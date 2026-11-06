@@ -1,0 +1,34 @@
+
+Guide.png
+size: 230,257
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+10_guang_1
+  rotate: false
+  xy: 2, 124
+  size: 130, 131
+  orig: 135, 135
+  offset: 2, 2
+  index: -1
+90x90
+  rotate: false
+  xy: 2, 2
+  size: 120, 120
+  orig: 162, 162
+  offset: 21, 21
+  index: -1
+denglu_2
+  rotate: false
+  xy: 124, 16
+  size: 104, 106
+  orig: 128, 128
+  offset: 15, 8
+  index: -1
+fazhen_jiaxue_2
+  rotate: false
+  xy: 134, 168
+  size: 87, 87
+  orig: 120, 120
+  offset: 16, 16
+  index: -1

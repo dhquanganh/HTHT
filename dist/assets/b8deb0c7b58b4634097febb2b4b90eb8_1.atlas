@@ -1,0 +1,97 @@
+
+Lvlup.png
+size: 733,516
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Layer 1 copy 2
+  rotate: false
+  xy: 2, 336
+  size: 579, 178
+  orig: 584, 183
+  offset: 2, 2
+  index: -1
+Layer 1 copy 5
+  rotate: false
+  xy: 2, 2
+  size: 505, 88
+  orig: 513, 93
+  offset: 4, 2
+  index: -1
+a
+  rotate: false
+  xy: 583, 360
+  size: 82, 154
+  orig: 82, 154
+  offset: 0, 0
+  index: -1
+bgr
+  rotate: false
+  xy: 2, 92
+  size: 495, 242
+  orig: 523, 268
+  offset: 14, 13
+  index: -1
+c
+  rotate: false
+  xy: 499, 121
+  size: 82, 99
+  orig: 82, 99
+  offset: 0, 0
+  index: -1
+e
+  rotate: false
+  xy: 667, 387
+  size: 64, 127
+  orig: 64, 127
+  offset: 0, 0
+  index: -1
+flow
+  rotate: false
+  xy: 594, 43
+  size: 77, 77
+  orig: 82, 82
+  offset: 2, 3
+  index: -1
+i
+  rotate: false
+  xy: 673, 283
+  size: 42, 102
+  orig: 42, 102
+  offset: 0, 0
+  index: -1
+l
+  rotate: false
+  xy: 613, 260
+  size: 58, 98
+  orig: 58, 98
+  offset: 0, 0
+  index: -1
+n
+  rotate: false
+  xy: 509, 21
+  size: 83, 98
+  orig: 83, 98
+  offset: 0, 0
+  index: -1
+p
+  rotate: false
+  xy: 583, 122
+  size: 75, 98
+  orig: 76, 98
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 499, 222
+  size: 112, 112
+  orig: 130, 127
+  offset: 9, 7
+  index: -1
+tialua
+  rotate: false
+  xy: 613, 223
+  size: 35, 35
+  orig: 39, 39
+  offset: 2, 2
+  index: -1

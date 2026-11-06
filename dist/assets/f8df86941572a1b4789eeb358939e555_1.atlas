@@ -1,0 +1,41 @@
+
+Island_factory.png
+size: 675,334
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 2 copy
+  rotate: true
+  xy: 647, 85
+  size: 24, 26
+  orig: 26, 28
+  offset: 1, 1
+  index: -1
+o
+  rotate: false
+  xy: 529, 214
+  size: 132, 118
+  orig: 135, 122
+  offset: 2, 1
+  index: -1
+sad
+  rotate: false
+  xy: 2, 13
+  size: 525, 319
+  orig: 578, 343
+  offset: 18, 6
+  index: -1
+wave1
+  rotate: false
+  xy: 529, 111
+  size: 138, 101
+  orig: 142, 118
+  offset: 1, 17
+  index: -1
+wave2
+  rotate: true
+  xy: 529, 2
+  size: 107, 116
+  orig: 112, 116
+  offset: 3, 0
+  index: -1

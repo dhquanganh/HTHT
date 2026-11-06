@@ -1,0 +1,27 @@
+
+Arrow_fuse.png
+size: 102,69
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Layer 240 copy 6
+  rotate: true
+  xy: 2, 47
+  size: 20, 98
+  orig: 24, 106
+  offset: 2, 4
+  index: -1
+Layer 240 copy 9
+  rotate: false
+  xy: 2, 17
+  size: 28, 28
+  orig: 32, 32
+  offset: 2, 2
+  index: -1
+arrow_next
+  rotate: true
+  xy: 32, 2
+  size: 43, 44
+  orig: 43, 44
+  offset: 0, 0
+  index: -1

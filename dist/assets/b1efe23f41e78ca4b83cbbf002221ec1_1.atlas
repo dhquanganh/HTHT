@@ -1,0 +1,146 @@
+
+Phao_hoa1.png
+size: 348,278
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2_00
+  rotate: false
+  xy: 265, 2
+  size: 9, 27
+  orig: 99, 200
+  offset: 45, 12
+  index: -1
+2_01
+  rotate: true
+  xy: 281, 200
+  size: 12, 65
+  orig: 99, 200
+  offset: 44, 9
+  index: -1
+2_02
+  rotate: true
+  xy: 98, 171
+  size: 13, 100
+  orig: 99, 200
+  offset: 43, 8
+  index: -1
+2_03
+  rotate: true
+  xy: 87, 11
+  size: 14, 127
+  orig: 99, 200
+  offset: 43, 7
+  index: -1
+2_04
+  rotate: true
+  xy: 200, 171
+  size: 15, 142
+  orig: 99, 200
+  offset: 42, 7
+  index: -1
+2_05
+  rotate: false
+  xy: 326, 21
+  size: 17, 148
+  orig: 99, 200
+  offset: 41, 7
+  index: -1
+2_06
+  rotate: true
+  xy: 87, 48
+  size: 18, 151
+  orig: 99, 200
+  offset: 41, 8
+  index: -1
+2_07
+  rotate: true
+  xy: 87, 68
+  size: 19, 151
+  orig: 99, 200
+  offset: 40, 9
+  index: -1
+2_08
+  rotate: true
+  xy: 87, 27
+  size: 19, 150
+  orig: 99, 200
+  offset: 40, 11
+  index: -1
+2_09
+  rotate: false
+  xy: 239, 2
+  size: 24, 27
+  orig: 99, 200
+  offset: 39, 137
+  index: -1
+2_10
+  rotate: false
+  xy: 247, 92
+  size: 77, 77
+  orig: 99, 200
+  offset: 11, 112
+  index: -1
+2_11
+  rotate: false
+  xy: 2, 4
+  size: 83, 84
+  orig: 99, 200
+  offset: 8, 108
+  index: -1
+2_12
+  rotate: false
+  xy: 192, 188
+  size: 87, 88
+  orig: 99, 200
+  offset: 6, 106
+  index: -1
+2_13
+  rotate: false
+  xy: 2, 90
+  size: 91, 91
+  orig: 99, 200
+  offset: 4, 105
+  index: -1
+2_14
+  rotate: false
+  xy: 2, 183
+  size: 94, 93
+  orig: 99, 200
+  offset: 3, 104
+  index: -1
+2_15
+  rotate: false
+  xy: 98, 186
+  size: 92, 90
+  orig: 99, 200
+  offset: 4, 105
+  index: -1
+2_16
+  rotate: false
+  xy: 95, 91
+  size: 81, 78
+  orig: 99, 200
+  offset: 10, 111
+  index: -1
+2_17
+  rotate: true
+  xy: 178, 89
+  size: 80, 67
+  orig: 99, 200
+  offset: 11, 118
+  index: -1
+2_18
+  rotate: false
+  xy: 281, 214
+  size: 62, 62
+  orig: 99, 200
+  offset: 19, 119
+  index: -1
+2_19
+  rotate: false
+  xy: 247, 31
+  size: 60, 59
+  orig: 99, 200
+  offset: 20, 120
+  index: -1

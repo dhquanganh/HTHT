@@ -1,0 +1,27 @@
+
+Tab_02.png
+size: 300,111
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+d3
+  rotate: true
+  xy: 220, 20
+  size: 89, 78
+  orig: 106, 82
+  offset: 9, 2
+  index: -1
+e
+  rotate: false
+  xy: 2, 2
+  size: 107, 107
+  orig: 107, 107
+  offset: 0, 0
+  index: -1
+e1
+  rotate: false
+  xy: 111, 2
+  size: 107, 107
+  orig: 107, 107
+  offset: 0, 0
+  index: -1

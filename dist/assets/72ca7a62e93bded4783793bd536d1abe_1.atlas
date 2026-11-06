@@ -1,0 +1,27 @@
+
+Fx_summon_border.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx_summon new/d
+  rotate: true
+  xy: 2, 55
+  size: 266, 449
+  orig: 266, 449
+  offset: 0, 0
+  index: -1
+fx_summon new/tia
+  rotate: true
+  xy: 2, 425
+  size: 26, 256
+  orig: 26, 256
+  offset: 0, 0
+  index: -1
+fx_summon new/ui_guangci_0
+  rotate: false
+  xy: 260, 323
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

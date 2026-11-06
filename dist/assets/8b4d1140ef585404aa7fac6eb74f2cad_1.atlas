@@ -1,0 +1,27 @@
+
+Summon_eff_bar.png
+size: 638,106
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: true
+  xy: 528, 2
+  size: 102, 108
+  orig: 108, 110
+  offset: 4, 1
+  index: -1
+Layer 2 copy 2
+  rotate: false
+  xy: 2, 16
+  size: 40, 40
+  orig: 43, 44
+  offset: 1, 2
+  index: -1
+bar
+  rotate: false
+  xy: 2, 58
+  size: 524, 46
+  orig: 524, 46
+  offset: 0, 0
+  index: -1

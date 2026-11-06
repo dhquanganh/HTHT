@@ -1,0 +1,27 @@
+
+B_7.png
+size: 323,204
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm
+  rotate: false
+  xy: 194, 4
+  size: 63, 59
+  orig: 77, 82
+  offset: 7, 10
+  index: -1
+fx/star
+  rotate: false
+  xy: 2, 2
+  size: 190, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+vc_building_0000s_0006_Layer-11
+  rotate: true
+  xy: 194, 65
+  size: 137, 127
+  orig: 217, 220
+  offset: 40, 41
+  index: -1

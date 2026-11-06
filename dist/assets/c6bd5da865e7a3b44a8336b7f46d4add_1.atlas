@@ -1,0 +1,27 @@
+
+Plus.png
+size: 107,115
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Layer 240 copy 6
+  rotate: false
+  xy: 85, 15
+  size: 20, 98
+  orig: 24, 106
+  offset: 2, 4
+  index: -1
+Layer 240 copy 9
+  rotate: false
+  xy: 2, 2
+  size: 28, 28
+  orig: 32, 32
+  offset: 2, 2
+  index: -1
+plus
+  rotate: false
+  xy: 2, 32
+  size: 81, 81
+  orig: 84, 92
+  offset: 1, 7
+  index: -1

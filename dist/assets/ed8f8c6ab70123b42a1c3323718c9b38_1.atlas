@@ -1,0 +1,20 @@
+
+B_5.png
+size: 268,151
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/ui_qiceshengji_2
+  rotate: true
+  xy: 175, 56
+  size: 93, 91
+  orig: 100, 100
+  offset: 7, 0
+  index: -1
+vc_building_0000s_0004_Layer-10
+  rotate: true
+  xy: 2, 2
+  size: 147, 171
+  orig: 147, 175
+  offset: 0, 4
+  index: -1

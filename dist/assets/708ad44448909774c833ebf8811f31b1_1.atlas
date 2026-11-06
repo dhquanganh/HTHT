@@ -1,0 +1,97 @@
+
+B_6.png
+size: 608,312
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/2
+  rotate: false
+  xy: 2, 2
+  size: 308, 308
+  orig: 308, 308
+  offset: 0, 0
+  index: -1
+fx/fire1_01
+  rotate: false
+  xy: 491, 71
+  size: 57, 88
+  orig: 64, 128
+  offset: 6, 11
+  index: -1
+fx/fire1_04
+  rotate: true
+  xy: 461, 161
+  size: 56, 90
+  orig: 64, 128
+  offset: 6, 11
+  index: -1
+fx/fire1_07
+  rotate: false
+  xy: 519, 220
+  size: 56, 90
+  orig: 64, 128
+  offset: 5, 11
+  index: -1
+fx/fire1_10
+  rotate: false
+  xy: 432, 63
+  size: 57, 90
+  orig: 64, 128
+  offset: 4, 12
+  index: -1
+fx/fire1_13
+  rotate: true
+  xy: 405, 3
+  size: 57, 91
+  orig: 64, 128
+  offset: 2, 12
+  index: -1
+fx/fire1_16
+  rotate: false
+  xy: 312, 58
+  size: 57, 95
+  orig: 64, 128
+  offset: 2, 11
+  index: -1
+fx/fire1_19
+  rotate: true
+  xy: 498, 10
+  size: 59, 84
+  orig: 64, 128
+  offset: 1, 11
+  index: -1
+fx/fire1_22
+  rotate: false
+  xy: 371, 62
+  size: 59, 91
+  orig: 64, 128
+  offset: 2, 11
+  index: -1
+fx/fire1_25
+  rotate: true
+  xy: 312, 2
+  size: 54, 91
+  orig: 64, 128
+  offset: 8, 11
+  index: -1
+fx/fire1_28
+  rotate: false
+  xy: 461, 219
+  size: 56, 91
+  orig: 64, 128
+  offset: 7, 11
+  index: -1
+fx/fire1_31
+  rotate: false
+  xy: 550, 72
+  size: 56, 87
+  orig: 64, 128
+  offset: 7, 11
+  index: -1
+vc_building_0000s_0005_Layer-3
+  rotate: false
+  xy: 312, 155
+  size: 147, 155
+  orig: 147, 159
+  offset: 0, 4
+  index: -1

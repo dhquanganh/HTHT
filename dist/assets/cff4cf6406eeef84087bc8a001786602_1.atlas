@@ -1,0 +1,48 @@
+
+basehero.png
+size: 524,313
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+114.level.42.mob.1
+  rotate: false
+  xy: 449, 96
+  size: 73, 86
+  orig: 73, 86
+  offset: 0, 0
+  index: -1
+Layer 240 copy 6
+  rotate: false
+  xy: 488, 213
+  size: 20, 98
+  orig: 24, 106
+  offset: 2, 4
+  index: -1
+Layer 240 copy 9
+  rotate: false
+  xy: 449, 66
+  size: 28, 28
+  orig: 32, 32
+  offset: 2, 2
+  index: -1
+skill.4341004.effect.2
+  rotate: false
+  xy: 2, 2
+  size: 317, 309
+  orig: 317, 309
+  offset: 0, 0
+  index: -1
+text
+  rotate: false
+  xy: 321, 23
+  size: 126, 159
+  orig: 134, 167
+  offset: 4, 4
+  index: -1
+xoa
+  rotate: false
+  xy: 321, 184
+  size: 165, 127
+  orig: 177, 159
+  offset: 6, 0
+  index: -1

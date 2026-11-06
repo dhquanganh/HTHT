@@ -1,0 +1,20 @@
+
+wave_ship.png
+size: 560,60
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 130
+  rotate: false
+  xy: 2, 22
+  size: 351, 36
+  orig: 377, 39
+  offset: 16, 1
+  index: -1
+Layer 131
+  rotate: false
+  xy: 355, 2
+  size: 202, 56
+  orig: 207, 66
+  offset: 1, 9
+  index: -1

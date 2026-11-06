@@ -1,0 +1,104 @@
+
+eff_clanboss.png
+size: 173,603
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a_01
+  rotate: false
+  xy: 92, 326
+  size: 79, 77
+  orig: 100, 100
+  offset: 12, 11
+  index: -1
+a_02
+  rotate: false
+  xy: 82, 2
+  size: 77, 77
+  orig: 100, 100
+  offset: 12, 11
+  index: -1
+a_03
+  rotate: false
+  xy: 2, 160
+  size: 81, 77
+  orig: 100, 100
+  offset: 8, 11
+  index: -1
+a_04
+  rotate: false
+  xy: 2, 239
+  size: 81, 78
+  orig: 100, 100
+  offset: 8, 11
+  index: -1
+a_05
+  rotate: true
+  xy: 92, 405
+  size: 82, 79
+  orig: 100, 100
+  offset: 7, 11
+  index: -1
+a_06
+  rotate: true
+  xy: 2, 81
+  size: 77, 80
+  orig: 100, 100
+  offset: 12, 11
+  index: -1
+a_07
+  rotate: true
+  xy: 85, 160
+  size: 78, 81
+  orig: 100, 100
+  offset: 12, 11
+  index: -1
+a_08
+  rotate: true
+  xy: 90, 240
+  size: 84, 81
+  orig: 100, 100
+  offset: 8, 11
+  index: -1
+a_09
+  rotate: false
+  xy: 2, 404
+  size: 88, 83
+  orig: 100, 100
+  offset: 6, 11
+  index: -1
+a_10
+  rotate: false
+  xy: 2, 319
+  size: 86, 83
+  orig: 100, 100
+  offset: 3, 11
+  index: -1
+a_11
+  rotate: false
+  xy: 2, 2
+  size: 78, 77
+  orig: 100, 100
+  offset: 12, 11
+  index: -1
+a_12
+  rotate: false
+  xy: 84, 81
+  size: 79, 77
+  orig: 100, 100
+  offset: 12, 11
+  index: -1
+f1
+  rotate: false
+  xy: 2, 489
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+l
+  rotate: false
+  xy: 116, 531
+  size: 15, 70
+  orig: 15, 70
+  offset: 0, 0
+  index: -1

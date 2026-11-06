@@ -1,0 +1,146 @@
+
+Eff_flameshrine.png
+size: 1982,400
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+f_01
+  rotate: false
+  xy: 2, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_02
+  rotate: false
+  xy: 200, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_03
+  rotate: true
+  xy: 2, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_04
+  rotate: false
+  xy: 398, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_05
+  rotate: true
+  xy: 202, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_06
+  rotate: false
+  xy: 596, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_07
+  rotate: true
+  xy: 402, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_08
+  rotate: false
+  xy: 794, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_09
+  rotate: true
+  xy: 602, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_10
+  rotate: false
+  xy: 992, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_11
+  rotate: true
+  xy: 802, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_12
+  rotate: false
+  xy: 1190, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_13
+  rotate: true
+  xy: 1002, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_14
+  rotate: false
+  xy: 1388, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_15
+  rotate: true
+  xy: 1202, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_16
+  rotate: false
+  xy: 1586, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_17
+  rotate: true
+  xy: 1402, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_18
+  rotate: false
+  xy: 1784, 200
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+f_19
+  rotate: true
+  xy: 1602, 2
+  size: 196, 198
+  orig: 200, 199
+  offset: 2, 1
+  index: -1
+s1
+  rotate: false
+  xy: 1802, 175
+  size: 23, 23
+  orig: 25, 25
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,34 @@
+
+22.png
+size: 124,118
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Ellipse 1
+  rotate: false
+  xy: 2, 7
+  size: 56, 56
+  orig: 59, 58
+  offset: 1, 1
+  index: -1
+Group 1 copy 4
+  rotate: false
+  xy: 2, 65
+  size: 54, 51
+  orig: 57, 53
+  offset: 1, 1
+  index: -1
+Group 1 copy 5
+  rotate: false
+  xy: 58, 65
+  size: 55, 51
+  orig: 57, 53
+  offset: 1, 1
+  index: -1
+Group 4
+  rotate: false
+  xy: 60, 2
+  size: 62, 61
+  orig: 64, 63
+  offset: 1, 1
+  index: -1

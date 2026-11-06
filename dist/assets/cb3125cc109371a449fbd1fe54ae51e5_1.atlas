@@ -1,0 +1,34 @@
+
+Summoningbar.png
+size: 620,80
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+summoning/bar_energy
+  rotate: false
+  xy: 2, 2
+  size: 504, 28
+  orig: 508, 34
+  offset: 2, 3
+  index: -1
+summoning/bar_energy_bgr
+  rotate: false
+  xy: 2, 32
+  size: 524, 46
+  orig: 524, 46
+  offset: 0, 0
+  index: -1
+summoning/flow
+  rotate: false
+  xy: 579, 30
+  size: 39, 48
+  orig: 39, 48
+  offset: 0, 0
+  index: -1
+summoning/flow2
+  rotate: false
+  xy: 528, 24
+  size: 49, 54
+  orig: 121, 124
+  offset: 36, 34
+  index: -1

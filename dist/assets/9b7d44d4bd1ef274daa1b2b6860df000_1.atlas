@@ -1,0 +1,97 @@
+
+Eff_bgr1.png
+size: 1897,154
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+01
+  rotate: true
+  xy: 2, 2
+  size: 150, 148
+  orig: 150, 148
+  offset: 0, 0
+  index: -1
+02
+  rotate: false
+  xy: 1321, 7
+  size: 144, 145
+  orig: 150, 148
+  offset: 0, 3
+  index: -1
+03
+  rotate: false
+  xy: 1612, 6
+  size: 141, 146
+  orig: 150, 148
+  offset: 3, 2
+  index: -1
+04
+  rotate: false
+  xy: 1755, 8
+  size: 140, 144
+  orig: 150, 148
+  offset: 4, 4
+  index: -1
+05
+  rotate: false
+  xy: 1467, 6
+  size: 143, 146
+  orig: 150, 148
+  offset: 3, 2
+  index: -1
+06
+  rotate: false
+  xy: 1176, 5
+  size: 143, 147
+  orig: 150, 148
+  offset: 4, 1
+  index: -1
+07
+  rotate: false
+  xy: 447, 4
+  size: 145, 148
+  orig: 150, 148
+  offset: 4, 0
+  index: -1
+08
+  rotate: false
+  xy: 739, 4
+  size: 144, 148
+  orig: 150, 148
+  offset: 6, 0
+  index: -1
+09
+  rotate: true
+  xy: 885, 5
+  size: 147, 144
+  orig: 150, 148
+  offset: 3, 4
+  index: -1
+10
+  rotate: true
+  xy: 1031, 4
+  size: 148, 143
+  orig: 150, 148
+  offset: 2, 5
+  index: -1
+11
+  rotate: true
+  xy: 594, 2
+  size: 150, 143
+  orig: 150, 148
+  offset: 0, 5
+  index: -1
+12
+  rotate: true
+  xy: 301, 2
+  size: 150, 144
+  orig: 150, 148
+  offset: 0, 4
+  index: -1
+13
+  rotate: true
+  xy: 152, 3
+  size: 149, 147
+  orig: 150, 148
+  offset: 0, 1
+  index: -1

@@ -1,0 +1,20 @@
+
+Loot_spirit_auto.png
+size: 302,81
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+box_text_2
+  rotate: false
+  xy: 2, 2
+  size: 240, 77
+  orig: 246, 78
+  offset: 3, 0
+  index: -1
+icon_spirit
+  rotate: false
+  xy: 244, 16
+  size: 56, 63
+  orig: 72, 72
+  offset: 7, 5
+  index: -1

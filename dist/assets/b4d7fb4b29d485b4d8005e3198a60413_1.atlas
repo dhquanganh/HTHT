@@ -1,0 +1,41 @@
+
+Chest.png
+size: 272,282
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 2
+  rotate: true
+  xy: 2, 128
+  size: 152, 116
+  orig: 152, 116
+  offset: 0, 0
+  index: -1
+Layer 3
+  rotate: false
+  xy: 120, 179
+  size: 148, 101
+  orig: 148, 101
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: false
+  xy: 2, 16
+  size: 118, 110
+  orig: 118, 110
+  offset: 0, 0
+  index: -1
+Layer 5 copy
+  rotate: false
+  xy: 122, 77
+  size: 100, 100
+  orig: 102, 104
+  offset: 1, 3
+  index: -1
+shadpw
+  rotate: false
+  xy: 122, 2
+  size: 148, 73
+  orig: 154, 76
+  offset: 3, 2
+  index: -1

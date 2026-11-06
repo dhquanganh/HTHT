@@ -1,0 +1,62 @@
+
+Buff_mau.png
+size: 676,117
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+atk08/skill/1
+  rotate: false
+  xy: 647, 74
+  size: 27, 41
+  orig: 29, 43
+  offset: 1, 1
+  index: -1
+atk08/skill/2
+  rotate: true
+  xy: 647, 41
+  size: 31, 23
+  orig: 33, 24
+  offset: 1, 1
+  index: -1
+atk08/skill/barrier
+  rotate: true
+  xy: 458, 25
+  size: 90, 141
+  orig: 90, 142
+  offset: 0, 1
+  index: -1
+atk08/skill/chan
+  rotate: false
+  xy: 2, 2
+  size: 179, 113
+  orig: 187, 129
+  offset: 5, 4
+  index: -1
+atk08/skill/leave
+  rotate: true
+  xy: 601, 32
+  size: 28, 44
+  orig: 30, 46
+  offset: 1, 1
+  index: -1
+atk08/skill/smoke1
+  rotate: true
+  xy: 183, 4
+  size: 111, 147
+  orig: 115, 150
+  offset: 2, 2
+  index: -1
+atk08/skill/smoke2
+  rotate: true
+  xy: 332, 3
+  size: 112, 124
+  orig: 114, 128
+  offset: 0, 2
+  index: -1
+atk08/skill/star
+  rotate: false
+  xy: 601, 62
+  size: 44, 53
+  orig: 47, 57
+  offset: 2, 2
+  index: -1

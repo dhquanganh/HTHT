@@ -1,0 +1,202 @@
+
+Fx_beer.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+000
+  rotate: false
+  xy: 179, 421
+  size: 85, 60
+  orig: 85, 63
+  offset: 0, 1
+  index: -1
+001
+  rotate: true
+  xy: 286, 488
+  size: 98, 106
+  orig: 98, 109
+  offset: 0, 1
+  index: -1
+002
+  rotate: true
+  xy: 286, 488
+  size: 98, 106
+  orig: 98, 109
+  offset: 0, 1
+  index: -1
+003
+  rotate: false
+  xy: 2, 612
+  size: 116, 101
+  orig: 116, 104
+  offset: 0, 1
+  index: -1
+004
+  rotate: true
+  xy: 90, 419
+  size: 92, 87
+  orig: 92, 90
+  offset: 0, 1
+  index: -1
+006
+  rotate: true
+  xy: 179, 483
+  size: 93, 97
+  orig: 93, 100
+  offset: 0, 1
+  index: -1
+007
+  rotate: true
+  xy: 179, 578
+  size: 104, 105
+  orig: 104, 108
+  offset: 0, 1
+  index: -1
+008
+  rotate: true
+  xy: 2, 477
+  size: 133, 86
+  orig: 133, 89
+  offset: 0, 1
+  index: -1
+010
+  rotate: false
+  xy: 2, 715
+  size: 149, 103
+  orig: 149, 106
+  offset: 0, 1
+  index: -1
+012
+  rotate: false
+  xy: 286, 588
+  size: 113, 94
+  orig: 113, 97
+  offset: 0, 1
+  index: -1
+014
+  rotate: true
+  xy: 500, 464
+  size: 110, 55
+  orig: 110, 58
+  offset: 0, 1
+  index: -1
+015
+  rotate: true
+  xy: 2, 374
+  size: 101, 67
+  orig: 101, 70
+  offset: 0, 1
+  index: -1
+017
+  rotate: false
+  xy: 394, 458
+  size: 102, 54
+  orig: 102, 57
+  offset: 0, 1
+  index: -1
+019
+  rotate: false
+  xy: 394, 514
+  size: 104, 60
+  orig: 104, 63
+  offset: 0, 1
+  index: -1
+020
+  rotate: false
+  xy: 278, 430
+  size: 95, 56
+  orig: 95, 59
+  offset: 0, 1
+  index: -1
+cup
+  rotate: true
+  xy: 608, 519
+  size: 136, 154
+  orig: 136, 156
+  offset: 0, 2
+  index: -1
+ui_qiceshengji_1
+  rotate: false
+  xy: 2, 820
+  size: 200, 190
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ui_qiceshengji_10
+  rotate: false
+  xy: 406, 685
+  size: 200, 141
+  orig: 200, 200
+  offset: 0, 21
+  index: -1
+ui_qiceshengji_11
+  rotate: false
+  xy: 406, 576
+  size: 200, 107
+  orig: 200, 200
+  offset: 0, 37
+  index: -1
+ui_qiceshengji_12
+  rotate: true
+  xy: 120, 513
+  size: 200, 57
+  orig: 200, 200
+  offset: 0, 63
+  index: -1
+ui_qiceshengji_2
+  rotate: false
+  xy: 204, 824
+  size: 200, 186
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ui_qiceshengji_3
+  rotate: false
+  xy: 406, 828
+  size: 200, 182
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+ui_qiceshengji_4
+  rotate: false
+  xy: 608, 831
+  size: 200, 179
+  orig: 200, 200
+  offset: 0, 2
+  index: -1
+ui_qiceshengji_5
+  rotate: false
+  xy: 810, 659
+  size: 200, 174
+  orig: 200, 200
+  offset: 0, 8
+  index: -1
+ui_qiceshengji_6
+  rotate: false
+  xy: 608, 657
+  size: 200, 172
+  orig: 200, 200
+  offset: 0, 14
+  index: -1
+ui_qiceshengji_7
+  rotate: false
+  xy: 810, 493
+  size: 200, 164
+  orig: 200, 200
+  offset: 0, 29
+  index: -1
+ui_qiceshengji_8
+  rotate: false
+  xy: 204, 684
+  size: 200, 138
+  orig: 200, 200
+  offset: 0, 38
+  index: -1
+ui_qiceshengji_9
+  rotate: false
+  xy: 810, 835
+  size: 200, 175
+  orig: 200, 200
+  offset: 0, 1
+  index: -1

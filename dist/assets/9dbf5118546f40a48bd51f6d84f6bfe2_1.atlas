@@ -1,0 +1,90 @@
+
+Fx_mission.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+mission/zhenfa_1
+  rotate: false
+  xy: 284, 730
+  size: 280, 115
+  orig: 280, 120
+  offset: 0, 3
+  index: -1
+mission/zhenfa_10
+  rotate: false
+  xy: 2, 630
+  size: 280, 96
+  orig: 280, 120
+  offset: 0, 10
+  index: -1
+mission/zhenfa_11
+  rotate: false
+  xy: 2, 534
+  size: 280, 94
+  orig: 280, 120
+  offset: 0, 12
+  index: -1
+mission/zhenfa_12
+  rotate: false
+  xy: 284, 526
+  size: 280, 92
+  orig: 280, 120
+  offset: 0, 13
+  index: -1
+mission/zhenfa_2
+  rotate: true
+  xy: 848, 685
+  size: 280, 117
+  orig: 280, 120
+  offset: 0, 1
+  index: -1
+mission/zhenfa_3
+  rotate: false
+  xy: 284, 847
+  size: 280, 118
+  orig: 280, 120
+  offset: 0, 0
+  index: -1
+mission/zhenfa_4
+  rotate: false
+  xy: 2, 845
+  size: 280, 120
+  orig: 280, 120
+  offset: 0, 0
+  index: -1
+mission/zhenfa_5
+  rotate: false
+  xy: 566, 847
+  size: 280, 118
+  orig: 280, 120
+  offset: 0, 0
+  index: -1
+mission/zhenfa_6
+  rotate: false
+  xy: 2, 728
+  size: 280, 115
+  orig: 280, 120
+  offset: 0, 2
+  index: -1
+mission/zhenfa_7
+  rotate: false
+  xy: 566, 731
+  size: 280, 114
+  orig: 280, 120
+  offset: 0, 1
+  index: -1
+mission/zhenfa_8
+  rotate: false
+  xy: 566, 618
+  size: 280, 111
+  orig: 280, 120
+  offset: 0, 3
+  index: -1
+mission/zhenfa_9
+  rotate: false
+  xy: 284, 620
+  size: 280, 108
+  orig: 280, 120
+  offset: 0, 5
+  index: -1

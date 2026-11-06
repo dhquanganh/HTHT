@@ -1,0 +1,34 @@
+
+MagicHit_1.png
+size: 542,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Magic_1/skill.51121008.hit.0.0
+  rotate: true
+  xy: 2, 6
+  size: 136, 173
+  orig: 136, 173
+  offset: 0, 0
+  index: -1
+Magic_1/skill.51121008.hit.0.1
+  rotate: true
+  xy: 421, 12
+  size: 130, 119
+  orig: 130, 119
+  offset: 0, 0
+  index: -1
+Magic_1/skill.51121008.hit.0.2
+  rotate: true
+  xy: 177, 7
+  size: 135, 125
+  orig: 135, 125
+  offset: 0, 0
+  index: -1
+Magic_1/skill.51121008.hit.0.3
+  rotate: true
+  xy: 304, 2
+  size: 140, 115
+  orig: 140, 115
+  offset: 0, 0
+  index: -1

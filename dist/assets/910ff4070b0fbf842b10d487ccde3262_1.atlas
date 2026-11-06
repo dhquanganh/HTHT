@@ -1,0 +1,76 @@
+
+icon tang toc.png
+size: 267,94
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Ellipse 1
+  rotate: false
+  xy: 219, 2
+  size: 46, 11
+  orig: 48, 13
+  offset: 1, 1
+  index: -1
+Layer 1
+  rotate: false
+  xy: 93, 2
+  size: 67, 49
+  orig: 69, 51
+  offset: 1, 1
+  index: -1
+Layer 11
+  rotate: false
+  xy: 219, 15
+  size: 23, 45
+  orig: 25, 47
+  offset: 1, 1
+  index: -1
+Layer 2
+  rotate: false
+  xy: 93, 53
+  size: 98, 39
+  orig: 100, 41
+  offset: 1, 1
+  index: -1
+Layer 3
+  rotate: false
+  xy: 193, 14
+  size: 24, 46
+  orig: 24, 46
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: false
+  xy: 193, 62
+  size: 53, 30
+  orig: 59, 40
+  offset: 3, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 162, 4
+  size: 29, 47
+  orig: 31, 49
+  offset: 1, 1
+  index: -1
+Layer 6
+  rotate: false
+  xy: 193, 5
+  size: 7, 7
+  orig: 9, 9
+  offset: 1, 1
+  index: -1
+layer 7
+  rotate: false
+  xy: 248, 74
+  size: 6, 18
+  orig: 8, 21
+  offset: 1, 1
+  index: -1
+layer8
+  rotate: false
+  xy: 2, 4
+  size: 89, 88
+  orig: 91, 90
+  offset: 1, 1
+  index: -1

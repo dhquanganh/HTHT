@@ -1,0 +1,125 @@
+
+Upgrade_item1.png
+size: 856,808
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+refresh upgrade/uplarge
+  rotate: true
+  xy: 2, 412
+  size: 391, 226
+  orig: 391, 226
+  offset: 0, 0
+  index: -1
+refresh upgrade/vien (1)
+  rotate: true
+  xy: 639, 180
+  size: 72, 183
+  orig: 168, 254
+  offset: 0, 11
+  index: -1
+refresh upgrade/vien (10)
+  rotate: true
+  xy: 242, 2
+  size: 168, 238
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (11)
+  rotate: false
+  xy: 230, 565
+  size: 168, 238
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (12)
+  rotate: false
+  xy: 342, 179
+  size: 163, 238
+  orig: 168, 254
+  offset: 5, 9
+  index: -1
+refresh upgrade/vien (13)
+  rotate: true
+  xy: 482, 20
+  size: 157, 236
+  orig: 168, 254
+  offset: 11, 11
+  index: -1
+refresh upgrade/vien (14)
+  rotate: true
+  xy: 230, 419
+  size: 144, 232
+  orig: 168, 254
+  offset: 24, 15
+  index: -1
+refresh upgrade/vien (15)
+  rotate: false
+  xy: 725, 583
+  size: 129, 220
+  orig: 168, 254
+  offset: 39, 27
+  index: -1
+refresh upgrade/vien (16)
+  rotate: true
+  xy: 639, 254
+  size: 103, 207
+  orig: 168, 254
+  offset: 65, 37
+  index: -1
+refresh upgrade/vien (2)
+  rotate: false
+  xy: 696, 359
+  size: 152, 208
+  orig: 168, 254
+  offset: 0, 11
+  index: -1
+refresh upgrade/vien (3)
+  rotate: false
+  xy: 507, 200
+  size: 130, 218
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (4)
+  rotate: true
+  xy: 464, 420
+  size: 143, 230
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (5)
+  rotate: false
+  xy: 567, 569
+  size: 156, 234
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (6)
+  rotate: false
+  xy: 400, 565
+  size: 165, 238
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (7)
+  rotate: false
+  xy: 2, 172
+  size: 168, 238
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (8)
+  rotate: true
+  xy: 2, 2
+  size: 168, 238
+  orig: 168, 254
+  offset: 0, 9
+  index: -1
+refresh upgrade/vien (9)
+  rotate: false
+  xy: 172, 172
+  size: 168, 238
+  orig: 168, 254
+  offset: 0, 9
+  index: -1

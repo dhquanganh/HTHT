@@ -1,0 +1,41 @@
+
+nut.png
+size: 358,104
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Group 1
+  rotate: false
+  xy: 2, 2
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 104, 2
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+Layer 6
+  rotate: true
+  xy: 206, 3
+  size: 17, 20
+  orig: 20, 22
+  offset: 1, 1
+  index: -1
+Layer 7
+  rotate: true
+  xy: 290, 7
+  size: 95, 66
+  orig: 97, 68
+  offset: 1, 1
+  index: -1
+Shape 1
+  rotate: false
+  xy: 206, 22
+  size: 82, 80
+  orig: 84, 82
+  offset: 1, 1
+  index: -1

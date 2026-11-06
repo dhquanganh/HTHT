@@ -1,0 +1,20 @@
+
+home.png
+size: 470,143
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 106
+  rotate: false
+  xy: 2, 2
+  size: 225, 19
+  orig: 233, 25
+  offset: 2, 3
+  index: -1
+wave
+  rotate: false
+  xy: 2, 23
+  size: 466, 118
+  orig: 488, 139
+  offset: 11, 6
+  index: -1

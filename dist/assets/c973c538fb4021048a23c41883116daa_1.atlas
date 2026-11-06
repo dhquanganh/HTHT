@@ -1,0 +1,125 @@
+
+Tower2.png
+size: 1240,916
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 100 copy
+  rotate: false
+  xy: 2, 104
+  size: 1027, 168
+  orig: 1071, 184
+  offset: 1, 15
+  index: -1
+Layer 137
+  rotate: false
+  xy: 2, 11
+  size: 274, 91
+  orig: 277, 94
+  offset: 2, 1
+  index: -1
+Layer 138
+  rotate: false
+  xy: 965, 44
+  size: 109, 36
+  orig: 121, 51
+  offset: 11, 1
+  index: -1
+Layer 139
+  rotate: false
+  xy: 508, 2
+  size: 190, 53
+  orig: 193, 57
+  offset: 2, 1
+  index: -1
+Layer 140
+  rotate: true
+  xy: 1140, 616
+  size: 298, 95
+  orig: 301, 103
+  offset: 2, 1
+  index: -1
+Layer 141
+  rotate: true
+  xy: 1140, 403
+  size: 211, 74
+  orig: 214, 76
+  offset: 1, 1
+  index: -1
+Layer 142
+  rotate: true
+  xy: 1031, 82
+  size: 190, 112
+  orig: 192, 114
+  offset: 1, 1
+  index: -1
+bgr_tower_new_harda
+  rotate: false
+  xy: 2, 274
+  size: 1136, 640
+  orig: 1136, 640
+  offset: 0, 0
+  index: -1
+images/set_02
+  rotate: false
+  xy: 1145, 81
+  size: 44, 220
+  orig: 56, 250
+  offset: 4, 12
+  index: -1
+images/set_03
+  rotate: true
+  xy: 737, 58
+  size: 44, 225
+  orig: 55, 250
+  offset: 4, 12
+  index: -1
+images/set_04
+  rotate: false
+  xy: 1191, 80
+  size: 43, 221
+  orig: 55, 250
+  offset: 6, 14
+  index: -1
+images/set_05
+  rotate: true
+  xy: 508, 57
+  size: 45, 227
+  orig: 67, 250
+  offset: 12, 7
+  index: -1
+images/set_07
+  rotate: true
+  xy: 278, 6
+  size: 47, 222
+  orig: 58, 250
+  offset: 4, 11
+  index: -1
+images/set_08
+  rotate: true
+  xy: 278, 55
+  size: 47, 228
+  orig: 65, 250
+  offset: 7, 9
+  index: -1
+images/set_10
+  rotate: true
+  xy: 965, 4
+  size: 38, 218
+  orig: 57, 250
+  offset: 11, 15
+  index: -1
+images/set_11
+  rotate: true
+  xy: 737, 18
+  size: 38, 226
+  orig: 62, 250
+  offset: 11, 12
+  index: -1
+light
+  rotate: true
+  xy: 1140, 303
+  size: 98, 90
+  orig: 202, 208
+  offset: 52, 60
+  index: -1

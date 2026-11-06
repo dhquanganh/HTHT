@@ -1,0 +1,47 @@
+{
+"skeleton": { "hash": "HAWm9WJ1xXNWni7S0SR9u43u53g", "spine": "3.8.75", "images": "C:\\Users\\Shichida1\\Desktop\\Convert", "audio": "C:\\Users\\Shichida1\\Desktop\\Convert" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "123.level.42.affected.0", "bone": "root", "attachment": "12/skill.61120018.hit.0.5", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"123.level.42.affected.0": {
+				"12/skill.61120018.hit.0.0": { "width": 167, "height": 123 },
+				"12/skill.61120018.hit.0.1": { "width": 195, "height": 121 },
+				"12/skill.61120018.hit.0.2": { "width": 191, "height": 127 },
+				"12/skill.61120018.hit.0.3": { "width": 203, "height": 135 },
+				"12/skill.61120018.hit.0.4": { "width": 191, "height": 139 },
+				"12/skill.61120018.hit.0.5": { "width": 185, "height": 121 }
+			}
+		}
+	}
+],
+"animations": {
+	"Hit": {
+		"slots": {
+			"123.level.42.affected.0": {
+				"attachment": [
+					{ "name": "12/skill.61120018.hit.0.0" },
+					{ "time": 0.0333, "name": "12/skill.61120018.hit.0.1" },
+					{ "time": 0.0667, "name": "12/skill.61120018.hit.0.2" },
+					{ "time": 0.1, "name": "12/skill.61120018.hit.0.3" },
+					{ "time": 0.1333, "name": "12/skill.61120018.hit.0.4" },
+					{ "time": 0.1667, "name": "12/skill.61120018.hit.0.5" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"scale": [
+					{ "x": 3, "y": 3 }
+				]
+			}
+		}
+	}
+}
+}

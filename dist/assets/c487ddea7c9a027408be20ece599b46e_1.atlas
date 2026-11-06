@@ -1,0 +1,55 @@
+
+eff_clan_skill.png
+size: 1446,428
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Layer-56
+  rotate: false
+  xy: 1192, 103
+  size: 69, 69
+  orig: 69, 69
+  offset: 0, 0
+  index: -1
+a
+  rotate: false
+  xy: 2, 2
+  size: 424, 424
+  orig: 428, 428
+  offset: 2, 2
+  index: -1
+aa
+  rotate: false
+  xy: 428, 12
+  size: 414, 414
+  orig: 428, 428
+  offset: 7, 7
+  index: -1
+c
+  rotate: false
+  xy: 844, 80
+  size: 346, 346
+  orig: 387, 387
+  offset: 20, 21
+  index: -1
+e
+  rotate: false
+  xy: 1192, 174
+  size: 252, 252
+  orig: 253, 253
+  offset: 0, 1
+  index: -1
+f
+  rotate: false
+  xy: 844, 37
+  size: 31, 41
+  orig: 34, 44
+  offset: 1, 1
+  index: -1
+s
+  rotate: false
+  xy: 1263, 137
+  size: 25, 35
+  orig: 34, 44
+  offset: 4, 4
+  index: -1

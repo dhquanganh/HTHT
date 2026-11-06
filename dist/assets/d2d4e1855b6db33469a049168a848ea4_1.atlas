@@ -1,0 +1,83 @@
+
+B_4.png
+size: 315,194
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/goldCoin1
+  rotate: true
+  xy: 224, 39
+  size: 14, 18
+  orig: 32, 32
+  offset: 9, 7
+  index: -1
+fx/goldCoin2
+  rotate: false
+  xy: 215, 15
+  size: 7, 18
+  orig: 32, 32
+  offset: 13, 7
+  index: -1
+fx/goldCoin3
+  rotate: false
+  xy: 204, 15
+  size: 9, 18
+  orig: 32, 32
+  offset: 12, 7
+  index: -1
+fx/goldCoin4
+  rotate: true
+  xy: 244, 39
+  size: 14, 18
+  orig: 32, 32
+  offset: 9, 7
+  index: -1
+fx/goldCoin5
+  rotate: false
+  xy: 204, 35
+  size: 18, 18
+  orig: 32, 32
+  offset: 7, 7
+  index: -1
+fx/goldCoin6
+  rotate: false
+  xy: 264, 35
+  size: 14, 18
+  orig: 32, 32
+  offset: 9, 7
+  index: -1
+fx/goldCoin7
+  rotate: false
+  xy: 240, 19
+  size: 9, 18
+  orig: 32, 32
+  offset: 12, 7
+  index: -1
+fx/goldCoin8
+  rotate: false
+  xy: 251, 19
+  size: 7, 18
+  orig: 32, 32
+  offset: 13, 7
+  index: -1
+fx/goldCoin9
+  rotate: false
+  xy: 224, 19
+  size: 14, 18
+  orig: 32, 32
+  offset: 9, 7
+  index: -1
+fx/star
+  rotate: true
+  xy: 2, 2
+  size: 190, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+vc_building_0000s_0003_Layer-15
+  rotate: true
+  xy: 204, 55
+  size: 137, 109
+  orig: 137, 112
+  offset: 0, 3
+  index: -1

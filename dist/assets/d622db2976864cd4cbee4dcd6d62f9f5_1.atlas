@@ -1,0 +1,48 @@
+
+Unlock_slot.png
+size: 171,104
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: false
+  xy: 2, 2
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+Layer 2
+  rotate: false
+  xy: 104, 27
+  size: 40, 27
+  orig: 42, 29
+  offset: 1, 1
+  index: -1
+Layer 3
+  rotate: false
+  xy: 104, 6
+  size: 38, 19
+  orig: 42, 21
+  offset: 2, 1
+  index: -1
+Layer 3 copy
+  rotate: true
+  xy: 146, 16
+  size: 38, 19
+  orig: 42, 21
+  offset: 2, 1
+  index: -1
+Layer 3 copy 2
+  rotate: false
+  xy: 104, 56
+  size: 56, 46
+  orig: 59, 48
+  offset: 1, 1
+  index: -1
+Layer 4
+  rotate: false
+  xy: 162, 86
+  size: 7, 16
+  orig: 9, 18
+  offset: 1, 1
+  index: -1

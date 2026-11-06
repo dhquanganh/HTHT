@@ -1,0 +1,27 @@
+
+Hand.png
+size: 249,96
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hadn
+  rotate: false
+  xy: 2, 2
+  size: 97, 92
+  orig: 97, 97
+  offset: 0, 1
+  index: -1
+hadn2
+  rotate: true
+  xy: 101, 4
+  size: 90, 94
+  orig: 97, 97
+  offset: 7, 0
+  index: -1
+target
+  rotate: false
+  xy: 197, 44
+  size: 50, 50
+  orig: 51, 51
+  offset: 1, 0
+  index: -1

@@ -1,0 +1,90 @@
+
+aura_1.png
+size: 1712,494
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+a1
+  rotate: false
+  xy: 2, 248
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a10
+  rotate: false
+  xy: 1142, 2
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a11
+  rotate: false
+  xy: 1427, 248
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a12
+  rotate: false
+  xy: 1427, 2
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a2
+  rotate: false
+  xy: 2, 2
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a3
+  rotate: false
+  xy: 287, 248
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a4
+  rotate: false
+  xy: 287, 2
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a5
+  rotate: false
+  xy: 572, 248
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a6
+  rotate: false
+  xy: 572, 2
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a7
+  rotate: false
+  xy: 857, 248
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a8
+  rotate: false
+  xy: 857, 2
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
+a9
+  rotate: false
+  xy: 1142, 248
+  size: 283, 244
+  orig: 283, 246
+  offset: 0, 2
+  index: -1
