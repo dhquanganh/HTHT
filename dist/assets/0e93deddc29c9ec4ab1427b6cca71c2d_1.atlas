@@ -1,0 +1,48 @@
+
+Hit_12.png
+size: 593,268
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+12/skill.61120018.hit.0.0
+  rotate: false
+  xy: 386, 143
+  size: 167, 123
+  orig: 167, 123
+  offset: 0, 0
+  index: -1
+12/skill.61120018.hit.0.1
+  rotate: false
+  xy: 2, 145
+  size: 195, 121
+  orig: 195, 121
+  offset: 0, 0
+  index: -1
+12/skill.61120018.hit.0.2
+  rotate: false
+  xy: 2, 16
+  size: 191, 127
+  orig: 191, 127
+  offset: 0, 0
+  index: -1
+12/skill.61120018.hit.0.3
+  rotate: false
+  xy: 195, 6
+  size: 203, 135
+  orig: 203, 135
+  offset: 0, 0
+  index: -1
+12/skill.61120018.hit.0.4
+  rotate: false
+  xy: 400, 2
+  size: 191, 139
+  orig: 191, 139
+  offset: 0, 0
+  index: -1
+12/skill.61120018.hit.0.5
+  rotate: false
+  xy: 199, 145
+  size: 185, 121
+  orig: 185, 121
+  offset: 0, 0
+  index: -1

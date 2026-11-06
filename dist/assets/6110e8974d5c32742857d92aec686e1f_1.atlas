@@ -1,0 +1,111 @@
+
+Nami.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 12
+  rotate: false
+  xy: 2, 626
+  size: 551, 394
+  orig: 551, 394
+  offset: 0, 0
+  index: -1
+Layer 13
+  rotate: false
+  xy: 555, 843
+  size: 205, 177
+  orig: 205, 177
+  offset: 0, 0
+  index: -1
+Layer 14
+  rotate: true
+  xy: 555, 731
+  size: 110, 173
+  orig: 110, 173
+  offset: 0, 0
+  index: -1
+Layer 17
+  rotate: true
+  xy: 762, 845
+  size: 175, 205
+  orig: 175, 205
+  offset: 0, 0
+  index: -1
+Layer 18
+  rotate: false
+  xy: 555, 614
+  size: 155, 115
+  orig: 155, 115
+  offset: 0, 0
+  index: -1
+Layer 19
+  rotate: true
+  xy: 762, 684
+  size: 159, 171
+  orig: 159, 171
+  offset: 0, 0
+  index: -1
+Layer 20
+  rotate: false
+  xy: 935, 639
+  size: 74, 47
+  orig: 74, 47
+  offset: 0, 0
+  index: -1
+Layer 21
+  rotate: false
+  xy: 935, 688
+  size: 85, 124
+  orig: 85, 124
+  offset: 0, 0
+  index: -1
+Layer 23
+  rotate: false
+  xy: 969, 814
+  size: 34, 102
+  orig: 34, 102
+  offset: 0, 0
+  index: -1
+Layer 23 copy
+  rotate: false
+  xy: 969, 918
+  size: 40, 102
+  orig: 40, 102
+  offset: 0, 0
+  index: -1
+Layer 24
+  rotate: false
+  xy: 1005, 902
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+Layer 24 copy
+  rotate: false
+  xy: 1005, 902
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+eyes_close
+  rotate: true
+  xy: 712, 655
+  size: 74, 40
+  orig: 74, 40
+  offset: 0, 0
+  index: -1
+smoke1
+  rotate: false
+  xy: 754, 638
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+smoke2
+  rotate: false
+  xy: 800, 638
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,1 @@
+{"name":"haitacphucsinh-ui","private":true,"version":"1.1.8","description":"Original Unity UI reconstructed as a static website","scripts":{"start":"python -m http.server 4173 --directory dist","check":"node --check dist/app.js"},"devDependencies":{"playwright-core":"^1.56.0"}}

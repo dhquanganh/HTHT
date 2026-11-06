@@ -1,0 +1,41 @@
+
+Island_casino.png
+size: 524,328
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+casino
+  rotate: false
+  xy: 2, 2
+  size: 411, 324
+  orig: 411, 335
+  offset: 0, 11
+  index: -1
+casinol1
+  rotate: true
+  xy: 471, 14
+  size: 54, 50
+  orig: 54, 50
+  offset: 0, 0
+  index: -1
+casinol2
+  rotate: false
+  xy: 415, 18
+  size: 54, 50
+  orig: 54, 50
+  offset: 0, 0
+  index: -1
+wave1
+  rotate: true
+  xy: 415, 70
+  size: 138, 101
+  orig: 142, 118
+  offset: 1, 17
+  index: -1
+wave2
+  rotate: false
+  xy: 415, 210
+  size: 107, 116
+  orig: 112, 116
+  offset: 3, 0
+  index: -1

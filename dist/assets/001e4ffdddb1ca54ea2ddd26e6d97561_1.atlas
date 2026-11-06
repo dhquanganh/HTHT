@@ -1,0 +1,104 @@
+
+Home_chest.png
+size: 100,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 130
+  rotate: true
+  xy: 60, 83
+  size: 351, 36
+  orig: 377, 39
+  offset: 16, 1
+  index: -1
+Layer 131
+  rotate: true
+  xy: 2, 232
+  size: 202, 56
+  orig: 207, 66
+  offset: 1, 9
+  index: -1
+images/splash_09
+  rotate: true
+  xy: 16, 96
+  size: 64, 23
+  orig: 85, 43
+  offset: 5, 10
+  index: -1
+images/splash_10
+  rotate: true
+  xy: 2, 162
+  size: 68, 23
+  orig: 85, 43
+  offset: 6, 10
+  index: -1
+images/splash_11
+  rotate: true
+  xy: 73, 437
+  size: 80, 19
+  orig: 86, 43
+  offset: 5, 14
+  index: -1
+images/splash_12
+  rotate: false
+  xy: 2, 63
+  size: 80, 18
+  orig: 85, 43
+  offset: 5, 15
+  index: -1
+images/splash_13
+  rotate: true
+  xy: 84, 9
+  size: 72, 14
+  orig: 85, 42
+  offset: 13, 17
+  index: -1
+images/splash_14
+  rotate: true
+  xy: 2, 93
+  size: 67, 12
+  orig: 86, 42
+  offset: 18, 18
+  index: -1
+images/splash_15
+  rotate: true
+  xy: 62, 3
+  size: 58, 10
+  orig: 85, 42
+  offset: 24, 19
+  index: -1
+images/splash_16
+  rotate: false
+  xy: 2, 2
+  size: 50, 8
+  orig: 85, 43
+  offset: 32, 21
+  index: -1
+images/splash_17
+  rotate: true
+  xy: 74, 25
+  size: 36, 7
+  orig: 86, 43
+  offset: 45, 21
+  index: -1
+images/splash_18
+  rotate: true
+  xy: 94, 493
+  size: 24, 3
+  orig: 85, 43
+  offset: 45, 23
+  index: -1
+ruong
+  rotate: false
+  xy: 2, 12
+  size: 58, 49
+  orig: 66, 51
+  offset: 8, 2
+  index: -1
+ruong2
+  rotate: true
+  xy: 2, 436
+  size: 81, 69
+  orig: 84, 69
+  offset: 3, 0
+  index: -1

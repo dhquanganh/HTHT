@@ -1,0 +1,27 @@
+
+Flag_campaign.png
+size: 416,78
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 279
+  rotate: true
+  xy: 2, 2
+  size: 74, 238
+  orig: 74, 238
+  offset: 0, 0
+  index: -1
+Layer 280
+  rotate: true
+  xy: 242, 7
+  size: 69, 151
+  orig: 69, 151
+  offset: 0, 0
+  index: -1
+shao
+  rotate: true
+  xy: 395, 51
+  size: 25, 19
+  orig: 27, 21
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,27 @@
+
+cloud.png
+size: 549,893
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+zbxh_cloud1
+  rotate: false
+  xy: 2, 624
+  size: 422, 267
+  orig: 422, 269
+  offset: 0, 0
+  index: -1
+zbxh_cloud2
+  rotate: true
+  xy: 2, 13
+  size: 609, 246
+  orig: 612, 256
+  offset: 0, 10
+  index: -1
+zbxh_cloud3
+  rotate: true
+  xy: 250, 2
+  size: 620, 297
+  orig: 638, 313
+  offset: 11, 8
+  index: -1

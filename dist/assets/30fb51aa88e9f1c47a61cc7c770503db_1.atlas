@@ -1,0 +1,41 @@
+
+Island_cake.png
+size: 748,306
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cake
+  rotate: false
+  xy: 2, 2
+  size: 635, 302
+  orig: 656, 348
+  offset: 20, 13
+  index: -1
+snow
+  rotate: false
+  xy: 659, 37
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+snow2
+  rotate: true
+  xy: 639, 29
+  size: 17, 18
+  orig: 20, 20
+  offset: 1, 2
+  index: -1
+wave1
+  rotate: true
+  xy: 639, 48
+  size: 138, 101
+  orig: 142, 118
+  offset: 1, 17
+  index: -1
+wave2
+  rotate: false
+  xy: 639, 188
+  size: 107, 116
+  orig: 112, 116
+  offset: 3, 0
+  index: -1

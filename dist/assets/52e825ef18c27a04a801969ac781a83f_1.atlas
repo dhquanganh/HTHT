@@ -1,0 +1,13 @@
+
+Glass.png
+size: 36,49
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+glass
+  rotate: false
+  xy: 2, 2
+  size: 32, 45
+  orig: 32, 45
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,41 @@
+
+Group 1.png
+size: 353,111
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: false
+  xy: 2, 7
+  size: 102, 102
+  orig: 104, 104
+  offset: 1, 1
+  index: -1
+Layer 2 copy
+  rotate: true
+  xy: 208, 19
+  size: 90, 83
+  orig: 92, 86
+  offset: 1, 2
+  index: -1
+Layer 3
+  rotate: false
+  xy: 106, 9
+  size: 100, 100
+  orig: 102, 102
+  offset: 1, 1
+  index: -1
+Layer 4
+  rotate: true
+  xy: 293, 24
+  size: 85, 58
+  orig: 87, 60
+  offset: 1, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 293, 2
+  size: 20, 20
+  orig: 25, 25
+  offset: 3, 2
+  index: -1

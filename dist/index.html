@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071d2d">
+  <meta name="description" content="Giao diện Hải Tặc Phục Sinh 1.1.8, khôi phục từ tài nguyên và bố cục Unity gốc.">
+  <link rel="icon" href="data:,">
+  <title>Hải Tặc Phục Sinh — Giao diện</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/spine-canvas.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main id="viewer">
+    <div id="stage"><canvas id="game" width="1136" height="640" aria-label="Giao diện game Hải Tặc Phục Sinh"></canvas><div id="loading" role="status">Đang tải giao diện…</div></div>
+  </main>
+  <nav id="toolbar" aria-label="Chọn giao diện">
+    <a class="brand" href="#13">HẢI TẶC <span>PHỤC SINH</span></a>
+    <select id="scene" aria-label="Màn hình"></select>
+    <button id="previous" title="Màn trước" aria-label="Màn trước">‹</button>
+    <button id="next" title="Màn tiếp" aria-label="Màn tiếp">›</button>
+    <button id="pause" title="Bật hoặc tắt chuyển động">Dừng chuyển động</button>
+    <button id="fullscreen" title="Toàn màn hình">Toàn màn hình</button>
+    <button id="hide" title="Ẩn thanh chọn màn hình (phím H)">Ẩn thanh</button>
+  </nav>
+  <button id="show" aria-label="Hiện thanh chọn màn hình">☰</button>
+  <div id="toast" role="status"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+B_1.png
+size: 350,182
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+smoke
+  rotate: false
+  xy: 261, 93
+  size: 87, 87
+  orig: 94, 95
+  offset: 3, 5
+  index: -1
+vc_building_0000s_0001_Layer-16
+  rotate: false
+  xy: 2, 2
+  size: 257, 178
+  orig: 257, 178
+  offset: 0, 0
+  index: -1

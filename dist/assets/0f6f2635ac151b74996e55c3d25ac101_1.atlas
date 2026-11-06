@@ -1,0 +1,27 @@
+
+Pet_up.png
+size: 629,240
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Layer 2
+  rotate: true
+  xy: 2, 17
+  size: 221, 261
+  orig: 227, 267
+  offset: 3, 3
+  index: -1
+Layer 2 copy 2
+  rotate: false
+  xy: 265, 50
+  size: 362, 188
+  orig: 364, 195
+  offset: 1, 5
+  index: -1
+Layer 3
+  rotate: true
+  xy: 265, 2
+  size: 46, 47
+  orig: 50, 51
+  offset: 2, 2
+  index: -1

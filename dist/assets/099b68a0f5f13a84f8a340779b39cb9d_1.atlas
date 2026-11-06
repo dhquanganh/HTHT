@@ -1,0 +1,34 @@
+
+Island_marine.png
+size: 526,348
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+haed
+  rotate: false
+  xy: 2, 2
+  size: 413, 344
+  orig: 413, 354
+  offset: 0, 10
+  index: -1
+wave1
+  rotate: true
+  xy: 417, 208
+  size: 138, 101
+  orig: 142, 118
+  offset: 1, 17
+  index: -1
+wave2
+  rotate: false
+  xy: 417, 90
+  size: 107, 116
+  orig: 112, 116
+  offset: 3, 0
+  index: -1
+white_flag
+  rotate: false
+  xy: 417, 79
+  size: 23, 9
+  orig: 23, 9
+  offset: 0, 0
+  index: -1

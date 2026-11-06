@@ -1,0 +1,13 @@
+
+Red_arrow_focus.png
+size: 143,102
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+red
+  rotate: false
+  xy: 2, 2
+  size: 139, 98
+  orig: 139, 98
+  offset: 0, 0
+  index: -1

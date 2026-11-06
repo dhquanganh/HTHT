@@ -1,0 +1,97 @@
+
+Ace.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: true
+  xy: 2, 157
+  size: 590, 445
+  orig: 590, 445
+  offset: 0, 0
+  index: -1
+Layer 10
+  rotate: false
+  xy: 2, 749
+  size: 592, 104
+  orig: 592, 104
+  offset: 0, 0
+  index: -1
+Layer 11
+  rotate: false
+  xy: 449, 143
+  size: 285, 213
+  orig: 285, 213
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: true
+  xy: 511, 673
+  size: 35, 24
+  orig: 35, 24
+  offset: 0, 0
+  index: -1
+Layer 3
+  rotate: true
+  xy: 482, 688
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: true
+  xy: 524, 713
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: false
+  xy: 524, 730
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+Layer 6
+  rotate: true
+  xy: 596, 597
+  size: 256, 250
+  orig: 256, 250
+  offset: 0, 0
+  index: -1
+Layer 7
+  rotate: true
+  xy: 449, 672
+  size: 75, 31
+  orig: 75, 31
+  offset: 0, 0
+  index: -1
+Layer 8
+  rotate: false
+  xy: 449, 624
+  size: 60, 46
+  orig: 60, 46
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: false
+  xy: 482, 710
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+flow
+  rotate: false
+  xy: 449, 358
+  size: 221, 237
+  orig: 221, 237
+  offset: 0, 0
+  index: -1
+lua
+  rotate: false
+  xy: 672, 459
+  size: 181, 136
+  orig: 181, 136
+  offset: 0, 0
+  index: -1

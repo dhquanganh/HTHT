@@ -1,0 +1,13 @@
+
+Ship1.png
+size: 95,155
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 97 copy
+  rotate: false
+  xy: 2, 2
+  size: 91, 151
+  orig: 93, 154
+  offset: 1, 2
+  index: -1

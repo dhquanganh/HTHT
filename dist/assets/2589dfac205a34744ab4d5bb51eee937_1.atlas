@@ -1,0 +1,69 @@
+
+B_3.png
+size: 464,348
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/poin (1)
+  rotate: true
+  xy: 233, 108
+  size: 121, 108
+  orig: 121, 108
+  offset: 0, 0
+  index: -1
+fx/poin (2)
+  rotate: false
+  xy: 343, 118
+  size: 107, 111
+  orig: 107, 111
+  offset: 0, 0
+  index: -1
+fx/poin (3)
+  rotate: true
+  xy: 351, 11
+  size: 105, 111
+  orig: 105, 111
+  offset: 0, 0
+  index: -1
+fx/poin (4)
+  rotate: true
+  xy: 161, 231
+  size: 115, 114
+  orig: 115, 114
+  offset: 0, 0
+  index: -1
+fx/poin (5)
+  rotate: false
+  xy: 2, 22
+  size: 121, 124
+  orig: 121, 124
+  offset: 0, 0
+  index: -1
+fx/poin (6)
+  rotate: false
+  xy: 125, 22
+  size: 106, 124
+  orig: 106, 124
+  offset: 0, 0
+  index: -1
+fx/poin (7)
+  rotate: true
+  xy: 233, 2
+  size: 104, 116
+  orig: 104, 116
+  offset: 0, 0
+  index: -1
+fx/poin (8)
+  rotate: true
+  xy: 277, 231
+  size: 115, 112
+  orig: 115, 112
+  offset: 0, 0
+  index: -1
+vc_building_0000s_0002_Layer-14-copy
+  rotate: true
+  xy: 2, 148
+  size: 198, 157
+  orig: 198, 158
+  offset: 0, 1
+  index: -1

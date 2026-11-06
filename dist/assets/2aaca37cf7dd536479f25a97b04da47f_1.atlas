@@ -1,0 +1,20 @@
+
+Island_tower.png
+size: 493,320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+leo_thap
+  rotate: true
+  xy: 2, 2
+  size: 316, 369
+  orig: 316, 370
+  offset: 0, 1
+  index: -1
+o
+  rotate: true
+  xy: 373, 186
+  size: 132, 118
+  orig: 135, 122
+  offset: 2, 1
+  index: -1

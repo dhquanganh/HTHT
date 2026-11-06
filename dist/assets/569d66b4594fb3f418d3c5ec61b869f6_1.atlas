@@ -1,0 +1,111 @@
+
+Win.png
+size: 1073,521
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 12
+  rotate: true
+  xy: 2, 121
+  size: 101, 341
+  orig: 111, 368
+  offset: 4, 1
+  index: -1
+Layer 14
+  rotate: false
+  xy: 551, 28
+  size: 187, 187
+  orig: 193, 193
+  offset: 3, 3
+  index: -1
+Layer 14 copy
+  rotate: false
+  xy: 345, 217
+  size: 334, 5
+  orig: 345, 7
+  offset: 6, 1
+  index: -1
+Layer 15
+  rotate: false
+  xy: 841, 114
+  size: 152, 152
+  orig: 161, 161
+  offset: 4, 6
+  index: -1
+Layer 3 copy
+  rotate: false
+  xy: 2, 224
+  size: 824, 295
+  orig: 826, 297
+  offset: 1, 1
+  index: -1
+Layer 3 copy 2
+  rotate: false
+  xy: 828, 268
+  size: 243, 251
+  orig: 245, 253
+  offset: 1, 1
+  index: -1
+Shape 1
+  rotate: false
+  xy: 991, 55
+  size: 59, 35
+  orig: 61, 37
+  offset: 1, 1
+  index: -1
+Shape 1 copy
+  rotate: false
+  xy: 841, 53
+  size: 98, 59
+  orig: 100, 61
+  offset: 1, 1
+  index: -1
+Shape 1 copy 2
+  rotate: false
+  xy: 941, 63
+  size: 48, 49
+  orig: 50, 51
+  offset: 1, 1
+  index: -1
+Shape 1 copy 3
+  rotate: false
+  xy: 995, 92
+  size: 47, 95
+  orig: 49, 97
+  offset: 1, 1
+  index: -1
+Shape 1 copy 4
+  rotate: true
+  xy: 740, 48
+  size: 174, 99
+  orig: 177, 102
+  offset: 1, 2
+  index: -1
+Shape 2
+  rotate: false
+  xy: 345, 88
+  size: 204, 127
+  orig: 206, 129
+  offset: 1, 1
+  index: -1
+V copy 2
+  rotate: false
+  xy: 2, 2
+  size: 309, 117
+  orig: 311, 119
+  offset: 1, 1
+  index: -1
+Yeah!!
+  rotate: false
+  xy: 740, 10
+  size: 89, 36
+  orig: 91, 38
+  offset: 1, 1
+  index: -1
+shape
+  rotate: false
+  xy: 995, 189
+  size: 69, 77
+  orig: 71, 79
+  offset: 1, 1
+  index: -1

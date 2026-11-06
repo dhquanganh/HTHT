@@ -1,0 +1,48 @@
+
+BlackFlag.png
+size: 471,378
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 117
+  rotate: false
+  xy: 2, 342
+  size: 168, 34
+  orig: 175, 35
+  offset: 6, 1
+  index: -1
+images/blackflag_01
+  rotate: false
+  xy: 2, 157
+  size: 233, 148
+  orig: 233, 148
+  offset: 0, 0
+  index: -1
+images/blackflag_02
+  rotate: false
+  xy: 237, 155
+  size: 227, 150
+  orig: 227, 150
+  offset: 0, 0
+  index: -1
+images/blackflag_05
+  rotate: false
+  xy: 226, 2
+  size: 222, 151
+  orig: 223, 151
+  offset: 0, 0
+  index: -1
+images/blackflag_06
+  rotate: false
+  xy: 2, 5
+  size: 222, 150
+  orig: 237, 151
+  offset: 0, 0
+  index: -1
+images/blackflag_07
+  rotate: true
+  xy: 172, 307
+  size: 69, 297
+  orig: 69, 298
+  offset: 0, 0
+  index: -1

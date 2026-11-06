@@ -1,0 +1,62 @@
+
+Loot_gold_auto.png
+size: 630,81
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+box_text_1
+  rotate: false
+  xy: 2, 2
+  size: 240, 77
+  orig: 246, 78
+  offset: 3, 0
+  index: -1
+box_text_2
+  rotate: false
+  xy: 244, 2
+  size: 240, 77
+  orig: 246, 78
+  offset: 3, 0
+  index: -1
+coin (1)
+  rotate: true
+  xy: 534, 39
+  size: 40, 46
+  orig: 50, 50
+  offset: 5, 2
+  index: -1
+coin (2)
+  rotate: false
+  xy: 486, 33
+  size: 46, 46
+  orig: 50, 50
+  offset: 2, 2
+  index: -1
+coin (3)
+  rotate: false
+  xy: 582, 33
+  size: 40, 46
+  orig: 50, 50
+  offset: 5, 2
+  index: -1
+coin (4)
+  rotate: true
+  xy: 534, 9
+  size: 28, 46
+  orig: 50, 50
+  offset: 11, 2
+  index: -1
+coin (5)
+  rotate: true
+  xy: 582, 17
+  size: 14, 46
+  orig: 50, 50
+  offset: 18, 2
+  index: -1
+coin (6)
+  rotate: true
+  xy: 486, 3
+  size: 28, 46
+  orig: 50, 50
+  offset: 11, 2
+  index: -1

@@ -1,0 +1,104 @@
+
+Gift_open.png
+size: 1328,107
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 68
+  rotate: false
+  xy: 1192, 20
+  size: 85, 85
+  orig: 87, 87
+  offset: 1, 1
+  index: -1
+a
+  rotate: false
+  xy: 1279, 40
+  size: 47, 65
+  orig: 49, 67
+  offset: 1, 1
+  index: -1
+flow
+  rotate: true
+  xy: 1095, 9
+  size: 96, 95
+  orig: 100, 100
+  offset: 2, 3
+  index: -1
+g
+  rotate: false
+  xy: 2, 2
+  size: 103, 103
+  orig: 105, 105
+  offset: 1, 1
+  index: -1
+images/square_light_01
+  rotate: true
+  xy: 605, 4
+  size: 101, 96
+  orig: 118, 115
+  offset: 12, 7
+  index: -1
+images/square_light_02
+  rotate: true
+  xy: 703, 4
+  size: 101, 96
+  orig: 118, 115
+  offset: 13, 7
+  index: -1
+images/square_light_03
+  rotate: true
+  xy: 407, 5
+  size: 100, 97
+  orig: 118, 115
+  offset: 13, 6
+  index: -1
+images/square_light_04
+  rotate: true
+  xy: 998, 5
+  size: 100, 95
+  orig: 118, 115
+  offset: 11, 8
+  index: -1
+images/square_light_05
+  rotate: true
+  xy: 801, 4
+  size: 101, 96
+  orig: 118, 114
+  offset: 12, 7
+  index: -1
+images/square_light_06
+  rotate: true
+  xy: 208, 4
+  size: 101, 97
+  orig: 118, 114
+  offset: 13, 3
+  index: -1
+images/square_light_07
+  rotate: false
+  xy: 307, 6
+  size: 98, 99
+  orig: 118, 114
+  offset: 13, 1
+  index: -1
+images/square_light_08
+  rotate: false
+  xy: 107, 5
+  size: 99, 100
+  orig: 118, 114
+  offset: 6, 0
+  index: -1
+images/square_light_09
+  rotate: true
+  xy: 506, 5
+  size: 100, 97
+  orig: 118, 115
+  offset: 12, 10
+  index: -1
+images/square_light_10
+  rotate: true
+  xy: 899, 6
+  size: 99, 97
+  orig: 118, 115
+  offset: 15, 5
+  index: -1
