@@ -1,0 +1,27 @@
+
+Hit_375.png
+size: 232,204
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+glow_1007
+  rotate: false
+  xy: 125, 15
+  size: 104, 104
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+glow_1129
+  rotate: false
+  xy: 2, 121
+  size: 228, 80
+  orig: 256, 128
+  offset: 16, 24
+  index: -1
+glow_4071
+  rotate: false
+  xy: 2, 2
+  size: 121, 117
+  orig: 128, 128
+  offset: 7, 3
+  index: -1

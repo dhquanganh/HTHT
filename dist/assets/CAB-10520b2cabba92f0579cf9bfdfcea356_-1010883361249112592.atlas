@@ -1,0 +1,118 @@
+
+Cast_408_a.png
+size: 1352,544
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bgr1
+  rotate: false
+  xy: 556, 11
+  size: 200, 117
+  orig: 200, 117
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 93
+  size: 552, 449
+  orig: 554, 451
+  offset: 1, 1
+  index: -1
+flowbody
+  rotate: true
+  xy: 1242, 22
+  size: 173, 106
+  orig: 174, 108
+  offset: 1, 1
+  index: -1
+fx/throw_01
+  rotate: false
+  xy: 1042, 197
+  size: 227, 46
+  orig: 256, 64
+  offset: 21, 11
+  index: -1
+fx/throw_02
+  rotate: false
+  xy: 260, 41
+  size: 248, 50
+  orig: 256, 64
+  offset: 8, 8
+  index: -1
+fx/throw_03
+  rotate: false
+  xy: 2, 40
+  size: 256, 51
+  orig: 256, 64
+  offset: 0, 9
+  index: -1
+fx/throw_04
+  rotate: true
+  xy: 1282, 286
+  size: 256, 47
+  orig: 256, 64
+  offset: 0, 12
+  index: -1
+hand1
+  rotate: false
+  xy: 556, 130
+  size: 225, 412
+  orig: 225, 412
+  offset: 0, 0
+  index: -1
+hand2
+  rotate: false
+  xy: 783, 229
+  size: 257, 313
+  orig: 257, 313
+  offset: 0, 0
+  index: -1
+long1
+  rotate: false
+  xy: 1042, 245
+  size: 238, 297
+  orig: 238, 297
+  offset: 0, 0
+  index: -1
+long2
+  rotate: false
+  xy: 758, 2
+  size: 169, 116
+  orig: 169, 117
+  offset: 0, 1
+  index: -1
+nit
+  rotate: false
+  xy: 929, 25
+  size: 81, 93
+  orig: 84, 115
+  offset: 1, 21
+  index: -1
+rau1
+  rotate: true
+  xy: 783, 120
+  size: 107, 231
+  orig: 107, 231
+  offset: 0, 0
+  index: -1
+rau2
+  rotate: true
+  xy: 1016, 35
+  size: 160, 224
+  orig: 160, 224
+  offset: 0, 0
+  index: -1
+toc1
+  rotate: false
+  xy: 1282, 232
+  size: 61, 52
+  orig: 61, 52
+  offset: 0, 0
+  index: -1
+tocs2
+  rotate: true
+  xy: 510, 35
+  size: 56, 39
+  orig: 56, 39
+  offset: 0, 0
+  index: -1

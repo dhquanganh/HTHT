@@ -1,0 +1,580 @@
+
+Hero_199.png
+size: 980,616
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_R_04
+  rotate: true
+  xy: 924, 63
+  size: 25, 34
+  orig: 26, 35
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 903, 369
+  size: 74, 92
+  orig: 75, 93
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 274, 117
+  size: 11, 18
+  orig: 12, 19
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 739, 62
+  size: 25, 10
+  orig: 26, 11
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 399, 7
+  size: 12, 32
+  orig: 14, 36
+  offset: 2, 3
+  index: -1
+cloth_04
+  rotate: true
+  xy: 871, 189
+  size: 47, 55
+  orig: 48, 56
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 675, 62
+  size: 62, 112
+  orig: 63, 113
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 675, 2
+  size: 58, 106
+  orig: 59, 107
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 880, 112
+  size: 42, 40
+  orig: 52, 48
+  offset: 6, 3
+  index: -1
+cloth_08
+  rotate: true
+  xy: 928, 198
+  size: 38, 50
+  orig: 39, 52
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1301
+  rotate: false
+  xy: 295, 2
+  size: 32, 17
+  orig: 33, 18
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1302
+  rotate: false
+  xy: 912, 42
+  size: 29, 19
+  orig: 30, 20
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1303
+  rotate: false
+  xy: 416, 255
+  size: 26, 17
+  orig: 27, 18
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1304
+  rotate: true
+  xy: 544, 2
+  size: 28, 24
+  orig: 34, 25
+  offset: 3, 0
+  index: -1
+doctorhogback_skill1 1305
+  rotate: true
+  xy: 796, 80
+  size: 57, 55
+  orig: 58, 56
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1306
+  rotate: true
+  xy: 812, 143
+  size: 60, 56
+  orig: 61, 57
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1307
+  rotate: true
+  xy: 796, 44
+  size: 34, 40
+  orig: 35, 41
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1309
+  rotate: false
+  xy: 98, 4
+  size: 21, 14
+  orig: 22, 15
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1310
+  rotate: true
+  xy: 838, 66
+  size: 12, 13
+  orig: 13, 14
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1311
+  rotate: false
+  xy: 488, 2
+  size: 26, 28
+  orig: 27, 29
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1312
+  rotate: false
+  xy: 622, 2
+  size: 39, 20
+  orig: 40, 21
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1313
+  rotate: false
+  xy: 817, 9
+  size: 20, 33
+  orig: 21, 34
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1 1314
+  rotate: true
+  xy: 853, 60
+  size: 23, 25
+  orig: 24, 26
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_04
+  rotate: false
+  xy: 761, 205
+  size: 79, 22
+  orig: 86, 28
+  offset: 7, 1
+  index: -1
+doctorhogback_skill1_05
+  rotate: false
+  xy: 871, 238
+  size: 88, 61
+  orig: 98, 65
+  offset: 10, 1
+  index: -1
+doctorhogback_skill1_06
+  rotate: false
+  xy: 765, 302
+  size: 109, 65
+  orig: 110, 69
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_08
+  rotate: true
+  xy: 446, 32
+  size: 96, 149
+  orig: 103, 152
+  offset: 7, 0
+  index: -1
+doctorhogback_skill1_09
+  rotate: false
+  xy: 905, 463
+  size: 73, 151
+  orig: 78, 155
+  offset: 5, 0
+  index: -1
+doctorhogback_skill1_10
+  rotate: true
+  xy: 563, 176
+  size: 76, 150
+  orig: 90, 154
+  offset: 14, 0
+  index: -1
+doctorhogback_skill1_101
+  rotate: false
+  xy: 924, 90
+  size: 34, 41
+  orig: 35, 42
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_102
+  rotate: true
+  xy: 927, 133
+  size: 34, 51
+  orig: 35, 52
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_103
+  rotate: false
+  xy: 960, 79
+  size: 18, 23
+  orig: 19, 24
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_104
+  rotate: true
+  xy: 928, 169
+  size: 27, 50
+  orig: 28, 51
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_105
+  rotate: false
+  xy: 715, 213
+  size: 44, 39
+  orig: 45, 40
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_11
+  rotate: false
+  xy: 597, 24
+  size: 76, 150
+  orig: 84, 156
+  offset: 8, 0
+  index: -1
+doctorhogback_skill1_12
+  rotate: true
+  xy: 295, 21
+  size: 107, 149
+  orig: 117, 156
+  offset: 10, 0
+  index: -1
+doctorhogback_skill1_13
+  rotate: true
+  xy: 277, 365
+  size: 101, 170
+  orig: 106, 174
+  offset: 5, 0
+  index: -1
+doctorhogback_skill1_14
+  rotate: true
+  xy: 273, 274
+  size: 89, 169
+  orig: 93, 176
+  offset: 4, 0
+  index: -1
+doctorhogback_skill1_15
+  rotate: false
+  xy: 416, 130
+  size: 145, 123
+  orig: 170, 132
+  offset: 10, 4
+  index: -1
+doctorhogback_skill1_15_ef01
+  rotate: false
+  xy: 761, 229
+  size: 108, 71
+  orig: 109, 72
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_15a
+  rotate: false
+  xy: 876, 301
+  size: 95, 66
+  orig: 96, 68
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_16
+  rotate: false
+  xy: 2, 20
+  size: 123, 81
+  orig: 131, 89
+  offset: 6, 2
+  index: -1
+doctorhogback_skill1_16_ef
+  rotate: false
+  xy: 765, 369
+  size: 136, 95
+  orig: 137, 96
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_701
+  rotate: true
+  xy: 66, 6
+  size: 12, 30
+  orig: 13, 31
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_702
+  rotate: false
+  xy: 943, 41
+  size: 29, 20
+  orig: 30, 21
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_703
+  rotate: false
+  xy: 739, 74
+  size: 55, 63
+  orig: 56, 64
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_704
+  rotate: false
+  xy: 739, 139
+  size: 71, 64
+  orig: 72, 65
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_705
+  rotate: false
+  xy: 880, 47
+  size: 30, 21
+  orig: 31, 22
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_706
+  rotate: true
+  xy: 570, 2
+  size: 20, 50
+  orig: 21, 51
+  offset: 1, 0
+  index: -1
+doctorhogback_skill1_707
+  rotate: true
+  xy: 446, 2
+  size: 28, 40
+  orig: 29, 41
+  offset: 1, 0
+  index: -1
+doctorhogback_skill2_04
+  rotate: false
+  xy: 277, 468
+  size: 171, 146
+  orig: 172, 147
+  offset: 1, 0
+  index: -1
+doctorhogback_skill2_05
+  rotate: false
+  xy: 274, 130
+  size: 140, 142
+  orig: 141, 143
+  offset: 1, 0
+  index: -1
+doctorhogback_skill2_06
+  rotate: true
+  xy: 450, 465
+  size: 149, 155
+  orig: 150, 156
+  offset: 1, 0
+  index: -1
+doctorhogback_skill2_07
+  rotate: false
+  xy: 138, 117
+  size: 134, 146
+  orig: 135, 147
+  offset: 1, 0
+  index: -1
+doctorhogback_skill2_08
+  rotate: false
+  xy: 138, 424
+  size: 137, 190
+  orig: 138, 191
+  offset: 1, 0
+  index: -1
+doctorhogback_skill2_10
+  rotate: false
+  xy: 2, 416
+  size: 134, 198
+  orig: 135, 199
+  offset: 1, 0
+  index: -1
+doctorhogback_skill2_101
+  rotate: false
+  xy: 783, 5
+  size: 32, 37
+  orig: 41, 44
+  offset: 5, 2
+  index: -1
+doctorhogback_skill2_102
+  rotate: false
+  xy: 842, 208
+  size: 23, 19
+  orig: 29, 25
+  offset: 5, 2
+  index: -1
+doctorhogback_skill2_201
+  rotate: false
+  xy: 563, 133
+  size: 32, 41
+  orig: 37, 44
+  offset: 2, 1
+  index: -1
+doctorhogback_skill2_202
+  rotate: true
+  xy: 516, 2
+  size: 28, 26
+  orig: 34, 33
+  offset: 3, 3
+  index: -1
+doctorhogback_skill2_203
+  rotate: false
+  xy: 870, 154
+  size: 55, 33
+  orig: 63, 41
+  offset: 4, 4
+  index: -1
+doctorhogback_skill2_801
+  rotate: false
+  xy: 853, 85
+  size: 25, 56
+  orig: 35, 67
+  offset: 3, 7
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 29, 3
+  size: 15, 35
+  orig: 16, 36
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 2, 2
+  size: 25, 16
+  orig: 26, 17
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 379, 2
+  size: 17, 18
+  orig: 18, 19
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 329, 2
+  size: 17, 26
+  orig: 18, 44
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 960, 104
+  size: 18, 27
+  orig: 19, 28
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 880, 70
+  size: 42, 40
+  orig: 43, 41
+  offset: 1, 0
+  index: -1
+hogback_damage
+  rotate: false
+  xy: 607, 462
+  size: 155, 152
+  orig: 156, 153
+  offset: 1, 0
+  index: -1
+hogback_rise
+  rotate: false
+  xy: 138, 2
+  size: 155, 113
+  orig: 167, 124
+  offset: 6, 3
+  index: -1
+hogback_standby_01
+  rotate: false
+  xy: 764, 466
+  size: 139, 148
+  orig: 140, 149
+  offset: 1, 0
+  index: -1
+hogback_standby_02
+  rotate: false
+  xy: 2, 103
+  size: 134, 153
+  orig: 135, 154
+  offset: 1, 0
+  index: -1
+hogback_win01
+  rotate: true
+  xy: 449, 361
+  size: 102, 156
+  orig: 111, 163
+  offset: 5, 2
+  index: -1
+hogback_win02
+  rotate: true
+  xy: 607, 358
+  size: 102, 156
+  orig: 108, 163
+  offset: 4, 3
+  index: -1
+hogback_win03
+  rotate: true
+  xy: 603, 254
+  size: 102, 156
+  orig: 112, 163
+  offset: 8, 2
+  index: -1
+hogback_win04
+  rotate: true
+  xy: 444, 255
+  size: 104, 157
+  orig: 111, 164
+  offset: 4, 3
+  index: -1
+hogback_win05
+  rotate: false
+  xy: 2, 258
+  size: 134, 156
+  orig: 140, 165
+  offset: 4, 5
+  index: -1
+hogback_win06
+  rotate: false
+  xy: 138, 265
+  size: 133, 157
+  orig: 142, 164
+  offset: 3, 3
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 663, 7
+  size: 10, 15
+  orig: 11, 16
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 961, 278
+  size: 12, 21
+  orig: 13, 22
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 357, 2
+  size: 17, 20
+  orig: 18, 21
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: false
+  xy: 715, 180
+  size: 22, 31
+  orig: 23, 33
+  offset: 1, 0
+  index: -1

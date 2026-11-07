@@ -1,0 +1,300 @@
+
+skill_507.png
+size: 1672,544
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_046_AU_013
+  rotate: true
+  xy: 161, 114
+  size: 146, 99
+  orig: 146, 99
+  offset: 0, 0
+  index: -1
+Char_046_AU_014
+  rotate: false
+  xy: 768, 94
+  size: 224, 129
+  orig: 224, 129
+  offset: 0, 0
+  index: -1
+Char_046_AU_015
+  rotate: false
+  xy: 517, 224
+  size: 249, 151
+  orig: 249, 151
+  offset: 0, 0
+  index: -1
+Char_046_AU_016
+  rotate: true
+  xy: 1165, 146
+  size: 253, 151
+  orig: 253, 151
+  offset: 0, 0
+  index: -1
+Char_046_AU_017
+  rotate: true
+  xy: 2, 112
+  size: 260, 157
+  orig: 260, 157
+  offset: 0, 0
+  index: -1
+Char_046_AU_018
+  rotate: false
+  xy: 1318, 142
+  size: 264, 158
+  orig: 264, 158
+  offset: 0, 0
+  index: -1
+Char_046_AU_019
+  rotate: true
+  xy: 1001, 132
+  size: 267, 162
+  orig: 267, 162
+  offset: 0, 0
+  index: -1
+Char_046_AU_020
+  rotate: false
+  xy: 2, 374
+  size: 271, 168
+  orig: 271, 168
+  offset: 0, 0
+  index: -1
+Layer-2
+  rotate: false
+  xy: 1310, 6
+  size: 163, 134
+  orig: 163, 134
+  offset: 0, 0
+  index: -1
+New folder/1
+  rotate: false
+  xy: 275, 377
+  size: 240, 165
+  orig: 240, 165
+  offset: 0, 0
+  index: -1
+New folder/2
+  rotate: false
+  xy: 517, 377
+  size: 240, 165
+  orig: 240, 165
+  offset: 0, 0
+  index: -1
+New folder/3
+  rotate: false
+  xy: 759, 377
+  size: 240, 165
+  orig: 240, 165
+  offset: 0, 0
+  index: -1
+New folder/4
+  rotate: true
+  xy: 1321, 302
+  size: 240, 165
+  orig: 240, 165
+  offset: 0, 0
+  index: -1
+New folder/5
+  rotate: true
+  xy: 1488, 302
+  size: 240, 165
+  orig: 240, 165
+  offset: 0, 0
+  index: -1
+New folder/6
+  rotate: false
+  xy: 275, 210
+  size: 240, 165
+  orig: 240, 165
+  offset: 0, 0
+  index: -1
+New folder/smoke_01
+  rotate: true
+  xy: 920, 237
+  size: 42, 48
+  orig: 128, 128
+  offset: 43, 40
+  index: -1
+New folder/smoke_02
+  rotate: true
+  xy: 1584, 68
+  size: 80, 78
+  orig: 128, 128
+  offset: 25, 23
+  index: -1
+New folder/smoke_03
+  rotate: true
+  xy: 464, 28
+  size: 94, 98
+  orig: 128, 128
+  offset: 23, 19
+  index: -1
+New folder/smoke_04
+  rotate: false
+  xy: 367, 100
+  size: 95, 108
+  orig: 128, 128
+  offset: 21, 13
+  index: -1
+New folder/smoke_05
+  rotate: false
+  xy: 161, 2
+  size: 94, 110
+  orig: 128, 128
+  offset: 21, 12
+  index: -1
+New folder/smoke_06
+  rotate: true
+  xy: 517, 124
+  size: 98, 110
+  orig: 128, 128
+  offset: 21, 11
+  index: -1
+New folder/smoke_07
+  rotate: false
+  xy: 161, 262
+  size: 100, 110
+  orig: 128, 128
+  offset: 21, 11
+  index: -1
+New folder/smoke_08
+  rotate: true
+  xy: 994, 31
+  size: 99, 107
+  orig: 128, 128
+  offset: 23, 11
+  index: -1
+New folder/smoke_09
+  rotate: false
+  xy: 629, 117
+  size: 98, 105
+  orig: 128, 128
+  offset: 24, 11
+  index: -1
+New folder/smoke_10
+  rotate: true
+  xy: 262, 111
+  size: 97, 103
+  orig: 128, 128
+  offset: 25, 11
+  index: -1
+New folder/smoke_11
+  rotate: true
+  xy: 564, 22
+  size: 93, 99
+  orig: 128, 128
+  offset: 27, 11
+  index: -1
+New folder/smoke_12
+  rotate: true
+  xy: 362, 5
+  size: 93, 100
+  orig: 128, 128
+  offset: 27, 10
+  index: -1
+New folder/smoke_13
+  rotate: false
+  xy: 665, 17
+  size: 92, 98
+  orig: 128, 128
+  offset: 28, 11
+  index: -1
+New folder/smoke_14
+  rotate: true
+  xy: 759, 2
+  size: 90, 98
+  orig: 128, 128
+  offset: 28, 11
+  index: -1
+New folder/smoke_15
+  rotate: false
+  xy: 920, 281
+  size: 74, 94
+  orig: 128, 128
+  offset: 27, 11
+  index: -1
+New folder/smoke_16
+  rotate: true
+  xy: 1580, 10
+  size: 56, 89
+  orig: 128, 128
+  offset: 43, 13
+  index: -1
+body1
+  rotate: false
+  xy: 2, 14
+  size: 103, 96
+  orig: 103, 96
+  offset: 0, 0
+  index: -1
+body2
+  rotate: false
+  xy: 1103, 20
+  size: 54, 110
+  orig: 54, 110
+  offset: 0, 0
+  index: -1
+earthquake
+  rotate: false
+  xy: 1001, 401
+  size: 318, 141
+  orig: 341, 145
+  offset: 12, 4
+  index: -1
+eff_rock
+  rotate: true
+  xy: 1584, 150
+  size: 150, 83
+  orig: 150, 83
+  offset: 0, 0
+  index: -1
+impact (123)b
+  rotate: true
+  xy: 1165, 3
+  size: 141, 143
+  orig: 150, 146
+  offset: 9, 3
+  index: -1
+la-2
+  rotate: true
+  xy: 107, 55
+  size: 55, 41
+  orig: 55, 41
+  offset: 0, 0
+  index: -1
+la1
+  rotate: false
+  xy: 970, 237
+  size: 26, 42
+  orig: 26, 42
+  offset: 0, 0
+  index: -1
+mieng-duoi
+  rotate: false
+  xy: 859, 26
+  size: 122, 66
+  orig: 122, 66
+  offset: 0, 0
+  index: -1
+nap-duoi
+  rotate: false
+  xy: 257, 14
+  size: 103, 95
+  orig: 103, 95
+  offset: 0, 0
+  index: -1
+nap-tren
+  rotate: true
+  xy: 1475, 26
+  size: 114, 103
+  orig: 114, 103
+  offset: 0, 0
+  index: -1
+skill1a
+  rotate: false
+  xy: 768, 225
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1

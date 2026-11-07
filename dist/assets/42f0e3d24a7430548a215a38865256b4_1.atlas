@@ -1,0 +1,132 @@
+
+Hit_66.png
+size: 173,278
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+denglu_2
+  rotate: true
+  xy: 2, 213
+  size: 63, 64
+  orig: 77, 77
+  offset: 9, 5
+  index: -1
+ef2
+  rotate: false
+  xy: 132, 212
+  size: 38, 64
+  orig: 40, 66
+  offset: 1, 1
+  index: -1
+fx/taozhuangkuang_1
+  rotate: true
+  xy: 57, 6
+  size: 9, 30
+  orig: 44, 66
+  offset: 2, 6
+  index: -1
+fx/taozhuangkuang_10
+  rotate: true
+  xy: 66, 140
+  size: 44, 62
+  orig: 44, 66
+  offset: 0, 2
+  index: -1
+fx/taozhuangkuang_11
+  rotate: true
+  xy: 2, 121
+  size: 44, 62
+  orig: 44, 66
+  offset: 0, 2
+  index: -1
+fx/taozhuangkuang_12
+  rotate: true
+  xy: 2, 76
+  size: 43, 62
+  orig: 44, 66
+  offset: 1, 2
+  index: -1
+fx/taozhuangkuang_13
+  rotate: true
+  xy: 66, 53
+  size: 40, 61
+  orig: 44, 66
+  offset: 4, 3
+  index: -1
+fx/taozhuangkuang_14
+  rotate: false
+  xy: 132, 150
+  size: 38, 60
+  orig: 44, 66
+  offset: 6, 4
+  index: -1
+fx/taozhuangkuang_15
+  rotate: true
+  xy: 2, 40
+  size: 34, 57
+  orig: 44, 66
+  offset: 10, 7
+  index: -1
+fx/taozhuangkuang_16
+  rotate: true
+  xy: 2, 14
+  size: 24, 53
+  orig: 44, 66
+  offset: 20, 10
+  index: -1
+fx/taozhuangkuang_2
+  rotate: true
+  xy: 119, 2
+  size: 22, 51
+  orig: 44, 66
+  offset: 0, 4
+  index: -1
+fx/taozhuangkuang_3
+  rotate: true
+  xy: 61, 17
+  size: 34, 56
+  orig: 44, 66
+  offset: 0, 3
+  index: -1
+fx/taozhuangkuang_4
+  rotate: false
+  xy: 129, 26
+  size: 38, 59
+  orig: 44, 66
+  offset: 0, 2
+  index: -1
+fx/taozhuangkuang_5
+  rotate: false
+  xy: 130, 87
+  size: 41, 61
+  orig: 44, 66
+  offset: 0, 2
+  index: -1
+fx/taozhuangkuang_6
+  rotate: true
+  xy: 66, 95
+  size: 43, 62
+  orig: 44, 66
+  offset: 0, 2
+  index: -1
+fx/taozhuangkuang_7
+  rotate: true
+  xy: 68, 232
+  size: 44, 62
+  orig: 44, 66
+  offset: 0, 2
+  index: -1
+fx/taozhuangkuang_8
+  rotate: true
+  xy: 68, 186
+  size: 44, 62
+  orig: 44, 66
+  offset: 0, 2
+  index: -1
+fx/taozhuangkuang_9
+  rotate: true
+  xy: 2, 167
+  size: 44, 62
+  orig: 44, 66
+  offset: 0, 2
+  index: -1

@@ -1,0 +1,356 @@
+
+Hero_205.png
+size: 712,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_01
+  rotate: false
+  xy: 42, 2
+  size: 14, 19
+  orig: 15, 20
+  offset: 1, 0
+  index: -1
+arm_L_04
+  rotate: true
+  xy: 426, 2
+  size: 11, 20
+  orig: 12, 21
+  offset: 1, 0
+  index: -1
+arm_R_01
+  rotate: false
+  xy: 25, 2
+  size: 15, 19
+  orig: 16, 20
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 234, 238
+  size: 22, 28
+  orig: 23, 29
+  offset: 1, 0
+  index: -1
+body_01
+  rotate: false
+  xy: 672, 277
+  size: 37, 78
+  orig: 38, 79
+  offset: 1, 0
+  index: -1
+body_03
+  rotate: true
+  xy: 297, 2
+  size: 58, 60
+  orig: 59, 61
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 359, 11
+  size: 49, 65
+  orig: 50, 66
+  offset: 1, 0
+  index: -1
+f-arm_L_01
+  rotate: false
+  xy: 426, 15
+  size: 16, 27
+  orig: 17, 28
+  offset: 1, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 691, 246
+  size: 29, 17
+  orig: 30, 18
+  offset: 1, 0
+  index: -1
+f-arm_R_01
+  rotate: true
+  xy: 426, 44
+  size: 16, 31
+  orig: 17, 32
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 234, 268
+  size: 28, 23
+  orig: 29, 24
+  offset: 1, 0
+  index: -1
+foot_L_01
+  rotate: true
+  xy: 691, 221
+  size: 23, 14
+  orig: 24, 15
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 456, 277
+  size: 24, 17
+  orig: 25, 18
+  offset: 1, 0
+  index: -1
+foot_R_01
+  rotate: true
+  xy: 475, 277
+  size: 5, 17
+  orig: 6, 18
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 359, 2
+  size: 7, 16
+  orig: 8, 17
+  offset: 1, 0
+  index: -1
+hand_L_01
+  rotate: false
+  xy: 444, 30
+  size: 12, 12
+  orig: 13, 13
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 176, 28
+  size: 10, 8
+  orig: 11, 9
+  offset: 1, 0
+  index: -1
+hand_R_01
+  rotate: false
+  xy: 691, 205
+  size: 14, 14
+  orig: 15, 15
+  offset: 1, 0
+  index: -1
+head_01
+  rotate: true
+  xy: 612, 44
+  size: 64, 93
+  orig: 65, 94
+  offset: 1, 0
+  index: -1
+head_03
+  rotate: true
+  xy: 590, 204
+  size: 71, 99
+  orig: 72, 100
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 612, 110
+  size: 71, 92
+  orig: 72, 93
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 399, 303
+  size: 98, 91
+  orig: 99, 92
+  offset: 1, 0
+  index: -1
+shank_L_01
+  rotate: true
+  xy: 499, 357
+  size: 5, 10
+  orig: 6, 11
+  offset: 1, 0
+  index: -1
+shank_L_03
+  rotate: true
+  xy: 475, 284
+  size: 17, 22
+  orig: 18, 23
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 511, 357
+  size: 5, 10
+  orig: 6, 11
+  offset: 1, 0
+  index: -1
+shank_R_01
+  rotate: true
+  xy: 58, 3
+  size: 18, 20
+  orig: 19, 21
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 2, 2
+  size: 19, 21
+  orig: 20, 22
+  offset: 1, 0
+  index: -1
+thigh_L_01
+  rotate: false
+  xy: 522, 366
+  size: 15, 28
+  orig: 16, 29
+  offset: 1, 0
+  index: -1
+thigh_L_03
+  rotate: false
+  xy: 149, 26
+  size: 25, 10
+  orig: 26, 11
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 80, 7
+  size: 14, 20
+  orig: 15, 21
+  offset: 1, 0
+  index: -1
+thigh_R_01
+  rotate: false
+  xy: 499, 364
+  size: 21, 30
+  orig: 22, 31
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 429, 277
+  size: 24, 25
+  orig: 25, 26
+  offset: 1, 0
+  index: -1
+zeff_beat_01
+  rotate: true
+  xy: 297, 62
+  size: 76, 160
+  orig: 77, 161
+  offset: 1, 0
+  index: -1
+zeff_beat_02
+  rotate: true
+  xy: 259, 140
+  size: 68, 160
+  orig: 69, 161
+  offset: 1, 0
+  index: -1
+zeff_beat_03
+  rotate: true
+  xy: 429, 201
+  size: 74, 159
+  orig: 75, 160
+  offset: 1, 0
+  index: -1
+zeff_beat_04
+  rotate: true
+  xy: 235, 385
+  size: 133, 161
+  orig: 134, 162
+  offset: 1, 0
+  index: -1
+zeff_damage
+  rotate: true
+  xy: 398, 396
+  size: 122, 143
+  orig: 123, 144
+  offset: 1, 0
+  index: -1
+zeff_guard
+  rotate: true
+  xy: 235, 298
+  size: 85, 162
+  orig: 86, 163
+  offset: 1, 0
+  index: -1
+zeff_skill1_01
+  rotate: true
+  xy: 112, 138
+  size: 98, 145
+  orig: 99, 146
+  offset: 1, 0
+  index: -1
+zeff_skill1_02
+  rotate: true
+  xy: 2, 138
+  size: 242, 108
+  orig: 322, 135
+  offset: 80, 26
+  index: -1
+zeff_skill1_03
+  rotate: false
+  xy: 2, 382
+  size: 231, 136
+  orig: 394, 160
+  offset: 163, 23
+  index: -1
+zeff_skill1_04
+  rotate: true
+  xy: 112, 238
+  size: 142, 120
+  orig: 143, 121
+  offset: 1, 0
+  index: -1
+zeff_skill1_05
+  rotate: true
+  xy: 2, 23
+  size: 113, 145
+  orig: 114, 146
+  offset: 1, 0
+  index: -1
+zeff_skill1_06
+  rotate: true
+  xy: 149, 38
+  size: 98, 146
+  orig: 99, 147
+  offset: 1, 0
+  index: -1
+zeff_standby_01
+  rotate: false
+  xy: 459, 40
+  size: 75, 159
+  orig: 76, 160
+  offset: 1, 0
+  index: -1
+zeff_standby_02
+  rotate: false
+  xy: 536, 40
+  size: 74, 159
+  orig: 75, 160
+  offset: 1, 0
+  index: -1
+zeff_win_01
+  rotate: true
+  xy: 499, 277
+  size: 78, 171
+  orig: 79, 172
+  offset: 1, 0
+  index: -1
+zeff_win_02
+  rotate: true
+  xy: 543, 357
+  size: 78, 166
+  orig: 79, 167
+  offset: 1, 0
+  index: -1
+zeff_win_03
+  rotate: true
+  xy: 543, 437
+  size: 81, 167
+  orig: 82, 168
+  offset: 1, 0
+  index: -1
+zeff_win_04
+  rotate: true
+  xy: 259, 210
+  size: 86, 168
+  orig: 87, 169
+  offset: 1, 0
+  index: -1

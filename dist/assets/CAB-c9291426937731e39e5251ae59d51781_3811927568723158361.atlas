@@ -1,0 +1,83 @@
+
+Skill_186.png
+size: 268,544
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_smoker_skill_3/000
+  rotate: true
+  xy: 199, 367
+  size: 175, 66
+  orig: 176, 67
+  offset: 1, 0
+  index: -1
+Char_smoker_skill_3/001
+  rotate: false
+  xy: 2, 402
+  size: 180, 59
+  orig: 183, 60
+  offset: 2, 0
+  index: -1
+Char_smoker_skill_3/003
+  rotate: false
+  xy: 2, 463
+  size: 195, 79
+  orig: 196, 80
+  offset: 1, 0
+  index: -1
+Char_smoker_skill_3/004
+  rotate: false
+  xy: 2, 100
+  size: 142, 96
+  orig: 143, 97
+  offset: 1, 0
+  index: -1
+Char_smoker_skill_3/007
+  rotate: false
+  xy: 2, 198
+  size: 147, 87
+  orig: 148, 88
+  offset: 1, 0
+  index: -1
+Char_smoker_skill_3/008
+  rotate: false
+  xy: 2, 287
+  size: 150, 113
+  orig: 151, 115
+  offset: 1, 0
+  index: -1
+Char_smoker_skill_3/010
+  rotate: true
+  xy: 154, 233
+  size: 132, 112
+  orig: 134, 114
+  offset: 1, 1
+  index: -1
+Char_smoker_skill_3/012
+  rotate: false
+  xy: 2, 2
+  size: 124, 96
+  orig: 126, 97
+  offset: 1, 0
+  index: -1
+Char_smoker_skill_3/014
+  rotate: false
+  xy: 146, 76
+  size: 119, 83
+  orig: 120, 84
+  offset: 1, 0
+  index: -1
+Char_smoker_skill_3/016
+  rotate: false
+  xy: 151, 161
+  size: 105, 70
+  orig: 107, 71
+  offset: 2, 0
+  index: -1
+Char_smoker_skill_3/018
+  rotate: false
+  xy: 128, 15
+  size: 90, 59
+  orig: 92, 60
+  offset: 1, 0
+  index: -1

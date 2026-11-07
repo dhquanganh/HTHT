@@ -1,0 +1,578 @@
+
+Hero_110.png
+size: 1024,1020
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 138, 929
+  size: 55, 70
+  orig: 55, 70
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 405, 921
+  size: 57, 74
+  orig: 57, 74
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: true
+  xy: 726, 724
+  size: 91, 99
+  orig: 97, 107
+  offset: 0, 3
+  index: -1
+cloth_11
+  rotate: true
+  xy: 921, 892
+  size: 70, 77
+  orig: 70, 83
+  offset: 0, 0
+  index: -1
+cloth_21
+  rotate: true
+  xy: 78, 930
+  size: 54, 58
+  orig: 54, 60
+  offset: 0, 0
+  index: -1
+cloth_22
+  rotate: false
+  xy: 791, 970
+  size: 72, 47
+  orig: 72, 47
+  offset: 0, 0
+  index: -1
+cloth_23
+  rotate: true
+  xy: 138, 767
+  size: 84, 107
+  orig: 85, 111
+  offset: 0, 2
+  index: -1
+cloth_24
+  rotate: false
+  xy: 306, 847
+  size: 77, 74
+  orig: 77, 74
+  offset: 0, 0
+  index: -1
+cloth_25
+  rotate: true
+  xy: 247, 760
+  size: 85, 110
+  orig: 87, 113
+  offset: 2, 3
+  index: -1
+cloth_26
+  rotate: true
+  xy: 141, 673
+  size: 92, 95
+  orig: 96, 100
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_05
+  rotate: true
+  xy: 2, 156
+  size: 268, 348
+  orig: 268, 348
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_06
+  rotate: true
+  xy: 352, 61
+  size: 271, 340
+  orig: 271, 340
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_09
+  rotate: false
+  xy: 694, 2
+  size: 291, 330
+  orig: 291, 330
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_201
+  rotate: true
+  xy: 755, 901
+  size: 67, 80
+  orig: 67, 80
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_202
+  rotate: true
+  xy: 920, 806
+  size: 84, 100
+  orig: 84, 100
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_203
+  rotate: true
+  xy: 826, 623
+  size: 94, 116
+  orig: 94, 116
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_204
+  rotate: false
+  xy: 433, 980
+  size: 63, 37
+  orig: 63, 37
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_205
+  rotate: false
+  xy: 446, 389
+  size: 164, 140
+  orig: 164, 140
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_206
+  rotate: false
+  xy: 486, 650
+  size: 132, 92
+  orig: 132, 92
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_207
+  rotate: true
+  xy: 335, 923
+  size: 56, 68
+  orig: 56, 68
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_208
+  rotate: false
+  xy: 523, 831
+  size: 96, 77
+  orig: 96, 77
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_209
+  rotate: true
+  xy: 621, 822
+  size: 79, 106
+  orig: 79, 106
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_301
+  rotate: false
+  xy: 952, 964
+  size: 63, 53
+  orig: 63, 53
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_302
+  rotate: false
+  xy: 219, 565
+  size: 100, 99
+  orig: 100, 99
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_303
+  rotate: true
+  xy: 321, 559
+  size: 99, 107
+  orig: 99, 107
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_305
+  rotate: false
+  xy: 481, 917
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_306
+  rotate: true
+  xy: 831, 809
+  size: 90, 87
+  orig: 90, 87
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_307
+  rotate: true
+  xy: 729, 817
+  size: 82, 100
+  orig: 82, 100
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_308
+  rotate: false
+  xy: 631, 976
+  size: 48, 41
+  orig: 48, 41
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_309
+  rotate: false
+  xy: 740, 971
+  size: 49, 46
+  orig: 49, 46
+  offset: 0, 0
+  index: -1
+franky-shogun_win_04_ef1
+  rotate: true
+  xy: 681, 975
+  size: 42, 57
+  orig: 42, 57
+  offset: 0, 0
+  index: -1
+franky-shogun_win_05_ef1
+  rotate: true
+  xy: 359, 753
+  size: 84, 147
+  orig: 84, 147
+  offset: 0, 0
+  index: -1
+franky-shogun_win_06_ef
+  rotate: true
+  xy: 508, 744
+  size: 85, 110
+  orig: 85, 110
+  offset: 0, 0
+  index: -1
+franky-shogun_win_07_ef
+  rotate: false
+  xy: 724, 626
+  size: 100, 96
+  orig: 100, 96
+  offset: 0, 0
+  index: -1
+franky-shogun_win_08_ef
+  rotate: false
+  xy: 156, 853
+  size: 148, 70
+  orig: 148, 70
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1901
+  rotate: false
+  xy: 680, 903
+  size: 73, 66
+  orig: 73, 66
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1902
+  rotate: true
+  xy: 2, 770
+  size: 82, 134
+  orig: 82, 134
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1903
+  rotate: true
+  xy: 565, 531
+  size: 101, 121
+  orig: 101, 121
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1904
+  rotate: false
+  xy: 273, 426
+  size: 171, 121
+  orig: 171, 121
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1905
+  rotate: false
+  xy: 837, 901
+  size: 82, 67
+  orig: 82, 67
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1906
+  rotate: true
+  xy: 357, 660
+  size: 91, 127
+  orig: 91, 127
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1907
+  rotate: true
+  xy: 827, 719
+  size: 85, 119
+  orig: 85, 120
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1908
+  rotate: false
+  xy: 385, 839
+  size: 136, 76
+  orig: 136, 76
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1909
+  rotate: true
+  xy: 276, 982
+  size: 35, 69
+  orig: 35, 69
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1910
+  rotate: true
+  xy: 579, 978
+  size: 39, 50
+  orig: 39, 50
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1911
+  rotate: false
+  xy: 131, 986
+  size: 102, 31
+  orig: 102, 31
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1912
+  rotate: false
+  xy: 865, 970
+  size: 85, 47
+  orig: 85, 47
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1913
+  rotate: false
+  xy: 68, 987
+  size: 61, 30
+  orig: 61, 30
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  1914
+  rotate: true
+  xy: 235, 983
+  size: 34, 39
+  orig: 34, 39
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  2201
+  rotate: false
+  xy: 75, 854
+  size: 79, 73
+  orig: 79, 73
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  2202
+  rotate: false
+  xy: 811, 511
+  size: 114, 110
+  orig: 114, 110
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  2203
+  rotate: false
+  xy: 688, 518
+  size: 121, 106
+  orig: 121, 106
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  2204
+  rotate: false
+  xy: 2, 938
+  size: 74, 47
+  orig: 74, 47
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  2205
+  rotate: false
+  xy: 542, 917
+  size: 69, 59
+  orig: 69, 59
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  2206
+  rotate: true
+  xy: 620, 634
+  size: 94, 102
+  orig: 94, 102
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  2210
+  rotate: true
+  xy: 2, 461
+  size: 119, 113
+  orig: 128, 119
+  offset: 6, 0
+  index: -1
+frankytwo_skill1  2211
+  rotate: true
+  xy: 117, 445
+  size: 118, 154
+  orig: 122, 159
+  offset: 0, 5
+  index: -1
+frankytwo_skill1  2212
+  rotate: false
+  xy: 238, 666
+  size: 117, 92
+  orig: 128, 102
+  offset: 7, 4
+  index: -1
+frankytwo_skill1  701
+  rotate: false
+  xy: 2, 866
+  size: 71, 70
+  orig: 71, 70
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  702
+  rotate: true
+  xy: 430, 549
+  size: 99, 133
+  orig: 99, 133
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  703
+  rotate: true
+  xy: 2, 582
+  size: 96, 116
+  orig: 96, 116
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  704
+  rotate: false
+  xy: 347, 981
+  size: 84, 36
+  orig: 84, 36
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  705
+  rotate: true
+  xy: 2, 988
+  size: 29, 64
+  orig: 29, 64
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  706
+  rotate: true
+  xy: 498, 978
+  size: 39, 79
+  orig: 39, 79
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  707
+  rotate: false
+  xy: 612, 334
+  size: 219, 175
+  orig: 219, 175
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  708
+  rotate: false
+  xy: 120, 574
+  size: 97, 97
+  orig: 97, 97
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  709
+  rotate: true
+  xy: 613, 910
+  size: 64, 65
+  orig: 64, 65
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  710
+  rotate: true
+  xy: 620, 730
+  size: 90, 104
+  orig: 90, 106
+  offset: 0, 0
+  index: -1
+frankytwo_skill1  711
+  rotate: false
+  xy: 210, 925
+  size: 123, 55
+  orig: 123, 55
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 2, 680
+  size: 137, 85
+  orig: 140, 98
+  offset: 0, 7
+  index: -1
+
+Hero_1102.png
+size: 1024,972
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+franky-shogun_damage
+  rotate: false
+  xy: 685, 665
+  size: 334, 303
+  orig: 334, 303
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_07
+  rotate: true
+  xy: 2, 697
+  size: 271, 339
+  orig: 271, 339
+  offset: 0, 0
+  index: -1
+franky-shogun_skill1_08
+  rotate: true
+  xy: 343, 697
+  size: 271, 340
+  orig: 271, 340
+  offset: 0, 0
+  index: -1
+franky-shogun_skill2_03
+  rotate: false
+  xy: 355, 368
+  size: 353, 295
+  orig: 353, 295
+  offset: 0, 0
+  index: -1
+franky-shogun_skill2_04
+  rotate: true
+  xy: 710, 299
+  size: 364, 300
+  orig: 364, 300
+  offset: 0, 0
+  index: -1
+franky-shogun_skill2_05
+  rotate: true
+  xy: 368, 2
+  size: 364, 301
+  orig: 364, 301
+  offset: 0, 0
+  index: -1
+franky-shogun_skill2_06
+  rotate: false
+  xy: 2, 66
+  size: 364, 300
+  orig: 364, 300
+  offset: 0, 0
+  index: -1
+franky-shogun_squat
+  rotate: false
+  xy: 2, 408
+  size: 351, 287
+  orig: 351, 287
+  offset: 0, 0
+  index: -1
+
+Hero_1103.png
+size: 608,372
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+franky-shogun_skill2_07
+  rotate: true
+  xy: 305, 2
+  size: 365, 300
+  orig: 365, 300
+  offset: 0, 0
+  index: -1
+franky-shogun_skill2_09
+  rotate: true
+  xy: 2, 3
+  size: 364, 301
+  orig: 364, 301
+  offset: 0, 0
+  index: -1

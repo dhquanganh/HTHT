@@ -1,0 +1,104 @@
+
+Hit_89.png
+size: 551,559
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ex/arrr
+  rotate: false
+  xy: 2, 358
+  size: 271, 199
+  orig: 300, 210
+  offset: 17, 2
+  index: -1
+ex/b (1)
+  rotate: true
+  xy: 146, 86
+  size: 127, 117
+  orig: 127, 117
+  offset: 0, 0
+  index: -1
+ex/b (10)
+  rotate: false
+  xy: 418, 222
+  size: 112, 121
+  orig: 112, 121
+  offset: 0, 0
+  index: -1
+ex/b (2)
+  rotate: false
+  xy: 2, 41
+  size: 114, 123
+  orig: 114, 123
+  offset: 0, 0
+  index: -1
+ex/b (3)
+  rotate: true
+  xy: 118, 2
+  size: 82, 121
+  orig: 82, 121
+  offset: 0, 0
+  index: -1
+ex/b (4)
+  rotate: true
+  xy: 433, 355
+  size: 82, 116
+  orig: 82, 116
+  offset: 0, 0
+  index: -1
+ex/b (5)
+  rotate: true
+  xy: 443, 43
+  size: 78, 99
+  orig: 78, 99
+  offset: 0, 0
+  index: -1
+ex/b (6)
+  rotate: true
+  xy: 275, 345
+  size: 212, 156
+  orig: 212, 156
+  offset: 0, 0
+  index: -1
+ex/b (7)
+  rotate: true
+  xy: 2, 166
+  size: 190, 142
+  orig: 190, 142
+  offset: 0, 0
+  index: -1
+ex/b (8)
+  rotate: true
+  xy: 274, 160
+  size: 183, 142
+  orig: 183, 142
+  offset: 0, 0
+  index: -1
+ex/b (9)
+  rotate: false
+  xy: 265, 18
+  size: 176, 140
+  orig: 176, 140
+  offset: 0, 0
+  index: -1
+ex/i (1)
+  rotate: true
+  xy: 443, 123
+  size: 97, 95
+  orig: 97, 95
+  offset: 0, 0
+  index: -1
+ex/i (2)
+  rotate: true
+  xy: 433, 439
+  size: 118, 107
+  orig: 118, 107
+  offset: 0, 0
+  index: -1
+ex/i (3)
+  rotate: true
+  xy: 146, 215
+  size: 141, 126
+  orig: 141, 126
+  offset: 0, 0
+  index: -1

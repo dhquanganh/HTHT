@@ -1,0 +1,76 @@
+
+mo the tuong.png
+size: 380,868
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Rectangle 1
+  rotate: true
+  xy: 236, 468
+  size: 215, 131
+  orig: 219, 135
+  offset: 2, 2
+  index: -1
+glow_1007
+  rotate: false
+  xy: 216, 2
+  size: 104, 104
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+sequence_1009
+  rotate: false
+  xy: 228, 286
+  size: 148, 180
+  orig: 250, 260
+  offset: 68, 20
+  index: -1
+sequence_1010
+  rotate: true
+  xy: 2, 524
+  size: 144, 232
+  orig: 250, 260
+  offset: 50, 8
+  index: -1
+sequence_1011
+  rotate: false
+  xy: 236, 685
+  size: 137, 180
+  orig: 250, 260
+  offset: 80, 52
+  index: -1
+sequence_1012
+  rotate: false
+  xy: 216, 108
+  size: 158, 176
+  orig: 250, 260
+  offset: 64, 16
+  index: -1
+sequence_1013
+  rotate: true
+  xy: 2, 670
+  size: 195, 232
+  orig: 250, 260
+  offset: 25, 0
+  index: -1
+sequence_1014
+  rotate: true
+  xy: 2, 314
+  size: 208, 224
+  orig: 250, 260
+  offset: 20, 19
+  index: -1
+sequence_1015
+  rotate: false
+  xy: 2, 104
+  size: 212, 208
+  orig: 250, 260
+  offset: 27, 28
+  index: -1
+vun
+  rotate: false
+  xy: 322, 77
+  size: 29, 29
+  orig: 31, 32
+  offset: 1, 2
+  index: -1

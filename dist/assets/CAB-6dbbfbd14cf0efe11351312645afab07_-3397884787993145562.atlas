@@ -1,0 +1,48 @@
+
+Skill_162.png
+size: 888,348
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_mr2_skill_1_foot3/000
+  rotate: false
+  xy: 558, 178
+  size: 278, 166
+  orig: 285, 167
+  offset: 3, 1
+  index: -1
+Char_mr2_skill_1_foot3/001
+  rotate: false
+  xy: 283, 183
+  size: 273, 161
+  orig: 277, 165
+  offset: 4, 0
+  index: -1
+Char_mr2_skill_1_foot3/002
+  rotate: false
+  xy: 2, 18
+  size: 273, 169
+  orig: 277, 171
+  offset: 4, 1
+  index: -1
+Char_mr2_skill_1_foot3/003
+  rotate: false
+  xy: 277, 3
+  size: 310, 173
+  orig: 313, 174
+  offset: 1, 0
+  index: -1
+Char_mr2_skill_1_foot3/004
+  rotate: false
+  xy: 589, 2
+  size: 294, 174
+  orig: 298, 174
+  offset: 1, 0
+  index: -1
+Char_mr2_skill_1_foot3/005
+  rotate: false
+  xy: 2, 189
+  size: 279, 155
+  orig: 284, 161
+  offset: 3, 1
+  index: -1

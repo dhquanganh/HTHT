@@ -1,0 +1,530 @@
+
+Hero_124.png
+size: 1024,980
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: false
+  xy: 208, 726
+  size: 22, 35
+  orig: 22, 35
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 208, 793
+  size: 24, 35
+  orig: 24, 35
+  offset: 0, 0
+  index: -1
+bepo_beat_right_01
+  rotate: true
+  xy: 558, 844
+  size: 132, 168
+  orig: 132, 168
+  offset: 0, 0
+  index: -1
+bepo_beat_right_02
+  rotate: false
+  xy: 524, 32
+  size: 115, 163
+  orig: 115, 163
+  offset: 0, 0
+  index: -1
+bepo_beat_right_03
+  rotate: false
+  xy: 2, 20
+  size: 121, 163
+  orig: 121, 163
+  offset: 0, 0
+  index: -1
+bepo_beat_right_04
+  rotate: true
+  xy: 657, 203
+  size: 116, 177
+  orig: 116, 177
+  offset: 0, 0
+  index: -1
+bepo_beat_right_05
+  rotate: true
+  xy: 235, 756
+  size: 220, 157
+  orig: 238, 166
+  offset: 13, 5
+  index: -1
+bepo_beat_right_06
+  rotate: false
+  xy: 128, 33
+  size: 122, 169
+  orig: 122, 169
+  offset: 0, 0
+  index: -1
+bepo_beat_right_07
+  rotate: true
+  xy: 528, 562
+  size: 130, 165
+  orig: 130, 165
+  offset: 0, 0
+  index: -1
+bepo_beat_right_08
+  rotate: false
+  xy: 893, 816
+  size: 116, 160
+  orig: 116, 160
+  offset: 0, 0
+  index: -1
+bepo_damage_right
+  rotate: true
+  xy: 728, 847
+  size: 129, 163
+  orig: 129, 163
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_03
+  rotate: true
+  xy: 730, 726
+  size: 119, 146
+  orig: 119, 146
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_04
+  rotate: false
+  xy: 147, 204
+  size: 127, 165
+  orig: 127, 165
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_05
+  rotate: false
+  xy: 2, 681
+  size: 156, 175
+  orig: 156, 175
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_05_ef
+  rotate: false
+  xy: 232, 692
+  size: 160, 62
+  orig: 160, 62
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_06
+  rotate: false
+  xy: 158, 371
+  size: 148, 166
+  orig: 148, 166
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_07
+  rotate: true
+  xy: 524, 197
+  size: 121, 131
+  orig: 121, 131
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_10
+  rotate: true
+  xy: 362, 395
+  size: 132, 168
+  orig: 132, 168
+  offset: 0, 0
+  index: -1
+bepo_skill2_right_01
+  rotate: false
+  xy: 373, 529
+  size: 153, 161
+  orig: 153, 161
+  offset: 0, 0
+  index: -1
+bepo_skill2_right_02
+  rotate: true
+  xy: 774, 50
+  size: 104, 171
+  orig: 104, 171
+  offset: 0, 0
+  index: -1
+bepo_skill2_right_03
+  rotate: true
+  xy: 821, 480
+  size: 112, 173
+  orig: 112, 173
+  offset: 0, 0
+  index: -1
+bepo_skill2_right_04
+  rotate: true
+  xy: 652, 440
+  size: 120, 167
+  orig: 120, 167
+  offset: 0, 0
+  index: -1
+bepo_skill2_right_05
+  rotate: true
+  xy: 865, 632
+  size: 92, 155
+  orig: 92, 155
+  offset: 0, 0
+  index: -1
+bepo_skill2_right_06
+  rotate: false
+  xy: 276, 173
+  size: 123, 167
+  orig: 123, 167
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_02
+  rotate: false
+  xy: 836, 156
+  size: 115, 164
+  orig: 115, 164
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_04
+  rotate: false
+  xy: 2, 185
+  size: 124, 160
+  orig: 124, 160
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_05
+  rotate: true
+  xy: 394, 694
+  size: 137, 166
+  orig: 137, 166
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_05_ef
+  rotate: true
+  xy: 160, 683
+  size: 173, 46
+  orig: 173, 46
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_06
+  rotate: false
+  xy: 2, 518
+  size: 154, 161
+  orig: 154, 161
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_07
+  rotate: false
+  xy: 252, 2
+  size: 114, 166
+  orig: 114, 166
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_09
+  rotate: false
+  xy: 657, 37
+  size: 115, 164
+  orig: 115, 164
+  offset: 0, 0
+  index: -1
+bepo_skill4_right_02
+  rotate: false
+  xy: 401, 21
+  size: 115, 163
+  orig: 115, 163
+  offset: 0, 0
+  index: -1
+bepo_skill4_right_03
+  rotate: false
+  xy: 401, 186
+  size: 121, 163
+  orig: 121, 163
+  offset: 0, 0
+  index: -1
+bepo_skill4_right_04
+  rotate: true
+  xy: 820, 322
+  size: 116, 177
+  orig: 116, 177
+  offset: 0, 0
+  index: -1
+bepo_skill4_right_05
+  rotate: false
+  xy: 160, 539
+  size: 211, 142
+  orig: 211, 142
+  offset: 0, 0
+  index: -1
+bepo_skill4_right_07
+  rotate: false
+  xy: 2, 858
+  size: 231, 118
+  orig: 231, 118
+  offset: 0, 0
+  index: -1
+bepo_skill4_right_09
+  rotate: true
+  xy: 532, 320
+  size: 212, 118
+  orig: 212, 118
+  offset: 0, 0
+  index: -1
+bepo_skill4_right_11
+  rotate: true
+  xy: 562, 713
+  size: 129, 166
+  orig: 129, 166
+  offset: 0, 0
+  index: -1
+bepo_standby_right_01
+  rotate: false
+  xy: 2, 347
+  size: 143, 169
+  orig: 143, 169
+  offset: 0, 0
+  index: -1
+bepo_standby_right_02
+  rotate: true
+  xy: 394, 833
+  size: 143, 162
+  orig: 143, 162
+  offset: 0, 0
+  index: -1
+bepo_win_right_01
+  rotate: true
+  xy: 695, 594
+  size: 117, 168
+  orig: 117, 168
+  offset: 0, 0
+  index: -1
+bepo_win_right_02
+  rotate: true
+  xy: 652, 321
+  size: 117, 166
+  orig: 117, 166
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 878, 738
+  size: 76, 84
+  orig: 76, 84
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 329, 345
+  size: 18, 21
+  orig: 18, 21
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 562, 694
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 128, 303
+  size: 17, 12
+  orig: 17, 12
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 362, 351
+  size: 61, 42
+  orig: 61, 42
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 593, 542
+  size: 18, 32
+  orig: 18, 32
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 208, 693
+  size: 22, 31
+  orig: 22, 31
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 208, 763
+  size: 24, 28
+  orig: 24, 28
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 556, 541
+  size: 19, 35
+  orig: 19, 35
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 128, 322
+  size: 16, 23
+  orig: 16, 23
+  offset: 0, 0
+  index: -1
+hand_L_14
+  rotate: true
+  xy: 276, 342
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 252, 170
+  size: 20, 32
+  orig: 20, 32
+  offset: 0, 0
+  index: -1
+hand_R_14
+  rotate: false
+  xy: 528, 534
+  size: 26, 26
+  orig: 32, 30
+  offset: 6, 2
+  index: -1
+head_04
+  rotate: true
+  xy: 308, 481
+  size: 56, 52
+  orig: 56, 52
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 308, 423
+  size: 56, 52
+  orig: 56, 52
+  offset: 0, 0
+  index: -1
+head_06
+  rotate: true
+  xy: 308, 365
+  size: 56, 52
+  orig: 56, 52
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 304, 342
+  size: 21, 23
+  orig: 21, 23
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 208, 830
+  size: 25, 26
+  orig: 25, 26
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 473, 357
+  size: 42, 36
+  orig: 42, 36
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: false
+  xy: 425, 355
+  size: 46, 38
+  orig: 46, 38
+  offset: 0, 0
+  index: -1
+
+Hero_1242.png
+size: 644,344
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bepo_skill1_right_01
+  rotate: false
+  xy: 441, 183
+  size: 99, 159
+  orig: 99, 159
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_02
+  rotate: false
+  xy: 533, 23
+  size: 107, 158
+  orig: 107, 158
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_08
+  rotate: false
+  xy: 329, 180
+  size: 110, 162
+  orig: 110, 162
+  offset: 0, 0
+  index: -1
+bepo_skill1_right_09
+  rotate: false
+  xy: 430, 18
+  size: 101, 160
+  orig: 101, 160
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_01
+  rotate: false
+  xy: 109, 6
+  size: 109, 167
+  orig: 109, 167
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_03
+  rotate: false
+  xy: 2, 173
+  size: 105, 169
+  orig: 105, 169
+  offset: 0, 0
+  index: -1
+bepo_skill3_right_08
+  rotate: false
+  xy: 2, 2
+  size: 105, 169
+  orig: 105, 169
+  offset: 0, 0
+  index: -1
+bepo_squat_right
+  rotate: false
+  xy: 542, 227
+  size: 99, 115
+  orig: 99, 115
+  offset: 0, 0
+  index: -1
+bepo_win_right_03
+  rotate: false
+  xy: 109, 175
+  size: 112, 167
+  orig: 112, 167
+  offset: 0, 0
+  index: -1
+bepo_win_right_04
+  rotate: false
+  xy: 326, 8
+  size: 102, 166
+  orig: 102, 166
+  offset: 0, 0
+  index: -1
+bepo_win_right_05
+  rotate: false
+  xy: 220, 7
+  size: 104, 166
+  orig: 104, 166
+  offset: 0, 0
+  index: -1
+bepo_win_right_06
+  rotate: false
+  xy: 223, 176
+  size: 104, 166
+  orig: 104, 166
+  offset: 0, 0
+  index: -1

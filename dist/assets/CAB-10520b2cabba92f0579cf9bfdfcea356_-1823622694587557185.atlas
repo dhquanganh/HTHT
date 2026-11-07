@@ -1,0 +1,503 @@
+
+Hit_471.png
+size: 1988,500
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+OT2/kakashi/images/arr_01
+  rotate: false
+  xy: 45, 3
+  size: 168, 35
+  orig: 256, 85
+  offset: 16, 38
+  index: -1
+OT2/kakashi/images/arr_02
+  rotate: true
+  xy: 849, 316
+  size: 182, 38
+  orig: 256, 86
+  offset: 6, 37
+  index: -1
+OT2/kakashi/images/arr_03
+  rotate: true
+  xy: 836, 84
+  size: 191, 43
+  orig: 256, 85
+  offset: 25, 35
+  index: -1
+OT2/kakashi/images/arr_04
+  rotate: true
+  xy: 1026, 337
+  size: 161, 47
+  orig: 256, 85
+  offset: 63, 31
+  index: -1
+OT2/kakashi/images/arr_05
+  rotate: true
+  xy: 1130, 185
+  size: 151, 56
+  orig: 256, 86
+  offset: 89, 27
+  index: -1
+OT2/kakashi/images/arr_06
+  rotate: false
+  xy: 1875, 448
+  size: 111, 50
+  orig: 256, 85
+  offset: 137, 26
+  index: -1
+OT2/kakashi/images/base_set_01
+  rotate: true
+  xy: 2, 40
+  size: 458, 124
+  orig: 512, 171
+  offset: 32, 27
+  index: -1
+OT2/kakashi/images/base_set_02
+  rotate: true
+  xy: 239, 50
+  size: 448, 124
+  orig: 512, 170
+  offset: 40, 33
+  index: -1
+OT2/kakashi/images/base_set_03
+  rotate: true
+  xy: 128, 46
+  size: 452, 109
+  orig: 512, 171
+  offset: 38, 43
+  index: -1
+OT2/kakashi/images/glow_2023
+  rotate: true
+  xy: 365, 242
+  size: 256, 96
+  orig: 256, 128
+  offset: 0, 16
+  index: -1
+OT2/kakashi/images/glow_3004
+  rotate: true
+  xy: 1762, 268
+  size: 112, 111
+  orig: 128, 128
+  offset: 8, 7
+  index: -1
+OT2/kakashi/images/glow_3008
+  rotate: false
+  xy: 1688, 382
+  size: 116, 116
+  orig: 128, 128
+  offset: 6, 6
+  index: -1
+OT2/kakashi/images/glow_4071
+  rotate: true
+  xy: 1525, 247
+  size: 121, 117
+  orig: 128, 128
+  offset: 7, 3
+  index: -1
+OT2/kakashi/images/glow_4088
+  rotate: false
+  xy: 404, 5
+  size: 235, 235
+  orig: 256, 256
+  offset: 8, 13
+  index: -1
+OT2/kakashi/images/handon_set_01
+  rotate: false
+  xy: 1876, 138
+  size: 99, 96
+  orig: 128, 128
+  offset: 10, 18
+  index: -1
+OT2/kakashi/images/handon_set_02
+  rotate: false
+  xy: 1644, 258
+  size: 116, 118
+  orig: 128, 128
+  offset: 6, 7
+  index: -1
+OT2/kakashi/images/handon_set_03
+  rotate: true
+  xy: 1512, 107
+  size: 123, 113
+  orig: 128, 128
+  offset: 2, 6
+  index: -1
+OT2/kakashi/images/handon_set_04
+  rotate: false
+  xy: 1664, 4
+  size: 114, 119
+  orig: 128, 128
+  offset: 4, 5
+  index: -1
+OT2/kakashi/images/handon_set_05
+  rotate: false
+  xy: 1875, 336
+  size: 110, 110
+  orig: 128, 128
+  offset: 6, 12
+  index: -1
+OT2/kakashi/images/handon_set_06
+  rotate: false
+  xy: 1741, 143
+  size: 104, 113
+  orig: 128, 128
+  offset: 16, 9
+  index: -1
+OT2/kakashi/images/handon_set_07
+  rotate: true
+  xy: 1553, 2
+  size: 103, 109
+  orig: 128, 128
+  offset: 15, 13
+  index: -1
+OT2/kakashi/images/handon_set_08
+  rotate: true
+  xy: 1076, 14
+  size: 77, 101
+  orig: 128, 128
+  offset: 27, 16
+  index: -1
+OT2/kakashi/images/lightrock_01
+  rotate: false
+  xy: 1293, 97
+  size: 92, 100
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+OT2/kakashi/images/lightrock_02
+  rotate: false
+  xy: 836, 2
+  size: 80, 80
+  orig: 128, 128
+  offset: 24, 36
+  index: -1
+OT2/kakashi/images/lightrock_03
+  rotate: false
+  xy: 1349, 19
+  size: 72, 76
+  orig: 128, 128
+  offset: 28, 24
+  index: -1
+OT2/kakashi/images/lightrock_04
+  rotate: false
+  xy: 1627, 125
+  size: 112, 120
+  orig: 128, 128
+  offset: 12, 0
+  index: -1
+OT2/kakashi/images/mask_10018
+  rotate: false
+  xy: 1436, 370
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+OT2/kakashi/images/mask_11013
+  rotate: false
+  xy: 1566, 378
+  size: 120, 120
+  orig: 128, 128
+  offset: 4, 4
+  index: -1
+OT2/kakashi/images/rock_01
+  rotate: true
+  xy: 2, 2
+  size: 36, 41
+  orig: 64, 64
+  offset: 10, 8
+  index: -1
+OT2/kakashi/images/rock_02
+  rotate: true
+  xy: 359, 4
+  size: 44, 43
+  orig: 64, 64
+  offset: 11, 7
+  index: -1
+OT2/kakashi/images/rock_03
+  rotate: true
+  xy: 365, 213
+  size: 27, 34
+  orig: 64, 64
+  offset: 19, 15
+  index: -1
+OT2/kakashi/images/rock_04
+  rotate: true
+  xy: 365, 134
+  size: 14, 26
+  orig: 64, 64
+  offset: 27, 15
+  index: -1
+OT2/kakashi/images/rock_blur_01
+  rotate: true
+  xy: 215, 3
+  size: 41, 44
+  orig: 64, 64
+  offset: 8, 7
+  index: -1
+OT2/kakashi/images/rock_blur_02
+  rotate: true
+  xy: 1876, 26
+  size: 49, 47
+  orig: 64, 64
+  offset: 9, 4
+  index: -1
+OT2/kakashi/images/rock_blur_03
+  rotate: false
+  xy: 365, 150
+  size: 31, 39
+  orig: 64, 64
+  offset: 17, 12
+  index: -1
+OT2/kakashi/images/rock_blur_04
+  rotate: true
+  xy: 365, 191
+  size: 20, 32
+  orig: 64, 64
+  offset: 24, 12
+  index: -1
+OT2/kakashi/images/run_01
+  rotate: true
+  xy: 737, 26
+  size: 230, 97
+  orig: 256, 128
+  offset: 23, 4
+  index: -1
+OT2/kakashi/images/run_02
+  rotate: true
+  xy: 684, 258
+  size: 240, 66
+  orig: 256, 128
+  offset: 13, 6
+  index: -1
+OT2/kakashi/images/run_03
+  rotate: true
+  xy: 641, 8
+  size: 242, 94
+  orig: 256, 128
+  offset: 12, 5
+  index: -1
+OT2/kakashi/images/run_04
+  rotate: true
+  xy: 752, 277
+  size: 221, 95
+  orig: 256, 128
+  offset: 35, 5
+  index: -1
+OT2/kakashi/images/set1_01
+  rotate: true
+  xy: 463, 245
+  size: 253, 57
+  orig: 256, 64
+  offset: 3, 3
+  index: -1
+OT2/kakashi/images/set1_02
+  rotate: true
+  xy: 628, 252
+  size: 246, 54
+  orig: 256, 64
+  offset: 2, 6
+  index: -1
+OT2/kakashi/images/set1_03
+  rotate: true
+  xy: 576, 251
+  size: 247, 50
+  orig: 256, 64
+  offset: 5, 4
+  index: -1
+OT2/kakashi/images/set1_04
+  rotate: true
+  xy: 522, 250
+  size: 248, 52
+  orig: 256, 64
+  offset: 4, 8
+  index: -1
+OT2/kakashi/images/set_aura1_01
+  rotate: false
+  xy: 1925, 36
+  size: 39, 39
+  orig: 128, 128
+  offset: 44, 45
+  index: -1
+OT2/kakashi/images/set_aura1_02
+  rotate: true
+  xy: 881, 84
+  size: 66, 55
+  orig: 128, 128
+  offset: 30, 36
+  index: -1
+OT2/kakashi/images/set_aura1_03
+  rotate: true
+  xy: 1195, 97
+  size: 100, 96
+  orig: 128, 128
+  offset: 15, 16
+  index: -1
+OT2/kakashi/images/set_aura1_04
+  rotate: false
+  xy: 1387, 97
+  size: 123, 126
+  orig: 128, 128
+  offset: 2, 1
+  index: -1
+OT2/kakashi/images/set_aura2_01
+  rotate: true
+  xy: 1423, 23
+  size: 72, 61
+  orig: 128, 85
+  offset: 4, 15
+  index: -1
+OT2/kakashi/images/set_aura2_02
+  rotate: true
+  xy: 1046, 93
+  size: 79, 48
+  orig: 128, 85
+  offset: 35, 27
+  index: -1
+OT2/kakashi/images/set_aura2_03
+  rotate: false
+  xy: 1096, 95
+  size: 97, 77
+  orig: 128, 86
+  offset: 5, 0
+  index: -1
+OT2/kakashi/images/set_aura2_04
+  rotate: true
+  xy: 918, 3
+  size: 79, 64
+  orig: 128, 86
+  offset: 37, 19
+  index: -1
+OT2/kakashi/images/set_aura2_05
+  rotate: false
+  xy: 938, 85
+  size: 106, 65
+  orig: 128, 85
+  offset: 9, 20
+  index: -1
+OT2/kakashi/images/set_aura2_06
+  rotate: false
+  xy: 261, 2
+  size: 96, 46
+  orig: 128, 85
+  offset: 10, 18
+  index: -1
+OT2/kakashi/images/set_aura5_01
+  rotate: false
+  xy: 1876, 77
+  size: 98, 59
+  orig: 128, 128
+  offset: 28, 15
+  index: -1
+OT2/kakashi/images/set_aura5_02
+  rotate: true
+  xy: 1806, 394
+  size: 104, 67
+  orig: 128, 128
+  offset: 17, 11
+  index: -1
+OT2/kakashi/images/set_aura5_03
+  rotate: true
+  xy: 1179, 2
+  size: 91, 71
+  orig: 128, 128
+  offset: 7, 12
+  index: -1
+OT2/kakashi/images/set_aura5_04
+  rotate: true
+  xy: 1486, 27
+  size: 68, 65
+  orig: 128, 128
+  offset: 6, 25
+  index: -1
+OT2/kakashi/images/set_aura5_05
+  rotate: true
+  xy: 1252, 2
+  size: 93, 95
+  orig: 128, 128
+  offset: 0, 17
+  index: -1
+OT2/kakashi/images/set_aura5_06
+  rotate: false
+  xy: 1875, 236
+  size: 108, 98
+  orig: 128, 128
+  offset: 1, 20
+  index: -1
+OT2/kakashi/images/set_aura5_07
+  rotate: true
+  xy: 1780, 36
+  size: 105, 94
+  orig: 128, 128
+  offset: 8, 25
+  index: -1
+OT2/kakashi/images/set_aura5_08
+  rotate: false
+  xy: 984, 2
+  size: 90, 81
+  orig: 128, 128
+  offset: 20, 35
+  index: -1
+OT2/kakashi/images/toes_hit_01
+  rotate: false
+  xy: 1425, 232
+  size: 98, 132
+  orig: 171, 171
+  offset: 40, 17
+  index: -1
+OT2/kakashi/images/toes_hit_02
+  rotate: false
+  xy: 889, 337
+  size: 135, 161
+  orig: 170, 171
+  offset: 29, 6
+  index: -1
+OT2/kakashi/images/toes_hit_03
+  rotate: false
+  xy: 881, 152
+  size: 123, 162
+  orig: 171, 171
+  offset: 43, 5
+  index: -1
+OT2/kakashi/images/toes_hit_04
+  rotate: false
+  xy: 1006, 174
+  size: 122, 161
+  orig: 171, 170
+  offset: 44, 6
+  index: -1
+OT2/kakashi/images/toes_hit_05
+  rotate: false
+  xy: 1075, 338
+  size: 120, 160
+  orig: 170, 170
+  offset: 45, 6
+  index: -1
+OT2/kakashi/images/toes_hit_06
+  rotate: false
+  xy: 1197, 362
+  size: 118, 136
+  orig: 171, 170
+  offset: 45, 15
+  index: -1
+OT2/kakashi/images/toes_hit_07
+  rotate: false
+  xy: 1188, 199
+  size: 116, 137
+  orig: 171, 171
+  offset: 46, 14
+  index: -1
+OT2/kakashi/images/toes_hit_08
+  rotate: false
+  xy: 1306, 225
+  size: 117, 135
+  orig: 170, 171
+  offset: 46, 16
+  index: -1
+OT2/kakashi/images/toes_hit_09
+  rotate: false
+  xy: 1317, 366
+  size: 117, 132
+  orig: 171, 171
+  offset: 48, 16
+  index: -1

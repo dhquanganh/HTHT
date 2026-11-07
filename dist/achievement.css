@@ -1,0 +1,88 @@
+/* Thành tựu: PopupMasteringHero (Contents 1000x560 ở (0,-40), tab 180x72, CellGameChallenge 920x100) */
+.ach-popup{position:absolute;inset:0;z-index:40;background:rgba(0,0,0,.55);pointer-events:auto}
+.ach-window{position:absolute;left:68px;top:80px;width:1000px;height:560px;box-sizing:border-box;border:38px solid transparent;border-image:var(--frame) 38 fill stretch}
+.ach-scroll{position:absolute;left:-8px;top:-17px;width:940px;height:512px;box-sizing:border-box;padding:6px 8px;border:8px solid transparent;border-image:var(--box) 8 fill stretch;overflow-y:auto;scrollbar-width:none}
+.ach-scroll::-webkit-scrollbar{display:none}
+.ach-list{display:flex;flex-direction:column;gap:6px}
+.ach-cell{position:relative;flex:none;width:908px;height:100px;box-sizing:border-box;border:10px solid transparent;border-image:var(--cell) 10 fill stretch}
+.ach-desc{position:absolute;left:28px;top:5px;width:411px;margin:0;color:#6a4423;font-size:21px;line-height:30px;white-space:nowrap}
+.ach-bar{position:absolute;left:28px;top:47px;width:395px;height:18px;box-sizing:border-box;background:var(--track) center/100% 100% no-repeat;border-radius:9px}
+.ach-bar i{position:absolute;left:0;top:0;bottom:0;background:var(--fill) left center/395px 100% no-repeat;border-radius:9px}
+.ach-bar b{position:absolute;left:0;right:0;top:-7px;text-align:center;color:#fff;font-size:21px;line-height:30px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+.ach-rewards{position:absolute;left:477px;top:-6px;display:flex;gap:28px}
+.ach-item{position:relative;width:92px;height:92px;transform:scale(.88)}
+.ach-item img{position:absolute;pointer-events:none}
+.ach-item-bgr{left:1px;top:1px;width:90px;height:90px}
+.ach-item-icon{left:6px;top:6px;width:80px;height:80px;object-fit:contain}
+.ach-item-border{left:1px;top:1px;width:90px;height:90px}
+.ach-item b{position:absolute;right:6px;bottom:2px;color:#fff;font-size:21px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+#game-layer .ach-claim{position:absolute;left:705px;top:10px;width:180px;height:60px;padding:0 0 4px;border-width:17px 28px 23px;border-style:solid;border-color:transparent;border-image:var(--btn) 17 28 23 fill stretch;border-radius:0;background:none;box-shadow:none;color:#82312a;font-size:22px;line-height:1;white-space:nowrap;cursor:pointer;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
+#game-layer .ach-claim.locked{filter:grayscale(1) brightness(.95)}
+.ach-done{position:absolute;left:775px;top:21px;width:41px;height:38px}
+#game-layer .ach-tab{position:absolute;top:11px;width:180px;height:72px;padding:0 0 6px;border:0;border-radius:0;box-shadow:none;background:center/100% 100% no-repeat;color:#fff3d6;font-size:24px;text-shadow:1px 1px 0 #3d1e08,-1px -1px 0 #3d1e08,1px -1px 0 #3d1e08,-1px 1px 0 #3d1e08;cursor:pointer}
+#game-layer .ach-tab.first{left:101px}
+#game-layer .ach-tab.mastery{left:291px}
+.ach-dot{position:absolute;right:-6px;top:-6px;width:32px;height:32px}
+#game-layer .ach-close{position:absolute;left:959px;top:30px;width:92px;height:52px;border:0;border-radius:0;box-shadow:none;padding:0;background:center/100% 100% no-repeat;cursor:pointer}
+
+/* Thông thạo: BoxMastering trong PopupMasteringHero (toạ độ quy về khung 1136x640, tâm Contents ở (568,360)) */
+.mst{position:absolute;inset:0;pointer-events:none}
+.mst>*{pointer-events:auto}
+.mst-heroes,.mst-miles,.mst-quests{position:absolute;box-sizing:border-box;border:8px solid transparent;border-image-slice:8 fill;border-image-width:8px;border-image-repeat:stretch}
+.mst-heroes{left:94px;top:103px;width:214px;height:515px;padding:3px 0;overflow-y:auto;scrollbar-width:none}
+.mst-heroes::-webkit-scrollbar,.mst-scroll::-webkit-scrollbar{display:none}
+.mst-grid{display:grid;grid-template-columns:100px 100px;gap:2px 0;justify-content:center}
+#game-layer .mst-hero{position:relative;width:100px;height:100px;padding:0;border:0;border-radius:0;background:none;box-shadow:none;cursor:pointer}
+.mst-select{position:absolute;left:-5px;top:-5px;width:110px;height:110px;box-sizing:border-box;border:20px solid transparent;border-image-slice:20 fill;border-image-width:20px;z-index:2;pointer-events:none}
+.mst-points-icon{position:absolute;left:1px;top:1px;width:98px;height:98px}
+.mst-head{position:absolute;left:4px;top:4px;width:92px;height:92px}
+.mst-head img,.mst-head b,.mst-head .mst-stars{position:absolute}
+.mst-frame{left:1px;top:1px;width:90px;height:90px}
+.mst-mask{position:absolute;left:8px;top:8px;width:76px;height:76px;overflow:hidden;border-radius:6px}
+.mst-mask img{position:absolute;left:-7px;top:-7px;width:90px;height:90px}
+.mst-border{left:6px;top:6px;width:80px;height:80px}
+.mst-faction{left:1px;top:1px;width:30px;height:30px}
+.mst-level{right:4px;top:2px;color:#fff;font-size:18px;line-height:22px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+.mst-head .mst-stars{left:2px;right:2px;bottom:2px;display:flex;justify-content:center}
+.mst-head .mst-stars .hero-stars{transform:scale(.62);transform-origin:center bottom;white-space:nowrap}
+.mst-dot{position:absolute;right:0;top:0;width:32px;height:32px;z-index:3}
+/* Điểm tổng (FieldPoints) + danh sách mốc (CellHeroMasteringMileStone 710x110) */
+.mst-field{position:absolute;left:322px;top:110px;width:192px;height:36px;background:center/100% 100% no-repeat}
+.mst-trophy{position:absolute;left:-19px;top:-26px;width:88px;height:88px}
+.mst-field b{position:absolute;left:16px;right:0;top:3px;text-align:center;color:#fff;font-size:22px;line-height:30px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+.mst-miles{left:318px;top:165px;width:725px;height:449px}
+.mst-miles .mst-scroll{position:absolute;inset:2px;overflow-y:auto;scrollbar-width:none}
+.mst-mile{position:relative;width:700px;height:110px}
+.mst-mile-progress{position:absolute;left:20px;top:0;width:64px;height:110px}
+.mst-pbar{position:absolute;left:26px;top:-30px;width:12px;height:60px;background:center/100% 100% no-repeat}
+.mst-circle{position:absolute;left:0;top:23px;width:64px;height:64px}
+.mst-knob{position:absolute;left:22px;top:-2px;width:20px;height:20px}
+.mst-mile-progress b{position:absolute;left:-20px;right:-20px;top:40px;text-align:center;color:#efe4ce;font-size:19px;line-height:30px;text-shadow:1px 1px 0 #3d1e08,-1px -1px 0 #3d1e08,1px -1px 0 #3d1e08,-1px 1px 0 #3d1e08}
+#game-layer .mst-mile-rewards{position:absolute;left:117px;top:0;width:574px;height:110px;padding:0;box-sizing:border-box;border:14px solid transparent;border-width:14px 14px 14px 34px;border-image-slice:14 14 14 34 fill;border-image-width:14px 14px 14px 34px;border-radius:0;background:none;box-shadow:none;cursor:pointer}
+.mst-mile-items{position:absolute;left:118px;top:-8px;display:flex;gap:10px}
+.mst-mile-items .ach-item{transform:scale(.82)}
+.mst-mile-tick{position:absolute;left:7px;top:21px;width:48px;height:40px}
+.mst-mile-tag{position:absolute;left:0;top:-13px;width:108px;height:56px}
+.mst-mile-lock{position:absolute;left:-34px;top:-14px;right:-14px;bottom:-14px;box-sizing:border-box;border:14px solid transparent;border-width:14px 14px 14px 34px;border-image-slice:14 14 14 34 fill;border-image-width:14px 14px 14px 34px}
+.mst-mile-lock{opacity:.41}
+.mst-mile-lock-icon{position:absolute;left:-14px;top:21px;width:32px;height:40px}
+/* Nhiệm vụ của tướng (BoxMasteringQuest 725x515, CellHeroMasteringQuest 710x140) */
+.mst-quests{left:320px;top:103px;width:725px;height:515px}
+.mst-name{position:absolute;left:16px;top:12px;margin:0;color:#efe4ce;font-size:22px;line-height:30px;text-shadow:1px 1px 0 #3d1e08,-1px -1px 0 #3d1e08,1px -1px 0 #3d1e08,-1px 1px 0 #3d1e08}
+.mst-lap{position:absolute;left:563px;top:5px;width:148px;height:44px;box-sizing:border-box;border:20px solid transparent;border-image-slice:20 fill;border-image-width:20px;display:flex;align-items:center;justify-content:center;color:#efe4ce;font-size:20px;white-space:nowrap;text-shadow:1px 1px 0 #3d1e08,-1px -1px 0 #3d1e08,1px -1px 0 #3d1e08,-1px 1px 0 #3d1e08}
+.mst-quests .mst-scroll{position:absolute;left:-3px;top:67px;width:715px;height:435px;overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;gap:6px;align-items:center}
+.mst-quest{position:relative;flex:none;width:710px;height:140px;box-sizing:border-box;border:10px solid transparent;border-image-slice:10 fill;border-image-width:10px}
+.mst-quest-title{position:absolute;left:12px;top:-4px;width:589px;margin:0;color:#6a4423;font-size:20px;line-height:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mst-quest-points{position:absolute;left:10px;top:37px;width:167px;height:40px;box-sizing:border-box;border:10px solid transparent;border-image-slice:10 fill;border-image-width:10px}
+.mst-quest-points img{position:absolute;left:-5px;top:-10px;width:40px;height:40px}
+.mst-quest-points b{position:absolute;left:30px;right:-6px;top:-6px;text-align:center;color:#fafafa;font-size:19px;line-height:30px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+.ach-bar.mst-quest-bar{left:10px;top:84px;width:317px}
+.ach-bar.mst-quest-bar i{background-size:317px 100%}
+.ach-bar.mst-quest-bar b{color:#fdf6e8}
+.mst-quest-rewards{position:absolute;left:356px;top:24px;display:flex;gap:0}
+.mst-quest-rewards .ach-item{transform:scale(.74)}
+#game-layer .mst-collect{position:absolute;left:529px;top:26px;width:140px;height:68px;padding:0 0 4px;box-sizing:border-box;border-width:17px 28px 23px;border-style:solid;border-color:transparent;border-image-slice:17 28 23 fill;border-image-width:17px 28px 23px;border-radius:0;background:none;box-shadow:none;color:#1f6828;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#game-layer .mst-collect.locked{filter:grayscale(1) brightness(.95)}
+.mst-quest-tick{position:absolute;left:576px;top:40px;width:48px;height:40px}
+.mst-finished{margin:150px 40px 0;color:#6a4423;font-size:22px;text-align:center}
+.mst-finished img{width:48px;height:40px;vertical-align:middle;margin-right:8px}

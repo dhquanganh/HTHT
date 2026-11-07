@@ -1,0 +1,61 @@
+
+Skill_111.png
+size: 884,740
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Urouge_skill1/000
+  rotate: true
+  xy: 2, 669
+  size: 69, 100
+  orig: 77, 111
+  offset: 6, 6
+  index: -1
+Char_Urouge_skill1/001
+  rotate: false
+  xy: 104, 522
+  size: 240, 216
+  orig: 247, 228
+  offset: 4, 7
+  index: -1
+Char_Urouge_skill1/002
+  rotate: true
+  xy: 411, 2
+  size: 404, 469
+  orig: 412, 477
+  offset: 4, 5
+  index: -1
+Char_Urouge_skill1/005
+  rotate: false
+  xy: 2, 53
+  size: 407, 353
+  orig: 416, 365
+  offset: 5, 5
+  index: -1
+Char_Urouge_skill1/006
+  rotate: false
+  xy: 346, 408
+  size: 419, 330
+  orig: 424, 351
+  offset: 2, 5
+  index: -1
+
+Skill_1112.png
+size: 856,548
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Urouge_skill1/003
+  rotate: true
+  xy: 2, 8
+  size: 538, 430
+  orig: 549, 440
+  offset: 5, 7
+  index: -1
+Char_Urouge_skill1/004
+  rotate: true
+  xy: 434, 2
+  size: 544, 418
+  orig: 550, 427
+  offset: 4, 4
+  index: -1

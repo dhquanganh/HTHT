@@ -1,0 +1,643 @@
+
+Hero_420.png
+size: 1988,652
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+335_kinemon_skill1_01
+  rotate: false
+  xy: 1730, 152
+  size: 82, 169
+  orig: 113, 209
+  offset: 18, 22
+  index: -1
+335_kinemon_skill1_02
+  rotate: true
+  xy: 163, 309
+  size: 107, 151
+  orig: 116, 161
+  offset: 7, 4
+  index: -1
+335_kinemon_skill1_03
+  rotate: true
+  xy: 690, 311
+  size: 129, 188
+  orig: 136, 201
+  offset: 5, 6
+  index: -1
+335_kinemon_skill1_04
+  rotate: false
+  xy: 1247, 317
+  size: 160, 147
+  orig: 178, 167
+  offset: 12, 8
+  index: -1
+335_kinemon_skill1_05
+  rotate: true
+  xy: 905, 454
+  size: 196, 154
+  orig: 212, 161
+  offset: 7, 0
+  index: -1
+335_kinemon_skill1_06
+  rotate: true
+  xy: 163, 418
+  size: 232, 181
+  orig: 245, 217
+  offset: 9, 15
+  index: -1
+335_kinemon_skill1_07
+  rotate: false
+  xy: 2, 63
+  size: 128, 242
+  orig: 144, 260
+  offset: 12, 11
+  index: -1
+335_kinemon_skill1_09
+  rotate: false
+  xy: 1061, 458
+  size: 147, 192
+  orig: 181, 216
+  offset: 22, 12
+  index: -1
+335_kinemon_skill1_10
+  rotate: false
+  xy: 1381, 469
+  size: 159, 181
+  orig: 168, 195
+  offset: 7, 7
+  index: -1
+335_kinemon_skill1_11
+  rotate: false
+  xy: 1462, 15
+  size: 155, 124
+  orig: 174, 137
+  offset: 14, 6
+  index: -1
+335_kinemon_skill1_12
+  rotate: true
+  xy: 390, 97
+  size: 212, 157
+  orig: 227, 185
+  offset: 0, 10
+  index: -1
+335_kinemon_skill1_13
+  rotate: false
+  xy: 751, 444
+  size: 152, 206
+  orig: 169, 227
+  offset: 13, 9
+  index: -1
+335_kinemon_skill1_14
+  rotate: true
+  xy: 792, 9
+  size: 97, 169
+  orig: 127, 198
+  offset: 17, 10
+  index: -1
+335_kinemon_skill1_15
+  rotate: false
+  xy: 511, 435
+  size: 143, 215
+  orig: 203, 252
+  offset: 47, 15
+  index: -1
+335_kinemon_skill1_right_03ef
+  rotate: true
+  xy: 170, 6
+  size: 61, 104
+  orig: 61, 104
+  offset: 0, 0
+  index: -1
+335_kinemon_skill1_right_14ef
+  rotate: false
+  xy: 1278, 3
+  size: 182, 121
+  orig: 182, 121
+  offset: 0, 0
+  index: -1
+arm_L_04
+  rotate: true
+  xy: 1949, 86
+  size: 18, 34
+  orig: 18, 34
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 1864, 152
+  size: 23, 36
+  orig: 23, 36
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 2, 2
+  size: 50, 59
+  orig: 63, 77
+  offset: 6, 9
+  index: -1
+cloth_01
+  rotate: true
+  xy: 1800, 324
+  size: 27, 23
+  orig: 27, 23
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 1902, 153
+  size: 29, 22
+  orig: 29, 22
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 1895, 17
+  size: 25, 21
+  orig: 25, 21
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 905, 444
+  size: 8, 23
+  orig: 8, 23
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 346, 419
+  size: 6, 23
+  orig: 6, 23
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 1895, 70
+  size: 29, 47
+  orig: 29, 47
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 1868, 202
+  size: 25, 48
+  orig: 25, 48
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: true
+  xy: 1814, 152
+  size: 47, 48
+  orig: 47, 48
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 1868, 177
+  size: 23, 25
+  orig: 23, 25
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 1766, 323
+  size: 32, 28
+  orig: 32, 34
+  offset: 0, 6
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 1895, 177
+  size: 30, 22
+  orig: 30, 22
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 1944, 63
+  size: 21, 31
+  orig: 21, 31
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 390, 76
+  size: 16, 19
+  orig: 16, 19
+  offset: 0, 0
+  index: -1
+hand_R_03
+  rotate: false
+  xy: 408, 78
+  size: 26, 17
+  orig: 30, 21
+  offset: 3, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 930, 444
+  size: 12, 8
+  orig: 12, 8
+  offset: 0, 0
+  index: -1
+head_03
+  rotate: false
+  xy: 1905, 549
+  size: 52, 49
+  orig: 52, 49
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 1895, 201
+  size: 52, 49
+  orig: 52, 49
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 1814, 201
+  size: 52, 49
+  orig: 52, 49
+  offset: 0, 0
+  index: -1
+head_06
+  rotate: false
+  xy: 1895, 101
+  size: 52, 49
+  orig: 52, 49
+  offset: 0, 0
+  index: -1
+kinemon_beat 01
+  rotate: true
+  xy: 1814, 366
+  size: 138, 166
+  orig: 150, 179
+  offset: 9, 8
+  index: -1
+kinemon_stand 01
+  rotate: true
+  xy: 1814, 366
+  size: 138, 166
+  orig: 146, 175
+  offset: 5, 4
+  index: -1
+kinemon_beat 02
+  rotate: true
+  xy: 1085, 311
+  size: 145, 160
+  orig: 158, 178
+  offset: 7, 9
+  index: -1
+kinemon_beat 03
+  rotate: true
+  xy: 1210, 466
+  size: 184, 169
+  orig: 197, 178
+  offset: 10, 4
+  index: -1
+kinemon_beat 04
+  rotate: true
+  xy: 2, 307
+  size: 343, 159
+  orig: 356, 182
+  offset: 7, 6
+  index: -1
+kinemon_beat 05
+  rotate: true
+  xy: 346, 427
+  size: 223, 163
+  orig: 243, 194
+  offset: 10, 13
+  index: -1
+kinemon_damage
+  rotate: true
+  xy: 1733, 506
+  size: 144, 170
+  orig: 150, 183
+  offset: 4, 7
+  index: -1
+kinemon_rise
+  rotate: true
+  xy: 650, 2
+  size: 95, 140
+  orig: 113, 150
+  offset: 12, 5
+  index: -1
+kinemon_run 101
+  rotate: false
+  xy: 1949, 151
+  size: 34, 49
+  orig: 34, 49
+  offset: 0, 0
+  index: -1
+kinemon_run 103
+  rotate: false
+  xy: 54, 4
+  size: 61, 57
+  orig: 75, 74
+  offset: 11, 6
+  index: -1
+kinemon_run 104
+  rotate: false
+  xy: 1766, 391
+  size: 44, 42
+  orig: 44, 42
+  offset: 0, 0
+  index: -1
+kinemon_run 105
+  rotate: true
+  xy: 117, 9
+  size: 52, 51
+  orig: 52, 51
+  offset: 0, 0
+  index: -1
+kinemon_run 106
+  rotate: false
+  xy: 1905, 600
+  size: 74, 50
+  orig: 74, 50
+  offset: 0, 0
+  index: -1
+kinemon_run 107
+  rotate: false
+  xy: 963, 8
+  size: 67, 10
+  orig: 67, 10
+  offset: 0, 0
+  index: -1
+kinemon_skill1 801
+  rotate: true
+  xy: 1959, 533
+  size: 31, 26
+  orig: 31, 26
+  offset: 0, 0
+  index: -1
+kinemon_skill1 802
+  rotate: false
+  xy: 1949, 202
+  size: 36, 48
+  orig: 36, 48
+  offset: 0, 0
+  index: -1
+kinemon_skill1 803
+  rotate: false
+  xy: 1949, 106
+  size: 34, 43
+  orig: 34, 43
+  offset: 0, 0
+  index: -1
+kinemon_skill1 804
+  rotate: false
+  xy: 1690, 582
+  size: 41, 68
+  orig: 41, 68
+  offset: 0, 0
+  index: -1
+kinemon_skill1 805
+  rotate: true
+  xy: 1766, 435
+  size: 69, 46
+  orig: 69, 46
+  offset: 0, 0
+  index: -1
+kinemon_skill1 806
+  rotate: true
+  xy: 1895, 44
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
+kinemon_skill1 807
+  rotate: false
+  xy: 1959, 506
+  size: 26, 25
+  orig: 26, 25
+  offset: 0, 0
+  index: -1
+kinemon_skill1 808
+  rotate: true
+  xy: 316, 314
+  size: 102, 50
+  orig: 102, 50
+  offset: 0, 0
+  index: -1
+kinemon_skill1 809
+  rotate: false
+  xy: 1959, 566
+  size: 26, 32
+  orig: 26, 32
+  offset: 0, 0
+  index: -1
+kinemon_skill1 810
+  rotate: false
+  xy: 1690, 537
+  size: 40, 43
+  orig: 40, 43
+  offset: 0, 0
+  index: -1
+kinemon_skill1 812
+  rotate: true
+  xy: 1766, 353
+  size: 36, 43
+  orig: 36, 43
+  offset: 0, 0
+  index: -1
+kinemon_skill1 813
+  rotate: false
+  xy: 1690, 492
+  size: 40, 43
+  orig: 40, 43
+  offset: 0, 0
+  index: -1
+kinemon_skill1 814
+  rotate: true
+  xy: 1905, 512
+  size: 35, 52
+  orig: 35, 52
+  offset: 0, 0
+  index: -1
+kinemon_skill2_01
+  rotate: true
+  xy: 963, 20
+  size: 87, 169
+  orig: 105, 182
+  offset: 10, 7
+  index: -1
+kinemon_skill2_02
+  rotate: true
+  xy: 371, 311
+  size: 114, 149
+  orig: 124, 159
+  offset: 5, 3
+  index: -1
+kinemon_skill2_03
+  rotate: true
+  xy: 1134, 3
+  size: 112, 142
+  orig: 128, 163
+  offset: 9, 10
+  index: -1
+kinemon_skill2_04
+  rotate: false
+  xy: 1619, 2
+  size: 112, 142
+  orig: 129, 158
+  offset: 7, 9
+  index: -1
+kinemon_skill2_05
+  rotate: true
+  xy: 1825, 252
+  size: 112, 142
+  orig: 124, 159
+  offset: 7, 11
+  index: -1
+kinemon_skill2_12
+  rotate: false
+  xy: 880, 311
+  size: 191, 131
+  orig: 210, 146
+  offset: 14, 8
+  index: -1
+kinemon_skill2_13
+  rotate: true
+  xy: 1409, 320
+  size: 147, 135
+  orig: 162, 150
+  offset: 10, 8
+  index: -1
+kinemon_skill2_14
+  rotate: true
+  xy: 1011, 117
+  size: 192, 143
+  orig: 203, 158
+  offset: 4, 6
+  index: -1
+kinemon_skill2_15
+  rotate: false
+  xy: 1546, 323
+  size: 142, 146
+  orig: 161, 168
+  offset: 15, 12
+  index: -1
+kinemon_skill2_16
+  rotate: true
+  xy: 1542, 471
+  size: 179, 146
+  orig: 187, 159
+  offset: 6, 6
+  index: -1
+kinemon_skill2_17
+  rotate: true
+  xy: 1574, 146
+  size: 175, 154
+  orig: 180, 163
+  offset: 3, 4
+  index: -1
+kinemon_skill2_18
+  rotate: true
+  xy: 549, 99
+  size: 210, 145
+  orig: 218, 173
+  offset: 3, 15
+  index: -1
+kinemon_skill2_19
+  rotate: true
+  xy: 844, 109
+  size: 200, 165
+  orig: 223, 188
+  offset: 12, 12
+  index: -1
+kinemon_skill2_20
+  rotate: true
+  xy: 522, 311
+  size: 122, 166
+  orig: 140, 190
+  offset: 8, 14
+  index: -1
+kinemon_skill2_21
+  rotate: false
+  xy: 1461, 141
+  size: 111, 177
+  orig: 138, 197
+  offset: 21, 11
+  index: -1
+kinemon_skill3_01
+  rotate: false
+  xy: 1304, 134
+  size: 155, 181
+  orig: 170, 189
+  offset: 11, 4
+  index: -1
+kinemon_skill3_02
+  rotate: true
+  xy: 440, 2
+  size: 93, 208
+  orig: 115, 219
+  offset: 14, 5
+  index: -1
+kinemon_skill3_03
+  rotate: false
+  xy: 656, 442
+  size: 93, 208
+  orig: 122, 225
+  offset: 18, 10
+  index: -1
+kinemon_skill3_04
+  rotate: false
+  xy: 1156, 126
+  size: 146, 183
+  orig: 159, 196
+  offset: 8, 6
+  index: -1
+kinemon_skill3_05
+  rotate: true
+  xy: 696, 108
+  size: 201, 146
+  orig: 222, 172
+  offset: 11, 11
+  index: -1
+kinemon_skill3_06
+  rotate: true
+  xy: 132, 69
+  size: 236, 129
+  orig: 240, 150
+  offset: 0, 9
+  index: -1
+kinemon_skill3_07
+  rotate: true
+  xy: 263, 75
+  size: 232, 125
+  orig: 237, 136
+  offset: 0, 4
+  index: -1
+kinemon_stand 02
+  rotate: true
+  xy: 1733, 6
+  size: 144, 160
+  orig: 149, 170
+  offset: 5, 4
+  index: -1
+kinemon_win 01
+  rotate: false
+  xy: 1690, 323
+  size: 74, 167
+  orig: 91, 188
+  offset: 11, 11
+  index: -1
+kinemon_win 02
+  rotate: true
+  xy: 276, 2
+  size: 71, 162
+  orig: 91, 179
+  offset: 12, 7
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 1061, 445
+  size: 11, 22
+  orig: 11, 22
+  offset: 0, 0
+  index: -1

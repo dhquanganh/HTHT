@@ -1,0 +1,181 @@
+
+Cut_393.png
+size: 1032,1040
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/aochoanglaw
+  rotate: true
+  xy: 324, 4
+  size: 189, 363
+  orig: 189, 363
+  offset: 0, 0
+  index: -1
+images/canhtaylaw
+  rotate: true
+  xy: 882, 566
+  size: 38, 141
+  orig: 38, 142
+  offset: 0, 1
+  index: -1
+images/lawcut2_03
+  rotate: true
+  xy: 412, 563
+  size: 475, 253
+  orig: 480, 257
+  offset: 5, 0
+  index: -1
+images/lawcut2_11
+  rotate: true
+  xy: 412, 427
+  size: 134, 476
+  orig: 134, 477
+  offset: 0, 0
+  index: -1
+images/lawcut2_15
+  rotate: false
+  xy: 882, 606
+  size: 51, 432
+  orig: 51, 438
+  offset: 0, 0
+  index: -1
+images/lawcut2_20
+  rotate: true
+  xy: 808, 269
+  size: 59, 187
+  orig: 62, 196
+  offset: 2, 2
+  index: -1
+images/lawcut2_23
+  rotate: false
+  xy: 756, 235
+  size: 50, 190
+  orig: 53, 198
+  offset: 2, 3
+  index: -1
+images/lawcut2_26
+  rotate: true
+  xy: 890, 452
+  size: 112, 139
+  orig: 115, 145
+  offset: 2, 4
+  index: -1
+images/lawcut2_30
+  rotate: true
+  xy: 2, 2
+  size: 191, 320
+  orig: 195, 322
+  offset: 1, 0
+  index: -1
+images/lawcut2_35
+  rotate: true
+  xy: 689, 52
+  size: 86, 200
+  orig: 96, 201
+  offset: 4, 1
+  index: -1
+images/lawcut2_39
+  rotate: false
+  xy: 412, 343
+  size: 263, 82
+  orig: 272, 82
+  offset: 5, 0
+  index: -1
+images/lawcut2_41
+  rotate: false
+  xy: 808, 330
+  size: 183, 95
+  orig: 188, 99
+  offset: 2, 3
+  index: -1
+images/lawcut2_45
+  rotate: false
+  xy: 412, 270
+  size: 260, 71
+  orig: 266, 73
+  offset: 3, 2
+  index: -1
+images/lawcut2_48
+  rotate: true
+  xy: 756, 148
+  size: 85, 110
+  orig: 87, 111
+  offset: 0, 1
+  index: -1
+images/lawcut2_51
+  rotate: true
+  xy: 689, 140
+  size: 285, 65
+  orig: 293, 70
+  offset: 4, 2
+  index: -1
+images/lawcut2_54
+  rotate: false
+  xy: 503, 209
+  size: 178, 59
+  orig: 180, 64
+  offset: 2, 1
+  index: -1
+images/lawcut2_57
+  rotate: true
+  xy: 966, 612
+  size: 124, 53
+  orig: 126, 61
+  offset: 1, 2
+  index: -1
+images/lawcut2_61
+  rotate: true
+  xy: 412, 202
+  size: 66, 89
+  orig: 72, 93
+  offset: 4, 1
+  index: -1
+images/lawcut2_65
+  rotate: true
+  xy: 935, 608
+  size: 430, 29
+  orig: 441, 33
+  offset: 7, 2
+  index: -1
+images/lawcut2_67
+  rotate: true
+  xy: 966, 738
+  size: 300, 60
+  orig: 303, 62
+  offset: 0, 0
+  index: -1
+images/zoom1
+  rotate: true
+  xy: 667, 599
+  size: 439, 213
+  orig: 575, 275
+  offset: 67, 30
+  index: -1
+images/zoom2
+  rotate: true
+  xy: 2, 195
+  size: 843, 408
+  orig: 1149, 550
+  offset: 151, 71
+  index: -1
+lines/glow_1052
+  rotate: false
+  xy: 868, 143
+  size: 128, 124
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+lines/glow_1052apng
+  rotate: false
+  xy: 891, 13
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+smoke/trail_1068_2
+  rotate: true
+  xy: 667, 584
+  size: 13, 131
+  orig: 64, 156
+  offset: 25, 12
+  index: -1

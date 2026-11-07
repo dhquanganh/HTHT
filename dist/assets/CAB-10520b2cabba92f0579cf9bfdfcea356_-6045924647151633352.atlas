@@ -1,0 +1,146 @@
+
+Hit_453.png
+size: 436,1048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+OT3/Suigetsu/fex/images/roam_01
+  rotate: false
+  xy: 261, 304
+  size: 44, 43
+  orig: 128, 128
+  offset: 76, 4
+  index: -1
+OT3/Suigetsu/fex/images/roam_02
+  rotate: false
+  xy: 316, 14
+  size: 88, 100
+  orig: 128, 128
+  offset: 28, 4
+  index: -1
+OT3/Suigetsu/fex/images/roam_03
+  rotate: false
+  xy: 261, 475
+  size: 95, 116
+  orig: 128, 128
+  offset: 17, 4
+  index: -1
+OT3/Suigetsu/fex/images/roam_04
+  rotate: true
+  xy: 190, 20
+  size: 94, 124
+  orig: 128, 128
+  offset: 6, 4
+  index: -1
+OT3/Suigetsu/fex/images/roam_05
+  rotate: false
+  xy: 261, 349
+  size: 87, 124
+  orig: 128, 128
+  offset: 5, 4
+  index: -1
+OT3/Suigetsu/fex/images/roam_06
+  rotate: true
+  xy: 350, 386
+  size: 87, 84
+  orig: 128, 128
+  offset: 5, 44
+  index: -1
+OT3/Suigetsu/fex/images/roam_07
+  rotate: false
+  xy: 341, 203
+  size: 88, 88
+  orig: 128, 128
+  offset: 4, 40
+  index: -1
+OT3/Suigetsu/fex/land/smoke_11006
+  rotate: true
+  xy: 203, 299
+  size: 256, 56
+  orig: 256, 64
+  offset: 0, 1
+  index: -1
+OT3/Suigetsu/fex/land/smoke_11007
+  rotate: true
+  xy: 361, 587
+  size: 125, 67
+  orig: 128, 128
+  offset: 1, 31
+  index: -1
+OT3/Suigetsu/fex/land/trail_5081
+  rotate: true
+  xy: 2, 299
+  size: 256, 199
+  orig: 256, 256
+  offset: 0, 21
+  index: -1
+OT3/Suigetsu/fex/smoke_10003
+  rotate: false
+  xy: 2, 557
+  size: 238, 231
+  orig: 256, 256
+  offset: 16, 4
+  index: -1
+envi/dgbaodian_10
+  rotate: true
+  xy: 350, 293
+  size: 91, 78
+  orig: 225, 150
+  offset: 91, 57
+  index: -1
+envi/dgbaodian_4
+  rotate: false
+  xy: 260, 714
+  size: 138, 125
+  orig: 225, 150
+  offset: 50, 21
+  index: -1
+envi/dgbaodian_5
+  rotate: false
+  xy: 2, 2
+  size: 186, 147
+  orig: 225, 150
+  offset: 20, 3
+  index: -1
+envi/dgbaodian_6
+  rotate: true
+  xy: 196, 116
+  size: 181, 143
+  orig: 225, 150
+  offset: 23, 6
+  index: -1
+envi/dgbaodian_7
+  rotate: false
+  xy: 2, 151
+  size: 192, 146
+  orig: 225, 150
+  offset: 17, 3
+  index: -1
+envi/dgbaodian_8
+  rotate: true
+  xy: 260, 841
+  size: 205, 135
+  orig: 225, 150
+  offset: 11, 8
+  index: -1
+envi/dgbaodian_9
+  rotate: false
+  xy: 341, 116
+  size: 89, 85
+  orig: 225, 150
+  offset: 88, 52
+  index: -1
+envi/glo_3047
+  rotate: false
+  xy: 242, 593
+  size: 117, 119
+  orig: 128, 128
+  offset: 7, 6
+  index: -1
+envi/other_2007
+  rotate: false
+  xy: 2, 790
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

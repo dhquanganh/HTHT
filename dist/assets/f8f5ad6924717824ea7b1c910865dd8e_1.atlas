@@ -1,0 +1,125 @@
+
+Hit_147.png
+size: 979,883
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/Hit/hit.0_0
+  rotate: true
+  xy: 902, 404
+  size: 96, 72
+  orig: 126, 126
+  offset: 30, 52
+  index: -1
+images/Hit/hit.0_1
+  rotate: false
+  xy: 308, 760
+  size: 125, 121
+  orig: 126, 126
+  offset: 0, 3
+  index: -1
+images/Hit/hit.0_2
+  rotate: true
+  xy: 308, 645
+  size: 113, 123
+  orig: 126, 126
+  offset: 2, 3
+  index: -1
+images/Hit/hit.0_3
+  rotate: true
+  xy: 812, 127
+  size: 96, 109
+  orig: 126, 126
+  offset: 7, 0
+  index: -1
+images/Hit/hit.0_4
+  rotate: true
+  xy: 902, 502
+  size: 73, 75
+  orig: 126, 126
+  offset: 15, 21
+  index: -1
+images/Hit/hit.0_5
+  rotate: true
+  xy: 308, 615
+  size: 28, 27
+  orig: 126, 126
+  offset: 22, 59
+  index: -1
+images/atk/Layer 5
+  rotate: true
+  xy: 2, 199
+  size: 682, 100
+  orig: 682, 111
+  offset: 0, 9
+  index: -1
+images/atk/Layer 7
+  rotate: true
+  xy: 201, 200
+  size: 681, 105
+  orig: 681, 111
+  offset: 0, 4
+  index: -1
+images/atk/Layer 9
+  rotate: true
+  xy: 104, 199
+  size: 682, 95
+  orig: 682, 111
+  offset: 0, 14
+  index: -1
+images/fxskill/image1
+  rotate: false
+  xy: 817, 727
+  size: 159, 154
+  orig: 163, 158
+  offset: 2, 2
+  index: -1
+images/fxskill/image2
+  rotate: false
+  xy: 817, 577
+  size: 159, 148
+  orig: 162, 153
+  offset: 1, 1
+  index: -1
+images/fxskill/image3
+  rotate: true
+  xy: 2, 8
+  size: 189, 168
+  orig: 194, 174
+  offset: 3, 3
+  index: -1
+images/fxskill/image4
+  rotate: true
+  xy: 438, 2
+  size: 206, 372
+  orig: 222, 377
+  offset: 14, 2
+  index: -1
+images/fxskill/image5
+  rotate: false
+  xy: 308, 210
+  size: 336, 372
+  orig: 340, 392
+  offset: 3, 6
+  index: -1
+images/fxskill/image6
+  rotate: false
+  xy: 646, 225
+  size: 254, 350
+  orig: 256, 375
+  offset: 1, 19
+  index: -1
+images/fxskill/image8
+  rotate: true
+  xy: 438, 584
+  size: 297, 377
+  orig: 299, 398
+  offset: 1, 9
+  index: -1
+images/fxskill/image9
+  rotate: true
+  xy: 172, 12
+  size: 185, 264
+  orig: 202, 280
+  offset: 10, 6
+  index: -1

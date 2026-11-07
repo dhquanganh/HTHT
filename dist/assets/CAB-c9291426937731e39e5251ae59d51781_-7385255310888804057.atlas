@@ -1,0 +1,200 @@
+
+Skill_187.png
+size: 980,936
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Bartolomeo_skill1_baozha/000
+  rotate: true
+  xy: 691, 514
+  size: 237, 263
+  orig: 242, 267
+  offset: 3, 1
+  index: -1
+Char_Bartolomeo_skill1_baozha/006
+  rotate: false
+  xy: 463, 553
+  size: 226, 225
+  orig: 239, 239
+  offset: 8, 3
+  index: -1
+Char_Bartolomeo_skill1_baozha/007
+  rotate: true
+  xy: 2, 615
+  size: 194, 197
+  orig: 197, 198
+  offset: 2, 0
+  index: -1
+Char_Bartolomeo_skill1_baozha/008
+  rotate: false
+  xy: 253, 783
+  size: 171, 148
+  orig: 174, 150
+  offset: 2, 0
+  index: -1
+Char_Bartolomeo_skill1_baozha/009
+  rotate: false
+  xy: 579, 780
+  size: 156, 151
+  orig: 159, 154
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_baozha/010
+  rotate: false
+  xy: 426, 781
+  size: 151, 150
+  orig: 155, 151
+  offset: 3, 0
+  index: -1
+Char_Bartolomeo_skill1_dun/000
+  rotate: false
+  xy: 2, 811
+  size: 249, 120
+  orig: 251, 123
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/001
+  rotate: false
+  xy: 737, 753
+  size: 241, 178
+  orig: 244, 182
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/002
+  rotate: true
+  xy: 2, 347
+  size: 242, 267
+  orig: 244, 271
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/003
+  rotate: false
+  xy: 270, 21
+  size: 258, 284
+  orig: 261, 285
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/004
+  rotate: false
+  xy: 2, 65
+  size: 266, 280
+  orig: 269, 281
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/005
+  rotate: true
+  xy: 271, 307
+  size: 244, 276
+  orig: 246, 277
+  offset: 1, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/006
+  rotate: true
+  xy: 549, 262
+  size: 250, 285
+  orig: 251, 286
+  offset: 1, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/010
+  rotate: true
+  xy: 201, 591
+  size: 188, 260
+  orig: 191, 261
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun2/000
+  rotate: false
+  xy: 530, 2
+  size: 349, 258
+  orig: 352, 260
+  offset: 2, 2
+  index: -1
+
+Skill_1872.png
+size: 1016,924
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Bartolomeo_skill1_baozha/003
+  rotate: true
+  xy: 681, 2
+  size: 373, 331
+  orig: 377, 333
+  offset: 0, 0
+  index: -1
+Char_Bartolomeo_skill1_baozha/004
+  rotate: false
+  xy: 311, 72
+  size: 368, 303
+  orig: 375, 307
+  offset: 6, 2
+  index: -1
+Char_Bartolomeo_skill1_baozha/005
+  rotate: false
+  xy: 2, 108
+  size: 307, 290
+  orig: 310, 295
+  offset: 1, 3
+  index: -1
+Char_Bartolomeo_skill1_dun/007
+  rotate: true
+  xy: 675, 661
+  size: 260, 286
+  orig: 263, 287
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun/008
+  rotate: true
+  xy: 325, 382
+  size: 278, 282
+  orig: 280, 284
+  offset: 1, 2
+  index: -1
+Char_Bartolomeo_skill1_dun/009
+  rotate: false
+  xy: 609, 377
+  size: 283, 282
+  orig: 286, 283
+  offset: 2, 1
+  index: -1
+Char_Bartolomeo_skill1_dun2/001
+  rotate: false
+  xy: 2, 663
+  size: 357, 258
+  orig: 361, 260
+  offset: 2, 2
+  index: -1
+Char_Bartolomeo_skill1_dun2/002
+  rotate: false
+  xy: 2, 400
+  size: 321, 261
+  orig: 324, 261
+  offset: 2, 0
+  index: -1
+Char_Bartolomeo_skill1_dun2/003
+  rotate: false
+  xy: 361, 662
+  size: 312, 259
+  orig: 314, 260
+  offset: 1, 1
+  index: -1
+
+Skill_1873.png
+size: 800,320
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Bartolomeo_skill1_baozha/001
+  rotate: false
+  xy: 2, 2
+  size: 397, 315
+  orig: 400, 319
+  offset: 2, 0
+  index: -1
+Char_Bartolomeo_skill1_baozha/002
+  rotate: false
+  xy: 401, 2
+  size: 397, 315
+  orig: 400, 319
+  offset: 2, 0
+  index: -1

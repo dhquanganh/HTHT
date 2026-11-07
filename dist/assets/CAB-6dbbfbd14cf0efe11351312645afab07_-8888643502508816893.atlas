@@ -1,0 +1,90 @@
+
+Skill_159.png
+size: 664,536
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Tbone_skill1/000
+  rotate: true
+  xy: 369, 60
+  size: 112, 79
+  orig: 118, 83
+  offset: 4, 2
+  index: -1
+Char_Tbone_skill1/001
+  rotate: false
+  xy: 469, 156
+  size: 156, 70
+  orig: 162, 73
+  offset: 4, 1
+  index: -1
+Char_Tbone_skill1/002
+  rotate: true
+  xy: 213, 24
+  size: 148, 154
+  orig: 153, 158
+  offset: 3, 2
+  index: -1
+Char_Tbone_skill1/003
+  rotate: true
+  xy: 450, 6
+  size: 148, 154
+  orig: 153, 158
+  offset: 3, 2
+  index: -1
+Char_Tbone_skill1/004
+  rotate: true
+  xy: 2, 2
+  size: 134, 192
+  orig: 139, 195
+  offset: 3, 1
+  index: -1
+Char_Tbone_skill1/005
+  rotate: true
+  xy: 470, 228
+  size: 134, 192
+  orig: 139, 195
+  offset: 3, 1
+  index: -1
+Char_Tbone_skill1/006
+  rotate: true
+  xy: 214, 364
+  size: 170, 208
+  orig: 174, 212
+  offset: 2, 2
+  index: -1
+Char_Tbone_skill1/007
+  rotate: true
+  xy: 424, 364
+  size: 170, 208
+  orig: 174, 212
+  offset: 2, 2
+  index: -1
+Char_Tbone_skill1/008
+  rotate: false
+  xy: 2, 327
+  size: 210, 207
+  orig: 214, 210
+  offset: 2, 1
+  index: -1
+Char_Tbone_skill1/009
+  rotate: false
+  xy: 2, 138
+  size: 209, 187
+  orig: 214, 190
+  offset: 3, 1
+  index: -1
+Char_Tbone_skill1/010
+  rotate: false
+  xy: 214, 269
+  size: 254, 93
+  orig: 260, 96
+  offset: 3, 1
+  index: -1
+Char_Tbone_skill1/011
+  rotate: false
+  xy: 213, 174
+  size: 254, 93
+  orig: 260, 96
+  offset: 3, 1
+  index: -1

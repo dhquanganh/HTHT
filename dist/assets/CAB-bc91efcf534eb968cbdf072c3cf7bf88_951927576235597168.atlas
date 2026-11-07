@@ -1,0 +1,48 @@
+
+maid1.png
+size: 336,476
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: true
+  xy: 193, 343
+  size: 131, 140
+  orig: 131, 140
+  offset: 0, 0
+  index: -1
+Layer 1 copy
+  rotate: true
+  xy: 193, 210
+  size: 131, 140
+  orig: 131, 140
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 2, 289
+  size: 185, 189
+  orig: 185, 189
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 2, 93
+  size: 174, 194
+  orig: 174, 194
+  offset: 0, 0
+  index: -1
+tocday
+  rotate: true
+  xy: 2, 74
+  size: 17, 131
+  orig: 17, 131
+  offset: 0, 0
+  index: -1
+tocsau
+  rotate: false
+  xy: 178, 2
+  size: 153, 206
+  orig: 153, 206
+  offset: 0, 0
+  index: -1

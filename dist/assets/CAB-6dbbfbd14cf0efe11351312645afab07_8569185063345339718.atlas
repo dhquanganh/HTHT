@@ -1,0 +1,768 @@
+
+Hero_143.png
+size: 1024,1016
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+09_win_right_01_D003_1401014
+  rotate: true
+  xy: 744, 668
+  size: 93, 166
+  orig: 113, 181
+  offset: 9, 4
+  index: -1
+09_win_right_02_D003_1401014
+  rotate: true
+  xy: 308, 577
+  size: 113, 168
+  orig: 128, 181
+  offset: 9, 7
+  index: -1
+09_win_right_03_D003_1401014
+  rotate: true
+  xy: 2, 346
+  size: 132, 168
+  orig: 143, 179
+  offset: 3, 6
+  index: -1
+09_win_right_04_D003_1401014
+  rotate: true
+  xy: 172, 316
+  size: 132, 168
+  orig: 147, 172
+  offset: 7, 2
+  index: -1
+Fly_akainu_beat
+  rotate: false
+  xy: 411, 692
+  size: 204, 82
+  orig: 207, 83
+  offset: 3, 1
+  index: -1
+akainu_beat_01
+  rotate: true
+  xy: 694, 269
+  size: 141, 161
+  orig: 174, 173
+  offset: 16, 4
+  index: -1
+akainu_beat_03
+  rotate: false
+  xy: 169, 2
+  size: 163, 159
+  orig: 188, 171
+  offset: 13, 8
+  index: -1
+akainu_damage
+  rotate: true
+  xy: 138, 480
+  size: 124, 161
+  orig: 138, 173
+  offset: 8, 5
+  index: -1
+akainu_skill1_01
+  rotate: true
+  xy: 301, 450
+  size: 125, 165
+  orig: 135, 180
+  offset: 5, 9
+  index: -1
+akainu_skill1_02
+  rotate: true
+  xy: 468, 428
+  size: 140, 135
+  orig: 168, 165
+  offset: 17, 13
+  index: -1
+akainu_skill1_04
+  rotate: false
+  xy: 559, 123
+  size: 224, 144
+  orig: 308, 197
+  offset: 60, 2
+  index: -1
+akainu_skill2_right_01
+  rotate: false
+  xy: 810, 412
+  size: 150, 131
+  orig: 159, 143
+  offset: 5, 5
+  index: -1
+akainu_skill2_right_02
+  rotate: true
+  xy: 751, 545
+  size: 121, 159
+  orig: 134, 170
+  offset: 7, 5
+  index: -1
+akainu_skill2_right_03
+  rotate: false
+  xy: 342, 294
+  size: 159, 132
+  orig: 165, 140
+  offset: 2, 3
+  index: -1
+akainu_skill2_right_04
+  rotate: true
+  xy: 857, 263
+  size: 147, 158
+  orig: 163, 170
+  offset: 7, 6
+  index: -1
+akainu_skill2_right_09
+  rotate: false
+  xy: 171, 163
+  size: 169, 151
+  orig: 181, 159
+  offset: 7, 3
+  index: -1
+akainu_skill2_right_10
+  rotate: false
+  xy: 605, 420
+  size: 203, 123
+  orig: 219, 139
+  offset: 7, 9
+  index: -1
+akainu_skill2_right_eff_A_000
+  rotate: false
+  xy: 912, 668
+  size: 110, 93
+  orig: 200, 200
+  offset: 56, 88
+  index: -1
+akainu_skill2_right_eff_A_001
+  rotate: true
+  xy: 611, 776
+  size: 84, 103
+  orig: 200, 200
+  offset: 52, 55
+  index: -1
+akainu_skill2_right_eff_A_002
+  rotate: true
+  xy: 2, 614
+  size: 100, 135
+  orig: 200, 200
+  offset: 31, 23
+  index: -1
+akainu_skill2_right_eff_A_003
+  rotate: true
+  xy: 274, 708
+  size: 89, 135
+  orig: 200, 200
+  offset: 23, 31
+  index: -1
+akainu_skill2_right_eff_A_004
+  rotate: true
+  xy: 138, 716
+  size: 88, 134
+  orig: 200, 200
+  offset: 19, 25
+  index: -1
+akainu_skill2_right_eff_A_005
+  rotate: true
+  xy: 2, 733
+  size: 87, 134
+  orig: 200, 200
+  offset: 17, 20
+  index: -1
+akainu_skill2_right_eff_A_006
+  rotate: true
+  xy: 716, 768
+  size: 86, 133
+  orig: 200, 200
+  offset: 14, 16
+  index: -1
+akainu_skill2_right_eff_A_007
+  rotate: false
+  xy: 444, 880
+  size: 69, 59
+  orig: 200, 200
+  offset: 22, 21
+  index: -1
+akainu_skill2_right_eff_B_001
+  rotate: false
+  xy: 605, 549
+  size: 144, 117
+  orig: 260, 220
+  offset: 70, 27
+  index: -1
+akainu_skill2_right_eff_B_002
+  rotate: false
+  xy: 470, 783
+  size: 139, 80
+  orig: 260, 220
+  offset: 77, 57
+  index: -1
+akainu_skill2_right_eff_B_004
+  rotate: false
+  xy: 342, 135
+  size: 215, 141
+  orig: 260, 220
+  offset: 20, 43
+  index: -1
+akainu_skill2_right_eff_B_005
+  rotate: false
+  xy: 139, 606
+  size: 167, 100
+  orig: 260, 220
+  offset: 52, 67
+  index: -1
+akainu_skill2_right_eff_B_006
+  rotate: false
+  xy: 851, 763
+  size: 158, 84
+  orig: 260, 220
+  offset: 59, 73
+  index: -1
+akainu_skill2_right_eff_B_007
+  rotate: false
+  xy: 316, 799
+  size: 152, 79
+  orig: 260, 220
+  offset: 60, 81
+  index: -1
+akainu_skill2_right_eff_C_001
+  rotate: false
+  xy: 478, 570
+  size: 125, 120
+  orig: 260, 250
+  offset: 85, 96
+  index: -1
+akainu_skill2_right_eff_C_002
+  rotate: true
+  xy: 2, 194
+  size: 150, 167
+  orig: 260, 250
+  offset: 63, 59
+  index: -1
+akainu_skill2_right_eff_C_003
+  rotate: false
+  xy: 503, 278
+  size: 189, 140
+  orig: 260, 250
+  offset: 40, 73
+  index: -1
+akainu_skill2_right_eff_C_004
+  rotate: false
+  xy: 785, 117
+  size: 180, 144
+  orig: 260, 250
+  offset: 33, 62
+  index: -1
+akainu_squat_01_C000_140925
+  rotate: false
+  xy: 2, 482
+  size: 134, 130
+  orig: 142, 140
+  offset: 3, 7
+  index: -1
+akainu_standby_01_C000_141021
+  rotate: true
+  xy: 2, 37
+  size: 155, 165
+  orig: 170, 175
+  offset: 8, 4
+  index: -1
+arm_R_01
+  rotate: true
+  xy: 294, 992
+  size: 21, 44
+  orig: 22, 45
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 532, 983
+  size: 66, 30
+  orig: 67, 31
+  offset: 1, 0
+  index: -1
+body_01
+  rotate: true
+  xy: 240, 947
+  size: 43, 69
+  orig: 44, 70
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 827, 925
+  size: 52, 75
+  orig: 53, 76
+  offset: 1, 0
+  index: -1
+body_41
+  rotate: true
+  xy: 209, 889
+  size: 56, 76
+  orig: 63, 83
+  offset: 4, 3
+  index: -1
+cloth_41
+  rotate: false
+  xy: 912, 977
+  size: 59, 36
+  orig: 60, 37
+  offset: 1, 0
+  index: -1
+cloth_42
+  rotate: true
+  xy: 871, 979
+  size: 34, 39
+  orig: 42, 40
+  offset: 1, 0
+  index: -1
+cloth_43
+  rotate: true
+  xy: 650, 981
+  size: 32, 59
+  orig: 33, 61
+  offset: 1, 0
+  index: -1
+cloth_44
+  rotate: true
+  xy: 89, 897
+  size: 52, 118
+  orig: 53, 119
+  offset: 1, 0
+  index: -1
+cloth_46
+  rotate: true
+  xy: 88, 994
+  size: 19, 76
+  orig: 30, 79
+  offset: 1, 0
+  index: -1
+cloth_47
+  rotate: true
+  xy: 419, 990
+  size: 23, 111
+  orig: 24, 112
+  offset: 1, 0
+  index: -1
+cloth_48
+  rotate: true
+  xy: 757, 856
+  size: 67, 106
+  orig: 88, 121
+  offset: 12, 4
+  index: -1
+cloth_53
+  rotate: true
+  xy: 90, 951
+  size: 41, 51
+  orig: 42, 58
+  offset: 1, 6
+  index: -1
+cloth_55
+  rotate: false
+  xy: 2, 898
+  size: 85, 53
+  orig: 109, 90
+  offset: 14, 23
+  index: -1
+cloth_56
+  rotate: false
+  xy: 2, 953
+  size: 86, 39
+  orig: 109, 90
+  offset: 12, 24
+  index: -1
+cloth_57
+  rotate: false
+  xy: 311, 946
+  size: 86, 43
+  orig: 109, 90
+  offset: 12, 15
+  index: -1
+cloth_58
+  rotate: false
+  xy: 143, 951
+  size: 95, 41
+  orig: 109, 90
+  offset: 9, 22
+  index: -1
+cloth_61
+  rotate: true
+  xy: 772, 980
+  size: 33, 52
+  orig: 40, 55
+  offset: 3, 2
+  index: -1
+cloth_66
+  rotate: true
+  xy: 865, 849
+  size: 69, 100
+  orig: 84, 116
+  offset: 8, 5
+  index: -1
+cloth_67
+  rotate: false
+  xy: 570, 930
+  size: 127, 49
+  orig: 144, 70
+  offset: 5, 11
+  index: -1
+cloth_68
+  rotate: false
+  xy: 2, 822
+  size: 100, 73
+  orig: 114, 90
+  offset: 6, 7
+  index: -1
+cloth_71
+  rotate: true
+  xy: 711, 981
+  size: 32, 59
+  orig: 33, 61
+  offset: 1, 0
+  index: -1
+cloth_72
+  rotate: false
+  xy: 699, 929
+  size: 126, 49
+  orig: 144, 70
+  offset: 5, 11
+  index: -1
+cloth_73
+  rotate: true
+  xy: 104, 822
+  size: 73, 94
+  orig: 81, 105
+  offset: 4, 7
+  index: -1
+cloth_74
+  rotate: true
+  xy: 617, 677
+  size: 89, 125
+  orig: 142, 140
+  offset: 32, 12
+  index: -1
+cloth_75
+  rotate: false
+  xy: 349, 882
+  size: 93, 58
+  orig: 103, 67
+  offset: 5, 7
+  index: -1
+cloth_76
+  rotate: false
+  xy: 200, 806
+  size: 114, 79
+  orig: 130, 92
+  offset: 10, 4
+  index: -1
+cloth_81
+  rotate: false
+  xy: 399, 942
+  size: 64, 46
+  orig: 72, 55
+  offset: 3, 3
+  index: -1
+cloth_82
+  rotate: false
+  xy: 973, 971
+  size: 44, 42
+  orig: 64, 61
+  offset: 11, 10
+  index: -1
+cloth_83
+  rotate: true
+  xy: 515, 932
+  size: 49, 53
+  orig: 62, 61
+  offset: 7, 4
+  index: -1
+cloth_84
+  rotate: false
+  xy: 690, 862
+  size: 65, 65
+  orig: 75, 75
+  offset: 6, 4
+  index: -1
+cloth_85
+  rotate: false
+  xy: 515, 865
+  size: 173, 63
+  orig: 191, 75
+  offset: 9, 5
+  index: -1
+cloth_86
+  rotate: false
+  xy: 600, 982
+  size: 48, 31
+  orig: 54, 38
+  offset: 4, 4
+  index: -1
+f_arm_R_01
+  rotate: true
+  xy: 2, 996
+  size: 17, 31
+  orig: 18, 32
+  offset: 1, 0
+  index: -1
+foot_04
+  rotate: false
+  xy: 35, 995
+  size: 26, 18
+  orig: 27, 19
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 166, 994
+  size: 24, 19
+  orig: 25, 20
+  offset: 1, 0
+  index: -1
+hand_L_01
+  rotate: false
+  xy: 340, 991
+  size: 22, 22
+  orig: 28, 27
+  offset: 3, 2
+  index: -1
+hand_L_41
+  rotate: true
+  xy: 364, 991
+  size: 22, 24
+  orig: 28, 30
+  offset: 3, 3
+  index: -1
+hand_R_01
+  rotate: true
+  xy: 63, 995
+  size: 18, 23
+  orig: 19, 24
+  offset: 1, 0
+  index: -1
+head_01
+  rotate: false
+  xy: 287, 887
+  size: 60, 57
+  orig: 61, 58
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 465, 941
+  size: 48, 47
+  orig: 49, 48
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 904, 920
+  size: 55, 66
+  orig: 62, 69
+  offset: 4, 1
+  index: -1
+shnak_L_04
+  rotate: true
+  xy: 192, 994
+  size: 19, 30
+  orig: 20, 31
+  offset: 1, 0
+  index: -1
+shnak_R_04
+  rotate: true
+  xy: 390, 991
+  size: 22, 27
+  orig: 23, 28
+  offset: 1, 0
+  index: -1
+shnak_R_05
+  rotate: true
+  xy: 224, 994
+  size: 19, 30
+  orig: 20, 31
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 256, 993
+  size: 20, 36
+  orig: 21, 37
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 826, 980
+  size: 33, 43
+  orig: 34, 44
+  offset: 1, 0
+  index: -1
+
+Hero_1432.png
+size: 1000,968
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+akainu_beat_02
+  rotate: false
+  xy: 252, 2
+  size: 177, 145
+  orig: 192, 155
+  offset: 4, 6
+  index: -1
+akainu_beat_04
+  rotate: true
+  xy: 428, 586
+  size: 214, 169
+  orig: 236, 191
+  offset: 13, 10
+  index: -1
+akainu_beat_05
+  rotate: true
+  xy: 841, 780
+  size: 185, 152
+  orig: 214, 173
+  offset: 15, 6
+  index: -1
+akainu_beat_06
+  rotate: false
+  xy: 798, 269
+  size: 185, 151
+  orig: 206, 168
+  offset: 12, 8
+  index: -1
+akainu_skill1_03
+  rotate: false
+  xy: 435, 25
+  size: 169, 160
+  orig: 189, 187
+  offset: 7, 15
+  index: -1
+akainu_skill1_05
+  rotate: false
+  xy: 578, 821
+  size: 261, 144
+  orig: 527, 194
+  offset: 15, 15
+  index: -1
+akainu_skill1_06
+  rotate: false
+  xy: 2, 2
+  size: 248, 145
+  orig: 530, 190
+  offset: 14, 11
+  index: -1
+akainu_skill2_right_05
+  rotate: false
+  xy: 2, 332
+  size: 243, 226
+  orig: 256, 251
+  offset: 5, 22
+  index: -1
+akainu_skill2_right_06
+  rotate: false
+  xy: 797, 96
+  size: 178, 171
+  orig: 197, 184
+  offset: 8, 8
+  index: -1
+akainu_skill2_right_07
+  rotate: false
+  xy: 2, 560
+  size: 259, 223
+  orig: 260, 232
+  offset: 1, 8
+  index: -1
+akainu_skill2_right_08
+  rotate: true
+  xy: 435, 385
+  size: 199, 170
+  orig: 226, 179
+  offset: 7, 3
+  index: -1
+akainu_skill2_right_11
+  rotate: false
+  xy: 309, 802
+  size: 267, 163
+  orig: 287, 170
+  offset: 13, 3
+  index: -1
+akainu_skill2_right_12
+  rotate: false
+  xy: 2, 785
+  size: 305, 180
+  orig: 325, 190
+  offset: 15, 2
+  index: -1
+akainu_skill2_right_eff_B_000
+  rotate: true
+  xy: 247, 322
+  size: 220, 186
+  orig: 260, 220
+  offset: 30, 5
+  index: -1
+akainu_skill2_right_eff_B_003
+  rotate: true
+  xy: 263, 544
+  size: 239, 163
+  orig: 260, 220
+  offset: 11, 47
+  index: -1
+akainu_skill2_right_eff_C_005
+  rotate: false
+  xy: 805, 422
+  size: 191, 178
+  orig: 260, 250
+  offset: 22, 29
+  index: -1
+akainu_skill2_right_eff_C_006
+  rotate: false
+  xy: 805, 602
+  size: 193, 176
+  orig: 260, 250
+  offset: 17, 37
+  index: -1
+akainu_skill2_right_eff_C_007
+  rotate: false
+  xy: 2, 149
+  size: 227, 181
+  orig: 260, 250
+  offset: 12, 32
+  index: -1
+akainu_skill2_right_eff_C_008
+  rotate: false
+  xy: 599, 642
+  size: 204, 177
+  orig: 260, 250
+  offset: 10, 28
+  index: -1
+akainu_skill2_right_eff_C_009
+  rotate: true
+  xy: 616, 281
+  size: 190, 180
+  orig: 260, 250
+  offset: 23, 25
+  index: -1
+akainu_skill2_right_eff_C_010
+  rotate: false
+  xy: 607, 473
+  size: 196, 167
+  orig: 260, 250
+  offset: 18, 32
+  index: -1
+akainu_skill2_right_eff_C_011
+  rotate: false
+  xy: 231, 149
+  size: 202, 171
+  orig: 260, 250
+  offset: 15, 35
+  index: -1
+akainu_skill2_right_eff_C_012
+  rotate: true
+  xy: 435, 187
+  size: 196, 179
+  orig: 260, 250
+  offset: 24, 30
+  index: -1
+akainu_standby_02_C000_141021
+  rotate: false
+  xy: 616, 114
+  size: 179, 165
+  orig: 194, 176
+  offset: 8, 7
+  index: -1

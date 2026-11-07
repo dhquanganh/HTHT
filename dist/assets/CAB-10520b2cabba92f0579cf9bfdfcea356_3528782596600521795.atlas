@@ -1,0 +1,321 @@
+
+Hero_411.png
+size: 1348,224
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 838, 7
+  size: 94, 64
+  orig: 179, 128
+  offset: 71, 9
+  index: -1
+2
+  rotate: true
+  xy: 557, 2
+  size: 90, 83
+  orig: 179, 128
+  offset: 75, 9
+  index: -1
+2.1
+  rotate: false
+  xy: 2, 2
+  size: 256, 220
+  orig: 256, 256
+  offset: 0, 16
+  index: -1
+3
+  rotate: true
+  xy: 454, 3
+  size: 88, 101
+  orig: 179, 128
+  offset: 77, 9
+  index: -1
+4
+  rotate: true
+  xy: 1055, 109
+  size: 113, 109
+  orig: 179, 128
+  offset: 57, 9
+  index: -1
+43
+  rotate: false
+  xy: 260, 2
+  size: 73, 77
+  orig: 145, 132
+  offset: 11, 50
+  index: -1
+44
+  rotate: true
+  xy: 260, 81
+  size: 141, 103
+  orig: 145, 132
+  offset: 3, 5
+  index: -1
+45
+  rotate: false
+  xy: 726, 2
+  size: 110, 97
+  orig: 145, 132
+  offset: 4, 14
+  index: -1
+46
+  rotate: false
+  xy: 942, 106
+  size: 111, 116
+  orig: 145, 132
+  offset: 0, 14
+  index: -1
+Comp-1_00002
+  rotate: true
+  xy: 335, 3
+  size: 76, 117
+  orig: 139, 143
+  offset: 4, 17
+  index: -1
+Comp-1_00003
+  rotate: false
+  xy: 579, 97
+  size: 114, 125
+  orig: 139, 143
+  offset: 0, 9
+  index: -1
+Comp-1_00004
+  rotate: true
+  xy: 365, 93
+  size: 129, 102
+  orig: 139, 143
+  offset: 4, 4
+  index: -1
+Comp-1_00005
+  rotate: true
+  xy: 718, 101
+  size: 121, 103
+  orig: 139, 143
+  offset: 12, 4
+  index: -1
+Comp-1_00006
+  rotate: true
+  xy: 1166, 112
+  size: 110, 106
+  orig: 139, 143
+  offset: 24, 6
+  index: -1
+ban chan phai
+  rotate: true
+  xy: 1113, 4
+  size: 27, 33
+  orig: 29, 35
+  offset: 1, 1
+  index: -1
+ban chan trai
+  rotate: false
+  xy: 1297, 91
+  size: 27, 33
+  orig: 29, 35
+  offset: 1, 1
+  index: -1
+ban tay phai
+  rotate: false
+  xy: 1297, 58
+  size: 21, 31
+  orig: 24, 33
+  offset: 2, 1
+  index: -1
+ban tay trai
+  rotate: false
+  xy: 904, 2
+  size: 17, 19
+  orig: 20, 21
+  offset: 1, 1
+  index: -1
+ban-chan-2
+  rotate: true
+  xy: 1083, 2
+  size: 29, 28
+  orig: 29, 43
+  offset: 0, 0
+  index: -1
+ban-tay-phai-2
+  rotate: false
+  xy: 997, 2
+  size: 26, 22
+  orig: 26, 22
+  offset: 0, 0
+  index: -1
+bap chan phai
+  rotate: true
+  xy: 1195, 3
+  size: 44, 32
+  orig: 46, 34
+  offset: 1, 1
+  index: -1
+bap chan trai
+  rotate: true
+  xy: 1274, 126
+  size: 46, 33
+  orig: 48, 35
+  offset: 1, 1
+  index: -1
+bap tay phai
+  rotate: false
+  xy: 1229, 8
+  size: 38, 39
+  orig: 38, 47
+  offset: 0, 0
+  index: -1
+bap tay trai
+  rotate: true
+  xy: 1302, 186
+  size: 36, 31
+  orig: 38, 33
+  offset: 1, 1
+  index: -1
+bap-tay-phai-2
+  rotate: true
+  xy: 1269, 9
+  size: 38, 33
+  orig: 38, 33
+  offset: 0, 0
+  index: -1
+cang chan phai
+  rotate: false
+  xy: 1322, 35
+  size: 21, 26
+  orig: 39, 29
+  offset: 1, 2
+  index: -1
+cang chan trai
+  rotate: false
+  xy: 1304, 2
+  size: 20, 25
+  orig: 39, 27
+  offset: 18, 1
+  index: -1
+cang tay phai
+  rotate: false
+  xy: 1304, 29
+  size: 16, 27
+  orig: 19, 29
+  offset: 1, 1
+  index: -1
+cang tay trai
+  rotate: false
+  xy: 923, 3
+  size: 23, 18
+  orig: 25, 21
+  offset: 1, 2
+  index: -1
+cang-tay-phai-2
+  rotate: false
+  xy: 1048, 3
+  size: 33, 21
+  orig: 33, 21
+  offset: 0, 0
+  index: -1
+dau
+  rotate: true
+  xy: 904, 23
+  size: 78, 63
+  orig: 80, 65
+  offset: 1, 1
+  index: -1
+dau-2
+  rotate: true
+  xy: 997, 26
+  size: 78, 63
+  orig: 78, 63
+  offset: 0, 0
+  index: -1
+dau-3
+  rotate: true
+  xy: 1062, 33
+  size: 74, 62
+  orig: 74, 62
+  offset: 0, 0
+  index: -1
+glo_3047
+  rotate: false
+  xy: 823, 103
+  size: 117, 119
+  orig: 128, 128
+  offset: 7, 6
+  index: -1
+glow_11046
+  rotate: true
+  xy: 469, 94
+  size: 128, 108
+  orig: 128, 128
+  offset: 0, 10
+  index: -1
+tay-2
+  rotate: true
+  xy: 1320, 63
+  size: 26, 24
+  orig: 30, 28
+  offset: 2, 2
+  index: -1
+tay-3
+  rotate: true
+  xy: 1025, 2
+  size: 22, 21
+  orig: 24, 29
+  offset: 1, 0
+  index: -1
+than
+  rotate: true
+  xy: 642, 10
+  size: 85, 82
+  orig: 88, 82
+  offset: 2, 0
+  index: -1
+than-2
+  rotate: false
+  xy: 1126, 39
+  size: 67, 68
+  orig: 95, 86
+  offset: 14, 9
+  index: -1
+vai sau phai
+  rotate: false
+  xy: 1195, 49
+  size: 49, 61
+  orig: 52, 63
+  offset: 1, 1
+  index: -1
+vai sau trai
+  rotate: false
+  xy: 1246, 49
+  size: 49, 61
+  orig: 52, 63
+  offset: 2, 1
+  index: -1
+vai truoc phai
+  rotate: true
+  xy: 1148, 2
+  size: 35, 45
+  orig: 37, 48
+  offset: 1, 2
+  index: -1
+vai truoc trai
+  rotate: false
+  xy: 1274, 174
+  size: 26, 48
+  orig: 29, 50
+  offset: 1, 1
+  index: -1
+vu khi
+  rotate: true
+  xy: 969, 3
+  size: 101, 26
+  orig: 103, 28
+  offset: 1, 1
+  index: -1
+vu khi 2
+  rotate: true
+  xy: 695, 98
+  size: 124, 21
+  orig: 126, 24
+  offset: 1, 1
+  index: -1

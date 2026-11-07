@@ -1,0 +1,810 @@
+
+Hero_75.png
+size: 1024,992
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Jozu_damage
+  rotate: true
+  xy: 663, 485
+  size: 139, 166
+  orig: 171, 185
+  offset: 19, 10
+  index: -1
+Jozu_squat
+  rotate: false
+  xy: 831, 476
+  size: 161, 148
+  orig: 162, 149
+  offset: 1, 0
+  index: -1
+Jozu_standby_01
+  rotate: false
+  xy: 191, 99
+  size: 172, 160
+  orig: 173, 161
+  offset: 1, 0
+  index: -1
+Jozu_standby_02
+  rotate: false
+  xy: 365, 59
+  size: 175, 160
+  orig: 176, 161
+  offset: 1, 0
+  index: -1
+Jozu_win_01
+  rotate: true
+  xy: 441, 375
+  size: 146, 193
+  orig: 165, 208
+  offset: 11, 7
+  index: -1
+Jozu_win_02
+  rotate: true
+  xy: 815, 323
+  size: 151, 191
+  orig: 165, 206
+  offset: 7, 4
+  index: -1
+Jozu_win_03
+  rotate: true
+  xy: 2, 112
+  size: 154, 187
+  orig: 176, 201
+  offset: 14, 4
+  index: -1
+Jozu_win_04
+  rotate: true
+  xy: 429, 221
+  size: 152, 187
+  orig: 170, 204
+  offset: 12, 7
+  index: -1
+Jozu_win_05
+  rotate: true
+  xy: 2, 268
+  size: 151, 191
+  orig: 169, 204
+  offset: 12, 4
+  index: -1
+arm_L_04
+  rotate: true
+  xy: 238, 927
+  size: 34, 62
+  orig: 35, 63
+  offset: 1, 0
+  index: -1
+arm_L_11
+  rotate: false
+  xy: 654, 921
+  size: 53, 36
+  orig: 54, 37
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 438, 924
+  size: 35, 41
+  orig: 36, 42
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 353, 800
+  size: 76, 88
+  orig: 77, 89
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 837, 867
+  size: 50, 49
+  orig: 51, 50
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 58, 972
+  size: 20, 15
+  orig: 21, 17
+  offset: 1, 1
+  index: -1
+cloth_03
+  rotate: true
+  xy: 2, 976
+  size: 11, 12
+  orig: 12, 13
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 37, 938
+  size: 64, 32
+  orig: 65, 33
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 709, 921
+  size: 36, 43
+  orig: 42, 50
+  offset: 3, 3
+  index: -1
+cloth_11
+  rotate: true
+  xy: 62, 838
+  size: 49, 53
+  orig: 50, 54
+  offset: 1, 0
+  index: -1
+cloth_51
+  rotate: false
+  xy: 469, 876
+  size: 68, 45
+  orig: 69, 46
+  offset: 1, 0
+  index: -1
+f-arm_04
+  rotate: true
+  xy: 524, 960
+  size: 27, 45
+  orig: 28, 46
+  offset: 1, 0
+  index: -1
+f-arm_L_01
+  rotate: true
+  xy: 194, 929
+  size: 34, 42
+  orig: 42, 43
+  offset: 3, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 571, 960
+  size: 27, 43
+  orig: 28, 44
+  offset: 1, 0
+  index: -1
+f-arm_L_11
+  rotate: false
+  xy: 891, 915
+  size: 40, 40
+  orig: 41, 41
+  offset: 1, 0
+  index: -1
+f-arm_R_51
+  rotate: true
+  xy: 481, 923
+  size: 35, 42
+  orig: 36, 43
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 80, 972
+  size: 26, 15
+  orig: 27, 16
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 108, 972
+  size: 15, 17
+  orig: 16, 18
+  offset: 1, 0
+  index: -1
+hand_L_01
+  rotate: false
+  xy: 302, 926
+  size: 34, 34
+  orig: 40, 44
+  offset: 6, 3
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 306, 962
+  size: 25, 26
+  orig: 26, 27
+  offset: 1, 0
+  index: -1
+hand_L_11
+  rotate: false
+  xy: 754, 919
+  size: 44, 37
+  orig: 45, 38
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 659, 959
+  size: 32, 28
+  orig: 33, 29
+  offset: 1, 0
+  index: -1
+hand_R_51
+  rotate: false
+  xy: 616, 960
+  size: 41, 27
+  orig: 42, 28
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 539, 876
+  size: 45, 73
+  orig: 46, 74
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 614, 874
+  size: 45, 73
+  orig: 46, 74
+  offset: 1, 0
+  index: -1
+joz_beat_03
+  rotate: true
+  xy: 145, 562
+  size: 135, 151
+  orig: 136, 152
+  offset: 1, 0
+  index: -1
+joz_beat_04
+  rotate: true
+  xy: 2, 588
+  size: 134, 141
+  orig: 135, 142
+  offset: 1, 0
+  index: -1
+joz_beat_06
+  rotate: true
+  xy: 853, 2
+  size: 164, 169
+  orig: 165, 170
+  offset: 1, 0
+  index: -1
+joz_skill2_01
+  rotate: false
+  xy: 195, 261
+  size: 232, 151
+  orig: 233, 152
+  offset: 1, 0
+  index: -1
+joz_skill2_01_eff
+  rotate: false
+  xy: 276, 699
+  size: 295, 94
+  orig: 296, 95
+  offset: 1, 0
+  index: -1
+joz_skill2_02_eff
+  rotate: false
+  xy: 542, 14
+  size: 309, 152
+  orig: 310, 153
+  offset: 1, 0
+  index: -1
+joz_skill2_03_eff_02
+  rotate: false
+  xy: 2, 724
+  size: 272, 102
+  orig: 273, 103
+  offset: 1, 0
+  index: -1
+joz_skill2_09
+  rotate: false
+  xy: 618, 179
+  size: 190, 153
+  orig: 191, 154
+  offset: 1, 0
+  index: -1
+joz_skill2_10
+  rotate: false
+  xy: 504, 523
+  size: 157, 137
+  orig: 158, 138
+  offset: 1, 0
+  index: -1
+jozu_beat 201
+  rotate: false
+  xy: 2, 940
+  size: 33, 32
+  orig: 34, 33
+  offset: 1, 0
+  index: -1
+jozu_beat 202
+  rotate: true
+  xy: 736, 786
+  size: 82, 91
+  orig: 83, 92
+  offset: 1, 0
+  index: -1
+jozu_beat 203
+  rotate: true
+  xy: 944, 956
+  size: 31, 33
+  orig: 32, 34
+  offset: 1, 0
+  index: -1
+jozu_beat 501
+  rotate: false
+  xy: 538, 795
+  size: 100, 77
+  orig: 101, 78
+  offset: 1, 0
+  index: -1
+jozu_beat 502
+  rotate: false
+  xy: 2, 844
+  size: 58, 48
+  orig: 59, 49
+  offset: 1, 0
+  index: -1
+jozu_beat 503
+  rotate: false
+  xy: 334, 962
+  size: 36, 25
+  orig: 37, 26
+  offset: 1, 0
+  index: -1
+jozu_beat 504
+  rotate: false
+  xy: 765, 958
+  size: 53, 29
+  orig: 54, 30
+  offset: 1, 0
+  index: -1
+jozu_beat 505
+  rotate: false
+  xy: 103, 933
+  size: 52, 32
+  orig: 53, 33
+  offset: 1, 0
+  index: -1
+jozu_beat 506
+  rotate: false
+  xy: 525, 923
+  size: 74, 35
+  orig: 75, 36
+  offset: 1, 0
+  index: -1
+jozu_beat 507
+  rotate: true
+  xy: 350, 880
+  size: 44, 70
+  orig: 45, 71
+  offset: 1, 0
+  index: -1
+jozu_beat 508
+  rotate: false
+  xy: 231, 828
+  size: 54, 53
+  orig: 55, 54
+  offset: 1, 0
+  index: -1
+jozu_beat 701
+  rotate: true
+  xy: 820, 958
+  size: 29, 37
+  orig: 30, 38
+  offset: 1, 0
+  index: -1
+jozu_beat 702
+  rotate: true
+  xy: 157, 932
+  size: 33, 35
+  orig: 34, 36
+  offset: 1, 0
+  index: -1
+jozu_skill1  401
+  rotate: false
+  xy: 800, 919
+  size: 43, 37
+  orig: 48, 47
+  offset: 2, 4
+  index: -1
+jozu_skill1 201
+  rotate: false
+  xy: 2, 894
+  size: 50, 42
+  orig: 51, 43
+  offset: 1, 0
+  index: -1
+jozu_skill1 202
+  rotate: true
+  xy: 979, 956
+  size: 31, 34
+  orig: 32, 35
+  offset: 1, 0
+  index: -1
+jozu_skill1 203
+  rotate: false
+  xy: 693, 959
+  size: 38, 28
+  orig: 39, 29
+  offset: 1, 0
+  index: -1
+jozu_skill1 204
+  rotate: true
+  xy: 150, 885
+  size: 42, 69
+  orig: 43, 70
+  offset: 1, 0
+  index: -1
+jozu_skill1 301
+  rotate: true
+  xy: 889, 864
+  size: 47, 70
+  orig: 48, 71
+  offset: 1, 0
+  index: -1
+jozu_skill1 303
+  rotate: true
+  xy: 906, 957
+  size: 30, 36
+  orig: 31, 37
+  offset: 1, 0
+  index: -1
+jozu_skill2_301
+  rotate: true
+  xy: 601, 923
+  size: 35, 51
+  orig: 36, 52
+  offset: 1, 0
+  index: -1
+jozu_skill2_302
+  rotate: true
+  xy: 859, 958
+  size: 29, 45
+  orig: 30, 46
+  offset: 1, 0
+  index: -1
+jozu_skill2_303
+  rotate: true
+  xy: 933, 913
+  size: 41, 57
+  orig: 42, 58
+  offset: 1, 0
+  index: -1
+jozu_skill2_304
+  rotate: true
+  xy: 689, 874
+  size: 45, 49
+  orig: 46, 50
+  offset: 1, 0
+  index: -1
+jozu_skill2_306
+  rotate: false
+  xy: 788, 870
+  size: 47, 47
+  orig: 48, 48
+  offset: 1, 0
+  index: -1
+jozu_skill2_307
+  rotate: true
+  xy: 221, 883
+  size: 42, 78
+  orig: 55, 88
+  offset: 7, 2
+  index: -1
+jozu_skill2_308
+  rotate: false
+  xy: 829, 774
+  size: 92, 88
+  orig: 99, 97
+  offset: 4, 1
+  index: -1
+jozu_skill2_801
+  rotate: false
+  xy: 422, 878
+  size: 45, 44
+  orig: 46, 45
+  offset: 1, 0
+  index: -1
+jozu_skill2_802
+  rotate: true
+  xy: 100, 889
+  size: 42, 48
+  orig: 43, 49
+  offset: 1, 0
+  index: -1
+jozu_skill2_803
+  rotate: true
+  xy: 301, 881
+  size: 43, 47
+  orig: 44, 48
+  offset: 1, 0
+  index: -1
+jozu_skill2_804
+  rotate: true
+  xy: 923, 753
+  size: 109, 99
+  orig: 110, 100
+  offset: 1, 0
+  index: -1
+jozu_skill2_805
+  rotate: false
+  xy: 845, 918
+  size: 44, 38
+  orig: 45, 39
+  offset: 1, 0
+  index: -1
+jozu_skill2_806
+  rotate: true
+  xy: 54, 894
+  size: 42, 44
+  orig: 43, 45
+  offset: 1, 0
+  index: -1
+jozu_skill2_807
+  rotate: false
+  xy: 287, 819
+  size: 64, 59
+  orig: 66, 60
+  offset: 1, 0
+  index: -1
+jozu_skill2_808
+  rotate: true
+  xy: 127, 967
+  size: 20, 21
+  orig: 21, 22
+  offset: 1, 0
+  index: -1
+jozu_skill2_809
+  rotate: false
+  xy: 961, 864
+  size: 60, 47
+  orig: 68, 57
+  offset: 3, 4
+  index: -1
+jozu_skill3_01
+  rotate: true
+  xy: 810, 168
+  size: 153, 158
+  orig: 154, 159
+  offset: 1, 0
+  index: -1
+jozu_skill3_07
+  rotate: false
+  xy: 636, 334
+  size: 177, 149
+  orig: 178, 150
+  offset: 1, 0
+  index: -1
+jozu_skill3_08
+  rotate: false
+  xy: 573, 662
+  size: 214, 122
+  orig: 215, 123
+  offset: 1, 0
+  index: -1
+jozu_skill3_09
+  rotate: false
+  xy: 298, 561
+  size: 204, 136
+  orig: 205, 137
+  offset: 1, 0
+  index: -1
+jozu_skill3_09_e
+  rotate: false
+  xy: 640, 792
+  size: 94, 80
+  orig: 95, 81
+  offset: 1, 0
+  index: -1
+jozu_skill3_10
+  rotate: false
+  xy: 789, 626
+  size: 196, 125
+  orig: 197, 126
+  offset: 1, 0
+  index: -1
+jozu_skill3_11
+  rotate: false
+  xy: 2, 421
+  size: 213, 139
+  orig: 214, 140
+  offset: 1, 0
+  index: -1
+jozu_skill3_12
+  rotate: false
+  xy: 217, 414
+  size: 222, 145
+  orig: 223, 146
+  offset: 1, 0
+  index: -1
+jozu_skill3_12_e
+  rotate: true
+  xy: 443, 798
+  size: 76, 93
+  orig: 77, 94
+  offset: 1, 0
+  index: -1
+jozu_skill3_301
+  rotate: false
+  xy: 242, 964
+  size: 25, 23
+  orig: 26, 24
+  offset: 1, 0
+  index: -1
+jozu_skill3_302
+  rotate: false
+  xy: 150, 967
+  size: 29, 20
+  orig: 30, 21
+  offset: 1, 0
+  index: -1
+jozu_skill3_303
+  rotate: false
+  xy: 338, 926
+  size: 48, 34
+  orig: 57, 35
+  offset: 9, 0
+  index: -1
+jozu_skill3_304
+  rotate: false
+  xy: 269, 963
+  size: 35, 24
+  orig: 36, 25
+  offset: 1, 0
+  index: -1
+jozu_skill3_305
+  rotate: true
+  xy: 174, 829
+  size: 52, 55
+  orig: 56, 65
+  offset: 1, 4
+  index: -1
+jozu_skill3_306
+  rotate: false
+  xy: 442, 961
+  size: 39, 26
+  orig: 43, 28
+  offset: 2, 0
+  index: -1
+jozu_skill3_601
+  rotate: false
+  xy: 372, 962
+  size: 30, 25
+  orig: 31, 26
+  offset: 1, 0
+  index: -1
+jozu_skill3_602
+  rotate: false
+  xy: 181, 967
+  size: 34, 20
+  orig: 35, 21
+  offset: 1, 0
+  index: -1
+jozu_skill3_603
+  rotate: true
+  xy: 117, 832
+  size: 51, 55
+  orig: 52, 56
+  offset: 1, 0
+  index: -1
+jozu_skill3_604
+  rotate: false
+  xy: 483, 961
+  size: 39, 26
+  orig: 40, 27
+  offset: 1, 0
+  index: -1
+jozu_skill3_605
+  rotate: false
+  xy: 388, 926
+  size: 48, 34
+  orig: 49, 35
+  offset: 1, 0
+  index: -1
+jozu_skill3_606
+  rotate: false
+  xy: 740, 871
+  size: 46, 46
+  orig: 47, 47
+  offset: 1, 0
+  index: -1
+jozu_skill3_607
+  rotate: false
+  xy: 404, 962
+  size: 36, 25
+  orig: 37, 26
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 16, 975
+  size: 12, 15
+  orig: 13, 16
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 33, 974
+  size: 13, 23
+  orig: 14, 24
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 217, 965
+  size: 22, 23
+  orig: 26, 26
+  offset: 4, 0
+  index: -1
+thigh_R_04
+  rotate: false
+  xy: 733, 959
+  size: 30, 28
+  orig: 31, 29
+  offset: 1, 0
+  index: -1
+
+Hero_752.png
+size: 956,768
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+joz_skill2_02
+  rotate: true
+  xy: 727, 556
+  size: 209, 224
+  orig: 210, 225
+  offset: 1, 0
+  index: -1
+joz_skill2_03
+  rotate: true
+  xy: 259, 291
+  size: 163, 211
+  orig: 164, 212
+  offset: 1, 0
+  index: -1
+joz_skill2_03_eff_01
+  rotate: true
+  xy: 727, 38
+  size: 205, 212
+  orig: 206, 265
+  offset: 1, 52
+  index: -1
+joz_skill2_06
+  rotate: true
+  xy: 2, 2
+  size: 281, 248
+  orig: 282, 249
+  offset: 1, 0
+  index: -1
+joz_skill2_07
+  rotate: true
+  xy: 727, 245
+  size: 309, 223
+  orig: 310, 224
+  offset: 1, 0
+  index: -1
+joz_skill2_11_eff
+  rotate: false
+  xy: 259, 456
+  size: 438, 309
+  orig: 439, 310
+  offset: 1, 0
+  index: -1
+joz_skill2_12_eff
+  rotate: false
+  xy: 252, 6
+  size: 473, 277
+  orig: 474, 278
+  offset: 1, 0
+  index: -1
+joz_skill2_13_eff
+  rotate: true
+  xy: 2, 285
+  size: 480, 255
+  orig: 481, 256
+  offset: 1, 0
+  index: -1
+jozu_skill3_02
+  rotate: false
+  xy: 472, 291
+  size: 190, 163
+  orig: 208, 186
+  offset: 9, 9
+  index: -1

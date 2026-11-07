@@ -1,0 +1,712 @@
+
+Hero_184.png
+size: 1020,952
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 87, 932
+  size: 16, 28
+  orig: 17, 29
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 117, 932
+  size: 16, 40
+  orig: 17, 41
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 650, 882
+  size: 41, 54
+  orig: 42, 55
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 95, 767
+  size: 104, 77
+  orig: 105, 78
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 830, 921
+  size: 51, 27
+  orig: 52, 28
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 597, 926
+  size: 22, 32
+  orig: 23, 33
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 956, 874
+  size: 50, 44
+  orig: 51, 45
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 883, 921
+  size: 29, 27
+  orig: 30, 28
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 2, 856
+  size: 59, 46
+  orig: 60, 47
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 816, 877
+  size: 58, 42
+  orig: 59, 43
+  offset: 1, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 28, 934
+  size: 36, 14
+  orig: 39, 20
+  offset: 1, 2
+  index: -1
+cloth_11
+  rotate: false
+  xy: 510, 927
+  size: 24, 21
+  orig: 30, 25
+  offset: 4, 2
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 656, 925
+  size: 23, 30
+  orig: 24, 31
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 721, 923
+  size: 25, 33
+  orig: 26, 34
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 243, 930
+  size: 18, 22
+  orig: 19, 23
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 416, 929
+  size: 19, 20
+  orig: 20, 21
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 632, 825
+  size: 55, 63
+  orig: 56, 64
+  offset: 1, 0
+  index: -1
+ryuma_beat_right_01
+  rotate: true
+  xy: 836, 589
+  size: 118, 169
+  orig: 119, 170
+  offset: 1, 0
+  index: -1
+ryuma_beat_right_02
+  rotate: true
+  xy: 478, 486
+  size: 122, 165
+  orig: 123, 166
+  offset: 1, 0
+  index: -1
+ryuma_beat_right_03
+  rotate: true
+  xy: 2, 237
+  size: 146, 148
+  orig: 147, 149
+  offset: 1, 0
+  index: -1
+ryuma_beat_right_04
+  rotate: false
+  xy: 645, 172
+  size: 208, 147
+  orig: 209, 148
+  offset: 1, 0
+  index: -1
+ryuma_beat_right_04_ef
+  rotate: false
+  xy: 211, 845
+  size: 153, 48
+  orig: 154, 49
+  offset: 1, 0
+  index: -1
+ryuma_beat_right_05
+  rotate: false
+  xy: 2, 66
+  size: 229, 148
+  orig: 230, 149
+  offset: 1, 0
+  index: -1
+ryuma_damage_right
+  rotate: true
+  xy: 314, 353
+  size: 131, 188
+  orig: 132, 189
+  offset: 1, 0
+  index: -1
+ryuma_rise
+  rotate: true
+  xy: 201, 757
+  size: 86, 124
+  orig: 93, 134
+  offset: 4, 4
+  index: -1
+ryuma_rise_01
+  rotate: false
+  xy: 267, 930
+  size: 20, 18
+  orig: 21, 19
+  offset: 1, 0
+  index: -1
+ryuma_rise_02
+  rotate: true
+  xy: 947, 920
+  size: 28, 32
+  orig: 29, 33
+  offset: 1, 0
+  index: -1
+ryuma_rise_03
+  rotate: true
+  xy: 981, 920
+  size: 28, 29
+  orig: 29, 30
+  offset: 1, 0
+  index: -1
+ryuma_rise_04
+  rotate: false
+  xy: 145, 846
+  size: 64, 52
+  orig: 65, 53
+  offset: 1, 0
+  index: -1
+ryuma_run_01
+  rotate: false
+  xy: 159, 900
+  size: 61, 29
+  orig: 62, 30
+  offset: 1, 0
+  index: -1
+ryuma_run_02
+  rotate: false
+  xy: 366, 840
+  size: 69, 52
+  orig: 70, 53
+  offset: 1, 0
+  index: -1
+ryuma_run_03
+  rotate: true
+  xy: 260, 895
+  size: 33, 44
+  orig: 34, 45
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_01
+  rotate: true
+  xy: 128, 640
+  size: 115, 173
+  orig: 116, 174
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_02
+  rotate: true
+  xy: 233, 58
+  size: 150, 170
+  orig: 151, 171
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_03
+  rotate: true
+  xy: 768, 709
+  size: 107, 195
+  orig: 108, 196
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_04
+  rotate: true
+  xy: 152, 369
+  size: 134, 160
+  orig: 135, 161
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_05
+  rotate: false
+  xy: 577, 16
+  size: 265, 154
+  orig: 266, 155
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_05_ef
+  rotate: false
+  xy: 659, 590
+  size: 175, 117
+  orig: 176, 118
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_06_ef
+  rotate: false
+  xy: 327, 745
+  size: 186, 91
+  orig: 187, 92
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1001
+  rotate: false
+  xy: 66, 933
+  size: 19, 15
+  orig: 20, 16
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1002
+  rotate: true
+  xy: 706, 879
+  size: 41, 49
+  orig: 42, 50
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1003
+  rotate: false
+  xy: 536, 927
+  size: 36, 21
+  orig: 37, 22
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1004
+  rotate: true
+  xy: 688, 925
+  size: 23, 31
+  orig: 24, 32
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1005
+  rotate: true
+  xy: 441, 890
+  size: 37, 51
+  orig: 38, 52
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1006
+  rotate: false
+  xy: 876, 876
+  size: 78, 42
+  orig: 79, 43
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1101
+  rotate: false
+  xy: 289, 930
+  size: 125, 18
+  orig: 126, 19
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1102
+  rotate: false
+  xy: 306, 895
+  size: 82, 33
+  orig: 83, 34
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1103
+  rotate: false
+  xy: 438, 929
+  size: 39, 19
+  orig: 40, 20
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1104
+  rotate: false
+  xy: 159, 931
+  size: 62, 17
+  orig: 63, 18
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1107
+  rotate: false
+  xy: 536, 831
+  size: 94, 51
+  orig: 95, 52
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1108
+  rotate: false
+  xy: 541, 886
+  size: 58, 38
+  orig: 59, 39
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1109
+  rotate: false
+  xy: 494, 888
+  size: 45, 37
+  orig: 46, 38
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1110
+  rotate: false
+  xy: 2, 904
+  size: 62, 28
+  orig: 63, 29
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1111
+  rotate: false
+  xy: 631, 926
+  size: 23, 22
+  orig: 24, 23
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1112
+  rotate: true
+  xy: 785, 820
+  size: 55, 66
+  orig: 56, 67
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_1113
+  rotate: true
+  xy: 601, 884
+  size: 40, 47
+  orig: 41, 48
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_14
+  rotate: true
+  xy: 405, 37
+  size: 150, 170
+  orig: 151, 171
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_15
+  rotate: true
+  xy: 303, 628
+  size: 115, 173
+  orig: 116, 174
+  offset: 1, 0
+  index: -1
+ryuma_skill2_right_01
+  rotate: true
+  xy: 813, 462
+  size: 125, 172
+  orig: 126, 173
+  offset: 1, 0
+  index: -1
+ryuma_skill2_right_02
+  rotate: false
+  xy: 336, 489
+  size: 140, 137
+  orig: 141, 138
+  offset: 1, 0
+  index: -1
+ryuma_skill2_right_03
+  rotate: false
+  xy: 645, 330
+  size: 141, 134
+  orig: 142, 135
+  offset: 1, 0
+  index: -1
+ryuma_skill2_right_04
+  rotate: true
+  xy: 152, 216
+  size: 151, 158
+  orig: 152, 159
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_02_ef
+  rotate: false
+  xy: 437, 838
+  size: 97, 48
+  orig: 98, 49
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_03_ef
+  rotate: false
+  xy: 2, 657
+  size: 124, 108
+  orig: 125, 109
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_04_ef
+  rotate: false
+  xy: 478, 610
+  size: 179, 115
+  orig: 180, 116
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_05_ef
+  rotate: false
+  xy: 2, 385
+  size: 148, 130
+  orig: 149, 131
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_06_ef
+  rotate: false
+  xy: 504, 345
+  size: 139, 139
+  orig: 140, 140
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_07
+  rotate: true
+  xy: 788, 321
+  size: 139, 165
+  orig: 140, 166
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_07_ef
+  rotate: true
+  xy: 631, 727
+  size: 96, 135
+  orig: 97, 136
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_08_ef
+  rotate: false
+  xy: 515, 738
+  size: 114, 91
+  orig: 115, 92
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_09_ef
+  rotate: false
+  xy: 2, 781
+  size: 91, 68
+  orig: 92, 69
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_10_ef
+  rotate: false
+  xy: 390, 894
+  size: 49, 33
+  orig: 50, 34
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_501
+  rotate: false
+  xy: 66, 902
+  size: 47, 28
+  orig: 48, 29
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_502
+  rotate: false
+  xy: 574, 927
+  size: 21, 21
+  orig: 22, 22
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_503
+  rotate: true
+  xy: 757, 879
+  size: 41, 57
+  orig: 42, 58
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_504
+  rotate: false
+  xy: 63, 851
+  size: 80, 49
+  orig: 81, 50
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_505
+  rotate: false
+  xy: 223, 931
+  size: 18, 17
+  orig: 19, 23
+  offset: 1, 0
+  index: -1
+ryuma_skill3_right_506
+  rotate: false
+  xy: 115, 902
+  size: 42, 28
+  orig: 48, 29
+  offset: 3, 0
+  index: -1
+ryuma_skill3_right_507
+  rotate: false
+  xy: 697, 825
+  size: 86, 52
+  orig: 88, 56
+  offset: 2, 1
+  index: -1
+ryuma_skill3_right_508
+  rotate: false
+  xy: 222, 896
+  size: 36, 32
+  orig: 39, 34
+  offset: 1, 1
+  index: -1
+ryuma_skill3_right_509
+  rotate: false
+  xy: 853, 818
+  size: 117, 54
+  orig: 120, 59
+  offset: 1, 1
+  index: -1
+ryuma_skill3_right_510
+  rotate: true
+  xy: 756, 922
+  size: 26, 43
+  orig: 37, 53
+  offset: 5, 3
+  index: -1
+ryuma_standby_right_01
+  rotate: false
+  xy: 481, 189
+  size: 162, 154
+  orig: 163, 155
+  offset: 1, 0
+  index: -1
+ryuma_standby_right_02
+  rotate: false
+  xy: 855, 167
+  size: 163, 152
+  orig: 164, 153
+  offset: 1, 0
+  index: -1
+ryuma_win_right_01
+  rotate: true
+  xy: 844, 2
+  size: 163, 169
+  orig: 164, 170
+  offset: 1, 0
+  index: -1
+ryuma_win_right_02
+  rotate: true
+  xy: 312, 210
+  size: 141, 167
+  orig: 142, 168
+  offset: 1, 0
+  index: -1
+ryuma_win_right_04
+  rotate: true
+  xy: 645, 466
+  size: 122, 166
+  orig: 123, 167
+  offset: 1, 0
+  index: -1
+ryuma_win_right_05
+  rotate: true
+  xy: 2, 517
+  size: 121, 164
+  orig: 122, 165
+  offset: 1, 0
+  index: -1
+ryuma_win_right_06
+  rotate: true
+  xy: 168, 505
+  size: 121, 166
+  orig: 122, 167
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 801, 922
+  size: 26, 27
+  orig: 27, 28
+  offset: 1, 0
+  index: -1
+shank_L_05
+  rotate: false
+  xy: 914, 921
+  size: 31, 27
+  orig: 34, 29
+  offset: 3, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 479, 929
+  size: 19, 29
+  orig: 20, 30
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 2, 939
+  size: 9, 24
+  orig: 10, 25
+  offset: 1, 0
+  index: -1
+
+Hero_1842.png
+size: 516,584
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ryuma_beat_right_06
+  rotate: false
+  xy: 314, 250
+  size: 200, 170
+  orig: 201, 171
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_06
+  rotate: true
+  xy: 2, 2
+  size: 266, 154
+  orig: 267, 155
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_07
+  rotate: true
+  xy: 158, 3
+  size: 265, 154
+  orig: 266, 155
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_09
+  rotate: false
+  xy: 277, 422
+  size: 236, 158
+  orig: 237, 159
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_12
+  rotate: false
+  xy: 2, 426
+  size: 273, 154
+  orig: 274, 155
+  offset: 1, 0
+  index: -1
+ryuma_skill1_right_13
+  rotate: false
+  xy: 2, 270
+  size: 273, 154
+  orig: 274, 155
+  offset: 1, 0
+  index: -1
+ryuma_win_right_03
+  rotate: true
+  xy: 314, 25
+  size: 223, 167
+  orig: 224, 168
+  offset: 1, 0
+  index: -1

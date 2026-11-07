@@ -1,0 +1,160 @@
+
+Skill_627.png
+size: 1685,1685
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Glow02
+  rotate: false
+  xy: 1344, 48
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+Glow12
+  rotate: false
+  xy: 936, 20
+  size: 222, 222
+  orig: 256, 256
+  offset: 17, 17
+  index: -1
+Skill_VFX/AE_Impact_01
+  rotate: false
+  xy: 260, 13
+  size: 180, 180
+  orig: 256, 256
+  offset: 38, 38
+  index: -1
+Skill_VFX/AE_Shockwave_01
+  rotate: false
+  xy: 1420, 44
+  size: 247, 244
+  orig: 256, 256
+  offset: 4, 6
+  index: -1
+Skill_VFX/AE_Shockwave_12
+  rotate: true
+  xy: 1363, 420
+  size: 245, 255
+  orig: 256, 256
+  offset: 4, 0
+  index: -1
+Skill_VFX/Circle_InnerOuterGlow_01
+  rotate: false
+  xy: 1420, 1427
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+Skill_VFX/Fireworks_Glow_01
+  rotate: true
+  xy: 1160, 3
+  size: 109, 116
+  orig: 128, 128
+  offset: 3, 6
+  index: -1
+Skill_VFX/Fireworks_Glow_02
+  rotate: false
+  xy: 1160, 114
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+Skill_VFX/Shockwave32
+  rotate: false
+  xy: 678, 2
+  size: 256, 240
+  orig: 256, 256
+  offset: 0, 10
+  index: -1
+Snowflake_01 (2)
+  rotate: false
+  xy: 2, 4
+  size: 64, 59
+  orig: 64, 64
+  offset: 0, 2
+  index: -1
+box
+  rotate: false
+  xy: 1028, 667
+  size: 599, 394
+  orig: 599, 396
+  offset: 0, 1
+  index: -1
+box_glow
+  rotate: false
+  xy: 2, 195
+  size: 666, 462
+  orig: 670, 466
+  offset: 2, 2
+  index: -1
+glow
+  rotate: true
+  xy: 1278, 37
+  size: 75, 64
+  orig: 79, 68
+  offset: 2, 2
+  index: -1
+lid
+  rotate: true
+  xy: 1028, 1063
+  size: 620, 345
+  orig: 621, 346
+  offset: 0, 0
+  index: -1
+lid_hlow
+  rotate: false
+  xy: 670, 244
+  size: 691, 413
+  orig: 695, 417
+  offset: 2, 2
+  index: -1
+objects (171)
+  rotate: false
+  xy: 1290, 114
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+particle (105)
+  rotate: false
+  xy: 2, 65
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+particle (228)
+  rotate: false
+  xy: 2, 659
+  size: 1024, 1024
+  orig: 1024, 1024
+  offset: 0, 0
+  index: -1
+particle (32)
+  rotate: false
+  xy: 1363, 290
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+particle (331)
+  rotate: false
+  xy: 1375, 1169
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+smoke (2)
+  rotate: true
+  xy: 1493, 293
+  size: 125, 121
+  orig: 128, 128
+  offset: 2, 4
+  index: -1
+trail_9003_0
+  rotate: true
+  xy: 442, 67
+  size: 126, 234
+  orig: 232, 368
+  offset: 54, 78
+  index: -1

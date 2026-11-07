@@ -1,0 +1,52 @@
+/* Battle HUD uses the APK's original sprites, in the 1136 × 640 game space. */
+.battle-hud { position:absolute; inset:0; pointer-events:none; }
+.battle-hud button { pointer-events:auto; }
+#screen-ui .battle-sprite { position:absolute; padding:0; border:0; background:none; box-shadow:none; min-width:0; border-radius:0; }
+.battle-sprite img { display:block; width:100%; height:100%; object-fit:contain; }
+.battle-sprite:hover { filter:brightness(1.13); }
+.battle-sprite:focus-visible { outline:3px solid #fff1ab; outline-offset:2px; }
+.battle-info { left:0; top:14px; width:66px; height:66px; }
+.battle-speed { right:104px; top:4px; width:124px; height:60px; }
+.battle-skip { right:20px; top:4px; width:64px; height:64px; }
+.battle-round { position:absolute; top:16px; left:40%; width:20%; text-align:center; color:white; font:700 35px GameFont,sans-serif; -webkit-text-stroke:1px #251d19; paint-order:stroke fill; text-shadow:2px 2px #201a15,-2px -2px #201a15,2px -2px #201a15,-2px 2px #201a15; }
+.battle-aura { position:absolute; bottom:-9px; width:115px; height:115px; }
+.battle-aura.ally { left:-9px; }
+.battle-aura.enemy { right:-9px; }
+.battle-aura>img { position:absolute; inset:0; width:100%; height:100%; }
+.battle-aura { background:radial-gradient(ellipse at center,#45311d 0 35%,transparent 36%); }
+.battle-aura .aura-slot { position:absolute; width:38px; height:38px; }
+.battle-aura .aura-slot:nth-of-type(1) { left:60px; top:6px; }
+.battle-aura .aura-slot:nth-of-type(2) { left:79px; top:39px; }
+.battle-aura .aura-slot:nth-of-type(3) { left:21px; top:6px; }
+.battle-aura .aura-slot:nth-of-type(4) { left:60px; top:74px; }
+.battle-aura .aura-slot:nth-of-type(5) { left:21px; top:74px; }
+.battle-aura .aura-slot:nth-of-type(6) { left:1px; top:39px; }
+.battle-aura .aura-slot img { width:100%; height:100%; }
+#screen-ui .battle-aura button { padding:0; min-width:0; border:0; border-radius:0; background:none; box-shadow:none; }
+.battle-aura .aura-open { position:absolute; inset:0; width:100%; height:100%; }
+.battle-menu { position:absolute; left:76px; top:88px; width:315px; padding:18px; color:#fff2ce; border:3px solid #cba84e; border-radius:15px; background:#302328f2; box-shadow:0 6px 18px #261a2870; pointer-events:auto; }
+.battle-menu[hidden] { display:none; }
+.battle-menu header { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.battle-menu header img { width:48px; height:48px; object-fit:contain; }
+.battle-menu header strong { font-size:22px; }
+.battle-menu header small { display:block; font-size:15px; }
+#screen-ui .battle-menu .battle-controls { position:static; display:grid; grid-template-columns:1fr 1fr; gap:8px; width:auto; height:auto; padding:0; background:none; border:0; box-shadow:none; }
+#screen-ui .battle-menu button { min-height:45px; font-size:17px; padding:6px; }
+#screen-ui .battle-menu .skill-button { display:flex; align-items:center; justify-content:center; gap:5px; }
+#screen-ui .battle-menu .battle-controls .skill-button { height:60px; min-width:0; }
+.battle-menu .skill-button img { width:32px; height:32px; }
+.battle-menu .skill-button small { display:block; font-size:12px; }
+.battle-skill-summary p { margin:0 0 12px; font-size:16px; }
+.battle-skill-summary>div { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+.battle-skill-summary img { width:42px; height:42px; object-fit:contain; }
+.battle-skill-summary small { display:block; font-size:13px; color:#e0c5a0; }
+#screen-ui .battle-menu .battle-controls { grid-template-columns:1fr; }
+.battle-menu .battle-links { display:flex; gap:8px; margin-top:12px; }
+.battle-menu .battle-links button { flex:1; }
+.battle-auto-status { position:absolute; bottom:9px; left:118px; color:#fff4d4; font:700 16px GameFont,sans-serif; text-shadow:1px 2px 2px #31291d; }
+.battle-turn-name{position:absolute;top:60px;left:34%;width:32%;text-align:center;color:#fff2a5;font-size:18px;text-shadow:1px 2px #251d19}
+.battle-party{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+#screen-ui .battle-party button{position:relative;width:40px;height:47px;min-height:0;padding:2px;border:2px solid #795f47;background:#403025;border-radius:5px}
+.battle-party button img{width:100%;height:100%;object-fit:contain}.battle-party button small{position:absolute;bottom:-1px;left:0;right:0;color:white;text-shadow:1px 1px black;font-size:11px;text-align:center}
+#screen-ui .battle-party button.selected{border-color:#f4d77b}.battle-party .fallen,.aura-slot.fallen{filter:grayscale(1);opacity:.5}
+.battle-menu{max-height:530px;overflow-y:auto}

@@ -1,0 +1,48 @@
+
+Skill_124.png
+size: 872,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Bepo_skill1_chongjibo/000
+  rotate: false
+  xy: 426, 2
+  size: 319, 170
+  orig: 328, 174
+  offset: 6, 3
+  index: -1
+Char_Bepo_skill1_chongjibo/001
+  rotate: false
+  xy: 2, 38
+  size: 422, 153
+  orig: 426, 154
+  offset: 2, 0
+  index: -1
+Char_Bepo_skill1_chongjibo/002
+  rotate: false
+  xy: 2, 193
+  size: 565, 160
+  orig: 571, 165
+  offset: 2, 3
+  index: -1
+Char_Bepo_skill1_chongjibo/003
+  rotate: false
+  xy: 2, 355
+  size: 594, 175
+  orig: 599, 181
+  offset: 2, 3
+  index: -1
+Char_Bepo_skill1_chongjibo/004
+  rotate: false
+  xy: 598, 353
+  size: 270, 177
+  orig: 279, 183
+  offset: 5, 2
+  index: -1
+Char_Bepo_skill1_chongjibo/005
+  rotate: false
+  xy: 569, 174
+  size: 281, 177
+  orig: 289, 183
+  offset: 4, 2
+  index: -1

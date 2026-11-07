@@ -1,0 +1,97 @@
+
+Hit_75.png
+size: 1008,352
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Jozu_skill2/000
+  rotate: true
+  xy: 2, 2
+  size: 89, 47
+  orig: 94, 50
+  offset: 4, 0
+  index: -1
+Char_Jozu_skill2/001
+  rotate: true
+  xy: 51, 2
+  size: 89, 46
+  orig: 94, 50
+  offset: 4, 1
+  index: -1
+Char_Jozu_skill2/002
+  rotate: false
+  xy: 474, 6
+  size: 209, 96
+  orig: 214, 98
+  offset: 4, 0
+  index: -1
+Char_Jozu_skill2/003
+  rotate: false
+  xy: 259, 5
+  size: 213, 96
+  orig: 216, 98
+  offset: 2, 0
+  index: -1
+Char_Jozu_skill2/004
+  rotate: false
+  xy: 760, 123
+  size: 237, 113
+  orig: 242, 116
+  offset: 4, 0
+  index: -1
+Char_Jozu_skill2/005
+  rotate: false
+  xy: 760, 8
+  size: 237, 113
+  orig: 242, 116
+  offset: 4, 0
+  index: -1
+Char_Jozu_skill2/006
+  rotate: true
+  xy: 638, 104
+  size: 244, 120
+  orig: 248, 123
+  offset: 3, 0
+  index: -1
+Char_Jozu_skill2/007
+  rotate: true
+  xy: 515, 104
+  size: 244, 121
+  orig: 248, 125
+  offset: 3, 1
+  index: -1
+Char_Jozu_skill2/008
+  rotate: true
+  xy: 259, 103
+  size: 245, 125
+  orig: 250, 129
+  offset: 4, 1
+  index: -1
+Char_Jozu_skill2/009
+  rotate: true
+  xy: 386, 104
+  size: 244, 127
+  orig: 250, 131
+  offset: 4, 1
+  index: -1
+Char_Jozu_skill2/010
+  rotate: true
+  xy: 122, 94
+  size: 254, 135
+  orig: 261, 139
+  offset: 5, 1
+  index: -1
+Char_Jozu_skill2/011
+  rotate: true
+  xy: 2, 93
+  size: 255, 118
+  orig: 261, 123
+  offset: 4, 1
+  index: -1
+Char_Jozu_skill2/012
+  rotate: false
+  xy: 760, 238
+  size: 243, 110
+  orig: 249, 114
+  offset: 4, 1
+  index: -1

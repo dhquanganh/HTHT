@@ -1,0 +1,1098 @@
+
+Hero_331.png
+size: 1988,1476
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 539, 12
+  size: 20, 36
+  orig: 20, 36
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 162, 2
+  size: 19, 37
+  orig: 19, 37
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 1481, 16
+  size: 38, 52
+  orig: 38, 52
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 1008, 1141
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 1471, 288
+  size: 7, 9
+  orig: 7, 9
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 1840, 1152
+  size: 5, 10
+  orig: 5, 10
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 1521, 2
+  size: 25, 28
+  orig: 25, 28
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 1325, 134
+  size: 23, 16
+  orig: 23, 16
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 1196, 963
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 405, 1213
+  size: 11, 20
+  orig: 11, 20
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 672, 64
+  size: 11, 16
+  orig: 11, 16
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: false
+  xy: 1471, 297
+  size: 41, 15
+  orig: 41, 15
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 1420, 148
+  size: 49, 46
+  orig: 49, 46
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 1607, 125
+  size: 27, 43
+  orig: 27, 43
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: true
+  xy: 771, 1019
+  size: 31, 25
+  orig: 31, 25
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: false
+  xy: 1335, 673
+  size: 34, 51
+  orig: 34, 51
+  offset: 0, 0
+  index: -1
+cloth_14
+  rotate: false
+  xy: 1518, 74
+  size: 31, 44
+  orig: 31, 44
+  offset: 0, 0
+  index: -1
+cloth_15
+  rotate: true
+  xy: 1523, 967
+  size: 11, 9
+  orig: 13, 11
+  offset: 2, 0
+  index: -1
+cloth_16
+  rotate: false
+  xy: 488, 8
+  size: 49, 24
+  orig: 52, 27
+  offset: 3, 0
+  index: -1
+cloth_17
+  rotate: true
+  xy: 162, 41
+  size: 47, 40
+  orig: 52, 50
+  offset: 5, 1
+  index: -1
+cloth_18
+  rotate: false
+  xy: 672, 6
+  size: 36, 33
+  orig: 36, 33
+  offset: 0, 0
+  index: -1
+cloth_19
+  rotate: true
+  xy: 771, 999
+  size: 18, 19
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+cloth_20
+  rotate: true
+  xy: 1167, 962
+  size: 14, 27
+  orig: 14, 27
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 798, 1153
+  size: 9, 17
+  orig: 9, 17
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 356, 456
+  size: 9, 18
+  orig: 9, 18
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 935, 98
+  size: 28, 17
+  orig: 28, 17
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 694, 652
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 296, 711
+  size: 12, 14
+  orig: 12, 14
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 1216, 2
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 1264, 134
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 1359, 93
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+head_14
+  rotate: false
+  xy: 1359, 27
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 975, 978
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 190, 409
+  size: 12, 21
+  orig: 12, 21
+  offset: 0, 0
+  index: -1
+zoro_skill2 1201
+  rotate: false
+  xy: 1116, 2
+  size: 98, 14
+  orig: 98, 14
+  offset: 0, 0
+  index: -1
+zoro_skill2 1202
+  rotate: false
+  xy: 865, 102
+  size: 68, 24
+  orig: 68, 24
+  offset: 0, 0
+  index: -1
+zoro_skill2 1203
+  rotate: false
+  xy: 1420, 2
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+zoro_skill2 1204
+  rotate: true
+  xy: 1471, 120
+  size: 57, 68
+  orig: 57, 68
+  offset: 0, 0
+  index: -1
+zoro_skill2 1205
+  rotate: false
+  xy: 1851, 655
+  size: 94, 20
+  orig: 94, 20
+  offset: 0, 0
+  index: -1
+zoro_skill2 1206
+  rotate: true
+  xy: 1814, 1334
+  size: 30, 24
+  orig: 30, 24
+  offset: 0, 0
+  index: -1
+zoro_skill2 1207
+  rotate: true
+  xy: 1420, 68
+  size: 78, 42
+  orig: 78, 42
+  offset: 0, 0
+  index: -1
+zoro_skill2 1208
+  rotate: true
+  xy: 1931, 89
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: -1
+zoro_skill2 1209
+  rotate: false
+  xy: 685, 41
+  size: 89, 52
+  orig: 89, 52
+  offset: 0, 0
+  index: -1
+zoro_skill2 1210
+  rotate: true
+  xy: 1693, 1111
+  size: 37, 23
+  orig: 37, 23
+  offset: 0, 0
+  index: -1
+zoro_skill2 1211
+  rotate: false
+  xy: 1521, 29
+  size: 32, 43
+  orig: 32, 43
+  offset: 0, 0
+  index: -1
+zoro_skill2 1212
+  rotate: false
+  xy: 1931, 123
+  size: 51, 92
+  orig: 51, 94
+  offset: 0, 0
+  index: -1
+zoro_skill2 1213
+  rotate: true
+  xy: 694, 672
+  size: 114, 42
+  orig: 114, 42
+  offset: 0, 0
+  index: -1
+zoro_skill2 1214
+  rotate: true
+  xy: 577, 5
+  size: 75, 93
+  orig: 75, 93
+  offset: 0, 0
+  index: -1
+zoro_skill2 1215
+  rotate: false
+  xy: 1501, 1126
+  size: 20, 22
+  orig: 20, 22
+  offset: 0, 0
+  index: -1
+zoro_skill2 1216
+  rotate: false
+  xy: 738, 726
+  size: 29, 29
+  orig: 29, 29
+  offset: 0, 0
+  index: -1
+zoro_skill2 1217
+  rotate: false
+  xy: 432, 725
+  size: 58, 65
+  orig: 58, 65
+  offset: 0, 0
+  index: -1
+zoro_skill2 1218
+  rotate: false
+  xy: 1325, 159
+  size: 93, 35
+  orig: 93, 35
+  offset: 0, 0
+  index: -1
+zoro_skill2_03_ef
+  rotate: true
+  xy: 1718, 1107
+  size: 211, 120
+  orig: 211, 120
+  offset: 0, 0
+  index: -1
+zoro_skill2_16_ef_2
+  rotate: true
+  xy: 296, 725
+  size: 294, 134
+  orig: 294, 134
+  offset: 0, 0
+  index: -1
+zoro_skill2_17_ef_2
+  rotate: true
+  xy: 2, 388
+  size: 321, 186
+  orig: 321, 186
+  offset: 0, 0
+  index: -1
+zoro_skill2_18_ef_1
+  rotate: false
+  xy: 1047, 1136
+  size: 222, 179
+  orig: 222, 179
+  offset: 0, 0
+  index: -1
+zoro_skill2_18_ef_2
+  rotate: true
+  xy: 204, 169
+  size: 261, 161
+  orig: 261, 161
+  offset: 0, 0
+  index: -1
+zoro_skill2_19_ef
+  rotate: false
+  xy: 2, 1021
+  size: 401, 212
+  orig: 401, 212
+  offset: 0, 0
+  index: -1
+zoro_skill2_19_ef_2
+  rotate: false
+  xy: 367, 173
+  size: 115, 61
+  orig: 115, 61
+  offset: 0, 0
+  index: -1
+zoro_skill2_20_ef
+  rotate: false
+  xy: 418, 1261
+  size: 397, 213
+  orig: 397, 213
+  offset: 0, 0
+  index: -1
+zoro_skill2_22_ef
+  rotate: true
+  xy: 1264, 200
+  size: 115, 61
+  orig: 115, 61
+  offset: 0, 0
+  index: -1
+zorotwo_beat_01
+  rotate: false
+  xy: 1401, 957
+  size: 120, 163
+  orig: 122, 163
+  offset: 2, 0
+  index: -1
+zorotwo_beat_02
+  rotate: false
+  xy: 771, 841
+  size: 202, 156
+  orig: 202, 156
+  offset: 0, 0
+  index: -1
+zorotwo_beat_02_ef
+  rotate: false
+  xy: 1541, 135
+  size: 64, 42
+  orig: 64, 42
+  offset: 0, 0
+  index: -1
+zorotwo_beat_03
+  rotate: true
+  xy: 1693, 979
+  size: 126, 152
+  orig: 153, 162
+  offset: 14, 5
+  index: -1
+zorotwo_beat_04
+  rotate: false
+  xy: 1008, 978
+  size: 204, 156
+  orig: 204, 156
+  offset: 0, 0
+  index: -1
+zorotwo_beat_05
+  rotate: true
+  xy: 1371, 824
+  size: 131, 161
+  orig: 131, 161
+  offset: 0, 0
+  index: -1
+zorotwo_beat_06
+  rotate: true
+  xy: 1371, 670
+  size: 152, 161
+  orig: 152, 161
+  offset: 0, 0
+  index: -1
+zorotwo_beat_07
+  rotate: true
+  xy: 1534, 653
+  size: 152, 161
+  orig: 152, 161
+  offset: 0, 0
+  index: -1
+zorotwo_beat_08
+  rotate: false
+  xy: 1697, 652
+  size: 152, 161
+  orig: 152, 161
+  offset: 0, 0
+  index: -1
+zorotwo_beat_11
+  rotate: false
+  xy: 1214, 962
+  size: 185, 158
+  orig: 185, 158
+  offset: 0, 0
+  index: -1
+zorotwo_beat_11_ef
+  rotate: false
+  xy: 1602, 201
+  size: 69, 85
+  orig: 71, 87
+  offset: 2, 2
+  index: -1
+zorotwo_beat_12
+  rotate: false
+  xy: 929, 565
+  size: 129, 156
+  orig: 129, 156
+  offset: 0, 0
+  index: -1
+zorotwo_beat_13
+  rotate: false
+  xy: 1060, 556
+  size: 118, 166
+  orig: 118, 166
+  offset: 0, 0
+  index: -1
+zorotwo_damage
+  rotate: true
+  xy: 1514, 288
+  size: 110, 157
+  orig: 110, 157
+  offset: 0, 0
+  index: -1
+zorotwo_dead_01
+  rotate: false
+  xy: 738, 757
+  size: 30, 29
+  orig: 30, 29
+  offset: 0, 0
+  index: -1
+zorotwo_dead_02
+  rotate: true
+  xy: 1464, 70
+  size: 48, 52
+  orig: 50, 52
+  offset: 0, 0
+  index: -1
+zorotwo_dead_03
+  rotate: false
+  xy: 1607, 154
+  size: 47, 45
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_01
+  rotate: true
+  xy: 1814, 1366
+  size: 108, 172
+  orig: 108, 172
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_02
+  rotate: true
+  xy: 1335, 562
+  size: 106, 166
+  orig: 106, 166
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_03
+  rotate: true
+  xy: 648, 1164
+  size: 95, 167
+  orig: 95, 167
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_04
+  rotate: true
+  xy: 1817, 319
+  size: 95, 167
+  orig: 95, 167
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_07
+  rotate: true
+  xy: 1817, 217
+  size: 100, 160
+  orig: 100, 160
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_08
+  rotate: false
+  xy: 629, 477
+  size: 115, 173
+  orig: 115, 173
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_09
+  rotate: false
+  xy: 784, 299
+  size: 132, 181
+  orig: 132, 181
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_10
+  rotate: false
+  xy: 583, 875
+  size: 186, 175
+  orig: 186, 175
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_11
+  rotate: true
+  xy: 817, 1153
+  size: 162, 228
+  orig: 162, 228
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_12
+  rotate: false
+  xy: 1534, 807
+  size: 153, 171
+  orig: 153, 171
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_18
+  rotate: false
+  xy: 1180, 561
+  size: 153, 163
+  orig: 153, 163
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_19
+  rotate: false
+  xy: 954, 136
+  size: 153, 163
+  orig: 153, 163
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_20
+  rotate: false
+  xy: 1109, 136
+  size: 153, 163
+  orig: 153, 163
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_21
+  rotate: true
+  xy: 1352, 408
+  size: 152, 161
+  orig: 152, 161
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_22
+  rotate: false
+  xy: 954, 2
+  size: 160, 132
+  orig: 160, 132
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_28
+  rotate: false
+  xy: 1167, 844
+  size: 202, 116
+  orig: 202, 116
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_29
+  rotate: false
+  xy: 770, 723
+  size: 202, 116
+  orig: 202, 116
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_30
+  rotate: false
+  xy: 1167, 726
+  size: 202, 116
+  orig: 202, 116
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_33
+  rotate: true
+  xy: 1689, 815
+  size: 162, 158
+  orig: 162, 158
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_34
+  rotate: false
+  xy: 503, 476
+  size: 124, 174
+  orig: 124, 174
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_35
+  rotate: false
+  xy: 1843, 502
+  size: 143, 148
+  orig: 143, 148
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_36
+  rotate: false
+  xy: 204, 2
+  size: 140, 165
+  orig: 140, 165
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_38
+  rotate: false
+  xy: 921, 422
+  size: 136, 141
+  orig: 136, 141
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_39
+  rotate: true
+  xy: 560, 272
+  size: 202, 116
+  orig: 202, 116
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_40
+  rotate: false
+  xy: 346, 2
+  size: 140, 165
+  orig: 140, 165
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_10
+  rotate: false
+  xy: 1471, 179
+  size: 129, 107
+  orig: 129, 107
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_11
+  rotate: false
+  xy: 356, 476
+  size: 145, 247
+  orig: 145, 247
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_18
+  rotate: false
+  xy: 776, 96
+  size: 87, 177
+  orig: 87, 177
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_19
+  rotate: false
+  xy: 685, 95
+  size: 89, 178
+  orig: 89, 178
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_20
+  rotate: true
+  xy: 583, 788
+  size: 85, 185
+  orig: 85, 185
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_21
+  rotate: true
+  xy: 1820, 416
+  size: 84, 165
+  orig: 84, 165
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_22
+  rotate: true
+  xy: 418, 1167
+  size: 92, 228
+  orig: 92, 229
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_23
+  rotate: true
+  xy: 678, 275
+  size: 200, 104
+  orig: 200, 104
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_24
+  rotate: false
+  xy: 817, 1317
+  size: 393, 157
+  orig: 393, 157
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_25
+  rotate: false
+  xy: 2, 1235
+  size: 414, 239
+  orig: 414, 239
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_26
+  rotate: false
+  xy: 2, 711
+  size: 292, 308
+  orig: 292, 308
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_27
+  rotate: false
+  xy: 2, 90
+  size: 200, 296
+  orig: 200, 296
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_33
+  rotate: false
+  xy: 1249, 317
+  size: 99, 107
+  orig: 99, 107
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_34
+  rotate: false
+  xy: 1260, 34
+  size: 97, 98
+  orig: 97, 98
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_35
+  rotate: true
+  xy: 1060, 724
+  size: 116, 105
+  orig: 116, 105
+  offset: 0, 0
+  index: -1
+zorotwo_skill1_ef_37
+  rotate: true
+  xy: 1849, 868
+  size: 126, 137
+  orig: 126, 137
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_01
+  rotate: true
+  xy: 776, 2
+  size: 92, 162
+  orig: 92, 162
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_02
+  rotate: true
+  xy: 1116, 18
+  size: 116, 142
+  orig: 116, 142
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_03
+  rotate: false
+  xy: 1501, 1150
+  size: 215, 168
+  orig: 215, 168
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_04
+  rotate: true
+  xy: 1515, 400
+  size: 160, 148
+  orig: 160, 148
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_13
+  rotate: false
+  xy: 1271, 1122
+  size: 228, 196
+  orig: 228, 196
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_14
+  rotate: true
+  xy: 367, 236
+  size: 238, 191
+  orig: 238, 191
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_15
+  rotate: true
+  xy: 190, 432
+  size: 277, 164
+  orig: 277, 164
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_16
+  rotate: false
+  xy: 798, 999
+  size: 208, 152
+  orig: 208, 152
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_17
+  rotate: false
+  xy: 1514, 1320
+  size: 298, 154
+  orig: 298, 154
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_18
+  rotate: false
+  xy: 1212, 1320
+  size: 300, 154
+  orig: 355, 161
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_19
+  rotate: false
+  xy: 975, 842
+  size: 190, 134
+  orig: 190, 134
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_20
+  rotate: true
+  xy: 1851, 677
+  size: 189, 134
+  orig: 189, 134
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_21
+  rotate: false
+  xy: 503, 652
+  size: 189, 134
+  orig: 189, 134
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_26
+  rotate: true
+  xy: 1847, 996
+  size: 166, 139
+  orig: 166, 139
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_27
+  rotate: true
+  xy: 405, 1021
+  size: 144, 171
+  orig: 144, 171
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_33
+  rotate: true
+  xy: 1673, 279
+  size: 136, 142
+  orig: 136, 142
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_34
+  rotate: true
+  xy: 1327, 196
+  size: 116, 142
+  orig: 116, 142
+  offset: 0, 0
+  index: -1
+zorotwo_skill2_35
+  rotate: true
+  xy: 1350, 314
+  size: 92, 162
+  orig: 92, 162
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_02
+  rotate: false
+  xy: 1803, 96
+  size: 126, 119
+  orig: 126, 119
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_03
+  rotate: false
+  xy: 746, 583
+  size: 181, 138
+  orig: 181, 138
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_05
+  rotate: false
+  xy: 1665, 417
+  size: 153, 141
+  orig: 153, 141
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_06
+  rotate: false
+  xy: 918, 301
+  size: 163, 119
+  orig: 163, 119
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_07
+  rotate: false
+  xy: 1059, 425
+  size: 147, 129
+  orig: 147, 129
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_09
+  rotate: true
+  xy: 432, 792
+  size: 227, 149
+  orig: 241, 168
+  offset: 14, 7
+  index: -1
+zorotwo_skill3_10
+  rotate: false
+  xy: 1208, 426
+  size: 142, 133
+  orig: 142, 133
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_11_ef
+  rotate: false
+  xy: 1840, 1164
+  size: 144, 200
+  orig: 144, 200
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_12_ef
+  rotate: false
+  xy: 488, 34
+  size: 87, 200
+  orig: 87, 200
+  offset: 0, 0
+  index: -1
+zorotwo_skill3_14
+  rotate: true
+  xy: 578, 1052
+  size: 110, 218
+  orig: 135, 241
+  offset: 13, 22
+  index: -1
+zorotwo_squat
+  rotate: true
+  xy: 1673, 170
+  size: 107, 128
+  orig: 107, 128
+  offset: 0, 0
+  index: -1
+zorotwo_standby 01
+  rotate: true
+  xy: 1503, 562
+  size: 89, 168
+  orig: 178, 180
+  offset: 45, 6
+  index: -1
+zorotwo_standby_02
+  rotate: true
+  xy: 1673, 560
+  size: 90, 168
+  orig: 178, 180
+  offset: 44, 6
+  index: -1
+zorotwo_win_01
+  rotate: false
+  xy: 865, 128
+  size: 87, 169
+  orig: 87, 169
+  offset: 0, 0
+  index: -1
+zorotwo_win_02
+  rotate: true
+  xy: 1083, 301
+  size: 122, 164
+  orig: 122, 164
+  offset: 0, 0
+  index: -1
+zorotwo_win_03
+  rotate: false
+  xy: 1523, 980
+  size: 168, 168
+  orig: 168, 168
+  offset: 0, 0
+  index: -1
+zorotwo_win_04
+  rotate: false
+  xy: 577, 82
+  size: 106, 188
+  orig: 106, 188
+  offset: 0, 0
+  index: -1
+zorotwo_win_04_ef
+  rotate: false
+  xy: 2, 2
+  size: 158, 86
+  orig: 158, 86
+  offset: 0, 0
+  index: -1
+zorotwo_win_05
+  rotate: true
+  xy: 746, 482
+  size: 99, 173
+  orig: 99, 173
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,782 @@
+
+Hero_171.png
+size: 1024,992
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 452, 968
+  size: 21, 40
+  orig: 21, 40
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 165, 971
+  size: 18, 40
+  orig: 18, 40
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 2, 881
+  size: 58, 62
+  orig: 58, 62
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 2, 976
+  size: 13, 23
+  orig: 13, 23
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 585, 922
+  size: 49, 43
+  orig: 49, 43
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 435, 925
+  size: 41, 50
+  orig: 41, 50
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 217, 863
+  size: 65, 69
+  orig: 65, 69
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 282, 970
+  size: 26, 19
+  orig: 26, 19
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 835, 959
+  size: 34, 30
+  orig: 34, 30
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 713, 965
+  size: 35, 24
+  orig: 35, 24
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 361, 969
+  size: 20, 27
+  orig: 20, 27
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: false
+  xy: 750, 963
+  size: 41, 26
+  orig: 41, 26
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 519, 967
+  size: 46, 22
+  orig: 46, 22
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: false
+  xy: 793, 963
+  size: 40, 26
+  orig: 40, 26
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: true
+  xy: 988, 954
+  size: 35, 34
+  orig: 38, 37
+  offset: 3, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 97, 972
+  size: 17, 24
+  orig: 17, 24
+  offset: 0, 0
+  index: -1
+f-atm_L_04
+  rotate: true
+  xy: 390, 969
+  size: 20, 25
+  orig: 20, 25
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 207, 971
+  size: 28, 18
+  orig: 28, 18
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 237, 971
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+gladius_beat 01
+  rotate: true
+  xy: 2, 422
+  size: 111, 161
+  orig: 134, 175
+  offset: 18, 6
+  index: -1
+gladius_beat 02
+  rotate: true
+  xy: 425, 245
+  size: 126, 162
+  orig: 145, 170
+  offset: 15, 3
+  index: -1
+gladius_beat 03
+  rotate: true
+  xy: 2, 293
+  size: 127, 159
+  orig: 139, 171
+  offset: 8, 6
+  index: -1
+gladius_beat 04
+  rotate: true
+  xy: 512, 96
+  size: 140, 159
+  orig: 154, 169
+  offset: 9, 5
+  index: -1
+gladius_beat 13
+  rotate: true
+  xy: 758, 237
+  size: 128, 158
+  orig: 148, 173
+  offset: 13, 9
+  index: -1
+gladius_damage
+  rotate: true
+  xy: 705, 594
+  size: 107, 160
+  orig: 119, 177
+  offset: 4, 8
+  index: -1
+gladius_idling  101
+  rotate: false
+  xy: 85, 938
+  size: 62, 32
+  orig: 79, 53
+  offset: 11, 7
+  index: -1
+gladius_rise
+  rotate: false
+  xy: 914, 748
+  size: 97, 145
+  orig: 134, 173
+  offset: 23, 16
+  index: -1
+gladius_skill1 201
+  rotate: true
+  xy: 648, 966
+  size: 23, 26
+  orig: 23, 26
+  offset: 0, 0
+  index: -1
+gladius_skill1 202
+  rotate: true
+  xy: 676, 966
+  size: 23, 35
+  orig: 23, 35
+  offset: 0, 0
+  index: -1
+gladius_skill1 203
+  rotate: true
+  xy: 72, 974
+  size: 15, 23
+  orig: 15, 23
+  offset: 0, 0
+  index: -1
+gladius_skill1 204
+  rotate: true
+  xy: 567, 967
+  size: 22, 34
+  orig: 22, 34
+  offset: 0, 0
+  index: -1
+gladius_skill1 701
+  rotate: true
+  xy: 636, 920
+  size: 44, 45
+  orig: 44, 45
+  offset: 0, 0
+  index: -1
+gladius_skill1 702
+  rotate: false
+  xy: 310, 970
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+gladius_skill1 703
+  rotate: false
+  xy: 261, 971
+  size: 19, 18
+  orig: 19, 18
+  offset: 0, 0
+  index: -1
+gladius_skill1 704
+  rotate: false
+  xy: 487, 923
+  size: 48, 42
+  orig: 48, 42
+  offset: 0, 0
+  index: -1
+gladius_skill1 705
+  rotate: true
+  xy: 871, 959
+  size: 30, 33
+  orig: 30, 33
+  offset: 0, 0
+  index: -1
+gladius_skill1 706
+  rotate: false
+  xy: 906, 959
+  size: 46, 30
+  orig: 46, 30
+  offset: 0, 0
+  index: -1
+gladius_skill1 707
+  rotate: false
+  xy: 287, 930
+  size: 39, 38
+  orig: 39, 38
+  offset: 0, 0
+  index: -1
+gladius_skill1 708
+  rotate: false
+  xy: 537, 923
+  size: 46, 42
+  orig: 46, 42
+  offset: 0, 0
+  index: -1
+gladius_skill1 709
+  rotate: true
+  xy: 789, 903
+  size: 54, 73
+  orig: 54, 73
+  offset: 0, 0
+  index: -1
+gladius_skill1_03
+  rotate: true
+  xy: 744, 805
+  size: 96, 168
+  orig: 106, 185
+  offset: 6, 10
+  index: -1
+gladius_skill1_04
+  rotate: true
+  xy: 565, 819
+  size: 90, 177
+  orig: 92, 177
+  offset: 2, 0
+  index: -1
+gladius_skill1_05
+  rotate: true
+  xy: 349, 732
+  size: 98, 185
+  orig: 98, 185
+  offset: 0, 0
+  index: -1
+gladius_skill1_06
+  rotate: true
+  xy: 324, 520
+  size: 107, 186
+  orig: 107, 186
+  offset: 0, 0
+  index: -1
+gladius_skill1_11
+  rotate: false
+  xy: 162, 2
+  size: 158, 143
+  orig: 170, 159
+  offset: 8, 6
+  index: -1
+gladius_skill1_12
+  rotate: false
+  xy: 673, 95
+  size: 158, 140
+  orig: 179, 153
+  offset: 10, 5
+  index: -1
+gladius_skill1_12a
+  rotate: false
+  xy: 833, 95
+  size: 165, 140
+  orig: 179, 153
+  offset: 6, 5
+  index: -1
+gladius_skill1_13
+  rotate: false
+  xy: 2, 152
+  size: 158, 139
+  orig: 182, 155
+  offset: 14, 6
+  index: -1
+gladius_skill1_13a
+  rotate: false
+  xy: 345, 104
+  size: 165, 139
+  orig: 182, 155
+  offset: 10, 6
+  index: -1
+gladius_skill1_15
+  rotate: false
+  xy: 2, 10
+  size: 158, 140
+  orig: 172, 152
+  offset: 8, 7
+  index: -1
+gladius_skill1_17
+  rotate: true
+  xy: 589, 238
+  size: 127, 167
+  orig: 127, 167
+  offset: 0, 0
+  index: -1
+gladius_skill2_02
+  rotate: true
+  xy: 520, 612
+  size: 105, 183
+  orig: 105, 183
+  offset: 0, 0
+  index: -1
+gladius_skill2_03
+  rotate: true
+  xy: 336, 629
+  size: 101, 182
+  orig: 101, 182
+  offset: 0, 0
+  index: -1
+gladius_skill2_04
+  rotate: true
+  xy: 162, 147
+  size: 132, 181
+  orig: 132, 181
+  offset: 0, 0
+  index: -1
+gladius_skill2_05
+  rotate: true
+  xy: 487, 373
+  size: 125, 180
+  orig: 125, 180
+  offset: 0, 0
+  index: -1
+gladius_skill2_1501
+  rotate: false
+  xy: 734, 911
+  size: 53, 50
+  orig: 53, 50
+  offset: 0, 0
+  index: -1
+gladius_skill2_1502
+  rotate: false
+  xy: 669, 367
+  size: 260, 112
+  orig: 260, 112
+  offset: 0, 0
+  index: -1
+gladius_skill2_1503
+  rotate: false
+  xy: 163, 281
+  size: 260, 122
+  orig: 260, 122
+  offset: 0, 0
+  index: -1
+gladius_skill2_1504
+  rotate: false
+  xy: 66, 873
+  size: 149, 60
+  orig: 149, 60
+  offset: 0, 0
+  index: -1
+gladius_skill2_1505
+  rotate: false
+  xy: 288, 847
+  size: 157, 76
+  orig: 157, 76
+  offset: 0, 0
+  index: -1
+gladius_skill2_1506
+  rotate: false
+  xy: 447, 832
+  size: 116, 89
+  orig: 116, 89
+  offset: 0, 0
+  index: -1
+gladius_skill2_1507
+  rotate: false
+  xy: 328, 929
+  size: 52, 38
+  orig: 52, 38
+  offset: 0, 0
+  index: -1
+gladius_skill3 1503
+  rotate: false
+  xy: 123, 972
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+gladius_skill3 1504
+  rotate: true
+  xy: 954, 959
+  size: 30, 32
+  orig: 30, 32
+  offset: 0, 0
+  index: -1
+gladius_skill3 1505
+  rotate: false
+  xy: 603, 967
+  size: 43, 22
+  orig: 43, 22
+  offset: 0, 0
+  index: -1
+gladius_skill3 1506
+  rotate: true
+  xy: 417, 969
+  size: 20, 33
+  orig: 20, 33
+  offset: 0, 0
+  index: -1
+gladius_skill3 1507
+  rotate: false
+  xy: 202, 935
+  size: 39, 34
+  orig: 39, 34
+  offset: 0, 0
+  index: -1
+gladius_skill3 1508
+  rotate: false
+  xy: 382, 929
+  size: 51, 38
+  orig: 51, 38
+  offset: 0, 0
+  index: -1
+gladius_skill3 1509
+  rotate: false
+  xy: 41, 941
+  size: 42, 31
+  orig: 42, 31
+  offset: 0, 0
+  index: -1
+gladius_skill3 1510
+  rotate: false
+  xy: 932, 895
+  size: 73, 57
+  orig: 73, 57
+  offset: 0, 0
+  index: -1
+gladius_skill3 1511
+  rotate: false
+  xy: 864, 903
+  size: 66, 54
+  orig: 66, 54
+  offset: 0, 0
+  index: -1
+gladius_skill3 1512
+  rotate: true
+  xy: 2, 943
+  size: 30, 37
+  orig: 30, 37
+  offset: 0, 0
+  index: -1
+gladius_skill3 1513
+  rotate: false
+  xy: 683, 915
+  size: 49, 48
+  orig: 49, 48
+  offset: 0, 0
+  index: -1
+gladius_skill3 1514
+  rotate: false
+  xy: 149, 937
+  size: 51, 32
+  orig: 51, 32
+  offset: 0, 0
+  index: -1
+gladius_skill3 1515
+  rotate: false
+  xy: 494, 968
+  size: 23, 21
+  orig: 23, 21
+  offset: 0, 0
+  index: -1
+gladius_skill3_01
+  rotate: true
+  xy: 2, 775
+  size: 96, 163
+  orig: 115, 175
+  offset: 13, 4
+  index: -1
+gladius_skill3_02
+  rotate: true
+  xy: 2, 667
+  size: 106, 155
+  orig: 118, 166
+  offset: 8, 3
+  index: -1
+gladius_skill3_03
+  rotate: false
+  xy: 895, 593
+  size: 116, 153
+  orig: 127, 161
+  offset: 8, 2
+  index: -1
+gladius_skill3_04
+  rotate: true
+  xy: 2, 547
+  size: 118, 154
+  orig: 127, 162
+  offset: 6, 5
+  index: -1
+gladius_skill3_05
+  rotate: true
+  xy: 165, 407
+  size: 126, 155
+  orig: 131, 173
+  offset: 0, 8
+  index: -1
+gladius_standby 01
+  rotate: true
+  xy: 167, 749
+  size: 96, 180
+  orig: 115, 194
+  offset: 7, 6
+  index: -1
+gladius_standby 02
+  rotate: true
+  xy: 536, 719
+  size: 98, 180
+  orig: 110, 193
+  offset: 7, 5
+  index: -1
+gladius_win_02
+  rotate: true
+  xy: 718, 703
+  size: 100, 175
+  orig: 100, 175
+  offset: 0, 0
+  index: -1
+gladius_win_03
+  rotate: true
+  xy: 158, 535
+  size: 110, 164
+  orig: 110, 164
+  offset: 0, 0
+  index: -1
+gladius_win_04
+  rotate: true
+  xy: 512, 500
+  size: 110, 164
+  orig: 110, 164
+  offset: 0, 0
+  index: -1
+gladius_win_05
+  rotate: true
+  xy: 322, 405
+  size: 113, 163
+  orig: 113, 163
+  offset: 0, 0
+  index: -1
+gladius_win_06
+  rotate: true
+  xy: 678, 482
+  size: 110, 164
+  orig: 110, 164
+  offset: 0, 0
+  index: -1
+gladius_win_07
+  rotate: true
+  xy: 844, 481
+  size: 110, 164
+  orig: 110, 164
+  offset: 0, 0
+  index: -1
+gladius_win_08
+  rotate: true
+  xy: 159, 647
+  size: 100, 175
+  orig: 100, 175
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 145, 972
+  size: 18, 17
+  orig: 25, 23
+  offset: 5, 1
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 27, 975
+  size: 18, 14
+  orig: 18, 14
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 243, 931
+  size: 42, 37
+  orig: 42, 37
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 47, 975
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 331, 970
+  size: 19, 28
+  orig: 19, 28
+  offset: 0, 0
+  index: -1
+
+Hero_1712.png
+size: 1012,1012
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gladius_beat 05
+  rotate: true
+  xy: 743, 26
+  size: 171, 159
+  orig: 192, 169
+  offset: 17, 4
+  index: -1
+gladius_beat 06
+  rotate: true
+  xy: 2, 2
+  size: 174, 159
+  orig: 188, 175
+  offset: 10, 9
+  index: -1
+gladius_beat 07
+  rotate: true
+  xy: 368, 6
+  size: 198, 162
+  orig: 217, 176
+  offset: 15, 6
+  index: -1
+gladius_beat 08
+  rotate: false
+  xy: 726, 366
+  size: 219, 163
+  orig: 247, 172
+  offset: 18, 4
+  index: -1
+gladius_beat 09
+  rotate: true
+  xy: 337, 289
+  size: 240, 169
+  orig: 259, 186
+  offset: 15, 11
+  index: -1
+gladius_beat 10
+  rotate: false
+  xy: 728, 691
+  size: 268, 157
+  orig: 287, 172
+  offset: 15, 9
+  index: -1
+gladius_beat 11
+  rotate: false
+  xy: 728, 850
+  size: 269, 158
+  orig: 297, 177
+  offset: 22, 13
+  index: -1
+gladius_beat 12
+  rotate: false
+  xy: 728, 531
+  size: 243, 158
+  orig: 259, 170
+  offset: 6, 6
+  index: -1
+gladius_skill1_11a
+  rotate: true
+  xy: 867, 199
+  size: 165, 143
+  orig: 170, 159
+  offset: 4, 6
+  index: -1
+gladius_skill1_14
+  rotate: true
+  xy: 722, 206
+  size: 158, 143
+  orig: 169, 153
+  offset: 6, 4
+  index: -1
+gladius_skill2_06
+  rotate: true
+  xy: 508, 206
+  size: 181, 212
+  orig: 181, 212
+  offset: 0, 0
+  index: -1
+gladius_skill2_07
+  rotate: true
+  xy: 163, 4
+  size: 172, 203
+  orig: 172, 203
+  offset: 0, 0
+  index: -1
+gladius_skill2_08
+  rotate: true
+  xy: 508, 389
+  size: 206, 216
+  orig: 206, 216
+  offset: 0, 0
+  index: -1
+gladius_skill2_09
+  rotate: true
+  xy: 532, 14
+  size: 190, 209
+  orig: 190, 209
+  offset: 0, 0
+  index: -1
+gladius_skill2_18
+  rotate: true
+  xy: 2, 178
+  size: 351, 333
+  orig: 351, 334
+  offset: 0, 0
+  index: -1
+gladius_skill2_19
+  rotate: false
+  xy: 2, 597
+  size: 724, 411
+  orig: 724, 411
+  offset: 0, 0
+  index: -1

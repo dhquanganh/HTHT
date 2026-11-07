@@ -374,7 +374,7 @@
     "id": 53,
     "name": "BossOfWorldScene",
     "prefab": false,
-    "nodes": 4,
+    "nodes": 68,
     "path": "scenes/53.json"
   },
   {
@@ -4002,5 +4002,19 @@
     "prefab": true,
     "nodes": 24,
     "path": "scenes/1515.json"
+  },
+  {
+    "id": 1600,
+    "name": "PopupTopBoss",
+    "prefab": false,
+    "nodes": 82,
+    "path": "scenes/1600.json"
+  },
+  {
+    "id": 1700,
+    "name": "MermaidIsland",
+    "prefab": false,
+    "nodes": 47,
+    "path": "scenes/1700.json"
   }
 ]

@@ -1,0 +1,497 @@
+{
+  "assets/resources/_pack2/heroes/576/cuts_576.atlas.txt": {
+    "type": "TextAsset"
+  },
+  "assets/resources/_pack2/heroes/576/cuts_576.png": {
+    "type": "Texture2D"
+  },
+  "assets/resources/_pack2/heroes/576/cuts_576.skel.bytes": {
+    "type": "TextAsset"
+  },
+  "assets/resources/_pack2/heroes/576/cuts_576_atlas.asset": {
+    "type": "MonoBehaviour",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 1008803689438726606
+      },
+      "m_Name": "Cuts_576_Atlas",
+      "atlasFile": {
+        "m_FileID": 0,
+        "m_PathID": 1970244301771086930
+      },
+      "materials": [
+        {
+          "m_FileID": 0,
+          "m_PathID": -4241612313984887842
+        }
+      ]
+    }
+  },
+  "assets/resources/_pack2/heroes/576/cuts_576_material.mat": {
+    "type": "Material",
+    "data": {
+      "m_Name": "Cuts_576_Material",
+      "m_Shader": {
+        "m_FileID": 0,
+        "m_PathID": -905636281508599772
+      },
+      "m_ValidKeywords": [],
+      "m_InvalidKeywords": [
+        "_USE8NEIGHBOURHOOD_ON"
+      ],
+      "m_LightmapFlags": 4,
+      "m_EnableInstancingVariants": false,
+      "m_DoubleSidedGI": false,
+      "m_CustomRenderQueue": -1,
+      "stringTagMap": [],
+      "disabledShaderPasses": [],
+      "m_SavedProperties": {
+        "m_TexEnvs": [
+          [
+            "_MainTex",
+            {
+              "m_Texture": {
+                "m_FileID": 0,
+                "m_PathID": 5686297296515253814
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          ]
+        ],
+        "m_Ints": [],
+        "m_Floats": [
+          [
+            "_Cutoff",
+            0.10000000149011612
+          ],
+          [
+            "_OutlineMipLevel",
+            0.0
+          ],
+          [
+            "_OutlineReferenceTexWidth",
+            1024.0
+          ],
+          [
+            "_OutlineSmoothness",
+            1.0
+          ],
+          [
+            "_OutlineWidth",
+            3.0
+          ],
+          [
+            "_StencilComp",
+            8.0
+          ],
+          [
+            "_StencilRef",
+            1.0
+          ],
+          [
+            "_StraightAlphaInput",
+            0.0
+          ],
+          [
+            "_ThresholdEnd",
+            0.25
+          ],
+          [
+            "_Use8Neighbourhood",
+            1.0
+          ]
+        ],
+        "m_Colors": [
+          [
+            "_OutlineColor",
+            {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 0.0,
+              "a": 1.0
+            }
+          ]
+        ]
+      },
+      "m_BuildTextureStacks": []
+    }
+  },
+  "assets/resources/_pack2/heroes/576/cuts_576_skeletondata.asset": {
+    "type": "MonoBehaviour",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 8302033850027404168
+      },
+      "m_Name": "Cuts_576_SkeletonData",
+      "atlasAssets": [
+        {
+          "m_FileID": 0,
+          "m_PathID": -9094006311219913756
+        }
+      ],
+      "scale": 0.009999999776482582,
+      "skeletonJSON": {
+        "m_FileID": 0,
+        "m_PathID": -7798947566839296261
+      },
+      "skeletonDataModifiers": [],
+      "fromAnimation": [],
+      "toAnimation": [],
+      "duration": [],
+      "defaultMix": 0.20000000298023224,
+      "controller": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    }
+  },
+  "assets/resources/_pack2/heroes/576/hero_576.atlas.txt": {
+    "type": "TextAsset"
+  },
+  "assets/resources/_pack2/heroes/576/hero_576.png": {
+    "type": "Texture2D"
+  },
+  "assets/resources/_pack2/heroes/576/hero_576.skel.bytes": {
+    "type": "TextAsset"
+  },
+  "assets/resources/_pack2/heroes/576/hero_576_atlas.asset": {
+    "type": "MonoBehaviour",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 1008803689438726606
+      },
+      "m_Name": "Hero_576_Atlas",
+      "atlasFile": {
+        "m_FileID": 0,
+        "m_PathID": 3402841148933797119
+      },
+      "materials": [
+        {
+          "m_FileID": 0,
+          "m_PathID": -3641822784017833684
+        }
+      ]
+    }
+  },
+  "assets/resources/_pack2/heroes/576/hero_576_material.mat": {
+    "type": "Material",
+    "data": {
+      "m_Name": "Hero_576_Material",
+      "m_Shader": {
+        "m_FileID": 0,
+        "m_PathID": -905636281508599772
+      },
+      "m_ValidKeywords": [],
+      "m_InvalidKeywords": [
+        "_USE8NEIGHBOURHOOD_ON"
+      ],
+      "m_LightmapFlags": 4,
+      "m_EnableInstancingVariants": false,
+      "m_DoubleSidedGI": false,
+      "m_CustomRenderQueue": -1,
+      "stringTagMap": [],
+      "disabledShaderPasses": [],
+      "m_SavedProperties": {
+        "m_TexEnvs": [
+          [
+            "_MainTex",
+            {
+              "m_Texture": {
+                "m_FileID": 0,
+                "m_PathID": -7879437702861403577
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          ]
+        ],
+        "m_Ints": [],
+        "m_Floats": [
+          [
+            "_Cutoff",
+            0.10000000149011612
+          ],
+          [
+            "_OutlineMipLevel",
+            0.0
+          ],
+          [
+            "_OutlineReferenceTexWidth",
+            1024.0
+          ],
+          [
+            "_OutlineSmoothness",
+            1.0
+          ],
+          [
+            "_OutlineWidth",
+            3.0
+          ],
+          [
+            "_StencilComp",
+            8.0
+          ],
+          [
+            "_StencilRef",
+            1.0
+          ],
+          [
+            "_StraightAlphaInput",
+            0.0
+          ],
+          [
+            "_ThresholdEnd",
+            0.25
+          ],
+          [
+            "_Use8Neighbourhood",
+            1.0
+          ]
+        ],
+        "m_Colors": [
+          [
+            "_OutlineColor",
+            {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 0.0,
+              "a": 1.0
+            }
+          ]
+        ]
+      },
+      "m_BuildTextureStacks": []
+    }
+  },
+  "assets/resources/_pack2/heroes/576/hero_576_skeletondata.asset": {
+    "type": "MonoBehaviour",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 8302033850027404168
+      },
+      "m_Name": "Hero_576_SkeletonData",
+      "atlasAssets": [
+        {
+          "m_FileID": 0,
+          "m_PathID": 7650315192916389036
+        }
+      ],
+      "scale": 0.009999999776482582,
+      "skeletonJSON": {
+        "m_FileID": 0,
+        "m_PathID": -6873612871771067305
+      },
+      "skeletonDataModifiers": [],
+      "fromAnimation": [],
+      "toAnimation": [],
+      "duration": [],
+      "defaultMix": 0.20000000298023224,
+      "controller": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    }
+  },
+  "assets/resources/_pack2/heroes/576/skill_576.atlas.txt": {
+    "type": "TextAsset"
+  },
+  "assets/resources/_pack2/heroes/576/skill_576.png": {
+    "type": "Texture2D"
+  },
+  "assets/resources/_pack2/heroes/576/skill_576.skel.bytes": {
+    "type": "TextAsset"
+  },
+  "assets/resources/_pack2/heroes/576/skill_576_atlas.asset": {
+    "type": "MonoBehaviour",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 1008803689438726606
+      },
+      "m_Name": "Skill_576_Atlas",
+      "atlasFile": {
+        "m_FileID": 0,
+        "m_PathID": 5053441325411579130
+      },
+      "materials": [
+        {
+          "m_FileID": 0,
+          "m_PathID": 5974214231359095826
+        }
+      ]
+    }
+  },
+  "assets/resources/_pack2/heroes/576/skill_576_material.mat": {
+    "type": "Material",
+    "data": {
+      "m_Name": "Skill_576_Material",
+      "m_Shader": {
+        "m_FileID": 0,
+        "m_PathID": -905636281508599772
+      },
+      "m_ValidKeywords": [],
+      "m_InvalidKeywords": [
+        "_USE8NEIGHBOURHOOD_ON"
+      ],
+      "m_LightmapFlags": 4,
+      "m_EnableInstancingVariants": false,
+      "m_DoubleSidedGI": false,
+      "m_CustomRenderQueue": -1,
+      "stringTagMap": [],
+      "disabledShaderPasses": [],
+      "m_SavedProperties": {
+        "m_TexEnvs": [
+          [
+            "_MainTex",
+            {
+              "m_Texture": {
+                "m_FileID": 0,
+                "m_PathID": -3929598785994516057
+              },
+              "m_Scale": {
+                "x": 1.0,
+                "y": 1.0
+              },
+              "m_Offset": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          ]
+        ],
+        "m_Ints": [],
+        "m_Floats": [
+          [
+            "_Cutoff",
+            0.10000000149011612
+          ],
+          [
+            "_OutlineMipLevel",
+            0.0
+          ],
+          [
+            "_OutlineReferenceTexWidth",
+            1024.0
+          ],
+          [
+            "_OutlineSmoothness",
+            1.0
+          ],
+          [
+            "_OutlineWidth",
+            3.0
+          ],
+          [
+            "_StencilComp",
+            8.0
+          ],
+          [
+            "_StencilRef",
+            1.0
+          ],
+          [
+            "_StraightAlphaInput",
+            0.0
+          ],
+          [
+            "_ThresholdEnd",
+            0.25
+          ],
+          [
+            "_Use8Neighbourhood",
+            1.0
+          ]
+        ],
+        "m_Colors": [
+          [
+            "_OutlineColor",
+            {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 0.0,
+              "a": 1.0
+            }
+          ]
+        ]
+      },
+      "m_BuildTextureStacks": []
+    }
+  },
+  "assets/resources/_pack2/heroes/576/skill_576_skeletondata.asset": {
+    "type": "MonoBehaviour",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 8302033850027404168
+      },
+      "m_Name": "Skill_576_SkeletonData",
+      "atlasAssets": [
+        {
+          "m_FileID": 0,
+          "m_PathID": 3670221886233675749
+        }
+      ],
+      "scale": 0.009999999776482582,
+      "skeletonJSON": {
+        "m_FileID": 0,
+        "m_PathID": -6314287522776648291
+      },
+      "skeletonDataModifiers": [],
+      "fromAnimation": [],
+      "toAnimation": [],
+      "duration": [],
+      "defaultMix": 0.20000000298023224,
+      "controller": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      }
+    }
+  }
+}

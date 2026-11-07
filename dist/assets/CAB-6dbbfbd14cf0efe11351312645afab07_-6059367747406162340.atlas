@@ -1,0 +1,538 @@
+
+Hero_130.png
+size: 980,772
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 952, 338
+  size: 15, 26
+  orig: 16, 27
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 490, 295
+  size: 15, 32
+  orig: 16, 33
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 803, 60
+  size: 42, 45
+  orig: 43, 46
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 950, 205
+  size: 16, 46
+  orig: 17, 47
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 951, 22
+  size: 25, 19
+  orig: 26, 20
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 895, 473
+  size: 61, 61
+  orig: 62, 62
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 803, 42
+  size: 14, 16
+  orig: 15, 17
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 732, 3
+  size: 36, 33
+  orig: 37, 34
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 951, 173
+  size: 27, 30
+  orig: 28, 31
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 602, 155
+  size: 15, 15
+  orig: 16, 23
+  offset: 1, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 802, 107
+  size: 49, 45
+  orig: 58, 46
+  offset: 1, 0
+  index: -1
+cloth_09
+  rotate: true
+  xy: 952, 320
+  size: 16, 21
+  orig: 17, 22
+  offset: 1, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 388, 112
+  size: 11, 26
+  orig: 30, 45
+  offset: 9, 12
+  index: -1
+cloth_12
+  rotate: false
+  xy: 948, 74
+  size: 29, 21
+  orig: 30, 45
+  offset: 1, 0
+  index: -1
+cloth_51
+  rotate: false
+  xy: 903, 410
+  size: 61, 61
+  orig: 62, 62
+  offset: 1, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 958, 509
+  size: 25, 20
+  orig: 26, 21
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 946, 49
+  size: 24, 23
+  orig: 25, 24
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 950, 253
+  size: 28, 25
+  orig: 29, 26
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 951, 135
+  size: 24, 36
+  orig: 25, 37
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 602, 2
+  size: 34, 43
+  orig: 35, 44
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 681, 5
+  size: 31, 49
+  orig: 32, 50
+  offset: 1, 0
+  index: -1
+izou_beat_05
+  rotate: false
+  xy: 649, 458
+  size: 109, 165
+  orig: 110, 166
+  offset: 1, 0
+  index: -1
+izou_beat_06
+  rotate: false
+  xy: 260, 453
+  size: 114, 166
+  orig: 115, 167
+  offset: 1, 0
+  index: -1
+izou_beat_301
+  rotate: true
+  xy: 647, 2
+  size: 34, 32
+  orig: 35, 33
+  offset: 1, 0
+  index: -1
+izou_beat_302
+  rotate: true
+  xy: 948, 97
+  size: 32, 30
+  orig: 33, 31
+  offset: 1, 0
+  index: -1
+izou_beat_303
+  rotate: true
+  xy: 853, 91
+  size: 38, 47
+  orig: 39, 48
+  offset: 1, 0
+  index: -1
+izou_beat_304
+  rotate: false
+  xy: 958, 487
+  size: 20, 20
+  orig: 21, 21
+  offset: 1, 0
+  index: -1
+izou_beat_305
+  rotate: true
+  xy: 416, 112
+  size: 11, 22
+  orig: 12, 23
+  offset: 1, 0
+  index: -1
+izou_beat_306
+  rotate: true
+  xy: 950, 355
+  size: 53, 28
+  orig: 54, 29
+  offset: 1, 0
+  index: -1
+izou_beat_307
+  rotate: false
+  xy: 903, 320
+  size: 47, 30
+  orig: 48, 31
+  offset: 1, 0
+  index: -1
+izou_beat_308
+  rotate: true
+  xy: 866, 16
+  size: 42, 39
+  orig: 43, 40
+  offset: 1, 0
+  index: -1
+izou_beat_309
+  rotate: false
+  xy: 770, 2
+  size: 52, 38
+  orig: 53, 39
+  offset: 1, 0
+  index: -1
+izou_beat_310
+  rotate: true
+  xy: 847, 60
+  size: 29, 44
+  orig: 30, 45
+  offset: 1, 0
+  index: -1
+izou_beat_311
+  rotate: false
+  xy: 571, 125
+  size: 29, 45
+  orig: 30, 46
+  offset: 1, 0
+  index: -1
+izou_beat_401
+  rotate: true
+  xy: 902, 89
+  size: 40, 44
+  orig: 60, 52
+  offset: 4, 2
+  index: -1
+izou_damage
+  rotate: false
+  xy: 763, 154
+  size: 97, 149
+  orig: 114, 161
+  offset: 10, 4
+  index: -1
+izou_rise
+  rotate: false
+  xy: 862, 202
+  size: 86, 111
+  orig: 87, 112
+  offset: 1, 0
+  index: -1
+izou_skill1_02
+  rotate: false
+  xy: 2, 107
+  size: 155, 157
+  orig: 156, 158
+  offset: 1, 0
+  index: -1
+izou_skill1_03
+  rotate: false
+  xy: 510, 466
+  size: 137, 157
+  orig: 138, 158
+  offset: 1, 0
+  index: -1
+izou_skill1_04
+  rotate: false
+  xy: 159, 107
+  size: 111, 158
+  orig: 112, 159
+  offset: 1, 0
+  index: -1
+izou_skill1_06
+  rotate: true
+  xy: 667, 631
+  size: 139, 158
+  orig: 140, 159
+  offset: 1, 0
+  index: -1
+izou_skill1_08
+  rotate: false
+  xy: 2, 266
+  size: 148, 167
+  orig: 149, 168
+  offset: 1, 0
+  index: -1
+izou_skill1_09
+  rotate: false
+  xy: 490, 329
+  size: 152, 135
+  orig: 153, 136
+  offset: 1, 0
+  index: -1
+izou_skill1_10
+  rotate: false
+  xy: 446, 2
+  size: 154, 121
+  orig: 155, 122
+  offset: 1, 0
+  index: -1
+izou_skill1_11
+  rotate: false
+  xy: 155, 6
+  size: 130, 99
+  orig: 131, 100
+  offset: 1, 0
+  index: -1
+izou_skill1_12
+  rotate: false
+  xy: 760, 467
+  size: 133, 156
+  orig: 134, 157
+  offset: 1, 0
+  index: -1
+izou_skill1_13
+  rotate: true
+  xy: 2, 2
+  size: 103, 151
+  orig: 104, 152
+  offset: 1, 0
+  index: -1
+izou_skill1_14
+  rotate: false
+  xy: 644, 305
+  size: 118, 151
+  orig: 119, 152
+  offset: 1, 0
+  index: -1
+izou_skill1_15
+  rotate: false
+  xy: 640, 152
+  size: 121, 151
+  orig: 122, 152
+  offset: 1, 0
+  index: -1
+izou_skill2_02
+  rotate: true
+  xy: 764, 315
+  size: 150, 137
+  orig: 151, 138
+  offset: 1, 0
+  index: -1
+izou_skill2_03
+  rotate: false
+  xy: 827, 625
+  size: 151, 145
+  orig: 152, 146
+  offset: 1, 0
+  index: -1
+izou_skill2_04
+  rotate: false
+  xy: 2, 612
+  size: 168, 158
+  orig: 169, 159
+  offset: 1, 0
+  index: -1
+izou_skill2_06
+  rotate: true
+  xy: 344, 626
+  size: 144, 164
+  orig: 145, 165
+  offset: 1, 0
+  index: -1
+izou_skill2_07
+  rotate: false
+  xy: 172, 621
+  size: 170, 149
+  orig: 171, 150
+  offset: 1, 0
+  index: -1
+izou_skill2_07_ef1
+  rotate: true
+  xy: 272, 112
+  size: 162, 114
+  orig: 163, 115
+  offset: 1, 0
+  index: -1
+izou_skill2_07_ef2
+  rotate: true
+  xy: 374, 289
+  size: 162, 114
+  orig: 163, 115
+  offset: 1, 0
+  index: -1
+izou_skill2_08
+  rotate: true
+  xy: 2, 435
+  size: 175, 149
+  orig: 176, 150
+  offset: 1, 0
+  index: -1
+izou_skill2_09
+  rotate: true
+  xy: 510, 625
+  size: 145, 155
+  orig: 146, 156
+  offset: 1, 0
+  index: -1
+izou_skill2_10
+  rotate: false
+  xy: 510, 172
+  size: 128, 155
+  orig: 129, 156
+  offset: 1, 0
+  index: -1
+izou_skill2_13
+  rotate: false
+  xy: 376, 467
+  size: 132, 157
+  orig: 133, 158
+  offset: 1, 0
+  index: -1
+izou_skill2_501
+  rotate: true
+  xy: 761, 96
+  size: 54, 39
+  orig: 55, 40
+  offset: 1, 0
+  index: -1
+izou_skill2_502
+  rotate: true
+  xy: 761, 42
+  size: 52, 40
+  orig: 53, 42
+  offset: 1, 0
+  index: -1
+izou_skill2_503
+  rotate: false
+  xy: 907, 49
+  size: 37, 38
+  orig: 38, 40
+  offset: 1, 0
+  index: -1
+izou_skill2_504
+  rotate: false
+  xy: 824, 15
+  size: 40, 43
+  orig: 41, 45
+  offset: 1, 0
+  index: -1
+izou_skill2_505
+  rotate: true
+  xy: 895, 536
+  size: 87, 69
+  orig: 88, 70
+  offset: 1, 0
+  index: -1
+izou_skill2_506
+  rotate: false
+  xy: 950, 280
+  size: 28, 38
+  orig: 38, 40
+  offset: 10, 0
+  index: -1
+izou_skill2_507
+  rotate: true
+  xy: 907, 14
+  size: 33, 42
+  orig: 41, 45
+  offset: 1, 0
+  index: -1
+izou_skill2_508
+  rotate: false
+  xy: 862, 131
+  size: 87, 69
+  orig: 88, 70
+  offset: 1, 0
+  index: -1
+izou_standby_01
+  rotate: true
+  xy: 287, 3
+  size: 107, 157
+  orig: 108, 158
+  offset: 1, 0
+  index: -1
+izou_standby_01_ef
+  rotate: true
+  xy: 510, 125
+  size: 45, 59
+  orig: 46, 60
+  offset: 1, 0
+  index: -1
+izou_standby_02
+  rotate: true
+  xy: 602, 38
+  size: 112, 157
+  orig: 113, 158
+  offset: 1, 0
+  index: -1
+izou_standby_02_ef
+  rotate: false
+  xy: 903, 352
+  size: 45, 56
+  orig: 46, 57
+  offset: 1, 0
+  index: -1
+izou_win_01
+  rotate: false
+  xy: 388, 125
+  size: 120, 162
+  orig: 121, 163
+  offset: 1, 0
+  index: -1
+izou_win_02
+  rotate: false
+  xy: 153, 442
+  size: 105, 168
+  orig: 106, 169
+  offset: 1, 0
+  index: -1
+izou_win_03
+  rotate: false
+  xy: 256, 276
+  size: 116, 164
+  orig: 117, 165
+  offset: 1, 0
+  index: -1
+izou_win_04
+  rotate: false
+  xy: 152, 267
+  size: 102, 166
+  orig: 103, 167
+  offset: 1, 0
+  index: -1

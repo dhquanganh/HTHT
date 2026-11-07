@@ -1,0 +1,97 @@
+
+Hit_190.png
+size: 664,273
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+000
+  rotate: false
+  xy: 336, 6
+  size: 36, 26
+  orig: 39, 29
+  offset: 2, 1
+  index: -1
+001
+  rotate: true
+  xy: 410, 3
+  size: 56, 63
+  orig: 60, 65
+  offset: 2, 1
+  index: -1
+002
+  rotate: true
+  xy: 410, 61
+  size: 64, 74
+  orig: 68, 76
+  offset: 2, 1
+  index: -1
+003
+  rotate: false
+  xy: 336, 34
+  size: 72, 90
+  orig: 75, 93
+  offset: 2, 1
+  index: -1
+004
+  rotate: true
+  xy: 233, 8
+  size: 115, 101
+  orig: 119, 103
+  offset: 2, 0
+  index: -1
+005
+  rotate: false
+  xy: 116, 6
+  size: 115, 117
+  orig: 119, 120
+  offset: 2, 1
+  index: -1
+006
+  rotate: false
+  xy: 2, 2
+  size: 112, 121
+  orig: 116, 124
+  offset: 3, 1
+  index: -1
+007
+  rotate: false
+  xy: 521, 4
+  size: 128, 138
+  orig: 132, 140
+  offset: 3, 1
+  index: -1
+008
+  rotate: true
+  xy: 521, 144
+  size: 127, 141
+  orig: 132, 146
+  offset: 3, 1
+  index: -1
+009
+  rotate: false
+  xy: 386, 127
+  size: 133, 144
+  orig: 138, 148
+  offset: 3, 0
+  index: -1
+010
+  rotate: false
+  xy: 2, 125
+  size: 134, 146
+  orig: 139, 151
+  offset: 3, 2
+  index: -1
+011
+  rotate: false
+  xy: 138, 125
+  size: 133, 146
+  orig: 139, 151
+  offset: 3, 2
+  index: -1
+012
+  rotate: false
+  xy: 273, 126
+  size: 111, 145
+  orig: 116, 150
+  offset: 3, 2
+  index: -1

@@ -1,0 +1,335 @@
+
+Cast_378.png
+size: 1468,540
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cutscene/cast_feet
+  rotate: false
+  xy: 1293, 242
+  size: 123, 123
+  orig: 128, 128
+  offset: 4, 1
+  index: -1
+cutscene/glow_1006
+  rotate: false
+  xy: 581, 12
+  size: 240, 240
+  orig: 256, 256
+  offset: 8, 8
+  index: -1
+cutscene/images/cast_01
+  rotate: true
+  xy: 2, 58
+  size: 480, 253
+  orig: 485, 257
+  offset: 3, 3
+  index: -1
+cutscene/images/cast_02
+  rotate: false
+  xy: 823, 45
+  size: 93, 230
+  orig: 94, 233
+  offset: 0, 3
+  index: -1
+cutscene/images/cast_04
+  rotate: true
+  xy: 965, 95
+  size: 180, 110
+  orig: 184, 123
+  offset: 0, 3
+  index: -1
+cutscene/images/cast_05
+  rotate: false
+  xy: 528, 254
+  size: 247, 284
+  orig: 254, 286
+  offset: 4, 0
+  index: -1
+cutscene/images/cast_07
+  rotate: true
+  xy: 1007, 364
+  size: 174, 109
+  orig: 176, 119
+  offset: 0, 7
+  index: -1
+cutscene/images/cast_10
+  rotate: false
+  xy: 1198, 95
+  size: 75, 74
+  orig: 80, 75
+  offset: 3, 0
+  index: -1
+cutscene/images/cast_12
+  rotate: true
+  xy: 257, 219
+  size: 319, 269
+  orig: 324, 270
+  offset: 3, 1
+  index: -1
+cutscene/images/cast_15
+  rotate: false
+  xy: 1007, 284
+  size: 120, 78
+  orig: 129, 82
+  offset: 4, 0
+  index: -1
+cutscene/images/cast_17
+  rotate: true
+  xy: 777, 277
+  size: 261, 228
+  orig: 262, 235
+  offset: 0, 2
+  index: -1
+cutscene/images/cast_19
+  rotate: true
+  xy: 965, 47
+  size: 46, 113
+  orig: 53, 121
+  offset: 5, 3
+  index: -1
+cutscene/images/cast_27
+  rotate: false
+  xy: 349, 4
+  size: 128, 83
+  orig: 132, 83
+  offset: 1, 0
+  index: -1
+cutscene/images/cast_28
+  rotate: false
+  xy: 1077, 198
+  size: 117, 75
+  orig: 123, 77
+  offset: 4, 0
+  index: -1
+cutscene/images/cast_30
+  rotate: false
+  xy: 859, 7
+  size: 83, 36
+  orig: 91, 36
+  offset: 6, 0
+  index: -1
+cutscene/images/cast_33
+  rotate: false
+  xy: 1293, 367
+  size: 173, 171
+  orig: 177, 172
+  offset: 1, 1
+  index: -1
+cutscene/images/cast_34
+  rotate: true
+  xy: 1403, 92
+  size: 104, 63
+  orig: 117, 66
+  offset: 8, 0
+  index: -1
+cutscene/images/cast_42
+  rotate: true
+  xy: 1275, 119
+  size: 46, 110
+  orig: 52, 113
+  offset: 1, 1
+  index: -1
+cutscene/images/cast_43
+  rotate: false
+  xy: 1286, 167
+  size: 115, 73
+  orig: 122, 74
+  offset: 5, 0
+  index: -1
+cutscene/images/cast_44
+  rotate: true
+  xy: 1077, 99
+  size: 97, 67
+  orig: 104, 69
+  offset: 6, 0
+  index: -1
+cutscene/images/cast_47
+  rotate: false
+  xy: 1118, 365
+  size: 173, 173
+  orig: 177, 178
+  offset: 1, 3
+  index: -1
+cutscene/images/cast_76
+  rotate: true
+  xy: 1198, 171
+  size: 102, 86
+  orig: 103, 90
+  offset: 0, 1
+  index: -1
+cutscene/noise_1010
+  rotate: false
+  xy: 257, 89
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+cutscene/smoke_5000_01
+  rotate: true
+  xy: 823, 3
+  size: 40, 34
+  orig: 64, 64
+  offset: 9, 14
+  index: -1
+cutscene/smoke_5000_02
+  rotate: false
+  xy: 990, 11
+  size: 45, 34
+  orig: 64, 64
+  offset: 9, 16
+  index: -1
+cutscene/smoke_5000_03
+  rotate: true
+  xy: 59, 2
+  size: 54, 38
+  orig: 64, 64
+  offset: 5, 14
+  index: -1
+cutscene/smoke_5000_04
+  rotate: true
+  xy: 1418, 198
+  size: 57, 47
+  orig: 64, 64
+  offset: 3, 12
+  index: -1
+cutscene/smoke_5000_05
+  rotate: false
+  xy: 1129, 313
+  size: 63, 50
+  orig: 64, 64
+  offset: 0, 11
+  index: -1
+cutscene/smoke_5000_06
+  rotate: true
+  xy: 1198, 29
+  size: 61, 51
+  orig: 64, 64
+  offset: 1, 10
+  index: -1
+cutscene/smoke_5000_07
+  rotate: true
+  xy: 1418, 304
+  size: 61, 48
+  orig: 64, 64
+  offset: 0, 11
+  index: -1
+cutscene/smoke_5000_08
+  rotate: true
+  xy: 1146, 135
+  size: 61, 50
+  orig: 64, 64
+  offset: 2, 9
+  index: -1
+cutscene/smoke_5000_09
+  rotate: true
+  xy: 1251, 34
+  size: 56, 52
+  orig: 64, 64
+  offset: 3, 8
+  index: -1
+cutscene/smoke_5000_10
+  rotate: true
+  xy: 2, 2
+  size: 54, 55
+  orig: 64, 64
+  offset: 4, 5
+  index: -1
+cutscene/smoke_5000_11
+  rotate: false
+  xy: 99, 3
+  size: 52, 53
+  orig: 64, 64
+  offset: 4, 9
+  index: -1
+cutscene/smoke_5000_12
+  rotate: false
+  xy: 153, 3
+  size: 52, 53
+  orig: 64, 64
+  offset: 5, 9
+  index: -1
+cutscene/smoke_5000_13
+  rotate: false
+  xy: 207, 3
+  size: 51, 53
+  orig: 64, 64
+  offset: 7, 9
+  index: -1
+cutscene/smoke_5000_14
+  rotate: false
+  xy: 1305, 39
+  size: 46, 51
+  orig: 64, 64
+  offset: 12, 11
+  index: -1
+cutscene/smoke_5000_15
+  rotate: true
+  xy: 1353, 67
+  size: 50, 47
+  orig: 64, 64
+  offset: 9, 12
+  index: -1
+cutscene/smoke_5000_16
+  rotate: false
+  xy: 1418, 257
+  size: 48, 45
+  orig: 64, 64
+  offset: 9, 12
+  index: -1
+cutscene/trail_3000
+  rotate: true
+  xy: 918, 47
+  size: 228, 45
+  orig: 256, 64
+  offset: 16, 8
+  index: -1
+cutscene/typhoon2_01
+  rotate: false
+  xy: 944, 2
+  size: 44, 43
+  orig: 128, 128
+  offset: 76, 4
+  index: -1
+cutscene/typhoon2_02
+  rotate: true
+  xy: 479, 3
+  size: 88, 100
+  orig: 128, 128
+  offset: 28, 4
+  index: -1
+cutscene/typhoon2_03
+  rotate: true
+  xy: 1080, 2
+  size: 95, 116
+  orig: 128, 128
+  offset: 17, 4
+  index: -1
+cutscene/typhoon2_04
+  rotate: false
+  xy: 387, 93
+  size: 94, 124
+  orig: 128, 128
+  offset: 6, 4
+  index: -1
+cutscene/typhoon2_05
+  rotate: false
+  xy: 483, 93
+  size: 87, 124
+  orig: 128, 128
+  offset: 5, 4
+  index: -1
+cutscene/typhoon2_06
+  rotate: false
+  xy: 260, 3
+  size: 87, 84
+  orig: 128, 128
+  offset: 5, 44
+  index: -1
+cutscene/typhoon2_07
+  rotate: false
+  xy: 1198, 275
+  size: 88, 88
+  orig: 128, 128
+  offset: 4, 40
+  index: -1

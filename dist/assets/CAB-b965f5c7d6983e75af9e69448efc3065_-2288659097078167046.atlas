@@ -1,0 +1,1047 @@
+
+Hero_307.png
+size: 1016,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 2, 1010
+  size: 11, 26
+  orig: 11, 26
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 587, 1004
+  size: 17, 24
+  orig: 17, 24
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 434, 944
+  size: 35, 48
+  orig: 35, 48
+  offset: 0, 0
+  index: -1
+brooke_beat_02
+  rotate: true
+  xy: 178, 694
+  size: 97, 195
+  orig: 97, 197
+  offset: 0, 0
+  index: -1
+brooke_beat_03
+  rotate: true
+  xy: 761, 724
+  size: 95, 196
+  orig: 95, 196
+  offset: 0, 0
+  index: -1
+brooke_beat_04
+  rotate: true
+  xy: 162, 590
+  size: 102, 197
+  orig: 102, 197
+  offset: 0, 0
+  index: -1
+brooke_beat_05
+  rotate: true
+  xy: 581, 139
+  size: 134, 197
+  orig: 134, 197
+  offset: 0, 0
+  index: -1
+brooke_beat_07
+  rotate: true
+  xy: 556, 532
+  size: 112, 162
+  orig: 114, 162
+  offset: 2, 0
+  index: -1
+brooke_beat_08_ef
+  rotate: false
+  xy: 363, 981
+  size: 185, 22
+  orig: 185, 24
+  offset: 0, 2
+  index: -1
+brooke_damage
+  rotate: true
+  xy: 156, 346
+  size: 122, 183
+  orig: 122, 185
+  offset: 0, 0
+  index: -1
+brooke_skill1  1801
+  rotate: false
+  xy: 341, 1006
+  size: 32, 15
+  orig: 32, 15
+  offset: 0, 0
+  index: -1
+brooke_skill1  1802
+  rotate: false
+  xy: 233, 1007
+  size: 26, 14
+  orig: 26, 14
+  offset: 0, 0
+  index: -1
+brooke_skill1  1803
+  rotate: true
+  xy: 965, 1002
+  size: 19, 27
+  orig: 19, 27
+  offset: 0, 0
+  index: -1
+brooke_skill1  1804
+  rotate: true
+  xy: 442, 1005
+  size: 16, 20
+  orig: 19, 22
+  offset: 3, 2
+  index: -1
+brooke_skill1  1805
+  rotate: false
+  xy: 960, 903
+  size: 53, 66
+  orig: 53, 66
+  offset: 0, 0
+  index: -1
+brooke_skill1  1806
+  rotate: false
+  xy: 236, 948
+  size: 72, 34
+  orig: 72, 34
+  offset: 0, 0
+  index: -1
+brooke_skill1  1808
+  rotate: true
+  xy: 109, 954
+  size: 31, 34
+  orig: 31, 34
+  offset: 0, 0
+  index: -1
+brooke_skill1  1809
+  rotate: true
+  xy: 577, 979
+  size: 23, 42
+  orig: 23, 42
+  offset: 0, 0
+  index: -1
+brooke_skill1  1810
+  rotate: true
+  xy: 530, 942
+  size: 36, 39
+  orig: 36, 39
+  offset: 0, 0
+  index: -1
+brooke_skill1  1811
+  rotate: false
+  xy: 2, 989
+  size: 44, 19
+  orig: 44, 19
+  offset: 0, 0
+  index: -1
+brooke_skill1  1812
+  rotate: false
+  xy: 196, 985
+  size: 32, 21
+  orig: 32, 21
+  offset: 0, 0
+  index: -1
+brooke_skill1  3301
+  rotate: true
+  xy: 181, 1008
+  size: 13, 15
+  orig: 13, 15
+  offset: 0, 0
+  index: -1
+brooke_skill1  3302
+  rotate: true
+  xy: 87, 987
+  size: 20, 30
+  orig: 20, 30
+  offset: 0, 0
+  index: -1
+brooke_skill1  3303
+  rotate: true
+  xy: 464, 1005
+  size: 16, 19
+  orig: 16, 19
+  offset: 0, 0
+  index: -1
+brooke_skill1  3304
+  rotate: false
+  xy: 2, 957
+  size: 61, 29
+  orig: 61, 29
+  offset: 0, 0
+  index: -1
+brooke_skill1  3305
+  rotate: false
+  xy: 351, 945
+  size: 81, 34
+  orig: 81, 34
+  offset: 0, 0
+  index: -1
+brooke_skill1  3306
+  rotate: false
+  xy: 261, 1007
+  size: 24, 14
+  orig: 24, 14
+  offset: 0, 0
+  index: -1
+brooke_skill1  3307
+  rotate: false
+  xy: 119, 987
+  size: 33, 20
+  orig: 33, 20
+  offset: 0, 0
+  index: -1
+brooke_skill1  3308
+  rotate: true
+  xy: 642, 937
+  size: 38, 54
+  orig: 38, 54
+  offset: 0, 0
+  index: -1
+brooke_skill1  3309
+  rotate: false
+  xy: 762, 975
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1
+brooke_skill1  3310
+  rotate: true
+  xy: 621, 979
+  size: 23, 39
+  orig: 23, 39
+  offset: 0, 0
+  index: -1
+brooke_skill1  3311
+  rotate: true
+  xy: 677, 1003
+  size: 18, 32
+  orig: 18, 32
+  offset: 0, 0
+  index: -1
+brooke_skill1  3312
+  rotate: false
+  xy: 485, 1005
+  size: 38, 16
+  orig: 38, 16
+  offset: 0, 0
+  index: -1
+brooke_skill1  3313
+  rotate: true
+  xy: 711, 1003
+  size: 18, 30
+  orig: 18, 30
+  offset: 0, 0
+  index: -1
+brooke_skill1  4101
+  rotate: false
+  xy: 613, 1004
+  size: 32, 17
+  orig: 39, 27
+  offset: 5, 4
+  index: -1
+brooke_skill1_05
+  rotate: true
+  xy: 780, 109
+  size: 135, 197
+  orig: 135, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_06
+  rotate: true
+  xy: 2, 82
+  size: 135, 197
+  orig: 135, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_07
+  rotate: true
+  xy: 201, 57
+  size: 135, 197
+  orig: 135, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_08
+  rotate: true
+  xy: 566, 2
+  size: 135, 197
+  orig: 135, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_11
+  rotate: true
+  xy: 670, 275
+  size: 125, 197
+  orig: 125, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_12
+  rotate: true
+  xy: 2, 219
+  size: 125, 197
+  orig: 125, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_13
+  rotate: true
+  xy: 201, 194
+  size: 125, 197
+  orig: 125, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_16
+  rotate: true
+  xy: 720, 516
+  size: 104, 190
+  orig: 104, 190
+  offset: 0, 0
+  index: -1
+brooke_skill1_16_ef
+  rotate: false
+  xy: 858, 821
+  size: 145, 80
+  orig: 145, 80
+  offset: 0, 0
+  index: -1
+brooke_skill1_16_ef_2
+  rotate: false
+  xy: 596, 859
+  size: 125, 66
+  orig: 125, 66
+  offset: 0, 0
+  index: -1
+brooke_skill1_17
+  rotate: true
+  xy: 183, 470
+  size: 118, 161
+  orig: 118, 161
+  offset: 0, 0
+  index: -1
+brooke_skill1_17_ef
+  rotate: false
+  xy: 723, 849
+  size: 133, 73
+  orig: 133, 73
+  offset: 0, 0
+  index: -1
+brooke_skill1_17_ef_2
+  rotate: false
+  xy: 698, 927
+  size: 127, 46
+  orig: 127, 46
+  offset: 0, 0
+  index: -1
+brooke_skill1_30
+  rotate: true
+  xy: 341, 321
+  size: 130, 183
+  orig: 130, 183
+  offset: 0, 0
+  index: -1
+brooke_skill1_32
+  rotate: true
+  xy: 526, 279
+  size: 130, 142
+  orig: 130, 142
+  offset: 0, 0
+  index: -1
+brooke_skill2_02
+  rotate: true
+  xy: 375, 673
+  size: 102, 194
+  orig: 102, 194
+  offset: 0, 0
+  index: -1
+brooke_skill2_03
+  rotate: true
+  xy: 400, 4
+  size: 140, 164
+  orig: 140, 166
+  offset: 0, 0
+  index: -1
+brooke_skill2_04
+  rotate: false
+  xy: 696, 402
+  size: 241, 112
+  orig: 241, 114
+  offset: 0, 0
+  index: -1
+brooke_skill2_11
+  rotate: true
+  xy: 400, 146
+  size: 131, 179
+  orig: 131, 181
+  offset: 0, 0
+  index: -1
+brooke_skill2_12
+  rotate: true
+  xy: 2, 478
+  size: 110, 179
+  orig: 110, 181
+  offset: 0, 0
+  index: -1
+brooke_skill2_13
+  rotate: true
+  xy: 533, 411
+  size: 119, 161
+  orig: 119, 161
+  offset: 0, 0
+  index: -1
+brooke_skill2_13_ef
+  rotate: true
+  xy: 895, 922
+  size: 49, 63
+  orig: 49, 63
+  offset: 0, 0
+  index: -1
+brooke_skill2_15_ef
+  rotate: false
+  xy: 827, 924
+  size: 66, 47
+  orig: 66, 49
+  offset: 0, 0
+  index: -1
+brooke_skill2_16_ef
+  rotate: true
+  xy: 147, 892
+  size: 56, 80
+  orig: 56, 80
+  offset: 0, 0
+  index: -1
+brooke_skill2_17_ef
+  rotate: true
+  xy: 493, 873
+  size: 65, 101
+  orig: 65, 101
+  offset: 0, 0
+  index: -1
+brooke_skill2_901
+  rotate: true
+  xy: 310, 946
+  size: 34, 39
+  orig: 34, 39
+  offset: 0, 0
+  index: -1
+brooke_skill2_902
+  rotate: false
+  xy: 30, 1010
+  size: 26, 11
+  orig: 26, 11
+  offset: 0, 0
+  index: -1
+brooke_skill2_903
+  rotate: false
+  xy: 647, 1004
+  size: 28, 17
+  orig: 28, 17
+  offset: 0, 0
+  index: -1
+brooke_skill2_904
+  rotate: false
+  xy: 320, 887
+  size: 93, 56
+  orig: 93, 56
+  offset: 0, 0
+  index: -1
+brooke_skill2_905
+  rotate: true
+  xy: 694, 977
+  size: 24, 34
+  orig: 24, 34
+  offset: 0, 0
+  index: -1
+brooke_skill2_906
+  rotate: true
+  xy: 145, 952
+  size: 32, 43
+  orig: 32, 43
+  offset: 0, 0
+  index: -1
+brooke_skill2_907
+  rotate: false
+  xy: 2, 901
+  size: 70, 52
+  orig: 70, 52
+  offset: 0, 0
+  index: -1
+brooke_skill2_908
+  rotate: false
+  xy: 198, 1008
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+brooke_skill2_909
+  rotate: true
+  xy: 287, 1007
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+brooke_skill2_910
+  rotate: false
+  xy: 375, 1006
+  size: 31, 15
+  orig: 31, 15
+  offset: 0, 0
+  index: -1
+brooke_skill2_911
+  rotate: false
+  xy: 484, 944
+  size: 44, 35
+  orig: 44, 35
+  offset: 0, 0
+  index: -1
+brooke_skill2_912
+  rotate: false
+  xy: 65, 955
+  size: 42, 30
+  orig: 42, 30
+  offset: 0, 0
+  index: -1
+brooke_skill2_913
+  rotate: false
+  xy: 58, 1009
+  size: 39, 12
+  orig: 39, 12
+  offset: 0, 0
+  index: -1
+brooke_skill2_916
+  rotate: true
+  xy: 790, 975
+  size: 26, 30
+  orig: 26, 30
+  offset: 0, 0
+  index: -1
+brooke_skill3_03
+  rotate: true
+  xy: 720, 622
+  size: 100, 198
+  orig: 100, 198
+  offset: 0, 0
+  index: -1
+brooke_skill3_15
+  rotate: false
+  xy: 869, 246
+  size: 134, 154
+  orig: 134, 154
+  offset: 0, 0
+  index: -1
+brooke_skill3_16
+  rotate: true
+  xy: 571, 646
+  size: 105, 147
+  orig: 105, 147
+  offset: 0, 0
+  index: -1
+brooke_skill3_17
+  rotate: true
+  xy: 198, 793
+  size: 92, 181
+  orig: 92, 181
+  offset: 0, 0
+  index: -1
+brooke_skill3_801
+  rotate: true
+  xy: 216, 1008
+  size: 13, 15
+  orig: 13, 15
+  offset: 0, 0
+  index: -1
+brooke_skill4_02
+  rotate: true
+  xy: 346, 453
+  size: 113, 185
+  orig: 113, 185
+  offset: 0, 0
+  index: -1
+brooke_skill4_03
+  rotate: true
+  xy: 2, 701
+  size: 96, 174
+  orig: 96, 174
+  offset: 0, 0
+  index: -1
+brooke_skill4_04
+  rotate: true
+  xy: 2, 593
+  size: 106, 158
+  orig: 106, 158
+  offset: 0, 0
+  index: -1
+brooke_skill4_601
+  rotate: true
+  xy: 743, 1003
+  size: 18, 23
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+brooke_skill4_602
+  rotate: true
+  xy: 408, 1006
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+brooke_skill4_603
+  rotate: true
+  xy: 858, 973
+  size: 28, 35
+  orig: 28, 35
+  offset: 0, 0
+  index: -1
+brooke_skill4_604
+  rotate: false
+  xy: 190, 950
+  size: 44, 32
+  orig: 44, 32
+  offset: 0, 0
+  index: -1
+brooke_skill4_605
+  rotate: true
+  xy: 822, 975
+  size: 26, 34
+  orig: 26, 34
+  offset: 0, 0
+  index: -1
+brooke_skill4_606
+  rotate: true
+  xy: 571, 940
+  size: 37, 69
+  orig: 37, 69
+  offset: 0, 0
+  index: -1
+brooke_skill4_607
+  rotate: true
+  xy: 895, 973
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+brooke_skill4_608
+  rotate: true
+  xy: 154, 986
+  size: 20, 40
+  orig: 20, 40
+  offset: 0, 0
+  index: -1
+brooke_skill4_609
+  rotate: false
+  xy: 550, 980
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+brooke_skill4_610
+  rotate: true
+  xy: 963, 971
+  size: 29, 32
+  orig: 29, 32
+  offset: 0, 0
+  index: -1
+brooke_skill4_611
+  rotate: true
+  xy: 768, 1003
+  size: 18, 26
+  orig: 18, 26
+  offset: 0, 0
+  index: -1
+brooke_skill4_612
+  rotate: true
+  xy: 796, 1003
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+brooke_squat
+  rotate: true
+  xy: 2, 349
+  size: 127, 152
+  orig: 127, 154
+  offset: 0, 0
+  index: -1
+brooke_standby_01
+  rotate: true
+  xy: 381, 777
+  size: 94, 190
+  orig: 96, 190
+  offset: 2, 0
+  index: -1
+brooke_standby_02
+  rotate: true
+  xy: 573, 753
+  size: 94, 186
+  orig: 94, 186
+  offset: 0, 0
+  index: -1
+brooke_win_01
+  rotate: true
+  xy: 2, 799
+  size: 91, 194
+  orig: 93, 194
+  offset: 2, 0
+  index: -1
+brooke_win_02
+  rotate: true
+  xy: 361, 568
+  size: 103, 193
+  orig: 103, 193
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 99, 1009
+  size: 26, 12
+  orig: 26, 12
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 230, 984
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 74, 895
+  size: 55, 71
+  orig: 55, 71
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 662, 978
+  size: 23, 30
+  orig: 23, 30
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 730, 977
+  size: 30, 24
+  orig: 30, 24
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 304, 1007
+  size: 18, 14
+  orig: 18, 14
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 820, 1003
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 338, 982
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: false
+  xy: 846, 1003
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 994, 1002
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: false
+  xy: 256, 984
+  size: 50, 21
+  orig: 50, 21
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: false
+  xy: 415, 884
+  size: 76, 58
+  orig: 76, 58
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: false
+  xy: 229, 889
+  size: 89, 55
+  orig: 89, 55
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 525, 1005
+  size: 16, 28
+  orig: 16, 28
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 868, 1003
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 892, 1003
+  size: 34, 18
+  orig: 34, 18
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 308, 984
+  size: 28, 21
+  orig: 28, 21
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 127, 1009
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 324, 1007
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 927, 973
+  size: 28, 34
+  orig: 28, 34
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 555, 1005
+  size: 16, 30
+  orig: 16, 30
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 48, 988
+  size: 19, 37
+  orig: 19, 37
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 146, 1009
+  size: 12, 33
+  orig: 12, 33
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 928, 1003
+  size: 18, 35
+  orig: 18, 35
+  offset: 0, 0
+  index: -1
+
+Hero_3072.png
+size: 1012,864
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+brooke_beat_06
+  rotate: true
+  xy: 751, 558
+  size: 153, 184
+  orig: 153, 184
+  offset: 0, 0
+  index: -1
+brooke_beat_08
+  rotate: false
+  xy: 2, 236
+  size: 345, 169
+  orig: 345, 169
+  offset: 0, 0
+  index: -1
+brooke_beat_09
+  rotate: false
+  xy: 349, 222
+  size: 228, 175
+  orig: 228, 175
+  offset: 0, 0
+  index: -1
+brooke_beat_10
+  rotate: false
+  xy: 579, 212
+  size: 228, 175
+  orig: 228, 175
+  offset: 0, 0
+  index: -1
+brooke_beat_11
+  rotate: false
+  xy: 2, 59
+  size: 228, 175
+  orig: 228, 175
+  offset: 0, 0
+  index: -1
+brooke_skill1_03
+  rotate: true
+  xy: 164, 407
+  size: 158, 198
+  orig: 158, 198
+  offset: 0, 0
+  index: -1
+brooke_skill1_04
+  rotate: true
+  xy: 173, 567
+  size: 148, 198
+  orig: 148, 198
+  offset: 0, 0
+  index: -1
+brooke_skill1_10
+  rotate: true
+  xy: 2, 722
+  size: 137, 197
+  orig: 137, 197
+  offset: 0, 0
+  index: -1
+brooke_skill1_15
+  rotate: true
+  xy: 373, 715
+  size: 144, 165
+  orig: 144, 165
+  offset: 0, 0
+  index: -1
+brooke_skill1_28
+  rotate: true
+  xy: 809, 202
+  size: 185, 199
+  orig: 185, 199
+  offset: 0, 0
+  index: -1
+brooke_skill1_29
+  rotate: true
+  xy: 713, 713
+  size: 146, 197
+  orig: 146, 197
+  offset: 0, 0
+  index: -1
+brooke_skill2_05
+  rotate: false
+  xy: 364, 399
+  size: 360, 161
+  orig: 360, 161
+  offset: 0, 0
+  index: -1
+brooke_skill2_05_ef
+  rotate: false
+  xy: 232, 41
+  size: 509, 169
+  orig: 509, 169
+  offset: 0, 0
+  index: -1
+brooke_skill2_06
+  rotate: false
+  xy: 373, 566
+  size: 213, 146
+  orig: 213, 148
+  offset: 0, 0
+  index: -1
+brooke_skill2_10
+  rotate: true
+  xy: 588, 562
+  size: 149, 161
+  orig: 151, 161
+  offset: 2, 0
+  index: -1
+brooke_skill3_04
+  rotate: false
+  xy: 743, 2
+  size: 198, 198
+  orig: 198, 198
+  offset: 0, 0
+  index: -1
+brooke_skill3_05
+  rotate: true
+  xy: 726, 389
+  size: 167, 198
+  orig: 167, 198
+  offset: 0, 0
+  index: -1
+brooke_win_03
+  rotate: false
+  xy: 2, 413
+  size: 160, 158
+  orig: 160, 158
+  offset: 0, 0
+  index: -1
+brooke_win_04
+  rotate: true
+  xy: 201, 717
+  size: 142, 170
+  orig: 142, 172
+  offset: 0, 0
+  index: -1
+brooke_win_05
+  rotate: true
+  xy: 2, 573
+  size: 147, 169
+  orig: 147, 169
+  offset: 0, 0
+  index: -1
+brooke_win_06
+  rotate: true
+  xy: 540, 714
+  size: 145, 171
+  orig: 145, 171
+  offset: 0, 0
+  index: -1
+
+Hero_3073.png
+size: 724,400
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+brooke_skill2_06_ef
+  rotate: true
+  xy: 509, 45
+  size: 350, 210
+  orig: 350, 210
+  offset: 0, 0
+  index: -1
+brooke_skill2_07_ef
+  rotate: true
+  xy: 276, 2
+  size: 393, 231
+  orig: 393, 231
+  offset: 0, 0
+  index: -1
+brooke_skill2_08_ef
+  rotate: true
+  xy: 2, 52
+  size: 343, 272
+  orig: 343, 272
+  offset: 0, 0
+  index: -1

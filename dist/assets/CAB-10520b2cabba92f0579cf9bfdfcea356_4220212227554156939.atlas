@@ -1,0 +1,412 @@
+
+Hero_423.png
+size: 920,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 560, 114
+  size: 94, 64
+  orig: 179, 128
+  offset: 71, 9
+  index: -1
+10.1
+  rotate: true
+  xy: 840, 5
+  size: 55, 52
+  orig: 69, 64
+  offset: 7, 8
+  index: -1
+11.1
+  rotate: false
+  xy: 808, 121
+  size: 57, 52
+  orig: 69, 64
+  offset: 7, 8
+  index: -1
+2
+  rotate: false
+  xy: 401, 29
+  size: 90, 83
+  orig: 179, 128
+  offset: 75, 9
+  index: -1
+2.2
+  rotate: true
+  xy: 3, 19
+  size: 256, 220
+  orig: 256, 256
+  offset: 0, 16
+  index: -1
+3
+  rotate: false
+  xy: 408, 115
+  size: 88, 101
+  orig: 179, 128
+  offset: 77, 9
+  index: -1
+3.1
+  rotate: true
+  xy: 656, 46
+  size: 62, 61
+  orig: 69, 64
+  offset: 4, 2
+  index: -1
+4
+  rotate: false
+  xy: 738, 298
+  size: 113, 109
+  orig: 179, 128
+  offset: 57, 9
+  index: -1
+4.1
+  rotate: false
+  xy: 720, 56
+  size: 57, 61
+  orig: 69, 64
+  offset: 2, 1
+  index: -1
+43
+  rotate: false
+  xy: 484, 316
+  size: 132, 99
+  orig: 145, 132
+  offset: 9, 5
+  index: -1
+44
+  rotate: false
+  xy: 484, 418
+  size: 141, 103
+  orig: 145, 132
+  offset: 3, 5
+  index: -1
+45
+  rotate: false
+  xy: 295, 119
+  size: 110, 97
+  orig: 145, 132
+  offset: 4, 14
+  index: -1
+46
+  rotate: true
+  xy: 749, 410
+  size: 111, 116
+  orig: 145, 132
+  offset: 0, 14
+  index: -1
+47
+  rotate: false
+  xy: 580, 34
+  size: 73, 77
+  orig: 145, 132
+  offset: 11, 50
+  index: -1
+5.1
+  rotate: false
+  xy: 679, 182
+  size: 56, 58
+  orig: 69, 64
+  offset: 4, 3
+  index: -1
+6.1
+  rotate: false
+  xy: 780, 3
+  size: 57, 52
+  orig: 69, 64
+  offset: 5, 6
+  index: -1
+7.1
+  rotate: false
+  xy: 831, 176
+  size: 57, 57
+  orig: 69, 64
+  offset: 4, 3
+  index: -1
+8.1
+  rotate: true
+  xy: 834, 63
+  size: 55, 51
+  orig: 69, 64
+  offset: 6, 7
+  index: -1
+9.1
+  rotate: false
+  xy: 720, 3
+  size: 56, 50
+  orig: 69, 64
+  offset: 6, 7
+  index: -1
+ao choang
+  rotate: false
+  xy: 628, 412
+  size: 118, 109
+  orig: 118, 109
+  offset: 0, 0
+  index: -1
+ban chan phai
+  rotate: false
+  xy: 698, 22
+  size: 18, 21
+  orig: 28, 26
+  offset: 3, 1
+  index: -1
+ban chan trai
+  rotate: true
+  xy: 441, 219
+  size: 26, 18
+  orig: 28, 20
+  offset: 1, 1
+  index: -1
+ban tay phai
+  rotate: false
+  xy: 888, 72
+  size: 24, 32
+  orig: 26, 34
+  offset: 1, 1
+  index: -1
+ban tay trai
+  rotate: true
+  xy: 891, 220
+  size: 27, 25
+  orig: 29, 27
+  offset: 1, 1
+  index: -1
+bap tay phai
+  rotate: true
+  xy: 569, 3
+  size: 28, 35
+  orig: 30, 37
+  offset: 1, 1
+  index: -1
+bap tay trai
+  rotate: true
+  xy: 462, 225
+  size: 20, 34
+  orig: 23, 36
+  offset: 2, 1
+  index: -1
+cang chan phai
+  rotate: false
+  xy: 560, 243
+  size: 19, 19
+  orig: 26, 21
+  offset: 6, 1
+  index: -1
+cang chan trai
+  rotate: false
+  xy: 582, 247
+  size: 14, 15
+  orig: 17, 17
+  offset: 2, 1
+  index: -1
+cang tay phai
+  rotate: false
+  xy: 868, 135
+  size: 25, 38
+  orig: 28, 42
+  offset: 1, 3
+  index: -1
+cang tay trai
+  rotate: false
+  xy: 607, 3
+  size: 25, 28
+  orig: 30, 31
+  offset: 2, 2
+  index: -1
+dau
+  rotate: true
+  xy: 226, 132
+  size: 143, 66
+  orig: 145, 68
+  offset: 1, 1
+  index: -1
+dau-2
+  rotate: false
+  xy: 295, 219
+  size: 143, 66
+  orig: 145, 68
+  offset: 1, 1
+  index: -1
+dui phai
+  rotate: true
+  xy: 686, 126
+  size: 53, 49
+  orig: 61, 52
+  offset: 6, 2
+  index: -1
+dui trai
+  rotate: true
+  xy: 441, 248
+  size: 37, 40
+  orig: 39, 42
+  offset: 1, 1
+  index: -1
+gap vai phai
+  rotate: true
+  xy: 780, 58
+  size: 59, 51
+  orig: 59, 51
+  offset: 0, 0
+  index: -1
+giap vai trai
+  rotate: false
+  xy: 660, 4
+  size: 35, 39
+  orig: 35, 39
+  offset: 0, 0
+  index: -1
+glow_1039
+  rotate: false
+  xy: 294, 12
+  size: 104, 104
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+glow_6098_1
+  rotate: false
+  xy: 3, 278
+  size: 242, 243
+  orig: 256, 256
+  offset: 7, 6
+  index: -1
+long dai lung phai
+  rotate: true
+  xy: 888, 107
+  size: 25, 29
+  orig: 25, 29
+  offset: 0, 0
+  index: -1
+long dai lung trai
+  rotate: false
+  xy: 635, 3
+  size: 22, 28
+  orig: 22, 28
+  offset: 0, 0
+  index: -1
+object_11023
+  rotate: false
+  xy: 248, 288
+  size: 233, 233
+  orig: 256, 256
+  offset: 13, 11
+  index: -1
+sequence_10010
+  rotate: false
+  xy: 738, 236
+  size: 116, 59
+  orig: 136, 80
+  offset: 8, 6
+  index: -1
+sequence_10011
+  rotate: true
+  xy: 499, 143
+  size: 119, 58
+  orig: 136, 80
+  offset: 4, 5
+  index: -1
+sequence_10012
+  rotate: false
+  xy: 560, 181
+  size: 116, 59
+  orig: 136, 80
+  offset: 5, 8
+  index: -1
+sequence_1005
+  rotate: false
+  xy: 494, 3
+  size: 72, 28
+  orig: 136, 80
+  offset: 17, 20
+  index: -1
+sequence_1006
+  rotate: false
+  xy: 484, 265
+  size: 124, 48
+  orig: 136, 80
+  offset: 11, 10
+  index: -1
+sequence_1007
+  rotate: true
+  xy: 868, 401
+  size: 120, 49
+  orig: 136, 80
+  offset: 10, 10
+  index: -1
+sequence_1008
+  rotate: false
+  xy: 611, 243
+  size: 124, 51
+  orig: 136, 80
+  offset: 6, 9
+  index: -1
+sequence_1009
+  rotate: true
+  xy: 226, 6
+  size: 123, 65
+  orig: 136, 80
+  offset: 0, 0
+  index: -1
+smoke_6003
+  rotate: true
+  xy: 619, 297
+  size: 112, 116
+  orig: 128, 128
+  offset: 11, 4
+  index: -1
+tay-phai-2
+  rotate: true
+  xy: 401, 3
+  size: 23, 21
+  orig: 23, 21
+  offset: 0, 0
+  index: -1
+than
+  rotate: false
+  xy: 494, 34
+  size: 83, 77
+  orig: 87, 80
+  offset: 4, 2
+  index: -1
+toc
+  rotate: true
+  xy: 854, 332
+  size: 66, 63
+  orig: 67, 63
+  offset: 1, 0
+  index: -1
+toc phai
+  rotate: false
+  xy: 657, 111
+  size: 26, 67
+  orig: 26, 67
+  offset: 0, 0
+  index: -1
+toc trai
+  rotate: true
+  xy: 499, 118
+  size: 22, 58
+  orig: 23, 58
+  offset: 1, 0
+  index: -1
+vu khi phai
+  rotate: true
+  xy: 738, 176
+  size: 57, 90
+  orig: 59, 93
+  offset: 1, 1
+  index: -1
+vu khi trai
+  rotate: false
+  xy: 857, 250
+  size: 50, 79
+  orig: 52, 81
+  offset: 1, 1
+  index: -1
+vu-khi-trai-2
+  rotate: true
+  xy: 738, 120
+  size: 53, 67
+  orig: 56, 81
+  offset: 2, 0
+  index: -1

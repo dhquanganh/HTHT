@@ -1,0 +1,146 @@
+
+Item_effect.png
+size: 716,716
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a_01
+  rotate: true
+  xy: 2, 576
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_02
+  rotate: true
+  xy: 143, 576
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_03
+  rotate: false
+  xy: 566, 435
+  size: 139, 139
+  orig: 150, 150
+  offset: 6, 5
+  index: -1
+a_04
+  rotate: false
+  xy: 286, 152
+  size: 142, 140
+  orig: 150, 150
+  offset: 5, 4
+  index: -1
+a_05
+  rotate: true
+  xy: 284, 576
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_06
+  rotate: true
+  xy: 425, 576
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_07
+  rotate: true
+  xy: 2, 295
+  size: 139, 140
+  orig: 150, 150
+  offset: 7, 4
+  index: -1
+a_08
+  rotate: false
+  xy: 144, 295
+  size: 139, 139
+  orig: 150, 150
+  offset: 6, 5
+  index: -1
+a_09
+  rotate: false
+  xy: 285, 295
+  size: 139, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_10
+  rotate: true
+  xy: 430, 152
+  size: 140, 142
+  orig: 150, 150
+  offset: 5, 2
+  index: -1
+a_11
+  rotate: false
+  xy: 426, 294
+  size: 141, 139
+  orig: 150, 150
+  offset: 5, 5
+  index: -1
+a_12
+  rotate: true
+  xy: 566, 576
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_13
+  rotate: true
+  xy: 2, 436
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_14
+  rotate: true
+  xy: 143, 436
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_15
+  rotate: false
+  xy: 569, 294
+  size: 139, 139
+  orig: 150, 150
+  offset: 6, 5
+  index: -1
+a_16
+  rotate: true
+  xy: 284, 436
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_17
+  rotate: true
+  xy: 425, 436
+  size: 138, 139
+  orig: 150, 150
+  offset: 7, 5
+  index: -1
+a_18
+  rotate: false
+  xy: 2, 154
+  size: 139, 139
+  orig: 150, 150
+  offset: 6, 5
+  index: -1
+a_19
+  rotate: false
+  xy: 143, 154
+  size: 141, 139
+  orig: 150, 150
+  offset: 6, 5
+  index: -1
+a_20
+  rotate: false
+  xy: 574, 152
+  size: 140, 140
+  orig: 150, 150
+  offset: 7, 4
+  index: -1

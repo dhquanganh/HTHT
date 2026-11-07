@@ -1,0 +1,117 @@
+
+skill_171.png
+size: 980,800
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_gladius_skill3/000
+  rotate: false
+  xy: 2, 462
+  size: 425, 190
+  orig: 435, 200
+  offset: 5, 8
+  index: -1
+Char_gladius_skill3/001
+  rotate: false
+  xy: 429, 458
+  size: 459, 192
+  orig: 466, 199
+  offset: 4, 2
+  index: -1
+Char_gladius_skill3/002
+  rotate: false
+  xy: 2, 246
+  size: 502, 210
+  orig: 505, 218
+  offset: 0, 2
+  index: -1
+Char_gladius_skill3/007
+  rotate: false
+  xy: 475, 2
+  size: 490, 228
+  orig: 494, 234
+  offset: 0, 5
+  index: -1
+Char_gladius_skill3/008
+  rotate: false
+  xy: 506, 232
+  size: 471, 224
+  orig: 477, 231
+  offset: 4, 5
+  index: -1
+Char_gladius_skill3/009
+  rotate: false
+  xy: 2, 19
+  size: 471, 225
+  orig: 477, 232
+  offset: 4, 5
+  index: -1
+Char_gladius_skill3/hi (1)
+  rotate: true
+  xy: 319, 654
+  size: 141, 143
+  orig: 141, 143
+  offset: 0, 0
+  index: -1
+Char_gladius_skill3/hi (2)
+  rotate: true
+  xy: 2, 679
+  size: 116, 140
+  orig: 116, 140
+  offset: 0, 0
+  index: -1
+Char_gladius_skill3/hi (3)
+  rotate: true
+  xy: 144, 664
+  size: 131, 173
+  orig: 131, 173
+  offset: 0, 0
+  index: -1
+Char_gladius_skill3/hi (4)
+  rotate: true
+  xy: 464, 654
+  size: 141, 164
+  orig: 141, 164
+  offset: 0, 0
+  index: -1
+Char_gladius_skill3/hi (5)
+  rotate: true
+  xy: 630, 652
+  size: 143, 146
+  orig: 143, 146
+  offset: 0, 0
+  index: -1
+
+skill_1712.png
+size: 980,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_gladius_skill3/003
+  rotate: true
+  xy: 2, 2
+  size: 513, 238
+  orig: 517, 242
+  offset: 0, 2
+  index: -1
+Char_gladius_skill3/004
+  rotate: true
+  xy: 242, 2
+  size: 513, 238
+  orig: 517, 242
+  offset: 0, 2
+  index: -1
+Char_gladius_skill3/005
+  rotate: false
+  xy: 482, 261
+  size: 493, 254
+  orig: 496, 260
+  offset: 0, 3
+  index: -1
+Char_gladius_skill3/006
+  rotate: false
+  xy: 482, 4
+  size: 490, 255
+  orig: 494, 261
+  offset: 0, 3
+  index: -1

@@ -1,0 +1,1504 @@
+
+Hero_109.png
+size: 2020,1416
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: false
+  xy: 1733, 2
+  size: 26, 12
+  orig: 26, 12
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 882, 10
+  size: 39, 27
+  orig: 39, 27
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 1251, 229
+  size: 38, 40
+  orig: 38, 40
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 2000, 139
+  size: 39, 13
+  orig: 39, 13
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 1251, 211
+  size: 16, 32
+  orig: 16, 32
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 1884, 117
+  size: 22, 39
+  orig: 22, 39
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 264, 624
+  size: 12, 30
+  orig: 12, 30
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 1982, 102
+  size: 16, 26
+  orig: 16, 26
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 1844, 2
+  size: 27, 23
+  orig: 27, 23
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 2000, 86
+  size: 18, 15
+  orig: 18, 15
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 1956, 233
+  size: 57, 55
+  orig: 57, 55
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 1517, 1014
+  size: 32, 12
+  orig: 32, 12
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 1739, 131
+  size: 14, 18
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 1938, 59
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 832, 1165
+  size: 30, 18
+  orig: 30, 18
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 1782, 25
+  size: 14, 33
+  orig: 14, 33
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 832, 1091
+  size: 19, 18
+  orig: 19, 18
+  offset: 0, 0
+  index: -1
+hand_R_41
+  rotate: false
+  xy: 1953, 38
+  size: 19, 19
+  orig: 23, 25
+  offset: 3, 3
+  index: -1
+head_04
+  rotate: false
+  xy: 1587, 41
+  size: 46, 52
+  orig: 46, 52
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_301
+  rotate: true
+  xy: 1553, 8
+  size: 14, 32
+  orig: 14, 32
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_302
+  rotate: false
+  xy: 1709, 147
+  size: 48, 54
+  orig: 63, 59
+  offset: 9, 0
+  index: -1
+luffy_gear2_beat_303
+  rotate: false
+  xy: 294, 310
+  size: 22, 15
+  orig: 22, 15
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_601
+  rotate: false
+  xy: 1873, 2
+  size: 27, 23
+  orig: 27, 23
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_602
+  rotate: true
+  xy: 216, 675
+  size: 16, 27
+  orig: 16, 27
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_603
+  rotate: true
+  xy: 1908, 45
+  size: 17, 21
+  orig: 17, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_604
+  rotate: false
+  xy: 1983, 854
+  size: 22, 29
+  orig: 22, 29
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_605
+  rotate: true
+  xy: 1639, 93
+  size: 51, 45
+  orig: 51, 45
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_606
+  rotate: false
+  xy: 1862, 76
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_607
+  rotate: false
+  xy: 1587, 2
+  size: 45, 37
+  orig: 45, 37
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_608
+  rotate: false
+  xy: 1686, 66
+  size: 51, 30
+  orig: 51, 30
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_609
+  rotate: true
+  xy: 1788, 60
+  size: 24, 19
+  orig: 24, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_beat_610
+  rotate: false
+  xy: 1482, 2
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_beat_04
+  rotate: false
+  xy: 727, 236
+  size: 198, 118
+  orig: 198, 118
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_beat_04_ef
+  rotate: true
+  xy: 671, 809
+  size: 249, 179
+  orig: 249, 179
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_beat_05
+  rotate: false
+  xy: 1277, 718
+  size: 196, 122
+  orig: 196, 122
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_beat_05_ef
+  rotate: true
+  xy: 507, 310
+  size: 312, 218
+  orig: 312, 218
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_beat_06_ef
+  rotate: false
+  xy: 346, 806
+  size: 323, 252
+  orig: 323, 252
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_beat_07_ef
+  rotate: false
+  xy: 1540, 1176
+  size: 347, 238
+  orig: 347, 238
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_damage
+  rotate: false
+  xy: 711, 625
+  size: 139, 182
+  orig: 157, 199
+  offset: 12, 7
+  index: -1
+luffy_gear2_left_skill1_01_ef
+  rotate: false
+  xy: 1475, 683
+  size: 110, 157
+  orig: 110, 157
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_02_ef
+  rotate: true
+  xy: 1114, 85
+  size: 124, 177
+  orig: 124, 177
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_03_ef
+  rotate: true
+  xy: 1733, 399
+  size: 137, 136
+  orig: 137, 136
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_03_fix1
+  rotate: true
+  xy: 1482, 24
+  size: 116, 103
+  orig: 125, 110
+  offset: 6, 3
+  index: -1
+luffy_gear2_left_skill1_04
+  rotate: true
+  xy: 1441, 545
+  size: 136, 150
+  orig: 136, 150
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_04_ef
+  rotate: false
+  xy: 1728, 854
+  size: 161, 141
+  orig: 161, 141
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_05
+  rotate: true
+  xy: 1089, 391
+  size: 95, 167
+  orig: 95, 167
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_05_ef
+  rotate: false
+  xy: 923, 90
+  size: 189, 144
+  orig: 189, 144
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_06
+  rotate: false
+  xy: 737, 1061
+  size: 93, 162
+  orig: 93, 162
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_06_ef
+  rotate: true
+  xy: 852, 625
+  size: 193, 164
+  orig: 193, 164
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_07
+  rotate: false
+  xy: 1574, 862
+  size: 152, 164
+  orig: 152, 164
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_07_ef
+  rotate: true
+  xy: 727, 356
+  size: 267, 196
+  orig: 500, 500
+  offset: 80, 172
+  index: -1
+luffy_gear2_left_skill1_08
+  rotate: true
+  xy: 266, 2
+  size: 306, 227
+  orig: 306, 227
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_08_ef
+  rotate: false
+  xy: 1171, 1217
+  size: 367, 197
+  orig: 367, 197
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_09
+  rotate: false
+  xy: 2, 8
+  size: 262, 271
+  orig: 262, 271
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_09_ef
+  rotate: false
+  xy: 2, 1079
+  size: 352, 335
+  orig: 352, 335
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_10_ef
+  rotate: false
+  xy: 208, 379
+  size: 297, 243
+  orig: 500, 500
+  offset: 33, 186
+  index: -1
+luffy_gear2_left_skill1_10_fix1
+  rotate: true
+  xy: 1891, 884
+  size: 191, 90
+  orig: 201, 105
+  offset: 6, 6
+  index: -1
+luffy_gear2_left_skill1_10_fix2
+  rotate: false
+  xy: 923, 5
+  size: 187, 83
+  orig: 196, 90
+  offset: 7, 3
+  index: -1
+luffy_gear2_left_skill1_11
+  rotate: false
+  xy: 1466, 842
+  size: 106, 170
+  orig: 106, 170
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_11_ef
+  rotate: true
+  xy: 927, 236
+  size: 153, 185
+  orig: 153, 185
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_11_fix1
+  rotate: true
+  xy: 394, 339
+  size: 38, 92
+  orig: 56, 101
+  offset: 18, 9
+  index: -1
+luffy_gear2_left_skill1_11_fix2
+  rotate: false
+  xy: 208, 327
+  size: 184, 50
+  orig: 188, 58
+  offset: 2, 4
+  index: -1
+luffy_gear2_left_skill1_12
+  rotate: true
+  xy: 1679, 203
+  size: 104, 137
+  orig: 104, 137
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_12_ef
+  rotate: true
+  xy: 1059, 714
+  size: 125, 216
+  orig: 125, 216
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill1_12_fix1
+  rotate: true
+  xy: 1554, 205
+  size: 87, 101
+  orig: 93, 107
+  offset: 4, 2
+  index: -1
+luffy_gear2_left_skill1_12_fix2
+  rotate: true
+  xy: 1258, 363
+  size: 93, 174
+  orig: 103, 183
+  offset: 6, 3
+  index: -1
+luffy_gear2_left_skill1_12_fix3
+  rotate: false
+  xy: 1389, 5
+  size: 91, 125
+  orig: 97, 132
+  offset: 4, 3
+  index: -1
+luffy_gear2_left_skill1_13
+  rotate: false
+  xy: 1554, 294
+  size: 123, 125
+  orig: 123, 125
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_01
+  rotate: false
+  xy: 1293, 2
+  size: 94, 128
+  orig: 94, 128
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_02
+  rotate: true
+  xy: 1430, 142
+  size: 125, 119
+  orig: 125, 119
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_03
+  rotate: true
+  xy: 1889, 1077
+  size: 128, 129
+  orig: 128, 129
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_03_ef
+  rotate: false
+  xy: 1593, 543
+  size: 140, 150
+  orig: 140, 150
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_04_ef
+  rotate: false
+  xy: 1288, 548
+  size: 151, 168
+  orig: 151, 168
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_05
+  rotate: false
+  xy: 1293, 132
+  size: 135, 135
+  orig: 135, 135
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_05_ef
+  rotate: false
+  xy: 1728, 997
+  size: 159, 177
+  orig: 159, 177
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_06
+  rotate: true
+  xy: 1587, 695
+  size: 165, 137
+  orig: 165, 137
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_06_ef
+  rotate: false
+  xy: 1273, 842
+  size: 191, 170
+  orig: 191, 170
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_07
+  rotate: true
+  xy: 216, 693
+  size: 384, 128
+  orig: 386, 128
+  offset: 2, 0
+  index: -1
+luffy_gear2_left_skill2_07_ef
+  rotate: true
+  xy: 2, 675
+  size: 402, 212
+  orig: 402, 212
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_08
+  rotate: false
+  xy: 356, 1060
+  size: 379, 163
+  orig: 379, 163
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_08_ef
+  rotate: false
+  xy: 356, 1225
+  size: 423, 189
+  orig: 423, 189
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_09
+  rotate: false
+  xy: 781, 1230
+  size: 388, 184
+  orig: 388, 184
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_09_ef
+  rotate: true
+  xy: 2, 281
+  size: 392, 204
+  orig: 392, 204
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_10
+  rotate: false
+  xy: 346, 624
+  size: 363, 180
+  orig: 365, 180
+  offset: 2, 0
+  index: -1
+luffy_gear2_left_skill2_17
+  rotate: true
+  xy: 1735, 538
+  size: 161, 134
+  orig: 161, 134
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill2_17_ef
+  rotate: true
+  xy: 925, 391
+  size: 232, 162
+  orig: 232, 180
+  offset: 0, 18
+  index: -1
+luffy_gear2_left_skill2_18_ef
+  rotate: false
+  xy: 852, 1034
+  size: 230, 194
+  orig: 230, 194
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill3_07_ef
+  rotate: true
+  xy: 495, 5
+  size: 303, 224
+  orig: 303, 224
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill3_08
+  rotate: false
+  xy: 1726, 701
+  size: 162, 151
+  orig: 162, 151
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill3_08_ef
+  rotate: false
+  xy: 1517, 1028
+  size: 209, 146
+  orig: 209, 146
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill3_09
+  rotate: true
+  xy: 1251, 269
+  size: 92, 184
+  orig: 92, 184
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill3_09_ef
+  rotate: false
+  xy: 1089, 488
+  size: 112, 224
+  orig: 112, 224
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill3_10_ef
+  rotate: false
+  xy: 1890, 704
+  size: 128, 148
+  orig: 128, 148
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_skill3_12
+  rotate: true
+  xy: 1441, 433
+  size: 110, 150
+  orig: 110, 150
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_squat
+  rotate: true
+  xy: 1871, 503
+  size: 101, 145
+  orig: 112, 154
+  offset: 4, 1
+  index: -1
+luffy_gear2_left_standby_01_ef
+  rotate: false
+  xy: 721, 86
+  size: 200, 148
+  orig: 200, 148
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_standby_02_ef
+  rotate: false
+  xy: 1059, 841
+  size: 212, 182
+  orig: 212, 182
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_standby_03_ef
+  rotate: false
+  xy: 1084, 1025
+  size: 215, 190
+  orig: 215, 190
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_standby_04_ef
+  rotate: false
+  xy: 852, 820
+  size: 205, 212
+  orig: 205, 212
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_standby_05_ef
+  rotate: false
+  xy: 1301, 1014
+  size: 214, 201
+  orig: 214, 201
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_win_01
+  rotate: true
+  xy: 1890, 606
+  size: 96, 128
+  orig: 96, 128
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_win_01_ef
+  rotate: true
+  xy: 1593, 421
+  size: 120, 138
+  orig: 143, 169
+  offset: 8, 18
+  index: -1
+luffy_gear2_left_win_02
+  rotate: true
+  xy: 1867, 292
+  size: 88, 141
+  orig: 88, 141
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_win_02_ef
+  rotate: true
+  xy: 1871, 382
+  size: 119, 143
+  orig: 134, 163
+  offset: 10, 10
+  index: -1
+luffy_gear2_left_win_03
+  rotate: true
+  xy: 1288, 458
+  size: 88, 151
+  orig: 88, 151
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_win_03_ef
+  rotate: false
+  xy: 1437, 282
+  size: 115, 149
+  orig: 131, 167
+  offset: 9, 9
+  index: -1
+luffy_gear2_left_win_04
+  rotate: false
+  xy: 1203, 515
+  size: 83, 197
+  orig: 83, 197
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_win_04_ef
+  rotate: false
+  xy: 1114, 211
+  size: 135, 178
+  orig: 158, 205
+  offset: 15, 11
+  index: -1
+luffy_gear2_left_win_05
+  rotate: true
+  xy: 1679, 309
+  size: 88, 186
+  orig: 88, 186
+  offset: 0, 0
+  index: -1
+luffy_gear2_left_win_05_ef
+  rotate: false
+  xy: 1889, 1207
+  size: 129, 207
+  orig: 143, 224
+  offset: 8, 8
+  index: -1
+luffy_gear2_skill1 1001
+  rotate: true
+  xy: 1798, 27
+  size: 31, 22
+  orig: 31, 22
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1002
+  rotate: false
+  xy: 264, 638
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1003
+  rotate: false
+  xy: 1686, 98
+  size: 51, 47
+  orig: 51, 47
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1004
+  rotate: true
+  xy: 1441, 683
+  size: 33, 21
+  orig: 33, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1005
+  rotate: true
+  xy: 1258, 458
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1006
+  rotate: true
+  xy: 1822, 27
+  size: 19, 26
+  orig: 19, 26
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1007
+  rotate: false
+  xy: 816, 23
+  size: 64, 61
+  orig: 64, 61
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1008
+  rotate: true
+  xy: 1634, 2
+  size: 37, 44
+  orig: 37, 44
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1009
+  rotate: false
+  xy: 1018, 625
+  size: 32, 62
+  orig: 32, 62
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 101
+  rotate: true
+  xy: 1944, 130
+  size: 48, 54
+  orig: 63, 61
+  offset: 9, 0
+  index: -1
+luffy_gear2_skill1 1010
+  rotate: false
+  xy: 1551, 148
+  size: 57, 55
+  orig: 57, 55
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 1011
+  rotate: false
+  xy: 1983, 1041
+  size: 35, 34
+  orig: 35, 34
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 102
+  rotate: false
+  xy: 816, 2
+  size: 30, 19
+  orig: 30, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 103
+  rotate: true
+  xy: 319, 630
+  size: 14, 25
+  orig: 16, 25
+  offset: 2, 0
+  index: -1
+luffy_gear2_skill1 104
+  rotate: true
+  xy: 1985, 61
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 105
+  rotate: false
+  xy: 1712, 3
+  size: 19, 27
+  orig: 21, 27
+  offset: 2, 0
+  index: -1
+luffy_gear2_skill1 106
+  rotate: false
+  xy: 1931, 40
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 107
+  rotate: false
+  xy: 1635, 41
+  size: 44, 50
+  orig: 44, 50
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 108
+  rotate: true
+  xy: 1052, 632
+  size: 42, 34
+  orig: 42, 34
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 109
+  rotate: false
+  xy: 449, 310
+  size: 44, 27
+  orig: 44, 27
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 110
+  rotate: false
+  xy: 245, 675
+  size: 17, 16
+  orig: 17, 16
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 111
+  rotate: true
+  xy: 1506, 2
+  size: 20, 22
+  orig: 20, 22
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill1 112
+  rotate: true
+  xy: 208, 624
+  size: 49, 54
+  orig: 64, 69
+  offset: 7, 4
+  index: -1
+luffy_gear2_skill1 113
+  rotate: true
+  xy: 2000, 121
+  size: 16, 18
+  orig: 18, 22
+  offset: 2, 2
+  index: -1
+luffy_gear2_skill2 1701
+  rotate: false
+  xy: 1850, 27
+  size: 23, 19
+  orig: 23, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 401
+  rotate: false
+  xy: 1962, 60
+  size: 21, 21
+  orig: 21, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 402
+  rotate: false
+  xy: 488, 342
+  size: 17, 35
+  orig: 17, 35
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 403
+  rotate: false
+  xy: 1258, 482
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 404
+  rotate: false
+  xy: 318, 311
+  size: 44, 14
+  orig: 44, 14
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 405
+  rotate: false
+  xy: 1794, 87
+  size: 23, 42
+  orig: 23, 42
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 406
+  rotate: false
+  xy: 1610, 146
+  size: 46, 57
+  orig: 46, 57
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 407
+  rotate: true
+  xy: 1970, 83
+  size: 17, 21
+  orig: 17, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 408
+  rotate: true
+  xy: 832, 1112
+  size: 24, 18
+  orig: 24, 19
+  offset: 0, 1
+  index: -1
+luffy_gear2_skill2 409
+  rotate: false
+  xy: 1759, 131
+  size: 55, 30
+  orig: 55, 30
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 410
+  rotate: true
+  xy: 1925, 117
+  size: 22, 17
+  orig: 22, 17
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 411
+  rotate: true
+  xy: 1517, 1181
+  size: 34, 21
+  orig: 34, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill2 412
+  rotate: false
+  xy: 1658, 147
+  size: 49, 54
+  orig: 63, 61
+  offset: 9, 0
+  index: -1
+luffy_gear2_skill21702
+  rotate: false
+  xy: 1889, 76
+  size: 21, 23
+  orig: 21, 23
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21703
+  rotate: true
+  xy: 1956, 180
+  size: 51, 57
+  orig: 64, 62
+  offset: 7, 0
+  index: -1
+luffy_gear2_skill21704
+  rotate: true
+  xy: 208, 281
+  size: 44, 52
+  orig: 44, 52
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21705
+  rotate: false
+  xy: 848, 2
+  size: 28, 19
+  orig: 28, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21706
+  rotate: true
+  xy: 1912, 64
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21707
+  rotate: false
+  xy: 1230, 2
+  size: 43, 36
+  orig: 43, 36
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21708
+  rotate: true
+  xy: 1871, 611
+  size: 23, 17
+  orig: 23, 17
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21709
+  rotate: true
+  xy: 1863, 101
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21710
+  rotate: false
+  xy: 1739, 60
+  size: 47, 24
+  orig: 47, 24
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill21711
+  rotate: false
+  xy: 1875, 27
+  size: 23, 19
+  orig: 27, 22
+  offset: 3, 1
+  index: -1
+luffy_gear2_skill3 1001
+  rotate: true
+  xy: 1974, 38
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 1002
+  rotate: false
+  xy: 1148, 2
+  size: 32, 19
+  orig: 32, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 1003
+  rotate: false
+  xy: 1912, 88
+  size: 27, 27
+  orig: 30, 27
+  offset: 3, 0
+  index: -1
+luffy_gear2_skill3 1004
+  rotate: false
+  xy: 1940, 854
+  size: 41, 28
+  orig: 41, 28
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 1005
+  rotate: false
+  xy: 1884, 141
+  size: 58, 41
+  orig: 58, 41
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 1006
+  rotate: false
+  xy: 262, 310
+  size: 30, 15
+  orig: 30, 16
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 1007
+  rotate: false
+  xy: 394, 310
+  size: 53, 27
+  orig: 53, 27
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 601
+  rotate: true
+  xy: 1530, 2
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 602
+  rotate: false
+  xy: 1863, 116
+  size: 19, 27
+  orig: 19, 27
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 603
+  rotate: false
+  xy: 1855, 48
+  size: 19, 26
+  orig: 19, 26
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 604
+  rotate: false
+  xy: 1112, 23
+  size: 61, 60
+  orig: 61, 60
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 605
+  rotate: true
+  xy: 1983, 885
+  size: 56, 30
+  orig: 56, 30
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 606
+  rotate: false
+  xy: 1679, 399
+  size: 44, 20
+  orig: 44, 20
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 607
+  rotate: true
+  xy: 1018, 753
+  size: 65, 39
+  orig: 65, 39
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 609
+  rotate: false
+  xy: 1818, 145
+  size: 64, 37
+  orig: 64, 37
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 610
+  rotate: true
+  xy: 2000, 103
+  size: 16, 18
+  orig: 16, 18
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 611
+  rotate: true
+  xy: 364, 312
+  size: 13, 28
+  orig: 13, 28
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 701
+  rotate: false
+  xy: 1230, 40
+  size: 61, 43
+  orig: 61, 43
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 702
+  rotate: false
+  xy: 1084, 1217
+  size: 26, 11
+  orig: 26, 11
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 703
+  rotate: true
+  xy: 1818, 292
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 704
+  rotate: false
+  xy: 832, 1070
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 705
+  rotate: true
+  xy: 1018, 689
+  size: 62, 39
+  orig: 66, 39
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 706
+  rotate: true
+  xy: 882, 39
+  size: 45, 39
+  orig: 45, 39
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 707
+  rotate: false
+  xy: 1739, 86
+  size: 53, 43
+  orig: 53, 43
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 708
+  rotate: false
+  xy: 1658, 203
+  size: 19, 21
+  orig: 19, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 709
+  rotate: false
+  xy: 1112, 2
+  size: 34, 19
+  orig: 34, 19
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 710
+  rotate: false
+  xy: 1871, 636
+  size: 17, 25
+  orig: 19, 25
+  offset: 2, 0
+  index: -1
+luffy_gear2_skill3 711
+  rotate: false
+  xy: 1818, 184
+  size: 136, 106
+  orig: 136, 106
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 712
+  rotate: false
+  xy: 721, 8
+  size: 93, 76
+  orig: 97, 79
+  offset: 4, 0
+  index: -1
+luffy_gear2_skill3 713
+  rotate: false
+  xy: 832, 1197
+  size: 18, 31
+  orig: 18, 31
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 714
+  rotate: false
+  xy: 1822, 48
+  size: 31, 26
+  orig: 31, 26
+  offset: 0, 0
+  index: -1
+luffy_gear2_skill3 715
+  rotate: false
+  xy: 1759, 163
+  size: 57, 38
+  orig: 60, 45
+  offset: 3, 3
+  index: -1
+luffy_gear2_standby_101
+  rotate: true
+  xy: 1944, 106
+  size: 22, 36
+  orig: 22, 36
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_102
+  rotate: false
+  xy: 1983, 973
+  size: 31, 66
+  orig: 31, 66
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_103
+  rotate: false
+  xy: 1175, 23
+  size: 53, 60
+  orig: 53, 60
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_104
+  rotate: true
+  xy: 1733, 16
+  size: 42, 47
+  orig: 42, 47
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_105
+  rotate: false
+  xy: 1891, 854
+  size: 47, 28
+  orig: 47, 28
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_106
+  rotate: true
+  xy: 1811, 2
+  size: 23, 31
+  orig: 23, 31
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_107
+  rotate: false
+  xy: 319, 646
+  size: 25, 45
+  orig: 25, 45
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_108
+  rotate: false
+  xy: 1203, 488
+  size: 48, 25
+  orig: 48, 25
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_109
+  rotate: false
+  xy: 1782, 2
+  size: 27, 21
+  orig: 27, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_109a
+  rotate: false
+  xy: 1941, 83
+  size: 27, 21
+  orig: 27, 21
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_110
+  rotate: true
+  xy: 1657, 226
+  size: 27, 20
+  orig: 27, 20
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_111
+  rotate: false
+  xy: 1587, 95
+  size: 50, 49
+  orig: 50, 49
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_112
+  rotate: false
+  xy: 1819, 101
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_201
+  rotate: false
+  xy: 1059, 676
+  size: 28, 36
+  orig: 32, 38
+  offset: 3, 0
+  index: -1
+luffy_gear2_standby_202
+  rotate: true
+  xy: 1680, 2
+  size: 28, 30
+  orig: 30, 33
+  offset: 0, 1
+  index: -1
+luffy_gear2_standby_301
+  rotate: true
+  xy: 1983, 943
+  size: 28, 35
+  orig: 29, 39
+  offset: 0, 2
+  index: -1
+luffy_gear2_standby_302
+  rotate: false
+  xy: 1876, 48
+  size: 30, 26
+  orig: 31, 28
+  offset: 0, 2
+  index: -1
+luffy_gear2_standby_401
+  rotate: false
+  xy: 1657, 255
+  size: 20, 37
+  orig: 20, 37
+  offset: 0, 0
+  index: -1
+luffy_gear2_standby_402
+  rotate: false
+  xy: 1275, 7
+  size: 16, 31
+  orig: 19, 34
+  offset: 2, 1
+  index: -1
+luffy_gear2_standby_501
+  rotate: false
+  xy: 1871, 663
+  size: 17, 36
+  orig: 19, 38
+  offset: 2, 0
+  index: -1
+luffy_gear2_standby_502
+  rotate: true
+  xy: 1182, 2
+  size: 19, 31
+  orig: 20, 34
+  offset: 0, 1
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 832, 1138
+  size: 18, 25
+  orig: 18, 25
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 1995, 39
+  size: 19, 20
+  orig: 19, 20
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 1681, 32
+  size: 50, 32
+  orig: 50, 32
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: false
+  xy: 1819, 76
+  size: 41, 23
+  orig: 41, 23
+  offset: 0, 0
+  index: -1

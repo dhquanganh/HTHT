@@ -1,0 +1,90 @@
+
+Hit_161.png
+size: 902,457
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+e (1)
+  rotate: false
+  xy: 689, 199
+  size: 205, 20
+  orig: 205, 20
+  offset: 0, 0
+  index: -1
+e (10)
+  rotate: true
+  xy: 360, 205
+  size: 250, 162
+  orig: 250, 162
+  offset: 0, 0
+  index: -1
+e (11)
+  rotate: true
+  xy: 524, 220
+  size: 235, 153
+  orig: 235, 153
+  offset: 0, 0
+  index: -1
+e (12)
+  rotate: true
+  xy: 679, 221
+  size: 234, 106
+  orig: 234, 106
+  offset: 0, 0
+  index: -1
+e (2)
+  rotate: true
+  xy: 787, 251
+  size: 204, 113
+  orig: 204, 113
+  offset: 0, 0
+  index: -1
+e (3)
+  rotate: true
+  xy: 549, 6
+  size: 212, 138
+  orig: 212, 138
+  offset: 0, 0
+  index: -1
+e (4)
+  rotate: false
+  xy: 689, 18
+  size: 204, 179
+  orig: 204, 179
+  offset: 0, 0
+  index: -1
+e (5)
+  rotate: true
+  xy: 2, 2
+  size: 191, 184
+  orig: 191, 184
+  offset: 0, 0
+  index: -1
+e (6)
+  rotate: false
+  xy: 188, 12
+  size: 189, 189
+  orig: 189, 189
+  offset: 0, 0
+  index: -1
+e (7)
+  rotate: false
+  xy: 379, 15
+  size: 168, 188
+  orig: 168, 188
+  offset: 0, 0
+  index: -1
+e (8)
+  rotate: true
+  xy: 172, 203
+  size: 252, 186
+  orig: 252, 186
+  offset: 0, 0
+  index: -1
+e (9)
+  rotate: true
+  xy: 2, 195
+  size: 260, 168
+  orig: 260, 169
+  offset: 0, 1
+  index: -1

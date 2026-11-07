@@ -1,0 +1,349 @@
+
+Hero_169.png
+size: 996,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 948, 363
+  size: 27, 44
+  orig: 27, 44
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 560, 15
+  size: 30, 47
+  orig: 30, 47
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 142, 7
+  size: 78, 105
+  orig: 78, 105
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 948, 392
+  size: 31, 63
+  orig: 31, 63
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 592, 32
+  size: 40, 35
+  orig: 40, 35
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 328, 2
+  size: 29, 55
+  orig: 29, 55
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 359, 4
+  size: 52, 53
+  orig: 52, 53
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 634, 38
+  size: 29, 45
+  orig: 29, 45
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 753, 48
+  size: 43, 21
+  orig: 45, 21
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 866, 46
+  size: 20, 23
+  orig: 20, 23
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 978, 261
+  size: 25, 16
+  orig: 25, 16
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: false
+  xy: 753, 31
+  size: 25, 15
+  orig: 25, 15
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 2, 2
+  size: 138, 83
+  orig: 138, 83
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: false
+  xy: 948, 457
+  size: 37, 61
+  orig: 37, 61
+  offset: 0, 0
+  index: -1
+dalmatian_beat_01
+  rotate: false
+  xy: 443, 212
+  size: 146, 159
+  orig: 146, 159
+  offset: 0, 0
+  index: -1
+dalmatian_beat_02
+  rotate: false
+  xy: 250, 59
+  size: 178, 155
+  orig: 178, 155
+  offset: 0, 0
+  index: -1
+dalmatian_beat_03
+  rotate: false
+  xy: 272, 373
+  size: 244, 145
+  orig: 244, 145
+  offset: 0, 0
+  index: -1
+dalmatian_beat_04
+  rotate: false
+  xy: 518, 374
+  size: 242, 144
+  orig: 242, 144
+  offset: 0, 0
+  index: -1
+dalmatian_beat_05
+  rotate: false
+  xy: 2, 87
+  size: 246, 145
+  orig: 246, 145
+  offset: 0, 0
+  index: -1
+dalmatian_beat_06
+  rotate: false
+  xy: 762, 363
+  size: 184, 155
+  orig: 184, 155
+  offset: 0, 0
+  index: -1
+dalmatian_damage
+  rotate: true
+  xy: 591, 216
+  size: 156, 163
+  orig: 156, 163
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 201
+  rotate: false
+  xy: 918, 224
+  size: 58, 62
+  orig: 58, 62
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 202
+  rotate: false
+  xy: 798, 48
+  size: 32, 21
+  orig: 32, 21
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 203
+  rotate: true
+  xy: 651, 2
+  size: 33, 19
+  orig: 33, 19
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 204
+  rotate: false
+  xy: 249, 8
+  size: 77, 49
+  orig: 77, 49
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 205
+  rotate: false
+  xy: 508, 30
+  size: 50, 32
+  orig: 50, 32
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 206
+  rotate: true
+  xy: 918, 288
+  size: 73, 62
+  orig: 73, 62
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 207
+  rotate: false
+  xy: 465, 18
+  size: 41, 44
+  orig: 41, 44
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 208
+  rotate: true
+  xy: 624, 2
+  size: 28, 25
+  orig: 28, 25
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 209
+  rotate: false
+  xy: 681, 37
+  size: 39, 30
+  orig: 39, 30
+  offset: 0, 0
+  index: -1
+dalmatian_skill1 210
+  rotate: true
+  xy: 890, 68
+  size: 146, 97
+  orig: 146, 97
+  offset: 0, 0
+  index: -1
+dalmatian_skill1_03
+  rotate: false
+  xy: 2, 381
+  size: 268, 137
+  orig: 268, 137
+  offset: 0, 0
+  index: -1
+dalmatian_skill1_04
+  rotate: false
+  xy: 2, 234
+  size: 253, 145
+  orig: 253, 145
+  offset: 0, 0
+  index: -1
+dalmatian_skill1_05
+  rotate: false
+  xy: 257, 216
+  size: 184, 155
+  orig: 184, 155
+  offset: 0, 0
+  index: -1
+dalmatian_skill1_06
+  rotate: true
+  xy: 756, 216
+  size: 145, 160
+  orig: 145, 160
+  offset: 0, 0
+  index: -1
+dalmatian_squat
+  rotate: false
+  xy: 753, 71
+  size: 135, 143
+  orig: 135, 143
+  offset: 0, 0
+  index: -1
+dalmatian_standby_01
+  rotate: true
+  xy: 591, 69
+  size: 145, 160
+  orig: 145, 160
+  offset: 0, 0
+  index: -1
+dalmatian_standby_02
+  rotate: true
+  xy: 430, 64
+  size: 146, 159
+  orig: 146, 159
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 945, 49
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 592, 2
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 978, 232
+  size: 27, 15
+  orig: 27, 15
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 780, 28
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 805, 28
+  size: 18, 23
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 919, 43
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 413, 6
+  size: 51, 50
+  orig: 51, 50
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 888, 43
+  size: 23, 29
+  orig: 31, 32
+  offset: 5, 3
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 830, 29
+  size: 15, 23
+  orig: 15, 23
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 832, 46
+  size: 32, 23
+  orig: 32, 23
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 722, 35
+  size: 32, 29
+  orig: 32, 29
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,517 @@
+
+Hero_212.png
+size: 996,900
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_03
+  rotate: true
+  xy: 766, 7
+  size: 25, 40
+  orig: 26, 41
+  offset: 1, 0
+  index: -1
+arm_L_04
+  rotate: false
+  xy: 725, 294
+  size: 28, 35
+  orig: 30, 36
+  offset: 2, 0
+  index: -1
+arm_R_01
+  rotate: false
+  xy: 904, 150
+  size: 42, 44
+  orig: 43, 45
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 882, 41
+  size: 41, 42
+  orig: 42, 43
+  offset: 1, 0
+  index: -1
+body_01
+  rotate: true
+  xy: 842, 196
+  size: 46, 70
+  orig: 70, 98
+  offset: 24, 27
+  index: -1
+body_04
+  rotate: true
+  xy: 850, 244
+  size: 65, 71
+  orig: 66, 72
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 754, 97
+  size: 43, 73
+  orig: 70, 98
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 882, 371
+  size: 101, 91
+  orig: 102, 92
+  offset: 1, 0
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 925, 26
+  size: 19, 27
+  orig: 20, 28
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 675, 123
+  size: 22, 35
+  orig: 23, 36
+  offset: 1, 0
+  index: -1
+foot_L_01
+  rotate: false
+  xy: 882, 19
+  size: 34, 20
+  orig: 35, 21
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 968, 226
+  size: 26, 19
+  orig: 27, 20
+  offset: 1, 0
+  index: -1
+foot_R_01
+  rotate: true
+  xy: 925, 55
+  size: 34, 19
+  orig: 35, 20
+  offset: 1, 0
+  index: -1
+foot_R_03
+  rotate: true
+  xy: 627, 121
+  size: 24, 22
+  orig: 25, 23
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 651, 121
+  size: 24, 22
+  orig: 25, 23
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 228, 737
+  size: 18, 27
+  orig: 19, 28
+  offset: 1, 0
+  index: -1
+hand_R_01
+  rotate: false
+  xy: 918, 2
+  size: 20, 22
+  orig: 21, 23
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 914, 206
+  size: 19, 36
+  orig: 20, 37
+  offset: 1, 0
+  index: -1
+head_01
+  rotate: true
+  xy: 842, 141
+  size: 53, 60
+  orig: 54, 61
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 766, 34
+  size: 53, 61
+  orig: 54, 62
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 829, 85
+  size: 54, 60
+  orig: 55, 61
+  offset: 1, 0
+  index: -1
+krieg_beat_01
+  rotate: false
+  xy: 325, 433
+  size: 125, 148
+  orig: 126, 149
+  offset: 1, 0
+  index: -1
+krieg_beat_02
+  rotate: false
+  xy: 732, 595
+  size: 131, 148
+  orig: 132, 149
+  offset: 1, 0
+  index: -1
+krieg_beat_03
+  rotate: false
+  xy: 869, 464
+  size: 123, 146
+  orig: 124, 147
+  offset: 1, 0
+  index: -1
+krieg_beat_04
+  rotate: true
+  xy: 308, 583
+  size: 172, 146
+  orig: 173, 147
+  offset: 1, 0
+  index: -1
+krieg_beat_05
+  rotate: true
+  xy: 2, 302
+  size: 191, 170
+  orig: 192, 171
+  offset: 1, 0
+  index: -1
+krieg_damage
+  rotate: true
+  xy: 734, 331
+  size: 119, 146
+  orig: 120, 147
+  offset: 1, 0
+  index: -1
+krieg_guard
+  rotate: false
+  xy: 449, 272
+  size: 159, 153
+  orig: 160, 154
+  offset: 1, 0
+  index: -1
+krieg_skill1_01
+  rotate: false
+  xy: 872, 756
+  size: 122, 142
+  orig: 123, 143
+  offset: 1, 0
+  index: -1
+krieg_skill1_02
+  rotate: false
+  xy: 734, 452
+  size: 133, 141
+  orig: 134, 142
+  offset: 1, 0
+  index: -1
+krieg_skill1_03
+  rotate: true
+  xy: 419, 4
+  size: 104, 136
+  orig: 105, 137
+  offset: 1, 0
+  index: -1
+krieg_skill1_04
+  rotate: false
+  xy: 614, 428
+  size: 118, 148
+  orig: 119, 149
+  offset: 1, 0
+  index: -1
+krieg_skill1_05
+  rotate: false
+  xy: 670, 745
+  size: 200, 153
+  orig: 201, 154
+  offset: 1, 0
+  index: -1
+krieg_skill1_06
+  rotate: false
+  xy: 2, 737
+  size: 224, 161
+  orig: 225, 162
+  offset: 1, 0
+  index: -1
+krieg_skill2_01
+  rotate: false
+  xy: 872, 612
+  size: 122, 142
+  orig: 123, 143
+  offset: 1, 0
+  index: -1
+krieg_skill2_02
+  rotate: false
+  xy: 627, 147
+  size: 126, 142
+  orig: 127, 143
+  offset: 1, 0
+  index: -1
+krieg_skill2_03
+  rotate: true
+  xy: 337, 110
+  size: 159, 142
+  orig: 160, 143
+  offset: 1, 0
+  index: -1
+krieg_skill2_04
+  rotate: true
+  xy: 174, 395
+  size: 165, 149
+  orig: 166, 150
+  offset: 1, 0
+  index: -1
+krieg_skill2_05
+  rotate: true
+  xy: 143, 562
+  size: 173, 163
+  orig: 182, 164
+  offset: 1, 0
+  index: -1
+krieg_skill2_06
+  rotate: false
+  xy: 456, 578
+  size: 172, 163
+  orig: 201, 164
+  offset: 1, 0
+  index: -1
+krieg_skill2_07
+  rotate: true
+  xy: 2, 114
+  size: 186, 176
+  orig: 224, 177
+  offset: 1, 0
+  index: -1
+krieg_skill2_08
+  rotate: false
+  xy: 481, 121
+  size: 144, 149
+  orig: 145, 150
+  offset: 1, 0
+  index: -1
+krieg_skill3_11
+  rotate: false
+  xy: 452, 427
+  size: 160, 149
+  orig: 197, 173
+  offset: 20, 14
+  index: -1
+krieg_skill3_21
+  rotate: true
+  xy: 716, 6
+  size: 67, 48
+  orig: 68, 49
+  offset: 1, 0
+  index: -1
+krieg_skill3_22
+  rotate: false
+  xy: 923, 247
+  size: 55, 62
+  orig: 56, 63
+  offset: 1, 0
+  index: -1
+krieg_skill3_23
+  rotate: true
+  xy: 716, 75
+  size: 70, 36
+  orig: 71, 37
+  offset: 1, 0
+  index: -1
+krieg_skill3_24
+  rotate: false
+  xy: 935, 212
+  size: 31, 33
+  orig: 32, 34
+  offset: 1, 0
+  index: -1
+krieg_skill3_25
+  rotate: false
+  xy: 882, 311
+  size: 98, 58
+  orig: 109, 69
+  offset: 1, 10
+  index: -1
+krieg_skill3_26
+  rotate: false
+  xy: 163, 2
+  size: 96, 110
+  orig: 97, 111
+  offset: 1, 0
+  index: -1
+krieg_skill3_27
+  rotate: false
+  xy: 755, 142
+  size: 80, 42
+  orig: 81, 43
+  offset: 1, 0
+  index: -1
+krieg_skill3_28
+  rotate: false
+  xy: 755, 261
+  size: 93, 68
+  orig: 94, 69
+  offset: 1, 0
+  index: -1
+krieg_skill3_29
+  rotate: true
+  xy: 821, 34
+  size: 49, 59
+  orig: 50, 60
+  offset: 1, 0
+  index: -1
+krieg_skill3_31
+  rotate: false
+  xy: 228, 757
+  size: 236, 141
+  orig: 248, 157
+  offset: 7, 5
+  index: -1
+krieg_skill3_41
+  rotate: true
+  xy: 2, 495
+  size: 240, 139
+  orig: 254, 150
+  offset: 6, 8
+  index: -1
+krieg_skill3_51
+  rotate: false
+  xy: 466, 743
+  size: 202, 155
+  orig: 219, 172
+  offset: 8, 4
+  index: -1
+krieg_skill3_61
+  rotate: false
+  xy: 610, 291
+  size: 113, 134
+  orig: 135, 150
+  offset: 8, 7
+  index: -1
+krieg_skill3_62
+  rotate: false
+  xy: 755, 186
+  size: 85, 73
+  orig: 99, 88
+  offset: 7, 9
+  index: -1
+krieg_skill3_63
+  rotate: true
+  xy: 180, 233
+  size: 160, 152
+  orig: 177, 163
+  offset: 8, 4
+  index: -1
+krieg_standby_01
+  rotate: true
+  xy: 557, 5
+  size: 114, 157
+  orig: 115, 158
+  offset: 1, 0
+  index: -1
+krieg_standby_02
+  rotate: true
+  xy: 180, 115
+  size: 116, 155
+  orig: 117, 156
+  offset: 1, 0
+  index: -1
+krieg_win_01
+  rotate: true
+  xy: 261, 3
+  size: 105, 156
+  orig: 106, 157
+  offset: 1, 0
+  index: -1
+krieg_win_02
+  rotate: false
+  xy: 630, 582
+  size: 100, 159
+  orig: 101, 160
+  offset: 1, 0
+  index: -1
+krieg_win_03
+  rotate: false
+  xy: 334, 271
+  size: 113, 160
+  orig: 114, 161
+  offset: 1, 0
+  index: -1
+krieg_win_04
+  rotate: true
+  xy: 2, 2
+  size: 110, 159
+  orig: 111, 160
+  offset: 1, 0
+  index: -1
+shank_L_01
+  rotate: true
+  xy: 940, 2
+  size: 22, 19
+  orig: 23, 20
+  offset: 1, 0
+  index: -1
+shank_L_03
+  rotate: true
+  xy: 143, 504
+  size: 22, 29
+  orig: 23, 30
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 980, 293
+  size: 16, 14
+  orig: 17, 15
+  offset: 1, 0
+  index: -1
+shank_R_01
+  rotate: true
+  xy: 968, 203
+  size: 21, 23
+  orig: 22, 24
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 850, 316
+  size: 20, 13
+  orig: 21, 14
+  offset: 1, 0
+  index: -1
+thigh_L_01
+  rotate: false
+  xy: 143, 528
+  size: 29, 32
+  orig: 30, 33
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 808, 5
+  size: 33, 27
+  orig: 34, 28
+  offset: 1, 0
+  index: -1
+thigh_R_01
+  rotate: true
+  xy: 843, 4
+  size: 28, 33
+  orig: 29, 34
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 891, 91
+  size: 48, 44
+  orig: 51, 49
+  offset: 3, 4
+  index: -1

@@ -1,0 +1,475 @@
+
+Hit_378.png
+size: 748,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cutscene/cast_feet
+  rotate: false
+  xy: 340, 399
+  size: 123, 123
+  orig: 128, 128
+  offset: 4, 1
+  index: -1
+cutscene/glow_1006
+  rotate: false
+  xy: 2, 282
+  size: 240, 240
+  orig: 256, 256
+  offset: 8, 8
+  index: -1
+cutscene/noise_1010
+  rotate: false
+  xy: 83, 152
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+cutscene/smoke_5000_01
+  rotate: false
+  xy: 516, 301
+  size: 40, 34
+  orig: 64, 64
+  offset: 9, 14
+  index: -1
+cutscene/smoke_5000_02
+  rotate: false
+  xy: 476, 175
+  size: 45, 34
+  orig: 64, 64
+  offset: 9, 16
+  index: -1
+cutscene/smoke_5000_03
+  rotate: false
+  xy: 420, 171
+  size: 54, 38
+  orig: 64, 64
+  offset: 5, 14
+  index: -1
+cutscene/smoke_5000_04
+  rotate: false
+  xy: 675, 475
+  size: 57, 47
+  orig: 64, 64
+  offset: 3, 12
+  index: -1
+cutscene/smoke_5000_05
+  rotate: true
+  xy: 465, 459
+  size: 63, 50
+  orig: 64, 64
+  offset: 0, 11
+  index: -1
+cutscene/smoke_5000_06
+  rotate: true
+  xy: 568, 338
+  size: 61, 51
+  orig: 64, 64
+  offset: 1, 10
+  index: -1
+cutscene/smoke_5000_07
+  rotate: true
+  xy: 573, 275
+  size: 61, 48
+  orig: 64, 64
+  offset: 0, 11
+  index: -1
+cutscene/smoke_5000_08
+  rotate: true
+  xy: 580, 461
+  size: 61, 50
+  orig: 64, 64
+  offset: 2, 9
+  index: -1
+cutscene/smoke_5000_09
+  rotate: false
+  xy: 687, 421
+  size: 56, 52
+  orig: 64, 64
+  offset: 3, 8
+  index: -1
+cutscene/smoke_5000_10
+  rotate: true
+  xy: 675, 257
+  size: 54, 55
+  orig: 64, 64
+  offset: 4, 5
+  index: -1
+cutscene/smoke_5000_11
+  rotate: true
+  xy: 684, 154
+  size: 52, 53
+  orig: 64, 64
+  offset: 4, 9
+  index: -1
+cutscene/smoke_5000_12
+  rotate: false
+  xy: 591, 67
+  size: 52, 53
+  orig: 64, 64
+  offset: 5, 9
+  index: -1
+cutscene/smoke_5000_13
+  rotate: false
+  xy: 591, 12
+  size: 51, 53
+  orig: 64, 64
+  offset: 7, 9
+  index: -1
+cutscene/smoke_5000_14
+  rotate: true
+  xy: 695, 106
+  size: 46, 51
+  orig: 64, 64
+  offset: 12, 11
+  index: -1
+cutscene/smoke_5000_15
+  rotate: false
+  xy: 623, 236
+  size: 50, 47
+  orig: 64, 64
+  offset: 9, 12
+  index: -1
+cutscene/smoke_5000_16
+  rotate: false
+  xy: 645, 107
+  size: 48, 45
+  orig: 64, 64
+  offset: 9, 12
+  index: -1
+cutscene/typhoon2_01
+  rotate: false
+  xy: 695, 61
+  size: 44, 43
+  orig: 128, 128
+  offset: 76, 4
+  index: -1
+cutscene/typhoon2_02
+  rotate: false
+  xy: 244, 296
+  size: 88, 100
+  orig: 128, 128
+  offset: 28, 4
+  index: -1
+cutscene/typhoon2_03
+  rotate: true
+  xy: 334, 301
+  size: 95, 116
+  orig: 128, 128
+  offset: 17, 4
+  index: -1
+cutscene/typhoon2_04
+  rotate: false
+  xy: 244, 398
+  size: 94, 124
+  orig: 128, 128
+  offset: 6, 4
+  index: -1
+cutscene/typhoon2_05
+  rotate: false
+  xy: 331, 170
+  size: 87, 124
+  orig: 128, 128
+  offset: 5, 4
+  index: -1
+cutscene/typhoon2_06
+  rotate: true
+  xy: 392, 2
+  size: 87, 84
+  orig: 128, 128
+  offset: 5, 44
+  index: -1
+cutscene/typhoon2_07
+  rotate: false
+  xy: 420, 211
+  size: 88, 88
+  orig: 128, 128
+  offset: 4, 40
+  index: -1
+images/hand_hit_03
+  rotate: true
+  xy: 42, 84
+  size: 196, 39
+  orig: 199, 44
+  offset: 0, 3
+  index: -1
+images/hand_hit_07
+  rotate: true
+  xy: 2, 63
+  size: 217, 38
+  orig: 228, 51
+  offset: 6, 5
+  index: -1
+sod/ciguang1
+  rotate: false
+  xy: 213, 152
+  size: 116, 128
+  orig: 128, 128
+  offset: 5, 0
+  index: -1
+sod/fire_center_hit_01
+  rotate: true
+  xy: 517, 460
+  size: 62, 61
+  orig: 64, 64
+  offset: 1, 2
+  index: -1
+sod/fire_center_hit_02
+  rotate: false
+  xy: 506, 337
+  size: 60, 61
+  orig: 64, 64
+  offset: 2, 1
+  index: -1
+sod/fire_center_hit_03
+  rotate: false
+  xy: 523, 171
+  size: 56, 58
+  orig: 64, 64
+  offset: 4, 3
+  index: -1
+sod/fire_center_hit_04
+  rotate: true
+  xy: 524, 401
+  size: 57, 52
+  orig: 64, 64
+  offset: 4, 8
+  index: -1
+sod/fire_center_hit_05
+  rotate: false
+  xy: 465, 400
+  size: 57, 57
+  orig: 64, 64
+  offset: 4, 4
+  index: -1
+sod/fire_center_hit_06
+  rotate: false
+  xy: 687, 367
+  size: 56, 52
+  orig: 64, 64
+  offset: 5, 8
+  index: -1
+sod/fire_center_hit_07
+  rotate: false
+  xy: 675, 313
+  size: 56, 52
+  orig: 64, 64
+  offset: 5, 8
+  index: -1
+sod/fire_center_hit_08
+  rotate: true
+  xy: 581, 179
+  size: 55, 52
+  orig: 64, 64
+  offset: 5, 8
+  index: -1
+sod/fire_center_hit_09
+  rotate: true
+  xy: 578, 401
+  size: 57, 52
+  orig: 64, 64
+  offset: 4, 8
+  index: -1
+sod/fire_center_hit_10
+  rotate: true
+  xy: 586, 122
+  size: 55, 52
+  orig: 64, 64
+  offset: 5, 8
+  index: -1
+sod/fire_center_hit_11
+  rotate: true
+  xy: 635, 179
+  size: 55, 47
+  orig: 64, 64
+  offset: 5, 8
+  index: -1
+sod/fire_center_hit_12
+  rotate: false
+  xy: 684, 208
+  size: 54, 47
+  orig: 64, 64
+  offset: 6, 8
+  index: -1
+sod/smoke2_01
+  rotate: true
+  xy: 226, 86
+  size: 64, 61
+  orig: 102, 128
+  offset: 35, 29
+  index: -1
+sod/smoke2_02
+  rotate: true
+  xy: 204, 5
+  size: 79, 57
+  orig: 103, 128
+  offset: 20, 28
+  index: -1
+sod/smoke2_03
+  rotate: true
+  xy: 263, 6
+  size: 78, 63
+  orig: 102, 128
+  offset: 14, 29
+  index: -1
+sod/smoke2_04
+  rotate: false
+  xy: 83, 86
+  size: 77, 64
+  orig: 103, 128
+  offset: 10, 28
+  index: -1
+sod/smoke2_05
+  rotate: true
+  xy: 478, 23
+  size: 71, 60
+  orig: 102, 128
+  offset: 3, 28
+  index: -1
+sod/smoke2_06
+  rotate: true
+  xy: 466, 96
+  size: 73, 60
+  orig: 102, 128
+  offset: 1, 30
+  index: -1
+sod/smoke2_07
+  rotate: true
+  xy: 528, 101
+  size: 68, 56
+  orig: 103, 128
+  offset: 3, 30
+  index: -1
+sod/smoke2_08
+  rotate: true
+  xy: 623, 285
+  size: 55, 50
+  orig: 102, 128
+  offset: 5, 32
+  index: -1
+sod/smoke2_09
+  rotate: false
+  xy: 695, 16
+  size: 43, 43
+  orig: 103, 128
+  offset: 8, 35
+  index: -1
+sod/smoke_show_02
+  rotate: false
+  xy: 289, 86
+  size: 60, 64
+  orig: 86, 85
+  offset: 13, 6
+  index: -1
+sod/smoke_show_03
+  rotate: false
+  xy: 510, 231
+  size: 61, 68
+  orig: 85, 85
+  offset: 12, 6
+  index: -1
+sod/smoke_show_04
+  rotate: false
+  xy: 162, 86
+  size: 62, 64
+  orig: 85, 86
+  offset: 12, 7
+  index: -1
+sod/smoke_show_05
+  rotate: false
+  xy: 644, 13
+  size: 49, 52
+  orig: 86, 86
+  offset: 19, 21
+  index: -1
+sod/smoke_show_06
+  rotate: false
+  xy: 632, 417
+  size: 53, 56
+  orig: 85, 86
+  offset: 17, 20
+  index: -1
+sod/smoke_show_07
+  rotate: false
+  xy: 621, 342
+  size: 52, 57
+  orig: 85, 85
+  offset: 17, 20
+  index: -1
+sod/smoke_show_08
+  rotate: true
+  xy: 42, 64
+  size: 18, 26
+  orig: 86, 85
+  offset: 25, 51
+  index: -1
+sod/smoke_show_09
+  rotate: false
+  xy: 331, 152
+  size: 15, 16
+  orig: 85, 85
+  offset: 25, 58
+  index: -1
+sod/toenuoc3_02
+  rotate: true
+  xy: 540, 35
+  size: 64, 49
+  orig: 86, 64
+  offset: 10, 1
+  index: -1
+sod/toenuoc3_03
+  rotate: true
+  xy: 328, 6
+  size: 78, 62
+  orig: 85, 64
+  offset: 4, 1
+  index: -1
+sod/toenuoc3_04
+  rotate: true
+  xy: 142, 3
+  size: 81, 60
+  orig: 85, 64
+  offset: 3, 2
+  index: -1
+sod/toenuoc3_05
+  rotate: false
+  xy: 2, 2
+  size: 78, 59
+  orig: 86, 64
+  offset: 4, 3
+  index: -1
+sod/toenuoc3_06
+  rotate: true
+  xy: 82, 2
+  size: 80, 58
+  orig: 85, 64
+  offset: 2, 3
+  index: -1
+sod/toenuoc3_07
+  rotate: true
+  xy: 351, 91
+  size: 77, 56
+  orig: 85, 64
+  offset: 5, 4
+  index: -1
+sod/toenuoc3_08
+  rotate: true
+  xy: 409, 93
+  size: 75, 55
+  orig: 86, 64
+  offset: 7, 5
+  index: -1
+sod/toenuoc3_09
+  rotate: true
+  xy: 452, 328
+  size: 69, 52
+  orig: 85, 64
+  offset: 9, 7
+  index: -1
+sod/toenuoc3_10
+  rotate: false
+  xy: 452, 301
+  size: 62, 25
+  orig: 85, 64
+  offset: 12, 15
+  index: -1

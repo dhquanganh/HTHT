@@ -1,0 +1,62 @@
+
+Hit_109.png
+size: 851,219
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/on
+  rotate: false
+  xy: 782, 180
+  size: 67, 37
+  orig: 70, 39
+  offset: 2, 1
+  index: -1
+fx/on (1)
+  rotate: true
+  xy: 2, 100
+  size: 117, 235
+  orig: 117, 235
+  offset: 0, 0
+  index: -1
+fx/on (2)
+  rotate: true
+  xy: 277, 2
+  size: 103, 259
+  orig: 103, 259
+  offset: 0, 0
+  index: -1
+fx/on (3)
+  rotate: true
+  xy: 520, 109
+  size: 108, 260
+  orig: 108, 260
+  offset: 0, 0
+  index: -1
+fx/on (4)
+  rotate: true
+  xy: 2, 2
+  size: 96, 273
+  orig: 96, 273
+  offset: 0, 0
+  index: -1
+fx/on (5)
+  rotate: true
+  xy: 538, 7
+  size: 100, 274
+  orig: 100, 274
+  offset: 0, 0
+  index: -1
+fx/on (6)
+  rotate: true
+  xy: 239, 107
+  size: 110, 279
+  orig: 110, 279
+  offset: 0, 0
+  index: -1
+fx/on (7)
+  rotate: false
+  xy: 814, 119
+  size: 35, 59
+  orig: 35, 59
+  offset: 0, 0
+  index: -1

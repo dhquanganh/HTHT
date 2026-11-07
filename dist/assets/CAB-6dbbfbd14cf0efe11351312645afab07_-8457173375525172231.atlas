@@ -1,0 +1,69 @@
+
+Skill_164.png
+size: 828,796
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Skill_Hit/001
+  rotate: false
+  xy: 572, 603
+  size: 251, 190
+  orig: 256, 192
+  offset: 3, 1
+  index: -1
+Skill_Hit/002
+  rotate: false
+  xy: 522, 8
+  size: 302, 194
+  orig: 307, 197
+  offset: 3, 1
+  index: -1
+Skill_Hit/003
+  rotate: false
+  xy: 204, 2
+  size: 316, 200
+  orig: 321, 203
+  offset: 3, 1
+  index: -1
+Skill_Hit/004
+  rotate: false
+  xy: 204, 583
+  size: 366, 210
+  orig: 372, 213
+  offset: 3, 1
+  index: -1
+Skill_Hit/005
+  rotate: true
+  xy: 2, 34
+  size: 377, 200
+  orig: 382, 203
+  offset: 3, 1
+  index: -1
+Skill_Hit/006
+  rotate: true
+  xy: 2, 413
+  size: 380, 200
+  orig: 385, 203
+  offset: 3, 1
+  index: -1
+Skill_Hit/007
+  rotate: true
+  xy: 572, 266
+  size: 335, 208
+  orig: 340, 211
+  offset: 3, 1
+  index: -1
+Skill_Hit/008
+  rotate: false
+  xy: 204, 390
+  size: 341, 191
+  orig: 347, 194
+  offset: 4, 1
+  index: -1
+Skill_Hit/009
+  rotate: false
+  xy: 204, 204
+  size: 334, 184
+  orig: 340, 187
+  offset: 4, 1
+  index: -1

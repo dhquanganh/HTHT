@@ -1,0 +1,195 @@
+
+Cast_432.png
+size: 876,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+18/images/glow_4089
+  rotate: false
+  xy: 634, 272
+  size: 240, 244
+  orig: 256, 256
+  offset: 8, 4
+  index: -1
+18/images/smoke
+  rotate: false
+  xy: 2, 2
+  size: 123, 123
+  orig: 128, 128
+  offset: 4, 1
+  index: -1
+OT/04TenTen/images/smoke_1046
+  rotate: false
+  xy: 127, 61
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+OT/04TenTen/images/smoke_5022
+  rotate: true
+  xy: 827, 206
+  size: 64, 42
+  orig: 64, 64
+  offset: 0, 9
+  index: -1
+ab1
+  rotate: false
+  xy: 182, 7
+  size: 52, 52
+  orig: 53, 116
+  offset: 0, 33
+  index: -1
+ab2
+  rotate: false
+  xy: 817, 149
+  size: 49, 51
+  orig: 53, 116
+  offset: 0, 34
+  index: -1
+ab3
+  rotate: false
+  xy: 750, 89
+  size: 50, 51
+  orig: 53, 116
+  offset: 0, 34
+  index: -1
+ab4
+  rotate: false
+  xy: 750, 37
+  size: 50, 50
+  orig: 53, 116
+  offset: 0, 35
+  index: -1
+ab5
+  rotate: false
+  xy: 802, 90
+  size: 50, 50
+  orig: 53, 116
+  offset: 0, 35
+  index: -1
+ab6
+  rotate: false
+  xy: 802, 38
+  size: 49, 50
+  orig: 53, 116
+  offset: 0, 35
+  index: -1
+ab7
+  rotate: false
+  xy: 309, 75
+  size: 53, 50
+  orig: 53, 116
+  offset: 0, 35
+  index: -1
+ab8
+  rotate: true
+  xy: 698, 45
+  size: 53, 50
+  orig: 53, 116
+  offset: 0, 35
+  index: -1
+ab9
+  rotate: true
+  xy: 236, 6
+  size: 53, 48
+  orig: 53, 116
+  offset: 0, 37
+  index: -1
+images/smoke_show_01
+  rotate: false
+  xy: 764, 142
+  size: 51, 58
+  orig: 85, 85
+  offset: 17, 10
+  index: -1
+images/smoke_show_02
+  rotate: false
+  xy: 193, 61
+  size: 60, 64
+  orig: 86, 85
+  offset: 13, 6
+  index: -1
+images/smoke_show_03
+  rotate: false
+  xy: 764, 202
+  size: 61, 68
+  orig: 85, 85
+  offset: 12, 6
+  index: -1
+images/smoke_show_04
+  rotate: false
+  xy: 634, 34
+  size: 62, 64
+  orig: 85, 86
+  offset: 12, 7
+  index: -1
+images/smoke_show_05
+  rotate: false
+  xy: 286, 14
+  size: 49, 52
+  orig: 86, 86
+  offset: 19, 21
+  index: -1
+images/smoke_show_06
+  rotate: false
+  xy: 127, 3
+  size: 53, 56
+  orig: 85, 86
+  offset: 17, 20
+  index: -1
+images/smoke_show_07
+  rotate: false
+  xy: 255, 68
+  size: 52, 57
+  orig: 85, 85
+  offset: 17, 20
+  index: -1
+images/smoke_show_08
+  rotate: false
+  xy: 634, 6
+  size: 18, 26
+  orig: 86, 85
+  offset: 25, 51
+  index: -1
+images/smoke_show_09
+  rotate: false
+  xy: 654, 16
+  size: 15, 16
+  orig: 85, 85
+  offset: 25, 58
+  index: -1
+laudai
+  rotate: false
+  xy: 2, 127
+  size: 372, 389
+  orig: 372, 389
+  offset: 0, 0
+  index: -1
+noise_1006
+  rotate: false
+  xy: 376, 260
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+noise_2009
+  rotate: false
+  xy: 376, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+shad
+  rotate: false
+  xy: 634, 100
+  size: 113, 40
+  orig: 117, 42
+  offset: 2, 1
+  index: -1
+sky
+  rotate: false
+  xy: 634, 142
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

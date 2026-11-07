@@ -1,0 +1,872 @@
+
+Hero_104.png
+size: 1024,1020
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 674, 988
+  size: 27, 41
+  orig: 27, 41
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 372, 904
+  size: 49, 71
+  orig: 49, 71
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 430, 990
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 725, 944
+  size: 42, 64
+  orig: 42, 64
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 772, 879
+  size: 63, 104
+  orig: 63, 104
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 717, 988
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 260, 993
+  size: 22, 33
+  orig: 22, 33
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 445, 901
+  size: 65, 49
+  orig: 65, 49
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 122, 960
+  size: 34, 53
+  orig: 34, 53
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: true
+  xy: 671, 946
+  size: 40, 52
+  orig: 40, 52
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: true
+  xy: 2, 999
+  size: 16, 24
+  orig: 16, 24
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 619, 989
+  size: 26, 53
+  orig: 26, 53
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: true
+  xy: 525, 951
+  size: 37, 92
+  orig: 37, 92
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: true
+  xy: 177, 958
+  size: 34, 72
+  orig: 34, 72
+  offset: 0, 0
+  index: -1
+cloth_14
+  rotate: true
+  xy: 746, 988
+  size: 27, 36
+  orig: 34, 38
+  offset: 5, 2
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 784, 988
+  size: 27, 37
+  orig: 27, 37
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 295, 993
+  size: 28, 22
+  orig: 28, 22
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 28, 997
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1
+fujitora_beat_01
+  rotate: true
+  xy: 295, 459
+  size: 124, 155
+  orig: 124, 155
+  offset: 0, 0
+  index: -1
+fujitora_beat_06_ef
+  rotate: false
+  xy: 467, 686
+  size: 214, 106
+  orig: 214, 106
+  offset: 0, 0
+  index: -1
+fujitora_beat_07
+  rotate: false
+  xy: 853, 67
+  size: 161, 142
+  orig: 161, 142
+  offset: 0, 0
+  index: -1
+fujitora_beat_08
+  rotate: false
+  xy: 2, 95
+  size: 149, 136
+  orig: 149, 136
+  offset: 0, 0
+  index: -1
+fujitora_beat_09
+  rotate: true
+  xy: 299, 585
+  size: 118, 156
+  orig: 120, 156
+  offset: 2, 0
+  index: -1
+fujitora_damage
+  rotate: true
+  xy: 499, 286
+  size: 134, 163
+  orig: 134, 163
+  offset: 0, 0
+  index: -1
+fujitora_idling_02
+  rotate: true
+  xy: 129, 499
+  size: 121, 164
+  orig: 121, 164
+  offset: 0, 0
+  index: -1
+fujitora_idling_03
+  rotate: true
+  xy: 172, 327
+  size: 130, 167
+  orig: 130, 167
+  offset: 0, 0
+  index: -1
+fujitora_idling_04
+  rotate: true
+  xy: 133, 622
+  size: 113, 164
+  orig: 113, 166
+  offset: 0, 0
+  index: -1
+fujitora_idling_05
+  rotate: true
+  xy: 844, 596
+  size: 114, 174
+  orig: 114, 174
+  offset: 0, 0
+  index: -1
+fujitora_idling_06
+  rotate: true
+  xy: 457, 570
+  size: 114, 174
+  orig: 114, 174
+  offset: 0, 0
+  index: -1
+fujitora_idling_07
+  rotate: true
+  xy: 633, 550
+  size: 114, 174
+  orig: 114, 174
+  offset: 0, 0
+  index: -1
+fujitora_idling_11
+  rotate: true
+  xy: 809, 478
+  size: 116, 174
+  orig: 118, 174
+  offset: 2, 0
+  index: -1
+fujitora_idling_12
+  rotate: true
+  xy: 452, 446
+  size: 122, 163
+  orig: 122, 163
+  offset: 0, 0
+  index: -1
+fujitora_idling_13
+  rotate: true
+  xy: 307, 705
+  size: 104, 158
+  orig: 104, 158
+  offset: 0, 0
+  index: -1
+fujitora_rise
+  rotate: false
+  xy: 2, 507
+  size: 125, 120
+  orig: 139, 140
+  offset: 6, 9
+  index: -1
+fujitora_rise 101
+  rotate: false
+  xy: 483, 952
+  size: 40, 36
+  orig: 40, 36
+  offset: 0, 0
+  index: -1
+fujitora_rise 102
+  rotate: false
+  xy: 823, 988
+  size: 31, 27
+  orig: 31, 27
+  offset: 0, 0
+  index: -1
+fujitora_rise 103
+  rotate: true
+  xy: 156, 996
+  size: 19, 30
+  orig: 19, 30
+  offset: 0, 0
+  index: -1
+fujitora_rise 104
+  rotate: true
+  xy: 54, 997
+  size: 18, 100
+  orig: 18, 100
+  offset: 0, 0
+  index: -1
+fujitora_rise 105
+  rotate: true
+  xy: 77, 962
+  size: 33, 43
+  orig: 33, 43
+  offset: 0, 0
+  index: -1
+fujitora_skill1 201
+  rotate: false
+  xy: 301, 906
+  size: 69, 47
+  orig: 69, 47
+  offset: 0, 0
+  index: -1
+fujitora_skill1 202
+  rotate: false
+  xy: 791, 944
+  size: 85, 42
+  orig: 85, 42
+  offset: 0, 0
+  index: -1
+fujitora_skill1 203
+  rotate: true
+  xy: 188, 995
+  size: 20, 34
+  orig: 20, 34
+  offset: 0, 0
+  index: -1
+fujitora_skill1 204
+  rotate: true
+  xy: 224, 994
+  size: 21, 34
+  orig: 21, 34
+  offset: 0, 0
+  index: -1
+fujitora_skill1 205
+  rotate: false
+  xy: 251, 956
+  size: 61, 35
+  orig: 61, 35
+  offset: 0, 0
+  index: -1
+fujitora_skill1 206
+  rotate: true
+  xy: 336, 824
+  size: 78, 85
+  orig: 78, 85
+  offset: 0, 0
+  index: -1
+fujitora_skill1 207
+  rotate: true
+  xy: 356, 991
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+fujitora_skill1 208
+  rotate: false
+  xy: 856, 988
+  size: 27, 27
+  orig: 37, 48
+  offset: 0, 21
+  index: -1
+fujitora_skill1 209
+  rotate: false
+  xy: 885, 988
+  size: 65, 27
+  orig: 65, 27
+  offset: 0, 0
+  index: -1
+fujitora_skill1 210
+  rotate: false
+  xy: 619, 948
+  size: 50, 39
+  orig: 50, 39
+  offset: 0, 0
+  index: -1
+fujitora_skill1 211
+  rotate: true
+  xy: 878, 941
+  size: 45, 50
+  orig: 45, 50
+  offset: 0, 0
+  index: -1
+fujitora_skill1 212
+  rotate: false
+  xy: 644, 890
+  size: 64, 54
+  orig: 81, 54
+  offset: 0, 0
+  index: -1
+fujitora_skill1 213
+  rotate: true
+  xy: 325, 992
+  size: 23, 29
+  orig: 23, 29
+  offset: 0, 0
+  index: -1
+fujitora_skill1 214
+  rotate: false
+  xy: 423, 811
+  size: 133, 87
+  orig: 133, 87
+  offset: 0, 0
+  index: -1
+fujitora_skill1 215
+  rotate: false
+  xy: 40, 965
+  size: 35, 30
+  orig: 43, 32
+  offset: 6, 2
+  index: -1
+fujitora_skill1 216
+  rotate: false
+  xy: 150, 836
+  size: 91, 73
+  orig: 91, 73
+  offset: 0, 0
+  index: -1
+fujitora_skill1 501
+  rotate: false
+  xy: 930, 941
+  size: 54, 45
+  orig: 54, 45
+  offset: 0, 0
+  index: -1
+fujitora_skill1 502
+  rotate: false
+  xy: 952, 988
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+fujitora_skill1 503
+  rotate: false
+  xy: 387, 991
+  size: 41, 24
+  orig: 41, 24
+  offset: 0, 0
+  index: -1
+fujitora_skill1 504
+  rotate: false
+  xy: 243, 831
+  size: 91, 73
+  orig: 91, 73
+  offset: 0, 0
+  index: -1
+fujitora_skill1 505
+  rotate: false
+  xy: 457, 990
+  size: 34, 25
+  orig: 34, 25
+  offset: 0, 0
+  index: -1
+fujitora_skill1 506
+  rotate: true
+  xy: 56, 913
+  size: 47, 57
+  orig: 47, 57
+  offset: 0, 0
+  index: -1
+fujitora_skill1 507
+  rotate: false
+  xy: 2, 844
+  size: 146, 65
+  orig: 146, 65
+  offset: 0, 0
+  index: -1
+fujitora_skill1 601
+  rotate: false
+  xy: 2, 917
+  size: 52, 46
+  orig: 52, 46
+  offset: 0, 0
+  index: -1
+fujitora_skill1 602
+  rotate: false
+  xy: 878, 869
+  size: 143, 70
+  orig: 143, 70
+  offset: 0, 0
+  index: -1
+fujitora_skill1 701
+  rotate: false
+  xy: 2, 746
+  size: 142, 96
+  orig: 146, 145
+  offset: 3, 19
+  index: -1
+fujitora_skill1_01
+  rotate: true
+  xy: 2, 233
+  size: 134, 159
+  orig: 134, 159
+  offset: 0, 0
+  index: -1
+fujitora_skill1_03_ef
+  rotate: false
+  xy: 558, 794
+  size: 191, 87
+  orig: 191, 87
+  offset: 0, 0
+  index: -1
+fujitora_skill1_24
+  rotate: false
+  xy: 477, 2
+  size: 145, 145
+  orig: 145, 147
+  offset: 0, 0
+  index: -1
+fujitora_skill1_31
+  rotate: true
+  xy: 617, 422
+  size: 126, 172
+  orig: 126, 172
+  offset: 0, 0
+  index: -1
+fujitora_skill1_32
+  rotate: true
+  xy: 791, 347
+  size: 129, 172
+  orig: 131, 172
+  offset: 2, 0
+  index: -1
+fujitora_skill2 501
+  rotate: true
+  xy: 2, 966
+  size: 29, 36
+  orig: 37, 40
+  offset: 3, 0
+  index: -1
+fujitora_skill2 502
+  rotate: true
+  xy: 983, 988
+  size: 27, 30
+  orig: 34, 37
+  offset: 5, 2
+  index: -1
+fujitora_skill2 503
+  rotate: false
+  xy: 751, 776
+  size: 158, 91
+  orig: 200, 150
+  offset: 22, 35
+  index: -1
+fujitora_skill2 504
+  rotate: true
+  xy: 911, 712
+  size: 155, 106
+  orig: 200, 150
+  offset: 25, 20
+  index: -1
+fujitora_skill2 505
+  rotate: false
+  xy: 146, 737
+  size: 159, 92
+  orig: 200, 150
+  offset: 22, 35
+  index: -1
+fujitora_skill2_02
+  rotate: true
+  xy: 301, 29
+  size: 144, 174
+  orig: 144, 174
+  offset: 0, 0
+  index: -1
+fujitora_skill2_04
+  rotate: false
+  xy: 664, 211
+  size: 144, 134
+  orig: 144, 134
+  offset: 0, 0
+  index: -1
+fujitora_skill2_12
+  rotate: true
+  xy: 153, 45
+  size: 144, 146
+  orig: 144, 146
+  offset: 0, 0
+  index: -1
+fujitora_standby_01
+  rotate: true
+  xy: 810, 211
+  size: 134, 159
+  orig: 134, 159
+  offset: 0, 0
+  index: -1
+fujitora_standby_02
+  rotate: true
+  xy: 163, 191
+  size: 134, 157
+  orig: 134, 157
+  offset: 0, 0
+  index: -1
+fujitora_win_01
+  rotate: true
+  xy: 322, 175
+  size: 134, 159
+  orig: 134, 159
+  offset: 0, 0
+  index: -1
+fujitora_win_02_ef
+  rotate: false
+  xy: 2, 629
+  size: 129, 115
+  orig: 129, 115
+  offset: 0, 0
+  index: -1
+fujitora_win_02_ef_2
+  rotate: false
+  xy: 493, 990
+  size: 124, 25
+  orig: 124, 25
+  offset: 0, 0
+  index: -1
+fujitora_win_03_ef
+  rotate: false
+  xy: 2, 369
+  size: 168, 128
+  orig: 168, 128
+  offset: 0, 0
+  index: -1
+fujitora_win_03_ef_2
+  rotate: false
+  xy: 314, 955
+  size: 167, 33
+  orig: 167, 33
+  offset: 0, 0
+  index: -1
+fujitora_win_04_ef
+  rotate: false
+  xy: 625, 74
+  size: 226, 135
+  orig: 228, 135
+  offset: 2, 0
+  index: -1
+fujitora_win_04_ef_2
+  rotate: false
+  xy: 115, 911
+  size: 184, 43
+  orig: 186, 43
+  offset: 2, 0
+  index: -1
+fujitora_win_06
+  rotate: true
+  xy: 341, 311
+  size: 133, 156
+  orig: 133, 156
+  offset: 0, 0
+  index: -1
+fujitora_win_07
+  rotate: true
+  xy: 483, 149
+  size: 135, 140
+  orig: 135, 140
+  offset: 0, 0
+  index: -1
+fujitora_win_07_ef
+  rotate: false
+  xy: 683, 666
+  size: 159, 108
+  orig: 161, 108
+  offset: 2, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 710, 883
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 512, 900
+  size: 49, 64
+  orig: 49, 64
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 578, 897
+  size: 49, 64
+  orig: 49, 64
+  offset: 0, 0
+  index: -1
+
+Hero_1042.png
+size: 1012,996
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fujitora_beat_02
+  rotate: true
+  xy: 343, 847
+  size: 146, 160
+  orig: 146, 160
+  offset: 0, 0
+  index: -1
+fujitora_beat_03
+  rotate: false
+  xy: 174, 367
+  size: 189, 161
+  orig: 189, 161
+  offset: 0, 0
+  index: -1
+fujitora_beat_04
+  rotate: false
+  xy: 280, 188
+  size: 203, 170
+  orig: 203, 170
+  offset: 0, 0
+  index: -1
+fujitora_beat_05
+  rotate: false
+  xy: 198, 692
+  size: 266, 153
+  orig: 266, 153
+  offset: 0, 0
+  index: -1
+fujitora_beat_06
+  rotate: false
+  xy: 2, 696
+  size: 194, 150
+  orig: 194, 150
+  offset: 0, 0
+  index: -1
+fujitora_skill1_02
+  rotate: false
+  xy: 717, 517
+  size: 180, 160
+  orig: 180, 160
+  offset: 0, 0
+  index: -1
+fujitora_skill1_03
+  rotate: false
+  xy: 677, 172
+  size: 175, 173
+  orig: 175, 173
+  offset: 0, 0
+  index: -1
+fujitora_skill1_19
+  rotate: true
+  xy: 2, 371
+  size: 163, 170
+  orig: 208, 208
+  offset: 30, 22
+  index: -1
+fujitora_skill1_20
+  rotate: true
+  xy: 365, 360
+  size: 163, 169
+  orig: 163, 169
+  offset: 0, 0
+  index: -1
+fujitora_skill1_21
+  rotate: false
+  xy: 2, 2
+  size: 301, 184
+  orig: 301, 184
+  offset: 0, 0
+  index: -1
+fujitora_skill1_22
+  rotate: true
+  xy: 505, 846
+  size: 147, 168
+  orig: 147, 168
+  offset: 0, 0
+  index: -1
+fujitora_skill1_25
+  rotate: true
+  xy: 170, 848
+  size: 145, 171
+  orig: 145, 171
+  offset: 0, 0
+  index: -1
+fujitora_skill1_28
+  rotate: false
+  xy: 536, 352
+  size: 211, 163
+  orig: 211, 163
+  offset: 0, 0
+  index: -1
+fujitora_skill1_29
+  rotate: false
+  xy: 485, 178
+  size: 190, 172
+  orig: 190, 172
+  offset: 0, 0
+  index: -1
+fujitora_skill1_30
+  rotate: true
+  xy: 675, 845
+  size: 148, 172
+  orig: 148, 172
+  offset: 0, 0
+  index: -1
+fujitora_skill2_03
+  rotate: false
+  xy: 749, 347
+  size: 182, 168
+  orig: 184, 168
+  offset: 2, 0
+  index: -1
+fujitora_skill2_04_ef
+  rotate: false
+  xy: 2, 201
+  size: 276, 164
+  orig: 276, 165
+  offset: 0, 0
+  index: -1
+fujitora_skill2_13
+  rotate: false
+  xy: 829, 679
+  size: 170, 158
+  orig: 170, 158
+  offset: 0, 0
+  index: -1
+fujitora_skill2_14
+  rotate: false
+  xy: 353, 530
+  size: 177, 159
+  orig: 177, 159
+  offset: 0, 0
+  index: -1
+fujitora_skill2_15
+  rotate: false
+  xy: 2, 536
+  size: 183, 158
+  orig: 183, 158
+  offset: 0, 0
+  index: -1
+fujitora_skill2_25
+  rotate: true
+  xy: 187, 532
+  size: 158, 164
+  orig: 158, 164
+  offset: 0, 0
+  index: -1
+fujitora_skill2_26
+  rotate: true
+  xy: 2, 849
+  size: 144, 166
+  orig: 144, 166
+  offset: 0, 0
+  index: -1
+fujitora_win_02
+  rotate: true
+  xy: 849, 839
+  size: 154, 158
+  orig: 154, 158
+  offset: 0, 0
+  index: -1
+fujitora_win_03
+  rotate: false
+  xy: 532, 525
+  size: 183, 159
+  orig: 183, 159
+  offset: 0, 0
+  index: -1
+fujitora_win_04
+  rotate: true
+  xy: 466, 691
+  size: 153, 190
+  orig: 153, 190
+  offset: 0, 0
+  index: -1
+fujitora_win_05
+  rotate: false
+  xy: 658, 686
+  size: 169, 157
+  orig: 169, 157
+  offset: 0, 0
+  index: -1
+
+Hero_1043.png
+size: 784,284
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fujitora_win_05_ef
+  rotate: true
+  xy: 326, 25
+  size: 256, 239
+  orig: 258, 241
+  offset: 2, 0
+  index: -1
+fujitora_win_05_ef_2
+  rotate: true
+  xy: 567, 38
+  size: 243, 212
+  orig: 243, 212
+  offset: 0, 0
+  index: -1
+fujitora_win_06_ef
+  rotate: true
+  xy: 2, 2
+  size: 279, 322
+  orig: 279, 324
+  offset: 0, 0
+  index: -1

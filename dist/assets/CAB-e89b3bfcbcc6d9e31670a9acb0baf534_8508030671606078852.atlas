@@ -1,0 +1,90 @@
+
+Hit_74.png
+size: 964,916
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Enel_skill_1_ballboom/000
+  rotate: false
+  xy: 348, 574
+  size: 237, 337
+  orig: 244, 341
+  offset: 4, 2
+  index: -1
+Char_Enel_skill_1_ballboom/001
+  rotate: false
+  xy: 2, 520
+  size: 344, 391
+  orig: 358, 407
+  offset: 8, 5
+  index: -1
+Char_Enel_skill_1_ballboom/002
+  rotate: false
+  xy: 2, 146
+  size: 348, 372
+  orig: 364, 382
+  offset: 9, 8
+  index: -1
+Char_Enel_skill_1_ballboom/003
+  rotate: false
+  xy: 587, 588
+  size: 332, 323
+  orig: 333, 329
+  offset: 1, 2
+  index: -1
+Char_Enel_skill_1_ballboom/004
+  rotate: false
+  xy: 352, 7
+  size: 309, 205
+  orig: 318, 208
+  offset: 5, 2
+  index: -1
+Char_Enel_skill_1_ballboom/005
+  rotate: false
+  xy: 587, 394
+  size: 319, 192
+  orig: 330, 194
+  offset: 6, 1
+  index: -1
+Char_Enel_skill_1_ballboom/006
+  rotate: true
+  xy: 772, 73
+  size: 319, 190
+  orig: 324, 198
+  offset: 3, 7
+  index: -1
+Char_Enel_skill_1_ballboom/007
+  rotate: false
+  xy: 352, 403
+  size: 222, 169
+  orig: 225, 170
+  offset: 2, 0
+  index: -1
+Char_Enel_skill_1_ballboom/008
+  rotate: false
+  xy: 352, 214
+  size: 217, 187
+  orig: 218, 190
+  offset: 1, 2
+  index: -1
+Char_Enel_skill_1_ballboom/009
+  rotate: false
+  xy: 571, 242
+  size: 199, 150
+  orig: 200, 151
+  offset: 1, 0
+  index: -1
+Char_Enel_skill_1_ballboom/010
+  rotate: false
+  xy: 2, 2
+  size: 148, 142
+  orig: 149, 143
+  offset: 1, 0
+  index: -1
+Char_Enel_skill_1_ballboom/011
+  rotate: false
+  xy: 152, 8
+  size: 119, 136
+  orig: 120, 137
+  offset: 1, 0
+  index: -1

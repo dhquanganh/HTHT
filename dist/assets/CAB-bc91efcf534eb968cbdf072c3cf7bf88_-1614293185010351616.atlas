@@ -1,0 +1,13 @@
+
+Weed1.png
+size: 184,276
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sed
+  rotate: false
+  xy: 2, 2
+  size: 177, 270
+  orig: 205, 270
+  offset: 28, 0
+  index: -1

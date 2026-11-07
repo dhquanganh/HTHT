@@ -1,0 +1,97 @@
+
+Hit_70.png
+size: 522,345
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/skill.13101005.hit.0.0
+  rotate: false
+  xy: 403, 9
+  size: 110, 103
+  orig: 110, 103
+  offset: 0, 0
+  index: -1
+fx/skill.13101005.hit.0.1
+  rotate: false
+  xy: 150, 12
+  size: 125, 102
+  orig: 125, 102
+  offset: 0, 0
+  index: -1
+fx/skill.13101005.hit.0.2
+  rotate: false
+  xy: 384, 240
+  size: 136, 103
+  orig: 136, 103
+  offset: 0, 0
+  index: -1
+fx/skill.13101005.hit.0.3
+  rotate: false
+  xy: 378, 133
+  size: 135, 105
+  orig: 135, 105
+  offset: 0, 0
+  index: -1
+fx/skill.13101005.hit.0.4
+  rotate: false
+  xy: 2, 2
+  size: 146, 112
+  orig: 146, 112
+  offset: 0, 0
+  index: -1
+fx/skill.13101005.hit.0.5
+  rotate: false
+  xy: 277, 10
+  size: 124, 102
+  orig: 124, 102
+  offset: 0, 0
+  index: -1
+fx/skill.13111006.ball.0
+  rotate: false
+  xy: 2, 191
+  size: 186, 73
+  orig: 186, 73
+  offset: 0, 0
+  index: -1
+fx/skill.13111006.ball.1
+  rotate: false
+  xy: 190, 191
+  size: 186, 73
+  orig: 186, 73
+  offset: 0, 0
+  index: -1
+fx/skill.13111006.ball.2
+  rotate: false
+  xy: 194, 266
+  size: 188, 77
+  orig: 188, 77
+  offset: 0, 0
+  index: -1
+fx/skill.13111006.ball.3
+  rotate: false
+  xy: 2, 266
+  size: 190, 77
+  orig: 190, 77
+  offset: 0, 0
+  index: -1
+fx/skill.13111006.ball.4
+  rotate: false
+  xy: 2, 116
+  size: 186, 73
+  orig: 186, 73
+  offset: 0, 0
+  index: -1
+fx/skill.13111006.ball.5
+  rotate: false
+  xy: 190, 116
+  size: 186, 73
+  orig: 186, 73
+  offset: 0, 0
+  index: -1
+sword_18
+  rotate: true
+  xy: 378, 114
+  size: 17, 131
+  orig: 25, 140
+  offset: 4, 4
+  index: -1

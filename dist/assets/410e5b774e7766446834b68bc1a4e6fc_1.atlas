@@ -1,0 +1,125 @@
+
+Hit_85.png
+size: 979,547
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/Fxskill/image1
+  rotate: false
+  xy: 690, 333
+  size: 241, 104
+  orig: 247, 109
+  offset: 6, 2
+  index: -1
+images/Fxskill/image10
+  rotate: false
+  xy: 851, 65
+  size: 126, 135
+  orig: 129, 136
+  offset: 2, 1
+  index: -1
+images/Fxskill/image2
+  rotate: false
+  xy: 690, 439
+  size: 241, 106
+  orig: 243, 110
+  offset: 0, 2
+  index: -1
+images/Fxskill/image3
+  rotate: true
+  xy: 462, 103
+  size: 237, 109
+  orig: 238, 112
+  offset: 1, 2
+  index: -1
+images/Fxskill/image4
+  rotate: true
+  xy: 573, 143
+  size: 232, 108
+  orig: 234, 111
+  offset: 1, 2
+  index: -1
+images/Fxskill/image5
+  rotate: false
+  xy: 2, 24
+  size: 233, 132
+  orig: 241, 134
+  offset: 7, 1
+  index: -1
+images/Fxskill/image6
+  rotate: false
+  xy: 683, 202
+  size: 204, 129
+  orig: 208, 132
+  offset: 2, 2
+  index: -1
+images/Fxskill/image7
+  rotate: false
+  xy: 272, 168
+  size: 188, 172
+  orig: 192, 175
+  offset: 1, 2
+  index: -1
+images/Fxskill/image8
+  rotate: false
+  xy: 506, 377
+  size: 182, 168
+  orig: 184, 171
+  offset: 2, 2
+  index: -1
+images/Fxskill/image9
+  rotate: false
+  xy: 683, 41
+  size: 166, 159
+  orig: 170, 161
+  offset: 1, 1
+  index: -1
+images/arrow/6
+  rotate: false
+  xy: 438, 2
+  size: 99, 99
+  orig: 122, 126
+  offset: 10, 14
+  index: -1
+images/arrow/7
+  rotate: false
+  xy: 889, 249
+  size: 81, 82
+  orig: 94, 99
+  offset: 6, 10
+  index: -1
+images/arrow/8
+  rotate: false
+  xy: 573, 64
+  size: 77, 77
+  orig: 95, 96
+  offset: 10, 12
+  index: -1
+images/hit/0
+  rotate: false
+  xy: 272, 342
+  size: 232, 203
+  orig: 232, 203
+  offset: 0, 0
+  index: -1
+images/hit/1
+  rotate: false
+  xy: 2, 350
+  size: 268, 195
+  orig: 268, 195
+  offset: 0, 0
+  index: -1
+images/hit/2
+  rotate: false
+  xy: 2, 158
+  size: 268, 190
+  orig: 268, 190
+  offset: 0, 0
+  index: -1
+images/hit/3
+  rotate: true
+  xy: 272, 4
+  size: 162, 164
+  orig: 162, 164
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:,">
+  <title>Quản trị · Hải Tặc Phục Sinh</title>
+  <link rel="stylesheet" href="admin.css">
+  <script defer src="admin.js"></script>
+  <script defer src="admin-beast.js"></script>
+  <script defer src="admin-events.js"></script>
+</head>
+<body>
+  <main id="login" class="card login" hidden>
+    <h1>Quản trị</h1>
+    <form id="login-form">
+      <label>Mật khẩu quản trị <input id="password" type="password" autocomplete="current-password" required></label>
+      <button type="submit">Đăng nhập</button>
+      <p class="error" id="login-error" role="alert"></p>
+    </form>
+  </main>
+  <div id="app" hidden>
+    <header><h1>Quản trị</h1><nav class="main-tabs" role="tablist" aria-label="Khu vực quản trị"><button id="tab-players" type="button" role="tab" aria-selected="true" class="ghost on">Tài khoản</button><button id="tab-beast" type="button" role="tab" aria-selected="false" class="ghost">Chiến Thần Thú</button><button id="tab-events" type="button" role="tab" aria-selected="false" class="ghost">Sự kiện</button></nav><button id="logout" class="ghost">Đăng xuất</button></header>
+    <div id="beast-tab" class="beast-admin" hidden></div>
+    <div id="events-tab" class="events-admin" hidden></div>
+    <div class="columns" id="players-tab">
+      <section class="card">
+        <form id="search-form" class="row"><input id="search" type="search" placeholder="Tìm theo tên đăng nhập hoặc tên thuyền trưởng" aria-label="Tìm tài khoản"><button type="submit">Tìm</button></form>
+        <p class="muted" id="result-count"></p>
+        <div class="table"><table><thead><tr><th>Tài khoản</th><th>Cấp</th><th>Vàng</th><th>Kim cương</th><th>Ải</th><th>Đậu thần</th><th>Tướng</th><th>Hoạt động</th></tr></thead><tbody id="players"></tbody></table></div>
+        <div class="row pager"><button id="previous" class="ghost" type="button">Trang trước</button><span id="page"></span><button id="next" class="ghost" type="button">Trang sau</button></div>
+      </section>
+      <section class="card" id="detail" hidden aria-live="polite"></section>
+    </div>
+  </div>
+  <div id="toast" role="status"></div>
+</body>
+</html>

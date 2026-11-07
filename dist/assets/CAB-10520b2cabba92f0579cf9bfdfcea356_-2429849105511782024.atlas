@@ -1,0 +1,265 @@
+
+Hit_372.png
+size: 924,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hit/10a1
+  rotate: true
+  xy: 772, 49
+  size: 55, 52
+  orig: 69, 64
+  offset: 7, 8
+  index: -1
+hit/11a1
+  rotate: false
+  xy: 839, 176
+  size: 57, 52
+  orig: 69, 64
+  offset: 7, 8
+  index: -1
+hit/3a1
+  rotate: false
+  xy: 709, 106
+  size: 62, 61
+  orig: 69, 64
+  offset: 4, 2
+  index: -1
+hit/4a1
+  rotate: true
+  xy: 709, 47
+  size: 57, 61
+  orig: 69, 64
+  offset: 2, 1
+  index: -1
+hit/5a1
+  rotate: false
+  xy: 780, 227
+  size: 56, 58
+  orig: 69, 64
+  offset: 4, 3
+  index: -1
+hit/6a1
+  rotate: false
+  xy: 780, 173
+  size: 57, 52
+  orig: 69, 64
+  offset: 5, 6
+  index: -1
+hit/7a1
+  rotate: false
+  xy: 838, 230
+  size: 57, 57
+  orig: 69, 64
+  offset: 4, 3
+  index: -1
+hit/8a1
+  rotate: true
+  xy: 825, 116
+  size: 55, 51
+  orig: 69, 64
+  offset: 6, 7
+  index: -1
+hit/9a1
+  rotate: true
+  xy: 773, 111
+  size: 56, 50
+  orig: 69, 64
+  offset: 6, 7
+  index: -1
+hit/glo_3047
+  rotate: false
+  xy: 802, 351
+  size: 117, 119
+  orig: 128, 128
+  offset: 7, 6
+  index: -1
+hit/glow1
+  rotate: false
+  xy: 2, 283
+  size: 296, 247
+  orig: 400, 309
+  offset: 92, 27
+  index: -1
+hit/glow_11007
+  rotate: false
+  xy: 604, 171
+  size: 113, 114
+  orig: 128, 128
+  offset: 8, 8
+  index: -1
+hit/glow_4120
+  rotate: false
+  xy: 2, 25
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+hit/glow_6098
+  rotate: false
+  xy: 558, 287
+  size: 242, 243
+  orig: 256, 256
+  offset: 7, 6
+  index: -1
+hit/object_1009_0
+  rotate: false
+  xy: 495, 151
+  size: 107, 123
+  orig: 128, 128
+  offset: 10, 3
+  index: -1
+hit/object_11023
+  rotate: false
+  xy: 260, 41
+  size: 233, 233
+  orig: 256, 256
+  offset: 13, 11
+  index: -1
+hit/sequence_10010
+  rotate: false
+  xy: 802, 472
+  size: 120, 58
+  orig: 136, 79
+  offset: 0, 10
+  index: -1
+hit/sequence_10011
+  rotate: false
+  xy: 802, 289
+  size: 119, 60
+  orig: 136, 79
+  offset: 1, 6
+  index: -1
+hit/sequence_10012
+  rotate: true
+  xy: 719, 169
+  size: 116, 59
+  orig: 136, 79
+  offset: 0, 9
+  index: -1
+hit/sequence_1005
+  rotate: false
+  xy: 346, 11
+  size: 72, 28
+  orig: 136, 79
+  offset: 11, 22
+  index: -1
+hit/sequence_1006
+  rotate: true
+  xy: 555, 25
+  size: 124, 48
+  orig: 136, 79
+  offset: 9, 12
+  index: -1
+hit/sequence_1007
+  rotate: true
+  xy: 605, 39
+  size: 130, 49
+  orig: 136, 79
+  offset: 6, 12
+  index: -1
+hit/sequence_1008
+  rotate: true
+  xy: 656, 46
+  size: 123, 51
+  orig: 136, 79
+  offset: 6, 13
+  index: -1
+hit/sequence_1009
+  rotate: true
+  xy: 495, 26
+  size: 123, 58
+  orig: 136, 79
+  offset: 0, 9
+  index: -1
+hit/sequence_5074
+  rotate: true
+  xy: 897, 267
+  size: 20, 25
+  orig: 62, 73
+  offset: 28, 7
+  index: -1
+hit/sequence_5075
+  rotate: true
+  xy: 826, 51
+  size: 27, 34
+  orig: 62, 73
+  offset: 25, 5
+  index: -1
+hit/sequence_5076
+  rotate: false
+  xy: 788, 9
+  size: 33, 38
+  orig: 62, 73
+  offset: 22, 3
+  index: -1
+hit/sequence_5077
+  rotate: true
+  xy: 304, 2
+  size: 37, 40
+  orig: 62, 73
+  offset: 20, 4
+  index: -1
+hit/sequence_5078
+  rotate: false
+  xy: 709, 2
+  size: 39, 43
+  orig: 62, 73
+  offset: 18, 4
+  index: -1
+hit/sequence_5079
+  rotate: true
+  xy: 878, 133
+  size: 41, 44
+  orig: 62, 73
+  offset: 17, 5
+  index: -1
+hit/sequence_5080
+  rotate: false
+  xy: 260, 2
+  size: 42, 37
+  orig: 62, 73
+  offset: 14, 13
+  index: -1
+hit/sequence_5081
+  rotate: true
+  xy: 750, 2
+  size: 43, 36
+  orig: 62, 73
+  offset: 12, 15
+  index: -1
+hit/sequence_5082
+  rotate: true
+  xy: 656, 2
+  size: 42, 33
+  orig: 62, 73
+  offset: 11, 24
+  index: -1
+hit/sequence_5083
+  rotate: false
+  xy: 420, 5
+  size: 39, 34
+  orig: 62, 73
+  offset: 12, 23
+  index: -1
+hit/sequence_5084
+  rotate: false
+  xy: 826, 80
+  size: 34, 34
+  orig: 62, 73
+  offset: 9, 25
+  index: -1
+hit/sequence_5085
+  rotate: false
+  xy: 461, 7
+  size: 32, 32
+  orig: 62, 73
+  offset: 7, 26
+  index: -1
+hit/texture_3018
+  rotate: false
+  xy: 300, 276
+  size: 256, 254
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

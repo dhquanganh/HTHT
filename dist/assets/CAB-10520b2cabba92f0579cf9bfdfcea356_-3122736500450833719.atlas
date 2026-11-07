@@ -1,0 +1,153 @@
+
+Hit_411.png
+size: 700,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/images/typhoon2_01
+  rotate: false
+  xy: 554, 254
+  size: 44, 43
+  orig: 128, 128
+  offset: 76, 4
+  index: -1
+fx/images/typhoon2_02
+  rotate: true
+  xy: 217, 207
+  size: 88, 100
+  orig: 128, 128
+  offset: 28, 4
+  index: -1
+fx/images/typhoon2_03
+  rotate: false
+  xy: 457, 8
+  size: 95, 116
+  orig: 128, 128
+  offset: 17, 4
+  index: -1
+fx/images/typhoon2_04
+  rotate: true
+  xy: 554, 30
+  size: 94, 124
+  orig: 128, 128
+  offset: 6, 4
+  index: -1
+fx/images/typhoon2_05
+  rotate: true
+  xy: 409, 209
+  size: 87, 124
+  orig: 128, 128
+  offset: 5, 4
+  index: -1
+fx/images/typhoon2_06
+  rotate: false
+  xy: 524, 299
+  size: 87, 84
+  orig: 128, 128
+  offset: 5, 44
+  index: -1
+fx/images/typhoon2_07
+  rotate: false
+  xy: 319, 208
+  size: 88, 88
+  orig: 128, 128
+  offset: 4, 40
+  index: -1
+fx/smod_01
+  rotate: false
+  xy: 613, 355
+  size: 84, 28
+  orig: 256, 85
+  offset: 9, 5
+  index: -1
+fx/smod_02
+  rotate: true
+  xy: 535, 127
+  size: 125, 42
+  orig: 256, 85
+  offset: 7, 5
+  index: -1
+fx/smod_03
+  rotate: false
+  xy: 524, 385
+  size: 161, 69
+  orig: 256, 86
+  offset: 10, 9
+  index: -1
+fx/smod_04
+  rotate: true
+  xy: 233, 25
+  size: 180, 75
+  orig: 256, 86
+  offset: 10, 7
+  index: -1
+fx/smod_05
+  rotate: false
+  xy: 524, 456
+  size: 170, 74
+  orig: 256, 85
+  offset: 10, 7
+  index: -1
+fx/smod_06
+  rotate: true
+  xy: 310, 28
+  size: 177, 73
+  orig: 256, 85
+  offset: 12, 6
+  index: -1
+fx/smod_07
+  rotate: true
+  xy: 156, 20
+  size: 183, 75
+  orig: 256, 85
+  offset: 10, 5
+  index: -1
+fx/smod_08
+  rotate: true
+  xy: 613, 126
+  size: 227, 76
+  orig: 256, 85
+  offset: 14, 5
+  index: -1
+fx/smod_09
+  rotate: true
+  xy: 217, 297
+  size: 233, 71
+  orig: 256, 86
+  offset: 11, 6
+  index: -1
+fx/smod_10
+  rotate: true
+  xy: 78, 17
+  size: 186, 76
+  orig: 256, 86
+  offset: 60, 7
+  index: -1
+fx/smod_11
+  rotate: true
+  xy: 2, 5
+  size: 198, 74
+  orig: 256, 85
+  offset: 51, 7
+  index: -1
+fx/smod_12
+  rotate: true
+  xy: 385, 2
+  size: 204, 70
+  orig: 256, 85
+  offset: 51, 11
+  index: -1
+tialazer
+  rotate: true
+  xy: 2, 205
+  size: 325, 213
+  orig: 330, 217
+  offset: 2, 2
+  index: -1
+whitebgr
+  rotate: false
+  xy: 290, 298
+  size: 232, 232
+  orig: 256, 256
+  offset: 12, 12
+  index: -1

@@ -1,0 +1,475 @@
+
+Hit_489.png
+size: 1632,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+OT/Asset/Skill_104-Ren1_00
+  rotate: false
+  xy: 686, 90
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_01
+  rotate: false
+  xy: 686, 90
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_02
+  rotate: false
+  xy: 686, 90
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_03
+  rotate: false
+  xy: 686, 90
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_04
+  rotate: false
+  xy: 686, 90
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren2_22
+  rotate: false
+  xy: 686, 90
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren2_23
+  rotate: false
+  xy: 686, 90
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_05
+  rotate: true
+  xy: 1279, 268
+  size: 43, 51
+  orig: 380, 197
+  offset: 333, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_06
+  rotate: false
+  xy: 454, 12
+  size: 130, 79
+  orig: 380, 197
+  offset: 247, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_07
+  rotate: false
+  xy: 694, 90
+  size: 219, 90
+  orig: 380, 197
+  offset: 159, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_08
+  rotate: false
+  xy: 1045, 427
+  size: 311, 95
+  orig: 380, 197
+  offset: 68, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_09
+  rotate: false
+  xy: 2, 430
+  size: 374, 92
+  orig: 380, 197
+  offset: 2, 28
+  index: -1
+OT/Asset/Skill_104-Ren1_10
+  rotate: false
+  xy: 722, 316
+  size: 336, 59
+  orig: 380, 197
+  offset: 1, 63
+  index: -1
+OT/Asset/Skill_104-Ren1_11
+  rotate: false
+  xy: 2, 46
+  size: 287, 55
+  orig: 380, 197
+  offset: 0, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_12
+  rotate: false
+  xy: 1358, 384
+  size: 234, 56
+  orig: 380, 197
+  offset: 0, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_13
+  rotate: false
+  xy: 1045, 208
+  size: 180, 53
+  orig: 380, 197
+  offset: 0, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_14
+  rotate: false
+  xy: 1025, 14
+  size: 124, 48
+  orig: 380, 197
+  offset: 1, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_15
+  rotate: false
+  xy: 722, 242
+  size: 321, 36
+  orig: 380, 197
+  offset: 1, 70
+  index: -1
+OT/Asset/Skill_104-Ren1_16
+  rotate: false
+  xy: 722, 280
+  size: 328, 34
+  orig: 380, 197
+  offset: 2, 71
+  index: -1
+OT/Asset/Skill_104-Ren1_17
+  rotate: false
+  xy: 1007, 185
+  size: 35, 55
+  orig: 380, 197
+  offset: 295, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_18
+  rotate: false
+  xy: 1372, 2
+  size: 35, 76
+  orig: 380, 197
+  offset: 296, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_19
+  rotate: true
+  xy: 1516, 87
+  size: 35, 93
+  orig: 380, 197
+  offset: 296, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_20
+  rotate: true
+  xy: 1266, 4
+  size: 44, 104
+  orig: 380, 197
+  offset: 286, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_21
+  rotate: true
+  xy: 912, 10
+  size: 63, 111
+  orig: 380, 197
+  offset: 266, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_22
+  rotate: false
+  xy: 1532, 268
+  size: 83, 114
+  orig: 380, 197
+  offset: 245, 74
+  index: -1
+OT/Asset/Skill_104-Ren1_23
+  rotate: false
+  xy: 812, 10
+  size: 98, 78
+  orig: 380, 197
+  offset: 228, 113
+  index: -1
+OT/Asset/Skill_104-Ren2_00
+  rotate: false
+  xy: 258, 11
+  size: 120, 11
+  orig: 468, 221
+  offset: 7, 2
+  index: -1
+OT/Asset/Skill_104-Ren2_01
+  rotate: false
+  xy: 1358, 303
+  size: 151, 15
+  orig: 468, 221
+  offset: 24, 2
+  index: -1
+OT/Asset/Skill_104-Ren2_02
+  rotate: false
+  xy: 1052, 263
+  size: 181, 19
+  orig: 468, 221
+  offset: 48, 3
+  index: -1
+OT/Asset/Skill_104-Ren2_03
+  rotate: false
+  xy: 1052, 284
+  size: 215, 26
+  orig: 468, 221
+  offset: 93, 5
+  index: -1
+OT/Asset/Skill_104-Ren2_04
+  rotate: false
+  xy: 2, 2
+  size: 254, 42
+  orig: 468, 221
+  offset: 132, 7
+  index: -1
+OT/Asset/Skill_104-Ren2_05
+  rotate: false
+  xy: 1358, 442
+  size: 270, 80
+  orig: 468, 221
+  offset: 191, 10
+  index: -1
+OT/Asset/Skill_104-Ren2_06
+  rotate: false
+  xy: 1060, 312
+  size: 217, 113
+  orig: 468, 221
+  offset: 251, 16
+  index: -1
+OT/Asset/Skill_104-Ren2_07
+  rotate: false
+  xy: 915, 75
+  size: 157, 105
+  orig: 468, 221
+  offset: 311, 25
+  index: -1
+OT/Asset/Skill_104-Ren2_08
+  rotate: false
+  xy: 1427, 97
+  size: 87, 85
+  orig: 468, 221
+  offset: 381, 43
+  index: -1
+OT/Asset/Skill_104-Ren2_09
+  rotate: true
+  xy: 1456, 3
+  size: 29, 51
+  orig: 468, 221
+  offset: 439, 75
+  index: -1
+OT/Asset/Skill_104-Ren2_10
+  rotate: false
+  xy: 1151, 2
+  size: 59, 60
+  orig: 468, 221
+  offset: 86, 127
+  index: -1
+OT/Asset/Skill_104-Ren2_11
+  rotate: false
+  xy: 1358, 320
+  size: 172, 62
+  orig: 468, 221
+  offset: 83, 116
+  index: -1
+OT/Asset/Skill_104-Ren2_12
+  rotate: false
+  xy: 722, 182
+  size: 283, 58
+  orig: 468, 221
+  offset: 79, 111
+  index: -1
+OT/Asset/Skill_104-Ren2_13
+  rotate: false
+  xy: 722, 377
+  size: 316, 59
+  orig: 468, 221
+  offset: 81, 112
+  index: -1
+OT/Asset/Skill_104-Ren2_14
+  rotate: false
+  xy: 710, 438
+  size: 333, 84
+  orig: 468, 221
+  offset: 83, 112
+  index: -1
+OT/Asset/Skill_104-Ren2_15
+  rotate: false
+  xy: 378, 423
+  size: 330, 99
+  orig: 468, 221
+  offset: 87, 114
+  index: -1
+OT/Asset/Skill_104-Ren2_16
+  rotate: false
+  xy: 2, 103
+  size: 288, 100
+  orig: 468, 221
+  offset: 129, 115
+  index: -1
+OT/Asset/Skill_104-Ren2_17
+  rotate: false
+  xy: 470, 93
+  size: 222, 102
+  orig: 468, 221
+  offset: 195, 118
+  index: -1
+OT/Asset/Skill_104-Ren2_18
+  rotate: false
+  xy: 292, 24
+  size: 160, 95
+  orig: 468, 221
+  offset: 257, 125
+  index: -1
+OT/Asset/Skill_104-Ren2_19
+  rotate: false
+  xy: 586, 7
+  size: 98, 84
+  orig: 468, 221
+  offset: 319, 136
+  index: -1
+OT/Asset/Skill_104-Ren2_20
+  rotate: false
+  xy: 1409, 15
+  size: 45, 63
+  orig: 468, 221
+  offset: 372, 157
+  index: -1
+OT/Asset/Skill_104-Ren2_21
+  rotate: false
+  xy: 1611, 87
+  size: 13, 35
+  orig: 468, 221
+  offset: 404, 185
+  index: -1
+OT2/Hashirama/images/cat_02
+  rotate: false
+  xy: 1229, 133
+  size: 124, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+OT2/Hashirama/images/hit_center1_01
+  rotate: false
+  xy: 1594, 389
+  size: 30, 51
+  orig: 85, 128
+  offset: 24, 1
+  index: -1
+OT2/Hashirama/images/hit_center1_02
+  rotate: true
+  xy: 1519, 124
+  size: 65, 99
+  orig: 86, 128
+  offset: 9, 1
+  index: -1
+OT2/Hashirama/images/hit_center1_03
+  rotate: true
+  xy: 686, 10
+  size: 78, 124
+  orig: 85, 128
+  offset: 4, 2
+  index: -1
+OT2/Hashirama/images/hit_center1_04
+  rotate: true
+  xy: 1229, 50
+  size: 81, 121
+  orig: 85, 128
+  offset: 2, 3
+  index: -1
+OT2/Hashirama/images/hit_center1_05
+  rotate: false
+  xy: 1438, 184
+  size: 79, 117
+  orig: 86, 128
+  offset: 3, 6
+  index: -1
+OT2/Hashirama/images/hit_center1_06
+  rotate: false
+  xy: 1355, 185
+  size: 81, 116
+  orig: 85, 128
+  offset: 2, 6
+  index: -1
+OT2/Hashirama/images/hit_center1_07
+  rotate: false
+  xy: 1279, 313
+  size: 77, 112
+  orig: 85, 128
+  offset: 5, 8
+  index: -1
+OT2/Hashirama/images/hit_center1_08
+  rotate: true
+  xy: 1519, 191
+  size: 75, 110
+  orig: 86, 128
+  offset: 7, 9
+  index: -1
+OT2/Hashirama/images/hit_center1_09
+  rotate: false
+  xy: 1355, 80
+  size: 70, 103
+  orig: 85, 128
+  offset: 8, 14
+  index: -1
+OT2/Hashirama/images/hitauar_01
+  rotate: false
+  xy: 1074, 64
+  size: 153, 142
+  orig: 256, 256
+  offset: 40, 38
+  index: -1
+OT2/Hashirama/images/hitauar_02
+  rotate: false
+  xy: 247, 205
+  size: 234, 216
+  orig: 256, 256
+  offset: 10, 20
+  index: -1
+OT2/Hashirama/images/hitauar_03
+  rotate: false
+  xy: 2, 205
+  size: 243, 223
+  orig: 256, 256
+  offset: 6, 16
+  index: -1
+OT2/Hashirama/images/hitauar_04
+  rotate: false
+  xy: 483, 197
+  size: 237, 224
+  orig: 256, 256
+  offset: 14, 17
+  index: -1
+OT2/Hashirama/images/lAa_01
+  rotate: false
+  xy: 1456, 34
+  size: 54, 61
+  orig: 64, 64
+  offset: 10, 0
+  index: -1
+OT2/Hashirama/images/lAa_02
+  rotate: false
+  xy: 1212, 2
+  size: 52, 46
+  orig: 64, 64
+  offset: 6, 8
+  index: -1
+OT2/Hashirama/images/lAa_03
+  rotate: true
+  xy: 1512, 24
+  size: 61, 63
+  orig: 64, 64
+  offset: 3, 0
+  index: -1
+OT2/Hashirama/images/lAa_04
+  rotate: false
+  xy: 1577, 23
+  size: 43, 62
+  orig: 64, 64
+  offset: 12, 1
+  index: -1
+OT2/Hashirama/images/object_3022
+  rotate: true
+  xy: 292, 121
+  size: 82, 176
+  orig: 128, 256
+  offset: 32, 49
+  index: -1

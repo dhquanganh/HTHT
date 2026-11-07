@@ -1,0 +1,286 @@
+
+Hero_372.png
+size: 1784,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 917, 13
+  size: 95, 132
+  orig: 95, 132
+  offset: 0, 0
+  index: -1
+10
+  rotate: true
+  xy: 1175, 3
+  size: 123, 156
+  orig: 123, 156
+  offset: 0, 0
+  index: -1
+11
+  rotate: true
+  xy: 1333, 10
+  size: 121, 156
+  orig: 121, 156
+  offset: 0, 0
+  index: -1
+12
+  rotate: true
+  xy: 1289, 133
+  size: 121, 157
+  orig: 121, 157
+  offset: 0, 0
+  index: -1
+13
+  rotate: true
+  xy: 1448, 142
+  size: 112, 156
+  orig: 112, 156
+  offset: 0, 0
+  index: -1
+14
+  rotate: false
+  xy: 161, 88
+  size: 148, 166
+  orig: 157, 167
+  offset: 9, 1
+  index: -1
+15
+  rotate: true
+  xy: 637, 110
+  size: 144, 166
+  orig: 144, 166
+  offset: 0, 0
+  index: -1
+16
+  rotate: false
+  xy: 311, 98
+  size: 155, 156
+  orig: 155, 156
+  offset: 0, 0
+  index: -1
+17
+  rotate: false
+  xy: 2, 87
+  size: 157, 167
+  orig: 157, 167
+  offset: 0, 0
+  index: -1
+18
+  rotate: true
+  xy: 805, 110
+  size: 144, 166
+  orig: 144, 166
+  offset: 0, 0
+  index: -1
+19
+  rotate: true
+  xy: 468, 110
+  size: 144, 167
+  orig: 144, 167
+  offset: 0, 0
+  index: -1
+2
+  rotate: true
+  xy: 1051, 13
+  size: 98, 122
+  orig: 98, 122
+  offset: 0, 0
+  index: -1
+20
+  rotate: true
+  xy: 1131, 128
+  size: 126, 156
+  orig: 126, 156
+  offset: 0, 0
+  index: -1
+21
+  rotate: true
+  xy: 604, 10
+  size: 98, 157
+  orig: 98, 157
+  offset: 0, 0
+  index: -1
+22
+  rotate: true
+  xy: 311, 5
+  size: 91, 137
+  orig: 91, 137
+  offset: 0, 0
+  index: -1
+23
+  rotate: true
+  xy: 1606, 154
+  size: 100, 96
+  orig: 100, 96
+  offset: 0, 0
+  index: -1
+3
+  rotate: true
+  xy: 2, 4
+  size: 81, 153
+  orig: 81, 153
+  offset: 0, 0
+  index: -1
+4
+  rotate: true
+  xy: 157, 4
+  size: 81, 152
+  orig: 81, 152
+  offset: 0, 0
+  index: -1
+5
+  rotate: true
+  xy: 450, 15
+  size: 81, 152
+  orig: 81, 152
+  offset: 0, 0
+  index: -1
+6
+  rotate: true
+  xy: 763, 11
+  size: 97, 152
+  orig: 97, 152
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 1596, 44
+  size: 122, 96
+  orig: 122, 96
+  offset: 0, 0
+  index: -1
+8
+  rotate: true
+  xy: 1491, 26
+  size: 114, 103
+  orig: 114, 103
+  offset: 0, 0
+  index: -1
+9
+  rotate: true
+  xy: 973, 128
+  size: 126, 156
+  orig: 126, 156
+  offset: 0, 0
+  index: -1
+head-2
+  rotate: true
+  xy: 1720, 49
+  size: 54, 59
+  orig: 54, 60
+  offset: 0, 1
+  index: -1
+layer  16
+  rotate: true
+  xy: 1679, 10
+  size: 32, 27
+  orig: 35, 29
+  offset: 2, 1
+  index: -1
+layer 1
+  rotate: true
+  xy: 1720, 105
+  size: 55, 62
+  orig: 55, 62
+  offset: 0, 0
+  index: -1
+layer 10
+  rotate: true
+  xy: 1522, 5
+  size: 19, 28
+  orig: 21, 30
+  offset: 1, 1
+  index: -1
+layer 11
+  rotate: true
+  xy: 1491, 2
+  size: 22, 29
+  orig: 24, 31
+  offset: 1, 1
+  index: -1
+layer 12
+  rotate: false
+  xy: 1602, 2
+  size: 23, 23
+  orig: 26, 25
+  offset: 2, 1
+  index: -1
+layer 13
+  rotate: true
+  xy: 1704, 162
+  size: 92, 71
+  orig: 93, 72
+  offset: 0, 0
+  index: -1
+layer 2
+  rotate: false
+  xy: 1618, 27
+  size: 17, 15
+  orig: 19, 17
+  offset: 1, 1
+  index: -1
+layer 3
+  rotate: true
+  xy: 1552, 5
+  size: 19, 26
+  orig: 24, 29
+  offset: 4, 2
+  index: -1
+layer 4
+  rotate: true
+  xy: 1720, 3
+  size: 44, 43
+  orig: 47, 78
+  offset: 2, 0
+  index: -1
+layer 5
+  rotate: true
+  xy: 1596, 27
+  size: 15, 20
+  orig: 18, 22
+  offset: 2, 1
+  index: -1
+layer 6
+  rotate: false
+  xy: 1580, 3
+  size: 20, 21
+  orig: 27, 27
+  offset: 3, 3
+  index: -1
+layer 7
+  rotate: true
+  xy: 973, 110
+  size: 16, 29
+  orig: 18, 31
+  offset: 1, 1
+  index: -1
+layer 8
+  rotate: true
+  xy: 1026, 113
+  size: 13, 24
+  orig: 15, 27
+  offset: 1, 1
+  index: -1
+layer 9
+  rotate: true
+  xy: 1648, 9
+  size: 33, 29
+  orig: 35, 29
+  offset: 1, 0
+  index: -1
+layer-14
+  rotate: true
+  xy: 1004, 110
+  size: 16, 20
+  orig: 16, 21
+  offset: 0, 1
+  index: -1
+layer-15
+  rotate: false
+  xy: 1627, 6
+  size: 19, 19
+  orig: 19, 20
+  offset: 0, 1
+  index: -1

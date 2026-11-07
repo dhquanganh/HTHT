@@ -1,0 +1,62 @@
+
+Hit_105.png
+size: 970,609
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hit/hit.0_0
+  rotate: false
+  xy: 502, 131
+  size: 210, 221
+  orig: 210, 258
+  offset: 0, 28
+  index: -1
+hit/hit.0_1
+  rotate: true
+  xy: 714, 2
+  size: 148, 229
+  orig: 210, 258
+  offset: 16, 17
+  index: -1
+hit/hit.0_2
+  rotate: false
+  xy: 342, 26
+  size: 158, 258
+  orig: 210, 258
+  offset: 13, 0
+  index: -1
+hit/hit.0_3
+  rotate: true
+  xy: 714, 152
+  size: 157, 254
+  orig: 210, 258
+  offset: 16, 2
+  index: -1
+hit_skill/effect_10
+  rotate: true
+  xy: 752, 311
+  size: 296, 207
+  orig: 530, 334
+  offset: 85, 26
+  index: -1
+hit_skill/effect_3
+  rotate: false
+  xy: 2, 286
+  size: 407, 321
+  orig: 530, 334
+  offset: 57, 10
+  index: -1
+hit_skill/effect_4
+  rotate: false
+  xy: 2, 7
+  size: 338, 277
+  orig: 530, 334
+  offset: 72, 6
+  index: -1
+hit_skill/effect_8
+  rotate: false
+  xy: 411, 354
+  size: 339, 253
+  orig: 530, 334
+  offset: 69, 16
+  index: -1

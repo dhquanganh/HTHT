@@ -1,0 +1,804 @@
+
+Hero_399.png
+size: 1844,1032
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 1807, 642
+  size: 18, 35
+  orig: 18, 35
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 1239, 2
+  size: 21, 35
+  orig: 21, 35
+  offset: 0, 0
+  index: -1
+beckman_beat_02
+  rotate: false
+  xy: 753, 168
+  size: 195, 166
+  orig: 195, 166
+  offset: 0, 0
+  index: -1
+beckman_beat_03
+  rotate: false
+  xy: 540, 168
+  size: 211, 166
+  orig: 211, 166
+  offset: 0, 0
+  index: -1
+beckman_beat_04
+  rotate: false
+  xy: 316, 168
+  size: 222, 166
+  orig: 222, 166
+  offset: 0, 0
+  index: -1
+beckman_beat_05
+  rotate: false
+  xy: 1570, 698
+  size: 188, 166
+  orig: 188, 166
+  offset: 0, 0
+  index: -1
+beckman_damage
+  rotate: false
+  xy: 908, 2
+  size: 152, 164
+  orig: 152, 164
+  offset: 0, 0
+  index: -1
+beckman_idling_06_ef
+  rotate: true
+  xy: 1399, 2
+  size: 46, 59
+  orig: 46, 59
+  offset: 0, 0
+  index: -1
+beckman_skill1_02
+  rotate: false
+  xy: 738, 2
+  size: 168, 164
+  orig: 168, 164
+  offset: 0, 0
+  index: -1
+beckman_skill1_03
+  rotate: false
+  xy: 566, 2
+  size: 170, 164
+  orig: 170, 164
+  offset: 0, 0
+  index: -1
+beckman_skill1_04
+  rotate: false
+  xy: 661, 517
+  size: 210, 178
+  orig: 210, 178
+  offset: 0, 0
+  index: -1
+beckman_skill1_05
+  rotate: true
+  xy: 669, 861
+  size: 169, 234
+  orig: 169, 234
+  offset: 0, 0
+  index: -1
+beckman_skill1_06
+  rotate: true
+  xy: 1137, 864
+  size: 166, 232
+  orig: 166, 232
+  offset: 0, 0
+  index: -1
+beckman_skill1_07
+  rotate: false
+  xy: 1371, 866
+  size: 233, 164
+  orig: 233, 164
+  offset: 0, 0
+  index: -1
+beckman_skill1_07_ef
+  rotate: false
+  xy: 1760, 720
+  size: 60, 144
+  orig: 60, 144
+  offset: 0, 0
+  index: -1
+beckman_skill1_09
+  rotate: true
+  xy: 2, 499
+  size: 262, 167
+  orig: 262, 167
+  offset: 0, 0
+  index: -1
+beckman_skill1_10
+  rotate: true
+  xy: 905, 851
+  size: 179, 230
+  orig: 179, 230
+  offset: 0, 0
+  index: -1
+beckman_skill1_11
+  rotate: false
+  xy: 1137, 707
+  size: 223, 155
+  orig: 223, 155
+  offset: 0, 0
+  index: -1
+beckman_skill1_12
+  rotate: true
+  xy: 1197, 369
+  size: 166, 129
+  orig: 166, 129
+  offset: 0, 0
+  index: -1
+beckman_skill1_13
+  rotate: true
+  xy: 757, 338
+  size: 177, 135
+  orig: 177, 135
+  offset: 0, 0
+  index: -1
+beckman_skill1_14
+  rotate: true
+  xy: 873, 518
+  size: 177, 129
+  orig: 177, 129
+  offset: 0, 0
+  index: -1
+beckman_skill1_15
+  rotate: true
+  xy: 1004, 523
+  size: 174, 143
+  orig: 174, 143
+  offset: 0, 0
+  index: -1
+beckman_skill1_16
+  rotate: false
+  xy: 1062, 23
+  size: 137, 161
+  orig: 137, 161
+  offset: 0, 0
+  index: -1
+beckman_skill1_17
+  rotate: false
+  xy: 1453, 71
+  size: 141, 146
+  orig: 141, 146
+  offset: 0, 0
+  index: -1
+beckman_skill1_18
+  rotate: false
+  xy: 137, 2
+  size: 218, 164
+  orig: 218, 164
+  offset: 0, 0
+  index: -1
+beckman_skill1_19
+  rotate: false
+  xy: 1606, 866
+  size: 233, 164
+  orig: 233, 164
+  offset: 0, 0
+  index: -1
+beckman_skill1_20
+  rotate: true
+  xy: 669, 697
+  size: 162, 221
+  orig: 162, 221
+  offset: 0, 0
+  index: -1
+beckman_skill1_21
+  rotate: true
+  xy: 892, 699
+  size: 150, 217
+  orig: 150, 217
+  offset: 0, 0
+  index: -1
+beckman_skill1_22
+  rotate: false
+  xy: 1045, 186
+  size: 138, 164
+  orig: 138, 164
+  offset: 0, 0
+  index: -1
+beckman_skill1_23
+  rotate: false
+  xy: 950, 171
+  size: 93, 167
+  orig: 93, 167
+  offset: 0, 0
+  index: -1
+beckman_skill1_801
+  rotate: true
+  xy: 1555, 13
+  size: 56, 81
+  orig: 56, 81
+  offset: 0, 0
+  index: -1
+beckman_skill1_802
+  rotate: false
+  xy: 1753, 75
+  size: 31, 44
+  orig: 31, 44
+  offset: 0, 0
+  index: -1
+beckman_skill1_803
+  rotate: false
+  xy: 1790, 259
+  size: 38, 43
+  orig: 38, 43
+  offset: 0, 0
+  index: -1
+beckman_skill1_804
+  rotate: false
+  xy: 1753, 31
+  size: 26, 42
+  orig: 26, 42
+  offset: 0, 0
+  index: -1
+beckman_skill1_805
+  rotate: false
+  xy: 1760, 556
+  size: 50, 58
+  orig: 50, 58
+  offset: 0, 0
+  index: -1
+beckman_skill1_807
+  rotate: false
+  xy: 1755, 121
+  size: 30, 81
+  orig: 30, 81
+  offset: 0, 0
+  index: -1
+beckman_skill1_808
+  rotate: true
+  xy: 1062, 2
+  size: 19, 60
+  orig: 19, 60
+  offset: 0, 0
+  index: -1
+beckman_skill1_809
+  rotate: true
+  xy: 1596, 71
+  size: 107, 103
+  orig: 118, 114
+  offset: 6, 4
+  index: -1
+beckman_skill2_02
+  rotate: false
+  xy: 1419, 219
+  size: 137, 155
+  orig: 137, 155
+  offset: 0, 0
+  index: -1
+beckman_skill2_03
+  rotate: false
+  xy: 1371, 682
+  size: 197, 182
+  orig: 197, 182
+  offset: 0, 0
+  index: -1
+beckman_skill2_04
+  rotate: true
+  xy: 1570, 541
+  size: 155, 188
+  orig: 155, 188
+  offset: 0, 0
+  index: -1
+beckman_skill2_05
+  rotate: false
+  xy: 894, 340
+  size: 136, 176
+  orig: 136, 176
+  offset: 0, 0
+  index: -1
+beckman_skill2_06
+  rotate: false
+  xy: 2, 763
+  size: 167, 267
+  orig: 167, 267
+  offset: 0, 0
+  index: -1
+beckman_skill2_07
+  rotate: true
+  xy: 2, 232
+  size: 265, 146
+  orig: 265, 146
+  offset: 0, 0
+  index: -1
+beckman_skill2_08
+  rotate: false
+  xy: 316, 336
+  size: 221, 172
+  orig: 221, 172
+  offset: 0, 0
+  index: -1
+beckman_skill2_09
+  rotate: false
+  xy: 171, 858
+  size: 251, 172
+  orig: 251, 172
+  offset: 0, 0
+  index: -1
+beckman_skill2_10
+  rotate: false
+  xy: 171, 684
+  size: 249, 172
+  orig: 249, 172
+  offset: 0, 0
+  index: -1
+beckman_skill2_11
+  rotate: false
+  xy: 424, 858
+  size: 243, 172
+  orig: 243, 172
+  offset: 0, 0
+  index: -1
+beckman_skill2_12
+  rotate: false
+  xy: 1149, 537
+  size: 166, 168
+  orig: 166, 168
+  offset: 0, 0
+  index: -1
+beckman_skill2_801
+  rotate: true
+  xy: 645, 583
+  size: 99, 14
+  orig: 104, 14
+  offset: 5, 0
+  index: -1
+beckman_skill3 201
+  rotate: false
+  xy: 1802, 506
+  size: 40, 48
+  orig: 40, 48
+  offset: 0, 0
+  index: -1
+beckman_skill3 202
+  rotate: false
+  xy: 1276, 2
+  size: 22, 21
+  orig: 27, 27
+  offset: 3, 2
+  index: -1
+beckman_skill3 203
+  rotate: true
+  xy: 1822, 827
+  size: 15, 20
+  orig: 20, 25
+  offset: 4, 2
+  index: -1
+beckman_skill3_04
+  rotate: false
+  xy: 1292, 208
+  size: 125, 159
+  orig: 125, 159
+  offset: 0, 0
+  index: -1
+beckman_skill3_05
+  rotate: false
+  xy: 1328, 376
+  size: 146, 161
+  orig: 204, 220
+  offset: 0, 0
+  index: -1
+beckman_skill3_05ef
+  rotate: false
+  xy: 1697, 204
+  size: 91, 95
+  orig: 91, 95
+  offset: 0, 0
+  index: -1
+beckman_skill3_06
+  rotate: false
+  xy: 1032, 352
+  size: 163, 169
+  orig: 232, 235
+  offset: 0, 0
+  index: -1
+beckman_skill3_06ef
+  rotate: false
+  xy: 1692, 301
+  size: 92, 100
+  orig: 95, 103
+  offset: 3, 3
+  index: -1
+beckman_skill3_07
+  rotate: false
+  xy: 539, 336
+  size: 216, 172
+  orig: 216, 172
+  offset: 0, 0
+  index: -1
+beckman_skill3_07_ef
+  rotate: false
+  xy: 1476, 395
+  size: 96, 142
+  orig: 96, 142
+  offset: 0, 0
+  index: -1
+beckman_skill3_09
+  rotate: false
+  xy: 171, 510
+  size: 239, 172
+  orig: 239, 172
+  offset: 0, 0
+  index: -1
+beckman_skill3_10
+  rotate: false
+  xy: 422, 684
+  size: 237, 172
+  orig: 237, 172
+  offset: 0, 0
+  index: -1
+beckman_skill3_1001
+  rotate: true
+  xy: 1705, 406
+  size: 133, 95
+  orig: 137, 101
+  offset: 0, 3
+  index: -1
+beckman_skill3_11
+  rotate: false
+  xy: 412, 510
+  size: 231, 172
+  orig: 231, 172
+  offset: 0, 0
+  index: -1
+beckman_skill3_701
+  rotate: false
+  xy: 150, 169
+  size: 158, 93
+  orig: 158, 94
+  offset: 0, 0
+  index: -1
+beckman_skill3_801
+  rotate: false
+  xy: 1542, 376
+  size: 25, 17
+  orig: 25, 17
+  offset: 0, 0
+  index: -1
+beckman_skill3_802
+  rotate: false
+  xy: 1111, 816
+  size: 24, 33
+  orig: 24, 33
+  offset: 0, 0
+  index: -1
+beckman_skill3_803
+  rotate: false
+  xy: 1460, 2
+  size: 23, 16
+  orig: 23, 16
+  offset: 0, 0
+  index: -1
+beckman_skill3_804
+  rotate: false
+  xy: 1111, 782
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1
+beckman_skill3_805
+  rotate: true
+  xy: 1485, 539
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+beckman_skill3_806
+  rotate: false
+  xy: 1790, 210
+  size: 31, 47
+  orig: 31, 47
+  offset: 0, 0
+  index: -1
+beckman_skill3_807
+  rotate: true
+  xy: 1197, 352
+  size: 15, 49
+  orig: 15, 49
+  offset: 0, 0
+  index: -1
+beckman_skill3_808
+  rotate: true
+  xy: 1807, 662
+  size: 25, 35
+  orig: 25, 35
+  offset: 0, 0
+  index: -1
+beckman_skill3_809
+  rotate: false
+  xy: 1822, 844
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+beckman_skill3_810
+  rotate: false
+  xy: 1812, 581
+  size: 29, 31
+  orig: 32, 31
+  offset: 3, 0
+  index: -1
+beckman_skill3_811
+  rotate: false
+  xy: 1248, 352
+  size: 26, 15
+  orig: 26, 15
+  offset: 0, 0
+  index: -1
+beckman_skill3_812
+  rotate: false
+  xy: 1124, 2
+  size: 33, 19
+  orig: 33, 19
+  offset: 0, 0
+  index: -1
+beckman_skill3_813
+  rotate: true
+  xy: 1638, 12
+  size: 57, 68
+  orig: 57, 68
+  offset: 0, 0
+  index: -1
+beckman_skill3_814
+  rotate: false
+  xy: 1545, 567
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+beckman_skill3_815
+  rotate: true
+  xy: 1476, 376
+  size: 17, 34
+  orig: 17, 34
+  offset: 0, 0
+  index: -1
+beckman_skill3_817
+  rotate: false
+  xy: 1708, 20
+  size: 43, 49
+  orig: 43, 49
+  offset: 0, 0
+  index: -1
+beckman_skill3_818
+  rotate: false
+  xy: 1786, 354
+  size: 41, 50
+  orig: 41, 50
+  offset: 0, 0
+  index: -1
+beckman_skill3_819
+  rotate: true
+  xy: 1596, 180
+  size: 108, 99
+  orig: 108, 99
+  offset: 0, 0
+  index: -1
+beckman_skill3_901
+  rotate: false
+  xy: 1574, 290
+  size: 116, 111
+  orig: 120, 121
+  offset: 0, 4
+  index: -1
+beckman_squat
+  rotate: false
+  xy: 1574, 403
+  size: 129, 136
+  orig: 129, 136
+  offset: 0, 0
+  index: -1
+beckman_standby_01
+  rotate: true
+  xy: 150, 264
+  size: 233, 164
+  orig: 233, 164
+  offset: 0, 0
+  index: -1
+beckman_standby_02
+  rotate: false
+  xy: 357, 2
+  size: 207, 164
+  orig: 207, 164
+  offset: 0, 0
+  index: -1
+beckman_win_02
+  rotate: true
+  xy: 1317, 539
+  size: 141, 166
+  orig: 141, 166
+  offset: 0, 0
+  index: -1
+beckman_win_03
+  rotate: false
+  xy: 2, 2
+  size: 133, 228
+  orig: 133, 228
+  offset: 0, 0
+  index: -1
+beckman_win_04
+  rotate: false
+  xy: 1307, 50
+  size: 144, 156
+  orig: 173, 190
+  offset: 13, 13
+  index: -1
+beckman_win_05
+  rotate: false
+  xy: 1185, 187
+  size: 105, 163
+  orig: 105, 163
+  offset: 0, 0
+  index: -1
+beckman_win_06
+  rotate: false
+  xy: 1201, 25
+  size: 104, 160
+  orig: 104, 160
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 1701, 128
+  size: 52, 74
+  orig: 52, 75
+  offset: 0, 1
+  index: -1
+cloth_01
+  rotate: false
+  xy: 1307, 2
+  size: 90, 46
+  orig: 90, 46
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 1545, 539
+  size: 26, 22
+  orig: 26, 22
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 1460, 20
+  size: 49, 93
+  orig: 49, 93
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 1004, 518
+  size: 11, 3
+  orig: 11, 3
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 1701, 71
+  size: 50, 55
+  orig: 50, 55
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 1760, 616
+  size: 45, 102
+  orig: 45, 102
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 1485, 592
+  size: 88, 80
+  orig: 88, 80
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 1111, 755
+  size: 24, 25
+  orig: 24, 28
+  offset: 0, 3
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 1812, 614
+  size: 26, 30
+  orig: 26, 30
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 1485, 3
+  size: 15, 25
+  orig: 15, 25
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 1512, 376
+  size: 28, 17
+  orig: 28, 17
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 1159, 2
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 1181, 3
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+hand_R_05
+  rotate: false
+  xy: 1317, 682
+  size: 28, 23
+  orig: 33, 31
+  offset: 3, 3
+  index: -1
+head_04
+  rotate: false
+  xy: 1802, 456
+  size: 40, 48
+  orig: 40, 48
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 1802, 406
+  size: 40, 48
+  orig: 40, 48
+  offset: 0, 0
+  index: -1
+head_06
+  rotate: false
+  xy: 1786, 304
+  size: 40, 48
+  orig: 40, 48
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 645, 562
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 1111, 728
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 1201, 2
+  size: 21, 36
+  orig: 21, 36
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 1807, 689
+  size: 29, 35
+  orig: 29, 35
+  offset: 0, 0
+  index: -1

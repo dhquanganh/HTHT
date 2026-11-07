@@ -1,0 +1,421 @@
+{
+  "luffy": {
+    "id": "3",
+    "name": "Luffy - S",
+    "avatar": "109",
+    "type": "abyss",
+    "star": "6",
+    "class": "mage",
+    "card": "d36b8683777ed674f864030680e0956a_1",
+    "head": "fac99d8dfcd405f41ac9713957dabbad_2",
+    "art": "160a5403fa6a97245b6b4602a25c506b_1",
+    "skeleton": {
+      "name": "Hero_109_SkeletonData",
+      "skeleton": {
+        "name": "Hero_109",
+        "src": "assets/8f801be3e6780b044b2f464c2a53a92b_1.json"
+      },
+      "atlases": [
+        {
+          "atlas": {
+            "name": "Hero_109.atlas",
+            "src": "assets/2ac4ef4d0e10da340b179bdfe8286212_1.atlas"
+          },
+          "textures": [
+            "733f4cc504600754784ac8ca13f028c6_1"
+          ]
+        }
+      ]
+    }
+  },
+  "battleBackgrounds": [
+    {
+      "id": "battlearena1",
+      "resource": "images/battle/battlearena1",
+      "visual": {
+        "key": "d379ae039370fe24d80e7a3dbc8f2c98_2",
+        "name": "BattleArena1",
+        "src": "assets/d379ae039370fe24d80e7a3dbc8f2c98_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena2",
+      "resource": "images/battle/battlearena2",
+      "visual": {
+        "key": "62d511f03f9e4c04fb92593b34e635b6_2",
+        "name": "BattleArena2",
+        "src": "assets/62d511f03f9e4c04fb92593b34e635b6_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena3",
+      "resource": "images/battle/battlearena3",
+      "visual": {
+        "key": "445ca4b1a92f9a34c9cde142ac0deb50_2",
+        "name": "BattleArena3",
+        "src": "assets/445ca4b1a92f9a34c9cde142ac0deb50_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena4",
+      "resource": "images/battle/battlearena4",
+      "visual": {
+        "key": "ca09dcca17a6c714999b4c6825dc8ce5_2",
+        "name": "BattleArena4",
+        "src": "assets/ca09dcca17a6c714999b4c6825dc8ce5_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena5",
+      "resource": "images/battle/battlearena5",
+      "visual": {
+        "key": "7f48bd37d246ace48ac5834644ef02d9_2",
+        "name": "BattleArena5",
+        "src": "assets/7f48bd37d246ace48ac5834644ef02d9_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena6",
+      "resource": "images/battle/battlearena6",
+      "visual": {
+        "key": "2724150d02207674b9d23e12bb734ea9_2",
+        "name": "BattleArena6",
+        "src": "assets/2724150d02207674b9d23e12bb734ea9_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena7",
+      "resource": "images/battle/battlearena7",
+      "visual": {
+        "key": "e540a59a2f2c9cb41ad034b773d263b5_2",
+        "name": "BattleArena7",
+        "src": "assets/e540a59a2f2c9cb41ad034b773d263b5_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena8",
+      "resource": "images/battle/battlearena8",
+      "visual": {
+        "key": "3d1ab9f5f70dece47a55f6024e1b3419_2",
+        "name": "BattleArena8",
+        "src": "assets/3d1ab9f5f70dece47a55f6024e1b3419_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena9",
+      "resource": "images/battle/battlearena9",
+      "visual": {
+        "key": "a4113b2a70de7b4448361fabd84b3cdc_2",
+        "name": "BattleArena9",
+        "src": "assets/a4113b2a70de7b4448361fabd84b3cdc_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena10",
+      "resource": "images/battle/battlearena10",
+      "visual": {
+        "key": "85d906ed706f78f4483e41caae7276b5_2",
+        "name": "BattleArena10",
+        "src": "assets/85d906ed706f78f4483e41caae7276b5_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena11",
+      "resource": "images/battle/battlearena11",
+      "visual": {
+        "key": "dceb3180606f64e4384657c247748f45_2",
+        "name": "BattleArena11",
+        "src": "assets/dceb3180606f64e4384657c247748f45_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "id": "battlearena12",
+      "resource": "images/battle/battlearena12",
+      "visual": {
+        "key": "a757a29fdbf69aa4b944256fb459009d_2",
+        "name": "BattleArena12",
+        "src": "assets/a757a29fdbf69aa4b944256fb459009d_2.webp",
+        "width": 1476,
+        "height": 880,
+        "border": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "map": {
+    "assetKey": "b817b80c840667c4380b63031b997661_2",
+    "sceneId": 18,
+    "width": 868,
+    "height": 640,
+    "layers": [
+      {
+        "assetKey": "b817b80c840667c4380b63031b997661_2",
+        "width": 868,
+        "height": 640,
+        "resource": "images/home/world_bgr_1"
+      },
+      {
+        "assetKey": "386edaf7f1b34c34f8c35e41cd83906b_2",
+        "width": 712,
+        "height": 640,
+        "resource": "images/home/world_bgr_2"
+      },
+      {
+        "assetKey": "cdc727113e0ea9b44be0e75211ea59e2_2",
+        "width": 608,
+        "height": 640,
+        "resource": "images/home/world_bgr_3"
+      }
+    ],
+    "layerLayout": "horizontal",
+    "originalOceanAssetKey": "08e46ae9ccdbb0b44b2f2bcd1c4a95d2_2"
+  },
+  "campaign": {
+    "assetKey": "329fb2ec2a8defe4e8c0e5401fb6e8f5_2",
+    "sceneId": 34,
+    "width": 1280,
+    "height": 640
+  },
+  "enemies": [
+    {
+      "id": "npc-1",
+      "name": "Kiếm sĩ hải tặc",
+      "skeleton": {
+        "name": "Hero_164_SkeletonData",
+        "skeleton": {
+          "name": "Hero_164",
+          "src": "assets/8094d59e8531dcd46b0fde15c77fb64f_1.json"
+        },
+        "atlases": [
+          {
+            "atlas": {
+              "name": "Hero_164.atlas",
+              "src": "assets/f4d169a58c3a1a849b1a5700ee488fdc_1.atlas"
+            },
+            "textures": [
+              "7a8b4dd805f01484fac5ae942acccf9b_1",
+              "3445e536c3c9c9f42bcef76ce5f41b7d_1"
+            ]
+          }
+        ]
+      },
+      "head": "a1e9aad3ee23b8c49b69a7db6b2cd9bd_2",
+      "art": "0338bc05779b748428554c1fada83db9_1",
+      "card": "1fe16be9691923f418e0b302834f7138_1",
+      "scale": 1
+    },
+    {
+      "id": "npc-2",
+      "name": "Võ sĩ hải tặc",
+      "skeleton": {
+        "name": "Hero_174_SkeletonData",
+        "skeleton": {
+          "name": "Hero_174",
+          "src": "assets/1e19c490eb576d448bc36980aaf1ef8e_1.json"
+        },
+        "atlases": [
+          {
+            "atlas": {
+              "name": "Hero_174.atlas",
+              "src": "assets/5115a7b59b6b2844fb8ee5dd2e8444f7_1.atlas"
+            },
+            "textures": [
+              "21990b5aebdeb1e468a199ca99410a95_1"
+            ]
+          }
+        ]
+      },
+      "head": "c0d67e131116d184985ac251a49bb05a_2",
+      "art": "af322fe2679dc2e4eba73d811b3d82d8_1",
+      "card": "0b4103c35b3c63a43a8c2478f80aebb0_1",
+      "scale": 1
+    },
+    {
+      "id": "npc-3",
+      "name": "Hoa tiêu hải tặc",
+      "skeleton": {
+        "name": "Hero_161_SkeletonData",
+        "skeleton": {
+          "name": "Hero_161",
+          "src": "assets/e36fa661e29d8a748ab5e1e6133adeef_1.json"
+        },
+        "atlases": [
+          {
+            "atlas": {
+              "name": "Hero_161.atlas",
+              "src": "assets/15a9206fa9df756438613adb6c433f62_1.atlas"
+            },
+            "textures": [
+              "bde5befc4d311c04e92d179c6b7aed2b_1"
+            ]
+          }
+        ]
+      },
+      "head": "c000498230200a945bb436806ec53412_2",
+      "art": "07add4e5b0221ff48a73c10dc4d76dda_1",
+      "card": "6f433bdf039ceca4d92e4fdf738fbc18_1",
+      "scale": 1
+    }
+  ],
+  "skillIcons": {
+    "83": {
+      "assetKey": "88931f2c039d07245a53df2163676d72_2",
+      "iconId": "183",
+      "name": "[1]  Haki Vũ Trang"
+    },
+    "84": {
+      "assetKey": "15261ee33854502489bcab2dfa61c29e_2",
+      "iconId": "140",
+      "name": "[1]  Mài Rũa"
+    },
+    "85": {
+      "assetKey": "55ac18857e24ac64185c4032ef8a6db2_2",
+      "iconId": "160",
+      "name": "[1]  Tuyệt Cảnh"
+    },
+    "938": {
+      "assetKey": "447237939b10393458bc63d59879cee5_2",
+      "iconId": "685",
+      "name": "[1]  Roi Cao Su"
+    }
+  },
+  "luffyAnimations": {
+    "idle": "idling",
+    "attack": "beat",
+    "skill": "skill3",
+    "damage": "damage",
+    "dead": "dead",
+    "run": "run",
+    "win": "win",
+    "attackImpact": 0.36,
+    "skillImpact": 0.73
+  },
+  "luffySkillIcons": {
+    "jetPistol": "447237939b10393458bc63d59879cee5_2",
+    "jetGatling": "85ba7e8a723488b47a94d5a3adb8e904_2"
+  },
+  "luffySkills": [
+    {
+      "id": "jetPistol",
+      "name": "Gomu Gomu no Jet Pistol",
+      "assetKey": "447237939b10393458bc63d59879cee5_2",
+      "animation": "beat",
+      "impactAt": 0.36,
+      "resource": "_pack/skillicon/skill_685",
+      "originalName": "Roi Cao Su"
+    },
+    {
+      "id": "jetGatling",
+      "name": "Gomu Gomu no Jet Gatling",
+      "assetKey": "85ba7e8a723488b47a94d5a3adb8e904_2",
+      "animation": "skill3",
+      "impactAt": 0.73,
+      "resource": "_pack/skillicon/skill_14",
+      "originalName": "Súng Cao Su"
+    }
+  ],
+  "starterItems": [
+    "equipment:1",
+    "equipment:22",
+    "artifact:1"
+  ],
+  "equipmentSlots": [
+    "pants",
+    "armor",
+    "boots",
+    "helmet",
+    "accessory"
+  ]
+}

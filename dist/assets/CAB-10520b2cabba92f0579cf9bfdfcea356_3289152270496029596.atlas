@@ -1,0 +1,83 @@
+
+Hit_148.png
+size: 380,480
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+16
+  rotate: false
+  xy: 2, 18
+  size: 200, 200
+  orig: 256, 256
+  offset: 28, 28
+  index: -1
+glow_1039
+  rotate: false
+  xy: 260, 372
+  size: 104, 104
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+glow_4015
+  rotate: false
+  xy: 2, 220
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+sequence_10010
+  rotate: true
+  xy: 255, 8
+  size: 116, 59
+  orig: 136, 80
+  offset: 8, 6
+  index: -1
+sequence_10011
+  rotate: true
+  xy: 260, 126
+  size: 119, 58
+  orig: 136, 80
+  offset: 4, 5
+  index: -1
+sequence_10012
+  rotate: true
+  xy: 316, 2
+  size: 116, 59
+  orig: 136, 80
+  offset: 5, 8
+  index: -1
+sequence_1005
+  rotate: true
+  xy: 204, 24
+  size: 72, 28
+  orig: 136, 80
+  offset: 17, 20
+  index: -1
+sequence_1006
+  rotate: true
+  xy: 320, 120
+  size: 124, 48
+  orig: 136, 80
+  offset: 11, 10
+  index: -1
+sequence_1007
+  rotate: true
+  xy: 204, 98
+  size: 120, 49
+  orig: 136, 80
+  offset: 10, 10
+  index: -1
+sequence_1008
+  rotate: true
+  xy: 327, 246
+  size: 124, 51
+  orig: 136, 80
+  offset: 6, 9
+  index: -1
+sequence_1009
+  rotate: true
+  xy: 260, 247
+  size: 123, 65
+  orig: 136, 80
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,117 @@
+
+Hit_2.png
+size: 1016,956
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Nami_skill_1_boom/000
+  rotate: true
+  xy: 844, 34
+  size: 241, 170
+  orig: 246, 176
+  offset: 3, 2
+  index: -1
+Char_Nami_skill_1_boom/002
+  rotate: true
+  xy: 2, 16
+  size: 256, 206
+  orig: 262, 211
+  offset: 3, 2
+  index: -1
+Char_Nami_skill_1_boom/003
+  rotate: true
+  xy: 730, 661
+  size: 293, 207
+  orig: 298, 211
+  offset: 3, 1
+  index: -1
+Char_Nami_skill_1_boom/004
+  rotate: false
+  xy: 322, 302
+  size: 368, 284
+  orig: 373, 290
+  offset: 3, 3
+  index: -1
+Char_Nami_skill_1_boom/005
+  rotate: false
+  xy: 2, 639
+  size: 384, 315
+  orig: 387, 320
+  offset: 2, 2
+  index: -1
+Char_Nami_skill_1_boom/006
+  rotate: true
+  xy: 2, 274
+  size: 363, 318
+  orig: 372, 325
+  offset: 5, 2
+  index: -1
+Char_Nami_skill_1_boom/007
+  rotate: true
+  xy: 388, 588
+  size: 366, 340
+  orig: 372, 344
+  offset: 4, 1
+  index: -1
+Char_Nami_skill_1_boom/008
+  rotate: false
+  xy: 322, 2
+  size: 298, 298
+  orig: 300, 299
+  offset: 1, 0
+  index: -1
+Char_Nami_skill_1_boom/009
+  rotate: false
+  xy: 692, 277
+  size: 309, 309
+  orig: 311, 310
+  offset: 1, 0
+  index: -1
+Char_Nami_skill_1_boom/012
+  rotate: false
+  xy: 622, 58
+  size: 220, 217
+  orig: 222, 220
+  offset: 2, 0
+  index: -1
+Char_Nami_skill_1_boom/014
+  rotate: false
+  xy: 210, 161
+  size: 81, 111
+  orig: 87, 117
+  offset: 3, 3
+  index: -1
+
+Hit_22.png
+size: 476,420
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Nami_skill_1_boom/001
+  rotate: false
+  xy: 207, 17
+  size: 248, 180
+  orig: 251, 185
+  offset: 1, 1
+  index: -1
+Char_Nami_skill_1_boom/010
+  rotate: false
+  xy: 2, 218
+  size: 255, 200
+  orig: 260, 211
+  offset: 2, 2
+  index: -1
+Char_Nami_skill_1_boom/011
+  rotate: true
+  xy: 259, 199
+  size: 219, 215
+  orig: 221, 219
+  offset: 2, 1
+  index: -1
+Char_Nami_skill_1_boom/013
+  rotate: false
+  xy: 2, 2
+  size: 203, 214
+  orig: 208, 218
+  offset: 3, 2
+  index: -1

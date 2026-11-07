@@ -1,0 +1,125 @@
+
+Skill_73.png
+size: 842,349
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 533 copy 5
+  rotate: false
+  xy: 2, 142
+  size: 105, 205
+  orig: 107, 207
+  offset: 1, 1
+  index: -1
+fx/a (1)
+  rotate: false
+  xy: 671, 99
+  size: 156, 89
+  orig: 156, 89
+  offset: 0, 0
+  index: -1
+fx/a (2)
+  rotate: true
+  xy: 489, 20
+  size: 157, 89
+  orig: 157, 89
+  offset: 0, 0
+  index: -1
+fx/a (3)
+  rotate: true
+  xy: 580, 20
+  size: 157, 89
+  orig: 157, 89
+  offset: 0, 0
+  index: -1
+fx/a (4)
+  rotate: true
+  xy: 185, 6
+  size: 158, 89
+  orig: 158, 89
+  offset: 0, 0
+  index: -1
+fx/a (5)
+  rotate: true
+  xy: 610, 190
+  size: 157, 89
+  orig: 157, 89
+  offset: 0, 0
+  index: -1
+fx/a (6)
+  rotate: true
+  xy: 276, 8
+  size: 157, 92
+  orig: 157, 92
+  offset: 0, 0
+  index: -1
+fx/a (7)
+  rotate: true
+  xy: 701, 191
+  size: 156, 89
+  orig: 156, 89
+  offset: 0, 0
+  index: -1
+fx/b (10)
+  rotate: false
+  xy: 239, 167
+  size: 123, 180
+  orig: 123, 180
+  offset: 0, 0
+  index: -1
+fx/b (11)
+  rotate: true
+  xy: 2, 12
+  size: 128, 181
+  orig: 128, 181
+  offset: 0, 0
+  index: -1
+fx/b (12)
+  rotate: false
+  xy: 109, 166
+  size: 128, 181
+  orig: 128, 181
+  offset: 0, 0
+  index: -1
+fx/b (13)
+  rotate: false
+  xy: 484, 179
+  size: 124, 168
+  orig: 124, 168
+  offset: 0, 0
+  index: -1
+fx/b (8)
+  rotate: false
+  xy: 370, 2
+  size: 117, 170
+  orig: 117, 170
+  offset: 0, 0
+  index: -1
+fx/b (9)
+  rotate: false
+  xy: 364, 174
+  size: 118, 173
+  orig: 118, 173
+  offset: 0, 0
+  index: -1
+fx/hit (1)
+  rotate: true
+  xy: 792, 302
+  size: 45, 48
+  orig: 45, 48
+  offset: 0, 0
+  index: -1
+fx/hit (2)
+  rotate: false
+  xy: 749, 28
+  size: 66, 69
+  orig: 66, 69
+  offset: 0, 0
+  index: -1
+fx/hit (3)
+  rotate: false
+  xy: 671, 20
+  size: 76, 77
+  orig: 76, 77
+  offset: 0, 0
+  index: -1

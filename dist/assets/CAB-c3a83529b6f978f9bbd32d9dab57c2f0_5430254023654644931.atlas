@@ -1,0 +1,76 @@
+
+Og_tao1.png
+size: 215,851
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 2
+  size: 132, 114
+  orig: 132, 114
+  offset: 0, 0
+  index: -1
+cloud
+  rotate: true
+  xy: 2, 259
+  size: 270, 102
+  orig: 270, 102
+  offset: 0, 0
+  index: -1
+hand_R
+  rotate: false
+  xy: 2, 118
+  size: 182, 139
+  orig: 182, 139
+  offset: 0, 0
+  index: -1
+hand_l
+  rotate: false
+  xy: 106, 316
+  size: 84, 76
+  orig: 84, 76
+  offset: 0, 0
+  index: -1
+head1
+  rotate: false
+  xy: 2, 691
+  size: 210, 158
+  orig: 210, 158
+  offset: 0, 0
+  index: -1
+head2
+  rotate: false
+  xy: 2, 531
+  size: 210, 158
+  orig: 210, 158
+  offset: 0, 0
+  index: -1
+l1
+  rotate: true
+  xy: 106, 394
+  size: 135, 107
+  orig: 135, 107
+  offset: 0, 0
+  index: -1
+l2
+  rotate: false
+  xy: 106, 259
+  size: 64, 55
+  orig: 64, 55
+  offset: 0, 0
+  index: -1
+l3
+  rotate: true
+  xy: 136, 16
+  size: 46, 60
+  orig: 46, 60
+  offset: 0, 0
+  index: -1
+l4
+  rotate: false
+  xy: 136, 64
+  size: 56, 52
+  orig: 56, 52
+  offset: 0, 0
+  index: -1

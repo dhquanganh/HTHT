@@ -1,0 +1,1392 @@
+
+Hero_297.png
+size: 1604,1540
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 809
+  size: 230, 215
+  orig: 243, 235
+  offset: 4, 16
+  index: -1
+10
+  rotate: false
+  xy: 743, 1057
+  size: 42, 40
+  orig: 58, 70
+  offset: 9, 10
+  index: -1
+11
+  rotate: false
+  xy: 1503, 94
+  size: 46, 37
+  orig: 58, 70
+  offset: 5, 19
+  index: -1
+12
+  rotate: true
+  xy: 455, 241
+  size: 50, 34
+  orig: 58, 70
+  offset: 4, 24
+  index: -1
+13
+  rotate: false
+  xy: 1448, 53
+  size: 54, 29
+  orig: 58, 70
+  offset: 3, 27
+  index: -1
+14
+  rotate: false
+  xy: 960, 522
+  size: 54, 25
+  orig: 58, 70
+  offset: 4, 32
+  index: -1
+2
+  rotate: false
+  xy: 260, 1339
+  size: 256, 199
+  orig: 256, 256
+  offset: 0, 21
+  index: -1
+7
+  rotate: false
+  xy: 1575, 914
+  size: 27, 27
+  orig: 58, 70
+  offset: 16, 3
+  index: -1
+8
+  rotate: false
+  xy: 743, 1024
+  size: 39, 31
+  orig: 58, 70
+  offset: 10, 2
+  index: -1
+9
+  rotate: true
+  xy: 743, 1099
+  size: 41, 42
+  orig: 58, 70
+  offset: 8, 3
+  index: -1
+arm_L_04
+  rotate: true
+  xy: 620, 2
+  size: 11, 12
+  orig: 11, 12
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 1473, 2
+  size: 11, 14
+  orig: 11, 14
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 1515, 9
+  size: 37, 42
+  orig: 37, 42
+  offset: 0, 0
+  index: -1
+choppertwo 000
+  rotate: false
+  xy: 1377, 1017
+  size: 66, 125
+  orig: 358, 223
+  offset: 121, 66
+  index: -1
+choppertwo 001
+  rotate: false
+  xy: 1377, 1017
+  size: 66, 125
+  orig: 358, 223
+  offset: 121, 66
+  index: -1
+choppertwo 002
+  rotate: false
+  xy: 1377, 890
+  size: 66, 125
+  orig: 358, 223
+  offset: 120, 46
+  index: -1
+choppertwo 003
+  rotate: false
+  xy: 1524, 191
+  size: 66, 57
+  orig: 358, 223
+  offset: 113, 58
+  index: -1
+choppertwo 004
+  rotate: false
+  xy: 955, 1321
+  size: 220, 101
+  orig: 358, 223
+  offset: 52, 59
+  index: -1
+choppertwo 005
+  rotate: false
+  xy: 955, 1321
+  size: 220, 101
+  orig: 358, 223
+  offset: 52, 59
+  index: -1
+choppertwo 006
+  rotate: false
+  xy: 955, 1424
+  size: 274, 114
+  orig: 358, 223
+  offset: 57, 56
+  index: -1
+choppertwo 007
+  rotate: true
+  xy: 426, 824
+  size: 198, 88
+  orig: 358, 223
+  offset: 128, 74
+  index: -1
+choppertwo_beat_02
+  rotate: true
+  xy: 1106, 791
+  size: 105, 131
+  orig: 105, 131
+  offset: 0, 0
+  index: -1
+choppertwo_beat_03
+  rotate: false
+  xy: 1374, 760
+  size: 96, 128
+  orig: 96, 128
+  offset: 0, 0
+  index: -1
+choppertwo_beat_04
+  rotate: false
+  xy: 1175, 160
+  size: 97, 122
+  orig: 97, 124
+  offset: 0, 0
+  index: -1
+choppertwo_beat_05
+  rotate: true
+  xy: 1346, 283
+  size: 102, 121
+  orig: 104, 121
+  offset: 2, 0
+  index: -1
+choppertwo_beat_06
+  rotate: true
+  xy: 1104, 475
+  size: 106, 111
+  orig: 106, 113
+  offset: 0, 0
+  index: -1
+choppertwo_beat_07
+  rotate: true
+  xy: 1117, 898
+  size: 96, 120
+  orig: 96, 122
+  offset: 0, 0
+  index: -1
+choppertwo_damage
+  rotate: true
+  xy: 849, 2
+  size: 113, 118
+  orig: 115, 118
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_02
+  rotate: true
+  xy: 1239, 794
+  size: 115, 133
+  orig: 117, 135
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_03
+  rotate: true
+  xy: 1470, 471
+  size: 102, 131
+  orig: 104, 131
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_04
+  rotate: true
+  xy: 1239, 677
+  size: 115, 133
+  orig: 117, 135
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_05
+  rotate: true
+  xy: 606, 1024
+  size: 116, 135
+  orig: 116, 135
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_06
+  rotate: false
+  xy: 1353, 523
+  size: 115, 133
+  orig: 115, 133
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_07
+  rotate: true
+  xy: 1469, 358
+  size: 111, 133
+  orig: 113, 133
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_08
+  rotate: true
+  xy: 1217, 570
+  size: 105, 134
+  orig: 105, 134
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_09
+  rotate: true
+  xy: 1217, 461
+  size: 107, 134
+  orig: 107, 134
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_11
+  rotate: false
+  xy: 573, 686
+  size: 105, 136
+  orig: 105, 136
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_12
+  rotate: true
+  xy: 1027, 262
+  size: 105, 128
+  orig: 105, 128
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_13
+  rotate: false
+  xy: 731, 116
+  size: 103, 131
+  orig: 105, 131
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_14_ef
+  rotate: true
+  xy: 1575, 943
+  size: 93, 24
+  orig: 93, 24
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_15_ef
+  rotate: false
+  xy: 1095, 720
+  size: 120, 69
+  orig: 120, 69
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_16_ef
+  rotate: false
+  xy: 217, 592
+  size: 160, 147
+  orig: 162, 147
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_17_ef
+  rotate: false
+  xy: 2, 177
+  size: 191, 204
+  orig: 193, 206
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_18_ef
+  rotate: true
+  xy: 518, 1346
+  size: 192, 223
+  orig: 192, 223
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_19_ef
+  rotate: false
+  xy: 2, 383
+  size: 196, 211
+  orig: 196, 211
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_20_ef
+  rotate: true
+  xy: 518, 385
+  size: 146, 147
+  orig: 146, 149
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_21_ef
+  rotate: false
+  xy: 1446, 182
+  size: 76, 66
+  orig: 76, 68
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2201
+  rotate: false
+  xy: 589, 15
+  size: 130, 76
+  orig: 130, 76
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2202
+  rotate: false
+  xy: 1452, 15
+  size: 61, 36
+  orig: 61, 36
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2203
+  rotate: true
+  xy: 1027, 442
+  size: 105, 75
+  orig: 105, 75
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2204
+  rotate: true
+  xy: 667, 388
+  size: 24, 43
+  orig: 24, 43
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2205
+  rotate: false
+  xy: 995, 481
+  size: 22, 39
+  orig: 22, 42
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2206
+  rotate: false
+  xy: 1357, 6
+  size: 38, 46
+  orig: 38, 48
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2207
+  rotate: false
+  xy: 1397, 53
+  size: 49, 55
+  orig: 49, 55
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2208
+  rotate: false
+  xy: 956, 474
+  size: 37, 46
+  orig: 37, 46
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2209
+  rotate: false
+  xy: 989, 362
+  size: 28, 33
+  orig: 28, 33
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2210
+  rotate: false
+  xy: 217, 773
+  size: 15, 34
+  orig: 15, 34
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2211
+  rotate: true
+  xy: 1504, 53
+  size: 39, 43
+  orig: 49, 55
+  offset: 7, 3
+  index: -1
+choppertwo_skill1_2212
+  rotate: false
+  xy: 959, 397
+  size: 37, 35
+  orig: 45, 46
+  offset: 4, 5
+  index: -1
+choppertwo_skill1_2213
+  rotate: true
+  xy: 605, 2
+  size: 11, 13
+  orig: 11, 13
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2215
+  rotate: false
+  xy: 321, 2
+  size: 19, 18
+  orig: 19, 18
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2216
+  rotate: false
+  xy: 1592, 215
+  size: 10, 14
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_2218
+  rotate: true
+  xy: 1570, 133
+  size: 24, 14
+  orig: 24, 14
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_24
+  rotate: true
+  xy: 355, 293
+  size: 147, 151
+  orig: 147, 151
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_25
+  rotate: true
+  xy: 680, 685
+  size: 152, 136
+  orig: 154, 136
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_26
+  rotate: false
+  xy: 234, 828
+  size: 190, 194
+  orig: 190, 196
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_27
+  rotate: true
+  xy: 941, 852
+  size: 139, 163
+  orig: 139, 163
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_28
+  rotate: false
+  xy: 470, 1143
+  size: 155, 194
+  orig: 155, 194
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_29
+  rotate: true
+  xy: 677, 534
+  size: 149, 141
+  orig: 149, 141
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_30
+  rotate: false
+  xy: 456, 94
+  size: 144, 145
+  orig: 144, 145
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_31
+  rotate: false
+  xy: 637, 839
+  size: 147, 183
+  orig: 149, 183
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_32
+  rotate: true
+  xy: 260, 1161
+  size: 176, 208
+  orig: 178, 208
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_33
+  rotate: true
+  xy: 256, 1024
+  size: 135, 205
+  orig: 135, 207
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_43
+  rotate: true
+  xy: 743, 1351
+  size: 187, 210
+  orig: 187, 210
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_51
+  rotate: false
+  xy: 147, 3
+  size: 172, 172
+  orig: 174, 172
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_52
+  rotate: false
+  xy: 1137, 1145
+  size: 136, 174
+  orig: 138, 174
+  offset: 2, 0
+  index: -1
+choppertwo_skill1_5301
+  rotate: true
+  xy: 342, 2
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5302
+  rotate: false
+  xy: 379, 691
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5303
+  rotate: true
+  xy: 1397, 4
+  size: 47, 53
+  orig: 47, 53
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5304
+  rotate: true
+  xy: 1397, 110
+  size: 63, 48
+  orig: 63, 48
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5305
+  rotate: true
+  xy: 731, 441
+  size: 91, 87
+  orig: 91, 87
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5306
+  rotate: false
+  xy: 1175, 140
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5307
+  rotate: true
+  xy: 1217, 725
+  size: 29, 20
+  orig: 29, 20
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5308
+  rotate: true
+  xy: 1257, 1424
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5309
+  rotate: true
+  xy: 1217, 756
+  size: 33, 20
+  orig: 33, 20
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5310
+  rotate: false
+  xy: 712, 385
+  size: 53, 54
+  orig: 53, 54
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5311
+  rotate: false
+  xy: 637, 824
+  size: 30, 13
+  orig: 30, 13
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5312
+  rotate: true
+  xy: 518, 534
+  size: 29, 13
+  orig: 29, 13
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5313
+  rotate: false
+  xy: 1447, 134
+  size: 63, 46
+  orig: 63, 46
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5314
+  rotate: false
+  xy: 956, 434
+  size: 45, 38
+  orig: 45, 38
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5315
+  rotate: false
+  xy: 1445, 1350
+  size: 29, 34
+  orig: 29, 34
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5316
+  rotate: true
+  xy: 1376, 175
+  size: 106, 68
+  orig: 106, 68
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_5317
+  rotate: false
+  xy: 491, 259
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_54
+  rotate: true
+  xy: 627, 1142
+  size: 202, 158
+  orig: 202, 158
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_55
+  rotate: false
+  xy: 786, 850
+  size: 153, 167
+  orig: 153, 169
+  offset: 0, 0
+  index: -1
+choppertwo_skill1_56
+  rotate: false
+  xy: 1445, 1181
+  size: 154, 167
+  orig: 156, 167
+  offset: 2, 0
+  index: -1
+choppertwo_skill2_04
+  rotate: true
+  xy: 1239, 911
+  size: 109, 136
+  orig: 111, 138
+  offset: 2, 0
+  index: -1
+choppertwo_skill2_05
+  rotate: true
+  xy: 820, 432
+  size: 111, 134
+  orig: 113, 134
+  offset: 2, 0
+  index: -1
+choppertwo_skill2_06
+  rotate: false
+  xy: 195, 177
+  size: 120, 121
+  orig: 120, 121
+  offset: 0, 0
+  index: -1
+choppertwo_skill2_07
+  rotate: false
+  xy: 943, 118
+  size: 105, 129
+  orig: 105, 129
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_23
+  rotate: true
+  xy: 508, 241
+  size: 142, 147
+  orig: 142, 149
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_24
+  rotate: false
+  xy: 820, 545
+  size: 138, 149
+  orig: 138, 151
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_25
+  rotate: false
+  xy: 949, 699
+  size: 144, 151
+  orig: 144, 153
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_26
+  rotate: false
+  xy: 950, 993
+  size: 165, 141
+  orig: 165, 141
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_27
+  rotate: true
+  xy: 200, 300
+  size: 142, 153
+  orig: 142, 153
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_28
+  rotate: true
+  xy: 379, 565
+  size: 120, 162
+  orig: 120, 164
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_29
+  rotate: false
+  xy: 1275, 1267
+  size: 168, 169
+  orig: 168, 169
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_30
+  rotate: true
+  xy: 602, 93
+  size: 146, 127
+  orig: 146, 127
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_31
+  rotate: false
+  xy: 516, 824
+  size: 119, 198
+  orig: 119, 198
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_31_ef
+  rotate: false
+  xy: 1482, 1350
+  size: 120, 188
+  orig: 120, 188
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_32
+  rotate: false
+  xy: 1239, 1022
+  size: 136, 120
+  orig: 136, 120
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_32_ef
+  rotate: false
+  xy: 818, 696
+  size: 129, 152
+  orig: 129, 152
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_33
+  rotate: true
+  xy: 406, 687
+  size: 135, 165
+  orig: 135, 165
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_33_ef
+  rotate: true
+  xy: 1275, 1144
+  size: 121, 168
+  orig: 121, 168
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_38
+  rotate: true
+  xy: 960, 549
+  size: 148, 142
+  orig: 148, 142
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_39
+  rotate: false
+  xy: 2, 2
+  size: 143, 173
+  orig: 145, 173
+  offset: 2, 0
+  index: -1
+choppertwo_skill3_40
+  rotate: false
+  xy: 1445, 1038
+  size: 154, 141
+  orig: 154, 141
+  offset: 0, 0
+  index: -1
+choppertwo_skill3_41
+  rotate: false
+  xy: 543, 533
+  size: 132, 151
+  orig: 132, 151
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1901
+  rotate: true
+  xy: 1095, 835
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1902
+  rotate: false
+  xy: 1177, 1329
+  size: 88, 93
+  orig: 88, 93
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1906
+  rotate: false
+  xy: 1261, 291
+  size: 82, 66
+  orig: 82, 66
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1907
+  rotate: false
+  xy: 1448, 84
+  size: 53, 48
+  orig: 53, 48
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1908
+  rotate: false
+  xy: 217, 741
+  size: 15, 10
+  orig: 15, 10
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1911
+  rotate: true
+  xy: 772, 358
+  size: 72, 78
+  orig: 72, 78
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1912
+  rotate: false
+  xy: 217, 753
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1913
+  rotate: false
+  xy: 959, 359
+  size: 28, 36
+  orig: 28, 36
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1914
+  rotate: false
+  xy: 1445, 890
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1915
+  rotate: false
+  xy: 1445, 1386
+  size: 35, 50
+  orig: 35, 50
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1916
+  rotate: false
+  xy: 1157, 266
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1917
+  rotate: true
+  xy: 1489, 2
+  size: 11, 14
+  orig: 11, 14
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1918
+  rotate: false
+  xy: 998, 404
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1919
+  rotate: false
+  xy: 1217, 708
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1920
+  rotate: false
+  xy: 1512, 161
+  size: 10, 19
+  orig: 10, 19
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1921
+  rotate: false
+  xy: 379, 712
+  size: 25, 27
+  orig: 25, 27
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1922
+  rotate: true
+  xy: 1446, 256
+  size: 25, 21
+  orig: 25, 21
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1923
+  rotate: true
+  xy: 786, 839
+  size: 9, 19
+  orig: 9, 19
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1924
+  rotate: true
+  xy: 1106, 974
+  size: 17, 9
+  orig: 17, 9
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1925
+  rotate: false
+  xy: 1524, 159
+  size: 59, 30
+  orig: 59, 30
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1926
+  rotate: false
+  xy: 1512, 133
+  size: 56, 24
+  orig: 56, 24
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_1927
+  rotate: false
+  xy: 1291, 13
+  size: 64, 39
+  orig: 64, 39
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_24
+  rotate: false
+  xy: 200, 444
+  size: 158, 146
+  orig: 158, 148
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_25
+  rotate: false
+  xy: 321, 22
+  size: 133, 153
+  orig: 135, 153
+  offset: 2, 0
+  index: -1
+choppertwo_skill4_26
+  rotate: true
+  xy: 787, 1019
+  size: 142, 161
+  orig: 142, 161
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_27
+  rotate: false
+  xy: 1050, 133
+  size: 123, 127
+  orig: 152, 148
+  offset: 17, 12
+  index: -1
+choppertwo_skill4_28
+  rotate: true
+  xy: 1117, 996
+  size: 138, 120
+  orig: 164, 138
+  offset: 13, 8
+  index: -1
+choppertwo_skill4_29
+  rotate: false
+  xy: 463, 1024
+  size: 141, 117
+  orig: 166, 138
+  offset: 15, 11
+  index: -1
+choppertwo_skill4_30
+  rotate: false
+  xy: 360, 442
+  size: 156, 121
+  orig: 156, 121
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_31
+  rotate: false
+  xy: 772, 249
+  size: 128, 107
+  orig: 130, 107
+  offset: 2, 0
+  index: -1
+choppertwo_skill4_32
+  rotate: false
+  xy: 1472, 692
+  size: 130, 105
+  orig: 130, 105
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_33
+  rotate: false
+  xy: 456, 14
+  size: 131, 78
+  orig: 131, 78
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_34
+  rotate: true
+  xy: 667, 414
+  size: 117, 43
+  orig: 117, 45
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_39
+  rotate: false
+  xy: 2, 596
+  size: 213, 211
+  orig: 215, 211
+  offset: 2, 0
+  index: -1
+choppertwo_skill4_40
+  rotate: false
+  xy: 950, 1136
+  size: 185, 183
+  orig: 185, 185
+  offset: 0, 0
+  index: -1
+choppertwo_skill4_41
+  rotate: false
+  xy: 787, 1163
+  size: 161, 186
+  orig: 161, 186
+  offset: 0, 0
+  index: -1
+choppertwo_squat
+  rotate: true
+  xy: 1104, 369
+  size: 104, 109
+  orig: 104, 109
+  offset: 0, 0
+  index: -1
+choppertwo_standby_01
+  rotate: false
+  xy: 1189, 36
+  size: 100, 122
+  orig: 100, 122
+  offset: 0, 0
+  index: -1
+choppertwo_standby_02
+  rotate: false
+  xy: 1274, 160
+  size: 100, 121
+  orig: 100, 121
+  offset: 0, 0
+  index: -1
+choppertwo_win_02
+  rotate: false
+  xy: 836, 117
+  size: 105, 130
+  orig: 105, 130
+  offset: 0, 0
+  index: -1
+choppertwo_win_03
+  rotate: true
+  xy: 1470, 575
+  size: 115, 132
+  orig: 115, 134
+  offset: 0, 0
+  index: -1
+choppertwo_win_04
+  rotate: false
+  xy: 1104, 583
+  size: 111, 135
+  orig: 111, 135
+  offset: 0, 0
+  index: -1
+choppertwo_win_05
+  rotate: true
+  xy: 1215, 359
+  size: 100, 129
+  orig: 100, 129
+  offset: 0, 0
+  index: -1
+choppertwo_win_06
+  rotate: false
+  xy: 657, 249
+  size: 113, 134
+  orig: 113, 136
+  offset: 0, 0
+  index: -1
+choppertwo_win_07
+  rotate: true
+  xy: 1469, 250
+  size: 106, 129
+  orig: 106, 129
+  offset: 0, 0
+  index: -1
+choppertwo_win_08
+  rotate: true
+  xy: 1472, 799
+  size: 109, 130
+  orig: 109, 130
+  offset: 0, 0
+  index: -1
+choppertwo_win_09
+  rotate: true
+  xy: 317, 177
+  size: 114, 136
+  orig: 114, 136
+  offset: 0, 0
+  index: -1
+choppertwo_win_10
+  rotate: false
+  xy: 1353, 387
+  size: 114, 134
+  orig: 114, 134
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 1592, 231
+  size: 17, 10
+  orig: 17, 10
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 1016, 533
+  size: 9, 14
+  orig: 9, 14
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 363, 7
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 491, 241
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 852, 359
+  size: 105, 71
+  orig: 105, 71
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 1027, 249
+  size: 11, 21
+  orig: 11, 21
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 1231, 1424
+  size: 12, 24
+  orig: 12, 24
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 1551, 97
+  size: 24, 34
+  orig: 24, 34
+  offset: 0, 0
+  index: -1
+da
+  rotate: true
+  xy: 234, 741
+  size: 85, 170
+  orig: 98, 202
+  offset: 7, 22
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 508, 430
+  size: 8, 10
+  orig: 8, 10
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 1592, 202
+  size: 10, 11
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 1452, 2
+  size: 19, 11
+  orig: 19, 11
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 1353, 660
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+glow_1039
+  rotate: false
+  xy: 1291, 54
+  size: 104, 104
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+glow_1057
+  rotate: false
+  xy: 2, 1026
+  size: 252, 256
+  orig: 256, 256
+  offset: 4, 0
+  index: -1
+glow_4078
+  rotate: false
+  xy: 1445, 910
+  size: 128, 126
+  orig: 128, 128
+  offset: 0, 1
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 1050, 118
+  size: 13, 15
+  orig: 13, 15
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 360, 574
+  size: 14, 16
+  orig: 14, 18
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 1189, 2
+  size: 46, 32
+  orig: 46, 32
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 1237, 2
+  size: 46, 32
+  orig: 46, 32
+  offset: 0, 0
+  index: -1
+object_1009
+  rotate: true
+  xy: 902, 249
+  size: 107, 123
+  orig: 128, 128
+  offset: 10, 3
+  index: -1
+object_3011
+  rotate: false
+  xy: 2, 1284
+  size: 256, 254
+  orig: 256, 256
+  offset: 0, 1
+  index: -1
+object_5053
+  rotate: false
+  xy: 1231, 1438
+  size: 249, 100
+  orig: 256, 128
+  offset: 7, 16
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 1177, 1321
+  size: 6, 7
+  orig: 6, 7
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 721, 82
+  size: 8, 9
+  orig: 8, 9
+  offset: 0, 0
+  index: -1
+smoke_6003
+  rotate: true
+  xy: 731, 2
+  size: 112, 116
+  orig: 128, 128
+  offset: 11, 4
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 589, 2
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: false
+  xy: 1376, 160
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+typhoon4_02
+  rotate: true
+  xy: 1068, 6
+  size: 125, 119
+  orig: 170, 128
+  offset: 45, 5
+  index: -1
+typhoon4_03
+  rotate: false
+  xy: 969, 3
+  size: 97, 113
+  orig: 171, 128
+  offset: 74, 3
+  index: -1
+typhoon4_04
+  rotate: true
+  xy: 1374, 658
+  size: 100, 94
+  orig: 171, 128
+  offset: 66, 1
+  index: -1
+typhoon4_05
+  rotate: false
+  xy: 1157, 284
+  size: 102, 73
+  orig: 170, 128
+  offset: 64, 1
+  index: -1

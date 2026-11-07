@@ -1,0 +1,153 @@
+
+Skill_106.png
+size: 908,872
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_ivankof_skill_1_hit/000
+  rotate: false
+  xy: 2, 2
+  size: 260, 100
+  orig: 267, 104
+  offset: 4, 2
+  index: -1
+Char_ivankof_skill_1_hit/001
+  rotate: false
+  xy: 413, 155
+  size: 146, 181
+  orig: 150, 186
+  offset: 2, 2
+  index: -1
+Char_ivankof_skill_1_hit/002
+  rotate: false
+  xy: 262, 107
+  size: 149, 188
+  orig: 153, 192
+  offset: 2, 2
+  index: -1
+Char_ivankof_skill_1_hit/003
+  rotate: true
+  xy: 561, 83
+  size: 151, 177
+  orig: 156, 181
+  offset: 3, 2
+  index: -1
+Char_ivankof_skill_1_hit/004
+  rotate: true
+  xy: 767, 398
+  size: 131, 139
+  orig: 135, 144
+  offset: 3, 2
+  index: -1
+Char_ivankof_skill_1_hit/005
+  rotate: true
+  xy: 740, 82
+  size: 133, 140
+  orig: 138, 144
+  offset: 3, 1
+  index: -1
+Char_ivankof_skill_1_zhuti/000
+  rotate: false
+  xy: 413, 117
+  size: 82, 36
+  orig: 85, 39
+  offset: 1, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/001
+  rotate: false
+  xy: 424, 19
+  size: 187, 62
+  orig: 192, 64
+  offset: 2, 1
+  index: -1
+Char_ivankof_skill_1_zhuti/002
+  rotate: false
+  xy: 264, 4
+  size: 158, 101
+  orig: 162, 103
+  offset: 1, 1
+  index: -1
+Char_ivankof_skill_1_zhuti/003
+  rotate: false
+  xy: 322, 724
+  size: 349, 143
+  orig: 357, 148
+  offset: 4, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/004
+  rotate: false
+  xy: 562, 381
+  size: 203, 148
+  orig: 211, 153
+  offset: 4, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/005
+  rotate: false
+  xy: 607, 531
+  size: 253, 157
+  orig: 260, 162
+  offset: 4, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/006
+  rotate: false
+  xy: 2, 679
+  size: 318, 188
+  orig: 325, 190
+  offset: 3, 1
+  index: -1
+Char_ivankof_skill_1_zhuti/007
+  rotate: false
+  xy: 322, 338
+  size: 238, 192
+  orig: 243, 195
+  offset: 2, 1
+  index: -1
+Char_ivankof_skill_1_zhuti/008
+  rotate: false
+  xy: 2, 297
+  size: 291, 193
+  orig: 298, 196
+  offset: 4, 1
+  index: -1
+Char_ivankof_skill_1_zhuti/009
+  rotate: false
+  xy: 2, 492
+  size: 318, 185
+  orig: 325, 188
+  offset: 3, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/010
+  rotate: false
+  xy: 2, 104
+  size: 258, 191
+  orig: 264, 195
+  offset: 4, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/011
+  rotate: false
+  xy: 322, 532
+  size: 283, 190
+  orig: 291, 193
+  offset: 4, 1
+  index: -1
+Char_ivankof_skill_1_zhuti/012
+  rotate: false
+  xy: 673, 690
+  size: 215, 177
+  orig: 216, 182
+  offset: 1, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/013
+  rotate: false
+  xy: 562, 236
+  size: 208, 143
+  orig: 215, 146
+  offset: 4, 2
+  index: -1
+Char_ivankof_skill_1_zhuti/014
+  rotate: true
+  xy: 772, 217
+  size: 179, 133
+  orig: 181, 137
+  offset: 1, 2
+  index: -1

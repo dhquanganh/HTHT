@@ -1,0 +1,942 @@
+
+Hero_112.png
+size: 1024,1020
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 374, 993
+  size: 22, 25
+  orig: 22, 25
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 401, 992
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 470, 952
+  size: 36, 58
+  orig: 36, 58
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 431, 899
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 484, 990
+  size: 91, 25
+  orig: 93, 25
+  offset: 2, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 720, 988
+  size: 27, 49
+  orig: 27, 49
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 2, 1002
+  size: 13, 33
+  orig: 13, 33
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 859, 985
+  size: 30, 45
+  orig: 30, 45
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 905, 791
+  size: 101, 82
+  orig: 101, 82
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: false
+  xy: 2, 645
+  size: 139, 110
+  orig: 139, 112
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: false
+  xy: 282, 612
+  size: 134, 114
+  orig: 134, 116
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: false
+  xy: 143, 633
+  size: 137, 110
+  orig: 137, 112
+  offset: 0, 0
+  index: -1
+drake_beat_01
+  rotate: true
+  xy: 803, 565
+  size: 118, 152
+  orig: 118, 152
+  offset: 0, 0
+  index: -1
+drake_beat_02
+  rotate: true
+  xy: 257, 485
+  size: 125, 146
+  orig: 125, 146
+  offset: 0, 0
+  index: -1
+drake_beat_03
+  rotate: false
+  xy: 168, 51
+  size: 265, 138
+  orig: 265, 138
+  offset: 0, 0
+  index: -1
+drake_beat_03_ef
+  rotate: false
+  xy: 299, 728
+  size: 131, 94
+  orig: 131, 94
+  offset: 0, 0
+  index: -1
+drake_beat_04
+  rotate: false
+  xy: 435, 22
+  size: 227, 150
+  orig: 227, 150
+  offset: 0, 0
+  index: -1
+drake_beat_05
+  rotate: true
+  xy: 397, 332
+  size: 128, 151
+  orig: 128, 151
+  offset: 0, 0
+  index: -1
+drake_beat_06
+  rotate: true
+  xy: 550, 315
+  size: 129, 153
+  orig: 129, 153
+  offset: 0, 0
+  index: -1
+drake_beat_09
+  rotate: false
+  xy: 664, 5
+  size: 171, 151
+  orig: 171, 151
+  offset: 0, 0
+  index: -1
+drake_damage
+  rotate: true
+  xy: 418, 590
+  size: 107, 201
+  orig: 120, 218
+  offset: 7, 5
+  index: -1
+drake_skill1_03
+  rotate: true
+  xy: 405, 462
+  size: 126, 163
+  orig: 126, 163
+  offset: 0, 0
+  index: -1
+drake_skill1_05
+  rotate: false
+  xy: 837, 2
+  size: 178, 154
+  orig: 178, 154
+  offset: 0, 0
+  index: -1
+drake_skill1_1301
+  rotate: false
+  xy: 650, 949
+  size: 44, 38
+  orig: 44, 38
+  offset: 0, 0
+  index: -1
+drake_skill1_1302
+  rotate: true
+  xy: 661, 799
+  size: 80, 89
+  orig: 80, 89
+  offset: 0, 0
+  index: -1
+drake_skill1_1303
+  rotate: true
+  xy: 171, 912
+  size: 45, 84
+  orig: 45, 84
+  offset: 0, 0
+  index: -1
+drake_skill1_1304
+  rotate: false
+  xy: 696, 947
+  size: 80, 38
+  orig: 80, 38
+  offset: 0, 0
+  index: -1
+drake_skill1_1305
+  rotate: false
+  xy: 257, 910
+  size: 53, 46
+  orig: 53, 46
+  offset: 0, 0
+  index: -1
+drake_skill1_1306
+  rotate: true
+  xy: 491, 898
+  size: 51, 57
+  orig: 51, 57
+  offset: 0, 0
+  index: -1
+drake_skill1_1307
+  rotate: false
+  xy: 335, 994
+  size: 37, 21
+  orig: 37, 21
+  offset: 0, 0
+  index: -1
+drake_skill1_1308
+  rotate: true
+  xy: 586, 950
+  size: 37, 62
+  orig: 37, 62
+  offset: 0, 0
+  index: -1
+drake_skill1_1309
+  rotate: false
+  xy: 2, 757
+  size: 166, 89
+  orig: 166, 89
+  offset: 0, 0
+  index: -1
+drake_skill1_1310
+  rotate: false
+  xy: 432, 712
+  size: 116, 96
+  orig: 116, 96
+  offset: 0, 0
+  index: -1
+drake_skill1_13_ef
+  rotate: true
+  xy: 570, 446
+  size: 124, 222
+  orig: 124, 222
+  offset: 0, 0
+  index: -1
+drake_skill1_14_ef
+  rotate: true
+  xy: 727, 685
+  size: 104, 233
+  orig: 104, 233
+  offset: 0, 0
+  index: -1
+drake_skill1_701
+  rotate: true
+  xy: 906, 983
+  size: 32, 54
+  orig: 32, 54
+  offset: 0, 0
+  index: -1
+drake_skill1_702
+  rotate: false
+  xy: 577, 989
+  size: 28, 26
+  orig: 28, 26
+  offset: 0, 0
+  index: -1
+drake_skill1_703
+  rotate: false
+  xy: 269, 994
+  size: 29, 21
+  orig: 29, 21
+  offset: 0, 0
+  index: -1
+drake_skill1_704
+  rotate: true
+  xy: 178, 995
+  size: 20, 32
+  orig: 20, 32
+  offset: 0, 0
+  index: -1
+drake_skill1_705
+  rotate: true
+  xy: 463, 810
+  size: 77, 104
+  orig: 77, 104
+  offset: 0, 0
+  index: -1
+drake_skill1_706
+  rotate: true
+  xy: 607, 989
+  size: 26, 49
+  orig: 26, 49
+  offset: 0, 0
+  index: -1
+drake_skill1_707
+  rotate: true
+  xy: 103, 915
+  size: 44, 66
+  orig: 44, 66
+  offset: 0, 0
+  index: -1
+drake_skill1_708
+  rotate: true
+  xy: 530, 951
+  size: 36, 54
+  orig: 36, 54
+  offset: 0, 0
+  index: -1
+drake_skill1_709
+  rotate: true
+  xy: 355, 824
+  size: 73, 106
+  orig: 73, 106
+  offset: 0, 0
+  index: -1
+drake_skill1_710
+  rotate: false
+  xy: 312, 907
+  size: 54, 47
+  orig: 54, 47
+  offset: 0, 0
+  index: -1
+drake_skill1_711
+  rotate: true
+  xy: 177, 959
+  size: 34, 47
+  orig: 34, 47
+  offset: 0, 0
+  index: -1
+drake_skill1_712
+  rotate: false
+  xy: 300, 994
+  size: 33, 21
+  orig: 33, 21
+  offset: 0, 0
+  index: -1
+drake_skill1_713
+  rotate: true
+  xy: 658, 989
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+drake_skill1_714
+  rotate: false
+  xy: 101, 961
+  size: 74, 33
+  orig: 74, 33
+  offset: 0, 0
+  index: -1
+drake_skill1_715
+  rotate: false
+  xy: 802, 877
+  size: 102, 65
+  orig: 102, 65
+  offset: 0, 0
+  index: -1
+drake_skill2_08
+  rotate: true
+  xy: 794, 436
+  size: 127, 160
+  orig: 127, 160
+  offset: 0, 0
+  index: -1
+drake_skill2_09
+  rotate: true
+  xy: 2, 102
+  size: 145, 164
+  orig: 145, 164
+  offset: 0, 0
+  index: -1
+drake_skill2_1001
+  rotate: true
+  xy: 268, 958
+  size: 34, 53
+  orig: 34, 53
+  offset: 0, 0
+  index: -1
+drake_skill2_1002
+  rotate: false
+  xy: 722, 881
+  size: 78, 62
+  orig: 78, 62
+  offset: 0, 0
+  index: -1
+drake_skill2_1003
+  rotate: true
+  xy: 809, 986
+  size: 29, 48
+  orig: 29, 48
+  offset: 0, 0
+  index: -1
+drake_skill2_1004
+  rotate: false
+  xy: 2, 964
+  size: 43, 33
+  orig: 43, 33
+  offset: 0, 0
+  index: -1
+drake_skill2_1005
+  rotate: false
+  xy: 778, 945
+  size: 42, 39
+  orig: 42, 39
+  offset: 0, 0
+  index: -1
+drake_skill2_1006
+  rotate: true
+  xy: 550, 889
+  size: 59, 67
+  orig: 59, 67
+  offset: 0, 0
+  index: -1
+drake_skill2_1007
+  rotate: true
+  xy: 368, 902
+  size: 50, 61
+  orig: 50, 61
+  offset: 0, 0
+  index: -1
+drake_skill2_1008
+  rotate: false
+  xy: 962, 983
+  size: 51, 32
+  orig: 51, 32
+  offset: 0, 0
+  index: -1
+drake_skill2_1009
+  rotate: false
+  xy: 906, 875
+  size: 113, 64
+  orig: 113, 64
+  offset: 0, 0
+  index: -1
+drake_skill2_1010
+  rotate: true
+  xy: 380, 954
+  size: 35, 88
+  orig: 35, 88
+  offset: 0, 0
+  index: -1
+drake_skill3_17
+  rotate: false
+  xy: 2, 510
+  size: 253, 121
+  orig: 259, 121
+  offset: 0, 0
+  index: -1
+drake_skill3_17_ef
+  rotate: false
+  xy: 256, 335
+  size: 139, 148
+  orig: 149, 148
+  offset: 0, 0
+  index: -1
+drake_skill3_18
+  rotate: false
+  xy: 2, 387
+  size: 252, 121
+  orig: 252, 121
+  offset: 0, 0
+  index: -1
+drake_skill3_18_ef
+  rotate: true
+  xy: 681, 158
+  size: 142, 197
+  orig: 144, 197
+  offset: 0, 0
+  index: -1
+drake_skill3_21_ef
+  rotate: false
+  xy: 183, 839
+  size: 170, 66
+  orig: 170, 66
+  offset: 0, 0
+  index: -1
+drake_skill3_22_ef
+  rotate: false
+  xy: 550, 699
+  size: 175, 98
+  orig: 181, 98
+  offset: 0, 0
+  index: -1
+drake_skill3_23_ef
+  rotate: false
+  xy: 752, 795
+  size: 151, 80
+  orig: 151, 80
+  offset: 0, 0
+  index: -1
+drake_skill3_24_ef
+  rotate: false
+  xy: 170, 745
+  size: 127, 92
+  orig: 127, 92
+  offset: 0, 0
+  index: -1
+drake_skill3_701
+  rotate: true
+  xy: 619, 884
+  size: 61, 101
+  orig: 61, 101
+  offset: 0, 0
+  index: -1
+drake_skill3_702
+  rotate: false
+  xy: 569, 804
+  size: 90, 78
+  orig: 90, 78
+  offset: 0, 0
+  index: -1
+drake_skill3_703
+  rotate: true
+  xy: 47, 962
+  size: 33, 52
+  orig: 33, 52
+  offset: 0, 0
+  index: -1
+drake_skill3_704
+  rotate: false
+  xy: 771, 987
+  size: 36, 28
+  orig: 36, 28
+  offset: 0, 0
+  index: -1
+drake_skill3_705
+  rotate: false
+  xy: 906, 941
+  size: 100, 40
+  orig: 100, 40
+  offset: 0, 0
+  index: -1
+drake_skill3_706
+  rotate: false
+  xy: 323, 956
+  size: 55, 35
+  orig: 55, 35
+  offset: 0, 0
+  index: -1
+drake_skill3_708
+  rotate: false
+  xy: 61, 997
+  size: 24, 18
+  orig: 24, 18
+  offset: 0, 0
+  index: -1
+drake_skill3_709
+  rotate: false
+  xy: 212, 995
+  size: 28, 20
+  orig: 28, 20
+  offset: 0, 0
+  index: -1
+drake_squat
+  rotate: false
+  xy: 705, 302
+  size: 181, 132
+  orig: 181, 132
+  offset: 0, 0
+  index: -1
+drake_standby_01
+  rotate: true
+  xy: 340, 191
+  size: 139, 167
+  orig: 139, 167
+  offset: 0, 0
+  index: -1
+drake_standby_02
+  rotate: false
+  xy: 888, 267
+  size: 134, 167
+  orig: 134, 167
+  offset: 0, 0
+  index: -1
+drake_standby_03
+  rotate: true
+  xy: 171, 196
+  size: 137, 167
+  orig: 137, 167
+  offset: 0, 0
+  index: -1
+drake_win_01
+  rotate: true
+  xy: 621, 572
+  size: 111, 180
+  orig: 111, 180
+  offset: 0, 0
+  index: -1
+drake_win_02
+  rotate: true
+  xy: 2, 249
+  size: 136, 167
+  orig: 136, 167
+  offset: 0, 0
+  index: -1
+drake_win_03
+  rotate: true
+  xy: 509, 174
+  size: 139, 170
+  orig: 139, 170
+  offset: 0, 0
+  index: -1
+drake_win_09_ef
+  rotate: true
+  xy: 2, 848
+  size: 62, 179
+  orig: 62, 179
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 118, 996
+  size: 19, 28
+  orig: 19, 28
+  offset: 0, 0
+  index: -1
+f_arm_L_04
+  rotate: false
+  xy: 427, 991
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 148, 996
+  size: 28, 19
+  orig: 28, 19
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 242, 995
+  size: 20, 25
+  orig: 20, 25
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 2, 919
+  size: 99, 40
+  orig: 99, 42
+  offset: 0, 2
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 37, 999
+  size: 22, 16
+  orig: 22, 16
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 822, 944
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 864, 944
+  size: 40, 39
+  orig: 40, 39
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 87, 997
+  size: 18, 29
+  orig: 18, 29
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 688, 989
+  size: 26, 30
+  orig: 26, 30
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 453, 991
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 226, 959
+  size: 34, 40
+  orig: 34, 40
+  offset: 0, 0
+  index: -1
+
+Hero_1122.png
+size: 1024,972
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+drake_beat_07_ef
+  rotate: false
+  xy: 327, 523
+  size: 230, 200
+  orig: 230, 200
+  offset: 0, 0
+  index: -1
+drake_idlling_right
+  rotate: true
+  xy: 830, 705
+  size: 263, 192
+  orig: 263, 192
+  offset: 0, 0
+  index: -1
+drake_skill1_06
+  rotate: true
+  xy: 669, 3
+  size: 224, 170
+  orig: 224, 170
+  offset: 0, 0
+  index: -1
+drake_skill1_09
+  rotate: true
+  xy: 830, 439
+  size: 264, 174
+  orig: 264, 174
+  offset: 0, 0
+  index: -1
+drake_skill1_09_ef
+  rotate: true
+  xy: 236, 17
+  size: 157, 251
+  orig: 157, 251
+  offset: 0, 0
+  index: -1
+drake_skill1_10
+  rotate: false
+  xy: 2, 422
+  size: 268, 166
+  orig: 268, 166
+  offset: 0, 0
+  index: -1
+drake_skill1_10_ef
+  rotate: true
+  xy: 413, 725
+  size: 243, 270
+  orig: 243, 270
+  offset: 0, 0
+  index: -1
+drake_skill1_11
+  rotate: false
+  xy: 272, 357
+  size: 255, 164
+  orig: 255, 164
+  offset: 0, 0
+  index: -1
+drake_skill1_14
+  rotate: false
+  xy: 2, 590
+  size: 323, 160
+  orig: 323, 160
+  offset: 0, 0
+  index: -1
+drake_skill1_15
+  rotate: false
+  xy: 529, 236
+  size: 245, 169
+  orig: 245, 169
+  offset: 0, 0
+  index: -1
+drake_skill1_15_ef
+  rotate: true
+  xy: 559, 407
+  size: 199, 231
+  orig: 199, 231
+  offset: 0, 0
+  index: -1
+drake_skill1_16_ef
+  rotate: false
+  xy: 792, 229
+  size: 218, 208
+  orig: 218, 208
+  offset: 0, 0
+  index: -1
+drake_skill2_11
+  rotate: false
+  xy: 2, 752
+  size: 409, 216
+  orig: 419, 227
+  offset: 5, 6
+  index: -1
+drake_skill2_13
+  rotate: true
+  xy: 841, 26
+  size: 201, 180
+  orig: 201, 180
+  offset: 0, 0
+  index: -1
+drake_skill3_10
+  rotate: false
+  xy: 2, 265
+  size: 266, 155
+  orig: 279, 168
+  offset: 8, 9
+  index: -1
+drake_skill3_16
+  rotate: true
+  xy: 685, 608
+  size: 360, 143
+  orig: 364, 151
+  offset: 4, 3
+  index: -1
+drake_win_09
+  rotate: true
+  xy: 270, 176
+  size: 179, 223
+  orig: 179, 223
+  offset: 0, 0
+  index: -1
+drake_win_10
+  rotate: true
+  xy: 2, 91
+  size: 172, 232
+  orig: 172, 232
+  offset: 0, 0
+  index: -1
+drake_win_11
+  rotate: false
+  xy: 495, 2
+  size: 172, 232
+  orig: 172, 232
+  offset: 0, 0
+  index: -1
+
+Hero_1123.png
+size: 864,592
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+drake_beat_07
+  rotate: true
+  xy: 164, 172
+  size: 206, 167
+  orig: 206, 167
+  offset: 0, 0
+  index: -1
+drake_beat_08
+  rotate: true
+  xy: 701, 228
+  size: 178, 158
+  orig: 178, 158
+  offset: 0, 0
+  index: -1
+drake_skill1_04
+  rotate: true
+  xy: 2, 3
+  size: 164, 166
+  orig: 164, 166
+  offset: 0, 0
+  index: -1
+drake_skill1_08
+  rotate: true
+  xy: 333, 186
+  size: 201, 178
+  orig: 201, 178
+  offset: 0, 0
+  index: -1
+drake_skill1_12
+  rotate: true
+  xy: 513, 193
+  size: 195, 186
+  orig: 195, 186
+  offset: 0, 0
+  index: -1
+drake_skill1_16
+  rotate: false
+  xy: 689, 22
+  size: 172, 169
+  orig: 172, 169
+  offset: 0, 0
+  index: -1
+drake_skill2_12
+  rotate: true
+  xy: 351, 390
+  size: 200, 180
+  orig: 200, 180
+  offset: 0, 0
+  index: -1
+drake_skill2_14
+  rotate: true
+  xy: 169, 389
+  size: 201, 180
+  orig: 201, 180
+  offset: 0, 0
+  index: -1
+drake_skill3_20
+  rotate: true
+  xy: 2, 380
+  size: 210, 165
+  orig: 210, 165
+  offset: 0, 0
+  index: -1
+drake_skill3_21
+  rotate: false
+  xy: 2, 169
+  size: 160, 209
+  orig: 160, 209
+  offset: 0, 0
+  index: -1
+drake_win_04
+  rotate: true
+  xy: 518, 14
+  size: 177, 169
+  orig: 177, 169
+  offset: 0, 0
+  index: -1
+drake_win_05
+  rotate: true
+  xy: 533, 436
+  size: 154, 162
+  orig: 154, 162
+  offset: 0, 0
+  index: -1
+drake_win_06
+  rotate: true
+  xy: 170, 2
+  size: 168, 158
+  orig: 168, 158
+  offset: 0, 0
+  index: -1
+drake_win_07
+  rotate: true
+  xy: 701, 408
+  size: 182, 159
+  orig: 182, 159
+  offset: 0, 0
+  index: -1
+drake_win_08
+  rotate: false
+  xy: 330, 4
+  size: 186, 166
+  orig: 186, 166
+  offset: 0, 0
+  index: -1

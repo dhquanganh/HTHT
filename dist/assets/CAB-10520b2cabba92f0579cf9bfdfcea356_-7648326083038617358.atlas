@@ -1,0 +1,139 @@
+
+Cast_447B.png
+size: 2036,1680
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: true
+  xy: 194, 37
+  size: 429, 606
+  orig: 429, 606
+  offset: 0, 0
+  index: -1
+bui toc sau
+  rotate: true
+  xy: 802, 23
+  size: 469, 229
+  orig: 469, 229
+  offset: 0, 0
+  index: -1
+canh tay phai
+  rotate: true
+  xy: 1293, 828
+  size: 211, 365
+  orig: 211, 365
+  offset: 0, 0
+  index: -1
+canh tay trai
+  rotate: false
+  xy: 1729, 52
+  size: 154, 404
+  orig: 155, 404
+  offset: 1, 0
+  index: -1
+dau
+  rotate: true
+  xy: 922, 509
+  size: 302, 363
+  orig: 302, 363
+  offset: 0, 0
+  index: -1
+images/mask_4026
+  rotate: false
+  xy: 1729, 458
+  size: 179, 115
+  orig: 179, 115
+  offset: 0, 0
+  index: -1
+lontoc 1
+  rotate: false
+  xy: 1652, 1256
+  size: 72, 422
+  orig: 72, 422
+  offset: 0, 0
+  index: -1
+lontoc 2
+  rotate: false
+  xy: 830, 496
+  size: 90, 315
+  orig: 95, 315
+  offset: 0, 0
+  index: -1
+mat
+  rotate: false
+  xy: 1729, 1315
+  size: 302, 363
+  orig: 302, 363
+  offset: 0, 0
+  index: -1
+mom
+  rotate: true
+  xy: 1287, 509
+  size: 302, 363
+  orig: 302, 363
+  offset: 0, 0
+  index: -1
+no
+  rotate: true
+  xy: 661, 494
+  size: 317, 167
+  orig: 317, 167
+  offset: 0, 0
+  index: -1
+smoke/trail_1068_2
+  rotate: true
+  xy: 2, 2
+  size: 17, 78
+  orig: 45, 90
+  offset: 14, 6
+  index: -1
+tay phai
+  rotate: true
+  xy: 1293, 1041
+  size: 637, 356
+  orig: 637, 356
+  offset: 0, 0
+  index: -1
+tay trai
+  rotate: true
+  xy: 1660, 575
+  size: 679, 353
+  orig: 679, 353
+  offset: 0, 0
+  index: -1
+that no
+  rotate: false
+  xy: 1910, 490
+  size: 120, 83
+  orig: 120, 83
+  offset: 0, 0
+  index: -1
+vat ao phai
+  rotate: true
+  xy: 661, 813
+  size: 865, 630
+  orig: 865, 630
+  offset: 0, 0
+  index: -1
+vat ao sau
+  rotate: true
+  xy: 2, 468
+  size: 1210, 657
+  orig: 1210, 657
+  offset: 0, 0
+  index: -1
+vat ao trai
+  rotate: true
+  xy: 1033, 9
+  size: 498, 694
+  orig: 498, 694
+  offset: 0, 0
+  index: -1
+vat ao truoc
+  rotate: true
+  xy: 2, 21
+  size: 445, 190
+  orig: 445, 190
+  offset: 0, 0
+  index: -1

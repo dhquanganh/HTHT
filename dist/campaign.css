@@ -1,0 +1,66 @@
+.campaign-map,.campaign-deck{position:absolute;inset:0;color:#6c472d}
+#game-layer .campaign-map button,#game-layer .campaign-deck button,#game-layer .campaign-hero-card,#game-layer .campaign-slot>button,#game-layer .campaign-ship-slot,#game-layer .campaign-filter{min-height:0;padding:0;border:0;border-radius:0;box-shadow:none;background-color:transparent}
+.campaign-map button,.campaign-deck button{pointer-events:auto}
+.campaign-ocean-scroll{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;pointer-events:auto;scrollbar-width:thin;scrollbar-color:#a77b39 #147ca8;touch-action:pan-x}
+.campaign-ocean-track{position:relative;height:640px;background-size:1136px 640px;background-repeat:repeat-x}
+.campaign-terrain{position:absolute;object-fit:contain;pointer-events:none}
+#screen-ui .campaign-island{position:absolute;width:320px;height:272px;isolation:isolate;color:white;overflow:visible}
+.campaign-island-art{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 7px 3px #086a83a0)}
+.campaign-island.locked .campaign-island-art{filter:saturate(.7) drop-shadow(0 6px 3px #086a83a0)}
+.campaign-island-label{position:absolute;left:15px;right:0;top:-25px;min-height:51px;padding:8px 15px;background-size:100% 100%;display:flex;align-items:center;justify-content:center;white-space:nowrap;font-size:25px;text-shadow:1px 2px #2e2521}
+.campaign-current-island{position:absolute;top:12px;right:12px}.campaign-current-island img{width:22px;height:22px}
+#screen-ui .campaign-back{position:absolute;left:16px;top:12px;width:77px;height:88px;z-index:3}.campaign-back img{width:100%;height:100%;object-fit:contain}
+#screen-ui .campaign-locate{position:absolute;right:20px;bottom:20px;width:75px;height:75px}.campaign-locate img{width:100%;height:100%;object-fit:contain}
+.campaign-wallet{position:absolute;top:13px;left:348px;display:flex;gap:27px;color:white;font-size:27px;text-shadow:1px 2px #42372a}
+.campaign-wallet>span{position:relative;width:213px;height:43px;background-size:100% 100%;padding:1px 10px 0 38px;text-align:center}.campaign-wallet img{position:absolute;left:-12px;top:-7px;width:46px;height:50px;object-fit:contain}
+.campaign-chapter-banner{position:absolute;left:0;top:110px;width:232px;height:78px;padding:22px 17px 14px;background-size:100% 100%;text-align:center;font-size:23px}
+.campaign-deck-tools{position:absolute;top:13px;right:12px;display:flex;gap:13px}.campaign-deck-tools button{width:66px;height:66px}.campaign-deck-tools img{width:100%;height:100%;object-fit:contain}
+.campaign-speech{position:absolute;left:450px;top:66px;width:282px;min-height:119px;padding:18px 16px;background:#f8ebd8;border:1px solid #c39f81;border-radius:13px;color:#3e3832;font-size:23px;font-style:italic;text-align:center;line-height:1.35;pointer-events:none}
+.campaign-speech:after{content:'';position:absolute;left:11px;bottom:-20px;width:30px;height:26px;background:#f8ebd8;clip-path:polygon(0 0,100% 0,0 100%)}
+#screen-ui .campaign-deck-map{position:absolute;left:0;bottom:151px;width:92px;height:93px}.campaign-deck-map img{width:100%;height:100%;object-fit:contain}
+#screen-ui .campaign-primary{position:absolute;left:460px;top:405px;width:220px;height:65px;background-size:100% 100%;color:#845322;font-size:30px}
+.campaign-current-stage{display:none}
+#screen-ui .campaign-chest-hit{position:absolute;right:0;bottom:150px;width:240px;height:165px}
+.campaign-stage-rail{position:absolute;left:0;right:0;bottom:0;height:164px;background-size:100% 100%;border-top:3px solid #553b21;pointer-events:auto}
+.campaign-stage-scroll{height:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;touch-action:pan-x}.campaign-stage-track{position:relative;height:142px}
+.campaign-stage-track svg{position:absolute;inset:0;pointer-events:none}.campaign-stage-track polyline{fill:none;stroke:#3d3029;stroke-width:9px;stroke-linecap:round;stroke-dasharray:1 24}
+#screen-ui .campaign-stage{position:absolute;width:130px;height:111px;color:white;overflow:visible}.campaign-stage>img:first-child{display:block;width:115px;height:88px;margin:auto;object-fit:contain}
+.campaign-stage strong{position:absolute;left:0;right:0;top:88px;text-align:center;font-size:25px;text-shadow:1px 2px #423223,-1px -1px #423223}
+.campaign-stage.selected>img:first-child{filter:drop-shadow(0 0 7px #fff567)}.campaign-stage-check{position:absolute;left:45px;top:23px;width:39px;height:38px}
+.campaign-formation-shade{background:#0b152370}
+.campaign-formation{left:94px;top:5px;width:960px;height:500px;border-width:62px 25px 20px;border-image-slice:72 32 28 32 fill}
+.campaign-formation .reference-title{top:-58px}
+.campaign-formation .reference-close{top:-82px!important;right:-43px!important}
+.campaign-team-power{position:absolute;left:15px;top:0;right:15px;height:39px;display:flex;align-items:center;gap:10px;font-size:29px;color:#fff;text-shadow:1px 2px #332219,-1px -1px #332219}
+.campaign-team-power>img{width:38px;height:38px}.campaign-team-power>span{margin-left:auto;font-size:18px;color:#805531;text-shadow:none}
+.campaign-formation-slots{position:absolute;left:8px;right:8px;top:49px;height:170px;background:#c9a98e;border-radius:11px}
+.campaign-formation-slots>h3{position:absolute;top:8px;margin:0;font-size:25px}.campaign-formation-slots>h3:nth-child(1){left:48px}.campaign-formation-slots>h3:nth-child(2){left:370px}.campaign-formation-slots>h3:nth-child(3){right:16px}
+.campaign-six-slots{position:absolute;left:14px;top:56px}.campaign-slot{position:absolute;top:0;width:94px;height:94px}.campaign-slot>button{width:94px;height:94px}.campaign-slot>button>img:first-child{width:100%;height:100%}
+#game-layer .campaign-hero-card{display:block;position:relative;width:94px;height:94px;overflow:hidden;isolation:isolate;color:white}
+.campaign-card-frame{position:absolute;inset:0;width:100%;height:100%;z-index:0}.campaign-card-head{position:absolute;left:7px;top:7px;width:80px;height:80px;object-fit:cover;z-index:1}
+.campaign-card-faction{position:absolute;left:3px;top:3px;width:28px;height:28px;z-index:3}.campaign-hero-card>b{position:absolute;right:7px;top:4px;font-size:22px;line-height:1;text-shadow:1px 2px black,-1px -1px black;z-index:3}
+.campaign-card-stars{position:absolute;left:6px;bottom:6px;display:flex;z-index:3}.campaign-card-stars img{width:16px;height:17px;object-fit:contain}
+.campaign-card-check{position:absolute;left:28px;top:25px;width:42px;height:40px;z-index:4}.campaign-reserves .campaign-hero-card.selected{filter:brightness(.85)}
+#game-layer .campaign-ship-slot{position:absolute;right:24px;top:52px;width:104px;height:108px}.campaign-ship-slot>img:first-child{position:absolute;inset:0;width:100%;height:100%}.campaign-ship-symbol{position:absolute;left:23px;top:23px;width:58px;height:62px;object-fit:contain;opacity:.8}
+.campaign-aura-box{position:absolute;left:8px;right:8px;top:233px;height:109px;background:#c9a98e;border-radius:11px}
+.campaign-aura-wheel{position:absolute;left:10px;top:4px;width:126px;height:100px}.campaign-aura-wheel>img{position:absolute;inset:0;width:126px;height:100px;object-fit:contain}.campaign-aura-wheel>span{position:absolute;width:35px;height:35px}.campaign-aura-wheel>span img{width:100%;height:100%;object-fit:contain}
+.campaign-aura-wheel>span:nth-of-type(1){left:56px;top:0}.campaign-aura-wheel>span:nth-of-type(2){left:78px;top:33px}.campaign-aura-wheel>span:nth-of-type(3){left:57px;top:65px}.campaign-aura-wheel>span:nth-of-type(4){left:18px;top:65px}.campaign-aura-wheel>span:nth-of-type(5){left:0;top:33px}.campaign-aura-wheel>span:nth-of-type(6){left:18px;top:0}
+.campaign-aura-description{position:absolute;left:157px;right:15px;top:17px;font-size:20px;line-height:1.25}.campaign-aura-description strong{font-size:22px}.campaign-aura-description p{margin:7px 0 0;font-size:18px}
+.campaign-fight{position:absolute;left:456px;bottom:0;width:220px;height:56px!important}
+.campaign-save{position:absolute;left:225px;bottom:0;width:200px;height:56px!important;font-size:23px!important}
+.campaign-slot.focused{outline:3px solid #f8e26d;outline-offset:3px;border-radius:8px}
+.campaign-reserves{position:absolute;left:20px;right:20px;bottom:2px;height:124px;border:6px solid #9a7252;background:#654025;pointer-events:auto}
+.campaign-reserve-scroll{position:absolute;left:7px;right:103px;top:8px;bottom:6px;display:flex;gap:10px;overflow-x:auto;overflow-y:hidden}.campaign-reserve-scroll>button{flex:none}
+#game-layer .campaign-filter{position:absolute;right:7px;top:9px;width:88px;height:91px}.campaign-filter img{width:100%;height:100%}.campaign-filter-clear{position:absolute;bottom:0;right:15px;font-size:14px!important;padding:0!important;min-height:0!important}
+.campaign-drop-list{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}.campaign-drop-list>span{display:flex;align-items:center;gap:8px;font-size:18px}.campaign-drop-list img{width:52px;height:52px;object-fit:contain}
+.campaign-afk{left:178px;top:48px;width:780px;height:532px;font-size:22px}
+.campaign-afk-time{display:flex;align-items:center;justify-content:center;gap:18px;height:50px;color:#6d3901;font-size:25px;font-weight:700}
+.campaign-afk-time strong{width:150px;height:44px;line-height:44px;border-radius:9px;background:#4d2620;color:#85fc4a;font-size:26px;text-align:center}
+.campaign-afk-rates{display:flex;justify-content:space-around;align-items:center;height:64px;margin-top:6px;border-radius:8px;background:#6d3e30;color:#fff;font-size:23px}
+.campaign-afk-rates span{display:flex;align-items:center;gap:8px}.campaign-afk-rates img{height:40px;max-width:74px;object-fit:contain}
+.campaign-afk-loot{position:relative;box-sizing:border-box;height:238px;margin-top:8px;padding:14px 18px;border:3px solid #e7d5ba;border-radius:14px;background:#755c51;color:#f7e5c5}
+#game-layer .campaign-afk-loot h3{position:absolute;left:18px;top:8px;margin:0;color:inherit;font-size:22px}
+.campaign-afk-items{display:flex;justify-content:center;gap:52px;margin-top:16px;text-align:center}.campaign-afk-items small{display:block;margin-top:4px;font-size:18px}
+.campaign-afk-items .ref-material-icon>img:first-child{position:absolute;inset:12px;width:70px;height:70px;object-fit:contain}
+.campaign-afk-loot p{margin:10px 0 0;font-size:18px;text-align:center}
+.campaign-afk-actions{display:flex;justify-content:center;gap:24px;margin-top:10px}#game-layer .campaign-afk-actions .ref-button{width:230px}#game-layer .campaign-afk-actions .ref-button:first-child{width:280px}

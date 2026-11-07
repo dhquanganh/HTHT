@@ -1,0 +1,293 @@
+
+Hero_474.png
+size: 1096,116
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ao choang 1
+  rotate: false
+  xy: 161, 29
+  size: 186, 85
+  orig: 186, 85
+  offset: 0, 0
+  index: -1
+ao choang run
+  rotate: false
+  xy: 2, 27
+  size: 157, 87
+  orig: 158, 87
+  offset: 1, 0
+  index: -1
+ao vai phai 1
+  rotate: false
+  xy: 132, 2
+  size: 34, 23
+  orig: 36, 25
+  offset: 1, 1
+  index: -1
+aoa chonag atk 2
+  rotate: false
+  xy: 428, 34
+  size: 135, 80
+  orig: 135, 81
+  offset: 0, 1
+  index: -1
+body 1
+  rotate: false
+  xy: 853, 58
+  size: 53, 56
+  orig: 53, 57
+  offset: 0, 1
+  index: -1
+body atk2
+  rotate: false
+  xy: 801, 55
+  size: 50, 59
+  orig: 52, 61
+  offset: 1, 1
+  index: -1
+body-run
+  rotate: false
+  xy: 831, 4
+  size: 58, 49
+  orig: 58, 49
+  offset: 0, 0
+  index: -1
+chan phai 1
+  rotate: false
+  xy: 707, 2
+  size: 44, 47
+  orig: 59, 48
+  offset: 0, 0
+  index: -1
+chan phai atk 2
+  rotate: false
+  xy: 753, 51
+  size: 46, 63
+  orig: 46, 63
+  offset: 0, 0
+  index: -1
+chan trai 1
+  rotate: true
+  xy: 653, 2
+  size: 43, 52
+  orig: 50, 52
+  offset: 6, 0
+  index: -1
+chan trai atk 2
+  rotate: false
+  xy: 941, 7
+  size: 43, 52
+  orig: 43, 52
+  offset: 0, 0
+  index: -1
+chan-phai-runn
+  rotate: true
+  xy: 891, 2
+  size: 54, 48
+  orig: 54, 56
+  offset: 0, 8
+  index: -1
+co ao atk2
+  rotate: false
+  xy: 561, 3
+  size: 49, 29
+  orig: 49, 29
+  offset: 0, 0
+  index: -1
+dui phai 1
+  rotate: false
+  xy: 986, 24
+  size: 31, 44
+  orig: 31, 44
+  offset: 0, 0
+  index: -1
+dui phai atk 2
+  rotate: true
+  xy: 908, 61
+  size: 53, 48
+  orig: 53, 98
+  offset: 0, 0
+  index: -1
+dui trai 1
+  rotate: false
+  xy: 355, 2
+  size: 45, 28
+  orig: 45, 28
+  offset: 0, 0
+  index: -1
+dui trai atk 2
+  rotate: true
+  xy: 1056, 36
+  size: 37, 36
+  orig: 39, 38
+  offset: 1, 1
+  index: -1
+dui-phai-runn
+  rotate: true
+  xy: 753, 5
+  size: 44, 38
+  orig: 44, 38
+  offset: 0, 0
+  index: -1
+head 1
+  rotate: false
+  xy: 635, 47
+  size: 63, 67
+  orig: 65, 69
+  offset: 1, 1
+  index: -1
+head atk2
+  rotate: true
+  xy: 565, 44
+  size: 70, 68
+  orig: 73, 70
+  offset: 1, 1
+  index: -1
+head-hit
+  rotate: false
+  xy: 349, 32
+  size: 77, 82
+  orig: 77, 82
+  offset: 0, 0
+  index: -1
+khan 1
+  rotate: false
+  xy: 700, 51
+  size: 51, 63
+  orig: 53, 65
+  offset: 1, 1
+  index: -1
+tay phai 1
+  rotate: true
+  xy: 447, 2
+  size: 30, 39
+  orig: 32, 41
+  offset: 1, 1
+  index: -1
+tay phai atk 1
+  rotate: true
+  xy: 488, 2
+  size: 30, 39
+  orig: 32, 41
+  offset: 1, 1
+  index: -1
+tay phai atk 2
+  rotate: false
+  xy: 1020, 75
+  size: 29, 39
+  orig: 31, 41
+  offset: 1, 1
+  index: -1
+tay phai run
+  rotate: true
+  xy: 402, 2
+  size: 28, 43
+  orig: 30, 45
+  offset: 1, 1
+  index: -1
+tay trai 1
+  rotate: false
+  xy: 529, 2
+  size: 30, 30
+  orig: 33, 32
+  offset: 2, 1
+  index: -1
+tay trai atk1
+  rotate: false
+  xy: 49, 2
+  size: 41, 23
+  orig: 45, 25
+  offset: 1, 1
+  index: -1
+tay-phai-dead
+  rotate: true
+  xy: 168, 3
+  size: 24, 52
+  orig: 24, 52
+  offset: 0, 0
+  index: -1
+tay-phai-hit
+  rotate: true
+  xy: 1051, 75
+  size: 39, 28
+  orig: 39, 28
+  offset: 0, 0
+  index: -1
+tay-phai-runn
+  rotate: true
+  xy: 793, 5
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+tay-trai-dead
+  rotate: false
+  xy: 269, 3
+  size: 44, 24
+  orig: 44, 24
+  offset: 0, 0
+  index: -1
+tay-trai-run
+  rotate: false
+  xy: 222, 3
+  size: 45, 24
+  orig: 45, 24
+  offset: 0, 0
+  index: -1
+toc 1
+  rotate: false
+  xy: 958, 66
+  size: 26, 48
+  orig: 26, 48
+  offset: 0, 0
+  index: -1
+toc 11
+  rotate: true
+  xy: 612, 2
+  size: 40, 39
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+toc atk2
+  rotate: false
+  xy: 986, 70
+  size: 32, 44
+  orig: 32, 44
+  offset: 0, 0
+  index: -1
+vai phai 1
+  rotate: false
+  xy: 92, 2
+  size: 38, 23
+  orig: 41, 26
+  offset: 1, 1
+  index: -1
+vai phai atk 2
+  rotate: true
+  xy: 1019, 29
+  size: 39, 35
+  orig: 41, 37
+  offset: 1, 1
+  index: -1
+vai trai 1
+  rotate: false
+  xy: 1056, 2
+  size: 29, 32
+  orig: 31, 34
+  offset: 1, 1
+  index: -1
+vai trai atk 2
+  rotate: false
+  xy: 315, 10
+  size: 38, 17
+  orig: 47, 19
+  offset: 8, 1
+  index: -1
+vai-trai-2
+  rotate: false
+  xy: 2, 2
+  size: 45, 23
+  orig: 45, 23
+  offset: 0, 0
+  index: -1

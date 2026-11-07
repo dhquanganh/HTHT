@@ -1,0 +1,300 @@
+
+skill_Robin.png
+size: 2020,468
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+10
+  rotate: false
+  xy: 1971, 187
+  size: 42, 40
+  orig: 58, 70
+  offset: 9, 10
+  index: -1
+11
+  rotate: true
+  xy: 2, 2
+  size: 46, 37
+  orig: 58, 70
+  offset: 5, 19
+  index: -1
+12
+  rotate: false
+  xy: 1965, 89
+  size: 50, 34
+  orig: 58, 70
+  offset: 4, 24
+  index: -1
+13
+  rotate: true
+  xy: 1971, 131
+  size: 54, 29
+  orig: 58, 70
+  offset: 3, 27
+  index: -1
+14
+  rotate: true
+  xy: 1965, 4
+  size: 54, 25
+  orig: 58, 70
+  offset: 4, 32
+  index: -1
+15
+  rotate: false
+  xy: 1748, 7
+  size: 109, 116
+  orig: 111, 119
+  offset: 1, 3
+  index: -1
+29
+  rotate: false
+  xy: 380, 7
+  size: 63, 71
+  orig: 63, 76
+  offset: 0, 5
+  index: -1
+3
+  rotate: false
+  xy: 1866, 125
+  size: 103, 102
+  orig: 104, 102
+  offset: 0, 0
+  index: -1
+4
+  rotate: true
+  xy: 114, 204
+  size: 262, 218
+  orig: 262, 229
+  offset: 0, 11
+  index: -1
+5
+  rotate: true
+  xy: 2, 50
+  size: 148, 118
+  orig: 148, 118
+  offset: 0, 0
+  index: -1
+6
+  rotate: true
+  xy: 2, 200
+  size: 266, 110
+  orig: 266, 110
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 1965, 60
+  size: 27, 27
+  orig: 58, 70
+  offset: 16, 3
+  index: -1
+8
+  rotate: true
+  xy: 84, 9
+  size: 39, 31
+  orig: 58, 70
+  offset: 10, 2
+  index: -1
+9
+  rotate: false
+  xy: 41, 6
+  size: 41, 42
+  orig: 58, 70
+  offset: 8, 3
+  index: -1
+Layer-1
+  rotate: false
+  xy: 380, 80
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+Untitled-2
+  rotate: true
+  xy: 541, 21
+  size: 57, 99
+  orig: 57, 99
+  offset: 0, 0
+  index: -1
+cut1
+  rotate: false
+  xy: 609, 93
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut10
+  rotate: true
+  xy: 1354, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut11
+  rotate: true
+  xy: 1358, 10
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut12
+  rotate: true
+  xy: 1484, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut13
+  rotate: true
+  xy: 1488, 10
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut14
+  rotate: true
+  xy: 1614, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut15
+  rotate: true
+  xy: 1618, 10
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut16
+  rotate: true
+  xy: 1744, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut2
+  rotate: true
+  xy: 834, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut3
+  rotate: true
+  xy: 838, 10
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut4
+  rotate: true
+  xy: 964, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut5
+  rotate: true
+  xy: 968, 10
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut6
+  rotate: true
+  xy: 1094, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut7
+  rotate: true
+  xy: 1098, 10
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut8
+  rotate: true
+  xy: 1224, 239
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+cut9
+  rotate: true
+  xy: 1228, 10
+  size: 227, 128
+  orig: 227, 128
+  offset: 0, 0
+  index: -1
+fh
+  rotate: false
+  xy: 122, 3
+  size: 256, 199
+  orig: 256, 256
+  offset: 0, 21
+  index: -1
+glow_1007
+  rotate: false
+  xy: 1859, 19
+  size: 104, 104
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+glow_4078
+  rotate: false
+  xy: 1874, 340
+  size: 128, 126
+  orig: 128, 128
+  offset: 0, 1
+  index: -1
+glow_6098
+  rotate: false
+  xy: 590, 223
+  size: 242, 243
+  orig: 256, 256
+  offset: 7, 6
+  index: -1
+object_3011
+  rotate: true
+  xy: 334, 210
+  size: 256, 254
+  orig: 256, 256
+  offset: 0, 1
+  index: -1
+smoke_6003
+  rotate: true
+  xy: 1748, 125
+  size: 112, 116
+  orig: 128, 128
+  offset: 11, 4
+  index: -1
+typhoon4_02
+  rotate: false
+  xy: 1874, 229
+  size: 119, 109
+  orig: 170, 128
+  offset: 44, 10
+  index: -1
+typhoon4_03
+  rotate: true
+  xy: 642, 3
+  size: 88, 101
+  orig: 171, 128
+  offset: 75, 10
+  index: -1
+typhoon4_04
+  rotate: false
+  xy: 745, 8
+  size: 90, 83
+  orig: 171, 128
+  offset: 68, 9
+  index: -1
+typhoon4_05
+  rotate: false
+  xy: 445, 14
+  size: 94, 64
+  orig: 170, 128
+  offset: 64, 9
+  index: -1

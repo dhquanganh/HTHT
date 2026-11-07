@@ -1,0 +1,139 @@
+
+Icon_effect.png
+size: 212,832
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+plusheal
+  rotate: false
+  xy: 111, 2
+  size: 53, 53
+  orig: 55, 55
+  offset: 1, 1
+  index: -1
+tialua
+  rotate: false
+  xy: 166, 12
+  size: 43, 43
+  orig: 49, 49
+  offset: 3, 3
+  index: -1
+vien (1)
+  rotate: true
+  xy: 111, 57
+  size: 23, 61
+  orig: 105, 107
+  offset: 5, 7
+  index: -1
+vien (10)
+  rotate: true
+  xy: 2, 318
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (11)
+  rotate: true
+  xy: 2, 211
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (12)
+  rotate: true
+  xy: 2, 2
+  size: 102, 107
+  orig: 105, 107
+  offset: 3, 0
+  index: -1
+vien (13)
+  rotate: false
+  xy: 111, 523
+  size: 97, 107
+  orig: 105, 107
+  offset: 8, 0
+  index: -1
+vien (14)
+  rotate: false
+  xy: 111, 145
+  size: 90, 104
+  orig: 105, 107
+  offset: 15, 3
+  index: -1
+vien (15)
+  rotate: true
+  xy: 111, 357
+  size: 81, 96
+  orig: 105, 107
+  offset: 24, 11
+  index: -1
+vien (16)
+  rotate: true
+  xy: 111, 82
+  size: 61, 89
+  orig: 105, 107
+  offset: 44, 18
+  index: -1
+vien (2)
+  rotate: false
+  xy: 117, 741
+  size: 92, 89
+  orig: 105, 107
+  offset: 0, 3
+  index: -1
+vien (3)
+  rotate: true
+  xy: 111, 440
+  size: 81, 97
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (4)
+  rotate: false
+  xy: 111, 251
+  size: 90, 104
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (5)
+  rotate: false
+  xy: 111, 632
+  size: 97, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (6)
+  rotate: true
+  xy: 2, 106
+  size: 103, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (7)
+  rotate: true
+  xy: 2, 639
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (8)
+  rotate: true
+  xy: 2, 532
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (9)
+  rotate: true
+  xy: 2, 425
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+wing
+  rotate: true
+  xy: 2, 746
+  size: 84, 113
+  orig: 84, 113
+  offset: 0, 0
+  index: -1

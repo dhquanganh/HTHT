@@ -1,0 +1,328 @@
+
+cut_vivi.png
+size: 1860,1160
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1 copy
+  rotate: true
+  xy: 489, 514
+  size: 644, 377
+  orig: 646, 379
+  offset: 1, 1
+  index: -1
+Layer 10
+  rotate: true
+  xy: 1578, 600
+  size: 141, 77
+  orig: 141, 77
+  offset: 0, 0
+  index: -1
+Layer 11
+  rotate: false
+  xy: 630, 275
+  size: 153, 237
+  orig: 155, 239
+  offset: 1, 1
+  index: -1
+Layer 12
+  rotate: true
+  xy: 959, 371
+  size: 142, 291
+  orig: 142, 322
+  offset: 0, 31
+  index: -1
+Layer 12 copy
+  rotate: true
+  xy: 868, 515
+  size: 223, 391
+  orig: 223, 391
+  offset: 0, 0
+  index: -1
+Layer 12 copy 2
+  rotate: true
+  xy: 397, 28
+  size: 238, 401
+  orig: 238, 401
+  offset: 0, 0
+  index: -1
+Layer 13
+  rotate: true
+  xy: 959, 138
+  size: 231, 288
+  orig: 231, 288
+  offset: 0, 0
+  index: -1
+Layer 15
+  rotate: false
+  xy: 868, 740
+  size: 371, 418
+  orig: 371, 418
+  offset: 0, 0
+  index: -1
+Layer 17
+  rotate: false
+  xy: 2, 262
+  size: 222, 896
+  orig: 223, 896
+  offset: 0, 0
+  index: -1
+Layer 18
+  rotate: false
+  xy: 1658, 748
+  size: 170, 169
+  orig: 172, 171
+  offset: 1, 1
+  index: -1
+Layer 19
+  rotate: false
+  xy: 226, 263
+  size: 61, 216
+  orig: 61, 216
+  offset: 0, 0
+  index: -1
+Layer 20
+  rotate: false
+  xy: 220, 21
+  size: 175, 239
+  orig: 175, 239
+  offset: 0, 0
+  index: -1
+Layer 21
+  rotate: false
+  xy: 156, 19
+  size: 62, 241
+  orig: 62, 241
+  offset: 0, 0
+  index: -1
+Layer 22
+  rotate: false
+  xy: 959, 2
+  size: 128, 134
+  orig: 128, 135
+  offset: 0, 0
+  index: -1
+Layer 23
+  rotate: false
+  xy: 1651, 345
+  size: 205, 140
+  orig: 207, 142
+  offset: 1, 1
+  index: -1
+Layer 24
+  rotate: true
+  xy: 1658, 1004
+  size: 154, 198
+  orig: 156, 200
+  offset: 1, 1
+  index: -1
+Layer 25
+  rotate: true
+  xy: 1355, 149
+  size: 68, 265
+  orig: 68, 265
+  offset: 0, 0
+  index: -1
+Layer 26
+  rotate: false
+  xy: 1578, 333
+  size: 71, 265
+  orig: 71, 265
+  offset: 0, 0
+  index: -1
+Layer 27
+  rotate: false
+  xy: 1658, 577
+  size: 170, 169
+  orig: 172, 171
+  offset: 1, 1
+  index: -1
+Layer 28
+  rotate: false
+  xy: 421, 272
+  size: 207, 207
+  orig: 209, 209
+  offset: 1, 1
+  index: -1
+Layer 29
+  rotate: true
+  xy: 1261, 458
+  size: 283, 315
+  orig: 283, 315
+  offset: 0, 0
+  index: -1
+Layer 30
+  rotate: true
+  xy: 1622, 4
+  size: 221, 88
+  orig: 221, 88
+  offset: 0, 0
+  index: -1
+Layer 31
+  rotate: true
+  xy: 289, 268
+  size: 211, 130
+  orig: 211, 130
+  offset: 0, 0
+  index: -1
+Layer 32
+  rotate: true
+  xy: 1252, 219
+  size: 237, 306
+  orig: 239, 308
+  offset: 1, 1
+  index: -1
+Layer 7
+  rotate: true
+  xy: 800, 7
+  size: 505, 157
+  orig: 505, 157
+  offset: 0, 0
+  index: -1
+Layer 8
+  rotate: false
+  xy: 1651, 487
+  size: 206, 88
+  orig: 206, 88
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: false
+  xy: 2, 16
+  size: 152, 244
+  orig: 152, 244
+  offset: 0, 0
+  index: -1
+Layer-331
+  rotate: false
+  xy: 1658, 919
+  size: 193, 83
+  orig: 193, 83
+  offset: 0, 0
+  index: -1
+bong
+  rotate: true
+  xy: 1739, 257
+  size: 86, 118
+  orig: 86, 118
+  offset: 0, 0
+  index: -1
+day
+  rotate: false
+  xy: 1560, 227
+  size: 83, 104
+  orig: 83, 104
+  offset: 0, 0
+  index: -1
+download (1)
+  rotate: true
+  xy: 226, 481
+  size: 677, 261
+  orig: 679, 263
+  offset: 1, 1
+  index: -1
+images/im_01
+  rotate: true
+  xy: 2, 2
+  size: 12, 11
+  orig: 171, 128
+  offset: 116, 35
+  index: -1
+images/im_02
+  rotate: false
+  xy: 590, 5
+  size: 39, 21
+  orig: 170, 128
+  offset: 88, 24
+  index: -1
+images/im_03
+  rotate: false
+  xy: 511, 2
+  size: 77, 24
+  orig: 171, 128
+  offset: 50, 20
+  index: -1
+images/im_04
+  rotate: false
+  xy: 1249, 148
+  size: 104, 69
+  orig: 171, 128
+  offset: 21, 19
+  index: -1
+images/im_05
+  rotate: false
+  xy: 1712, 79
+  size: 122, 93
+  orig: 170, 128
+  offset: 8, 19
+  index: -1
+images/im_06
+  rotate: true
+  xy: 1180, 3
+  size: 133, 98
+  orig: 171, 128
+  offset: 8, 18
+  index: -1
+images/im_07
+  rotate: true
+  xy: 1280, 10
+  size: 136, 98
+  orig: 171, 128
+  offset: 7, 19
+  index: -1
+images/im_08
+  rotate: true
+  xy: 1380, 11
+  size: 136, 97
+  orig: 170, 128
+  offset: 7, 19
+  index: -1
+images/im_09
+  rotate: false
+  xy: 1479, 50
+  size: 135, 97
+  orig: 171, 128
+  offset: 8, 19
+  index: -1
+images/im_10
+  rotate: true
+  xy: 1089, 2
+  size: 134, 89
+  orig: 171, 128
+  offset: 8, 27
+  index: -1
+images/im_11
+  rotate: true
+  xy: 1651, 227
+  size: 116, 86
+  orig: 170, 128
+  offset: 25, 29
+  index: -1
+images/im_12
+  rotate: false
+  xy: 1739, 174
+  size: 113, 81
+  orig: 171, 128
+  offset: 27, 33
+  index: -1
+knolans_weapon_trail_1_blur
+  rotate: false
+  xy: 1241, 743
+  size: 415, 415
+  orig: 512, 512
+  offset: 47, 49
+  index: -1
+smoke/trail_1068_2
+  rotate: true
+  xy: 397, 2
+  size: 24, 112
+  orig: 64, 128
+  offset: 20, 8
+  index: -1
+spark copy
+  rotate: true
+  xy: 156, 2
+  size: 15, 20
+  orig: 48, 48
+  offset: 16, 17
+  index: -1

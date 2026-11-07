@@ -1,0 +1,76 @@
+
+Hit_160.png
+size: 804,378
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/hit (1)
+  rotate: true
+  xy: 289, 17
+  size: 97, 95
+  orig: 97, 95
+  offset: 0, 0
+  index: -1
+fx/hit (2)
+  rotate: false
+  xy: 2, 2
+  size: 118, 107
+  orig: 118, 107
+  offset: 0, 0
+  index: -1
+fx/hit (3)
+  rotate: false
+  xy: 486, 5
+  size: 141, 126
+  orig: 141, 126
+  offset: 0, 0
+  index: -1
+fx/hit (4)
+  rotate: false
+  xy: 629, 9
+  size: 146, 122
+  orig: 146, 122
+  offset: 0, 0
+  index: -1
+fx/skill (1)
+  rotate: true
+  xy: 2, 111
+  size: 265, 158
+  orig: 265, 158
+  offset: 0, 0
+  index: -1
+fx/skill (2)
+  rotate: true
+  xy: 327, 117
+  size: 259, 157
+  orig: 259, 157
+  offset: 0, 0
+  index: -1
+fx/skill (3)
+  rotate: true
+  xy: 162, 116
+  size: 260, 163
+  orig: 260, 163
+  offset: 0, 0
+  index: -1
+fx/skill (4)
+  rotate: true
+  xy: 486, 133
+  size: 243, 158
+  orig: 243, 158
+  offset: 0, 0
+  index: -1
+fx/skill (5)
+  rotate: true
+  xy: 646, 134
+  size: 242, 156
+  orig: 242, 156
+  offset: 0, 0
+  index: -1
+fx/skill (6)
+  rotate: false
+  xy: 122, 7
+  size: 165, 102
+  orig: 165, 102
+  offset: 0, 0
+  index: -1

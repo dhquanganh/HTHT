@@ -1,0 +1,118 @@
+
+Og_tao2.png
+size: 927,212
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bag
+  rotate: false
+  xy: 505, 6
+  size: 57, 63
+  orig: 58, 63
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 600, 96
+  size: 127, 114
+  orig: 127, 114
+  offset: 0, 0
+  index: -1
+cloud_01
+  rotate: false
+  xy: 268, 8
+  size: 119, 61
+  orig: 119, 61
+  offset: 0, 0
+  index: -1
+cloud_02
+  rotate: false
+  xy: 389, 2
+  size: 114, 67
+  orig: 114, 67
+  offset: 0, 0
+  index: -1
+fish1
+  rotate: false
+  xy: 2, 5
+  size: 264, 205
+  orig: 264, 205
+  offset: 0, 0
+  index: -1
+fish2
+  rotate: false
+  xy: 875, 54
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+hanL
+  rotate: true
+  xy: 851, 103
+  size: 107, 74
+  orig: 107, 74
+  offset: 0, 0
+  index: -1
+handR
+  rotate: false
+  xy: 600, 10
+  size: 86, 84
+  orig: 86, 84
+  offset: 0, 0
+  index: -1
+head1
+  rotate: false
+  xy: 268, 71
+  size: 164, 139
+  orig: 164, 139
+  offset: 0, 0
+  index: -1
+head2
+  rotate: false
+  xy: 434, 71
+  size: 164, 139
+  orig: 164, 139
+  offset: 0, 0
+  index: -1
+l1
+  rotate: false
+  xy: 729, 110
+  size: 120, 100
+  orig: 120, 100
+  offset: 0, 0
+  index: -1
+l2
+  rotate: true
+  xy: 688, 27
+  size: 67, 53
+  orig: 67, 53
+  offset: 0, 0
+  index: -1
+l3
+  rotate: false
+  xy: 812, 47
+  size: 61, 54
+  orig: 61, 54
+  offset: 0, 0
+  index: -1
+l4
+  rotate: true
+  xy: 743, 16
+  size: 39, 67
+  orig: 39, 67
+  offset: 0, 0
+  index: -1
+l5
+  rotate: false
+  xy: 743, 57
+  size: 67, 51
+  orig: 67, 51
+  offset: 0, 0
+  index: -1
+o2
+  rotate: false
+  xy: 564, 43
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1

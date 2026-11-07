@@ -1,0 +1,349 @@
+
+Hit_384_a.png
+size: 1416,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4/trail_1
+  rotate: false
+  xy: 2, 30
+  size: 256, 14
+  orig: 256, 16
+  offset: 0, 1
+  index: -1
+8/images/tex/hit
+  rotate: false
+  xy: 759, 144
+  size: 128, 126
+  orig: 128, 128
+  offset: 0, 1
+  index: -1
+8/images/tex/hitbe
+  rotate: false
+  xy: 223, 46
+  size: 180, 224
+  orig: 256, 256
+  offset: 28, 8
+  index: -1
+8/images/tex/smoke_12001
+  rotate: true
+  xy: 889, 147
+  size: 123, 127
+  orig: 128, 128
+  offset: 4, 0
+  index: -1
+OT2/kakashi/images/lightrock_01
+  rotate: true
+  xy: 1235, 178
+  size: 92, 100
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+OT2/kakashi/images/lightrock_02
+  rotate: false
+  xy: 759, 62
+  size: 80, 80
+  orig: 128, 128
+  offset: 24, 36
+  index: -1
+OT2/kakashi/images/lightrock_03
+  rotate: true
+  xy: 1337, 140
+  size: 72, 76
+  orig: 128, 128
+  offset: 28, 24
+  index: -1
+OT2/kakashi/images/lightrock_04
+  rotate: false
+  xy: 1018, 150
+  size: 112, 120
+  orig: 128, 128
+  offset: 12, 0
+  index: -1
+OT2/kakashi/images/rock_01
+  rotate: false
+  xy: 1378, 42
+  size: 36, 41
+  orig: 64, 64
+  offset: 10, 8
+  index: -1
+OT2/kakashi/images/rock_02
+  rotate: false
+  xy: 712, 11
+  size: 44, 43
+  orig: 64, 64
+  offset: 11, 7
+  index: -1
+OT2/kakashi/images/rock_03
+  rotate: true
+  xy: 1096, 78
+  size: 27, 34
+  orig: 64, 64
+  offset: 19, 15
+  index: -1
+OT2/kakashi/images/rock_04
+  rotate: false
+  xy: 162, 2
+  size: 14, 26
+  orig: 64, 64
+  offset: 27, 15
+  index: -1
+OT2/kakashi/images/rock_blur_01
+  rotate: true
+  xy: 260, 3
+  size: 41, 44
+  orig: 64, 64
+  offset: 8, 7
+  index: -1
+OT2/kakashi/images/rock_blur_02
+  rotate: true
+  xy: 663, 2
+  size: 49, 47
+  orig: 64, 64
+  offset: 9, 4
+  index: -1
+OT2/kakashi/images/rock_blur_03
+  rotate: true
+  xy: 503, 2
+  size: 31, 39
+  orig: 64, 64
+  offset: 17, 12
+  index: -1
+OT2/kakashi/images/rock_blur_04
+  rotate: false
+  xy: 1378, 8
+  size: 20, 32
+  orig: 64, 64
+  offset: 24, 12
+  index: -1
+hit/blackhit_01
+  rotate: false
+  xy: 131, 2
+  size: 29, 26
+  orig: 85, 64
+  offset: 25, 0
+  index: -1
+hit/blackhit_02
+  rotate: false
+  xy: 597, 2
+  size: 64, 49
+  orig: 86, 64
+  offset: 10, 1
+  index: -1
+hit/blackhit_03
+  rotate: true
+  xy: 841, 64
+  size: 78, 62
+  orig: 85, 64
+  offset: 4, 1
+  index: -1
+hit/blackhit_04
+  rotate: true
+  xy: 905, 64
+  size: 81, 62
+  orig: 85, 64
+  offset: 3, 1
+  index: -1
+hit/blackhit_05
+  rotate: true
+  xy: 969, 67
+  size: 78, 59
+  orig: 86, 64
+  offset: 4, 3
+  index: -1
+hit/blackhit_06
+  rotate: false
+  xy: 759, 2
+  size: 81, 58
+  orig: 85, 64
+  offset: 2, 3
+  index: -1
+hit/blackhit_07
+  rotate: false
+  xy: 1337, 214
+  size: 77, 56
+  orig: 85, 64
+  offset: 5, 4
+  index: -1
+hit/blackhit_08
+  rotate: false
+  xy: 1034, 6
+  size: 75, 56
+  orig: 86, 64
+  offset: 7, 4
+  index: -1
+hit/blackhit_09
+  rotate: false
+  xy: 1335, 85
+  size: 69, 53
+  orig: 85, 64
+  offset: 9, 6
+  index: -1
+hit/blackhit_10
+  rotate: false
+  xy: 2, 3
+  size: 62, 25
+  orig: 85, 64
+  offset: 12, 15
+  index: -1
+hit/blackhit_11
+  rotate: false
+  xy: 66, 4
+  size: 63, 24
+  orig: 86, 64
+  offset: 12, 15
+  index: -1
+hit/blackhit_12
+  rotate: false
+  xy: 889, 144
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+hit/landhit_01
+  rotate: true
+  xy: 1333, 3
+  size: 80, 43
+  orig: 128, 128
+  offset: 22, 12
+  index: -1
+hit/landhit_02
+  rotate: false
+  xy: 1132, 177
+  size: 101, 93
+  orig: 128, 128
+  offset: 11, 9
+  index: -1
+hit/landhit_03
+  rotate: true
+  xy: 405, 32
+  size: 92, 96
+  orig: 128, 128
+  offset: 14, 6
+  index: -1
+hit/landhit_04
+  rotate: false
+  xy: 503, 35
+  size: 92, 89
+  orig: 128, 128
+  offset: 14, 8
+  index: -1
+hit/landhit_05
+  rotate: false
+  xy: 597, 53
+  size: 103, 71
+  orig: 128, 128
+  offset: 13, 10
+  index: -1
+hit/landhit_06
+  rotate: false
+  xy: 1132, 116
+  size: 103, 59
+  orig: 128, 128
+  offset: 13, 11
+  index: -1
+hit/landhit_07
+  rotate: false
+  xy: 1030, 107
+  size: 100, 41
+  orig: 128, 128
+  offset: 12, 16
+  index: -1
+hit/landhit_08
+  rotate: false
+  xy: 1030, 64
+  size: 64, 41
+  orig: 128, 128
+  offset: 12, 16
+  index: -1
+hit/skull_red_01
+  rotate: true
+  xy: 1132, 60
+  size: 54, 91
+  orig: 128, 171
+  offset: 36, 8
+  index: -1
+hit/skull_red_02
+  rotate: true
+  xy: 1225, 60
+  size: 54, 90
+  orig: 128, 171
+  offset: 36, 14
+  index: -1
+hit/skull_red_03
+  rotate: true
+  xy: 1237, 116
+  size: 60, 96
+  orig: 128, 171
+  offset: 32, 19
+  index: -1
+hit/skull_red_04
+  rotate: true
+  xy: 842, 2
+  size: 60, 96
+  orig: 128, 171
+  offset: 32, 19
+  index: -1
+hit/skull_red_05
+  rotate: true
+  xy: 940, 2
+  size: 60, 92
+  orig: 128, 170
+  offset: 32, 38
+  index: -1
+hit/skull_red_06
+  rotate: true
+  xy: 1187, 3
+  size: 55, 74
+  orig: 128, 170
+  offset: 35, 57
+  index: -1
+hit/skull_red_07
+  rotate: true
+  xy: 1111, 2
+  size: 56, 74
+  orig: 128, 170
+  offset: 35, 57
+  index: -1
+hit/skull_red_08
+  rotate: false
+  xy: 702, 56
+  size: 55, 68
+  orig: 128, 170
+  offset: 36, 62
+  index: -1
+hit/skull_red_09
+  rotate: true
+  xy: 1263, 4
+  size: 54, 68
+  orig: 128, 171
+  offset: 36, 63
+  index: -1
+hit/skull_red_10
+  rotate: false
+  xy: 405, 126
+  size: 116, 144
+  orig: 128, 171
+  offset: 4, 24
+  index: -1
+hit/skull_red_11
+  rotate: false
+  xy: 523, 126
+  size: 116, 144
+  orig: 128, 171
+  offset: 4, 24
+  index: -1
+hit/skull_red_12
+  rotate: false
+  xy: 641, 126
+  size: 116, 144
+  orig: 128, 171
+  offset: 4, 24
+  index: -1
+images/denvau_03
+  rotate: false
+  xy: 2, 46
+  size: 219, 224
+  orig: 219, 224
+  offset: 0, 0
+  index: -1

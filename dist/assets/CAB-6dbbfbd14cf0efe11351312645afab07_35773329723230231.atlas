@@ -1,0 +1,165 @@
+
+Skill_180.png
+size: 1020,876
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Diamante_skill1_dilie/000
+  rotate: false
+  xy: 512, 694
+  size: 274, 100
+  orig: 275, 103
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/001
+  rotate: false
+  xy: 2, 576
+  size: 282, 164
+  orig: 286, 168
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/002
+  rotate: false
+  xy: 519, 342
+  size: 420, 227
+  orig: 424, 232
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/003
+  rotate: false
+  xy: 513, 78
+  size: 505, 262
+  orig: 508, 265
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/004
+  rotate: false
+  xy: 2, 2
+  size: 505, 262
+  orig: 508, 265
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/012
+  rotate: false
+  xy: 2, 266
+  size: 509, 180
+  orig: 511, 183
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/013
+  rotate: false
+  xy: 286, 571
+  size: 515, 121
+  orig: 518, 125
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/014
+  rotate: false
+  xy: 2, 448
+  size: 515, 121
+  orig: 518, 125
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/015
+  rotate: false
+  xy: 2, 742
+  size: 508, 52
+  orig: 511, 55
+  offset: 2, 1
+  index: -1
+Char_Diamante_skill1_dilie/016
+  rotate: false
+  xy: 419, 796
+  size: 415, 43
+  orig: 418, 45
+  offset: 2, 1
+  index: -1
+Char_Diamante_skill1_dilie/017
+  rotate: false
+  xy: 2, 808
+  size: 415, 36
+  orig: 418, 38
+  offset: 2, 1
+  index: -1
+Char_Diamante_skill1_dilie/018
+  rotate: false
+  xy: 554, 841
+  size: 414, 31
+  orig: 418, 33
+  offset: 3, 1
+  index: -1
+Char_Diamante_skill1_dilie/019
+  rotate: false
+  xy: 277, 846
+  size: 275, 26
+  orig: 278, 27
+  offset: 2, 0
+  index: -1
+Char_Diamante_skill1_dilie/020
+  rotate: false
+  xy: 2, 847
+  size: 273, 25
+  orig: 278, 26
+  offset: 3, 0
+  index: -1
+
+Skill_1802.png
+size: 848,852
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Diamante_skill1_dilie/005
+  rotate: false
+  xy: 2, 562
+  size: 553, 287
+  orig: 556, 291
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/006
+  rotate: true
+  xy: 557, 296
+  size: 553, 287
+  orig: 556, 291
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/007
+  rotate: false
+  xy: 2, 2
+  size: 567, 292
+  orig: 570, 295
+  offset: 1, 0
+  index: -1
+
+Skill_1803.png
+size: 912,888
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Diamante_skill1_dilie/008
+  rotate: true
+  xy: 612, 6
+  size: 567, 292
+  orig: 570, 295
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/009
+  rotate: true
+  xy: 314, 2
+  size: 571, 296
+  orig: 575, 300
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/010
+  rotate: true
+  xy: 2, 289
+  size: 596, 310
+  orig: 597, 310
+  offset: 1, 0
+  index: -1
+Char_Diamante_skill1_dilie/011
+  rotate: false
+  xy: 314, 575
+  size: 596, 310
+  orig: 597, 310
+  offset: 1, 0
+  index: -1

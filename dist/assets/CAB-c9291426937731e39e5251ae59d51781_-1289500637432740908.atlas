@@ -1,0 +1,600 @@
+
+Hero_209.png
+size: 1024,980
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_R_01
+  rotate: true
+  xy: 290, 958
+  size: 17, 28
+  orig: 18, 29
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 171, 962
+  size: 13, 24
+  orig: 14, 25
+  offset: 1, 0
+  index: -1
+arm_R_41
+  rotate: true
+  xy: 197, 962
+  size: 13, 24
+  orig: 14, 25
+  offset: 1, 0
+  index: -1
+body_01
+  rotate: true
+  xy: 199, 918
+  size: 42, 58
+  orig: 43, 59
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 259, 911
+  size: 45, 65
+  orig: 46, 66
+  offset: 1, 0
+  index: -1
+chaka_beat_01
+  rotate: false
+  xy: 275, 157
+  size: 138, 129
+  orig: 139, 131
+  offset: 1, 0
+  index: -1
+chaka_beat_02
+  rotate: true
+  xy: 205, 540
+  size: 109, 142
+  orig: 110, 143
+  offset: 1, 0
+  index: -1
+chaka_beat_03
+  rotate: true
+  xy: 2, 197
+  size: 127, 138
+  orig: 128, 140
+  offset: 1, 0
+  index: -1
+chaka_beat_06
+  rotate: false
+  xy: 806, 136
+  size: 188, 130
+  orig: 189, 131
+  offset: 1, 0
+  index: -1
+chaka_damage
+  rotate: true
+  xy: 142, 172
+  size: 127, 131
+  orig: 128, 132
+  offset: 1, 0
+  index: -1
+chaka_skill_01
+  rotate: false
+  xy: 142, 24
+  size: 264, 131
+  orig: 348, 162
+  offset: 84, 30
+  index: -1
+chaka_skill_02
+  rotate: false
+  xy: 402, 635
+  size: 201, 93
+  orig: 202, 94
+  offset: 1, 0
+  index: -1
+chaka_skill_02_eff_dg_000
+  rotate: false
+  xy: 597, 504
+  size: 328, 104
+  orig: 590, 160
+  offset: 8, 28
+  index: -1
+chaka_skill_02_eff_dg_001
+  rotate: false
+  xy: 605, 610
+  size: 355, 93
+  orig: 590, 160
+  offset: 9, 58
+  index: -1
+chaka_skill_02_eff_dg_002
+  rotate: false
+  xy: 583, 389
+  size: 399, 113
+  orig: 590, 160
+  offset: 25, 23
+  index: -1
+chaka_skill_02_eff_dg_003
+  rotate: false
+  xy: 415, 140
+  size: 249, 128
+  orig: 590, 160
+  offset: 297, 10
+  index: -1
+chaka_skill_02_eff_dg_004
+  rotate: false
+  xy: 674, 2
+  size: 269, 132
+  orig: 590, 160
+  offset: 307, 10
+  index: -1
+chaka_skill_02_eff_dg_006
+  rotate: false
+  xy: 423, 730
+  size: 262, 80
+  orig: 590, 160
+  offset: 324, 4
+  index: -1
+chaka_skill_02_eff_yan_000
+  rotate: false
+  xy: 543, 940
+  size: 122, 35
+  orig: 250, 100
+  offset: 12, 13
+  index: -1
+chaka_skill_02_eff_yan_001
+  rotate: false
+  xy: 136, 843
+  size: 162, 66
+  orig: 250, 100
+  offset: 24, 12
+  index: -1
+chaka_skill_02_eff_yan_002
+  rotate: false
+  xy: 612, 812
+  size: 188, 71
+  orig: 250, 100
+  offset: 26, 13
+  index: -1
+chaka_skill_02_eff_yan_003
+  rotate: false
+  xy: 802, 797
+  size: 159, 71
+  orig: 250, 100
+  offset: 57, 11
+  index: -1
+chaka_skill_02_eff_yan_004
+  rotate: false
+  xy: 462, 818
+  size: 148, 69
+  orig: 250, 100
+  offset: 75, 12
+  index: -1
+chaka_skill_02_eff_yan_005
+  rotate: false
+  xy: 127, 768
+  size: 133, 73
+  orig: 250, 100
+  offset: 103, 12
+  index: -1
+chaka_skill_02_eff_yan_006
+  rotate: false
+  xy: 262, 752
+  size: 159, 78
+  orig: 250, 100
+  offset: 81, 11
+  index: -1
+chaka_skill_02_eff_yan_007
+  rotate: false
+  xy: 300, 832
+  size: 160, 68
+  orig: 250, 100
+  offset: 82, 13
+  index: -1
+chaka_skill_03
+  rotate: false
+  xy: 349, 525
+  size: 246, 108
+  orig: 247, 109
+  offset: 1, 0
+  index: -1
+chaka_skill_04
+  rotate: false
+  xy: 687, 705
+  size: 270, 90
+  orig: 271, 91
+  offset: 1, 0
+  index: -1
+chaka_skill_05
+  rotate: false
+  xy: 344, 407
+  size: 237, 116
+  orig: 500, 500
+  offset: 79, 114
+  index: -1
+chaka_skill_06
+  rotate: false
+  xy: 2, 446
+  size: 171, 117
+  orig: 173, 118
+  offset: 2, 0
+  index: -1
+chaka_skill_07
+  rotate: false
+  xy: 2, 326
+  size: 167, 118
+  orig: 168, 126
+  offset: 1, 7
+  index: -1
+chaka_skill_08
+  rotate: false
+  xy: 175, 421
+  size: 167, 117
+  orig: 168, 126
+  offset: 1, 8
+  index: -1
+chaka_skill_09
+  rotate: false
+  xy: 408, 4
+  size: 264, 131
+  orig: 348, 162
+  offset: 84, 30
+  index: -1
+chaka_squat_01_B001R_141129
+  rotate: false
+  xy: 704, 268
+  size: 231, 119
+  orig: 232, 120
+  offset: 1, 0
+  index: -1
+chaka_standby_01
+  rotate: true
+  xy: 2, 770
+  size: 91, 123
+  orig: 92, 124
+  offset: 1, 0
+  index: -1
+chaka_standby_02
+  rotate: true
+  xy: 2, 677
+  size: 91, 119
+  orig: 92, 120
+  offset: 1, 0
+  index: -1
+chaka_win_01
+  rotate: false
+  xy: 2, 46
+  size: 138, 149
+  orig: 139, 150
+  offset: 1, 0
+  index: -1
+chaka_win_03
+  rotate: true
+  xy: 340, 288
+  size: 117, 176
+  orig: 119, 177
+  offset: 2, 0
+  index: -1
+chaka_win_04
+  rotate: true
+  xy: 2, 565
+  size: 108, 201
+  orig: 109, 202
+  offset: 1, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 456, 952
+  size: 23, 40
+  orig: 24, 41
+  offset: 1, 0
+  index: -1
+cloth_13
+  rotate: true
+  xy: 932, 939
+  size: 36, 41
+  orig: 37, 42
+  offset: 1, 0
+  index: -1
+cloth_14
+  rotate: false
+  xy: 412, 953
+  size: 42, 22
+  orig: 43, 23
+  offset: 1, 0
+  index: -1
+cloth_22
+  rotate: false
+  xy: 563, 889
+  size: 95, 49
+  orig: 96, 51
+  offset: 1, 0
+  index: -1
+cloth_23
+  rotate: false
+  xy: 462, 894
+  size: 99, 44
+  orig: 101, 46
+  offset: 2, 0
+  index: -1
+cloth_24
+  rotate: false
+  xy: 2, 928
+  size: 99, 36
+  orig: 100, 37
+  offset: 1, 0
+  index: -1
+cloth_25
+  rotate: false
+  xy: 667, 940
+  size: 97, 35
+  orig: 98, 36
+  offset: 1, 0
+  index: -1
+cloth_41
+  rotate: true
+  xy: 498, 946
+  size: 29, 43
+  orig: 30, 44
+  offset: 1, 0
+  index: -1
+cloth_42
+  rotate: true
+  xy: 124, 965
+  size: 10, 24
+  orig: 11, 25
+  offset: 1, 0
+  index: -1
+cloth_43
+  rotate: true
+  xy: 2, 967
+  size: 8, 21
+  orig: 9, 22
+  offset: 1, 0
+  index: -1
+cloth_44
+  rotate: true
+  xy: 326, 910
+  size: 45, 81
+  orig: 46, 82
+  offset: 1, 0
+  index: -1
+cloth_45
+  rotate: true
+  xy: 103, 922
+  size: 38, 94
+  orig: 39, 95
+  offset: 1, 0
+  index: -1
+cloth_46
+  rotate: true
+  xy: 25, 966
+  size: 9, 28
+  orig: 10, 29
+  offset: 1, 0
+  index: -1
+cloth_48
+  rotate: false
+  xy: 766, 940
+  size: 39, 35
+  orig: 40, 36
+  offset: 1, 0
+  index: -1
+cloth_49
+  rotate: true
+  xy: 852, 870
+  size: 68, 75
+  orig: 70, 76
+  offset: 2, 0
+  index: -1
+f-arm_R_01
+  rotate: true
+  xy: 343, 957
+  size: 18, 21
+  orig: 19, 22
+  offset: 1, 0
+  index: -1
+foot_R_01
+  rotate: false
+  xy: 223, 962
+  size: 25, 13
+  orig: 26, 14
+  offset: 1, 0
+  index: -1
+hand_L_01
+  rotate: true
+  xy: 250, 962
+  size: 13, 17
+  orig: 14, 18
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 150, 963
+  size: 12, 19
+  orig: 13, 20
+  offset: 1, 0
+  index: -1
+hand_R_01
+  rotate: false
+  xy: 366, 957
+  size: 20, 18
+  orig: 21, 19
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 269, 962
+  size: 13, 19
+  orig: 14, 20
+  offset: 1, 0
+  index: -1
+head_01
+  rotate: false
+  xy: 660, 887
+  size: 52, 51
+  orig: 53, 52
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 807, 940
+  size: 35, 52
+  orig: 36, 53
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 409, 902
+  size: 48, 51
+  orig: 49, 52
+  offset: 1, 0
+  index: -1
+head_06
+  rotate: true
+  xy: 861, 940
+  size: 35, 69
+  orig: 36, 71
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 388, 957
+  size: 22, 18
+  orig: 23, 19
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 320, 958
+  size: 21, 17
+  orig: 26, 19
+  offset: 1, 0
+  index: -1
+skill3_11
+  rotate: false
+  xy: 666, 137
+  size: 138, 129
+  orig: 139, 131
+  offset: 1, 0
+  index: -1
+skill3_12
+  rotate: true
+  xy: 123, 675
+  size: 91, 123
+  orig: 92, 124
+  offset: 1, 0
+  index: -1
+skill3_13
+  rotate: false
+  xy: 975, 910
+  size: 46, 65
+  orig: 57, 77
+  offset: 5, 5
+  index: -1
+skill3_14
+  rotate: false
+  xy: 714, 885
+  size: 136, 53
+  orig: 160, 78
+  offset: 11, 13
+  index: -1
+skill3_15
+  rotate: false
+  xy: 248, 651
+  size: 152, 99
+  orig: 169, 115
+  offset: 8, 6
+  index: -1
+skill3_16
+  rotate: false
+  xy: 518, 270
+  size: 184, 117
+  orig: 202, 137
+  offset: 5, 9
+  index: -1
+skill3_17
+  rotate: false
+  xy: 171, 301
+  size: 167, 118
+  orig: 168, 126
+  offset: 1, 7
+  index: -1
+skill3_18
+  rotate: false
+  xy: 2, 863
+  size: 132, 57
+  orig: 160, 78
+  offset: 10, 13
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 55, 966
+  size: 9, 20
+  orig: 10, 21
+  offset: 1, 0
+  index: -1
+thigh_L_41
+  rotate: true
+  xy: 77, 966
+  size: 9, 20
+  orig: 10, 21
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 99, 966
+  size: 9, 23
+  orig: 12, 24
+  offset: 1, 0
+  index: -1
+
+Hero_2092.png
+size: 488,560
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chaka_beat_04
+  rotate: true
+  xy: 2, 2
+  size: 199, 135
+  orig: 200, 136
+  offset: 1, 0
+  index: -1
+chaka_beat_05
+  rotate: false
+  xy: 268, 154
+  size: 192, 161
+  orig: 199, 162
+  offset: 1, 0
+  index: -1
+chaka_skill_02_eff_cf_000
+  rotate: true
+  xy: 139, 5
+  size: 147, 179
+  orig: 220, 300
+  offset: 40, 51
+  index: -1
+chaka_skill_02_eff_cf_001
+  rotate: false
+  xy: 301, 317
+  size: 184, 238
+  orig: 220, 300
+  offset: 14, 24
+  index: -1
+chaka_skill_02_eff_cf_002
+  rotate: true
+  xy: 2, 338
+  size: 217, 297
+  orig: 220, 300
+  offset: 3, 0
+  index: -1
+chaka_skill_02_eff_dg_005
+  rotate: false
+  xy: 2, 203
+  size: 264, 133
+  orig: 590, 160
+  offset: 323, 5
+  index: -1
+chaka_win_02
+  rotate: true
+  xy: 320, 7
+  size: 145, 155
+  orig: 146, 156
+  offset: 1, 0
+  index: -1

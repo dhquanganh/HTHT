@@ -1,0 +1,405 @@
+
+Skill_450.png
+size: 1876,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+10/images/toenuoc3_02
+  rotate: false
+  xy: 955, 3
+  size: 64, 49
+  orig: 86, 64
+  offset: 10, 1
+  index: -1
+10/images/toenuoc3_03
+  rotate: true
+  xy: 1407, 57
+  size: 78, 62
+  orig: 85, 64
+  offset: 4, 1
+  index: -1
+10/images/toenuoc3_04
+  rotate: true
+  xy: 1553, 173
+  size: 81, 60
+  orig: 85, 64
+  offset: 3, 2
+  index: -1
+10/images/toenuoc3_05
+  rotate: true
+  xy: 1492, 2
+  size: 78, 59
+  orig: 86, 64
+  offset: 4, 3
+  index: -1
+10/images/toenuoc3_06
+  rotate: true
+  xy: 1611, 42
+  size: 80, 58
+  orig: 85, 64
+  offset: 2, 3
+  index: -1
+10/images/toenuoc3_07
+  rotate: true
+  xy: 1553, 4
+  size: 77, 56
+  orig: 85, 64
+  offset: 5, 4
+  index: -1
+10/images/toenuoc3_08
+  rotate: true
+  xy: 1350, 57
+  size: 75, 55
+  orig: 86, 64
+  offset: 7, 5
+  index: -1
+10/images/toenuoc3_09
+  rotate: false
+  xy: 1166, 3
+  size: 69, 52
+  orig: 85, 64
+  offset: 9, 7
+  index: -1
+17/images/images/feettoe (1)
+  rotate: true
+  xy: 2, 2
+  size: 252, 63
+  orig: 256, 64
+  offset: 0, 1
+  index: -1
+17/images/images/feettoe (2)
+  rotate: true
+  xy: 372, 27
+  size: 227, 60
+  orig: 256, 64
+  offset: 13, 0
+  index: -1
+17/images/images/feettoe (3)
+  rotate: true
+  xy: 309, 13
+  size: 241, 61
+  orig: 256, 64
+  offset: 6, 0
+  index: -1
+18/images/float
+  rotate: false
+  xy: 1363, 137
+  size: 54, 117
+  orig: 64, 128
+  offset: 5, 10
+  index: -1
+18/images/glow_4089
+  rotate: false
+  xy: 67, 10
+  size: 240, 244
+  orig: 256, 256
+  offset: 8, 4
+  index: -1
+18/images/hitex2_01
+  rotate: false
+  xy: 1611, 2
+  size: 37, 38
+  orig: 64, 64
+  offset: 16, 15
+  index: -1
+18/images/hitex2_02
+  rotate: false
+  xy: 1736, 19
+  size: 37, 39
+  orig: 64, 64
+  offset: 12, 14
+  index: -1
+18/images/hitex2_03
+  rotate: true
+  xy: 1109, 55
+  size: 39, 45
+  orig: 64, 64
+  offset: 10, 11
+  index: -1
+18/images/hitex2_04
+  rotate: false
+  xy: 1070, 4
+  size: 46, 49
+  orig: 64, 64
+  offset: 11, 9
+  index: -1
+18/images/hitex2_05
+  rotate: false
+  xy: 1015, 54
+  size: 44, 40
+  orig: 64, 64
+  offset: 9, 10
+  index: -1
+18/images/hitex2_06
+  rotate: true
+  xy: 1118, 4
+  size: 49, 46
+  orig: 64, 64
+  offset: 5, 8
+  index: -1
+18/images/hitex2_07
+  rotate: true
+  xy: 1396, 8
+  size: 47, 46
+  orig: 64, 64
+  offset: 9, 8
+  index: -1
+18/images/hitex2_08
+  rotate: true
+  xy: 1307, 6
+  size: 49, 43
+  orig: 64, 64
+  offset: 8, 8
+  index: -1
+18/images/hitex2_09
+  rotate: false
+  xy: 1352, 7
+  size: 42, 48
+  orig: 64, 64
+  offset: 14, 10
+  index: -1
+18/images/hitex2_10
+  rotate: true
+  xy: 1061, 55
+  size: 39, 46
+  orig: 64, 64
+  offset: 11, 9
+  index: -1
+18/images/hitex2_11
+  rotate: false
+  xy: 1021, 3
+  size: 47, 49
+  orig: 64, 64
+  offset: 8, 10
+  index: -1
+18/images/hitex2_12
+  rotate: false
+  xy: 1444, 8
+  size: 46, 47
+  orig: 64, 64
+  offset: 8, 13
+  index: -1
+18/images/hitex2_13
+  rotate: false
+  xy: 960, 54
+  size: 53, 40
+  orig: 64, 64
+  offset: 3, 12
+  index: -1
+18/images/hitex2_14
+  rotate: false
+  xy: 1650, 2
+  size: 36, 38
+  orig: 64, 64
+  offset: 14, 8
+  index: -1
+18/images/hitex2_15
+  rotate: false
+  xy: 679, 3
+  size: 36, 11
+  orig: 64, 64
+  offset: 11, 40
+  index: -1
+18/images/hitex2_16
+  rotate: false
+  xy: 679, 16
+  size: 41, 12
+  orig: 64, 64
+  offset: 8, 44
+  index: -1
+18/images/hitslash_01
+  rotate: false
+  xy: 465, 3
+  size: 71, 25
+  orig: 128, 64
+  offset: 1, 20
+  index: -1
+18/images/hitslash_02
+  rotate: true
+  xy: 1287, 133
+  size: 121, 45
+  orig: 128, 64
+  offset: 3, 8
+  index: -1
+18/images/hitslash_03
+  rotate: false
+  xy: 722, 2
+  size: 117, 40
+  orig: 128, 64
+  offset: 3, 16
+  index: -1
+18/images/hitslash_04
+  rotate: false
+  xy: 841, 2
+  size: 112, 40
+  orig: 128, 64
+  offset: 8, 16
+  index: -1
+18/images/hitslash_05
+  rotate: true
+  xy: 1239, 131
+  size: 123, 46
+  orig: 128, 64
+  offset: 4, 7
+  index: -1
+18/images/hitslash_06
+  rotate: true
+  xy: 1334, 134
+  size: 120, 27
+  orig: 128, 64
+  offset: 8, 15
+  index: -1
+18/images/hitslash_07
+  rotate: false
+  xy: 372, 3
+  size: 91, 22
+  orig: 128, 64
+  offset: 36, 20
+  index: -1
+18/images/hitslash_08
+  rotate: false
+  xy: 538, 7
+  size: 116, 21
+  orig: 128, 64
+  offset: 12, 20
+  index: -1
+18/images/smoke
+  rotate: false
+  xy: 1114, 131
+  size: 123, 123
+  orig: 128, 128
+  offset: 4, 1
+  index: -1
+19/images/mask_2015
+  rotate: false
+  xy: 434, 30
+  size: 256, 224
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+19/images/trail_3022
+  rotate: false
+  xy: 1615, 190
+  size: 256, 64
+  orig: 256, 64
+  offset: 0, 0
+  index: -1
+19/images/trail_3022_2
+  rotate: false
+  xy: 1615, 124
+  size: 256, 64
+  orig: 256, 64
+  offset: 0, 0
+  index: -1
+5/images/slash_2_01
+  rotate: false
+  xy: 1237, 3
+  size: 68, 52
+  orig: 85, 85
+  offset: 10, 18
+  index: -1
+5/images/slash_2_02
+  rotate: true
+  xy: 1538, 83
+  size: 84, 71
+  orig: 86, 85
+  offset: 1, 12
+  index: -1
+5/images/slash_2_03
+  rotate: true
+  xy: 1419, 169
+  size: 85, 66
+  orig: 85, 85
+  offset: 0, 19
+  index: -1
+5/images/slash_2_04
+  rotate: true
+  xy: 1471, 82
+  size: 85, 65
+  orig: 85, 86
+  offset: 0, 20
+  index: -1
+5/images/slash_2_05
+  rotate: true
+  xy: 1487, 169
+  size: 85, 64
+  orig: 86, 86
+  offset: 1, 21
+  index: -1
+5/images/slash_2_06
+  rotate: true
+  xy: 1156, 57
+  size: 72, 63
+  orig: 85, 86
+  offset: 8, 21
+  index: -1
+5/images/slash_2_07
+  rotate: true
+  xy: 1286, 57
+  size: 72, 62
+  orig: 85, 85
+  offset: 9, 20
+  index: -1
+5/images/slash_2_08
+  rotate: true
+  xy: 1221, 57
+  size: 72, 63
+  orig: 86, 85
+  offset: 9, 20
+  index: -1
+5/images/slash_2_09
+  rotate: true
+  xy: 1671, 52
+  size: 70, 63
+  orig: 85, 85
+  offset: 10, 22
+  index: -1
+5/white_dot
+  rotate: false
+  xy: 656, 7
+  size: 21, 21
+  orig: 25, 25
+  offset: 2, 2
+  index: -1
+black
+  rotate: false
+  xy: 1688, 4
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+blackhole
+  rotate: true
+  xy: 1736, 60
+  size: 62, 61
+  orig: 62, 63
+  offset: 0, 1
+  index: -1
+earth
+  rotate: false
+  xy: 692, 44
+  size: 210, 210
+  orig: 212, 212
+  offset: 1, 1
+  index: -1
+flowq
+  rotate: false
+  xy: 1799, 61
+  size: 62, 61
+  orig: 72, 72
+  offset: 5, 6
+  index: -1
+mag1
+  rotate: true
+  xy: 960, 96
+  size: 158, 152
+  orig: 162, 162
+  offset: 1, 4
+  index: -1
+magtrail
+  rotate: false
+  xy: 904, 54
+  size: 54, 200
+  orig: 54, 200
+  offset: 0, 0
+  index: -1

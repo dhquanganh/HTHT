@@ -1,0 +1,1139 @@
+
+Hero_127.png
+size: 1020,1016
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_R_04
+  rotate: true
+  xy: 159, 1002
+  size: 12, 28
+  orig: 12, 28
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 323, 966
+  size: 33, 43
+  orig: 33, 43
+  offset: 0, 0
+  index: -1
+bonney_beat_02
+  rotate: true
+  xy: 875, 328
+  size: 93, 142
+  orig: 93, 142
+  offset: 0, 0
+  index: -1
+bonney_damage
+  rotate: true
+  xy: 123, 236
+  size: 95, 134
+  orig: 105, 141
+  offset: 6, 3
+  index: -1
+bonney_rise
+  rotate: true
+  xy: 239, 603
+  size: 82, 115
+  orig: 88, 125
+  offset: 5, 5
+  index: -1
+bonney_skill1_01
+  rotate: true
+  xy: 489, 825
+  size: 69, 159
+  orig: 69, 159
+  offset: 0, 0
+  index: -1
+bonney_skill1_02
+  rotate: true
+  xy: 451, 400
+  size: 89, 132
+  orig: 89, 132
+  offset: 0, 0
+  index: -1
+bonney_skill1_04
+  rotate: false
+  xy: 746, 367
+  size: 127, 92
+  orig: 127, 92
+  offset: 0, 0
+  index: -1
+bonney_skill1_05
+  rotate: true
+  xy: 769, 657
+  size: 79, 121
+  orig: 79, 121
+  offset: 0, 0
+  index: -1
+bonney_skill1_06
+  rotate: true
+  xy: 930, 683
+  size: 101, 81
+  orig: 101, 81
+  offset: 0, 0
+  index: -1
+bonney_skill1_07
+  rotate: true
+  xy: 105, 523
+  size: 84, 121
+  orig: 84, 121
+  offset: 0, 0
+  index: -1
+bonney_skill1_08
+  rotate: true
+  xy: 2, 778
+  size: 79, 98
+  orig: 79, 98
+  offset: 0, 0
+  index: -1
+bonney_skill1_09
+  rotate: true
+  xy: 163, 691
+  size: 83, 95
+  orig: 83, 95
+  offset: 0, 0
+  index: -1
+bonney_skill1_10
+  rotate: true
+  xy: 761, 885
+  size: 63, 119
+  orig: 63, 119
+  offset: 0, 0
+  index: -1
+bonney_skill1_11
+  rotate: true
+  xy: 650, 814
+  size: 69, 122
+  orig: 69, 122
+  offset: 0, 0
+  index: -1
+bonney_skill1_12
+  rotate: true
+  xy: 532, 663
+  size: 76, 118
+  orig: 76, 118
+  offset: 0, 0
+  index: -1
+bonney_skill1_13
+  rotate: true
+  xy: 263, 767
+  size: 70, 111
+  orig: 70, 111
+  offset: 0, 0
+  index: -1
+bonney_skill1_14
+  rotate: true
+  xy: 652, 662
+  size: 77, 115
+  orig: 77, 115
+  offset: 0, 0
+  index: -1
+bonney_skill1_14a
+  rotate: true
+  xy: 228, 516
+  size: 85, 116
+  orig: 98, 124
+  offset: 9, 3
+  index: -1
+bonney_skill1_15
+  rotate: true
+  xy: 2, 342
+  size: 91, 130
+  orig: 91, 130
+  offset: 0, 0
+  index: -1
+bonney_skill1_16
+  rotate: true
+  xy: 111, 847
+  size: 63, 150
+  orig: 63, 150
+  offset: 0, 0
+  index: -1
+bonney_skill1_17
+  rotate: true
+  xy: 487, 752
+  size: 71, 119
+  orig: 71, 119
+  offset: 0, 0
+  index: -1
+bonney_skill1_18
+  rotate: true
+  xy: 2, 242
+  size: 98, 119
+  orig: 98, 119
+  offset: 0, 0
+  index: -1
+bonney_skill1_19
+  rotate: true
+  xy: 624, 67
+  size: 100, 132
+  orig: 100, 132
+  offset: 0, 0
+  index: -1
+bonney_skill1_20
+  rotate: false
+  xy: 2, 930
+  size: 65, 49
+  orig: 66, 50
+  offset: 0, 1
+  index: -1
+bonney_skill1_2001
+  rotate: false
+  xy: 738, 954
+  size: 54, 41
+  orig: 54, 41
+  offset: 0, 0
+  index: -1
+bonney_skill1_2003
+  rotate: true
+  xy: 215, 971
+  size: 29, 32
+  orig: 29, 32
+  offset: 0, 0
+  index: -1
+bonney_skill1_2004
+  rotate: true
+  xy: 143, 974
+  size: 26, 36
+  orig: 26, 36
+  offset: 0, 0
+  index: -1
+bonney_skill1_2005
+  rotate: false
+  xy: 33, 1005
+  size: 12, 9
+  orig: 12, 9
+  offset: 0, 0
+  index: -1
+bonney_skill1_2006
+  rotate: false
+  xy: 252, 1001
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+bonney_skill1_2007
+  rotate: true
+  xy: 189, 1002
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+bonney_skill1_2008
+  rotate: false
+  xy: 2, 985
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+bonney_skill1_2009
+  rotate: true
+  xy: 208, 1002
+  size: 12, 20
+  orig: 12, 20
+  offset: 0, 0
+  index: -1
+bonney_skill1_2010
+  rotate: true
+  xy: 686, 998
+  size: 16, 25
+  orig: 16, 25
+  offset: 0, 0
+  index: -1
+bonney_skill1_2011
+  rotate: false
+  xy: 270, 1001
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+bonney_skill1_2012
+  rotate: false
+  xy: 291, 1001
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+bonney_skill1_2013
+  rotate: false
+  xy: 839, 996
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+bonney_skill1_2014
+  rotate: true
+  xy: 121, 1003
+  size: 11, 19
+  orig: 11, 19
+  offset: 0, 0
+  index: -1
+bonney_skill1_2015
+  rotate: true
+  xy: 480, 1000
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+bonney_skill1_2016
+  rotate: true
+  xy: 309, 1001
+  size: 13, 17
+  orig: 13, 17
+  offset: 0, 0
+  index: -1
+bonney_skill1_2017
+  rotate: true
+  xy: 505, 1000
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+bonney_skill1_2018
+  rotate: false
+  xy: 230, 1002
+  size: 20, 12
+  orig: 20, 12
+  offset: 0, 0
+  index: -1
+bonney_skill1_2019
+  rotate: true
+  xy: 142, 1003
+  size: 11, 15
+  orig: 11, 15
+  offset: 0, 0
+  index: -1
+bonney_skill1_2020
+  rotate: true
+  xy: 596, 959
+  size: 38, 64
+  orig: 38, 64
+  offset: 0, 0
+  index: -1
+bonney_skill1_21
+  rotate: false
+  xy: 696, 890
+  size: 63, 62
+  orig: 66, 62
+  offset: 0, 0
+  index: -1
+bonney_skill1_22
+  rotate: false
+  xy: 130, 915
+  size: 63, 56
+  orig: 68, 65
+  offset: 0, 4
+  index: -1
+bonney_skill1_24
+  rotate: true
+  xy: 571, 896
+  size: 58, 123
+  orig: 58, 123
+  offset: 0, 0
+  index: -1
+bonney_skill1_25
+  rotate: true
+  xy: 195, 912
+  size: 55, 123
+  orig: 55, 123
+  offset: 0, 0
+  index: -1
+bonney_skill1_26
+  rotate: true
+  xy: 320, 906
+  size: 55, 123
+  orig: 55, 123
+  offset: 0, 0
+  index: -1
+bonney_skill2_02
+  rotate: true
+  xy: 388, 836
+  size: 68, 99
+  orig: 68, 99
+  offset: 0, 0
+  index: -1
+bonney_skill2_03
+  rotate: false
+  xy: 935, 786
+  size: 76, 94
+  orig: 76, 94
+  offset: 0, 0
+  index: -1
+bonney_skill2_04
+  rotate: true
+  xy: 263, 839
+  size: 65, 123
+  orig: 65, 123
+  offset: 0, 0
+  index: -1
+bonney_skill2_05
+  rotate: true
+  xy: 376, 756
+  size: 78, 109
+  orig: 78, 109
+  offset: 0, 0
+  index: -1
+bonney_skill2_06
+  rotate: true
+  xy: 2, 621
+  size: 79, 109
+  orig: 79, 109
+  offset: 0, 0
+  index: -1
+bonney_skill2_07
+  rotate: true
+  xy: 260, 687
+  size: 78, 109
+  orig: 78, 109
+  offset: 0, 0
+  index: -1
+bonney_skill2_12
+  rotate: false
+  xy: 768, 461
+  size: 107, 102
+  orig: 107, 102
+  offset: 0, 0
+  index: -1
+bonney_skill2_12a
+  rotate: false
+  xy: 636, 290
+  size: 107, 102
+  orig: 107, 102
+  offset: 0, 0
+  index: -1
+bonney_skill2_13
+  rotate: true
+  xy: 2, 528
+  size: 91, 101
+  orig: 91, 101
+  offset: 0, 0
+  index: -1
+bonney_skill2_14
+  rotate: true
+  xy: 777, 565
+  size: 90, 103
+  orig: 90, 103
+  offset: 0, 0
+  index: -1
+bonney_skill2_15
+  rotate: true
+  xy: 113, 609
+  size: 80, 124
+  orig: 80, 124
+  offset: 0, 0
+  index: -1
+bonney_skill2_16
+  rotate: true
+  xy: 882, 882
+  size: 63, 130
+  orig: 63, 130
+  offset: 0, 0
+  index: -1
+bonney_skill2_17
+  rotate: true
+  xy: 2, 859
+  size: 63, 107
+  orig: 63, 107
+  offset: 0, 0
+  index: -1
+bonney_skill2_18
+  rotate: true
+  xy: 445, 906
+  size: 55, 124
+  orig: 55, 124
+  offset: 0, 0
+  index: -1
+bonney_skill3_01
+  rotate: true
+  xy: 774, 811
+  size: 69, 159
+  orig: 69, 159
+  offset: 0, 0
+  index: -1
+bonney_skill3_02
+  rotate: true
+  xy: 608, 741
+  size: 71, 159
+  orig: 71, 159
+  offset: 0, 0
+  index: -1
+bonney_skill3_03
+  rotate: true
+  xy: 371, 676
+  size: 74, 159
+  orig: 74, 159
+  offset: 0, 0
+  index: -1
+bonney_skill3_04
+  rotate: true
+  xy: 769, 738
+  size: 71, 159
+  orig: 71, 159
+  offset: 0, 0
+  index: -1
+bonney_skill3_05
+  rotate: true
+  xy: 356, 595
+  size: 79, 158
+  orig: 79, 158
+  offset: 0, 0
+  index: -1
+bonney_skill3_06
+  rotate: true
+  xy: 136, 427
+  size: 87, 159
+  orig: 87, 159
+  offset: 0, 0
+  index: -1
+bonney_skill3_07
+  rotate: true
+  xy: 585, 394
+  size: 89, 159
+  orig: 89, 159
+  offset: 0, 0
+  index: -1
+bonney_skill3_08
+  rotate: true
+  xy: 2, 702
+  size: 72, 159
+  orig: 72, 159
+  offset: 0, 0
+  index: -1
+bonney_skill3_1901
+  rotate: true
+  xy: 603, 999
+  size: 15, 21
+  orig: 15, 21
+  offset: 0, 0
+  index: -1
+bonney_skill3_1902
+  rotate: true
+  xy: 626, 999
+  size: 15, 25
+  orig: 15, 25
+  offset: 0, 0
+  index: -1
+bonney_skill3_1903
+  rotate: false
+  xy: 368, 964
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+bonney_skill3_1904
+  rotate: true
+  xy: 111, 976
+  size: 25, 30
+  orig: 25, 30
+  offset: 0, 0
+  index: -1
+bonney_skill3_1905
+  rotate: false
+  xy: 87, 980
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+bonney_skill3_1906
+  rotate: true
+  xy: 713, 998
+  size: 16, 23
+  orig: 16, 23
+  offset: 0, 0
+  index: -1
+bonney_skill3_1907
+  rotate: true
+  xy: 738, 998
+  size: 16, 25
+  orig: 16, 25
+  offset: 0, 0
+  index: -1
+bonney_skill3_1908
+  rotate: true
+  xy: 765, 997
+  size: 17, 21
+  orig: 17, 21
+  offset: 0, 0
+  index: -1
+bonney_standby_01
+  rotate: true
+  xy: 297, 421
+  size: 87, 152
+  orig: 87, 152
+  offset: 0, 0
+  index: -1
+bonney_standby_02
+  rotate: true
+  xy: 497, 491
+  size: 85, 148
+  orig: 85, 148
+  offset: 0, 0
+  index: -1
+bonney_win_01
+  rotate: true
+  xy: 102, 776
+  size: 69, 159
+  orig: 69, 159
+  offset: 0, 0
+  index: -1
+bonney_win_02
+  rotate: true
+  xy: 516, 578
+  size: 82, 138
+  orig: 82, 138
+  offset: 0, 0
+  index: -1
+bonney_win_03
+  rotate: true
+  xy: 629, 181
+  size: 107, 114
+  orig: 107, 114
+  offset: 0, 0
+  index: -1
+bonney_win_05
+  rotate: true
+  xy: 262, 326
+  size: 93, 121
+  orig: 93, 121
+  offset: 0, 0
+  index: -1
+bonney_win_06
+  rotate: true
+  xy: 259, 225
+  size: 99, 121
+  orig: 99, 121
+  offset: 0, 0
+  index: -1
+bonney_win_07
+  rotate: true
+  xy: 882, 512
+  size: 85, 119
+  orig: 85, 119
+  offset: 0, 0
+  index: -1
+bonney_win_08
+  rotate: true
+  xy: 892, 599
+  size: 82, 119
+  orig: 82, 119
+  offset: 0, 0
+  index: -1
+bonney_win_09
+  rotate: true
+  xy: 647, 485
+  size: 85, 119
+  orig: 85, 119
+  offset: 0, 0
+  index: -1
+bonney_win_10
+  rotate: true
+  xy: 513, 298
+  size: 94, 121
+  orig: 94, 121
+  offset: 0, 0
+  index: -1
+bonney_win_11
+  rotate: true
+  xy: 745, 169
+  size: 99, 124
+  orig: 99, 124
+  offset: 0, 0
+  index: -1
+bonney_win_12
+  rotate: true
+  xy: 2, 135
+  size: 99, 124
+  orig: 99, 124
+  offset: 0, 0
+  index: -1
+bonney_win_13
+  rotate: false
+  xy: 758, 43
+  size: 102, 124
+  orig: 102, 124
+  offset: 0, 0
+  index: -1
+bonney_win_14
+  rotate: true
+  xy: 511, 194
+  size: 102, 116
+  orig: 102, 116
+  offset: 0, 0
+  index: -1
+bonney_win_15
+  rotate: true
+  xy: 128, 135
+  size: 99, 128
+  orig: 99, 128
+  offset: 0, 0
+  index: -1
+bonney_win_16
+  rotate: true
+  xy: 2, 33
+  size: 100, 124
+  orig: 100, 124
+  offset: 0, 0
+  index: -1
+bonney_win_17
+  rotate: true
+  xy: 128, 33
+  size: 100, 124
+  orig: 100, 124
+  offset: 0, 0
+  index: -1
+bonney_win_18
+  rotate: true
+  xy: 862, 25
+  size: 100, 124
+  orig: 100, 124
+  offset: 0, 0
+  index: -1
+bonney_win_19
+  rotate: true
+  xy: 873, 228
+  size: 98, 122
+  orig: 98, 122
+  offset: 0, 0
+  index: -1
+bonney_win_20
+  rotate: true
+  xy: 382, 205
+  size: 98, 127
+  orig: 98, 127
+  offset: 0, 0
+  index: -1
+bonney_win_21
+  rotate: true
+  xy: 656, 572
+  size: 83, 119
+  orig: 83, 119
+  offset: 0, 0
+  index: -1
+bonney_win_22
+  rotate: true
+  xy: 385, 305
+  size: 93, 126
+  orig: 93, 126
+  offset: 0, 0
+  index: -1
+bonney_win_23
+  rotate: true
+  xy: 871, 127
+  size: 99, 124
+  orig: 99, 124
+  offset: 0, 0
+  index: -1
+bonney_win_24
+  rotate: true
+  xy: 372, 104
+  size: 99, 124
+  orig: 99, 124
+  offset: 0, 0
+  index: -1
+bonney_win_25
+  rotate: true
+  xy: 498, 93
+  size: 99, 124
+  orig: 99, 124
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_02
+  rotate: true
+  xy: 2, 435
+  size: 86, 132
+  orig: 86, 132
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_03
+  rotate: true
+  xy: 877, 423
+  size: 87, 124
+  orig: 87, 124
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_04
+  rotate: true
+  xy: 254, 2
+  size: 100, 144
+  orig: 100, 144
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_05
+  rotate: true
+  xy: 346, 510
+  size: 83, 149
+  orig: 83, 149
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_06
+  rotate: true
+  xy: 745, 270
+  size: 95, 126
+  orig: 95, 126
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_07
+  rotate: true
+  xy: 134, 333
+  size: 92, 126
+  orig: 92, 126
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_17
+  rotate: true
+  xy: 258, 115
+  size: 108, 112
+  orig: 108, 112
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 869, 950
+  size: 60, 44
+  orig: 60, 44
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 24, 983
+  size: 19, 34
+  orig: 19, 34
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 60, 981
+  size: 25, 21
+  orig: 25, 21
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 328, 1001
+  size: 13, 35
+  orig: 13, 35
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 47, 1004
+  size: 10, 32
+  orig: 10, 32
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 2, 1006
+  size: 8, 29
+  orig: 8, 31
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 861, 996
+  size: 18, 34
+  orig: 18, 34
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: true
+  xy: 365, 1001
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 788, 997
+  size: 26, 17
+  orig: 26, 17
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: false
+  xy: 388, 1001
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: false
+  xy: 897, 996
+  size: 28, 18
+  orig: 28, 18
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: true
+  xy: 249, 969
+  size: 30, 72
+  orig: 30, 72
+  offset: 0, 0
+  index: -1
+cloth_14
+  rotate: true
+  xy: 407, 1001
+  size: 13, 20
+  orig: 13, 20
+  offset: 0, 0
+  index: -1
+cloth_15
+  rotate: true
+  xy: 522, 1000
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+cloth_16
+  rotate: true
+  xy: 181, 973
+  size: 27, 32
+  orig: 29, 32
+  offset: 2, 0
+  index: -1
+cloth_17
+  rotate: true
+  xy: 539, 1000
+  size: 14, 22
+  orig: 17, 26
+  offset: 3, 1
+  index: -1
+cloth_18
+  rotate: false
+  xy: 563, 1000
+  size: 14, 14
+  orig: 16, 14
+  offset: 2, 0
+  index: -1
+cloth_21
+  rotate: false
+  xy: 931, 947
+  size: 62, 47
+  orig: 63, 47
+  offset: 0, 0
+  index: -1
+cloth_22
+  rotate: false
+  xy: 662, 956
+  size: 74, 40
+  orig: 74, 44
+  offset: 0, 1
+  index: -1
+cloth_23
+  rotate: false
+  xy: 794, 952
+  size: 73, 42
+  orig: 74, 45
+  offset: 0, 1
+  index: -1
+cloth_24
+  rotate: false
+  xy: 69, 924
+  size: 59, 50
+  orig: 64, 55
+  offset: 3, 2
+  index: -1
+cloth_25
+  rotate: true
+  xy: 81, 1004
+  size: 10, 17
+  orig: 10, 19
+  offset: 0, 2
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 429, 1001
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 927, 996
+  size: 24, 18
+  orig: 24, 18
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 579, 1000
+  size: 14, 22
+  orig: 14, 22
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 100, 1004
+  size: 10, 19
+  orig: 10, 19
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 457, 1001
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 406, 964
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 444, 963
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+head_11
+  rotate: false
+  xy: 482, 963
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+head_12
+  rotate: false
+  xy: 520, 963
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+head_14
+  rotate: false
+  xy: 558, 963
+  size: 36, 35
+  orig: 36, 35
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 953, 996
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+shnak_L_04
+  rotate: true
+  xy: 816, 997
+  size: 17, 21
+  orig: 17, 21
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 653, 999
+  size: 15, 31
+  orig: 15, 31
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 977, 996
+  size: 18, 33
+  orig: 18, 33
+  offset: 0, 0
+  index: -1
+
+Hero_1272.png
+size: 904,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bonney_beat_01
+  rotate: true
+  xy: 511, 24
+  size: 108, 135
+  orig: 108, 135
+  offset: 0, 0
+  index: -1
+bonney_beat_03
+  rotate: true
+  xy: 2, 2
+  size: 116, 135
+  orig: 116, 135
+  offset: 0, 0
+  index: -1
+bonney_beat_04
+  rotate: true
+  xy: 375, 11
+  size: 121, 134
+  orig: 121, 134
+  offset: 0, 0
+  index: -1
+bonney_beat_05
+  rotate: false
+  xy: 2, 120
+  size: 143, 134
+  orig: 143, 134
+  offset: 0, 0
+  index: -1
+bonney_beat_06
+  rotate: false
+  xy: 738, 120
+  size: 137, 134
+  orig: 137, 134
+  offset: 0, 0
+  index: -1
+bonney_skill1_03
+  rotate: true
+  xy: 147, 146
+  size: 108, 164
+  orig: 108, 164
+  offset: 0, 0
+  index: -1
+bonney_win_04
+  rotate: true
+  xy: 648, 9
+  size: 109, 126
+  orig: 109, 126
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_12
+  rotate: false
+  xy: 456, 134
+  size: 139, 120
+  orig: 139, 120
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_12a
+  rotate: false
+  xy: 597, 134
+  size: 139, 120
+  orig: 139, 120
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_13
+  rotate: true
+  xy: 139, 2
+  size: 116, 120
+  orig: 116, 120
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_14
+  rotate: true
+  xy: 776, 6
+  size: 112, 126
+  orig: 112, 126
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_15
+  rotate: true
+  xy: 313, 145
+  size: 109, 141
+  orig: 109, 141
+  offset: 0, 0
+  index: -1
+bonneybig_skill2_16
+  rotate: true
+  xy: 261, 2
+  size: 116, 112
+  orig: 116, 112
+  offset: 0, 0
+  index: -1

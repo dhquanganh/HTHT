@@ -1,0 +1,13 @@
+
+Hit2_432.png
+size: 264,264
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/dikeng_1
+  rotate: false
+  xy: 3, 3
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

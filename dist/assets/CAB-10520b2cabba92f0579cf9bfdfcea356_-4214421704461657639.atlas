@@ -1,0 +1,405 @@
+
+Hero_471.png
+size: 1172,148
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 34
+  rotate: false
+  xy: 1072, 105
+  size: 26, 41
+  orig: 28, 43
+  offset: 1, 1
+  index: -1
+Layer 40
+  rotate: false
+  xy: 1100, 111
+  size: 33, 35
+  orig: 33, 35
+  offset: 0, 0
+  index: -1
+ban tay gay 2
+  rotate: true
+  xy: 1133, 63
+  size: 15, 19
+  orig: 18, 21
+  offset: 2, 1
+  index: -1
+ban tay phai 1
+  rotate: true
+  xy: 783, 25
+  size: 59, 40
+  orig: 61, 42
+  offset: 1, 1
+  index: -1
+body 1
+  rotate: false
+  xy: 356, 2
+  size: 42, 49
+  orig: 42, 49
+  offset: 0, 0
+  index: -1
+body at2
+  rotate: false
+  xy: 481, 3
+  size: 52, 60
+  orig: 54, 62
+  offset: 1, 1
+  index: -1
+body attack 1
+  rotate: true
+  xy: 884, 94
+  size: 52, 45
+  orig: 52, 45
+  offset: 0, 0
+  index: -1
+body run
+  rotate: true
+  xy: 254, 2
+  size: 49, 52
+  orig: 50, 52
+  offset: 1, 0
+  index: -1
+chan phai
+  rotate: true
+  xy: 783, 2
+  size: 21, 44
+  orig: 24, 46
+  offset: 1, 1
+  index: -1
+chan phai at1
+  rotate: false
+  xy: 789, 90
+  size: 28, 56
+  orig: 30, 58
+  offset: 1, 1
+  index: -1
+chan phai at2
+  rotate: false
+  xy: 931, 95
+  size: 42, 51
+  orig: 44, 53
+  offset: 1, 1
+  index: -1
+chan phai run
+  rotate: true
+  xy: 919, 41
+  size: 51, 43
+  orig: 51, 43
+  offset: 0, 0
+  index: -1
+chan sau at2
+  rotate: false
+  xy: 374, 53
+  size: 57, 93
+  orig: 57, 93
+  offset: 0, 0
+  index: -1
+chan trai
+  rotate: false
+  xy: 1027, 50
+  size: 38, 46
+  orig: 40, 56
+  offset: 0, 0
+  index: -1
+chan trai 1
+  rotate: true
+  xy: 883, 2
+  size: 32, 48
+  orig: 33, 49
+  offset: 0, 1
+  index: -1
+chan trai at1
+  rotate: true
+  xy: 1099, 63
+  size: 40, 32
+  orig: 40, 37
+  offset: 0, 5
+  index: -1
+chan trai run
+  rotate: true
+  xy: 995, 47
+  size: 48, 30
+  orig: 106, 32
+  offset: 0, 0
+  index: -1
+dau at3
+  rotate: false
+  xy: 615, 70
+  size: 76, 76
+  orig: 78, 78
+  offset: 1, 1
+  index: -1
+dau atk2
+  rotate: false
+  xy: 433, 65
+  size: 62, 81
+  orig: 74, 84
+  offset: 1, 2
+  index: -1
+dau attack1
+  rotate: true
+  xy: 693, 78
+  size: 68, 62
+  orig: 73, 69
+  offset: 1, 2
+  index: -1
+dau-hit
+  rotate: false
+  xy: 497, 66
+  size: 63, 80
+  orig: 63, 80
+  offset: 0, 0
+  index: -1
+dau-hittt
+  rotate: false
+  xy: 608, 3
+  size: 62, 64
+  orig: 62, 64
+  offset: 0, 0
+  index: -1
+dui phai at1
+  rotate: true
+  xy: 1037, 3
+  size: 45, 40
+  orig: 45, 49
+  offset: 0, 8
+  index: -1
+dui phai rụn
+  rotate: true
+  xy: 974, 2
+  size: 39, 38
+  orig: 39, 38
+  offset: 0, 0
+  index: -1
+dui trai at1
+  rotate: false
+  xy: 852, 36
+  size: 30, 54
+  orig: 32, 56
+  offset: 1, 1
+  index: -1
+dui trai run
+  rotate: false
+  xy: 1104, 27
+  size: 34, 34
+  orig: 34, 34
+  offset: 0, 0
+  index: -1
+gay attack 1
+  rotate: false
+  xy: 2, 10
+  size: 133, 136
+  orig: 133, 138
+  offset: 0, 2
+  index: -1
+head 1
+  rotate: true
+  xy: 672, 2
+  size: 66, 70
+  orig: 80, 72
+  offset: 1, 1
+  index: -1
+head run
+  rotate: true
+  xy: 535, 2
+  size: 62, 71
+  orig: 64, 78
+  offset: 1, 1
+  index: -1
+tai trai run
+  rotate: true
+  xy: 884, 40
+  size: 52, 33
+  orig: 52, 33
+  offset: 0, 0
+  index: -1
+tay gay 4
+  rotate: false
+  xy: 202, 53
+  size: 170, 93
+  orig: 171, 94
+  offset: 0, 1
+  index: -1
+tay phai 1
+  rotate: true
+  xy: 1140, 32
+  size: 29, 25
+  orig: 29, 25
+  offset: 0, 0
+  index: -1
+tay phai at2
+  rotate: false
+  xy: 975, 97
+  size: 33, 49
+  orig: 34, 49
+  offset: 1, 0
+  index: -1
+tay trai 1
+  rotate: true
+  xy: 1079, 13
+  size: 41, 23
+  orig: 43, 25
+  offset: 1, 1
+  index: -1
+tay trai 2
+  rotate: false
+  xy: 1014, 2
+  size: 21, 43
+  orig: 23, 45
+  offset: 1, 1
+  index: -1
+tay-phai-at1
+  rotate: true
+  xy: 562, 69
+  size: 77, 51
+  orig: 77, 51
+  offset: 0, 0
+  index: -1
+tay-phai-run
+  rotate: true
+  xy: 137, 40
+  size: 106, 63
+  orig: 106, 63
+  offset: 0, 0
+  index: -1
+tay-trai-at1
+  rotate: true
+  xy: 1010, 98
+  size: 48, 20
+  orig: 49, 21
+  offset: 1, 1
+  index: -1
+tay-trai-atk1
+  rotate: false
+  xy: 1104, 2
+  size: 31, 23
+  orig: 31, 23
+  offset: 0, 0
+  index: -1
+tay-trai-dead
+  rotate: true
+  xy: 1032, 102
+  size: 44, 38
+  orig: 44, 38
+  offset: 0, 0
+  index: -1
+toc 1
+  rotate: false
+  xy: 849, 92
+  size: 33, 54
+  orig: 37, 61
+  offset: 0, 7
+  index: -1
+toc attack 1
+  rotate: false
+  xy: 137, 2
+  size: 61, 36
+  orig: 66, 39
+  offset: 5, 2
+  index: -1
+toc sau run
+  rotate: false
+  xy: 308, 2
+  size: 46, 49
+  orig: 49, 58
+  offset: 3, 7
+  index: -1
+tocat2
+  rotate: false
+  xy: 819, 90
+  size: 28, 56
+  orig: 29, 58
+  offset: 0, 2
+  index: -1
+vai phai 1
+  rotate: true
+  xy: 1137, 4
+  size: 21, 31
+  orig: 23, 33
+  offset: 1, 1
+  index: -1
+vai trai 1
+  rotate: false
+  xy: 1133, 80
+  size: 26, 29
+  orig: 28, 31
+  offset: 1, 1
+  index: -1
+vat ao 1tk1
+  rotate: true
+  xy: 825, 33
+  size: 55, 25
+  orig: 55, 25
+  offset: 0, 0
+  index: -1
+vat ao at22
+  rotate: false
+  xy: 400, 2
+  size: 35, 49
+  orig: 35, 49
+  offset: 0, 0
+  index: -1
+vat ao run
+  rotate: true
+  xy: 757, 86
+  size: 60, 30
+  orig: 60, 30
+  offset: 0, 0
+  index: -1
+vat ao sau at1
+  rotate: true
+  xy: 757, 86
+  size: 60, 30
+  orig: 60, 30
+  offset: 0, 0
+  index: -1
+vat ao sau 1
+  rotate: false
+  xy: 744, 12
+  size: 37, 64
+  orig: 44, 65
+  offset: 0, 0
+  index: -1
+vat ao sau 12
+  rotate: false
+  xy: 829, 2
+  size: 52, 29
+  orig: 54, 29
+  offset: 0, 0
+  index: -1
+vat aoat2
+  rotate: true
+  xy: 437, 2
+  size: 61, 42
+  orig: 61, 42
+  offset: 0, 0
+  index: -1
+vat at 2
+  rotate: true
+  xy: 933, 2
+  size: 37, 39
+  orig: 37, 39
+  offset: 0, 0
+  index: -1
+vay 1
+  rotate: true
+  xy: 964, 43
+  size: 50, 29
+  orig: 51, 29
+  offset: 0, 0
+  index: -1
+vay attack 1
+  rotate: false
+  xy: 200, 3
+  size: 52, 35
+  orig: 60, 35
+  offset: 0, 0
+  index: -1
+vay run
+  rotate: true
+  xy: 1067, 56
+  size: 44, 30
+  orig: 44, 32
+  offset: 0, 1
+  index: -1

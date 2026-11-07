@@ -1,0 +1,97 @@
+
+Skill_328_2.png
+size: 840,684
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Sanji_2yl_skill2/001
+  rotate: true
+  xy: 684, 8
+  size: 135, 153
+  orig: 140, 158
+  offset: 3, 1
+  index: -1
+Char_Sanji_2yl_skill2/002
+  rotate: true
+  xy: 564, 492
+  size: 190, 259
+  orig: 195, 265
+  offset: 3, 2
+  index: -1
+Char_Sanji_2yl_skill2/005
+  rotate: false
+  xy: 2, 2
+  size: 201, 224
+  orig: 206, 231
+  offset: 3, 2
+  index: -1
+Char_Sanji_2yl_skill2/006
+  rotate: false
+  xy: 205, 25
+  size: 228, 201
+  orig: 235, 207
+  offset: 5, 1
+  index: -1
+Char_Sanji_2yl_skill2/007
+  rotate: false
+  xy: 297, 461
+  size: 265, 221
+  orig: 272, 229
+  offset: 5, 2
+  index: -1
+Char_Sanji_2yl_skill2/008
+  rotate: false
+  xy: 2, 228
+  size: 281, 227
+  orig: 286, 232
+  offset: 4, 2
+  index: -1
+Char_Sanji_2yl_skill2/009
+  rotate: false
+  xy: 2, 457
+  size: 293, 225
+  orig: 299, 230
+  offset: 4, 2
+  index: -1
+Char_Sanji_2yl_skill2/010
+  rotate: false
+  xy: 564, 375
+  size: 271, 115
+  orig: 275, 118
+  offset: 3, 1
+  index: -1
+Char_Sanji_2yl_skill2/011
+  rotate: false
+  xy: 297, 350
+  size: 262, 109
+  orig: 266, 113
+  offset: 2, 2
+  index: -1
+Char_Sanji_2yl_skill2/012
+  rotate: false
+  xy: 285, 239
+  size: 262, 109
+  orig: 266, 113
+  offset: 2, 2
+  index: -1
+Char_Sanji_2yl_skill2/013
+  rotate: false
+  xy: 549, 145
+  size: 248, 113
+  orig: 252, 117
+  offset: 3, 1
+  index: -1
+Char_Sanji_2yl_skill2/014
+  rotate: false
+  xy: 435, 31
+  size: 247, 112
+  orig: 252, 117
+  offset: 3, 2
+  index: -1
+Char_Sanji_2yl_skill2/015
+  rotate: false
+  xy: 561, 260
+  size: 257, 113
+  orig: 262, 117
+  offset: 3, 2
+  index: -1

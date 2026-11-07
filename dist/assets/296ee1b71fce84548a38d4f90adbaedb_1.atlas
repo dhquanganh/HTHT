@@ -1,0 +1,55 @@
+
+Hit_91.png
+size: 487,314
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/craw
+  rotate: true
+  xy: 245, 138
+  size: 174, 95
+  orig: 234, 171
+  offset: 26, 34
+  index: -1
+fx/dg_lan_1
+  rotate: true
+  xy: 2, 107
+  size: 205, 241
+  orig: 228, 300
+  offset: 8, 17
+  index: -1
+fx/g (2)
+  rotate: false
+  xy: 2, 2
+  size: 110, 103
+  orig: 110, 103
+  offset: 0, 0
+  index: -1
+fx/g (3)
+  rotate: false
+  xy: 114, 3
+  size: 125, 102
+  orig: 125, 102
+  offset: 0, 0
+  index: -1
+fx/g (4)
+  rotate: true
+  xy: 382, 5
+  size: 136, 103
+  orig: 136, 103
+  offset: 0, 0
+  index: -1
+fx/g (5)
+  rotate: false
+  xy: 245, 31
+  size: 135, 105
+  orig: 135, 105
+  offset: 0, 0
+  index: -1
+fx/skill
+  rotate: true
+  xy: 342, 143
+  size: 169, 96
+  orig: 177, 101
+  offset: 0, 0
+  index: -1

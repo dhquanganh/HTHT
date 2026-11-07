@@ -1,0 +1,83 @@
+
+Hammer.png
+size: 568,264
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 478, 164
+  size: 85, 95
+  orig: 85, 98
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 260, 69
+  size: 107, 96
+  orig: 137, 149
+  offset: 17, 27
+  index: -1
+images/ht_sand_01
+  rotate: false
+  xy: 475, 3
+  size: 19, 33
+  orig: 128, 128
+  offset: 49, 20
+  index: -1
+images/ht_sand_03
+  rotate: false
+  xy: 500, 73
+  size: 57, 89
+  orig: 128, 128
+  offset: 32, 17
+  index: -1
+images/ht_sand_05
+  rotate: true
+  xy: 379, 2
+  size: 69, 94
+  orig: 128, 128
+  offset: 22, 17
+  index: -1
+images/ht_sand_07
+  rotate: true
+  xy: 369, 73
+  size: 87, 104
+  orig: 128, 128
+  offset: 21, 15
+  index: -1
+images/ht_sand_09
+  rotate: true
+  xy: 375, 162
+  size: 97, 101
+  orig: 128, 128
+  offset: 16, 11
+  index: -1
+images/ht_sand_11
+  rotate: false
+  xy: 260, 167
+  size: 113, 92
+  orig: 128, 128
+  offset: 8, 10
+  index: -1
+images/ht_sand_13
+  rotate: false
+  xy: 260, 7
+  size: 117, 60
+  orig: 128, 128
+  offset: 6, 10
+  index: -1
+images/ht_sand_15
+  rotate: true
+  xy: 475, 38
+  size: 122, 23
+  orig: 128, 128
+  offset: 3, 11
+  index: -1
+texture_3008
+  rotate: false
+  xy: 2, 3
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1

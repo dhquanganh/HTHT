@@ -1,0 +1,55 @@
+
+maid3.png
+size: 852,504
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer1
+  rotate: true
+  xy: 2, 98
+  size: 402, 286
+  orig: 402, 286
+  offset: 0, 0
+  index: -1
+Layer2
+  rotate: false
+  xy: 680, 93
+  size: 150, 123
+  orig: 150, 123
+  offset: 0, 0
+  index: -1
+armR
+  rotate: true
+  xy: 145, 53
+  size: 43, 132
+  orig: 44, 133
+  offset: 1, 0
+  index: -1
+armR2
+  rotate: true
+  xy: 2, 2
+  size: 94, 141
+  orig: 94, 141
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 290, 20
+  size: 193, 196
+  orig: 194, 196
+  offset: 0, 0
+  index: -1
+head copy
+  rotate: false
+  xy: 485, 20
+  size: 193, 196
+  orig: 194, 196
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 290, 218
+  size: 559, 282
+  orig: 559, 282
+  offset: 0, 0
+  index: -1

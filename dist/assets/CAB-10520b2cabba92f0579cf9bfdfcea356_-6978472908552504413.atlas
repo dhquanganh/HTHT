@@ -1,0 +1,279 @@
+
+Skill_316.png
+size: 1952,316
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4/cast_body1
+  rotate: false
+  xy: 1849, 136
+  size: 90, 88
+  orig: 102, 102
+  offset: 0, 9
+  index: -1
+4/cast_feet
+  rotate: false
+  xy: 1423, 191
+  size: 123, 123
+  orig: 128, 128
+  offset: 4, 1
+  index: -1
+OT/03Might Guy/images/leave_01
+  rotate: true
+  xy: 907, 105
+  size: 46, 44
+  orig: 64, 64
+  offset: 12, 13
+  index: -1
+OT/03Might Guy/images/leave_02
+  rotate: false
+  xy: 811, 100
+  size: 49, 51
+  orig: 64, 64
+  offset: 2, 5
+  index: -1
+OT/03Might Guy/images/leave_03
+  rotate: false
+  xy: 953, 108
+  size: 43, 43
+  orig: 64, 64
+  offset: 12, 6
+  index: -1
+OT/03Might Guy/images/leave_04
+  rotate: true
+  xy: 862, 103
+  size: 48, 43
+  orig: 64, 64
+  offset: 6, 11
+  index: -1
+OT/03Might Guy/images/set/ciguang
+  rotate: false
+  xy: 322, 69
+  size: 217, 245
+  orig: 232, 257
+  offset: 5, 7
+  index: -1
+OT/03Might Guy/images/set/ciguang1
+  rotate: false
+  xy: 1311, 46
+  size: 116, 128
+  orig: 128, 128
+  offset: 5, 0
+  index: -1
+OT/03Might Guy/images/set/dd_huo_b_0
+  rotate: true
+  xy: 1548, 73
+  size: 119, 110
+  orig: 150, 150
+  offset: 23, 23
+  index: -1
+OT/03Might Guy/images/set/dd_huo_b_1
+  rotate: true
+  xy: 1296, 176
+  size: 138, 125
+  orig: 150, 150
+  offset: 12, 19
+  index: -1
+OT/03Might Guy/images/set/dd_huo_b_2
+  rotate: true
+  xy: 1046, 11
+  size: 140, 131
+  orig: 150, 150
+  offset: 10, 15
+  index: -1
+OT/03Might Guy/images/set/dd_huo_b_3
+  rotate: true
+  xy: 1179, 11
+  size: 140, 130
+  orig: 150, 150
+  offset: 10, 16
+  index: -1
+OT/03Might Guy/images/set/dd_huo_b_4
+  rotate: false
+  xy: 1429, 66
+  size: 117, 123
+  orig: 150, 150
+  offset: 17, 22
+  index: -1
+OT/03Might Guy/images/set/dd_huo_b_5
+  rotate: true
+  xy: 1626, 2
+  size: 69, 115
+  orig: 150, 150
+  offset: 16, 27
+  index: -1
+OT/03Might Guy/images/set/dd_huo_b_6
+  rotate: true
+  xy: 1429, 3
+  size: 61, 105
+  orig: 150, 150
+  offset: 19, 32
+  index: -1
+OT/03Might Guy/images/set/dudai_1
+  rotate: false
+  xy: 823, 4
+  size: 126, 94
+  orig: 131, 96
+  offset: 3, 0
+  index: -1
+OT/03Might Guy/images/set/dudai_2
+  rotate: false
+  xy: 575, 2
+  size: 119, 92
+  orig: 131, 96
+  offset: 12, 0
+  index: -1
+OT/03Might Guy/images/set/dudai_3
+  rotate: true
+  xy: 1660, 74
+  size: 119, 84
+  orig: 131, 96
+  offset: 11, 5
+  index: -1
+OT/03Might Guy/images/set/dudai_4
+  rotate: true
+  xy: 1746, 76
+  size: 117, 79
+  orig: 131, 96
+  offset: 13, 5
+  index: -1
+OT/03Might Guy/images/set/dudai_5
+  rotate: true
+  xy: 1311, 20
+  size: 24, 61
+  orig: 131, 96
+  offset: 88, 7
+  index: -1
+OT/03Might Guy/images/set/mask_1028
+  rotate: false
+  xy: 1747, 210
+  size: 100, 104
+  orig: 128, 128
+  offset: 16, 8
+  index: -1
+OT/03Might Guy/images/set/object_1051
+  rotate: false
+  xy: 172, 58
+  size: 148, 256
+  orig: 256, 256
+  offset: 52, 0
+  index: -1
+OT/03Might Guy/images/set/posui_00000
+  rotate: true
+  xy: 951, 2
+  size: 101, 93
+  orig: 125, 105
+  offset: 8, 0
+  index: -1
+OT/03Might Guy/images/set/posui_00001
+  rotate: false
+  xy: 696, 4
+  size: 125, 90
+  orig: 125, 105
+  offset: 0, 15
+  index: -1
+OT/03Might Guy/images/set/posui_00002
+  rotate: true
+  xy: 1548, 194
+  size: 120, 86
+  orig: 125, 105
+  offset: 2, 15
+  index: -1
+OT/03Might Guy/images/set/posui_00003
+  rotate: false
+  xy: 1536, 8
+  size: 88, 56
+  orig: 125, 105
+  offset: 26, 31
+  index: -1
+OT/03Might Guy/images/set/smoke_1002
+  rotate: true
+  xy: 2, 58
+  size: 256, 168
+  orig: 256, 256
+  offset: 0, 40
+  index: -1
+OT/03Might Guy/images/slash_feetA_01
+  rotate: false
+  xy: 418, 6
+  size: 155, 61
+  orig: 171, 128
+  offset: 6, 59
+  index: -1
+OT/03Might Guy/images/slash_feetA_02
+  rotate: true
+  xy: 1636, 195
+  size: 119, 109
+  orig: 170, 128
+  offset: 44, 10
+  index: -1
+OT/03Might Guy/images/slash_feetA_03
+  rotate: true
+  xy: 1849, 226
+  size: 88, 101
+  orig: 171, 128
+  offset: 75, 10
+  index: -1
+OT/03Might Guy/images/slash_feetA_04
+  rotate: false
+  xy: 1827, 51
+  size: 90, 83
+  orig: 171, 128
+  offset: 68, 9
+  index: -1
+OT/03Might Guy/images/slash_feetA_05
+  rotate: false
+  xy: 322, 3
+  size: 94, 64
+  orig: 170, 128
+  offset: 64, 9
+  index: -1
+OT/03Might Guy/images/slash_feetA_06
+  rotate: false
+  xy: 182, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/03Might Guy/images/slash_feetB_01
+  rotate: false
+  xy: 541, 96
+  size: 179, 218
+  orig: 256, 256
+  offset: 37, 10
+  index: -1
+OT/03Might Guy/images/slash_feetB_02
+  rotate: false
+  xy: 722, 106
+  size: 87, 208
+  orig: 256, 256
+  offset: 129, 26
+  index: -1
+OT/03Might Guy/images/slash_feetB_03
+  rotate: true
+  xy: 2, 2
+  size: 54, 178
+  orig: 256, 256
+  offset: 161, 65
+  index: -1
+OT/03Might Guy/images/slash_feetB_04
+  rotate: true
+  xy: 182, 5
+  size: 51, 138
+  orig: 256, 256
+  offset: 166, 111
+  index: -1
+blackdot1
+  rotate: false
+  xy: 998, 108
+  size: 40, 43
+  orig: 40, 43
+  offset: 0, 0
+  index: -1
+images/cutscene_franky_02
+  rotate: false
+  xy: 811, 153
+  size: 483, 161
+  orig: 540, 161
+  offset: 36, 0
+  index: -1

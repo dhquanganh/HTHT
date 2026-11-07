@@ -1,0 +1,111 @@
+
+Hit150.png
+size: 600,528
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+OT/03Might Guy/images/set/ciguang
+  rotate: false
+  xy: 2, 280
+  size: 217, 245
+  orig: 232, 257
+  offset: 5, 7
+  index: -1
+OT/03Might Guy/images/set/ciguang1
+  rotate: false
+  xy: 447, 397
+  size: 116, 128
+  orig: 128, 128
+  offset: 5, 0
+  index: -1
+OT/03Might Guy/images/set/dudai_1
+  rotate: false
+  xy: 447, 301
+  size: 126, 94
+  orig: 131, 96
+  offset: 3, 0
+  index: -1
+OT/03Might Guy/images/set/dudai_2
+  rotate: true
+  xy: 467, 180
+  size: 119, 92
+  orig: 131, 96
+  offset: 12, 0
+  index: -1
+OT/03Might Guy/images/set/dudai_3
+  rotate: false
+  xy: 299, 7
+  size: 119, 84
+  orig: 131, 96
+  offset: 11, 5
+  index: -1
+OT/03Might Guy/images/set/dudai_4
+  rotate: false
+  xy: 420, 11
+  size: 117, 79
+  orig: 131, 96
+  offset: 13, 5
+  index: -1
+OT/03Might Guy/images/set/dudai_5
+  rotate: false
+  xy: 565, 464
+  size: 24, 61
+  orig: 131, 96
+  offset: 88, 7
+  index: -1
+OT/03Might Guy/images/set/posui_00000
+  rotate: false
+  xy: 353, 93
+  size: 101, 93
+  orig: 125, 105
+  offset: 8, 0
+  index: -1
+OT/03Might Guy/images/set/posui_00001
+  rotate: false
+  xy: 172, 6
+  size: 125, 90
+  orig: 125, 105
+  offset: 0, 15
+  index: -1
+OT/03Might Guy/images/set/posui_00002
+  rotate: false
+  xy: 456, 92
+  size: 120, 86
+  orig: 125, 105
+  offset: 2, 15
+  index: -1
+OT/03Might Guy/images/set/posui_00003
+  rotate: true
+  xy: 539, 2
+  size: 88, 56
+  orig: 125, 105
+  offset: 26, 31
+  index: -1
+OT/03Might Guy/images/set/smoke_1002
+  rotate: true
+  xy: 2, 22
+  size: 256, 168
+  orig: 256, 256
+  offset: 0, 40
+  index: -1
+images/glow_1099
+  rotate: false
+  xy: 221, 301
+  size: 224, 224
+  orig: 256, 256
+  offset: 16, 16
+  index: -1
+images/glow_3004
+  rotate: false
+  xy: 353, 188
+  size: 112, 111
+  orig: 128, 128
+  offset: 8, 7
+  index: -1
+images/glow_5061
+  rotate: true
+  xy: 172, 98
+  size: 180, 179
+  orig: 256, 256
+  offset: 40, 38
+  index: -1

@@ -1,0 +1,200 @@
+
+Skill_93.png
+size: 952,888
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Sogeking_skill1_baozha/001
+  rotate: false
+  xy: 2, 471
+  size: 244, 211
+  orig: 251, 216
+  offset: 4, 2
+  index: -1
+Char_Sogeking_skill1_baozha/010
+  rotate: false
+  xy: 236, 13
+  size: 237, 226
+  orig: 242, 229
+  offset: 3, 1
+  index: -1
+Char_Sogeking_skill1_baozha/011
+  rotate: false
+  xy: 710, 2
+  size: 240, 227
+  orig: 244, 230
+  offset: 3, 1
+  index: -1
+Char_Sogeking_skill1_baozha/013
+  rotate: false
+  xy: 702, 673
+  size: 245, 210
+  orig: 251, 213
+  offset: 4, 1
+  index: -1
+Char_Sogeking_skill1_baozha/014
+  rotate: false
+  xy: 700, 455
+  size: 226, 216
+  orig: 233, 218
+  offset: 5, 1
+  index: -1
+Char_Sogeking_skill1_baozha/015
+  rotate: false
+  xy: 2, 250
+  size: 226, 219
+  orig: 233, 221
+  offset: 5, 1
+  index: -1
+Char_Sogeking_skill1_baozha/016
+  rotate: false
+  xy: 476, 463
+  size: 222, 219
+  orig: 225, 221
+  offset: 1, 1
+  index: -1
+Char_Sogeking_skill1_baozha/017
+  rotate: true
+  xy: 230, 249
+  size: 219, 220
+  orig: 223, 222
+  offset: 2, 1
+  index: -1
+Char_Sogeking_skill1_baozha/018
+  rotate: false
+  xy: 452, 241
+  size: 233, 220
+  orig: 237, 222
+  offset: 2, 1
+  index: -1
+Char_Sogeking_skill1_baozha/019
+  rotate: false
+  xy: 2, 24
+  size: 232, 223
+  orig: 236, 225
+  offset: 2, 0
+  index: -1
+Char_Sogeking_skill1_baozha/020
+  rotate: false
+  xy: 687, 231
+  size: 235, 222
+  orig: 239, 225
+  offset: 2, 1
+  index: -1
+Char_Sogeking_skill1_baozha/021
+  rotate: false
+  xy: 475, 3
+  size: 233, 226
+  orig: 237, 229
+  offset: 2, 1
+  index: -1
+Char_Sogeking_skill1_baozha/022
+  rotate: true
+  xy: 248, 470
+  size: 212, 226
+  orig: 215, 229
+  offset: 2, 1
+  index: -1
+Char_Sogeking_skill1_baozha/023
+  rotate: true
+  xy: 2, 684
+  size: 199, 231
+  orig: 202, 235
+  offset: 2, 2
+  index: -1
+Char_Sogeking_skill1_baozha/024
+  rotate: true
+  xy: 235, 684
+  size: 199, 231
+  orig: 202, 235
+  offset: 2, 2
+  index: -1
+Char_Sogeking_skill1_baozha/025
+  rotate: true
+  xy: 468, 684
+  size: 199, 232
+  orig: 202, 235
+  offset: 2, 1
+  index: -1
+
+Skill_932.png
+size: 984,828
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Sogeking_skill1_baozha/000
+  rotate: false
+  xy: 250, 593
+  size: 248, 231
+  orig: 255, 237
+  offset: 4, 2
+  index: -1
+Char_Sogeking_skill1_baozha/002
+  rotate: false
+  xy: 359, 344
+  size: 265, 247
+  orig: 274, 256
+  offset: 5, 4
+  index: -1
+Char_Sogeking_skill1_baozha/003
+  rotate: false
+  xy: 2, 38
+  size: 312, 311
+  orig: 320, 320
+  offset: 5, 4
+  index: -1
+Char_Sogeking_skill1_baozha/004
+  rotate: false
+  xy: 316, 23
+  size: 318, 312
+  orig: 325, 320
+  offset: 4, 3
+  index: -1
+Char_Sogeking_skill1_baozha/005
+  rotate: true
+  xy: 636, 2
+  size: 333, 343
+  orig: 341, 351
+  offset: 3, 3
+  index: -1
+Char_Sogeking_skill1_baozha/007
+  rotate: true
+  xy: 626, 337
+  size: 254, 356
+  orig: 260, 364
+  offset: 3, 3
+  index: -1
+Char_Sogeking_skill1_baozha/008
+  rotate: true
+  xy: 2, 351
+  size: 240, 355
+  orig: 246, 362
+  offset: 2, 2
+  index: -1
+Char_Sogeking_skill1_baozha/009
+  rotate: true
+  xy: 500, 593
+  size: 231, 355
+  orig: 237, 362
+  offset: 2, 2
+  index: -1
+Char_Sogeking_skill1_baozha/012
+  rotate: false
+  xy: 2, 597
+  size: 246, 227
+  orig: 251, 230
+  offset: 3, 1
+  index: -1
+
+Skill_933.png
+size: 364,360
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Sogeking_skill1_baozha/006
+  rotate: false
+  xy: 2, 2
+  size: 358, 355
+  orig: 365, 364
+  offset: 4, 4
+  index: -1

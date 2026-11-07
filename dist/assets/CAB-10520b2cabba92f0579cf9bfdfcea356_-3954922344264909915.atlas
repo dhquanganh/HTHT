@@ -1,0 +1,496 @@
+
+Hit_435.png
+size: 1844,396
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4/cast_body1
+  rotate: true
+  xy: 1622, 7
+  size: 90, 88
+  orig: 102, 102
+  offset: 0, 9
+  index: -1
+4/cast_feet
+  rotate: false
+  xy: 1514, 271
+  size: 123, 123
+  orig: 128, 128
+  offset: 4, 1
+  index: -1
+9/images/windsmoke_01
+  rotate: true
+  xy: 1342, 4
+  size: 65, 80
+  orig: 128, 85
+  offset: 33, 5
+  index: -1
+9/images/windsmoke_02
+  rotate: false
+  xy: 1758, 313
+  size: 84, 81
+  orig: 128, 85
+  offset: 33, 2
+  index: -1
+9/images/windsmoke_03
+  rotate: false
+  xy: 1520, 2
+  size: 100, 81
+  orig: 128, 86
+  offset: 28, 3
+  index: -1
+9/images/windsmoke_04
+  rotate: true
+  xy: 1639, 298
+  size: 96, 83
+  orig: 128, 86
+  offset: 32, 0
+  index: -1
+9/images/windsmoke_05
+  rotate: true
+  xy: 1758, 225
+  size: 86, 80
+  orig: 128, 85
+  offset: 42, 0
+  index: -1
+9/images/windsmoke_06
+  rotate: true
+  xy: 1429, 72
+  size: 128, 85
+  orig: 128, 85
+  offset: 0, 0
+  index: -1
+9/tp/tp3_0
+  rotate: false
+  xy: 39, 104
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+9/tp/tq2_0
+  rotate: false
+  xy: 39, 104
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/03Might Guy/images/slash_feetA_06
+  rotate: false
+  xy: 39, 104
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/smoke2_10
+  rotate: false
+  xy: 39, 104
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+9/tp/tp3_1
+  rotate: false
+  xy: 533, 10
+  size: 241, 140
+  orig: 669, 235
+  offset: 340, 64
+  index: -1
+9/tp/tp3_2
+  rotate: true
+  xy: 91, 118
+  size: 276, 98
+  orig: 669, 235
+  offset: 218, 124
+  index: -1
+9/tp/tp3_3
+  rotate: true
+  xy: 191, 125
+  size: 269, 49
+  orig: 669, 235
+  offset: 135, 179
+  index: -1
+9/tp/tp3_4
+  rotate: true
+  xy: 779, 181
+  size: 213, 26
+  orig: 669, 235
+  offset: 89, 206
+  index: -1
+9/tp/tp3_5
+  rotate: true
+  xy: 1127, 5
+  size: 192, 78
+  orig: 669, 235
+  offset: 3, 145
+  index: -1
+9/tp/tp3_6
+  rotate: true
+  xy: 1516, 85
+  size: 116, 84
+  orig: 669, 235
+  offset: 3, 130
+  index: -1
+9/tp/tp3_7
+  rotate: true
+  xy: 965, 9
+  size: 183, 36
+  orig: 669, 235
+  offset: 14, 124
+  index: -1
+9/tp/tq2_1
+  rotate: true
+  xy: 25, 103
+  size: 291, 12
+  orig: 695, 118
+  offset: 292, 10
+  index: -1
+9/tp/tq2_2
+  rotate: true
+  xy: 2, 76
+  size: 318, 21
+  orig: 695, 118
+  offset: 153, 5
+  index: -1
+9/tp/tq2_3
+  rotate: true
+  xy: 39, 107
+  size: 287, 50
+  orig: 695, 118
+  offset: 72, 3
+  index: -1
+9/tp/tq2_4
+  rotate: true
+  xy: 896, 192
+  size: 202, 64
+  orig: 695, 118
+  offset: 45, 6
+  index: -1
+9/tp/tq2_5
+  rotate: true
+  xy: 1207, 61
+  size: 136, 90
+  orig: 695, 118
+  offset: 2, 26
+  index: -1
+9/tp/tq2_6
+  rotate: true
+  xy: 776, 3
+  size: 171, 43
+  orig: 695, 118
+  offset: 5, 74
+  index: -1
+9/tp/tq2_7
+  rotate: true
+  xy: 821, 2
+  size: 182, 50
+  orig: 695, 118
+  offset: 76, 54
+  index: -1
+OT/03Might Guy/images/set/mask_1028
+  rotate: false
+  xy: 1602, 99
+  size: 100, 104
+  orig: 128, 128
+  offset: 16, 8
+  index: -1
+OT/03Might Guy/images/set/object_1051
+  rotate: false
+  xy: 242, 138
+  size: 148, 256
+  orig: 256, 256
+  offset: 52, 0
+  index: -1
+OT/03Might Guy/images/slash_feetA_01
+  rotate: true
+  xy: 1064, 37
+  size: 155, 61
+  orig: 171, 128
+  offset: 6, 59
+  index: -1
+OT/03Might Guy/images/slash_feetA_02
+  rotate: false
+  xy: 154, 7
+  size: 119, 109
+  orig: 170, 128
+  offset: 44, 10
+  index: -1
+OT/03Might Guy/images/slash_feetA_03
+  rotate: false
+  xy: 64, 4
+  size: 88, 101
+  orig: 171, 128
+  offset: 75, 10
+  index: -1
+OT/03Might Guy/images/slash_feetA_04
+  rotate: true
+  xy: 1673, 206
+  size: 90, 83
+  orig: 171, 128
+  offset: 68, 9
+  index: -1
+OT/03Might Guy/images/slash_feetA_05
+  rotate: false
+  xy: 1424, 5
+  size: 94, 64
+  orig: 170, 128
+  offset: 64, 9
+  index: -1
+OT/03Might Guy/images/slash_feetB_01
+  rotate: false
+  xy: 598, 176
+  size: 179, 218
+  orig: 256, 256
+  offset: 37, 10
+  index: -1
+OT/03Might Guy/images/slash_feetB_02
+  rotate: false
+  xy: 807, 186
+  size: 87, 208
+  orig: 256, 256
+  offset: 129, 26
+  index: -1
+OT/03Might Guy/images/slash_feetB_03
+  rotate: false
+  xy: 873, 6
+  size: 54, 178
+  orig: 256, 256
+  offset: 161, 65
+  index: -1
+OT/03Might Guy/images/slash_feetB_04
+  rotate: false
+  xy: 1205, 256
+  size: 51, 138
+  orig: 256, 256
+  offset: 166, 111
+  index: -1
+blackdot1
+  rotate: true
+  xy: 1712, 15
+  size: 40, 43
+  orig: 40, 43
+  offset: 0, 0
+  index: -1
+images/skill_2b_01
+  rotate: true
+  xy: 1141, 203
+  size: 191, 62
+  orig: 256, 102
+  offset: 60, 18
+  index: -1
+images/skill_2b_02
+  rotate: true
+  xy: 962, 194
+  size: 200, 62
+  orig: 256, 102
+  offset: 50, 18
+  index: -1
+images/skill_2b_03
+  rotate: true
+  xy: 484, 152
+  size: 242, 52
+  orig: 256, 103
+  offset: 9, 29
+  index: -1
+images/skill_2b_04
+  rotate: true
+  xy: 392, 142
+  size: 252, 39
+  orig: 256, 103
+  offset: 4, 32
+  index: -1
+images/skill_2b_05
+  rotate: true
+  xy: 433, 144
+  size: 250, 49
+  orig: 256, 102
+  offset: 6, 22
+  index: -1
+images/skill_2b_06
+  rotate: true
+  xy: 538, 169
+  size: 225, 58
+  orig: 256, 102
+  offset: 7, 15
+  index: -1
+images/skill_2b_07
+  rotate: true
+  xy: 1003, 16
+  size: 176, 59
+  orig: 256, 103
+  offset: 4, 14
+  index: -1
+images/skill_2b_08
+  rotate: true
+  xy: 929, 3
+  size: 187, 34
+  orig: 256, 103
+  offset: 9, 14
+  index: -1
+images/skill_2b_09
+  rotate: true
+  xy: 1026, 194
+  size: 200, 50
+  orig: 256, 102
+  offset: 24, 16
+  index: -1
+images/skill_2b_10
+  rotate: true
+  xy: 1078, 199
+  size: 195, 61
+  orig: 256, 102
+  offset: 48, 16
+  index: -1
+images/smoke2_01
+  rotate: true
+  xy: 1610, 205
+  size: 64, 61
+  orig: 102, 128
+  offset: 35, 29
+  index: -1
+images/smoke2_02
+  rotate: false
+  xy: 1207, 2
+  size: 79, 57
+  orig: 103, 128
+  offset: 20, 28
+  index: -1
+images/smoke2_03
+  rotate: false
+  xy: 1315, 201
+  size: 78, 63
+  orig: 102, 128
+  offset: 14, 29
+  index: -1
+images/smoke2_04
+  rotate: false
+  xy: 1531, 205
+  size: 77, 64
+  orig: 103, 128
+  offset: 10, 28
+  index: -1
+images/smoke2_05
+  rotate: true
+  xy: 2, 3
+  size: 71, 60
+  orig: 102, 128
+  offset: 3, 28
+  index: -1
+images/smoke2_06
+  rotate: false
+  xy: 1758, 163
+  size: 73, 60
+  orig: 102, 128
+  offset: 1, 30
+  index: -1
+images/smoke2_07
+  rotate: false
+  xy: 1764, 105
+  size: 68, 56
+  orig: 103, 128
+  offset: 3, 30
+  index: -1
+images/smoke2_08
+  rotate: true
+  xy: 1205, 199
+  size: 55, 50
+  orig: 102, 128
+  offset: 5, 32
+  index: -1
+images/smoke2_09
+  rotate: false
+  xy: 1712, 57
+  size: 43, 43
+  orig: 103, 128
+  offset: 8, 35
+  index: -1
+images/smoke_show_01
+  rotate: true
+  xy: 1704, 102
+  size: 51, 58
+  orig: 85, 85
+  offset: 17, 10
+  index: -1
+images/smoke_show_02
+  rotate: true
+  xy: 1764, 43
+  size: 60, 64
+  orig: 86, 85
+  offset: 13, 6
+  index: -1
+images/smoke_show_03
+  rotate: true
+  xy: 1461, 203
+  size: 61, 68
+  orig: 85, 85
+  offset: 12, 6
+  index: -1
+images/smoke_show_04
+  rotate: true
+  xy: 1395, 202
+  size: 62, 64
+  orig: 85, 86
+  offset: 12, 7
+  index: -1
+images/smoke_show_05
+  rotate: true
+  xy: 1704, 155
+  size: 49, 52
+  orig: 86, 86
+  offset: 19, 21
+  index: -1
+images/smoke_show_06
+  rotate: true
+  xy: 1257, 201
+  size: 53, 56
+  orig: 85, 86
+  offset: 17, 20
+  index: -1
+images/smoke_show_07
+  rotate: false
+  xy: 1288, 2
+  size: 52, 57
+  orig: 85, 85
+  offset: 17, 20
+  index: -1
+images/smoke_show_08
+  rotate: true
+  xy: 25, 83
+  size: 18, 26
+  orig: 86, 85
+  offset: 25, 51
+  index: -1
+images/smoke_show_09
+  rotate: false
+  xy: 242, 120
+  size: 15, 16
+  orig: 85, 85
+  offset: 25, 58
+  index: -1
+skill/glow_11040
+  rotate: false
+  xy: 275, 8
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+skill/glow_4078
+  rotate: true
+  xy: 1258, 266
+  size: 128, 126
+  orig: 128, 128
+  offset: 0, 1
+  index: -1
+skill/other_12001
+  rotate: false
+  xy: 1299, 71
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+skill/spin_fly
+  rotate: false
+  xy: 1386, 266
+  size: 126, 128
+  orig: 128, 128
+  offset: 1, 0
+  index: -1

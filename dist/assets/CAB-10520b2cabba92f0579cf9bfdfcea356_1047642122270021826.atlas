@@ -1,0 +1,230 @@
+
+Cast_438.png
+size: 2020,968
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ao1
+  rotate: false
+  xy: 1342, 440
+  size: 424, 526
+  orig: 424, 526
+  offset: 0, 0
+  index: -1
+aochass
+  rotate: true
+  xy: 2, 320
+  size: 646, 518
+  orig: 646, 518
+  offset: 0, 0
+  index: -1
+aochoang2
+  rotate: false
+  xy: 953, 12
+  size: 212, 349
+  orig: 212, 349
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 569, 2
+  size: 382, 358
+  orig: 382, 360
+  offset: 0, 2
+  index: -1
+chan1
+  rotate: false
+  xy: 281, 20
+  size: 154, 298
+  orig: 154, 298
+  offset: 0, 0
+  index: -1
+chantr
+  rotate: false
+  xy: 1359, 172
+  size: 276, 266
+  orig: 276, 266
+  offset: 0, 0
+  index: -1
+eye_base
+  rotate: false
+  xy: 522, 322
+  size: 32, 38
+  orig: 32, 38
+  offset: 0, 0
+  index: -1
+eyes
+  rotate: true
+  xy: 2, 3
+  size: 8, 7
+  orig: 10, 9
+  offset: 1, 1
+  index: -1
+glow
+  rotate: true
+  xy: 1829, 291
+  size: 75, 64
+  orig: 79, 68
+  offset: 2, 2
+  index: -1
+glow_light
+  rotate: false
+  xy: 1753, 94
+  size: 128, 128
+  orig: 130, 130
+  offset: 1, 1
+  index: -1
+ham2
+  rotate: true
+  xy: 1634, 35
+  size: 135, 117
+  orig: 135, 117
+  offset: 0, 0
+  index: -1
+head1
+  rotate: true
+  xy: 1896, 304
+  size: 130, 120
+  orig: 130, 120
+  offset: 0, 0
+  index: -1
+head2
+  rotate: true
+  xy: 1359, 2
+  size: 168, 123
+  orig: 168, 123
+  offset: 0, 0
+  index: -1
+long1
+  rotate: false
+  xy: 1768, 436
+  size: 223, 96
+  orig: 223, 96
+  offset: 0, 0
+  index: -1
+long2
+  rotate: true
+  xy: 1768, 534
+  size: 326, 236
+  orig: 326, 236
+  offset: 0, 0
+  index: -1
+longbe1
+  rotate: false
+  xy: 1895, 222
+  size: 116, 80
+  orig: 121, 81
+  offset: 5, 0
+  index: -1
+luoi
+  rotate: false
+  xy: 1637, 360
+  size: 129, 78
+  orig: 129, 78
+  offset: 0, 0
+  index: -1
+moon
+  rotate: false
+  xy: 1484, 22
+  size: 148, 148
+  orig: 152, 152
+  offset: 2, 2
+  index: -1
+rau1
+  rotate: true
+  xy: 917, 409
+  size: 557, 199
+  orig: 557, 199
+  offset: 0, 0
+  index: -1
+rau2
+  rotate: false
+  xy: 1637, 180
+  size: 111, 178
+  orig: 111, 178
+  offset: 0, 0
+  index: -1
+rauduoi
+  rotate: true
+  xy: 2, 13
+  size: 305, 277
+  orig: 306, 278
+  offset: 0, 0
+  index: -1
+sky
+  rotate: false
+  xy: 1883, 92
+  size: 128, 128
+  orig: 130, 130
+  offset: 1, 1
+  index: -1
+smoke_1026
+  rotate: false
+  xy: 1768, 368
+  size: 126, 66
+  orig: 128, 76
+  offset: 1, 0
+  index: -1
+smoke_3021
+  rotate: true
+  xy: 1167, 105
+  size: 256, 59
+  orig: 256, 64
+  offset: 0, 0
+  index: -1
+smoke_9007
+  rotate: false
+  xy: 1768, 862
+  size: 245, 104
+  orig: 256, 114
+  offset: 8, 0
+  index: -1
+spark copy
+  rotate: true
+  xy: 917, 363
+  size: 44, 43
+  orig: 48, 48
+  offset: 2, 3
+  index: -1
+tai1
+  rotate: true
+  xy: 1750, 224
+  size: 134, 77
+  orig: 135, 78
+  offset: 1, 0
+  index: -1
+tai2
+  rotate: false
+  xy: 1118, 363
+  size: 108, 58
+  orig: 108, 58
+  offset: 0, 0
+  index: -1
+tayp
+  rotate: false
+  xy: 1228, 11
+  size: 129, 410
+  orig: 129, 410
+  offset: 0, 0
+  index: -1
+taytra
+  rotate: false
+  xy: 1118, 423
+  size: 222, 543
+  orig: 222, 543
+  offset: 0, 0
+  index: -1
+tocto
+  rotate: true
+  xy: 522, 362
+  size: 604, 393
+  orig: 605, 394
+  offset: 0, 0
+  index: -1
+vay
+  rotate: true
+  xy: 437, 30
+  size: 288, 130
+  orig: 288, 130
+  offset: 0, 0
+  index: -1

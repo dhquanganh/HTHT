@@ -1,0 +1,62 @@
+
+Hit_1.png
+size: 321,516
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+000
+  rotate: false
+  xy: 141, 2
+  size: 88, 45
+  orig: 89, 46
+  offset: 1, 0
+  index: -1
+001
+  rotate: true
+  xy: 2, 3
+  size: 105, 137
+  orig: 109, 140
+  offset: 2, 1
+  index: -1
+002
+  rotate: true
+  xy: 165, 49
+  size: 126, 154
+  orig: 130, 158
+  offset: 3, 2
+  index: -1
+003
+  rotate: false
+  xy: 180, 345
+  size: 134, 169
+  orig: 138, 173
+  offset: 3, 2
+  index: -1
+004
+  rotate: true
+  xy: 2, 367
+  size: 147, 176
+  orig: 153, 179
+  offset: 5, 1
+  index: -1
+005
+  rotate: false
+  xy: 167, 177
+  size: 120, 166
+  orig: 125, 169
+  offset: 3, 1
+  index: -1
+006
+  rotate: true
+  xy: 2, 233
+  size: 132, 163
+  orig: 137, 167
+  offset: 4, 2
+  index: -1
+007
+  rotate: true
+  xy: 2, 110
+  size: 121, 161
+  orig: 128, 165
+  offset: 6, 2
+  index: -1

@@ -1,0 +1,1111 @@
+
+Hero_131.png
+size: 1024,1016
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_R_04
+  rotate: true
+  xy: 604, 993
+  size: 19, 35
+  orig: 20, 38
+  offset: 1, 2
+  index: -1
+body
+  rotate: true
+  xy: 289, 926
+  size: 41, 58
+  orig: 43, 59
+  offset: 2, 0
+  index: -1
+body_05
+  rotate: false
+  xy: 458, 863
+  size: 54, 54
+  orig: 55, 55
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 393, 867
+  size: 53, 63
+  orig: 54, 64
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 189, 998
+  size: 43, 14
+  orig: 44, 15
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 641, 993
+  size: 19, 26
+  orig: 20, 27
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 2, 1005
+  size: 7, 9
+  orig: 8, 10
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 848, 846
+  size: 69, 59
+  orig: 70, 60
+  offset: 1, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 936, 903
+  size: 48, 67
+  orig: 49, 71
+  offset: 1, 0
+  index: -1
+cloth_09
+  rotate: true
+  xy: 631, 959
+  size: 32, 55
+  orig: 33, 56
+  offset: 1, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 397, 716
+  size: 82, 82
+  orig: 83, 83
+  offset: 1, 0
+  index: -1
+cloth_11
+  rotate: false
+  xy: 234, 998
+  size: 25, 14
+  orig: 31, 18
+  offset: 2, 1
+  index: -1
+doflamingo_beat_02
+  rotate: true
+  xy: 449, 187
+  size: 136, 159
+  orig: 137, 160
+  offset: 1, 0
+  index: -1
+doflamingo_beat_04_ef
+  rotate: true
+  xy: 2, 888
+  size: 48, 67
+  orig: 105, 68
+  offset: 1, 0
+  index: -1
+doflamingo_beat_05_ef
+  rotate: false
+  xy: 669, 993
+  size: 40, 19
+  orig: 177, 66
+  offset: 1, 46
+  index: -1
+doflamingo_beat_08
+  rotate: true
+  xy: 345, 473
+  size: 119, 162
+  orig: 120, 163
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_03
+  rotate: false
+  xy: 439, 45
+  size: 147, 140
+  orig: 148, 141
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_04
+  rotate: false
+  xy: 665, 434
+  size: 151, 125
+  orig: 152, 126
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_05_ef
+  rotate: true
+  xy: 919, 842
+  size: 59, 87
+  orig: 60, 88
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_07_ef
+  rotate: true
+  xy: 259, 724
+  size: 79, 136
+  orig: 80, 137
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_09_ef
+  rotate: true
+  xy: 30, 975
+  size: 22, 86
+  orig: 23, 87
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_10_ef
+  rotate: true
+  xy: 536, 961
+  size: 30, 93
+  orig: 31, 94
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_11_ef
+  rotate: true
+  xy: 54, 999
+  size: 13, 79
+  orig: 14, 80
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_12_ef
+  rotate: true
+  xy: 13, 1002
+  size: 10, 15
+  orig: 11, 16
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_14
+  rotate: true
+  xy: 785, 283
+  size: 132, 145
+  orig: 133, 146
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_15
+  rotate: true
+  xy: 509, 456
+  size: 121, 154
+  orig: 122, 155
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_501
+  rotate: true
+  xy: 675, 855
+  size: 56, 68
+  orig: 57, 69
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_502
+  rotate: true
+  xy: 2, 826
+  size: 60, 62
+  orig: 61, 67
+  offset: 1, 4
+  index: -1
+doflamingo_skill1_503
+  rotate: true
+  xy: 66, 824
+  size: 59, 85
+  orig: 60, 86
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_504
+  rotate: false
+  xy: 578, 914
+  size: 47, 45
+  orig: 48, 46
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_505
+  rotate: false
+  xy: 245, 929
+  size: 42, 39
+  orig: 43, 40
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_506
+  rotate: true
+  xy: 370, 995
+  size: 17, 25
+  orig: 18, 26
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_507
+  rotate: true
+  xy: 885, 991
+  size: 21, 26
+  orig: 22, 27
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_508
+  rotate: false
+  xy: 533, 916
+  size: 43, 43
+  orig: 44, 44
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_509
+  rotate: true
+  xy: 292, 996
+  size: 16, 18
+  orig: 17, 19
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_510
+  rotate: false
+  xy: 248, 972
+  size: 29, 24
+  orig: 30, 27
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_801
+  rotate: false
+  xy: 2, 751
+  size: 77, 71
+  orig: 78, 72
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_802
+  rotate: true
+  xy: 781, 957
+  size: 33, 47
+  orig: 34, 48
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_803
+  rotate: false
+  xy: 753, 910
+  size: 60, 45
+  orig: 61, 46
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_804
+  rotate: true
+  xy: 155, 883
+  size: 49, 53
+  orig: 50, 54
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_805
+  rotate: false
+  xy: 821, 992
+  size: 26, 20
+  orig: 28, 21
+  offset: 2, 0
+  index: -1
+doflamingo_skill1_806
+  rotate: false
+  xy: 397, 995
+  size: 19, 17
+  orig: 20, 18
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_807
+  rotate: false
+  xy: 154, 974
+  size: 32, 23
+  orig: 33, 24
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_808
+  rotate: false
+  xy: 942, 990
+  size: 38, 22
+  orig: 39, 23
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_02
+  rotate: true
+  xy: 2, 377
+  size: 127, 159
+  orig: 128, 160
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_03
+  rotate: true
+  xy: 284, 66
+  size: 138, 153
+  orig: 139, 154
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_08
+  rotate: false
+  xy: 284, 206
+  size: 163, 134
+  orig: 164, 135
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_08_ef
+  rotate: false
+  xy: 163, 359
+  size: 170, 126
+  orig: 187, 139
+  offset: 10, 9
+  index: -1
+doflamingo_skill2_09
+  rotate: false
+  xy: 588, 22
+  size: 181, 140
+  orig: 182, 141
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_09_ef
+  rotate: false
+  xy: 730, 690
+  size: 117, 83
+  orig: 130, 89
+  offset: 6, 2
+  index: -1
+doflamingo_skill2_11
+  rotate: true
+  xy: 610, 164
+  size: 137, 164
+  orig: 138, 165
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_12
+  rotate: false
+  xy: 2, 642
+  size: 127, 96
+  orig: 130, 97
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_13
+  rotate: false
+  xy: 153, 815
+  size: 106, 59
+  orig: 110, 63
+  offset: 3, 0
+  index: -1
+doflamingo_skill3_02
+  rotate: true
+  xy: 598, 579
+  size: 124, 129
+  orig: 125, 130
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_04
+  rotate: false
+  xy: 171, 487
+  size: 172, 115
+  orig: 173, 116
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_09_ef
+  rotate: false
+  xy: 383, 965
+  size: 60, 28
+  orig: 65, 33
+  offset: 5, 0
+  index: -1
+doflamingo_skill3_10_ef
+  rotate: false
+  xy: 570, 858
+  size: 103, 53
+  orig: 105, 55
+  offset: 2, 0
+  index: -1
+doflamingo_skill3_11_ef
+  rotate: true
+  xy: 849, 675
+  size: 93, 98
+  orig: 96, 100
+  offset: 3, 0
+  index: -1
+doflamingo_skill3_12_ef
+  rotate: true
+  xy: 131, 620
+  size: 111, 124
+  orig: 117, 131
+  offset: 6, 0
+  index: -1
+doflamingo_skill3_14_ef
+  rotate: true
+  xy: 335, 342
+  size: 129, 158
+  orig: 133, 159
+  offset: 4, 0
+  index: -1
+doflamingo_skill3_15_ef
+  rotate: true
+  xy: 429, 594
+  size: 112, 167
+  orig: 114, 185
+  offset: 2, 0
+  index: -1
+doflamingo_skill3_16
+  rotate: true
+  xy: 776, 144
+  size: 137, 179
+  orig: 138, 180
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_16_ef1
+  rotate: true
+  xy: 729, 561
+  size: 112, 167
+  orig: 113, 168
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_16_ef2
+  rotate: false
+  xy: 481, 708
+  size: 126, 79
+  orig: 127, 80
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_17_ef1
+  rotate: true
+  xy: 2, 506
+  size: 112, 167
+  orig: 113, 168
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_17_ef2
+  rotate: false
+  xy: 257, 604
+  size: 170, 110
+  orig: 171, 111
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_601
+  rotate: false
+  xy: 501, 994
+  size: 26, 18
+  orig: 27, 19
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_602
+  rotate: true
+  xy: 491, 963
+  size: 29, 43
+  orig: 30, 44
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_603
+  rotate: false
+  xy: 688, 959
+  size: 35, 32
+  orig: 36, 33
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_604
+  rotate: false
+  xy: 339, 868
+  size: 52, 52
+  orig: 53, 53
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_605
+  rotate: false
+  xy: 210, 876
+  size: 56, 51
+  orig: 57, 52
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_606
+  rotate: false
+  xy: 725, 959
+  size: 54, 32
+  orig: 55, 33
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_607
+  rotate: false
+  xy: 261, 998
+  size: 29, 14
+  orig: 30, 15
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_608
+  rotate: true
+  xy: 849, 992
+  size: 20, 34
+  orig: 21, 35
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_609
+  rotate: false
+  xy: 982, 990
+  size: 22, 22
+  orig: 23, 23
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_610
+  rotate: true
+  xy: 969, 953
+  size: 35, 46
+  orig: 36, 47
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_611
+  rotate: true
+  xy: 711, 993
+  size: 19, 28
+  orig: 20, 29
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_901
+  rotate: true
+  xy: 312, 996
+  size: 16, 24
+  orig: 17, 25
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_902
+  rotate: false
+  xy: 815, 909
+  size: 59, 45
+  orig: 60, 46
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_903
+  rotate: true
+  xy: 876, 907
+  size: 45, 58
+  orig: 46, 59
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_904
+  rotate: true
+  xy: 445, 965
+  size: 28, 44
+  orig: 29, 45
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_905
+  rotate: true
+  xy: 418, 995
+  size: 17, 32
+  orig: 18, 33
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_906
+  rotate: false
+  xy: 913, 991
+  size: 27, 21
+  orig: 28, 22
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_907
+  rotate: true
+  xy: 529, 994
+  size: 18, 33
+  orig: 19, 34
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_908
+  rotate: false
+  xy: 830, 957
+  size: 42, 33
+  orig: 43, 34
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_909
+  rotate: true
+  xy: 564, 994
+  size: 18, 38
+  orig: 19, 39
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_911
+  rotate: true
+  xy: 103, 935
+  size: 37, 55
+  orig: 38, 56
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_912
+  rotate: false
+  xy: 2, 978
+  size: 26, 22
+  orig: 30, 28
+  offset: 4, 1
+  index: -1
+doflamingo_skill3_913
+  rotate: false
+  xy: 741, 993
+  size: 24, 19
+  orig: 27, 22
+  offset: 1, 1
+  index: -1
+doflamingo_skill3_914
+  rotate: true
+  xy: 188, 973
+  size: 23, 27
+  orig: 30, 32
+  offset: 4, 3
+  index: -1
+doflamingo_squat
+  rotate: false
+  xy: 898, 544
+  size: 124, 129
+  orig: 125, 130
+  offset: 1, 0
+  index: -1
+doflamingo_win_01
+  rotate: true
+  xy: 818, 417
+  size: 125, 146
+  orig: 126, 147
+  offset: 1, 0
+  index: -1
+doflamingo_win_02
+  rotate: false
+  xy: 495, 325
+  size: 143, 129
+  orig: 144, 130
+  offset: 1, 0
+  index: -1
+doflamingo_win_03
+  rotate: true
+  xy: 2, 242
+  size: 133, 139
+  orig: 134, 140
+  offset: 1, 0
+  index: -1
+doflamingo_win_04
+  rotate: false
+  xy: 2, 88
+  size: 138, 152
+  orig: 139, 153
+  offset: 1, 0
+  index: -1
+doflamingo_win_05
+  rotate: true
+  xy: 771, 2
+  size: 140, 149
+  orig: 141, 150
+  offset: 1, 0
+  index: -1
+doflamingo_win_06
+  rotate: false
+  xy: 142, 76
+  size: 140, 146
+  orig: 141, 147
+  offset: 1, 0
+  index: -1
+doflamingo_win_07
+  rotate: true
+  xy: 143, 224
+  size: 133, 139
+  orig: 134, 140
+  offset: 1, 0
+  index: -1
+doflamingo_win_08
+  rotate: false
+  xy: 640, 303
+  size: 143, 129
+  orig: 144, 130
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 135, 999
+  size: 13, 30
+  orig: 14, 31
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 767, 993
+  size: 28, 19
+  orig: 29, 20
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 797, 993
+  size: 19, 22
+  orig: 20, 23
+  offset: 1, 0
+  index: -1
+foot_R_05
+  rotate: true
+  xy: 338, 996
+  size: 16, 30
+  orig: 17, 31
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 167, 999
+  size: 13, 20
+  orig: 14, 21
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 30, 1001
+  size: 11, 22
+  orig: 12, 23
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 261, 810
+  size: 61, 69
+  orig: 62, 70
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 436, 800
+  size: 66, 61
+  orig: 67, 62
+  offset: 1, 0
+  index: -1
+run_101
+  rotate: false
+  xy: 2, 938
+  size: 46, 35
+  orig: 51, 41
+  offset: 3, 3
+  index: -1
+run_102
+  rotate: false
+  xy: 71, 885
+  size: 82, 48
+  orig: 83, 53
+  offset: 1, 1
+  index: -1
+run_103
+  rotate: false
+  xy: 160, 934
+  size: 83, 37
+  orig: 86, 40
+  offset: 3, 1
+  index: -1
+run_104a
+  rotate: true
+  xy: 877, 770
+  size: 70, 82
+  orig: 82, 89
+  offset: 5, 6
+  index: -1
+run_105
+  rotate: false
+  xy: 349, 922
+  size: 70, 41
+  orig: 73, 47
+  offset: 3, 1
+  index: -1
+run_106
+  rotate: false
+  xy: 804, 775
+  size: 71, 69
+  orig: 76, 73
+  offset: 4, 2
+  index: -1
+run_107
+  rotate: false
+  xy: 627, 913
+  size: 54, 44
+  orig: 56, 48
+  offset: 2, 1
+  index: -1
+run_108
+  rotate: false
+  xy: 745, 854
+  size: 101, 53
+  orig: 108, 59
+  offset: 3, 3
+  index: -1
+run_109
+  rotate: false
+  xy: 683, 913
+  size: 68, 44
+  orig: 70, 49
+  offset: 2, 4
+  index: -1
+run_110
+  rotate: false
+  xy: 332, 805
+  size: 102, 60
+  orig: 107, 65
+  offset: 2, 0
+  index: -1
+run_111
+  rotate: false
+  xy: 514, 860
+  size: 54, 54
+  orig: 55, 59
+  offset: 1, 2
+  index: -1
+run_201
+  rotate: false
+  xy: 268, 873
+  size: 69, 51
+  orig: 79, 57
+  offset: 7, 3
+  index: -1
+run_202
+  rotate: false
+  xy: 874, 956
+  size: 46, 33
+  orig: 51, 44
+  offset: 2, 2
+  index: -1
+run_203
+  rotate: true
+  xy: 922, 954
+  size: 34, 45
+  orig: 37, 51
+  offset: 1, 2
+  index: -1
+run_204
+  rotate: false
+  xy: 714, 786
+  size: 88, 66
+  orig: 95, 70
+  offset: 2, 0
+  index: -1
+run_205
+  rotate: false
+  xy: 421, 922
+  size: 52, 41
+  orig: 59, 45
+  offset: 5, 0
+  index: -1
+run_206
+  rotate: false
+  xy: 475, 919
+  size: 56, 42
+  orig: 61, 49
+  offset: 1, 4
+  index: -1
+run_207
+  rotate: false
+  xy: 589, 789
+  size: 123, 64
+  orig: 129, 67
+  offset: 5, 1
+  index: -1
+run_301
+  rotate: true
+  xy: 504, 794
+  size: 62, 83
+  orig: 69, 92
+  offset: 1, 6
+  index: -1
+run_302
+  rotate: true
+  xy: 609, 705
+  size: 79, 119
+  orig: 82, 124
+  offset: 1, 4
+  index: -1
+run_303
+  rotate: false
+  xy: 81, 740
+  size: 78, 73
+  orig: 81, 78
+  offset: 1, 4
+  index: -1
+run_304
+  rotate: true
+  xy: 161, 733
+  size: 80, 96
+  orig: 85, 102
+  offset: 1, 2
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 217, 973
+  size: 23, 29
+  orig: 24, 30
+  offset: 1, 0
+  index: -1
+shank_L_05
+  rotate: false
+  xy: 50, 938
+  size: 51, 35
+  orig: 52, 36
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 452, 995
+  size: 17, 25
+  orig: 18, 26
+  offset: 1, 0
+  index: -1
+shank_R_05
+  rotate: true
+  xy: 479, 995
+  size: 17, 20
+  orig: 18, 21
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 118, 975
+  size: 34, 22
+  orig: 38, 23
+  offset: 4, 0
+  index: -1
+thigh_L_05
+  rotate: false
+  xy: 279, 970
+  size: 31, 24
+  orig: 32, 25
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 353, 966
+  size: 27, 28
+  orig: 28, 29
+  offset: 1, 0
+  index: -1
+thigh_R_05
+  rotate: true
+  xy: 312, 969
+  size: 25, 39
+  orig: 26, 40
+  offset: 1, 0
+  index: -1
+
+Hero_1312.png
+size: 932,624
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+doflamingo_beat_03
+  rotate: false
+  xy: 332, 174
+  size: 185, 150
+  orig: 186, 151
+  offset: 1, 0
+  index: -1
+doflamingo_beat_04
+  rotate: true
+  xy: 305, 477
+  size: 144, 158
+  orig: 145, 159
+  offset: 1, 0
+  index: -1
+doflamingo_beat_05
+  rotate: true
+  xy: 159, 177
+  size: 150, 171
+  orig: 151, 172
+  offset: 1, 0
+  index: -1
+doflamingo_beat_06
+  rotate: true
+  xy: 341, 328
+  size: 147, 154
+  orig: 148, 155
+  offset: 1, 0
+  index: -1
+doflamingo_beat_07
+  rotate: true
+  xy: 2, 179
+  size: 150, 155
+  orig: 151, 156
+  offset: 1, 0
+  index: -1
+doflamingo_damage
+  rotate: true
+  xy: 737, 2
+  size: 167, 171
+  orig: 168, 172
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_02
+  rotate: false
+  xy: 465, 477
+  size: 158, 144
+  orig: 159, 145
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_07
+  rotate: false
+  xy: 2, 479
+  size: 145, 142
+  orig: 146, 143
+  offset: 1, 0
+  index: -1
+doflamingo_skill1_08_ef
+  rotate: false
+  xy: 2, 331
+  size: 165, 146
+  orig: 166, 147
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_04
+  rotate: false
+  xy: 169, 329
+  size: 170, 146
+  orig: 171, 147
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_05
+  rotate: false
+  xy: 564, 15
+  size: 171, 154
+  orig: 172, 155
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_06
+  rotate: false
+  xy: 700, 171
+  size: 227, 152
+  orig: 228, 153
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_07
+  rotate: false
+  xy: 171, 19
+  size: 228, 153
+  orig: 229, 154
+  offset: 1, 0
+  index: -1
+doflamingo_skill2_10
+  rotate: true
+  xy: 149, 479
+  size: 142, 154
+  orig: 143, 155
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_03
+  rotate: true
+  xy: 497, 326
+  size: 148, 203
+  orig: 149, 204
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_05
+  rotate: true
+  xy: 401, 18
+  size: 153, 161
+  orig: 154, 162
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_05_ef
+  rotate: true
+  xy: 625, 476
+  size: 145, 194
+  orig: 146, 195
+  offset: 1, 0
+  index: -1
+doflamingo_skill3_13_ef
+  rotate: false
+  xy: 519, 173
+  size: 179, 151
+  orig: 184, 152
+  offset: 5, 0
+  index: -1
+doflamingo_standby_01
+  rotate: false
+  xy: 2, 23
+  size: 167, 152
+  orig: 168, 153
+  offset: 1, 0
+  index: -1
+doflamingo_standby_02
+  rotate: false
+  xy: 702, 325
+  size: 168, 149
+  orig: 169, 150
+  offset: 1, 0
+  index: -1

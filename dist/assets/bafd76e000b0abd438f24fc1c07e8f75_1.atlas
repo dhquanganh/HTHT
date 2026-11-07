@@ -1,0 +1,48 @@
+
+Hit_11.png
+size: 819,514
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+11/skill.21121055.hit.0.0
+  rotate: false
+  xy: 2, 356
+  size: 429, 156
+  orig: 429, 156
+  offset: 0, 0
+  index: -1
+11/skill.21121055.hit.0.1
+  rotate: false
+  xy: 2, 196
+  size: 420, 158
+  orig: 420, 158
+  offset: 0, 0
+  index: -1
+11/skill.21121055.hit.0.2
+  rotate: false
+  xy: 424, 179
+  size: 393, 168
+  orig: 393, 168
+  offset: 0, 0
+  index: -1
+11/skill.21121055.hit.0.3
+  rotate: false
+  xy: 2, 19
+  size: 387, 175
+  orig: 387, 175
+  offset: 0, 0
+  index: -1
+11/skill.21121055.hit.0.4
+  rotate: false
+  xy: 391, 2
+  size: 369, 175
+  orig: 369, 175
+  offset: 0, 0
+  index: -1
+11/skill.21121055.hit.0.5
+  rotate: false
+  xy: 433, 349
+  size: 283, 163
+  orig: 283, 163
+  offset: 0, 0
+  index: -1

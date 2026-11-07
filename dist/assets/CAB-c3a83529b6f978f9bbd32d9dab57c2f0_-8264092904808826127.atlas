@@ -1,0 +1,83 @@
+
+Octopus.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 17
+  rotate: false
+  xy: 2, 581
+  size: 581, 426
+  orig: 581, 426
+  offset: 0, 0
+  index: -1
+Layer 18
+  rotate: true
+  xy: 157, 345
+  size: 234, 217
+  orig: 234, 217
+  offset: 0, 0
+  index: -1
+Layer 19
+  rotate: true
+  xy: 918, 698
+  size: 150, 33
+  orig: 150, 33
+  offset: 0, 0
+  index: -1
+Layer 20
+  rotate: true
+  xy: 585, 651
+  size: 356, 331
+  orig: 356, 331
+  offset: 0, 0
+  index: -1
+Layer 21
+  rotate: true
+  xy: 826, 330
+  size: 319, 181
+  orig: 319, 181
+  offset: 0, 0
+  index: -1
+Layer 22
+  rotate: true
+  xy: 585, 387
+  size: 262, 239
+  orig: 262, 239
+  offset: 0, 0
+  index: -1
+Layer 23
+  rotate: true
+  xy: 2, 251
+  size: 328, 153
+  orig: 328, 153
+  offset: 0, 0
+  index: -1
+Layer 24
+  rotate: false
+  xy: 918, 902
+  size: 67, 105
+  orig: 67, 105
+  offset: 0, 0
+  index: -1
+Layer 25
+  rotate: false
+  xy: 953, 724
+  size: 47, 57
+  orig: 47, 57
+  offset: 0, 0
+  index: -1
+Layer 26
+  rotate: false
+  xy: 953, 783
+  size: 47, 65
+  orig: 47, 65
+  offset: 0, 0
+  index: -1
+bb
+  rotate: false
+  xy: 918, 850
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1

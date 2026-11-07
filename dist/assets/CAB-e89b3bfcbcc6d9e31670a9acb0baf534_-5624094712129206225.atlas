@@ -1,0 +1,202 @@
+
+Hit_73.png
+size: 2007,1087
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Magellan_e_skill1_fly/000
+  rotate: true
+  xy: 565, 327
+  size: 377, 186
+  orig: 383, 191
+  offset: 4, 3
+  index: -1
+Char_Magellan_e_skill1_fly/001
+  rotate: true
+  xy: 2, 684
+  size: 401, 159
+  orig: 403, 163
+  offset: 0, 2
+  index: -1
+Char_Magellan_e_skill1_fly/002
+  rotate: true
+  xy: 2, 284
+  size: 398, 167
+  orig: 401, 170
+  offset: 1, 1
+  index: -1
+Char_Magellan_e_skill1_fly/003
+  rotate: true
+  xy: 171, 298
+  size: 391, 200
+  orig: 397, 203
+  offset: 4, 1
+  index: -1
+Char_Magellan_e_skill1_fly/004
+  rotate: true
+  xy: 163, 691
+  size: 394, 221
+  orig: 400, 223
+  offset: 4, 1
+  index: -1
+Char_Magellan_e_skill1_fly/005
+  rotate: true
+  xy: 386, 706
+  size: 379, 184
+  orig: 384, 190
+  offset: 3, 2
+  index: -1
+Char_Magellan_e_skill1_fly/006
+  rotate: true
+  xy: 373, 303
+  size: 386, 190
+  orig: 392, 195
+  offset: 4, 1
+  index: -1
+Char_Magellan_e_skill1_shouji/000
+  rotate: true
+  xy: 572, 717
+  size: 368, 216
+  orig: 382, 230
+  offset: 2, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/001
+  rotate: false
+  xy: 1299, 292
+  size: 249, 216
+  orig: 265, 230
+  offset: 4, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/002
+  rotate: true
+  xy: 1789, 93
+  size: 249, 216
+  orig: 265, 230
+  offset: 4, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/003
+  rotate: true
+  xy: 261, 2
+  size: 294, 243
+  orig: 307, 256
+  offset: 4, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/004
+  rotate: false
+  xy: 1550, 344
+  size: 269, 243
+  orig: 287, 256
+  offset: 9, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/005
+  rotate: false
+  xy: 1589, 838
+  size: 271, 247
+  orig: 281, 260
+  offset: 3, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/006
+  rotate: false
+  xy: 1589, 589
+  size: 271, 247
+  orig: 281, 260
+  offset: 3, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/007
+  rotate: true
+  xy: 1299, 27
+  size: 263, 247
+  orig: 274, 260
+  offset: 4, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/008
+  rotate: true
+  xy: 1038, 200
+  size: 286, 259
+  orig: 297, 267
+  offset: 4, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/009
+  rotate: true
+  xy: 777, 30
+  size: 298, 259
+  orig: 309, 267
+  offset: 4, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/010
+  rotate: true
+  xy: 790, 787
+  size: 298, 259
+  orig: 309, 267
+  offset: 4, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/011
+  rotate: true
+  xy: 2, 5
+  size: 277, 257
+  orig: 288, 267
+  offset: 3, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/012
+  rotate: true
+  xy: 1291, 510
+  size: 277, 257
+  orig: 288, 267
+  offset: 3, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/013
+  rotate: true
+  xy: 1322, 810
+  size: 275, 265
+  orig: 285, 274
+  offset: 3, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/014
+  rotate: true
+  xy: 1024, 488
+  size: 297, 265
+  orig: 307, 274
+  offset: 3, 6
+  index: -1
+Char_Magellan_e_skill1_shouji/015
+  rotate: true
+  xy: 753, 415
+  size: 300, 269
+  orig: 309, 274
+  offset: 3, 1
+  index: -1
+Char_Magellan_e_skill1_shouji/016
+  rotate: true
+  xy: 1051, 789
+  size: 296, 269
+  orig: 306, 274
+  offset: 4, 1
+  index: -1
+Char_Magellan_e_skill1_shouji/017
+  rotate: true
+  xy: 506, 2
+  size: 299, 269
+  orig: 306, 274
+  offset: 4, 0
+  index: -1
+Char_Magellan_e_skill1_shouji/018
+  rotate: false
+  xy: 1548, 39
+  size: 239, 251
+  orig: 254, 274
+  offset: 4, 9
+  index: -1
+Char_Magellan_e_skill1_shouji/019
+  rotate: true
+  xy: 753, 330
+  size: 83, 127
+  orig: 88, 128
+  offset: 4, 0
+  index: -1
+Char_Magellan_e_skill1_shouji/020
+  rotate: true
+  xy: 882, 356
+  size: 57, 129
+  orig: 60, 130
+  offset: 2, 0
+  index: -1

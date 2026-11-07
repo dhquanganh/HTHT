@@ -1,0 +1,62 @@
+
+Hit_3.png
+size: 459,302
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+000
+  rotate: false
+  xy: 360, 102
+  size: 95, 77
+  orig: 100, 83
+  offset: 3, 1
+  index: -1
+001
+  rotate: true
+  xy: 2, 105
+  size: 195, 115
+  orig: 202, 122
+  offset: 3, 3
+  index: -1
+002
+  rotate: true
+  xy: 119, 126
+  size: 174, 119
+  orig: 180, 123
+  offset: 4, 1
+  index: -1
+003
+  rotate: false
+  xy: 317, 8
+  size: 117, 92
+  orig: 122, 95
+  offset: 3, 1
+  index: -1
+004
+  rotate: true
+  xy: 360, 181
+  size: 119, 97
+  orig: 124, 102
+  offset: 3, 2
+  index: -1
+005
+  rotate: false
+  xy: 2, 2
+  size: 138, 101
+  orig: 145, 106
+  offset: 4, 2
+  index: -1
+006
+  rotate: false
+  xy: 142, 4
+  size: 173, 120
+  orig: 179, 125
+  offset: 3, 2
+  index: -1
+007
+  rotate: true
+  xy: 240, 128
+  size: 172, 118
+  orig: 178, 125
+  offset: 4, 3
+  index: -1

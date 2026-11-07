@@ -1,0 +1,188 @@
+
+Hit_130.png
+size: 980,280
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_izou_skill_1_hit/000
+  rotate: false
+  xy: 530, 6
+  size: 54, 30
+  orig: 55, 31
+  offset: 1, 0
+  index: -1
+Char_izou_skill_1_hit/001
+  rotate: true
+  xy: 905, 53
+  size: 63, 65
+  orig: 67, 67
+  offset: 3, 1
+  index: -1
+Char_izou_skill_1_hit/002
+  rotate: false
+  xy: 896, 210
+  size: 80, 67
+  orig: 83, 69
+  offset: 2, 2
+  index: -1
+Char_izou_skill_1_hit/003
+  rotate: true
+  xy: 2, 2
+  size: 104, 89
+  orig: 106, 92
+  offset: 2, 1
+  index: -1
+Char_izou_skill_1_hit/004
+  rotate: true
+  xy: 530, 38
+  size: 114, 106
+  orig: 118, 109
+  offset: 3, 1
+  index: -1
+Char_izou_skill_1_hit/005
+  rotate: true
+  xy: 547, 165
+  size: 112, 95
+  orig: 114, 97
+  offset: 1, 1
+  index: -1
+Char_izou_skill_1_hit/006
+  rotate: false
+  xy: 718, 80
+  size: 93, 96
+  orig: 96, 99
+  offset: 1, 2
+  index: -1
+Char_izou_skill_1_hit/007
+  rotate: true
+  xy: 644, 173
+  size: 104, 71
+  orig: 109, 75
+  offset: 3, 1
+  index: -1
+Char_izou_skill_1_hit/008
+  rotate: true
+  xy: 93, 2
+  size: 104, 77
+  orig: 107, 81
+  offset: 2, 2
+  index: -1
+Char_izou_skill_1_hit/009
+  rotate: true
+  xy: 717, 178
+  size: 99, 83
+  orig: 102, 87
+  offset: 3, 2
+  index: -1
+Char_izou_skill_1_hit/010
+  rotate: true
+  xy: 813, 92
+  size: 91, 90
+  orig: 97, 95
+  offset: 3, 2
+  index: -1
+Char_izou_skill_1_hit/011
+  rotate: true
+  xy: 638, 7
+  size: 46, 88
+  orig: 49, 91
+  offset: 2, 2
+  index: -1
+Char_izou_skill_1_hit/012
+  rotate: true
+  xy: 728, 5
+  size: 73, 91
+  orig: 76, 95
+  offset: 2, 2
+  index: -1
+Char_izou_skill_1_hit/013
+  rotate: false
+  xy: 802, 185
+  size: 92, 92
+  orig: 92, 95
+  offset: 0, 2
+  index: -1
+Char_izou_skill_1_hit/014
+  rotate: true
+  xy: 319, 2
+  size: 134, 88
+  orig: 138, 92
+  offset: 3, 2
+  index: -1
+Char_izou_skill_1_hit/015
+  rotate: true
+  xy: 129, 131
+  size: 146, 91
+  orig: 148, 95
+  offset: 2, 2
+  index: -1
+Char_izou_skill_1_hit/016
+  rotate: true
+  xy: 222, 132
+  size: 145, 91
+  orig: 148, 93
+  offset: 3, 1
+  index: -1
+Char_izou_skill_1_hit/017
+  rotate: true
+  xy: 315, 138
+  size: 139, 106
+  orig: 142, 108
+  offset: 3, 1
+  index: -1
+Char_izou_skill_1_hit/018
+  rotate: true
+  xy: 423, 154
+  size: 123, 122
+  orig: 127, 124
+  offset: 2, 0
+  index: -1
+Char_izou_skill_1_hit/019
+  rotate: false
+  xy: 172, 4
+  size: 145, 125
+  orig: 147, 128
+  offset: 1, 1
+  index: -1
+Char_izou_skill_1_hit/020
+  rotate: true
+  xy: 2, 108
+  size: 169, 125
+  orig: 169, 129
+  offset: 0, 2
+  index: -1
+Char_izou_skill_1_hit/021
+  rotate: true
+  xy: 409, 6
+  size: 130, 119
+  orig: 134, 123
+  offset: 2, 3
+  index: -1
+Char_izou_skill_1_hit/022
+  rotate: true
+  xy: 638, 55
+  size: 108, 78
+  orig: 112, 81
+  offset: 2, 1
+  index: -1
+Char_izou_skill_1_hit/023
+  rotate: true
+  xy: 905, 118
+  size: 90, 70
+  orig: 119, 81
+  offset: 2, 8
+  index: -1
+Char_izou_skill_1_hit/024
+  rotate: true
+  xy: 821, 5
+  size: 85, 66
+  orig: 88, 69
+  offset: 2, 1
+  index: -1
+Char_izou_skill_1_hit/025
+  rotate: true
+  xy: 889, 5
+  size: 46, 42
+  orig: 50, 50
+  offset: 3, 5
+  index: -1

@@ -1,0 +1,391 @@
+
+Skill_552.png
+size: 748,1032
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4/trail_1
+  rotate: true
+  xy: 197, 130
+  size: 256, 14
+  orig: 256, 16
+  offset: 0, 1
+  index: -1
+8/images/tex/hit
+  rotate: false
+  xy: 197, 2
+  size: 128, 126
+  orig: 128, 128
+  offset: 0, 1
+  index: -1
+8/images/tex/hitbe
+  rotate: false
+  xy: 223, 806
+  size: 180, 224
+  orig: 256, 256
+  offset: 28, 8
+  index: -1
+8/images/tex/smoke_12001
+  rotate: false
+  xy: 608, 723
+  size: 123, 127
+  orig: 128, 128
+  offset: 4, 0
+  index: -1
+OT2/kakashi/images/lightrock_01
+  rotate: false
+  xy: 503, 224
+  size: 92, 100
+  orig: 128, 128
+  offset: 12, 12
+  index: -1
+OT2/kakashi/images/lightrock_02
+  rotate: false
+  xy: 389, 3
+  size: 80, 80
+  orig: 128, 128
+  offset: 24, 36
+  index: -1
+OT2/kakashi/images/lightrock_03
+  rotate: false
+  xy: 622, 183
+  size: 72, 76
+  orig: 128, 128
+  offset: 28, 24
+  index: -1
+OT2/kakashi/images/lightrock_04
+  rotate: true
+  xy: 213, 132
+  size: 112, 120
+  orig: 128, 128
+  offset: 12, 0
+  index: -1
+OT2/kakashi/images/rock_01
+  rotate: true
+  xy: 705, 852
+  size: 36, 41
+  orig: 64, 64
+  offset: 10, 8
+  index: -1
+OT2/kakashi/images/rock_02
+  rotate: false
+  xy: 702, 165
+  size: 44, 43
+  orig: 64, 64
+  offset: 11, 7
+  index: -1
+OT2/kakashi/images/rock_03
+  rotate: false
+  xy: 702, 129
+  size: 27, 34
+  orig: 64, 64
+  offset: 19, 15
+  index: -1
+OT2/kakashi/images/rock_04
+  rotate: true
+  xy: 364, 326
+  size: 14, 26
+  orig: 64, 64
+  offset: 27, 15
+  index: -1
+OT2/kakashi/images/rock_blur_01
+  rotate: false
+  xy: 705, 986
+  size: 41, 44
+  orig: 64, 64
+  offset: 8, 7
+  index: -1
+OT2/kakashi/images/rock_blur_02
+  rotate: true
+  xy: 696, 210
+  size: 49, 47
+  orig: 64, 64
+  offset: 9, 4
+  index: -1
+OT2/kakashi/images/rock_blur_03
+  rotate: false
+  xy: 364, 342
+  size: 31, 39
+  orig: 64, 64
+  offset: 17, 12
+  index: -1
+OT2/kakashi/images/rock_blur_04
+  rotate: false
+  xy: 708, 530
+  size: 20, 32
+  orig: 64, 64
+  offset: 24, 12
+  index: -1
+bodyqua1
+  rotate: true
+  xy: 705, 890
+  size: 94, 26
+  orig: 94, 26
+  offset: 0, 0
+  index: -1
+canh-qau1
+  rotate: true
+  xy: 597, 266
+  size: 78, 37
+  orig: 78, 37
+  offset: 0, 0
+  index: -1
+canhqua2
+  rotate: true
+  xy: 364, 383
+  size: 56, 31
+  orig: 56, 31
+  offset: 0, 0
+  index: -1
+fx/d_21
+  rotate: true
+  xy: 628, 8
+  size: 33, 46
+  orig: 40, 54
+  offset: 3, 4
+  index: -1
+fx/d_22
+  rotate: false
+  xy: 636, 321
+  size: 86, 55
+  orig: 92, 62
+  offset: 2, 4
+  index: -1
+fx/d_23
+  rotate: false
+  xy: 474, 153
+  size: 92, 69
+  orig: 98, 74
+  offset: 3, 2
+  index: -1
+fx/d_24
+  rotate: true
+  xy: 556, 346
+  size: 136, 78
+  orig: 141, 83
+  offset: 3, 2
+  index: -1
+fx/d_25
+  rotate: false
+  xy: 364, 246
+  size: 137, 78
+  orig: 142, 84
+  offset: 2, 4
+  index: -1
+fx/d_26
+  rotate: false
+  xy: 335, 166
+  size: 137, 78
+  orig: 143, 86
+  offset: 2, 4
+  index: -1
+fx/d_27
+  rotate: false
+  xy: 608, 644
+  size: 136, 77
+  orig: 143, 83
+  offset: 3, 3
+  index: -1
+fx/d_28
+  rotate: false
+  xy: 599, 564
+  size: 132, 78
+  orig: 142, 83
+  offset: 5, 2
+  index: -1
+fx/d_29
+  rotate: true
+  xy: 636, 378
+  size: 108, 79
+  orig: 115, 84
+  offset: 3, 2
+  index: -1
+fx/d_30
+  rotate: false
+  xy: 335, 85
+  size: 108, 79
+  orig: 116, 86
+  offset: 3, 3
+  index: -1
+fx/d_31
+  rotate: false
+  xy: 599, 488
+  size: 107, 74
+  orig: 116, 84
+  offset: 4, 2
+  index: -1
+fx/d_32
+  rotate: false
+  xy: 445, 87
+  size: 91, 64
+  orig: 101, 74
+  offset: 4, 5
+  index: -1
+fx/yanbao_10
+  rotate: false
+  xy: 2, 388
+  size: 195, 203
+  orig: 220, 225
+  offset: 12, 6
+  index: -1
+fx/yanbao_11
+  rotate: true
+  xy: 405, 670
+  size: 161, 201
+  orig: 220, 225
+  offset: 17, 14
+  index: -1
+fx/yanbao_12
+  rotate: false
+  xy: 213, 246
+  size: 149, 193
+  orig: 220, 225
+  offset: 20, 26
+  index: -1
+fx/yanbao_13
+  rotate: false
+  xy: 604, 852
+  size: 99, 178
+  orig: 220, 225
+  offset: 60, 20
+  index: -1
+fx/yanbao_14
+  rotate: true
+  xy: 471, 2
+  size: 83, 91
+  orig: 220, 225
+  offset: 59, 60
+  index: -1
+fx/yanbao_2
+  rotate: true
+  xy: 397, 326
+  size: 156, 157
+  orig: 220, 225
+  offset: 39, 0
+  index: -1
+fx/yanbao_3
+  rotate: false
+  xy: 202, 441
+  size: 193, 162
+  orig: 220, 225
+  offset: 19, 4
+  index: -1
+fx/yanbao_4
+  rotate: false
+  xy: 2, 10
+  size: 193, 175
+  orig: 220, 225
+  offset: 19, 4
+  index: -1
+fx/yanbao_5
+  rotate: false
+  xy: 403, 484
+  size: 194, 184
+  orig: 220, 225
+  offset: 19, 4
+  index: -1
+fx/yanbao_6
+  rotate: false
+  xy: 2, 187
+  size: 193, 199
+  orig: 220, 225
+  offset: 19, 3
+  index: -1
+fx/yanbao_7
+  rotate: false
+  xy: 2, 593
+  size: 198, 211
+  orig: 220, 225
+  offset: 15, 3
+  index: -1
+fx/yanbao_8
+  rotate: false
+  xy: 405, 833
+  size: 197, 197
+  orig: 220, 225
+  offset: 15, 3
+  index: -1
+fx/yanbao_9
+  rotate: false
+  xy: 202, 605
+  size: 199, 199
+  orig: 220, 225
+  offset: 13, 3
+  index: -1
+images/denvau_03
+  rotate: false
+  xy: 2, 806
+  size: 219, 224
+  orig: 219, 224
+  offset: 0, 0
+  index: -1
+images/sequence_1051_01
+  rotate: true
+  xy: 708, 499
+  size: 29, 25
+  orig: 85, 64
+  offset: 25, 1
+  index: -1
+images/sequence_1051_02
+  rotate: true
+  xy: 538, 87
+  size: 64, 49
+  orig: 86, 64
+  offset: 10, 1
+  index: -1
+images/sequence_1051_03
+  rotate: true
+  xy: 564, 7
+  size: 78, 62
+  orig: 85, 64
+  offset: 4, 1
+  index: -1
+images/sequence_1051_04
+  rotate: true
+  xy: 327, 2
+  size: 81, 60
+  orig: 85, 64
+  offset: 3, 2
+  index: -1
+images/sequence_1051_05
+  rotate: false
+  xy: 622, 122
+  size: 78, 59
+  orig: 86, 64
+  offset: 4, 3
+  index: -1
+images/sequence_1051_06
+  rotate: false
+  xy: 636, 261
+  size: 80, 58
+  orig: 85, 64
+  offset: 2, 3
+  index: -1
+images/sequence_1051_07
+  rotate: true
+  xy: 628, 43
+  size: 77, 56
+  orig: 85, 64
+  offset: 5, 4
+  index: -1
+images/sequence_1051_08
+  rotate: true
+  xy: 686, 45
+  size: 75, 55
+  orig: 86, 64
+  offset: 7, 5
+  index: -1
+images/sequence_1051_09
+  rotate: true
+  xy: 568, 153
+  size: 69, 52
+  orig: 85, 64
+  offset: 9, 7
+  index: -1
+images/sequence_1051_10
+  rotate: true
+  xy: 589, 89
+  size: 62, 25
+  orig: 85, 64
+  offset: 12, 15
+  index: -1

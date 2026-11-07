@@ -1,0 +1,1056 @@
+
+Hero_122.png
+size: 1428,1540
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 1091, 610
+  size: 15, 26
+  orig: 16, 27
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 1396, 293
+  size: 15, 30
+  orig: 16, 31
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 1306, 366
+  size: 39, 70
+  orig: 40, 71
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 1408, 118
+  size: 16, 19
+  orig: 17, 20
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 213, 385
+  size: 7, 15
+  orig: 8, 16
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 1276, 253
+  size: 13, 12
+  orig: 14, 13
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 1209, 3
+  size: 10, 15
+  orig: 11, 16
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 1252, 502
+  size: 14, 13
+  orig: 15, 14
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 1400, 451
+  size: 32, 26
+  orig: 33, 27
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 1383, 76
+  size: 24, 20
+  orig: 25, 21
+  offset: 1, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 288, 2
+  size: 22, 58
+  orig: 23, 59
+  offset: 1, 0
+  index: -1
+cloth_09
+  rotate: true
+  xy: 879, 1168
+  size: 28, 18
+  orig: 29, 19
+  offset: 1, 0
+  index: -1
+cloth_10
+  rotate: true
+  xy: 1155, 2
+  size: 16, 26
+  orig: 17, 27
+  offset: 1, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 348, 2
+  size: 22, 50
+  orig: 23, 51
+  offset: 1, 0
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 1383, 51
+  size: 20, 23
+  orig: 21, 24
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 1390, 26
+  size: 19, 23
+  orig: 20, 24
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 1400, 425
+  size: 24, 26
+  orig: 25, 27
+  offset: 1, 0
+  index: -1
+foot_L_05
+  rotate: false
+  xy: 1375, 161
+  size: 25, 29
+  orig: 47, 35
+  offset: 13, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 879, 1232
+  size: 18, 32
+  orig: 19, 33
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 1182, 1106
+  size: 17, 15
+  orig: 18, 16
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 927, 631
+  size: 18, 16
+  orig: 19, 17
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 1332, 176
+  size: 41, 47
+  orig: 42, 48
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 1332, 127
+  size: 41, 47
+  orig: 42, 48
+  offset: 1, 0
+  index: -1
+maruko_beat_01
+  rotate: false
+  xy: 867, 649
+  size: 78, 157
+  orig: 79, 158
+  offset: 1, 0
+  index: -1
+maruko_beat_02
+  rotate: false
+  xy: 789, 391
+  size: 77, 142
+  orig: 78, 143
+  offset: 1, 0
+  index: -1
+maruko_beat_03
+  rotate: false
+  xy: 643, 391
+  size: 144, 142
+  orig: 145, 143
+  offset: 1, 0
+  index: -1
+maruko_beat_04
+  rotate: false
+  xy: 662, 82
+  size: 144, 142
+  orig: 145, 143
+  offset: 1, 0
+  index: -1
+maruko_beat_05
+  rotate: true
+  xy: 1029, 406
+  size: 94, 157
+  orig: 95, 158
+  offset: 1, 0
+  index: -1
+maruko_beat_06
+  rotate: true
+  xy: 662, 7
+  size: 73, 166
+  orig: 74, 167
+  offset: 1, 0
+  index: -1
+maruko_damage
+  rotate: true
+  xy: 125, 12
+  size: 91, 161
+  orig: 99, 171
+  offset: 8, 7
+  index: -1
+maruko_rie
+  rotate: false
+  xy: 1060, 2
+  size: 93, 119
+  orig: 106, 131
+  offset: 9, 3
+  index: -1
+maruko_skill1_01
+  rotate: false
+  xy: 1188, 384
+  size: 116, 116
+  orig: 117, 117
+  offset: 1, 0
+  index: -1
+maruko_skill1_03
+  rotate: true
+  xy: 894, 258
+  size: 151, 129
+  orig: 152, 130
+  offset: 1, 0
+  index: -1
+maruko_skill1_03_ef
+  rotate: false
+  xy: 733, 979
+  size: 208, 184
+  orig: 209, 185
+  offset: 1, 0
+  index: -1
+maruko_skill1_03_ef_02
+  rotate: false
+  xy: 1290, 640
+  size: 136, 130
+  orig: 137, 131
+  offset: 1, 0
+  index: -1
+maruko_skill1_04
+  rotate: true
+  xy: 292, 804
+  size: 388, 138
+  orig: 395, 145
+  offset: 2, 5
+  index: -1
+maruko_skill1_05
+  rotate: true
+  xy: 2, 13
+  size: 370, 121
+  orig: 395, 145
+  offset: 14, 20
+  index: -1
+maruko_skill1_06
+  rotate: false
+  xy: 899, 1401
+  size: 382, 137
+  orig: 395, 145
+  offset: 2, 6
+  index: -1
+maruko_skill1_10
+  rotate: true
+  xy: 1091, 502
+  size: 104, 159
+  orig: 105, 160
+  offset: 1, 0
+  index: -1
+maruko_skill1_10_ef
+  rotate: true
+  xy: 496, 189
+  size: 195, 159
+  orig: 196, 160
+  offset: 1, 0
+  index: -1
+maruko_skill1_10_ef_02
+  rotate: false
+  xy: 1178, 128
+  size: 110, 85
+  orig: 111, 86
+  offset: 1, 0
+  index: -1
+maruko_skill1_11
+  rotate: true
+  xy: 808, 86
+  size: 135, 100
+  orig: 136, 101
+  offset: 1, 0
+  index: -1
+maruko_skill1_11_ef
+  rotate: true
+  xy: 1283, 1281
+  size: 257, 143
+  orig: 258, 144
+  offset: 1, 0
+  index: -1
+maruko_skill1_1201
+  rotate: false
+  xy: 1252, 560
+  size: 36, 46
+  orig: 37, 47
+  offset: 1, 0
+  index: -1
+maruko_skill1_1202
+  rotate: false
+  xy: 1183, 2
+  size: 24, 16
+  orig: 25, 17
+  offset: 1, 0
+  index: -1
+maruko_skill1_1203
+  rotate: false
+  xy: 1020, 108
+  size: 27, 13
+  orig: 28, 14
+  offset: 1, 0
+  index: -1
+maruko_skill1_1204
+  rotate: false
+  xy: 1221, 68
+  size: 58, 58
+  orig: 59, 59
+  offset: 1, 0
+  index: -1
+maruko_skill1_1205
+  rotate: false
+  xy: 1413, 1063
+  size: 13, 41
+  orig: 14, 42
+  offset: 1, 0
+  index: -1
+maruko_skill1_1206
+  rotate: false
+  xy: 368, 391
+  size: 60, 45
+  orig: 61, 46
+  offset: 1, 0
+  index: -1
+maruko_skill1_1207
+  rotate: true
+  xy: 1201, 1281
+  size: 19, 28
+  orig: 20, 29
+  offset: 1, 0
+  index: -1
+maruko_skill1_1208
+  rotate: false
+  xy: 1349, 40
+  size: 32, 37
+  orig: 33, 38
+  offset: 1, 0
+  index: -1
+maruko_skill1_1209
+  rotate: false
+  xy: 1276, 268
+  size: 33, 59
+  orig: 34, 60
+  offset: 1, 0
+  index: -1
+maruko_skill1_12_ef
+  rotate: false
+  xy: 432, 735
+  size: 254, 79
+  orig: 255, 80
+  offset: 1, 0
+  index: -1
+maruko_skill1_13
+  rotate: true
+  xy: 1025, 216
+  size: 83, 160
+  orig: 84, 161
+  offset: 1, 0
+  index: -1
+maruko_skill1_13_ef
+  rotate: true
+  xy: 899, 1169
+  size: 131, 42
+  orig: 132, 43
+  offset: 1, 0
+  index: -1
+maruko_skill1_16
+  rotate: true
+  xy: 1020, 123
+  size: 91, 156
+  orig: 92, 157
+  offset: 1, 0
+  index: -1
+maruko_skill1_201
+  rotate: true
+  xy: 432, 2
+  size: 22, 23
+  orig: 23, 24
+  offset: 1, 0
+  index: -1
+maruko_skill1_202
+  rotate: false
+  xy: 1396, 276
+  size: 30, 15
+  orig: 31, 16
+  offset: 1, 0
+  index: -1
+maruko_skill1_203
+  rotate: false
+  xy: 1395, 242
+  size: 27, 32
+  orig: 28, 33
+  offset: 1, 0
+  index: -1
+maruko_skill1_204
+  rotate: false
+  xy: 1372, 246
+  size: 21, 31
+  orig: 22, 32
+  offset: 1, 0
+  index: -1
+maruko_skill1_205
+  rotate: true
+  xy: 1378, 339
+  size: 41, 47
+  orig: 42, 48
+  offset: 1, 0
+  index: -1
+maruko_skill1_206
+  rotate: false
+  xy: 1296, 330
+  size: 63, 34
+  orig: 64, 35
+  offset: 1, 0
+  index: -1
+maruko_skill1_207
+  rotate: true
+  xy: 1221, 2
+  size: 64, 42
+  orig: 65, 43
+  offset: 1, 0
+  index: -1
+maruko_skill1_208
+  rotate: true
+  xy: 457, 2
+  size: 22, 18
+  orig: 23, 19
+  offset: 1, 0
+  index: -1
+maruko_skill1_209
+  rotate: true
+  xy: 1361, 333
+  size: 31, 15
+  orig: 32, 16
+  offset: 1, 0
+  index: -1
+maruko_skill1_210
+  rotate: false
+  xy: 1120, 772
+  size: 19, 10
+  orig: 20, 11
+  offset: 1, 0
+  index: -1
+maruko_skill1_211
+  rotate: false
+  xy: 1402, 139
+  size: 24, 24
+  orig: 25, 25
+  offset: 1, 0
+  index: -1
+maruko_skill1_212
+  rotate: true
+  xy: 432, 1165
+  size: 27, 33
+  orig: 28, 34
+  offset: 1, 0
+  index: -1
+maruko_skill1_213
+  rotate: false
+  xy: 868, 391
+  size: 23, 18
+  orig: 24, 23
+  offset: 1, 2
+  index: -1
+maruko_skill2_11
+  rotate: false
+  xy: 721, 808
+  size: 225, 169
+  orig: 226, 170
+  offset: 1, 0
+  index: -1
+maruko_skill2_11_ef
+  rotate: true
+  xy: 651, 667
+  size: 66, 35
+  orig: 67, 36
+  offset: 1, 0
+  index: -1
+maruko_skill2_1201
+  rotate: false
+  xy: 1290, 523
+  size: 136, 115
+  orig: 137, 116
+  offset: 1, 0
+  index: -1
+maruko_skill2_1202
+  rotate: false
+  xy: 1375, 131
+  size: 23, 28
+  orig: 24, 29
+  offset: 1, 0
+  index: -1
+maruko_skill2_1203
+  rotate: false
+  xy: 1311, 279
+  size: 42, 49
+  orig: 51, 67
+  offset: 1, 0
+  index: -1
+maruko_skill2_1204
+  rotate: false
+  xy: 1237, 1297
+  size: 42, 57
+  orig: 43, 58
+  offset: 1, 0
+  index: -1
+maruko_skill2_1205
+  rotate: false
+  xy: 1281, 76
+  size: 30, 50
+  orig: 31, 51
+  offset: 1, 0
+  index: -1
+maruko_skill2_1206
+  rotate: false
+  xy: 1306, 407
+  size: 92, 114
+  orig: 93, 115
+  offset: 1, 0
+  index: -1
+maruko_skill2_1207
+  rotate: false
+  xy: 1383, 310
+  size: 43, 27
+  orig: 44, 28
+  offset: 1, 0
+  index: -1
+maruko_skill2_1208
+  rotate: false
+  xy: 651, 648
+  size: 34, 17
+  orig: 35, 18
+  offset: 1, 0
+  index: -1
+maruko_skill2_1209
+  rotate: false
+  xy: 1316, 35
+  size: 31, 42
+  orig: 32, 43
+  offset: 1, 0
+  index: -1
+maruko_skill2_1210
+  rotate: false
+  xy: 1338, 2
+  size: 23, 31
+  orig: 24, 32
+  offset: 1, 0
+  index: -1
+maruko_skill2_1211
+  rotate: false
+  xy: 1355, 279
+  size: 39, 29
+  orig: 40, 30
+  offset: 1, 0
+  index: -1
+maruko_skill2_12_ef
+  rotate: false
+  xy: 213, 394
+  size: 153, 42
+  orig: 154, 43
+  offset: 1, 0
+  index: -1
+maruko_skill2_13
+  rotate: false
+  xy: 432, 555
+  size: 217, 178
+  orig: 218, 179
+  offset: 1, 0
+  index: -1
+maruko_skill2_14
+  rotate: false
+  xy: 492, 8
+  size: 168, 179
+  orig: 169, 180
+  offset: 1, 0
+  index: -1
+maruko_skill2_1501
+  rotate: false
+  xy: 888, 17
+  size: 20, 67
+  orig: 21, 68
+  offset: 1, 0
+  index: -1
+maruko_skill2_1502
+  rotate: false
+  xy: 1187, 215
+  size: 87, 112
+  orig: 88, 113
+  offset: 1, 0
+  index: -1
+maruko_skill2_1503
+  rotate: false
+  xy: 1290, 24
+  size: 24, 50
+  orig: 25, 51
+  offset: 1, 0
+  index: -1
+maruko_skill2_1504
+  rotate: true
+  xy: 1378, 382
+  size: 20, 48
+  orig: 21, 49
+  offset: 1, 0
+  index: -1
+maruko_skill2_1505
+  rotate: true
+  xy: 1375, 192
+  size: 34, 32
+  orig: 35, 33
+  offset: 1, 0
+  index: -1
+maruko_skill2_1506
+  rotate: false
+  xy: 1237, 1356
+  size: 44, 43
+  orig: 45, 44
+  offset: 1, 0
+  index: -1
+maruko_skill2_1507
+  rotate: false
+  xy: 1252, 517
+  size: 36, 41
+  orig: 37, 42
+  offset: 1, 0
+  index: -1
+maruko_skill2_1508
+  rotate: false
+  xy: 1313, 79
+  size: 42, 46
+  orig: 54, 63
+  offset: 12, 0
+  index: -1
+maruko_skill2_1509
+  rotate: false
+  xy: 1155, 20
+  size: 64, 101
+  orig: 65, 102
+  offset: 1, 0
+  index: -1
+maruko_skill2_1601
+  rotate: false
+  xy: 821, 535
+  size: 104, 111
+  orig: 105, 112
+  offset: 1, 0
+  index: -1
+maruko_skill2_1602
+  rotate: false
+  xy: 830, 17
+  size: 56, 67
+  orig: 57, 68
+  offset: 1, 0
+  index: -1
+maruko_skill2_1603
+  rotate: true
+  xy: 1177, 329
+  size: 53, 117
+  orig: 54, 118
+  offset: 1, 0
+  index: -1
+maruko_skill2_1604
+  rotate: false
+  xy: 1400, 485
+  size: 26, 36
+  orig: 27, 37
+  offset: 1, 0
+  index: -1
+maruko_skill2_1605
+  rotate: true
+  xy: 1402, 165
+  size: 25, 24
+  orig: 26, 25
+  offset: 1, 0
+  index: -1
+maruko_skill2_1606
+  rotate: false
+  xy: 1265, 9
+  size: 23, 57
+  orig: 24, 58
+  offset: 1, 0
+  index: -1
+maruko_skill2_1607
+  rotate: false
+  xy: 1357, 79
+  size: 24, 46
+  orig: 25, 47
+  offset: 1, 0
+  index: -1
+maruko_skill2_1608
+  rotate: false
+  xy: 868, 512
+  size: 32, 21
+  orig: 33, 22
+  offset: 1, 0
+  index: -1
+maruko_skill2_1609
+  rotate: true
+  xy: 400, 2
+  size: 22, 30
+  orig: 23, 31
+  offset: 1, 0
+  index: -1
+maruko_skill2_16_ef
+  rotate: false
+  xy: 213, 441
+  size: 67, 272
+  orig: 68, 273
+  offset: 1, 0
+  index: -1
+maruko_skill2_18_ef
+  rotate: true
+  xy: 292, 589
+  size: 213, 138
+  orig: 214, 139
+  offset: 1, 0
+  index: -1
+maruko_skill3_1
+  rotate: false
+  xy: 819, 223
+  size: 73, 166
+  orig: 74, 167
+  offset: 1, 0
+  index: -1
+maruko_skill3_10
+  rotate: true
+  xy: 688, 648
+  size: 158, 177
+  orig: 159, 178
+  offset: 1, 0
+  index: -1
+maruko_skill3_11
+  rotate: false
+  xy: 943, 1123
+  size: 256, 177
+  orig: 257, 178
+  offset: 1, 0
+  index: -1
+maruko_skill3_12
+  rotate: true
+  xy: 2, 385
+  size: 328, 209
+  orig: 329, 210
+  offset: 1, 0
+  index: -1
+maruko_skill3_13
+  rotate: false
+  xy: 1201, 1106
+  size: 224, 173
+  orig: 225, 174
+  offset: 1, 0
+  index: -1
+maruko_skill3_13_ef
+  rotate: false
+  xy: 947, 627
+  size: 171, 155
+  orig: 176, 159
+  offset: 4, 1
+  index: -1
+maruko_skill3_14
+  rotate: true
+  xy: 282, 438
+  size: 149, 146
+  orig: 171, 168
+  offset: 15, 5
+  index: -1
+maruko_skill3_14_ef
+  rotate: false
+  xy: 467, 1266
+  size: 430, 272
+  orig: 699, 366
+  offset: 124, 54
+  index: -1
+maruko_skill3_15
+  rotate: true
+  xy: 1025, 301
+  size: 103, 150
+  orig: 171, 168
+  offset: 64, 12
+  index: -1
+maruko_skill3_15_ef
+  rotate: false
+  xy: 2, 1194
+  size: 463, 344
+  orig: 639, 389
+  offset: 175, 1
+  index: -1
+maruko_skill3_16
+  rotate: true
+  xy: 657, 226
+  size: 163, 160
+  orig: 171, 168
+  offset: 2, 6
+  index: -1
+maruko_skill3_16_ef
+  rotate: true
+  xy: 2, 715
+  size: 477, 288
+  orig: 610, 371
+  offset: 132, 1
+  index: -1
+maruko_skill3_2
+  rotate: true
+  xy: 868, 411
+  size: 99, 159
+  orig: 100, 160
+  offset: 1, 0
+  index: -1
+maruko_skill3_26
+  rotate: true
+  xy: 432, 816
+  size: 170, 287
+  orig: 171, 288
+  offset: 1, 0
+  index: -1
+maruko_skill3_26_ef
+  rotate: false
+  xy: 290, 194
+  size: 204, 190
+  orig: 205, 191
+  offset: 1, 0
+  index: -1
+maruko_skill3_27
+  rotate: true
+  xy: 651, 535
+  size: 111, 168
+  orig: 112, 169
+  offset: 1, 0
+  index: -1
+maruko_skill3_27_ef
+  rotate: true
+  xy: 948, 828
+  size: 175, 234
+  orig: 176, 235
+  offset: 1, 0
+  index: -1
+maruko_skill3_301
+  rotate: true
+  xy: 1372, 228
+  size: 16, 21
+  orig: 17, 22
+  offset: 1, 0
+  index: -1
+maruko_skill3_302
+  rotate: false
+  xy: 1332, 225
+  size: 38, 52
+  orig: 39, 53
+  offset: 1, 0
+  index: -1
+maruko_skill3_303
+  rotate: true
+  xy: 1290, 2
+  size: 20, 46
+  orig: 21, 47
+  offset: 1, 0
+  index: -1
+maruko_skill3_304
+  rotate: false
+  xy: 1413, 1040
+  size: 11, 21
+  orig: 12, 22
+  offset: 1, 0
+  index: -1
+maruko_skill3_305
+  rotate: true
+  xy: 1363, 3
+  size: 35, 25
+  orig: 36, 26
+  offset: 1, 0
+  index: -1
+maruko_skill3_306
+  rotate: true
+  xy: 1400, 404
+  size: 19, 26
+  orig: 20, 27
+  offset: 1, 0
+  index: -1
+maruko_skill3_307
+  rotate: false
+  xy: 1409, 212
+  size: 17, 28
+  orig: 18, 29
+  offset: 1, 0
+  index: -1
+maruko_skill3_308
+  rotate: true
+  xy: 879, 1198
+  size: 32, 18
+  orig: 33, 19
+  offset: 1, 0
+  index: -1
+maruko_skill3_309
+  rotate: true
+  xy: 1231, 1281
+  size: 14, 18
+  orig: 15, 19
+  offset: 1, 0
+  index: -1
+maruko_skill3_4_ef
+  rotate: true
+  xy: 1290, 130
+  size: 136, 40
+  orig: 140, 44
+  offset: 3, 1
+  index: -1
+maruko_skill3_5
+  rotate: false
+  xy: 948, 784
+  size: 227, 42
+  orig: 228, 46
+  offset: 1, 1
+  index: -1
+maruko_skill3_6
+  rotate: false
+  xy: 467, 1165
+  size: 410, 99
+  orig: 413, 103
+  offset: 2, 1
+  index: -1
+maruko_skill3_7
+  rotate: false
+  xy: 899, 1302
+  size: 336, 97
+  orig: 337, 148
+  offset: 1, 50
+  index: -1
+maruko_skill3_8
+  rotate: false
+  xy: 943, 1005
+  size: 237, 116
+  orig: 238, 157
+  offset: 1, 40
+  index: -1
+maruko_skill3_9
+  rotate: false
+  xy: 432, 988
+  size: 299, 175
+  orig: 300, 176
+  offset: 1, 0
+  index: -1
+maruko_standby_01
+  rotate: false
+  xy: 910, 108
+  size: 108, 148
+  orig: 126, 165
+  offset: 10, 7
+  index: -1
+maruko_standby_02
+  rotate: true
+  xy: 910, 2
+  size: 104, 148
+  orig: 119, 161
+  offset: 8, 4
+  index: -1
+maruko_win_01
+  rotate: true
+  xy: 927, 512
+  size: 113, 162
+  orig: 134, 178
+  offset: 11, 7
+  index: -1
+maruko_win_02
+  rotate: false
+  xy: 1120, 608
+  size: 168, 162
+  orig: 193, 182
+  offset: 13, 10
+  index: -1
+maruko_win_03
+  rotate: false
+  xy: 1184, 931
+  size: 227, 173
+  orig: 254, 206
+  offset: 17, 11
+  index: -1
+maruko_win_04
+  rotate: true
+  xy: 125, 105
+  size: 278, 163
+  orig: 321, 187
+  offset: 26, 6
+  index: -1
+maruko_win_05
+  rotate: true
+  xy: 1184, 772
+  size: 157, 230
+  orig: 197, 259
+  offset: 26, 15
+  index: -1
+maruko_win_06
+  rotate: false
+  xy: 290, 26
+  size: 200, 166
+  orig: 227, 186
+  offset: 12, 9
+  index: -1
+maruko_win_07
+  rotate: false
+  xy: 430, 386
+  size: 211, 167
+  orig: 249, 188
+  offset: 21, 11
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 894, 233
+  size: 14, 23
+  orig: 15, 25
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 902, 512
+  size: 23, 21
+  orig: 24, 22
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 1390, 5
+  size: 19, 23
+  orig: 20, 24
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 1383, 102
+  size: 27, 23
+  orig: 28, 24
+  offset: 1, 0
+  index: -1

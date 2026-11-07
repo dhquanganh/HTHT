@@ -1,0 +1,137 @@
+{
+  "enemies": [
+    {
+      "name": "Hero_237_SkeletonData",
+      "skeleton": {
+        "name": "Hero_237",
+        "src": "assets/9c9b69f629903dc4188f4a0f473651a6_1.json"
+      },
+      "atlases": [
+        {
+          "atlas": {
+            "name": "Hero_237.atlas",
+            "src": "assets/cd13757cf18d98c45b0da99d6a47aaf3_1.atlas"
+          },
+          "textures": [
+            "d61c5b6a46a75b54a9ab7a5f204cd01c_1"
+          ]
+        }
+      ]
+    }
+  ],
+  "effects": {
+    "impact": {
+      "resource": "_pack/herocommonskill/magichit_1",
+      "skeleton": {
+        "name": "MagicHit_1_SkeletonData",
+        "skeleton": {
+          "name": "MagicHit_1",
+          "src": "assets/152114e8811a8f94982edf66a6b2e307_1.json"
+        },
+        "atlases": [
+          {
+            "atlas": {
+              "name": "MagicHit_1.atlas",
+              "src": "assets/cb97448ba6669a345bcac9d6fda15e3e_1.atlas"
+            },
+            "textures": [
+              "3473f819e83029143a12a3aa48c30eea_1"
+            ]
+          }
+        ]
+      },
+      "animation": "Hit",
+      "scale": 0.6
+    },
+    "heal": {
+      "resource": "_pack/effects/hpbuff/buff_mau",
+      "skeleton": {
+        "name": "Buff_mau_SkeletonData",
+        "skeleton": {
+          "name": "Buff_mau",
+          "src": "assets/3301113a17422784b857df25a53287f6_1.json"
+        },
+        "atlases": [
+          {
+            "atlas": {
+              "name": "Buff_mau.atlas",
+              "src": "assets/db6eace5573c4584c8a8223180917a57_1.atlas"
+            },
+            "textures": [
+              "1cdd56a6936017e4da0ab4f753a0d024_1"
+            ]
+          }
+        ]
+      },
+      "animation": "animation",
+      "scale": 0.6
+    }
+  },
+  "combatAnimations": {
+    "hero": {
+      "attack": {
+        "type": "1",
+        "animation": "beat",
+        "delay_cast_eff": "0.36",
+        "delay_battle_eff": "0",
+        "need_move_up": "false",
+        "cast_effs": [],
+        "impact_effs": [
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "path": "_Pack/HeroCommonSkill/MagicHit_1",
+            "delay": "0",
+            "animation": "Hit",
+            "offset_layer": "1",
+            "scale": "0.6",
+            "sound": "attack_punch",
+            "impact_pos": "1"
+          }
+        ]
+      },
+      "skill": {
+        "type": "1",
+        "animation": "skill3",
+        "delay_cast_eff": "0.73",
+        "delay_battle_eff": "0",
+        "need_move_up": "false",
+        "cast_effs": [],
+        "impact_effs": [
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "delay": "0",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "se_skill_luffyskill_gurugurugompunch_b",
+            "impact_pos": "0"
+          }
+        ]
+      }
+    },
+    "enemy": {
+      "attack": {
+        "type": "3",
+        "animation": "beat",
+        "delay_cast_eff": "0.26",
+        "delay_battle_eff": "0",
+        "need_move_up": "false",
+        "cast_effs": [],
+        "impact_effs": [
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "path": "_Pack/HeroCommonSkill/MagicHit_1",
+            "delay": "0",
+            "animation": "Hit",
+            "offset_layer": "1",
+            "scale": "0.6",
+            "sound": "archer_hit1",
+            "impact_pos": "1"
+          }
+        ]
+      }
+    }
+  }
+}

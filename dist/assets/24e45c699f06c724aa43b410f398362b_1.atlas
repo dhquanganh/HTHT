@@ -1,0 +1,41 @@
+
+Hit_141.png
+size: 540,250
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Fx/Light/6
+  rotate: false
+  xy: 491, 37
+  size: 47, 46
+  orig: 48, 48
+  offset: 1, 1
+  index: -1
+Fx/Meteor_2/10
+  rotate: false
+  xy: 2, 3
+  size: 155, 245
+  orig: 165, 247
+  offset: 5, 1
+  index: -1
+Fx/Meteor_2/11
+  rotate: false
+  xy: 159, 5
+  size: 137, 243
+  orig: 165, 247
+  offset: 14, 4
+  index: -1
+Fx/Meteor_2/12
+  rotate: true
+  xy: 298, 2
+  size: 81, 191
+  orig: 165, 247
+  offset: 39, 56
+  index: -1
+Fx/Meteor_2/9
+  rotate: true
+  xy: 298, 85
+  size: 163, 221
+  orig: 165, 247
+  offset: 1, 0
+  index: -1

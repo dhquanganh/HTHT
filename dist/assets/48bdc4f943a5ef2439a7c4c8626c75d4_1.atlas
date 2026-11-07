@@ -1,0 +1,48 @@
+
+Hit_16.png
+size: 298,464
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+16/skill.42111011.hit.0.0
+  rotate: false
+  xy: 2, 277
+  size: 144, 185
+  orig: 144, 185
+  offset: 0, 0
+  index: -1
+16/skill.42111011.hit.0.1
+  rotate: true
+  xy: 2, 108
+  size: 167, 141
+  orig: 167, 141
+  offset: 0, 0
+  index: -1
+16/skill.42111011.hit.0.2
+  rotate: false
+  xy: 148, 170
+  size: 148, 144
+  orig: 148, 144
+  offset: 0, 0
+  index: -1
+16/skill.42111011.hit.0.3
+  rotate: false
+  xy: 148, 316
+  size: 148, 146
+  orig: 148, 146
+  offset: 0, 0
+  index: -1
+16/skill.42111011.hit.0.4
+  rotate: false
+  xy: 145, 17
+  size: 151, 151
+  orig: 151, 151
+  offset: 0, 0
+  index: -1
+16/skill.42111011.hit.0.5
+  rotate: false
+  xy: 2, 2
+  size: 132, 104
+  orig: 132, 104
+  offset: 0, 0
+  index: -1

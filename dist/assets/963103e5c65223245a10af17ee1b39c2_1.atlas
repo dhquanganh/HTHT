@@ -1,0 +1,41 @@
+
+Hit_6.png
+size: 125,125
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+000
+  rotate: false
+  xy: 76, 10
+  size: 35, 30
+  orig: 37, 32
+  offset: 2, 0
+  index: -1
+001
+  rotate: false
+  xy: 84, 42
+  size: 39, 31
+  orig: 43, 34
+  offset: 2, 1
+  index: -1
+002
+  rotate: true
+  xy: 84, 75
+  size: 48, 36
+  orig: 51, 39
+  offset: 2, 1
+  index: -1
+003
+  rotate: false
+  xy: 2, 2
+  size: 72, 59
+  orig: 75, 60
+  offset: 2, 0
+  index: -1
+004
+  rotate: false
+  xy: 2, 63
+  size: 80, 60
+  orig: 82, 63
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,97 @@
+
+Skill_181.png
+size: 888,328
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_mr1_skill_1_zhuti/000
+  rotate: true
+  xy: 557, 11
+  size: 152, 143
+  orig: 158, 148
+  offset: 3, 2
+  index: -1
+Char_mr1_skill_1_zhuti/001
+  rotate: false
+  xy: 386, 2
+  size: 169, 147
+  orig: 173, 151
+  offset: 2, 1
+  index: -1
+Char_mr1_skill_1_zhuti/002
+  rotate: true
+  xy: 2, 145
+  size: 181, 157
+  orig: 186, 160
+  offset: 3, 1
+  index: -1
+Char_mr1_skill_1_zhuti/003
+  rotate: false
+  xy: 481, 165
+  size: 157, 161
+  orig: 161, 165
+  offset: 2, 1
+  index: -1
+Char_mr1_skill_1_zhuti/004
+  rotate: true
+  xy: 161, 151
+  size: 175, 162
+  orig: 180, 168
+  offset: 4, 2
+  index: -1
+Char_mr1_skill_1_zhuti/005
+  rotate: true
+  xy: 325, 151
+  size: 175, 154
+  orig: 179, 158
+  offset: 3, 2
+  index: -1
+Char_mr1_skill_1_zhuti/006
+  rotate: false
+  xy: 195, 13
+  size: 189, 136
+  orig: 193, 141
+  offset: 3, 1
+  index: -1
+Char_mr1_skill_1_zhuti/007
+  rotate: false
+  xy: 2, 6
+  size: 191, 137
+  orig: 195, 142
+  offset: 3, 1
+  index: -1
+Char_mr1_skill_1_zhuti/008
+  rotate: false
+  xy: 640, 213
+  size: 190, 113
+  orig: 195, 116
+  offset: 4, 1
+  index: -1
+Char_mr1_skill_1_zhuti/009
+  rotate: true
+  xy: 702, 25
+  size: 186, 113
+  orig: 193, 116
+  offset: 5, 1
+  index: -1
+Char_mr1_skill_1_zhuti/010
+  rotate: true
+  xy: 817, 127
+  size: 84, 67
+  orig: 112, 92
+  offset: 26, 1
+  index: -1
+Char_mr1_skill_1_zhuti/011
+  rotate: false
+  xy: 817, 66
+  size: 62, 59
+  orig: 67, 63
+  offset: 2, 2
+  index: -1
+Char_mr1_skill_1_zhuti/012
+  rotate: true
+  xy: 817, 5
+  size: 59, 58
+  orig: 65, 62
+  offset: 2, 1
+  index: -1

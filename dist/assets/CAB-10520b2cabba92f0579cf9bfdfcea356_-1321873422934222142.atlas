@@ -1,0 +1,643 @@
+
+Hero_453.png
+size: 2036,624
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4/cast_body1
+  rotate: false
+  xy: 1302, 185
+  size: 90, 88
+  orig: 102, 102
+  offset: 0, 9
+  index: -1
+4/cast_feet
+  rotate: false
+  xy: 611, 89
+  size: 123, 123
+  orig: 128, 128
+  offset: 4, 1
+  index: -1
+Layer 1
+  rotate: true
+  xy: 1019, 293
+  size: 136, 176
+  orig: 174, 178
+  offset: 37, 1
+  index: -1
+Layer 11
+  rotate: false
+  xy: 2, 188
+  size: 340, 434
+  orig: 342, 436
+  offset: 1, 1
+  index: -1
+Layer 13
+  rotate: false
+  xy: 1288, 10
+  size: 31, 86
+  orig: 33, 88
+  offset: 1, 1
+  index: -1
+OT/03Might Guy/images/leave_01
+  rotate: false
+  xy: 972, 64
+  size: 46, 44
+  orig: 64, 64
+  offset: 12, 13
+  index: -1
+OT/03Might Guy/images/leave_02
+  rotate: false
+  xy: 1686, 3
+  size: 49, 51
+  orig: 64, 64
+  offset: 2, 5
+  index: -1
+OT/03Might Guy/images/leave_03
+  rotate: false
+  xy: 1451, 17
+  size: 43, 43
+  orig: 64, 64
+  offset: 12, 6
+  index: -1
+OT/03Might Guy/images/leave_04
+  rotate: false
+  xy: 1810, 48
+  size: 48, 43
+  orig: 64, 64
+  offset: 6, 11
+  index: -1
+OT/03Might Guy/images/set/mask_1028
+  rotate: true
+  xy: 1196, 173
+  size: 100, 104
+  orig: 128, 128
+  offset: 16, 8
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_00
+  rotate: false
+  xy: 333, 22
+  size: 227, 86
+  orig: 456, 95
+  offset: 229, 9
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_01
+  rotate: false
+  xy: 736, 45
+  size: 128, 71
+  orig: 456, 95
+  offset: 328, 24
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_02
+  rotate: true
+  xy: 1781, 497
+  size: 32, 38
+  orig: 456, 95
+  offset: 424, 57
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_03
+  rotate: true
+  xy: 1386, 119
+  size: 64, 69
+  orig: 456, 95
+  offset: 0, 26
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_04
+  rotate: false
+  xy: 1763, 93
+  size: 166, 84
+  orig: 456, 95
+  offset: 0, 11
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_05
+  rotate: false
+  xy: 1553, 531
+  size: 269, 91
+  orig: 456, 95
+  offset: 0, 4
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_06
+  rotate: false
+  xy: 790, 431
+  size: 369, 94
+  orig: 456, 95
+  offset: 0, 1
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_07
+  rotate: false
+  xy: 344, 527
+  size: 456, 95
+  orig: 456, 95
+  offset: 0, 0
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_08
+  rotate: false
+  xy: 802, 527
+  size: 420, 95
+  orig: 456, 95
+  offset: 36, 0
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-A3_09
+  rotate: false
+  xy: 1224, 529
+  size: 327, 93
+  orig: 456, 95
+  offset: 129, 2
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_00
+  rotate: false
+  xy: 344, 110
+  size: 265, 102
+  orig: 456, 108
+  offset: 191, 1
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_01
+  rotate: false
+  xy: 344, 214
+  size: 366, 106
+  orig: 456, 108
+  offset: 90, 1
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_02
+  rotate: false
+  xy: 344, 423
+  size: 444, 102
+  orig: 456, 108
+  offset: 12, 6
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_03
+  rotate: false
+  xy: 344, 322
+  size: 423, 99
+  orig: 456, 108
+  offset: 1, 9
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_04
+  rotate: false
+  xy: 2, 85
+  size: 329, 101
+  orig: 456, 108
+  offset: 1, 5
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_05
+  rotate: false
+  xy: 790, 333
+  size: 227, 96
+  orig: 456, 108
+  offset: 1, 5
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_06
+  rotate: false
+  xy: 135, 3
+  size: 130, 80
+  orig: 456, 108
+  offset: 1, 5
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_07
+  rotate: false
+  xy: 721, 2
+  size: 37, 41
+  orig: 456, 108
+  offset: 1, 10
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_08
+  rotate: true
+  xy: 1067, 2
+  size: 60, 76
+  orig: 456, 108
+  offset: 396, 1
+  index: -1
+OT/Asset/typhoon_size3/Skill_104-B3_09
+  rotate: false
+  xy: 736, 118
+  size: 162, 95
+  orig: 456, 108
+  offset: 294, 1
+  index: -1
+ao choang 2
+  rotate: false
+  xy: 1001, 207
+  size: 137, 84
+  orig: 137, 84
+  offset: 0, 0
+  index: -1
+ao choang phai 7
+  rotate: false
+  xy: 805, 3
+  size: 40, 40
+  orig: 40, 40
+  offset: 0, 0
+  index: -1
+ao choang sau 4
+  rotate: false
+  xy: 2, 3
+  size: 131, 80
+  orig: 131, 80
+  offset: 0, 0
+  index: -1
+ao choang sau 42
+  rotate: false
+  xy: 1931, 64
+  size: 103, 78
+  orig: 105, 80
+  offset: 1, 1
+  index: -1
+ao choang sau 5
+  rotate: false
+  xy: 712, 215
+  size: 157, 105
+  orig: 157, 105
+  offset: 0, 0
+  index: -1
+ao choang sau 7
+  rotate: true
+  xy: 900, 110
+  size: 122, 99
+  orig: 122, 100
+  offset: 0, 1
+  index: -1
+ao choang vai 4
+  rotate: false
+  xy: 1402, 2
+  size: 35, 35
+  orig: 37, 37
+  offset: 1, 1
+  index: -1
+aochoang trai 7
+  rotate: true
+  xy: 607, 31
+  size: 56, 110
+  orig: 56, 110
+  offset: 0, 0
+  index: -1
+ban tay phai 1 copy
+  rotate: false
+  xy: 1020, 81
+  size: 104, 30
+  orig: 106, 32
+  offset: 1, 1
+  index: -1
+ban tay phai 5
+  rotate: false
+  xy: 607, 5
+  size: 112, 24
+  orig: 114, 26
+  offset: 1, 1
+  index: -1
+ban tay trai 1
+  rotate: true
+  xy: 1984, 395
+  size: 100, 41
+  orig: 103, 43
+  offset: 1, 1
+  index: -1
+ban tay trai 2
+  rotate: false
+  xy: 1140, 186
+  size: 54, 105
+  orig: 56, 107
+  offset: 1, 1
+  index: -1
+ban tay trai 7
+  rotate: false
+  xy: 1145, 6
+  size: 74, 90
+  orig: 76, 92
+  offset: 1, 1
+  index: -1
+bao kiem
+  rotate: true
+  xy: 972, 2
+  size: 60, 93
+  orig: 62, 95
+  offset: 1, 1
+  index: -1
+body 4
+  rotate: false
+  xy: 1615, 2
+  size: 69, 57
+  orig: 69, 57
+  offset: 0, 0
+  index: -1
+body base
+  rotate: false
+  xy: 1693, 56
+  size: 54, 69
+  orig: 54, 69
+  offset: 0, 0
+  index: -1
+body1
+  rotate: false
+  xy: 1749, 35
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+cang tay phai 7
+  rotate: false
+  xy: 1530, 20
+  size: 29, 34
+  orig: 49, 45
+  offset: 18, 6
+  index: -1
+cang tay phai 7b
+  rotate: false
+  xy: 1951, 17
+  size: 42, 45
+  orig: 49, 45
+  offset: 0, 0
+  index: -1
+cang tay phai 7c
+  rotate: false
+  xy: 1907, 2
+  size: 42, 45
+  orig: 49, 45
+  offset: 0, 0
+  index: -1
+canh tay phai 5
+  rotate: true
+  xy: 1995, 22
+  size: 40, 37
+  orig: 42, 39
+  offset: 1, 1
+  index: -1
+chan phai 1
+  rotate: true
+  xy: 1321, 2
+  size: 33, 40
+  orig: 41, 41
+  offset: 2, 1
+  index: -1
+chan phai 7
+  rotate: false
+  xy: 1496, 18
+  size: 32, 42
+  orig: 32, 42
+  offset: 0, 0
+  index: -1
+chan trai 2
+  rotate: true
+  xy: 1860, 49
+  size: 42, 48
+  orig: 42, 50
+  offset: 0, 2
+  index: -1
+chan trai 4
+  rotate: false
+  xy: 1860, 2
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+chan trai 7
+  rotate: false
+  xy: 1406, 355
+  size: 24, 45
+  orig: 24, 45
+  offset: 0, 0
+  index: -1
+co tay phai 5
+  rotate: true
+  xy: 1363, 2
+  size: 33, 37
+  orig: 35, 39
+  offset: 1, 1
+  index: -1
+head 2
+  rotate: false
+  xy: 1966, 144
+  size: 68, 84
+  orig: 70, 86
+  offset: 1, 1
+  index: -1
+head 3
+  rotate: true
+  xy: 1302, 119
+  size: 64, 82
+  orig: 66, 84
+  offset: 1, 1
+  index: -1
+head 4
+  rotate: false
+  xy: 1128, 98
+  size: 65, 86
+  orig: 68, 88
+  offset: 2, 1
+  index: -1
+head 6
+  rotate: false
+  xy: 1221, 10
+  size: 65, 86
+  orig: 69, 88
+  offset: 1, 1
+  index: -1
+head 7
+  rotate: false
+  xy: 1385, 39
+  size: 64, 78
+  orig: 66, 80
+  offset: 1, 1
+  index: -1
+head1
+  rotate: false
+  xy: 1321, 37
+  size: 62, 80
+  orig: 70, 82
+  offset: 1, 1
+  index: -1
+images/idle_01
+  rotate: false
+  xy: 1433, 327
+  size: 169, 200
+  orig: 179, 217
+  offset: 5, 4
+  index: -1
+images/idle_03
+  rotate: true
+  xy: 1224, 402
+  size: 125, 207
+  orig: 133, 218
+  offset: 3, 5
+  index: -1
+images/idle_05
+  rotate: true
+  xy: 1824, 497
+  size: 125, 209
+  orig: 135, 214
+  offset: 3, 1
+  index: -1
+images/idle_07
+  rotate: true
+  xy: 1406, 194
+  size: 131, 201
+  orig: 138, 215
+  offset: 4, 2
+  index: -1
+images/idle_09
+  rotate: true
+  xy: 1781, 321
+  size: 174, 201
+  orig: 180, 216
+  offset: 2, 3
+  index: -1
+images/idle_11
+  rotate: false
+  xy: 1604, 328
+  size: 175, 201
+  orig: 180, 217
+  offset: 1, 4
+  index: -1
+images/idle_20
+  rotate: false
+  xy: 1609, 127
+  size: 152, 199
+  orig: 157, 215
+  offset: 0, 0
+  index: -1
+images/idle_23
+  rotate: true
+  xy: 1197, 275
+  size: 125, 207
+  orig: 137, 213
+  offset: 5, 0
+  index: -1
+images/idle_25
+  rotate: true
+  xy: 1763, 179
+  size: 140, 201
+  orig: 145, 216
+  offset: 2, 3
+  index: -1
+images/idle_28
+  rotate: false
+  xy: 1457, 128
+  size: 78, 64
+  orig: 82, 93
+  offset: 4, 10
+  index: -1
+images/idle_31
+  rotate: true
+  xy: 1966, 230
+  size: 89, 68
+  orig: 93, 90
+  offset: 0, 10
+  index: -1
+images/idle_35
+  rotate: false
+  xy: 1457, 62
+  size: 78, 64
+  orig: 83, 83
+  offset: 5, 7
+  index: -1
+images/idle_36
+  rotate: false
+  xy: 1537, 56
+  size: 76, 64
+  orig: 84, 81
+  offset: 2, 7
+  index: -1
+images/idle_39
+  rotate: false
+  xy: 1615, 61
+  size: 76, 64
+  orig: 88, 81
+  offset: 7, 8
+  index: -1
+images/idle_42
+  rotate: true
+  xy: 267, 4
+  size: 79, 64
+  orig: 86, 81
+  offset: 5, 10
+  index: -1
+kiem hong1
+  rotate: false
+  xy: 1931, 148
+  size: 33, 29
+  orig: 35, 31
+  offset: 1, 1
+  index: -1
+neck
+  rotate: true
+  xy: 1737, 7
+  size: 26, 33
+  orig: 26, 33
+  offset: 0, 0
+  index: -1
+quan 1
+  rotate: false
+  xy: 866, 31
+  size: 104, 77
+  orig: 104, 80
+  offset: 0, 3
+  index: -1
+quan 7
+  rotate: false
+  xy: 1537, 122
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 562, 26
+  size: 82, 43
+  orig: 84, 45
+  offset: 1, 1
+  index: -1
+tay phai 4
+  rotate: true
+  xy: 1195, 98
+  size: 73, 104
+  orig: 73, 104
+  offset: 0, 0
+  index: -1
+tay phai 7
+  rotate: false
+  xy: 1561, 24
+  size: 30, 30
+  orig: 32, 32
+  offset: 1, 1
+  index: -1
+tay trai 2
+  rotate: true
+  xy: 1984, 333
+  size: 60, 42
+  orig: 60, 42
+  offset: 0, 0
+  index: -1
+tay trai 4
+  rotate: false
+  xy: 871, 234
+  size: 128, 97
+  orig: 128, 97
+  offset: 0, 0
+  index: -1
+tay trai 5
+  rotate: false
+  xy: 1001, 113
+  size: 125, 92
+  orig: 125, 92
+  offset: 0, 0
+  index: -1
+tay trai 7a
+  rotate: true
+  xy: 1161, 435
+  size: 35, 57
+  orig: 45, 67
+  offset: 0, 9
+  index: -1
+tay trai 7b
+  rotate: false
+  xy: 760, 3
+  size: 43, 40
+  orig: 45, 67
+  offset: 2, 0
+  index: -1
+taytrai 1
+  rotate: false
+  xy: 1161, 472
+  size: 61, 53
+  orig: 61, 53
+  offset: 0, 0
+  index: -1

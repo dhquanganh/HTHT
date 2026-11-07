@@ -1,0 +1,104 @@
+
+Hit_166.png
+size: 792,771
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_franky_skill_1_hit/000
+  rotate: false
+  xy: 688, 59
+  size: 102, 216
+  orig: 109, 219
+  offset: 4, 1
+  index: -1
+Char_franky_skill_1_hit/001
+  rotate: false
+  xy: 2, 535
+  size: 277, 234
+  orig: 290, 238
+  offset: 10, 1
+  index: -1
+Char_franky_skill_1_hit/002
+  rotate: false
+  xy: 2, 299
+  size: 272, 234
+  orig: 282, 238
+  offset: 8, 1
+  index: -1
+Char_franky_skill_1_hit/003
+  rotate: true
+  xy: 281, 431
+  size: 156, 249
+  orig: 160, 253
+  offset: 2, 1
+  index: -1
+Char_franky_skill_1_hit/004
+  rotate: false
+  xy: 2, 35
+  size: 170, 262
+  orig: 174, 268
+  offset: 2, 2
+  index: -1
+Char_franky_skill_1_hit/005
+  rotate: true
+  xy: 281, 589
+  size: 180, 272
+  orig: 184, 281
+  offset: 2, 4
+  index: -1
+Char_franky_skill_1_hit/006
+  rotate: true
+  xy: 563, 277
+  size: 191, 204
+  orig: 197, 209
+  offset: 3, 2
+  index: -1
+Char_franky_skill_1_hit/007
+  rotate: true
+  xy: 555, 569
+  size: 200, 213
+  orig: 206, 218
+  offset: 4, 2
+  index: -1
+Char_franky_skill_1_hit/008
+  rotate: true
+  xy: 563, 470
+  size: 97, 227
+  orig: 102, 233
+  offset: 3, 2
+  index: -1
+Char_franky_skill_1_windgun/000
+  rotate: true
+  xy: 174, 5
+  size: 292, 126
+  orig: 301, 130
+  offset: 5, 1
+  index: -1
+Char_franky_skill_1_windgun/001
+  rotate: true
+  xy: 302, 13
+  size: 285, 127
+  orig: 298, 132
+  offset: 9, 2
+  index: -1
+Char_franky_skill_1_windgun/002
+  rotate: false
+  xy: 276, 300
+  size: 285, 129
+  orig: 298, 133
+  offset: 8, 1
+  index: -1
+Char_franky_skill_1_windgun/003
+  rotate: true
+  xy: 560, 2
+  size: 273, 126
+  orig: 286, 130
+  offset: 9, 1
+  index: -1
+Char_franky_skill_1_windgun/004
+  rotate: true
+  xy: 431, 22
+  size: 276, 127
+  orig: 289, 132
+  offset: 8, 2
+  index: -1

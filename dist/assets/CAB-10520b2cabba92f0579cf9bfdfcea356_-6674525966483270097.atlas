@@ -1,0 +1,671 @@
+
+Cuts_600.png
+size: 1988,1668
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+10_Scene
+  rotate: true
+  xy: 1324, 1377
+  size: 289, 551
+  orig: 289, 551
+  offset: 0, 0
+  index: -1
+11_Scene
+  rotate: true
+  xy: 1230, 1105
+  size: 270, 536
+  orig: 270, 536
+  offset: 0, 0
+  index: -1
+12_Body
+  rotate: false
+  xy: 1016, 400
+  size: 145, 189
+  orig: 186, 192
+  offset: 40, 1
+  index: -1
+12_Cape_L
+  rotate: false
+  xy: 1341, 104
+  size: 161, 103
+  orig: 163, 103
+  offset: 0, 0
+  index: -1
+12_Cape_R
+  rotate: false
+  xy: 1163, 442
+  size: 185, 147
+  orig: 188, 148
+  offset: 1, 1
+  index: -1
+12_Hair
+  rotate: false
+  xy: 1887, 145
+  size: 96, 131
+  orig: 96, 132
+  offset: 0, 1
+  index: -1
+12_Hair_1
+  rotate: true
+  xy: 1311, 28
+  size: 57, 17
+  orig: 57, 17
+  offset: 0, 0
+  index: -1
+12_Hair_2
+  rotate: true
+  xy: 1948, 638
+  size: 68, 38
+  orig: 71, 40
+  offset: 1, 1
+  index: -1
+12_Hair_3
+  rotate: false
+  xy: 1811, 33
+  size: 77, 41
+  orig: 80, 43
+  offset: 1, 1
+  index: -1
+12_StickMain_L
+  rotate: true
+  xy: 286, 6
+  size: 54, 221
+  orig: 54, 221
+  offset: 0, 0
+  index: -1
+12_StickMain_R
+  rotate: true
+  xy: 1527, 815
+  size: 67, 208
+  orig: 67, 208
+  offset: 0, 0
+  index: -1
+12_Stick_L
+  rotate: true
+  xy: 1896, 405
+  size: 61, 56
+  orig: 61, 56
+  offset: 0, 0
+  index: -1
+12_Stick_R
+  rotate: false
+  xy: 1412, 6
+  size: 94, 19
+  orig: 94, 25
+  offset: 0, 0
+  index: -1
+12_cape
+  rotate: false
+  xy: 556, 159
+  size: 278, 136
+  orig: 278, 164
+  offset: 0, 28
+  index: -1
+13_Cape
+  rotate: true
+  xy: 834, 2
+  size: 129, 134
+  orig: 148, 134
+  offset: 19, 0
+  index: -1
+13_CapeHand
+  rotate: true
+  xy: 1504, 110
+  size: 85, 161
+  orig: 107, 161
+  offset: 22, 0
+  index: -1
+13_Scene
+  rotate: true
+  xy: 594, 569
+  size: 262, 400
+  orig: 336, 401
+  offset: 74, 0
+  index: -1
+13_Stick_1
+  rotate: false
+  xy: 1892, 630
+  size: 54, 152
+  orig: 54, 152
+  offset: 0, 0
+  index: -1
+1_Face
+  rotate: false
+  xy: 643, 1384
+  size: 679, 282
+  orig: 679, 284
+  offset: 0, 0
+  index: -1
+1_Hair
+  rotate: true
+  xy: 556, 95
+  size: 62, 276
+  orig: 62, 276
+  offset: 0, 0
+  index: -1
+2_Badge
+  rotate: true
+  xy: 1954, 406
+  size: 60, 32
+  orig: 62, 34
+  offset: 1, 1
+  index: -1
+2_Cape
+  rotate: false
+  xy: 996, 591
+  size: 176, 222
+  orig: 176, 222
+  offset: 0, 0
+  index: -1
+2_CapeHand
+  rotate: false
+  xy: 869, 258
+  size: 146, 129
+  orig: 146, 129
+  offset: 0, 0
+  index: -1
+2_Face
+  rotate: false
+  xy: 509, 6
+  size: 44, 54
+  orig: 46, 58
+  offset: 1, 3
+  index: -1
+2_Hair
+  rotate: true
+  xy: 1727, 917
+  size: 172, 232
+  orig: 172, 233
+  offset: 0, 0
+  index: -1
+2_Hair_1
+  rotate: true
+  xy: 1882, 76
+  size: 67, 73
+  orig: 70, 74
+  offset: 1, 0
+  index: -1
+2_Hair_2
+  rotate: false
+  xy: 1739, 39
+  size: 70, 50
+  orig: 70, 51
+  offset: 0, 1
+  index: -1
+2_Hair_3
+  rotate: true
+  xy: 1013, 197
+  size: 59, 106
+  orig: 60, 108
+  offset: 0, 0
+  index: -1
+2_Hair_4
+  rotate: true
+  xy: 594, 833
+  size: 21, 38
+  orig: 21, 38
+  offset: 0, 0
+  index: -1
+2_Hair_5
+  rotate: false
+  xy: 924, 389
+  size: 90, 178
+  orig: 93, 182
+  offset: 2, 2
+  index: -1
+2_Hair_6
+  rotate: true
+  xy: 1174, 87
+  size: 114, 165
+  orig: 117, 167
+  offset: 0, 1
+  index: -1
+2_Hair_7
+  rotate: false
+  xy: 869, 392
+  size: 33, 22
+  orig: 33, 22
+  offset: 0, 0
+  index: -1
+2_Hand_L
+  rotate: false
+  xy: 1693, 92
+  size: 79, 63
+  orig: 81, 66
+  offset: 1, 2
+  index: -1
+2_Hand_L1
+  rotate: true
+  xy: 1851, 80
+  size: 75, 29
+  orig: 77, 31
+  offset: 1, 1
+  index: -1
+2_Hand_L1_2
+  rotate: false
+  xy: 1948, 708
+  size: 38, 74
+  orig: 41, 76
+  offset: 1, 1
+  index: -1
+2_Hand_L1_3
+  rotate: true
+  xy: 1877, 1393
+  size: 27, 101
+  orig: 30, 103
+  offset: 2, 1
+  index: -1
+2_Hand_R
+  rotate: true
+  xy: 594, 856
+  size: 86, 44
+  orig: 89, 47
+  offset: 2, 2
+  index: -1
+2_Hand_R1
+  rotate: true
+  xy: 754, 2
+  size: 91, 69
+  orig: 93, 71
+  offset: 1, 1
+  index: -1
+2_Scene
+  rotate: false
+  xy: 1527, 884
+  size: 198, 219
+  orig: 198, 219
+  offset: 0, 0
+  index: -1
+3_Scene
+  rotate: true
+  xy: 1703, 157
+  size: 122, 182
+  orig: 122, 182
+  offset: 0, 0
+  index: -1
+3_Scene_2
+  rotate: true
+  xy: 1708, 281
+  size: 122, 184
+  orig: 122, 184
+  offset: 0, 0
+  index: -1
+4_Body
+  rotate: true
+  xy: 1877, 1422
+  size: 244, 109
+  orig: 244, 109
+  offset: 0, 0
+  index: -1
+4_Cape
+  rotate: false
+  xy: 572, 297
+  size: 295, 117
+  orig: 295, 117
+  offset: 0, 0
+  index: -1
+4_CapeHand_L
+  rotate: false
+  xy: 1110, 25
+  size: 57, 106
+  orig: 58, 107
+  offset: 0, 1
+  index: -1
+4_CapeHand_R
+  rotate: false
+  xy: 1341, 2
+  size: 69, 100
+  orig: 69, 100
+  offset: 0, 0
+  index: -1
+4_Face
+  rotate: false
+  xy: 1707, 784
+  size: 27, 29
+  orig: 29, 31
+  offset: 1, 1
+  index: -1
+4_Hair_1
+  rotate: false
+  xy: 1110, 2
+  size: 24, 21
+  orig: 24, 21
+  offset: 0, 0
+  index: -1
+4_Hair_2
+  rotate: false
+  xy: 556, 341
+  size: 14, 15
+  orig: 16, 15
+  offset: 2, 0
+  index: -1
+4_Hair_3
+  rotate: true
+  xy: 1136, 2
+  size: 21, 15
+  orig: 21, 19
+  offset: 0, 0
+  index: -1
+4_Hair_4
+  rotate: true
+  xy: 572, 610
+  size: 34, 20
+  orig: 36, 20
+  offset: 2, 0
+  index: -1
+4_Hair_5
+  rotate: false
+  xy: 1514, 597
+  size: 15, 24
+  orig: 15, 24
+  offset: 0, 0
+  index: -1
+4_Hair_6
+  rotate: false
+  xy: 836, 263
+  size: 27, 32
+  orig: 27, 32
+  offset: 0, 0
+  index: -1
+4_Hand_R
+  rotate: true
+  xy: 1667, 113
+  size: 82, 24
+  orig: 84, 26
+  offset: 1, 1
+  index: -1
+4_Smoke_1
+  rotate: true
+  xy: 1896, 468
+  size: 160, 78
+  orig: 160, 78
+  offset: 0, 0
+  index: -1
+4_Smoke_2
+  rotate: false
+  xy: 1169, 25
+  size: 140, 60
+  orig: 140, 60
+  offset: 0, 0
+  index: -1
+4_Smoke_3
+  rotate: false
+  xy: 1525, 44
+  size: 136, 64
+  orig: 136, 64
+  offset: 0, 0
+  index: -1
+4_Smoke_4
+  rotate: true
+  xy: 1894, 278
+  size: 125, 92
+  orig: 125, 92
+  offset: 0, 0
+  index: -1
+4_Smoke_5
+  rotate: false
+  xy: 1013, 133
+  size: 159, 62
+  orig: 159, 62
+  offset: 0, 0
+  index: -1
+4_StickMain_L
+  rotate: true
+  xy: 572, 416
+  size: 151, 350
+  orig: 151, 350
+  offset: 0, 0
+  index: -1
+4_StickMain_R
+  rotate: true
+  xy: 1552, 343
+  size: 141, 154
+  orig: 141, 155
+  offset: 0, 0
+  index: -1
+4_Stick_4
+  rotate: true
+  xy: 1412, 27
+  size: 75, 111
+  orig: 75, 111
+  offset: 0, 0
+  index: -1
+5_Hair_1
+  rotate: true
+  xy: 2, 11
+  size: 49, 282
+  orig: 50, 282
+  offset: 1, 0
+  index: -1
+5_Hair_2
+  rotate: false
+  xy: 1097, 815
+  size: 193, 282
+  orig: 193, 282
+  offset: 0, 0
+  index: -1
+5_Hair_3
+  rotate: false
+  xy: 1292, 820
+  size: 233, 283
+  orig: 234, 283
+  offset: 1, 0
+  index: -1
+5_Scene
+  rotate: false
+  xy: 643, 1099
+  size: 585, 283
+  orig: 585, 283
+  offset: 0, 0
+  index: -1
+6_Scene
+  rotate: false
+  xy: 643, 833
+  size: 452, 264
+  orig: 452, 264
+  offset: 0, 0
+  index: -1
+7_Scene
+  rotate: false
+  xy: 2, 646
+  size: 590, 296
+  orig: 649, 296
+  offset: 0, 0
+  index: -1
+8_Boobs
+  rotate: false
+  xy: 1163, 325
+  size: 191, 115
+  orig: 193, 117
+  offset: 1, 1
+  index: -1
+8_Hair_1
+  rotate: true
+  xy: 1714, 405
+  size: 80, 180
+  orig: 80, 182
+  offset: 0, 1
+  index: -1
+8_Hair_2
+  rotate: true
+  xy: 556, 8
+  size: 85, 196
+  orig: 86, 199
+  offset: 1, 2
+  index: -1
+8_Scene
+  rotate: false
+  xy: 2, 358
+  size: 568, 286
+  orig: 568, 287
+  offset: 0, 0
+  index: -1
+9_Scene
+  rotate: true
+  xy: 2, 62
+  size: 294, 552
+  orig: 294, 552
+  offset: 0, 0
+  index: -1
+Anime-Speed-Lines-PNG-File
+  rotate: false
+  xy: 2, 1306
+  size: 639, 360
+  orig: 639, 360
+  offset: 0, 0
+  index: -1
+BG_Black
+  rotate: false
+  xy: 1504, 197
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+BG_White
+  rotate: false
+  xy: 1516, 197
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+FX_Crash
+  rotate: true
+  xy: 1554, 197
+  size: 144, 147
+  orig: 146, 147
+  offset: 0, 0
+  index: -1
+FX_Explosive/b0002
+  rotate: false
+  xy: 1663, 38
+  size: 74, 52
+  orig: 75, 53
+  offset: 0, 0
+  index: -1
+FX_Explosive/b0003
+  rotate: false
+  xy: 836, 133
+  size: 175, 123
+  orig: 178, 126
+  offset: 2, 1
+  index: -1
+FX_Explosive/b0004
+  rotate: false
+  xy: 1163, 203
+  size: 175, 120
+  orig: 178, 126
+  offset: 2, 1
+  index: -1
+FX_Explosive/b0005
+  rotate: false
+  xy: 1356, 333
+  size: 194, 125
+  orig: 200, 126
+  offset: 4, 0
+  index: -1
+FX_Explosive/b0006
+  rotate: false
+  xy: 1356, 209
+  size: 196, 122
+  orig: 200, 125
+  offset: 2, 1
+  index: -1
+FX_Explosive/b0007
+  rotate: false
+  xy: 1768, 1091
+  size: 216, 135
+  orig: 221, 138
+  offset: 2, 0
+  index: -1
+FX_Explosive/b0008
+  rotate: false
+  xy: 1768, 1228
+  size: 218, 147
+  orig: 223, 147
+  offset: 0, 0
+  index: -1
+FX_Explosive/b0009
+  rotate: true
+  xy: 1350, 597
+  size: 221, 162
+  orig: 227, 163
+  offset: 3, 0
+  index: -1
+FX_Explosive/b0010
+  rotate: true
+  xy: 1174, 591
+  size: 222, 174
+  orig: 227, 175
+  offset: 3, 0
+  index: -1
+FX_Explosive/b0011
+  rotate: false
+  xy: 1514, 623
+  size: 191, 190
+  orig: 191, 190
+  offset: 0, 0
+  index: -1
+FX_Explosive/b0012
+  rotate: true
+  xy: 1707, 624
+  size: 158, 183
+  orig: 159, 183
+  offset: 0, 0
+  index: -1
+FX_Part
+  rotate: true
+  xy: 970, 7
+  size: 124, 138
+  orig: 128, 141
+  offset: 2, 1
+  index: -1
+FX_SpeedLine/SpeedLine_3
+  rotate: false
+  xy: 1350, 460
+  size: 180, 135
+  orig: 180, 135
+  offset: 0, 0
+  index: -1
+FX_SpeedLine/SpeedLine_4
+  rotate: false
+  xy: 1532, 486
+  size: 180, 135
+  orig: 180, 135
+  offset: 0, 0
+  index: -1
+FX_SpeedLine/SpeedLine_5
+  rotate: false
+  xy: 1714, 487
+  size: 180, 135
+  orig: 180, 135
+  offset: 0, 0
+  index: -1
+SpeedLine_White
+  rotate: false
+  xy: 2, 944
+  size: 639, 360
+  orig: 639, 360
+  offset: 0, 0
+  index: -1
+bgrr
+  rotate: false
+  xy: 1737, 784
+  size: 210, 131
+  orig: 210, 131
+  offset: 0, 0
+  index: -1
+glow
+  rotate: false
+  xy: 1774, 91
+  size: 75, 64
+  orig: 79, 68
+  offset: 2, 2
+  index: -1
+—Pngtree—abstract comic style horizontal speed_6556226
+  rotate: false
+  xy: 1017, 262
+  size: 144, 136
+  orig: 150, 150
+  offset: 3, 7
+  index: -1

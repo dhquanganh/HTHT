@@ -1,0 +1,97 @@
+
+Chopper_mini.png
+size: 516,112
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 35
+  rotate: true
+  xy: 337, 8
+  size: 101, 63
+  orig: 101, 63
+  offset: 0, 0
+  index: -1
+Layer 38
+  rotate: true
+  xy: 402, 2
+  size: 13, 24
+  orig: 16, 26
+  offset: 1, 1
+  index: -1
+bat
+  rotate: false
+  xy: 450, 75
+  size: 61, 34
+  orig: 63, 36
+  offset: 1, 1
+  index: -1
+body
+  rotate: true
+  xy: 402, 17
+  size: 92, 46
+  orig: 92, 46
+  offset: 0, 0
+  index: -1
+feet L
+  rotate: false
+  xy: 495, 39
+  size: 18, 15
+  orig: 20, 17
+  offset: 1, 1
+  index: -1
+feet r
+  rotate: false
+  xy: 495, 24
+  size: 19, 13
+  orig: 21, 15
+  offset: 1, 1
+  index: -1
+head
+  rotate: true
+  xy: 258, 10
+  size: 99, 77
+  orig: 101, 79
+  offset: 1, 1
+  index: -1
+idle_head1
+  rotate: true
+  xy: 90, 3
+  size: 106, 82
+  orig: 108, 83
+  offset: 1, 0
+  index: -1
+idle_head2
+  rotate: true
+  xy: 174, 3
+  size: 106, 82
+  orig: 108, 83
+  offset: 1, 0
+  index: -1
+leg L
+  rotate: false
+  xy: 428, 2
+  size: 23, 13
+  orig: 25, 15
+  offset: 1, 1
+  index: -1
+leg R
+  rotate: true
+  xy: 495, 56
+  size: 17, 19
+  orig: 19, 21
+  offset: 1, 1
+  index: -1
+run_head
+  rotate: true
+  xy: 2, 5
+  size: 104, 86
+  orig: 106, 89
+  offset: 1, 2
+  index: -1
+shd
+  rotate: false
+  xy: 450, 30
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1

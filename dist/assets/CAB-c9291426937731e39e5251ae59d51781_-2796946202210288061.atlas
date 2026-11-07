@@ -1,0 +1,1307 @@
+
+Hero_182.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 162, 1008
+  size: 12, 23
+  orig: 13, 24
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 407, 987
+  size: 18, 22
+  orig: 19, 23
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 250, 925
+  size: 36, 50
+  orig: 46, 56
+  offset: 4, 4
+  index: -1
+cloth_01
+  rotate: true
+  xy: 431, 987
+  size: 18, 19
+  orig: 19, 20
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 187, 1008
+  size: 12, 62
+  orig: 13, 63
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 407, 958
+  size: 27, 71
+  orig: 28, 72
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 251, 1008
+  size: 12, 53
+  orig: 13, 54
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 452, 987
+  size: 30, 18
+  orig: 33, 25
+  offset: 3, 2
+  index: -1
+cloth_06
+  rotate: true
+  xy: 644, 985
+  size: 19, 21
+  orig: 20, 22
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 306, 962
+  size: 33, 25
+  orig: 34, 26
+  offset: 1, 0
+  index: -1
+cloth_41
+  rotate: true
+  xy: 599, 954
+  size: 30, 43
+  orig: 35, 46
+  offset: 3, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 86, 1009
+  size: 11, 19
+  orig: 12, 20
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 872, 1004
+  size: 16, 18
+  orig: 17, 19
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 733, 1005
+  size: 15, 19
+  orig: 16, 20
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 892, 1004
+  size: 16, 21
+  orig: 17, 22
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 2, 1010
+  size: 10, 19
+  orig: 11, 20
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 915, 1004
+  size: 18, 16
+  orig: 19, 17
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 178, 873
+  size: 52, 56
+  orig: 53, 57
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 797, 900
+  size: 52, 48
+  orig: 53, 57
+  offset: 1, 8
+  index: -1
+head_06
+  rotate: true
+  xy: 427, 862
+  size: 53, 59
+  orig: 57, 61
+  offset: 3, 1
+  index: -1
+head_14
+  rotate: true
+  xy: 236, 871
+  size: 52, 56
+  orig: 53, 57
+  offset: 1, 0
+  index: -1
+karifa_addmotion
+  rotate: true
+  xy: 2, 675
+  size: 80, 103
+  orig: 81, 104
+  offset: 1, 0
+  index: -1
+karifa_beat_02
+  rotate: true
+  xy: 297, 331
+  size: 115, 154
+  orig: 116, 155
+  offset: 1, 0
+  index: -1
+karifa_beat_04
+  rotate: true
+  xy: 473, 527
+  size: 95, 158
+  orig: 96, 159
+  offset: 1, 0
+  index: -1
+karifa_beat_101
+  rotate: false
+  xy: 414, 1007
+  size: 17, 13
+  orig: 18, 14
+  offset: 1, 0
+  index: -1
+karifa_beat_102
+  rotate: false
+  xy: 580, 1006
+  size: 14, 14
+  orig: 15, 15
+  offset: 1, 0
+  index: -1
+karifa_beat_103
+  rotate: true
+  xy: 433, 1007
+  size: 13, 14
+  orig: 14, 15
+  offset: 1, 0
+  index: -1
+karifa_beat_104
+  rotate: true
+  xy: 596, 1006
+  size: 14, 20
+  orig: 15, 21
+  offset: 1, 0
+  index: -1
+karifa_beat_105
+  rotate: false
+  xy: 750, 983
+  size: 21, 20
+  orig: 22, 21
+  offset: 1, 0
+  index: -1
+karifa_beat_106
+  rotate: true
+  xy: 488, 860
+  size: 53, 56
+  orig: 54, 57
+  offset: 1, 0
+  index: -1
+karifa_beat_107
+  rotate: true
+  xy: 341, 920
+  size: 37, 45
+  orig: 38, 46
+  offset: 1, 0
+  index: -1
+karifa_beat_108
+  rotate: true
+  xy: 895, 946
+  size: 33, 35
+  orig: 34, 36
+  offset: 1, 0
+  index: -1
+karifa_beat_109
+  rotate: false
+  xy: 773, 983
+  size: 23, 20
+  orig: 24, 21
+  offset: 1, 0
+  index: -1
+karifa_beat_110
+  rotate: true
+  xy: 798, 983
+  size: 20, 27
+  orig: 21, 28
+  offset: 1, 0
+  index: -1
+karifa_beat_111
+  rotate: true
+  xy: 111, 990
+  size: 17, 29
+  orig: 18, 30
+  offset: 1, 0
+  index: -1
+karifa_beat_112
+  rotate: true
+  xy: 935, 1004
+  size: 16, 20
+  orig: 17, 21
+  offset: 1, 0
+  index: -1
+karifa_beat_113
+  rotate: false
+  xy: 124, 964
+  size: 26, 24
+  orig: 27, 25
+  offset: 1, 0
+  index: -1
+karifa_beat_114
+  rotate: false
+  xy: 107, 1009
+  size: 22, 11
+  orig: 23, 14
+  offset: 1, 2
+  index: -1
+karifa_beat_115
+  rotate: true
+  xy: 23, 1010
+  size: 10, 21
+  orig: 11, 22
+  offset: 1, 0
+  index: -1
+karifa_beat_301
+  rotate: true
+  xy: 618, 1006
+  size: 14, 17
+  orig: 15, 18
+  offset: 1, 0
+  index: -1
+karifa_beat_302
+  rotate: true
+  xy: 449, 1007
+  size: 13, 19
+  orig: 14, 20
+  offset: 1, 0
+  index: -1
+karifa_beat_303
+  rotate: true
+  xy: 637, 1006
+  size: 14, 23
+  orig: 15, 24
+  offset: 1, 0
+  index: -1
+karifa_beat_304
+  rotate: false
+  xy: 302, 924
+  size: 37, 36
+  orig: 38, 37
+  offset: 1, 0
+  index: -1
+karifa_beat_305
+  rotate: true
+  xy: 52, 930
+  size: 35, 39
+  orig: 36, 40
+  offset: 1, 0
+  index: -1
+karifa_beat_306
+  rotate: false
+  xy: 152, 964
+  size: 32, 24
+  orig: 33, 25
+  offset: 1, 0
+  index: -1
+karifa_beat_307
+  rotate: false
+  xy: 754, 1005
+  size: 23, 15
+  orig: 24, 16
+  offset: 1, 0
+  index: -1
+karifa_beat_308
+  rotate: false
+  xy: 30, 968
+  size: 26, 22
+  orig: 27, 23
+  offset: 1, 0
+  index: -1
+karifa_beat_309
+  rotate: false
+  xy: 644, 952
+  size: 143, 29
+  orig: 144, 80
+  offset: 1, 24
+  index: -1
+karifa_beat_312
+  rotate: true
+  xy: 46, 1010
+  size: 10, 12
+  orig: 11, 13
+  offset: 1, 0
+  index: -1
+karifa_beat_313
+  rotate: true
+  xy: 779, 1005
+  size: 15, 24
+  orig: 16, 25
+  offset: 1, 0
+  index: -1
+karifa_beat_314
+  rotate: true
+  xy: 484, 987
+  size: 18, 27
+  orig: 19, 28
+  offset: 1, 0
+  index: -1
+karifa_beat_315
+  rotate: true
+  xy: 957, 1004
+  size: 16, 28
+  orig: 17, 29
+  offset: 1, 0
+  index: -1
+karifa_beat_316
+  rotate: true
+  xy: 546, 856
+  size: 53, 57
+  orig: 54, 58
+  offset: 1, 0
+  index: -1
+karifa_beat_317
+  rotate: true
+  xy: 2, 992
+  size: 16, 57
+  orig: 17, 58
+  offset: 1, 0
+  index: -1
+karifa_beat_318
+  rotate: false
+  xy: 870, 777
+  size: 69, 64
+  orig: 70, 65
+  offset: 1, 0
+  index: -1
+karifa_beat_401
+  rotate: true
+  xy: 93, 927
+  size: 35, 39
+  orig: 36, 40
+  offset: 1, 0
+  index: -1
+karifa_beat_402
+  rotate: true
+  xy: 186, 964
+  size: 24, 25
+  orig: 25, 26
+  offset: 1, 0
+  index: -1
+karifa_beat_403
+  rotate: false
+  xy: 851, 896
+  size: 74, 48
+  orig: 75, 49
+  offset: 1, 0
+  index: -1
+karifa_beat_501
+  rotate: false
+  xy: 159, 747
+  size: 66, 65
+  orig: 70, 72
+  offset: 3, 3
+  index: -1
+karifa_beat_502
+  rotate: true
+  xy: 662, 1006
+  size: 14, 17
+  orig: 19, 18
+  offset: 2, 0
+  index: -1
+karifa_beat_601
+  rotate: false
+  xy: 277, 808
+  size: 65, 56
+  orig: 70, 60
+  offset: 3, 0
+  index: -1
+karifa_beat_602
+  rotate: false
+  xy: 513, 987
+  size: 22, 18
+  orig: 28, 27
+  offset: 3, 4
+  index: -1
+karifa_beat_603
+  rotate: true
+  xy: 561, 911
+  size: 41, 62
+  orig: 70, 65
+  offset: 4, 2
+  index: -1
+karifa_beat_604
+  rotate: true
+  xy: 344, 807
+  size: 56, 64
+  orig: 70, 65
+  offset: 14, 0
+  index: -1
+karifa_damage
+  rotate: true
+  xy: 154, 454
+  size: 97, 152
+  orig: 98, 153
+  offset: 1, 0
+  index: -1
+karifa_skill1_08
+  rotate: true
+  xy: 633, 519
+  size: 95, 155
+  orig: 96, 156
+  offset: 1, 0
+  index: -1
+karifa_skill1_09
+  rotate: true
+  xy: 473, 428
+  size: 97, 157
+  orig: 98, 158
+  offset: 1, 0
+  index: -1
+karifa_skill1_10
+  rotate: true
+  xy: 790, 512
+  size: 95, 162
+  orig: 96, 163
+  offset: 1, 0
+  index: -1
+karifa_skill1_11
+  rotate: true
+  xy: 578, 285
+  size: 121, 162
+  orig: 122, 163
+  offset: 1, 0
+  index: -1
+karifa_skill1_131
+  rotate: true
+  xy: 58, 967
+  size: 22, 35
+  orig: 26, 38
+  offset: 2, 0
+  index: -1
+karifa_skill1_132
+  rotate: false
+  xy: 605, 851
+  size: 60, 53
+  orig: 62, 63
+  offset: 2, 1
+  index: -1
+karifa_skill1_133
+  rotate: false
+  xy: 903, 981
+  size: 22, 21
+  orig: 25, 26
+  offset: 2, 1
+  index: -1
+karifa_skill1_134
+  rotate: false
+  xy: 470, 1007
+  size: 22, 13
+  orig: 25, 17
+  offset: 1, 1
+  index: -1
+karifa_skill1_135
+  rotate: false
+  xy: 987, 1004
+  size: 17, 16
+  orig: 22, 21
+  offset: 5, 1
+  index: -1
+karifa_skill1_136
+  rotate: true
+  xy: 675, 905
+  size: 45, 67
+  orig: 51, 69
+  offset: 4, 0
+  index: -1
+karifa_skill1_702
+  rotate: true
+  xy: 306, 1008
+  size: 12, 32
+  orig: 13, 35
+  offset: 1, 0
+  index: -1
+karifa_skill1_703
+  rotate: false
+  xy: 494, 1007
+  size: 13, 13
+  orig: 14, 14
+  offset: 1, 0
+  index: -1
+karifa_skill1_704
+  rotate: false
+  xy: 509, 1007
+  size: 18, 13
+  orig: 19, 14
+  offset: 1, 0
+  index: -1
+karifa_skill1_706
+  rotate: true
+  xy: 667, 850
+  size: 53, 57
+  orig: 54, 58
+  offset: 1, 0
+  index: -1
+karifa_skill1_707
+  rotate: false
+  xy: 341, 961
+  size: 33, 26
+  orig: 34, 27
+  offset: 1, 0
+  index: -1
+karifa_skill1_708
+  rotate: true
+  xy: 272, 989
+  size: 17, 24
+  orig: 18, 25
+  offset: 1, 0
+  index: -1
+karifa_skill1_710
+  rotate: true
+  xy: 537, 987
+  size: 18, 23
+  orig: 19, 24
+  offset: 1, 0
+  index: -1
+karifa_skill2  1401
+  rotate: false
+  xy: 294, 866
+  size: 55, 52
+  orig: 59, 58
+  offset: 2, 2
+  index: -1
+karifa_skill2  1402
+  rotate: true
+  xy: 298, 989
+  size: 17, 51
+  orig: 23, 58
+  offset: 3, 2
+  index: -1
+karifa_skill2 401
+  rotate: false
+  xy: 134, 927
+  size: 69, 35
+  orig: 70, 36
+  offset: 1, 0
+  index: -1
+karifa_skill2 402
+  rotate: true
+  xy: 805, 1005
+  size: 15, 19
+  orig: 16, 20
+  offset: 1, 0
+  index: -1
+karifa_skill2 403
+  rotate: false
+  xy: 95, 965
+  size: 27, 23
+  orig: 28, 24
+  offset: 1, 0
+  index: -1
+karifa_skill2 404
+  rotate: true
+  xy: 2, 818
+  size: 55, 63
+  orig: 56, 64
+  offset: 1, 0
+  index: -1
+karifa_skill2 405
+  rotate: false
+  xy: 667, 985
+  size: 31, 19
+  orig: 32, 20
+  offset: 1, 0
+  index: -1
+karifa_skill2 406
+  rotate: true
+  xy: 927, 981
+  size: 21, 22
+  orig: 22, 23
+  offset: 1, 0
+  index: -1
+karifa_skill2 407
+  rotate: true
+  xy: 700, 985
+  size: 19, 22
+  orig: 20, 23
+  offset: 1, 0
+  index: -1
+karifa_skill2 408
+  rotate: false
+  xy: 376, 959
+  size: 29, 28
+  orig: 30, 29
+  offset: 1, 0
+  index: -1
+karifa_skill2 409
+  rotate: false
+  xy: 827, 983
+  size: 24, 20
+  orig: 25, 21
+  offset: 1, 0
+  index: -1
+karifa_skill2 410
+  rotate: false
+  xy: 853, 982
+  size: 20, 20
+  orig: 21, 21
+  offset: 1, 0
+  index: -1
+karifa_skill2_02
+  rotate: true
+  xy: 562, 624
+  size: 84, 158
+  orig: 85, 159
+  offset: 1, 0
+  index: -1
+karifa_skill2_02_ef
+  rotate: false
+  xy: 789, 950
+  size: 104, 30
+  orig: 105, 31
+  offset: 1, 0
+  index: -1
+karifa_skill2_06_ef
+  rotate: true
+  xy: 744, 901
+  size: 47, 51
+  orig: 48, 52
+  offset: 1, 0
+  index: -1
+karifa_skill2_07_ef
+  rotate: true
+  xy: 54, 875
+  size: 50, 58
+  orig: 58, 61
+  offset: 4, 2
+  index: -1
+karifa_skill2_07_ef_2
+  rotate: true
+  xy: 927, 895
+  size: 49, 66
+  orig: 50, 67
+  offset: 1, 0
+  index: -1
+karifa_skill2_08_ef
+  rotate: true
+  xy: 941, 777
+  size: 64, 78
+  orig: 65, 79
+  offset: 1, 0
+  index: -1
+karifa_skill2_08_ef_2
+  rotate: false
+  xy: 265, 642
+  size: 137, 82
+  orig: 138, 83
+  offset: 1, 0
+  index: -1
+karifa_skill2_09
+  rotate: false
+  xy: 453, 306
+  size: 123, 120
+  orig: 124, 121
+  offset: 1, 0
+  index: -1
+karifa_skill2_09_ef
+  rotate: true
+  xy: 227, 741
+  size: 65, 102
+  orig: 66, 103
+  offset: 1, 0
+  index: -1
+karifa_skill2_09_ef_2
+  rotate: true
+  xy: 410, 800
+  size: 60, 67
+  orig: 61, 68
+  offset: 1, 0
+  index: -1
+karifa_skill2_10
+  rotate: true
+  xy: 2, 362
+  size: 114, 131
+  orig: 115, 132
+  offset: 1, 0
+  index: -1
+karifa_skill2_10_ef
+  rotate: false
+  xy: 742, 281
+  size: 156, 124
+  orig: 157, 125
+  offset: 1, 0
+  index: -1
+karifa_skill2_10_ef_2
+  rotate: false
+  xy: 881, 609
+  size: 113, 91
+  orig: 114, 92
+  offset: 1, 0
+  index: -1
+karifa_skill2_11
+  rotate: true
+  xy: 157, 553
+  size: 87, 153
+  orig: 88, 154
+  offset: 1, 0
+  index: -1
+karifa_skill2_11_ef
+  rotate: false
+  xy: 609, 142
+  size: 316, 137
+  orig: 317, 138
+  offset: 1, 0
+  index: -1
+karifa_skill2_12
+  rotate: true
+  xy: 2, 478
+  size: 96, 150
+  orig: 97, 151
+  offset: 1, 0
+  index: -1
+karifa_skill2_1301
+  rotate: false
+  xy: 480, 958
+  size: 46, 27
+  orig: 47, 28
+  offset: 1, 0
+  index: -1
+karifa_skill2_1302
+  rotate: true
+  xy: 932, 946
+  size: 33, 35
+  orig: 34, 36
+  offset: 1, 0
+  index: -1
+karifa_skill2_1303
+  rotate: false
+  xy: 351, 989
+  size: 28, 17
+  orig: 29, 18
+  offset: 1, 0
+  index: -1
+karifa_skill2_1304
+  rotate: false
+  xy: 562, 986
+  size: 24, 18
+  orig: 25, 19
+  offset: 1, 0
+  index: -1
+karifa_skill2_1305
+  rotate: true
+  xy: 588, 986
+  size: 18, 27
+  orig: 19, 28
+  offset: 1, 0
+  index: -1
+karifa_skill2_1306
+  rotate: false
+  xy: 131, 1009
+  size: 29, 11
+  orig: 30, 12
+  offset: 1, 0
+  index: -1
+karifa_skill2_1307
+  rotate: false
+  xy: 60, 1010
+  size: 24, 10
+  orig: 25, 11
+  offset: 1, 0
+  index: -1
+karifa_skill2_1308
+  rotate: false
+  xy: 2, 932
+  size: 48, 34
+  orig: 49, 35
+  offset: 1, 0
+  index: -1
+karifa_skill2_1311
+  rotate: true
+  xy: 826, 1005
+  size: 15, 19
+  orig: 16, 20
+  offset: 1, 0
+  index: -1
+karifa_skill2_1312
+  rotate: false
+  xy: 787, 843
+  size: 57, 55
+  orig: 58, 56
+  offset: 1, 0
+  index: -1
+karifa_skill2_1313
+  rotate: false
+  xy: 213, 964
+  size: 29, 24
+  orig: 30, 25
+  offset: 1, 0
+  index: -1
+karifa_skill2_1314
+  rotate: false
+  xy: 951, 981
+  size: 29, 21
+  orig: 30, 22
+  offset: 1, 0
+  index: -1
+karifa_skill2_1315
+  rotate: false
+  xy: 982, 981
+  size: 22, 21
+  orig: 23, 22
+  offset: 1, 0
+  index: -1
+karifa_skill2_1316
+  rotate: true
+  xy: 726, 846
+  size: 53, 59
+  orig: 57, 61
+  offset: 3, 1
+  index: -1
+karifa_skill2_18
+  rotate: true
+  xy: 722, 616
+  size: 84, 157
+  orig: 85, 158
+  offset: 1, 0
+  index: -1
+karifa_skill3_03
+  rotate: true
+  xy: 846, 843
+  size: 50, 164
+  orig: 59, 165
+  offset: 7, 0
+  index: -1
+karifa_skill3_07
+  rotate: false
+  xy: 444, 144
+  size: 163, 139
+  orig: 164, 140
+  offset: 1, 0
+  index: -1
+karifa_skill3_08
+  rotate: false
+  xy: 2, 204
+  size: 148, 138
+  orig: 149, 139
+  offset: 1, 0
+  index: -1
+karifa_skill3_09
+  rotate: true
+  xy: 152, 198
+  size: 144, 139
+  orig: 145, 140
+  offset: 1, 0
+  index: -1
+karifa_skill3_10
+  rotate: false
+  xy: 293, 191
+  size: 149, 138
+  orig: 150, 139
+  offset: 1, 0
+  index: -1
+karifa_skill3_11
+  rotate: false
+  xy: 149, 49
+  size: 148, 140
+  orig: 149, 141
+  offset: 1, 0
+  index: -1
+karifa_skill3_12
+  rotate: false
+  xy: 2, 63
+  size: 145, 139
+  orig: 146, 140
+  offset: 1, 0
+  index: -1
+karifa_skill3_14
+  rotate: false
+  xy: 299, 2
+  size: 282, 140
+  orig: 283, 141
+  offset: 1, 0
+  index: -1
+karifa_skill3_18a
+  rotate: false
+  xy: 142, 990
+  size: 128, 16
+  orig: 129, 19
+  offset: 1, 1
+  index: -1
+karifa_skill3_19
+  rotate: true
+  xy: 632, 408
+  size: 102, 163
+  orig: 103, 164
+  offset: 1, 0
+  index: -1
+karifa_skill3_19_ef
+  rotate: false
+  xy: 479, 793
+  size: 164, 56
+  orig: 165, 57
+  offset: 1, 0
+  index: -1
+karifa_skill3_20
+  rotate: true
+  xy: 797, 407
+  size: 103, 163
+  orig: 104, 164
+  offset: 1, 0
+  index: -1
+karifa_skill3_20_ef
+  rotate: false
+  xy: 331, 726
+  size: 148, 65
+  orig: 149, 66
+  offset: 1, 0
+  index: -1
+karifa_skill3_21
+  rotate: true
+  xy: 308, 448
+  size: 95, 163
+  orig: 96, 164
+  offset: 1, 0
+  index: -1
+karifa_skill3_21_ef
+  rotate: false
+  xy: 67, 817
+  size: 137, 54
+  orig: 138, 55
+  offset: 1, 0
+  index: -1
+karifa_skill3_2301
+  rotate: true
+  xy: 351, 865
+  size: 52, 74
+  orig: 53, 75
+  offset: 1, 0
+  index: -1
+karifa_skill3_2302
+  rotate: false
+  xy: 388, 919
+  size: 43, 37
+  orig: 44, 38
+  offset: 1, 0
+  index: -1
+karifa_skill3_2303
+  rotate: true
+  xy: 528, 957
+  size: 27, 35
+  orig: 28, 48
+  offset: 1, 0
+  index: -1
+karifa_skill3_2304
+  rotate: false
+  xy: 271, 963
+  size: 33, 24
+  orig: 34, 25
+  offset: 1, 0
+  index: -1
+karifa_skill3_2305
+  rotate: true
+  xy: 114, 874
+  size: 51, 62
+  orig: 52, 63
+  offset: 1, 0
+  index: -1
+karifa_skill3_2306
+  rotate: true
+  xy: 340, 1008
+  size: 12, 45
+  orig: 13, 46
+  offset: 1, 0
+  index: -1
+karifa_skill3_2307
+  rotate: false
+  xy: 875, 982
+  size: 26, 20
+  orig: 27, 21
+  offset: 1, 0
+  index: -1
+karifa_skill3_2308
+  rotate: true
+  xy: 433, 917
+  size: 39, 63
+  orig: 40, 64
+  offset: 1, 0
+  index: -1
+karifa_skill3_2309
+  rotate: true
+  xy: 498, 915
+  size: 40, 61
+  orig: 41, 62
+  offset: 1, 0
+  index: -1
+karifa_standby_01
+  rotate: true
+  xy: 2, 757
+  size: 58, 155
+  orig: 59, 156
+  offset: 1, 0
+  index: -1
+karifa_standby_01_eff
+  rotate: false
+  xy: 206, 814
+  size: 69, 55
+  orig: 70, 56
+  offset: 1, 0
+  index: -1
+karifa_standby_02
+  rotate: true
+  xy: 714, 784
+  size: 57, 154
+  orig: 58, 155
+  offset: 1, 0
+  index: -1
+karifa_standby_02_eff
+  rotate: true
+  xy: 645, 786
+  size: 62, 67
+  orig: 63, 68
+  offset: 1, 0
+  index: -1
+karifa_win 1001
+  rotate: false
+  xy: 529, 1007
+  size: 26, 13
+  orig: 27, 14
+  offset: 1, 0
+  index: -1
+karifa_win 1002
+  rotate: false
+  xy: 387, 1008
+  size: 25, 12
+  orig: 26, 13
+  offset: 1, 0
+  index: -1
+karifa_win 1003
+  rotate: false
+  xy: 2, 969
+  size: 26, 21
+  orig: 27, 22
+  offset: 1, 0
+  index: -1
+karifa_win 1005
+  rotate: false
+  xy: 724, 984
+  size: 24, 19
+  orig: 25, 20
+  offset: 1, 0
+  index: -1
+karifa_win 1007
+  rotate: false
+  xy: 244, 964
+  size: 25, 24
+  orig: 26, 25
+  offset: 1, 0
+  index: -1
+karifa_win 1008
+  rotate: true
+  xy: 205, 927
+  size: 35, 43
+  orig: 36, 44
+  offset: 1, 0
+  index: -1
+karifa_win 1009
+  rotate: false
+  xy: 565, 956
+  size: 32, 28
+  orig: 33, 29
+  offset: 1, 0
+  index: -1
+karifa_win 1010
+  rotate: true
+  xy: 61, 992
+  size: 16, 23
+  orig: 17, 24
+  offset: 1, 0
+  index: -1
+karifa_win 1011
+  rotate: false
+  xy: 557, 1007
+  size: 21, 13
+  orig: 22, 14
+  offset: 1, 0
+  index: -1
+karifa_win 1012
+  rotate: false
+  xy: 681, 1006
+  size: 23, 14
+  orig: 24, 15
+  offset: 1, 0
+  index: -1
+karifa_win 1013
+  rotate: true
+  xy: 1006, 999
+  size: 21, 16
+  orig: 22, 17
+  offset: 1, 0
+  index: -1
+karifa_win_01
+  rotate: true
+  xy: 805, 702
+  size: 73, 158
+  orig: 74, 159
+  offset: 1, 0
+  index: -1
+karifa_win_02
+  rotate: true
+  xy: 312, 545
+  size: 89, 159
+  orig: 90, 160
+  offset: 1, 0
+  index: -1
+karifa_win_03
+  rotate: true
+  xy: 135, 344
+  size: 108, 160
+  orig: 109, 161
+  offset: 1, 0
+  index: -1
+karifa_win_04
+  rotate: true
+  xy: 2, 576
+  size: 85, 153
+  orig: 86, 154
+  offset: 1, 0
+  index: -1
+karifa_win_05
+  rotate: true
+  xy: 107, 663
+  size: 76, 156
+  orig: 77, 157
+  offset: 1, 0
+  index: -1
+karifa_win_06
+  rotate: true
+  xy: 404, 636
+  size: 82, 156
+  orig: 83, 157
+  offset: 1, 0
+  index: -1
+karifa_win_07
+  rotate: true
+  xy: 481, 720
+  size: 71, 160
+  orig: 72, 161
+  offset: 1, 0
+  index: -1
+karifa_win_08
+  rotate: true
+  xy: 643, 710
+  size: 72, 160
+  orig: 73, 161
+  offset: 1, 0
+  index: -1
+karifa_win_09_ef
+  rotate: true
+  xy: 625, 906
+  size: 44, 48
+  orig: 49, 65
+  offset: 5, 6
+  index: -1
+karifa_win_10_ef
+  rotate: false
+  xy: 2, 879
+  size: 50, 49
+  orig: 51, 50
+  offset: 1, 0
+  index: -1
+karifa_win_11_ef
+  rotate: true
+  xy: 969, 946
+  size: 33, 36
+  orig: 34, 37
+  offset: 1, 0
+  index: -1
+karifa_win_12_ef
+  rotate: true
+  xy: 847, 1005
+  size: 15, 23
+  orig: 16, 24
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 86, 991
+  size: 16, 23
+  orig: 17, 24
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 706, 1006
+  size: 14, 25
+  orig: 15, 26
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 381, 989
+  size: 17, 24
+  orig: 18, 25
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 617, 986
+  size: 18, 25
+  orig: 19, 26
+  offset: 1, 0
+  index: -1
+
+Hero_1822.png
+size: 724,584
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+karifa_skill3_15_ef
+  rotate: false
+  xy: 2, 2
+  size: 305, 147
+  orig: 418, 184
+  offset: 113, 36
+  index: -1
+karifa_skill3_16_ef
+  rotate: false
+  xy: 309, 9
+  size: 400, 223
+  orig: 401, 224
+  offset: 1, 0
+  index: -1
+karifa_skill3_17_ef
+  rotate: true
+  xy: 2, 151
+  size: 431, 261
+  orig: 432, 262
+  offset: 1, 0
+  index: -1
+karifa_skill3_18
+  rotate: true
+  xy: 557, 388
+  size: 194, 163
+  orig: 195, 164
+  offset: 1, 0
+  index: -1
+karifa_skill3_18_ef
+  rotate: true
+  xy: 265, 234
+  size: 348, 290
+  orig: 349, 291
+  offset: 1, 0
+  index: -1

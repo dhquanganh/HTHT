@@ -1,0 +1,1035 @@
+
+Hero_393.png
+size: 1272,1032
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 925, 355
+  size: 30, 26
+  orig: 30, 26
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 1232, 541
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 1136, 345
+  size: 42, 78
+  orig: 42, 78
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 964, 28
+  size: 61, 42
+  orig: 61, 42
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 1256, 458
+  size: 24, 14
+  orig: 24, 14
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 1202, 880
+  size: 150, 64
+  orig: 150, 64
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 605, 2
+  size: 9, 27
+  orig: 9, 27
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: false
+  xy: 436, 182
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: false
+  xy: 574, 218
+  size: 29, 39
+  orig: 29, 39
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: true
+  xy: 191, 506
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1
+cloth_14
+  rotate: false
+  xy: 640, 873
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+cloth_15
+  rotate: false
+  xy: 960, 2
+  size: 49, 24
+  orig: 49, 24
+  offset: 0, 0
+  index: -1
+cloth_16
+  rotate: false
+  xy: 1158, 25
+  size: 12, 33
+  orig: 12, 33
+  offset: 0, 0
+  index: -1
+cloth_17
+  rotate: true
+  xy: 584, 873
+  size: 16, 33
+  orig: 16, 33
+  offset: 0, 0
+  index: -1
+cloth_18
+  rotate: false
+  xy: 413, 856
+  size: 9, 33
+  orig: 9, 33
+  offset: 0, 0
+  index: -1
+cloth_20
+  rotate: true
+  xy: 498, 224
+  size: 62, 74
+  orig: 62, 74
+  offset: 0, 0
+  index: -1
+f-arm_L_03
+  rotate: true
+  xy: 158, 2
+  size: 19, 35
+  orig: 19, 35
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 953, 425
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+f-arm_L_05
+  rotate: true
+  xy: 1155, 2
+  size: 21, 26
+  orig: 26, 31
+  offset: 3, 2
+  index: -1
+f-arm_R_03
+  rotate: true
+  xy: 1232, 407
+  size: 18, 22
+  orig: 30, 37
+  offset: 11, 2
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 1232, 452
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 264, 2
+  size: 29, 19
+  orig: 29, 19
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 1250, 383
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+hand_L_03
+  rotate: false
+  xy: 1011, 2
+  size: 23, 26
+  orig: 23, 26
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 1255, 712
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+hand_L_05
+  rotate: false
+  xy: 736, 216
+  size: 12, 18
+  orig: 18, 25
+  offset: 4, 2
+  index: -1
+hand_R_03
+  rotate: false
+  xy: 1247, 232
+  size: 15, 18
+  orig: 19, 20
+  offset: 3, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 279, 506
+  size: 17, 20
+  orig: 17, 20
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 1068, 63
+  size: 50, 49
+  orig: 50, 49
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 1068, 12
+  size: 50, 49
+  orig: 50, 49
+  offset: 0, 0
+  index: -1
+law_damage
+  rotate: false
+  xy: 424, 288
+  size: 148, 174
+  orig: 157, 184
+  offset: 6, 4
+  index: -1
+law_skill1_201
+  rotate: false
+  xy: 710, 2
+  size: 21, 20
+  orig: 21, 20
+  offset: 0, 0
+  index: -1
+law_skill1_202
+  rotate: false
+  xy: 1232, 481
+  size: 18, 23
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+law_skill1_203
+  rotate: true
+  xy: 1231, 378
+  size: 27, 17
+  orig: 27, 17
+  offset: 0, 0
+  index: -1
+law_skill1_204
+  rotate: false
+  xy: 1247, 294
+  size: 18, 20
+  orig: 25, 23
+  offset: 5, 1
+  index: -1
+law_skill1_401
+  rotate: false
+  xy: 751, 387
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+law_skill1_402
+  rotate: true
+  xy: 1232, 427
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+law_skill1_502
+  rotate: true
+  xy: 892, 2
+  size: 27, 33
+  orig: 27, 33
+  offset: 0, 0
+  index: -1
+law_skill1_503
+  rotate: false
+  xy: 861, 2
+  size: 29, 19
+  orig: 29, 19
+  offset: 0, 0
+  index: -1
+law_skill1_504
+  rotate: false
+  xy: 574, 197
+  size: 29, 19
+  orig: 29, 19
+  offset: 0, 0
+  index: -1
+law_skill1_505
+  rotate: false
+  xy: 473, 182
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+law_skill1_506
+  rotate: true
+  xy: 822, 2
+  size: 19, 37
+  orig: 19, 37
+  offset: 0, 0
+  index: -1
+law_skill1_508
+  rotate: true
+  xy: 849, 150
+  size: 64, 74
+  orig: 64, 74
+  offset: 0, 0
+  index: -1
+law_skill1_601
+  rotate: false
+  xy: 1008, 30
+  size: 58, 64
+  orig: 58, 64
+  offset: 0, 0
+  index: -1
+law_skill1_602
+  rotate: false
+  xy: 781, 2
+  size: 39, 21
+  orig: 39, 21
+  offset: 0, 0
+  index: -1
+law_skill1_603
+  rotate: false
+  xy: 927, 2
+  size: 31, 27
+  orig: 31, 27
+  offset: 0, 0
+  index: -1
+law_skill1_604
+  rotate: false
+  xy: 849, 134
+  size: 35, 14
+  orig: 35, 14
+  offset: 0, 0
+  index: -1
+law_skill1_605
+  rotate: false
+  xy: 1197, 100
+  size: 43, 75
+  orig: 43, 75
+  offset: 0, 0
+  index: -1
+law_skill1_606
+  rotate: true
+  xy: 195, 2
+  size: 19, 33
+  orig: 19, 33
+  offset: 0, 0
+  index: -1
+law_skill2  1101
+  rotate: false
+  xy: 295, 2
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+law_skill2  1102
+  rotate: false
+  xy: 321, 182
+  size: 32, 23
+  orig: 32, 23
+  offset: 0, 0
+  index: -1
+law_skill2  1103
+  rotate: false
+  xy: 1252, 512
+  size: 18, 27
+  orig: 18, 27
+  offset: 0, 0
+  index: -1
+law_skill2  1104
+  rotate: false
+  xy: 1250, 336
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+law_skill2  1107
+  rotate: true
+  xy: 1120, 60
+  size: 52, 43
+  orig: 52, 43
+  offset: 0, 0
+  index: -1
+law_skill2  1108
+  rotate: true
+  xy: 1165, 75
+  size: 39, 30
+  orig: 42, 30
+  offset: 0, 0
+  index: -1
+law_skill2  1109
+  rotate: false
+  xy: 733, 2
+  size: 46, 21
+  orig: 46, 21
+  offset: 0, 0
+  index: -1
+law_skill2  1110
+  rotate: false
+  xy: 224, 506
+  size: 31, 28
+  orig: 31, 28
+  offset: 0, 0
+  index: -1
+law_skill2  1111
+  rotate: true
+  xy: 1255, 728
+  size: 23, 15
+  orig: 23, 15
+  offset: 0, 0
+  index: -1
+law_skill2  1112
+  rotate: false
+  xy: 390, 288
+  size: 28, 18
+  orig: 28, 18
+  offset: 0, 0
+  index: -1
+law_skill2  1201
+  rotate: false
+  xy: 953, 345
+  size: 181, 78
+  orig: 181, 78
+  offset: 0, 0
+  index: -1
+law_skill2  1203
+  rotate: false
+  xy: 505, 185
+  size: 36, 37
+  orig: 36, 37
+  offset: 0, 0
+  index: -1
+law_skill2  1204
+  rotate: false
+  xy: 733, 25
+  size: 89, 107
+  orig: 89, 107
+  offset: 0, 0
+  index: -1
+law_skill2  1205
+  rotate: true
+  xy: 889, 31
+  size: 58, 73
+  orig: 89, 107
+  offset: 31, 0
+  index: -1
+law_skill2  1701
+  rotate: false
+  xy: 824, 23
+  size: 63, 109
+  orig: 90, 141
+  offset: 24, 26
+  index: -1
+law_skill2  201
+  rotate: false
+  xy: 1245, 651
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+law_skill2  202
+  rotate: false
+  xy: 1245, 626
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+law_skill2  203
+  rotate: false
+  xy: 619, 873
+  size: 19, 16
+  orig: 19, 16
+  offset: 0, 0
+  index: -1
+law_skill2  204
+  rotate: false
+  xy: 605, 151
+  size: 129, 106
+  orig: 129, 106
+  offset: 0, 0
+  index: -1
+law_skill2  205
+  rotate: true
+  xy: 1131, 116
+  size: 59, 64
+  orig: 59, 64
+  offset: 0, 0
+  index: -1
+law_skill2  206
+  rotate: true
+  xy: 681, 2
+  size: 20, 27
+  orig: 20, 27
+  offset: 0, 0
+  index: -1
+law_skill2_03_ef
+  rotate: true
+  xy: 1255, 815
+  size: 63, 15
+  orig: 63, 15
+  offset: 0, 0
+  index: -1
+law_skill2_04_ef
+  rotate: true
+  xy: 1255, 753
+  size: 60, 15
+  orig: 60, 15
+  offset: 0, 0
+  index: -1
+law_skill2_10
+  rotate: true
+  xy: 1098, 177
+  size: 166, 147
+  orig: 178, 164
+  offset: 8, 6
+  index: -1
+law_skill2_10_ef
+  rotate: true
+  xy: 681, 24
+  size: 125, 50
+  orig: 130, 71
+  offset: 0, 14
+  index: -1
+law_skill2_12
+  rotate: false
+  xy: 651, 873
+  size: 281, 157
+  orig: 285, 176
+  offset: 2, 8
+  index: -1
+law_skill2_13
+  rotate: true
+  xy: 307, 352
+  size: 171, 115
+  orig: 191, 135
+  offset: 15, 7
+  index: -1
+law_skill2_14
+  rotate: false
+  xy: 2, 852
+  size: 327, 178
+  orig: 352, 202
+  offset: 11, 9
+  index: -1
+law_skill2_15
+  rotate: true
+  xy: 980, 568
+  size: 144, 215
+  orig: 162, 229
+  offset: 11, 9
+  index: -1
+law_skill2_15_ef
+  rotate: true
+  xy: 1226, 710
+  size: 168, 27
+  orig: 175, 39
+  offset: 0, 8
+  index: -1
+law_skill2_18
+  rotate: true
+  xy: 574, 259
+  size: 147, 175
+  orig: 166, 200
+  offset: 9, 16
+  index: -1
+law_skill2_18_ef
+  rotate: false
+  xy: 889, 91
+  size: 99, 54
+  orig: 99, 54
+  offset: 0, 0
+  index: -1
+law_skill2_right_01
+  rotate: true
+  xy: 424, 657
+  size: 232, 158
+  orig: 249, 169
+  offset: 13, 4
+  index: -1
+law_skill2_right_02
+  rotate: false
+  xy: 584, 716
+  size: 234, 155
+  orig: 248, 172
+  offset: 9, 7
+  index: -1
+law_skill2_right_03
+  rotate: false
+  xy: 584, 561
+  size: 236, 153
+  orig: 246, 163
+  offset: 6, 3
+  index: -1
+law_skill2_right_04
+  rotate: false
+  xy: 980, 425
+  size: 219, 141
+  orig: 228, 154
+  offset: 6, 7
+  index: -1
+law_skill2_right_05
+  rotate: true
+  xy: 2, 506
+  size: 344, 139
+  orig: 349, 154
+  offset: 3, 9
+  index: -1
+law_skill2_right_06
+  rotate: false
+  xy: 331, 891
+  size: 318, 139
+  orig: 330, 147
+  offset: 9, 2
+  index: -1
+law_skill2_right_07
+  rotate: true
+  xy: 143, 536
+  size: 314, 140
+  orig: 327, 158
+  offset: 8, 6
+  index: -1
+law_skill2_right_08
+  rotate: false
+  xy: 934, 875
+  size: 266, 155
+  orig: 290, 179
+  offset: 14, 12
+  index: -1
+law_skill2_right_09
+  rotate: false
+  xy: 982, 714
+  size: 205, 159
+  orig: 216, 174
+  offset: 10, 9
+  index: -1
+law_skill2_right_10
+  rotate: false
+  xy: 822, 554
+  size: 156, 160
+  orig: 171, 178
+  offset: 12, 9
+  index: -1
+law_skill2_right_11
+  rotate: true
+  xy: 820, 716
+  size: 155, 160
+  orig: 171, 175
+  offset: 13, 6
+  index: -1
+law_skill2_right_12
+  rotate: true
+  xy: 137, 201
+  size: 125, 166
+  orig: 138, 179
+  offset: 10, 6
+  index: -1
+law_skill3   1202
+  rotate: true
+  xy: 1232, 506
+  size: 33, 18
+  orig: 33, 18
+  offset: 0, 0
+  index: -1
+law_skill3   1204
+  rotate: true
+  xy: 953, 473
+  size: 34, 25
+  orig: 34, 25
+  offset: 0, 0
+  index: -1
+law_skill3   1205
+  rotate: true
+  xy: 543, 191
+  size: 31, 29
+  orig: 31, 29
+  offset: 0, 0
+  index: -1
+law_skill3   1207
+  rotate: false
+  xy: 925, 147
+  size: 136, 33
+  orig: 174, 73
+  offset: 38, 40
+  index: -1
+law_skill3   1301
+  rotate: false
+  xy: 1245, 606
+  size: 25, 18
+  orig: 25, 18
+  offset: 0, 0
+  index: -1
+law_skill3   1302
+  rotate: true
+  xy: 1252, 484
+  size: 26, 18
+  orig: 26, 18
+  offset: 0, 0
+  index: -1
+law_skill3   1304
+  rotate: true
+  xy: 257, 506
+  size: 28, 20
+  orig: 28, 20
+  offset: 0, 0
+  index: -1
+law_skill3   1305
+  rotate: true
+  xy: 1256, 437
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+law_skill3   1402
+  rotate: false
+  xy: 1197, 570
+  size: 46, 138
+  orig: 46, 138
+  offset: 0, 0
+  index: -1
+law_skill3   1701
+  rotate: false
+  xy: 1247, 316
+  size: 22, 18
+  orig: 22, 18
+  offset: 0, 0
+  index: -1
+law_skill3   1702
+  rotate: false
+  xy: 285, 525
+  size: 136, 74
+  orig: 136, 74
+  offset: 0, 0
+  index: -1
+law_skill3_1201
+  rotate: false
+  xy: 305, 207
+  size: 83, 99
+  orig: 83, 99
+  offset: 0, 0
+  index: -1
+law_skill3_1202
+  rotate: false
+  xy: 1180, 347
+  size: 49, 67
+  orig: 49, 67
+  offset: 0, 0
+  index: -1
+law_skill3_1203
+  rotate: true
+  xy: 953, 509
+  size: 43, 25
+  orig: 43, 25
+  offset: 0, 0
+  index: -1
+law_skill3_1204
+  rotate: true
+  xy: 1189, 720
+  size: 153, 35
+  orig: 153, 35
+  offset: 0, 0
+  index: -1
+law_skill4_right 1001
+  rotate: false
+  xy: 582, 408
+  size: 188, 151
+  orig: 210, 174
+  offset: 17, 10
+  index: -1
+law_skill4_right 101
+  rotate: true
+  xy: 1250, 359
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+law_skill4_right 102
+  rotate: true
+  xy: 355, 182
+  size: 23, 32
+  orig: 23, 32
+  offset: 0, 0
+  index: -1
+law_skill4_right 103
+  rotate: false
+  xy: 1247, 214
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+law_skill4_right 104
+  rotate: true
+  xy: 605, 13
+  size: 136, 74
+  orig: 136, 74
+  offset: 0, 0
+  index: -1
+law_skill4_right 105
+  rotate: false
+  xy: 390, 182
+  size: 44, 35
+  orig: 44, 35
+  offset: 0, 0
+  index: -1
+law_skill4_right 106
+  rotate: false
+  xy: 1197, 67
+  size: 37, 31
+  orig: 37, 31
+  offset: 0, 0
+  index: -1
+law_skill4_right 107
+  rotate: false
+  xy: 1245, 678
+  size: 25, 30
+  orig: 27, 30
+  offset: 2, 0
+  index: -1
+law_skill4_right 108
+  rotate: true
+  xy: 331, 852
+  size: 37, 80
+  orig: 37, 80
+  offset: 0, 0
+  index: -1
+law_skill4_right 109
+  rotate: false
+  xy: 1247, 272
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: -1
+law_skill4_right 111
+  rotate: false
+  xy: 1065, 114
+  size: 64, 61
+  orig: 64, 61
+  offset: 0, 0
+  index: -1
+law_skill4_right 112
+  rotate: true
+  xy: 1036, 2
+  size: 26, 22
+  orig: 26, 22
+  offset: 0, 0
+  index: -1
+law_skill4_right 113
+  rotate: true
+  xy: 1242, 104
+  size: 38, 22
+  orig: 38, 22
+  offset: 0, 0
+  index: -1
+law_skill4_right 114
+  rotate: false
+  xy: 736, 236
+  size: 13, 21
+  orig: 13, 21
+  offset: 0, 0
+  index: -1
+law_skill4_right 201
+  rotate: false
+  xy: 736, 134
+  size: 111, 80
+  orig: 111, 80
+  offset: 0, 0
+  index: -1
+law_skill4_right 202
+  rotate: true
+  xy: 1201, 416
+  size: 152, 29
+  orig: 152, 29
+  offset: 0, 0
+  index: -1
+law_skill4_right 203
+  rotate: true
+  xy: 990, 96
+  size: 49, 73
+  orig: 49, 73
+  offset: 0, 0
+  index: -1
+law_skill4_right 204
+  rotate: true
+  xy: 1242, 144
+  size: 31, 28
+  orig: 31, 28
+  offset: 0, 0
+  index: -1
+law_skill4_right 205
+  rotate: false
+  xy: 1120, 25
+  size: 36, 33
+  orig: 36, 33
+  offset: 0, 0
+  index: -1
+law_skill4_right 206
+  rotate: false
+  xy: 953, 440
+  size: 25, 31
+  orig: 25, 31
+  offset: 0, 0
+  index: -1
+law_skill4_right 207
+  rotate: false
+  xy: 143, 506
+  size: 46, 28
+  orig: 46, 28
+  offset: 0, 0
+  index: -1
+law_skill4_right 208
+  rotate: false
+  xy: 1247, 252
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+law_skill4_right 301
+  rotate: false
+  xy: 390, 219
+  size: 106, 67
+  orig: 114, 79
+  offset: 5, 5
+  index: -1
+law_skill4_right 801
+  rotate: true
+  xy: 285, 601
+  size: 249, 137
+  orig: 275, 163
+  offset: 17, 14
+  index: -1
+law_skill4_right 901
+  rotate: true
+  xy: 2, 201
+  size: 303, 133
+  orig: 317, 143
+  offset: 11, 4
+  index: -1
+law_squat
+  rotate: true
+  xy: 321, 15
+  size: 165, 119
+  orig: 172, 140
+  offset: 4, 6
+  index: -1
+law_stanby_01
+  rotate: true
+  xy: 424, 464
+  size: 191, 156
+  orig: 200, 160
+  offset: 6, 4
+  index: -1
+law_stanby_02
+  rotate: true
+  xy: 2, 6
+  size: 193, 154
+  orig: 208, 167
+  offset: 10, 5
+  index: -1
+law_win_01
+  rotate: true
+  xy: 772, 387
+  size: 165, 179
+  orig: 174, 191
+  offset: 5, 4
+  index: -1
+law_win_02
+  rotate: false
+  xy: 137, 328
+  size: 168, 176
+  orig: 177, 189
+  offset: 5, 4
+  index: -1
+law_win_08
+  rotate: true
+  xy: 751, 216
+  size: 169, 172
+  orig: 181, 182
+  offset: 10, 4
+  index: -1
+law_win_09
+  rotate: false
+  xy: 442, 10
+  size: 161, 170
+  orig: 170, 181
+  offset: 6, 6
+  index: -1
+law_win_10
+  rotate: true
+  xy: 925, 182
+  size: 161, 171
+  orig: 172, 183
+  offset: 4, 5
+  index: -1
+law_win_11
+  rotate: false
+  xy: 158, 23
+  size: 161, 176
+  orig: 172, 188
+  offset: 7, 5
+  index: -1
+low_beat_514
+  rotate: false
+  xy: 307, 308
+  size: 110, 42
+  orig: 113, 42
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 1231, 349
+  size: 17, 27
+  orig: 17, 27
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 230, 2
+  size: 19, 32
+  orig: 19, 32
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 1245, 570
+  size: 18, 34
+  orig: 18, 34
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 1120, 2
+  size: 21, 33
+  orig: 21, 33
+  offset: 0, 0
+  index: -1

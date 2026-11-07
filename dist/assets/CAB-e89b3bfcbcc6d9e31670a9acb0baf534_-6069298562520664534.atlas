@@ -1,0 +1,236 @@
+
+Skill_85.png
+size: 968,912
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Nami3Skill/library/010
+  rotate: false
+  xy: 2, 865
+  size: 70, 44
+  orig: 77, 51
+  offset: 6, 0
+  index: -1
+Nami3Skill/library/011
+  rotate: false
+  xy: 318, 801
+  size: 163, 108
+  orig: 165, 110
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/013
+  rotate: false
+  xy: 483, 800
+  size: 208, 109
+  orig: 209, 111
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/014
+  rotate: false
+  xy: 274, 538
+  size: 262, 129
+  orig: 265, 131
+  offset: 2, 1
+  index: -1
+Nami3Skill/library/015
+  rotate: false
+  xy: 693, 797
+  size: 272, 112
+  orig: 274, 114
+  offset: 1, 0
+  index: -1
+Nami3Skill/library/017
+  rotate: false
+  xy: 74, 818
+  size: 242, 91
+  orig: 243, 92
+  offset: 1, 0
+  index: -1
+Nami3Skill/library/018
+  rotate: false
+  xy: 538, 537
+  size: 270, 129
+  orig: 272, 131
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/019
+  rotate: false
+  xy: 2, 553
+  size: 270, 128
+  orig: 272, 130
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/020
+  rotate: false
+  xy: 2, 702
+  size: 237, 114
+  orig: 238, 116
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/021
+  rotate: false
+  xy: 262, 261
+  size: 259, 139
+  orig: 261, 141
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/022
+  rotate: false
+  xy: 2, 272
+  size: 258, 140
+  orig: 261, 142
+  offset: 2, 1
+  index: -1
+Nami3Skill/library/023
+  rotate: false
+  xy: 2, 414
+  size: 258, 137
+  orig: 261, 139
+  offset: 2, 1
+  index: -1
+Nami3Skill/library/024
+  rotate: false
+  xy: 241, 683
+  size: 232, 116
+  orig: 233, 118
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/025
+  rotate: false
+  xy: 523, 255
+  size: 285, 141
+  orig: 287, 143
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/026
+  rotate: false
+  xy: 2, 115
+  size: 285, 144
+  orig: 287, 147
+  offset: 1, 2
+  index: -1
+Nami3Skill/library/027
+  rotate: false
+  xy: 475, 669
+  size: 241, 126
+  orig: 242, 128
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/028
+  rotate: false
+  xy: 289, 107
+  size: 284, 146
+  orig: 286, 149
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/029
+  rotate: false
+  xy: 575, 2
+  size: 284, 148
+  orig: 286, 151
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/030
+  rotate: true
+  xy: 810, 424
+  size: 242, 133
+  orig: 243, 135
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/031
+  rotate: false
+  xy: 536, 398
+  size: 272, 137
+  orig: 274, 140
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/032
+  rotate: false
+  xy: 262, 402
+  size: 272, 134
+  orig: 274, 137
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/033
+  rotate: false
+  xy: 718, 668
+  size: 242, 127
+  orig: 243, 129
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/034
+  rotate: true
+  xy: 810, 152
+  size: 270, 142
+  orig: 272, 144
+  offset: 1, 1
+  index: -1
+
+Skill_852.png
+size: 824,820
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Nami3Skill/library/035
+  rotate: true
+  xy: 289, 258
+  size: 270, 268
+  orig: 272, 271
+  offset: 1, 2
+  index: -1
+Nami3Skill/library/036
+  rotate: true
+  xy: 528, 10
+  size: 237, 248
+  orig: 238, 250
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/037
+  rotate: false
+  xy: 559, 249
+  size: 258, 282
+  orig: 261, 284
+  offset: 2, 1
+  index: -1
+Nami3Skill/library/038
+  rotate: false
+  xy: 555, 533
+  size: 264, 284
+  orig: 267, 287
+  offset: 2, 2
+  index: -1
+Nami3Skill/library/039
+  rotate: false
+  xy: 289, 530
+  size: 264, 287
+  orig: 267, 288
+  offset: 2, 0
+  index: -1
+Nami3Skill/library/040
+  rotate: true
+  xy: 2, 2
+  size: 254, 264
+  orig: 258, 265
+  offset: 3, 0
+  index: -1
+Nami3Skill/library/041
+  rotate: false
+  xy: 2, 533
+  size: 285, 284
+  orig: 287, 286
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/042
+  rotate: false
+  xy: 2, 258
+  size: 285, 273
+  orig: 287, 275
+  offset: 1, 1
+  index: -1
+Nami3Skill/library/043
+  rotate: true
+  xy: 268, 15
+  size: 241, 258
+  orig: 242, 260
+  offset: 1, 1
+  index: -1

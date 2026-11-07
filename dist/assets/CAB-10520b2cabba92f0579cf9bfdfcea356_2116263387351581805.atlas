@@ -1,0 +1,300 @@
+
+Hero_462.png
+size: 780,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ao choang sau
+  rotate: false
+  xy: 89, 3
+  size: 89, 48
+  orig: 89, 48
+  offset: 0, 0
+  index: -1
+ao choang truoc
+  rotate: false
+  xy: 2, 2
+  size: 85, 49
+  orig: 86, 49
+  offset: 1, 0
+  index: -1
+ao choans side
+  rotate: true
+  xy: 246, 278
+  size: 79, 45
+  orig: 81, 47
+  offset: 1, 1
+  index: -1
+ban chan 1
+  rotate: true
+  xy: 303, 113
+  size: 27, 29
+  orig: 27, 29
+  offset: 0, 0
+  index: -1
+ban chan 2
+  rotate: true
+  xy: 753, 265
+  size: 38, 24
+  orig: 38, 24
+  offset: 0, 0
+  index: -1
+ban chan side 1
+  rotate: false
+  xy: 753, 225
+  size: 24, 38
+  orig: 24, 38
+  offset: 0, 0
+  index: -1
+ban chan side 2
+  rotate: true
+  xy: 550, 361
+  size: 25, 41
+  orig: 25, 41
+  offset: 0, 0
+  index: -1
+ban tay 1
+  rotate: false
+  xy: 753, 157
+  size: 19, 19
+  orig: 21, 21
+  offset: 1, 1
+  index: -1
+ban tay 2
+  rotate: true
+  xy: 540, 147
+  size: 15, 19
+  orig: 17, 21
+  offset: 1, 1
+  index: -1
+body side
+  rotate: false
+  xy: 696, 68
+  size: 37, 34
+  orig: 39, 36
+  offset: 1, 1
+  index: -1
+cay thong
+  rotate: false
+  xy: 2, 53
+  size: 174, 222
+  orig: 183, 224
+  offset: 2, 2
+  index: -1
+co chan 1
+  rotate: false
+  xy: 753, 200
+  size: 23, 23
+  orig: 25, 26
+  offset: 1, 1
+  index: -1
+co chan 2
+  rotate: true
+  xy: 669, 461
+  size: 20, 17
+  orig: 22, 19
+  offset: 1, 1
+  index: -1
+dung quan
+  rotate: true
+  xy: 669, 483
+  size: 37, 17
+  orig: 40, 19
+  offset: 2, 1
+  index: -1
+fx/glow_3011_01
+  rotate: false
+  xy: 251, 6
+  size: 97, 105
+  orig: 128, 128
+  offset: 18, 16
+  index: -1
+fx/glow_6098
+  rotate: false
+  xy: 2, 277
+  size: 242, 243
+  orig: 256, 256
+  offset: 7, 6
+  index: -1
+fx/toes_hit_01
+  rotate: false
+  xy: 505, 388
+  size: 98, 132
+  orig: 171, 171
+  offset: 40, 17
+  index: -1
+fx/toes_hit_02
+  rotate: false
+  xy: 246, 359
+  size: 135, 161
+  orig: 170, 171
+  offset: 29, 6
+  index: -1
+fx/toes_hit_03
+  rotate: false
+  xy: 178, 113
+  size: 123, 162
+  orig: 171, 171
+  offset: 43, 5
+  index: -1
+fx/toes_hit_05
+  rotate: false
+  xy: 383, 360
+  size: 120, 160
+  orig: 170, 170
+  offset: 45, 6
+  index: -1
+fx/toes_hit_06
+  rotate: false
+  xy: 364, 4
+  size: 118, 136
+  orig: 171, 170
+  offset: 45, 15
+  index: -1
+fx/toes_hit_07
+  rotate: false
+  xy: 303, 142
+  size: 116, 137
+  orig: 171, 171
+  offset: 46, 14
+  index: -1
+fx/toes_hit_08
+  rotate: false
+  xy: 421, 146
+  size: 117, 135
+  orig: 170, 171
+  offset: 46, 16
+  index: -1
+fx/toes_hit_09
+  rotate: false
+  xy: 484, 12
+  size: 117, 132
+  orig: 171, 171
+  offset: 48, 16
+  index: -1
+hand side
+  rotate: false
+  xy: 753, 178
+  size: 23, 20
+  orig: 25, 22
+  offset: 1, 1
+  index: -1
+head 1
+  rotate: false
+  xy: 633, 197
+  size: 118, 91
+  orig: 120, 93
+  offset: 1, 1
+  index: -1
+head 5
+  rotate: false
+  xy: 633, 104
+  size: 118, 91
+  orig: 120, 93
+  offset: 1, 1
+  index: -1
+head front
+  rotate: true
+  xy: 540, 164
+  size: 123, 91
+  orig: 125, 93
+  offset: 1, 1
+  index: -1
+head- side
+  rotate: true
+  xy: 688, 401
+  size: 119, 88
+  orig: 121, 90
+  offset: 1, 1
+  index: -1
+kick effect
+  rotate: true
+  xy: 605, 397
+  size: 123, 62
+  orig: 125, 83
+  offset: 1, 1
+  index: -1
+lantern
+  rotate: true
+  xy: 178, 53
+  size: 58, 65
+  orig: 60, 85
+  offset: 1, 1
+  index: -1
+no1
+  rotate: true
+  xy: 385, 283
+  size: 75, 86
+  orig: 122, 98
+  offset: 1, 2
+  index: -1
+no2
+  rotate: false
+  xy: 688, 305
+  size: 87, 94
+  orig: 90, 98
+  offset: 2, 2
+  index: -1
+no3
+  rotate: true
+  xy: 593, 290
+  size: 96, 93
+  orig: 98, 96
+  offset: 1, 1
+  index: -1
+no4
+  rotate: false
+  xy: 473, 284
+  size: 62, 74
+  orig: 64, 76
+  offset: 1, 1
+  index: -1
+no5
+  rotate: true
+  xy: 293, 281
+  size: 76, 90
+  orig: 78, 93
+  offset: 1, 2
+  index: -1
+no6
+  rotate: false
+  xy: 603, 9
+  size: 91, 93
+  orig: 95, 113
+  offset: 1, 18
+  index: -1
+quan side
+  rotate: false
+  xy: 505, 360
+  size: 43, 26
+  orig: 45, 28
+  offset: 1, 1
+  index: -1
+star effct
+  rotate: true
+  xy: 669, 440
+  size: 19, 17
+  orig: 21, 19
+  offset: 1, 1
+  index: -1
+tai mu 1
+  rotate: true
+  xy: 180, 3
+  size: 48, 69
+  orig: 48, 69
+  offset: 0, 0
+  index: -1
+tai mu 2
+  rotate: false
+  xy: 537, 289
+  size: 48, 69
+  orig: 48, 69
+  offset: 0, 0
+  index: -1
+tie
+  rotate: false
+  xy: 334, 113
+  size: 28, 27
+  orig: 31, 29
+  offset: 2, 1
+  index: -1

@@ -1,0 +1,391 @@
+
+Hit_480.png
+size: 1828,912
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hit/0
+  rotate: false
+  xy: 1708, 282
+  size: 55, 54
+  orig: 55, 54
+  offset: 0, 0
+  index: -1
+Hit/1
+  rotate: false
+  xy: 1709, 339
+  size: 64, 65
+  orig: 64, 65
+  offset: 0, 0
+  index: -1
+Hit/2
+  rotate: false
+  xy: 1349, 33
+  size: 67, 69
+  orig: 67, 69
+  offset: 0, 0
+  index: -1
+Hit/4
+  rotate: false
+  xy: 1776, 313
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+Water_ball/0
+  rotate: false
+  xy: 1246, 20
+  size: 100, 82
+  orig: 100, 82
+  offset: 0, 0
+  index: -1
+Water_ball/1
+  rotate: false
+  xy: 1711, 654
+  size: 97, 82
+  orig: 97, 82
+  offset: 0, 0
+  index: -1
+Water_ball/10
+  rotate: false
+  xy: 1554, 789
+  size: 156, 123
+  orig: 156, 123
+  offset: 0, 0
+  index: -1
+Water_ball/11
+  rotate: false
+  xy: 148, 12
+  size: 156, 123
+  orig: 156, 123
+  offset: 0, 0
+  index: -1
+Water_ball/2
+  rotate: false
+  xy: 1709, 568
+  size: 97, 83
+  orig: 97, 83
+  offset: 0, 0
+  index: -1
+Water_ball/3
+  rotate: false
+  xy: 1709, 484
+  size: 97, 81
+  orig: 97, 81
+  offset: 0, 0
+  index: -1
+Water_ball/4
+  rotate: false
+  xy: 1709, 407
+  size: 96, 74
+  orig: 96, 74
+  offset: 0, 0
+  index: -1
+Water_ball/5
+  rotate: false
+  xy: 1713, 739
+  size: 100, 77
+  orig: 100, 77
+  offset: 0, 0
+  index: -1
+Water_ball/6
+  rotate: false
+  xy: 1713, 819
+  size: 112, 93
+  orig: 112, 93
+  offset: 0, 0
+  index: -1
+Water_ball/7
+  rotate: false
+  xy: 307, 20
+  size: 144, 115
+  orig: 144, 115
+  offset: 0, 0
+  index: -1
+Water_ball/8
+  rotate: false
+  xy: 1295, 369
+  size: 148, 120
+  orig: 148, 120
+  offset: 0, 0
+  index: -1
+Water_ball/9
+  rotate: false
+  xy: 1554, 664
+  size: 154, 122
+  orig: 154, 122
+  offset: 0, 0
+  index: -1
+ex1
+  rotate: false
+  xy: 1295, 236
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ex2
+  rotate: false
+  xy: 454, 5
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ex3
+  rotate: false
+  xy: 587, 5
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+ex4
+  rotate: false
+  xy: 720, 5
+  size: 130, 130
+  orig: 130, 130
+  offset: 0, 0
+  index: -1
+glow1
+  rotate: false
+  xy: 1295, 492
+  size: 149, 161
+  orig: 149, 161
+  offset: 0, 0
+  index: -1
+images/nuoc-2_01
+  rotate: false
+  xy: 0, 656
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_02
+  rotate: false
+  xy: 0, 397
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_03
+  rotate: false
+  xy: 259, 656
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_04
+  rotate: false
+  xy: 0, 138
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_05
+  rotate: false
+  xy: 259, 397
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_06
+  rotate: false
+  xy: 518, 656
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_07
+  rotate: false
+  xy: 259, 138
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_08
+  rotate: false
+  xy: 518, 397
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_09
+  rotate: false
+  xy: 777, 656
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_10
+  rotate: false
+  xy: 518, 138
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_11
+  rotate: false
+  xy: 777, 397
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_12
+  rotate: false
+  xy: 1036, 656
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_13
+  rotate: false
+  xy: 777, 138
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_14
+  rotate: false
+  xy: 1036, 397
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_15
+  rotate: false
+  xy: 1295, 656
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc-2_16
+  rotate: false
+  xy: 1036, 138
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/nuoc_01
+  rotate: false
+  xy: 853, 7
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_02
+  rotate: false
+  xy: 984, 7
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_03
+  rotate: false
+  xy: 1115, 7
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_04
+  rotate: false
+  xy: 1447, 525
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_05
+  rotate: false
+  xy: 1578, 533
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_06
+  rotate: false
+  xy: 1295, 105
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_07
+  rotate: false
+  xy: 1447, 394
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_08
+  rotate: false
+  xy: 1578, 402
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_09
+  rotate: false
+  xy: 1446, 263
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_10
+  rotate: false
+  xy: 1428, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_11
+  rotate: false
+  xy: 1426, 1
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_12
+  rotate: false
+  xy: 1559, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_13
+  rotate: false
+  xy: 1557, 1
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_14
+  rotate: false
+  xy: 1577, 263
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_15
+  rotate: false
+  xy: 1690, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/nuoc_16
+  rotate: false
+  xy: 1688, 1
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+spark
+  rotate: false
+  xy: 1776, 358
+  size: 42, 46
+  orig: 42, 46
+  offset: 0, 0
+  index: -1
+vong-nuoc-1
+  rotate: false
+  xy: 0, 0
+  size: 145, 135
+  orig: 145, 135
+  offset: 0, 0
+  index: -1

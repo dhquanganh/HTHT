@@ -1,0 +1,286 @@
+
+Hero_30007.png
+size: 1940,460
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/2022814_0
+  rotate: false
+  xy: 415, 2
+  size: 16, 10
+  orig: 185, 186
+  offset: 53, 8
+  index: -1
+fx/2022814_1
+  rotate: true
+  xy: 1685, 179
+  size: 133, 128
+  orig: 185, 186
+  offset: 4, 5
+  index: -1
+fx/2022814_10
+  rotate: true
+  xy: 1437, 67
+  size: 159, 94
+  orig: 185, 186
+  offset: 22, 54
+  index: -1
+fx/2022814_11
+  rotate: true
+  xy: 1636, 4
+  size: 138, 91
+  orig: 185, 186
+  offset: 30, 57
+  index: -1
+fx/2022814_12
+  rotate: true
+  xy: 1426, 228
+  size: 69, 87
+  orig: 185, 186
+  offset: 56, 59
+  index: -1
+fx/2022814_2
+  rotate: true
+  xy: 1566, 314
+  size: 144, 142
+  orig: 185, 186
+  offset: 2, 4
+  index: -1
+fx/2022814_3
+  rotate: true
+  xy: 1533, 144
+  size: 153, 150
+  orig: 185, 186
+  offset: 1, 0
+  index: -1
+fx/2022814_4
+  rotate: false
+  xy: 2, 4
+  size: 159, 177
+  orig: 185, 186
+  offset: 0, 4
+  index: -1
+fx/2022814_5
+  rotate: false
+  xy: 766, 15
+  size: 156, 166
+  orig: 185, 186
+  offset: 1, 18
+  index: -1
+fx/2022814_6
+  rotate: false
+  xy: 599, 15
+  size: 165, 166
+  orig: 185, 186
+  offset: 13, 19
+  index: -1
+fx/2022814_7
+  rotate: false
+  xy: 415, 14
+  size: 182, 167
+  orig: 185, 186
+  offset: 3, 19
+  index: -1
+fx/2022814_8
+  rotate: true
+  xy: 163, 7
+  size: 174, 161
+  orig: 185, 186
+  offset: 7, 24
+  index: -1
+fx/2022814_9
+  rotate: true
+  xy: 1426, 299
+  size: 159, 138
+  orig: 185, 186
+  offset: 22, 37
+  index: -1
+fx/hit.0_0
+  rotate: true
+  xy: 1729, 6
+  size: 96, 72
+  orig: 126, 126
+  offset: 30, 52
+  index: -1
+fx/hit.0_1
+  rotate: true
+  xy: 1815, 218
+  size: 125, 121
+  orig: 126, 126
+  offset: 0, 3
+  index: -1
+fx/hit.0_2
+  rotate: true
+  xy: 1815, 345
+  size: 113, 123
+  orig: 126, 126
+  offset: 2, 3
+  index: -1
+fx/hit.0_3
+  rotate: true
+  xy: 1815, 120
+  size: 96, 109
+  orig: 126, 126
+  offset: 7, 0
+  index: -1
+fx/hit.0_4
+  rotate: true
+  xy: 1729, 104
+  size: 73, 75
+  orig: 126, 126
+  offset: 15, 21
+  index: -1
+fx/hit.0_5
+  rotate: false
+  xy: 924, 45
+  size: 28, 27
+  orig: 126, 126
+  offset: 22, 59
+  index: -1
+kaiourui_cloth_101
+  rotate: false
+  xy: 1317, 2
+  size: 19, 15
+  orig: 20, 16
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_102
+  rotate: true
+  xy: 326, 7
+  size: 174, 87
+  orig: 175, 88
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_103
+  rotate: false
+  xy: 599, 2
+  size: 14, 11
+  orig: 15, 12
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_104
+  rotate: true
+  xy: 1533, 4
+  size: 138, 101
+  orig: 139, 102
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_105
+  rotate: true
+  xy: 1160, 14
+  size: 210, 155
+  orig: 211, 156
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_106
+  rotate: true
+  xy: 1130, 226
+  size: 232, 153
+  orig: 233, 154
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_107
+  rotate: true
+  xy: 1033, 7
+  size: 213, 125
+  orig: 214, 126
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_108
+  rotate: true
+  xy: 997, 222
+  size: 236, 131
+  orig: 237, 135
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_109
+  rotate: true
+  xy: 973, 3
+  size: 216, 58
+  orig: 217, 59
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_110
+  rotate: false
+  xy: 782, 184
+  size: 189, 31
+  orig: 190, 32
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_111
+  rotate: true
+  xy: 782, 217
+  size: 241, 112
+  orig: 242, 113
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_112
+  rotate: true
+  xy: 924, 74
+  size: 108, 33
+  orig: 109, 34
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_113
+  rotate: true
+  xy: 1285, 227
+  size: 231, 107
+  orig: 242, 113
+  offset: 10, 0
+  index: -1
+kaiourui_cloth_114
+  rotate: true
+  xy: 1377, 28
+  size: 197, 58
+  orig: 217, 59
+  offset: 20, 0
+  index: -1
+kaiourui_cloth_115
+  rotate: true
+  xy: 1394, 271
+  size: 187, 30
+  orig: 190, 32
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_116
+  rotate: true
+  xy: 896, 221
+  size: 237, 99
+  orig: 242, 113
+  offset: 5, 0
+  index: -1
+kaiourui_cloth_117
+  rotate: true
+  xy: 1317, 19
+  size: 206, 58
+  orig: 217, 59
+  offset: 10, 0
+  index: -1
+kaiourui_cloth_118
+  rotate: true
+  xy: 924, 22
+  size: 21, 19
+  orig: 25, 22
+  offset: 3, 2
+  index: -1
+kaiourui_cloth_119
+  rotate: true
+  xy: 1710, 349
+  size: 109, 101
+  orig: 110, 102
+  offset: 1, 0
+  index: -1
+kaiourui_cloth_120
+  rotate: true
+  xy: 1437, 13
+  size: 52, 90
+  orig: 53, 91
+  offset: 1, 0
+  index: -1
+kaiourui_damage
+  rotate: false
+  xy: 2, 183
+  size: 778, 275
+  orig: 791, 302
+  offset: 5, 17
+  index: -1

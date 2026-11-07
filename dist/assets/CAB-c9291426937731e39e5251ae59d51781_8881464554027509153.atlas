@@ -1,0 +1,125 @@
+
+Skill_189.png
+size: 824,156
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Perona_skill2/001
+  rotate: true
+  xy: 367, 51
+  size: 103, 55
+  orig: 106, 60
+  offset: 2, 2
+  index: -1
+Char_Perona_skill2/003
+  rotate: true
+  xy: 424, 56
+  size: 98, 65
+  orig: 102, 69
+  offset: 2, 1
+  index: -1
+Char_Perona_skill2/005
+  rotate: true
+  xy: 242, 32
+  size: 122, 73
+  orig: 123, 75
+  offset: 1, 0
+  index: -1
+Char_Perona_skill2/007
+  rotate: false
+  xy: 498, 2
+  size: 171, 64
+  orig: 173, 66
+  offset: 1, 0
+  index: -1
+Char_Perona_skill2/011
+  rotate: true
+  xy: 122, 22
+  size: 132, 56
+  orig: 135, 59
+  offset: 2, 1
+  index: -1
+Char_Perona_skill2/013
+  rotate: false
+  xy: 317, 3
+  size: 82, 32
+  orig: 85, 34
+  offset: 2, 0
+  index: -1
+Char_Perona_skill2/015
+  rotate: true
+  xy: 317, 37
+  size: 117, 48
+  orig: 120, 50
+  offset: 2, 0
+  index: -1
+Char_Perona_skill2/017
+  rotate: true
+  xy: 2, 10
+  size: 144, 71
+  orig: 146, 74
+  offset: 1, 1
+  index: -1
+Char_Perona_skill2/019
+  rotate: true
+  xy: 75, 13
+  size: 141, 45
+  orig: 144, 48
+  offset: 2, 1
+  index: -1
+Char_Perona_skill2/021
+  rotate: true
+  xy: 180, 30
+  size: 124, 60
+  orig: 127, 63
+  offset: 2, 1
+  index: -1
+Char_Perona_skill2/023
+  rotate: false
+  xy: 424, 4
+  size: 72, 50
+  orig: 76, 53
+  offset: 2, 1
+  index: -1
+Char_Perona_skill2/025
+  rotate: false
+  xy: 747, 79
+  size: 73, 75
+  orig: 78, 81
+  offset: 3, 3
+  index: -1
+Char_Perona_skill2/027
+  rotate: false
+  xy: 663, 72
+  size: 82, 82
+  orig: 86, 87
+  offset: 2, 2
+  index: -1
+Char_Perona_skill2/029
+  rotate: false
+  xy: 578, 68
+  size: 83, 86
+  orig: 88, 91
+  offset: 3, 2
+  index: -1
+Char_Perona_skill2/031
+  rotate: false
+  xy: 491, 68
+  size: 85, 86
+  orig: 89, 92
+  offset: 2, 3
+  index: -1
+Char_Perona_skill2/033
+  rotate: false
+  xy: 747, 3
+  size: 69, 74
+  orig: 72, 79
+  offset: 1, 2
+  index: -1
+Char_Perona_skill2/035
+  rotate: true
+  xy: 671, 2
+  size: 68, 53
+  orig: 72, 58
+  offset: 2, 3
+  index: -1

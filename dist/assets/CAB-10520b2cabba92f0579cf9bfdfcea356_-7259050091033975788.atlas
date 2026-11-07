@@ -1,0 +1,188 @@
+
+Cast_150.png
+size: 1144,1036
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Kizaru_e_skill2_shouji/000
+  rotate: true
+  xy: 800, 12
+  size: 170, 135
+  orig: 181, 141
+  offset: 6, 1
+  index: -1
+Char_Kizaru_e_skill2_shouji/001
+  rotate: false
+  xy: 2, 3
+  size: 215, 137
+  orig: 236, 144
+  offset: 11, 2
+  index: -1
+Char_Kizaru_e_skill2_shouji/002
+  rotate: false
+  xy: 356, 149
+  size: 190, 146
+  orig: 201, 152
+  offset: 6, 1
+  index: -1
+Char_Kizaru_e_skill2_shouji/003
+  rotate: false
+  xy: 426, 3
+  size: 190, 144
+  orig: 201, 151
+  offset: 6, 2
+  index: -1
+Char_Kizaru_e_skill2_shouji/004
+  rotate: false
+  xy: 219, 2
+  size: 205, 138
+  orig: 215, 145
+  offset: 5, 1
+  index: -1
+Char_Kizaru_e_skill2_shouji/005
+  rotate: false
+  xy: 820, 194
+  size: 209, 144
+  orig: 219, 151
+  offset: 5, 1
+  index: -1
+Char_Kizaru_e_skill2_shouji/006
+  rotate: true
+  xy: 994, 819
+  size: 213, 148
+  orig: 224, 155
+  offset: 5, 1
+  index: -1
+Char_Kizaru_e_skill2_shouji/007
+  rotate: false
+  xy: 925, 566
+  size: 217, 152
+  orig: 229, 161
+  offset: 7, 2
+  index: -1
+Char_Kizaru_e_skill2_shouji/008
+  rotate: false
+  xy: 583, 184
+  size: 219, 144
+  orig: 229, 153
+  offset: 6, 1
+  index: -1
+Char_Kizaru_e_skill2_shouji/009
+  rotate: true
+  xy: 937, 97
+  size: 95, 61
+  orig: 112, 70
+  offset: 9, 2
+  index: -1
+images/bgr_ki
+  rotate: false
+  xy: 1000, 72
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+images/body2_03
+  rotate: false
+  xy: 2, 297
+  size: 426, 367
+  orig: 426, 367
+  offset: 0, 0
+  index: -1
+images/body_01
+  rotate: true
+  xy: 514, 720
+  size: 312, 478
+  orig: 318, 480
+  offset: 3, 2
+  index: -1
+images/face_01
+  rotate: false
+  xy: 2, 666
+  size: 510, 366
+  orig: 512, 369
+  offset: 1, 2
+  index: -1
+images/face_03
+  rotate: false
+  xy: 2, 142
+  size: 352, 153
+  orig: 354, 158
+  offset: 1, 1
+  index: -1
+images/face_05
+  rotate: false
+  xy: 1094, 446
+  size: 46, 118
+  orig: 54, 122
+  offset: 3, 3
+  index: -1
+images/face_07
+  rotate: true
+  xy: 994, 770
+  size: 47, 130
+  orig: 54, 132
+  offset: 2, 0
+  index: -1
+images/face_08
+  rotate: false
+  xy: 583, 567
+  size: 340, 151
+  orig: 354, 158
+  offset: 9, 1
+  index: -1
+images/face_10
+  rotate: false
+  xy: 937, 26
+  size: 54, 69
+  orig: 54, 73
+  offset: 0, 2
+  index: -1
+images/face_12
+  rotate: true
+  xy: 430, 313
+  size: 351, 151
+  orig: 364, 153
+  offset: 10, 2
+  index: -1
+images/frame_focus
+  rotate: false
+  xy: 994, 749
+  size: 102, 19
+  orig: 130, 20
+  offset: 28, 0
+  index: -1
+images/glow_1099
+  rotate: false
+  xy: 820, 340
+  size: 224, 224
+  orig: 256, 256
+  offset: 16, 16
+  index: -1
+images/glow_3004
+  rotate: true
+  xy: 1031, 176
+  size: 112, 111
+  orig: 128, 128
+  offset: 8, 7
+  index: -1
+images/glow_4088
+  rotate: false
+  xy: 583, 330
+  size: 235, 235
+  orig: 256, 256
+  offset: 8, 13
+  index: -1
+images/glow_5061
+  rotate: false
+  xy: 618, 3
+  size: 180, 179
+  orig: 256, 256
+  offset: 40, 38
+  index: -1
+images/glow_6100
+  rotate: true
+  xy: 1046, 290
+  size: 274, 46
+  orig: 274, 46
+  offset: 0, 0
+  index: -1

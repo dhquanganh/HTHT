@@ -1,0 +1,1048 @@
+
+Hero_85.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 253, 1008
+  size: 13, 26
+  orig: 13, 26
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 460, 1006
+  size: 15, 29
+  orig: 15, 29
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 555, 969
+  size: 38, 34
+  orig: 38, 34
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 8, 1015
+  size: 6, 24
+  orig: 6, 24
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 62, 1014
+  size: 7, 21
+  orig: 7, 21
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 85, 1014
+  size: 7, 17
+  orig: 7, 19
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 377, 1007
+  size: 14, 17
+  orig: 17, 17
+  offset: 3, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 971, 1001
+  size: 20, 29
+  orig: 20, 29
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 116, 989
+  size: 21, 33
+  orig: 21, 38
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 116, 1012
+  size: 9, 24
+  orig: 9, 24
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 591, 1005
+  size: 16, 37
+  orig: 16, 37
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: false
+  xy: 2, 1017
+  size: 4, 4
+  orig: 4, 4
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: true
+  xy: 104, 1014
+  size: 7, 10
+  orig: 7, 10
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 167, 1011
+  size: 10, 25
+  orig: 10, 25
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: true
+  xy: 413, 973
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: true
+  xy: 34, 1015
+  size: 6, 26
+  orig: 6, 26
+  offset: 0, 0
+  index: -1
+cloth_14
+  rotate: true
+  xy: 194, 1010
+  size: 11, 36
+  orig: 11, 36
+  offset: 0, 0
+  index: -1
+cloth_15
+  rotate: true
+  xy: 799, 901
+  size: 61, 94
+  orig: 61, 94
+  offset: 0, 0
+  index: -1
+cloth_16
+  rotate: false
+  xy: 464, 740
+  size: 108, 90
+  orig: 108, 90
+  offset: 0, 0
+  index: -1
+cloth_17
+  rotate: false
+  xy: 341, 921
+  size: 61, 54
+  orig: 61, 61
+  offset: 0, 7
+  index: -1
+cloth_18
+  rotate: false
+  xy: 209, 929
+  size: 75, 51
+  orig: 79, 57
+  offset: 0, 0
+  index: -1
+cloth_19
+  rotate: false
+  xy: 404, 914
+  size: 67, 56
+  orig: 70, 65
+  offset: 0, 0
+  index: -1
+cloth_20
+  rotate: true
+  xy: 553, 908
+  size: 58, 66
+  orig: 63, 66
+  offset: 0, 0
+  index: -1
+cloth_21
+  rotate: false
+  xy: 491, 1006
+  size: 17, 15
+  orig: 20, 21
+  offset: 0, 2
+  index: -1
+cloth_22
+  rotate: false
+  xy: 921, 1002
+  size: 19, 19
+  orig: 19, 27
+  offset: 0, 4
+  index: -1
+cloth_23
+  rotate: true
+  xy: 510, 1006
+  size: 15, 16
+  orig: 23, 16
+  offset: 5, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 281, 1008
+  size: 13, 22
+  orig: 13, 22
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 142, 1012
+  size: 9, 23
+  orig: 9, 23
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 183, 986
+  size: 25, 22
+  orig: 25, 22
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 630, 1005
+  size: 16, 25
+  orig: 16, 25
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 232, 1009
+  size: 12, 19
+  orig: 12, 19
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 657, 1005
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 912, 958
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 962, 954
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+head_14
+  rotate: true
+  xy: 2, 949
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+head_15
+  rotate: true
+  xy: 52, 946
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+namitwo_beat_02
+  rotate: true
+  xy: 160, 645
+  size: 95, 162
+  orig: 95, 162
+  offset: 0, 0
+  index: -1
+namitwo_beat_03
+  rotate: true
+  xy: 2, 565
+  size: 109, 152
+  orig: 109, 152
+  offset: 0, 0
+  index: -1
+namitwo_beat_05
+  rotate: true
+  xy: 2, 444
+  size: 119, 145
+  orig: 119, 145
+  offset: 0, 0
+  index: -1
+namitwo_beat_06
+  rotate: false
+  xy: 2, 146
+  size: 180, 133
+  orig: 206, 153
+  offset: 16, 9
+  index: -1
+namitwo_beat_07
+  rotate: false
+  xy: 2, 10
+  size: 178, 134
+  orig: 178, 134
+  offset: 0, 0
+  index: -1
+namitwo_damage
+  rotate: true
+  xy: 137, 281
+  size: 130, 153
+  orig: 130, 153
+  offset: 0, 0
+  index: -1
+namitwo_skill1_06
+  rotate: true
+  xy: 2, 676
+  size: 93, 156
+  orig: 93, 156
+  offset: 0, 0
+  index: -1
+namitwo_skill1_07
+  rotate: true
+  xy: 607, 226
+  size: 133, 157
+  orig: 133, 157
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1001
+  rotate: true
+  xy: 151, 988
+  size: 21, 30
+  orig: 21, 30
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1002
+  rotate: true
+  xy: 2, 993
+  size: 20, 26
+  orig: 20, 26
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1003
+  rotate: true
+  xy: 396, 1007
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1004
+  rotate: true
+  xy: 595, 968
+  size: 35, 37
+  orig: 35, 37
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1005
+  rotate: true
+  xy: 728, 966
+  size: 36, 44
+  orig: 36, 44
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1006
+  rotate: false
+  xy: 519, 971
+  size: 34, 33
+  orig: 34, 33
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1007
+  rotate: true
+  xy: 348, 977
+  size: 28, 31
+  orig: 28, 31
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1008
+  rotate: true
+  xy: 246, 983
+  size: 23, 31
+  orig: 23, 31
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1009
+  rotate: true
+  xy: 279, 982
+  size: 24, 36
+  orig: 24, 36
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1010
+  rotate: false
+  xy: 90, 990
+  size: 24, 22
+  orig: 24, 22
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1011
+  rotate: true
+  xy: 528, 1006
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1012
+  rotate: true
+  xy: 738, 1004
+  size: 17, 31
+  orig: 17, 31
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1013
+  rotate: true
+  xy: 1002, 998
+  size: 23, 20
+  orig: 23, 20
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1014
+  rotate: false
+  xy: 621, 907
+  size: 62, 59
+  orig: 62, 59
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1015
+  rotate: false
+  xy: 771, 1004
+  size: 24, 17
+  orig: 24, 17
+  offset: 0, 0
+  index: -1
+namitwo_skill1_1016
+  rotate: true
+  xy: 149, 940
+  size: 44, 58
+  orig: 44, 58
+  offset: 0, 0
+  index: -1
+namitwo_skill1_12
+  rotate: false
+  xy: 149, 413
+  size: 160, 120
+  orig: 160, 120
+  offset: 0, 0
+  index: -1
+namitwo_skill1_14
+  rotate: true
+  xy: 770, 331
+  size: 127, 174
+  orig: 127, 174
+  offset: 0, 0
+  index: -1
+namitwo_skill1_18
+  rotate: false
+  xy: 182, 2
+  size: 151, 136
+  orig: 151, 136
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3401
+  rotate: false
+  xy: 305, 1008
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3402
+  rotate: false
+  xy: 323, 1008
+  size: 14, 13
+  orig: 14, 13
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3403
+  rotate: true
+  xy: 679, 1005
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3404
+  rotate: false
+  xy: 449, 972
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3405
+  rotate: false
+  xy: 483, 972
+  size: 34, 32
+  orig: 34, 37
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3406
+  rotate: true
+  xy: 942, 1002
+  size: 19, 27
+  orig: 19, 27
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3407
+  rotate: false
+  xy: 381, 977
+  size: 30, 28
+  orig: 30, 28
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3408
+  rotate: true
+  xy: 797, 1004
+  size: 17, 20
+  orig: 17, 20
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3409
+  rotate: true
+  xy: 562, 1006
+  size: 15, 27
+  orig: 15, 27
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3410
+  rotate: true
+  xy: 317, 982
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+namitwo_skill1_3411
+  rotate: true
+  xy: 473, 912
+  size: 57, 78
+  orig: 57, 78
+  offset: 0, 0
+  index: -1
+namitwo_skill2_02
+  rotate: true
+  xy: 311, 407
+  size: 121, 157
+  orig: 121, 157
+  offset: 0, 0
+  index: -1
+namitwo_skill2_03
+  rotate: true
+  xy: 324, 640
+  size: 98, 162
+  orig: 98, 162
+  offset: 0, 0
+  index: -1
+namitwo_skill2_05
+  rotate: true
+  xy: 651, 601
+  size: 103, 157
+  orig: 103, 157
+  offset: 0, 0
+  index: -1
+namitwo_skill2_1301
+  rotate: false
+  xy: 415, 1007
+  size: 16, 14
+  orig: 16, 14
+  offset: 0, 0
+  index: -1
+namitwo_skill2_1302
+  rotate: false
+  xy: 339, 1008
+  size: 18, 13
+  orig: 18, 13
+  offset: 0, 0
+  index: -1
+namitwo_skill2_1303
+  rotate: false
+  xy: 210, 985
+  size: 34, 22
+  orig: 34, 22
+  offset: 0, 0
+  index: -1
+namitwo_skill2_1304
+  rotate: false
+  xy: 30, 993
+  size: 28, 20
+  orig: 28, 20
+  offset: 0, 0
+  index: -1
+namitwo_skill2_1305
+  rotate: false
+  xy: 359, 1008
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+namitwo_skill2_1306
+  rotate: true
+  xy: 819, 1004
+  size: 17, 28
+  orig: 17, 28
+  offset: 0, 0
+  index: -1
+namitwo_skill2_1307
+  rotate: false
+  xy: 286, 928
+  size: 53, 52
+  orig: 53, 52
+  offset: 0, 0
+  index: -1
+namitwo_skill2_14
+  rotate: true
+  xy: 482, 522
+  size: 109, 149
+  orig: 109, 149
+  offset: 0, 0
+  index: -1
+namitwo_skill3_01
+  rotate: true
+  xy: 156, 535
+  size: 108, 161
+  orig: 108, 161
+  offset: 0, 0
+  index: -1
+namitwo_skill3_02
+  rotate: true
+  xy: 257, 838
+  size: 74, 161
+  orig: 74, 161
+  offset: 0, 0
+  index: -1
+namitwo_skill3_03
+  rotate: true
+  xy: 609, 361
+  size: 126, 159
+  orig: 126, 159
+  offset: 0, 0
+  index: -1
+namitwo_skill3_04
+  rotate: true
+  xy: 292, 275
+  size: 130, 159
+  orig: 130, 159
+  offset: 0, 0
+  index: -1
+namitwo_skill3_04_ef
+  rotate: false
+  xy: 754, 810
+  size: 95, 89
+  orig: 95, 89
+  offset: 0, 0
+  index: -1
+namitwo_skill3_05
+  rotate: true
+  xy: 488, 633
+  size: 99, 161
+  orig: 99, 161
+  offset: 0, 0
+  index: -1
+namitwo_skill3_05_ef
+  rotate: true
+  xy: 810, 574
+  size: 130, 105
+  orig: 130, 105
+  offset: 0, 0
+  index: -1
+namitwo_skill3_06
+  rotate: true
+  xy: 420, 832
+  size: 74, 160
+  orig: 74, 160
+  offset: 0, 0
+  index: -1
+namitwo_skill3_07
+  rotate: true
+  xy: 851, 797
+  size: 82, 157
+  orig: 82, 157
+  offset: 0, 0
+  index: -1
+namitwo_skill3_08
+  rotate: true
+  xy: 2, 771
+  size: 82, 157
+  orig: 82, 157
+  offset: 0, 0
+  index: -1
+namitwo_skill3_09
+  rotate: true
+  xy: 161, 752
+  size: 84, 152
+  orig: 84, 152
+  offset: 0, 0
+  index: -1
+namitwo_skill3_10
+  rotate: false
+  xy: 920, 636
+  size: 100, 159
+  orig: 100, 159
+  offset: 0, 0
+  index: -1
+namitwo_skill3_11
+  rotate: true
+  xy: 633, 489
+  size: 110, 150
+  orig: 110, 150
+  offset: 0, 0
+  index: -1
+namitwo_skill3_12
+  rotate: false
+  xy: 184, 140
+  size: 166, 133
+  orig: 166, 133
+  offset: 0, 0
+  index: -1
+namitwo_skill3_13
+  rotate: false
+  xy: 352, 127
+  size: 166, 133
+  orig: 166, 133
+  offset: 0, 0
+  index: -1
+namitwo_skill3_14
+  rotate: false
+  xy: 520, 91
+  size: 166, 133
+  orig: 166, 133
+  offset: 0, 0
+  index: -1
+namitwo_skill3_24
+  rotate: false
+  xy: 688, 66
+  size: 166, 133
+  orig: 166, 133
+  offset: 0, 0
+  index: -1
+namitwo_skill3_25
+  rotate: true
+  xy: 315, 742
+  size: 88, 147
+  orig: 88, 147
+  offset: 0, 0
+  index: -1
+namitwo_skill3_26
+  rotate: true
+  xy: 100, 855
+  size: 72, 155
+  orig: 72, 155
+  offset: 0, 0
+  index: -1
+namitwo_skill3_27
+  rotate: true
+  xy: 738, 706
+  size: 89, 180
+  orig: 89, 180
+  offset: 0, 0
+  index: -1
+namitwo_skill3_27_ef
+  rotate: true
+  xy: 685, 902
+  size: 60, 112
+  orig: 60, 112
+  offset: 0, 0
+  index: -1
+namitwo_skill3_28
+  rotate: true
+  xy: 582, 826
+  size: 74, 170
+  orig: 74, 170
+  offset: 0, 0
+  index: -1
+namitwo_squat
+  rotate: false
+  xy: 470, 396
+  size: 137, 124
+  orig: 137, 124
+  offset: 0, 0
+  index: -1
+namitwo_standby_01
+  rotate: true
+  xy: 453, 262
+  size: 132, 152
+  orig: 132, 152
+  offset: 0, 0
+  index: -1
+namitwo_standby_02
+  rotate: false
+  xy: 2, 292
+  size: 133, 150
+  orig: 133, 150
+  offset: 0, 0
+  index: -1
+namitwo_win_01
+  rotate: true
+  xy: 319, 530
+  size: 108, 161
+  orig: 108, 161
+  offset: 0, 0
+  index: -1
+namitwo_win_02_ef
+  rotate: true
+  xy: 102, 944
+  size: 43, 45
+  orig: 43, 45
+  offset: 0, 0
+  index: -1
+namitwo_win_03_ef
+  rotate: true
+  xy: 634, 968
+  size: 35, 92
+  orig: 35, 92
+  offset: 0, 0
+  index: -1
+namitwo_win_04
+  rotate: true
+  xy: 856, 64
+  size: 135, 162
+  orig: 135, 162
+  offset: 0, 0
+  index: -1
+namitwo_win_04_ef
+  rotate: true
+  xy: 895, 881
+  size: 71, 124
+  orig: 71, 124
+  offset: 0, 0
+  index: -1
+namitwo_win_05_ef
+  rotate: false
+  xy: 2, 870
+  size: 96, 74
+  orig: 96, 74
+  offset: 0, 0
+  index: -1
+namitwo_win_06
+  rotate: true
+  xy: 766, 201
+  size: 128, 228
+  orig: 128, 228
+  offset: 0, 0
+  index: -1
+namitwo_win_06_ef
+  rotate: true
+  xy: 774, 964
+  size: 37, 136
+  orig: 37, 136
+  offset: 0, 0
+  index: -1
+namitwo_win_07
+  rotate: true
+  xy: 785, 460
+  size: 112, 195
+  orig: 112, 195
+  offset: 0, 0
+  index: -1
+namitwo_win_07_ef
+  rotate: true
+  xy: 849, 1003
+  size: 18, 39
+  orig: 18, 39
+  offset: 0, 0
+  index: -1
+namitwo_win_08
+  rotate: true
+  xy: 574, 734
+  size: 90, 162
+  orig: 90, 162
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 433, 1007
+  size: 14, 25
+  orig: 14, 25
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 60, 992
+  size: 20, 28
+  orig: 20, 28
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 710, 1005
+  size: 16, 26
+  orig: 16, 26
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 890, 1003
+  size: 18, 29
+  orig: 18, 29
+  offset: 0, 0
+  index: -1
+
+Hero_852.png
+size: 828,800
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+namitwo_beat_04
+  rotate: true
+  xy: 673, 653
+  size: 142, 151
+  orig: 142, 151
+  offset: 0, 0
+  index: -1
+namitwo_beat_08
+  rotate: false
+  xy: 2, 661
+  size: 178, 134
+  orig: 178, 134
+  offset: 0, 0
+  index: -1
+namitwo_beat_09
+  rotate: false
+  xy: 182, 661
+  size: 178, 134
+  orig: 178, 134
+  offset: 0, 0
+  index: -1
+namitwo_skill1_01
+  rotate: true
+  xy: 515, 655
+  size: 140, 156
+  orig: 140, 156
+  offset: 0, 0
+  index: -1
+namitwo_skill1_02
+  rotate: true
+  xy: 362, 658
+  size: 137, 151
+  orig: 137, 151
+  offset: 0, 0
+  index: -1
+namitwo_skill1_03
+  rotate: false
+  xy: 326, 363
+  size: 162, 149
+  orig: 162, 149
+  offset: 0, 0
+  index: -1
+namitwo_skill1_04
+  rotate: false
+  xy: 2, 519
+  size: 190, 140
+  orig: 190, 140
+  offset: 0, 0
+  index: -1
+namitwo_skill1_05
+  rotate: false
+  xy: 490, 356
+  size: 169, 153
+  orig: 169, 153
+  offset: 0, 0
+  index: -1
+namitwo_skill1_11
+  rotate: true
+  xy: 525, 2
+  size: 194, 201
+  orig: 194, 201
+  offset: 0, 0
+  index: -1
+namitwo_skill1_13
+  rotate: false
+  xy: 511, 511
+  size: 176, 140
+  orig: 176, 140
+  offset: 0, 0
+  index: -1
+namitwo_skill1_16
+  rotate: true
+  xy: 484, 200
+  size: 154, 170
+  orig: 154, 170
+  offset: 0, 0
+  index: -1
+namitwo_skill2_01
+  rotate: true
+  xy: 356, 514
+  size: 142, 153
+  orig: 142, 153
+  offset: 0, 0
+  index: -1
+namitwo_skill2_04
+  rotate: true
+  xy: 161, 370
+  size: 146, 163
+  orig: 146, 163
+  offset: 0, 0
+  index: -1
+namitwo_skill2_06
+  rotate: false
+  xy: 661, 356
+  size: 154, 153
+  orig: 154, 153
+  offset: 0, 0
+  index: -1
+namitwo_skill2_12
+  rotate: false
+  xy: 163, 213
+  size: 158, 155
+  orig: 158, 155
+  offset: 0, 0
+  index: -1
+namitwo_skill2_15
+  rotate: false
+  xy: 194, 45
+  size: 166, 159
+  orig: 166, 159
+  offset: 0, 0
+  index: -1
+namitwo_skill2_16
+  rotate: true
+  xy: 323, 206
+  size: 155, 159
+  orig: 155, 159
+  offset: 0, 0
+  index: -1
+namitwo_skill2_17
+  rotate: true
+  xy: 656, 198
+  size: 156, 159
+  orig: 156, 159
+  offset: 0, 0
+  index: -1
+namitwo_skill2_28
+  rotate: false
+  xy: 362, 39
+  size: 161, 159
+  orig: 161, 159
+  offset: 0, 0
+  index: -1
+namitwo_skill2_29
+  rotate: true
+  xy: 2, 215
+  size: 153, 159
+  orig: 153, 159
+  offset: 0, 0
+  index: -1
+namitwo_win_02
+  rotate: true
+  xy: 194, 518
+  size: 141, 160
+  orig: 141, 160
+  offset: 0, 0
+  index: -1
+namitwo_win_03
+  rotate: true
+  xy: 2, 373
+  size: 144, 157
+  orig: 144, 157
+  offset: 0, 0
+  index: -1
+namitwo_win_05
+  rotate: true
+  xy: 2, 53
+  size: 158, 190
+  orig: 158, 190
+  offset: 0, 0
+  index: -1

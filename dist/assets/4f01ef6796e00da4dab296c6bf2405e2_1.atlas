@@ -1,0 +1,41 @@
+
+Hit_14.png
+size: 700,459
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+14/skill.15121001.hit.0.0
+  rotate: true
+  xy: 2, 2
+  size: 220, 278
+  orig: 220, 278
+  offset: 0, 0
+  index: -1
+14/skill.15121001.hit.0.1
+  rotate: false
+  xy: 474, 221
+  size: 224, 236
+  orig: 224, 236
+  offset: 0, 0
+  index: -1
+14/skill.15121001.hit.0.2
+  rotate: false
+  xy: 240, 224
+  size: 232, 233
+  orig: 232, 233
+  offset: 0, 0
+  index: -1
+14/skill.15121001.hit.0.3
+  rotate: false
+  xy: 2, 224
+  size: 236, 233
+  orig: 236, 233
+  offset: 0, 0
+  index: -1
+14/skill.15121001.hit.0.4
+  rotate: true
+  xy: 282, 17
+  size: 202, 233
+  orig: 202, 233
+  offset: 0, 0
+  index: -1

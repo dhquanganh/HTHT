@@ -1,0 +1,153 @@
+
+Skill_591.png
+size: 848,1044
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+100/guangyun
+  rotate: false
+  xy: 636, 252
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+100/leid_1
+  rotate: false
+  xy: 568, 3
+  size: 52, 190
+  orig: 52, 190
+  offset: 0, 0
+  index: -1
+100/suishi_10
+  rotate: false
+  xy: 752, 911
+  size: 94, 129
+  orig: 94, 129
+  offset: 0, 0
+  index: -1
+100/yun_6
+  rotate: true
+  xy: 752, 665
+  size: 244, 68
+  orig: 244, 68
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 2, 32
+  size: 256, 199
+  orig: 256, 256
+  offset: 0, 21
+  index: -1
+SK2/bingqiu
+  rotate: true
+  xy: 372, 2
+  size: 191, 194
+  orig: 191, 194
+  offset: 0, 0
+  index: -1
+SK2/dilie2_1
+  rotate: false
+  xy: 636, 142
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+SK2/dilie2_2
+  rotate: false
+  xy: 622, 32
+  size: 108, 108
+  orig: 108, 108
+  offset: 0, 0
+  index: -1
+SK2/huoquan3_012
+  rotate: true
+  xy: 797, 587
+  size: 76, 41
+  orig: 76, 41
+  offset: 0, 0
+  index: -1
+SK2/huoquan3_013
+  rotate: true
+  xy: 753, 584
+  size: 79, 42
+  orig: 79, 42
+  offset: 0, 0
+  index: -1
+SK2/huoquan3_014
+  rotate: true
+  xy: 753, 502
+  size: 80, 41
+  orig: 80, 41
+  offset: 0, 0
+  index: -1
+SK2/huoquan3_015
+  rotate: true
+  xy: 753, 419
+  size: 81, 40
+  orig: 81, 40
+  offset: 0, 0
+  index: -1
+SK2/huoquan3_016
+  rotate: true
+  xy: 732, 66
+  size: 74, 41
+  orig: 74, 41
+  offset: 0, 0
+  index: -1
+SK2/lizi104_1
+  rotate: false
+  xy: 775, 98
+  size: 54, 52
+  orig: 54, 52
+  offset: 0, 0
+  index: -1
+SK2/yun
+  rotate: false
+  xy: 746, 152
+  size: 98, 98
+  orig: 98, 98
+  offset: 0, 0
+  index: -1
+SK2/yun2
+  rotate: false
+  xy: 424, 195
+  size: 210, 200
+  orig: 210, 200
+  offset: 0, 0
+  index: -1
+Skill/glow_1057
+  rotate: false
+  xy: 424, 397
+  size: 252, 256
+  orig: 256, 256
+  offset: 4, 0
+  index: -1
+bgr_skills
+  rotate: false
+  xy: 2, 655
+  size: 748, 385
+  orig: 748, 385
+  offset: 0, 0
+  index: -1
+buff/TX_dg322
+  rotate: true
+  xy: 260, 12
+  size: 219, 110
+  orig: 219, 110
+  offset: 0, 0
+  index: -1
+buff/yanlx_1
+  rotate: true
+  xy: 678, 382
+  size: 271, 73
+  orig: 271, 73
+  offset: 0, 0
+  index: -1
+glowww
+  rotate: false
+  xy: 2, 233
+  size: 420, 420
+  orig: 420, 420
+  offset: 0, 0
+  index: -1

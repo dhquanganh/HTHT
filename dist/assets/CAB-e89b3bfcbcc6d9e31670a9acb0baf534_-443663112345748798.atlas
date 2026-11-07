@@ -1,0 +1,551 @@
+
+Hero_87.png
+size: 1024,980
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 322, 958
+  size: 20, 31
+  orig: 20, 31
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 355, 958
+  size: 20, 42
+  orig: 20, 42
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 2, 872
+  size: 50, 75
+  orig: 50, 75
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 965, 946
+  size: 32, 43
+  orig: 32, 43
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 2, 964
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 78, 960
+  size: 29, 18
+  orig: 29, 18
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 109, 960
+  size: 18, 67
+  orig: 18, 67
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 2, 927
+  size: 34, 41
+  orig: 34, 41
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 227, 959
+  size: 19, 64
+  orig: 19, 64
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 421, 957
+  size: 21, 41
+  orig: 21, 41
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: true
+  xy: 856, 947
+  size: 31, 68
+  orig: 31, 68
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: true
+  xy: 464, 957
+  size: 21, 59
+  orig: 21, 59
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: true
+  xy: 172, 776
+  size: 87, 92
+  orig: 87, 92
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 203, 919
+  size: 38, 74
+  orig: 38, 74
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: true
+  xy: 45, 924
+  size: 34, 71
+  orig: 34, 71
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: true
+  xy: 367, 767
+  size: 87, 115
+  orig: 87, 115
+  offset: 0, 0
+  index: -1
+cloth_14
+  rotate: false
+  xy: 773, 948
+  size: 46, 30
+  orig: 46, 30
+  offset: 0, 0
+  index: -1
+cloth_15
+  rotate: false
+  xy: 155, 921
+  size: 46, 37
+  orig: 46, 37
+  offset: 0, 0
+  index: -1
+cloth_16
+  rotate: false
+  xy: 345, 916
+  size: 50, 40
+  orig: 50, 40
+  offset: 0, 0
+  index: -1
+cloth_17
+  rotate: false
+  xy: 579, 839
+  size: 189, 62
+  orig: 233, 62
+  offset: 0, 0
+  index: -1
+cloth_18
+  rotate: false
+  xy: 332, 856
+  size: 169, 56
+  orig: 182, 56
+  offset: 0, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 564, 956
+  size: 22, 27
+  orig: 22, 27
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 593, 955
+  size: 23, 30
+  orig: 23, 30
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 19, 963
+  size: 31, 15
+  orig: 31, 15
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 178, 960
+  size: 22, 18
+  orig: 22, 18
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 202, 960
+  size: 18, 23
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 399, 958
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 79, 868
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+head_05
+  rotate: true
+  xy: 268, 862
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 52, 961
+  size: 17, 24
+  orig: 17, 24
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 293, 959
+  size: 19, 27
+  orig: 19, 27
+  offset: 0, 0
+  index: -1
+skill3_42
+  rotate: false
+  xy: 535, 910
+  size: 74, 43
+  orig: 86, 61
+  offset: 7, 8
+  index: -1
+skill3_43
+  rotate: false
+  xy: 667, 903
+  size: 216, 42
+  orig: 232, 60
+  offset: 4, 6
+  index: -1
+skill3_44
+  rotate: false
+  xy: 397, 914
+  size: 136, 41
+  orig: 146, 61
+  offset: 10, 14
+  index: -1
+skill3_45
+  rotate: false
+  xy: 143, 865
+  size: 123, 52
+  orig: 140, 63
+  offset: 8, 4
+  index: -1
+skill3_46
+  rotate: false
+  xy: 770, 828
+  size: 106, 73
+  orig: 122, 81
+  offset: 9, 3
+  index: -1
+smokertwo_beat  01
+  rotate: true
+  xy: 2, 482
+  size: 171, 155
+  orig: 189, 165
+  offset: 7, 5
+  index: -1
+smokertwo_beat  02
+  rotate: false
+  xy: 669, 183
+  size: 179, 165
+  orig: 201, 179
+  offset: 9, 5
+  index: -1
+smokertwo_beat  03
+  rotate: false
+  xy: 177, 236
+  size: 234, 156
+  orig: 244, 168
+  offset: 7, 6
+  index: -1
+smokertwo_beat  04
+  rotate: false
+  xy: 744, 350
+  size: 196, 152
+  orig: 224, 173
+  offset: 20, 9
+  index: -1
+smokertwo_damage
+  rotate: false
+  xy: 2, 326
+  size: 173, 154
+  orig: 187, 162
+  offset: 8, 3
+  index: -1
+smokertwo_dead 01
+  rotate: true
+  xy: 611, 905
+  size: 46, 54
+  orig: 46, 54
+  offset: 0, 0
+  index: -1
+smokertwo_dead 02
+  rotate: false
+  xy: 661, 953
+  size: 35, 25
+  orig: 35, 25
+  offset: 0, 0
+  index: -1
+smokertwo_dead 03
+  rotate: false
+  xy: 885, 896
+  size: 98, 48
+  orig: 98, 48
+  offset: 0, 0
+  index: -1
+smokertwo_dead 04
+  rotate: false
+  xy: 2, 794
+  size: 168, 69
+  orig: 168, 69
+  offset: 0, 0
+  index: -1
+smokertwo_dead 05
+  rotate: true
+  xy: 279, 917
+  size: 39, 64
+  orig: 39, 64
+  offset: 0, 0
+  index: -1
+smokertwo_dead 06
+  rotate: false
+  xy: 821, 948
+  size: 33, 30
+  orig: 33, 30
+  offset: 0, 0
+  index: -1
+smokertwo_dead 07
+  rotate: true
+  xy: 503, 849
+  size: 59, 74
+  orig: 59, 74
+  offset: 0, 0
+  index: -1
+smokertwo_dead 08
+  rotate: false
+  xy: 926, 947
+  size: 37, 31
+  orig: 37, 31
+  offset: 0, 0
+  index: -1
+smokertwo_dead 09
+  rotate: false
+  xy: 625, 955
+  size: 34, 23
+  orig: 34, 23
+  offset: 0, 0
+  index: -1
+smokertwo_dead 10
+  rotate: false
+  xy: 741, 949
+  size: 30, 29
+  orig: 30, 29
+  offset: 0, 0
+  index: -1
+smokertwo_dead 11
+  rotate: false
+  xy: 118, 923
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+smokertwo_dead 13
+  rotate: true
+  xy: 878, 811
+  size: 83, 104
+  orig: 83, 104
+  offset: 0, 0
+  index: -1
+smokertwo_dead 14
+  rotate: false
+  xy: 266, 770
+  size: 99, 84
+  orig: 99, 84
+  offset: 0, 0
+  index: -1
+smokertwo_rise
+  rotate: false
+  xy: 333, 394
+  size: 174, 151
+  orig: 196, 169
+  offset: 13, 7
+  index: -1
+smokertwo_skill1  01
+  rotate: true
+  xy: 2, 117
+  size: 207, 167
+  orig: 241, 193
+  offset: 15, 15
+  index: -1
+smokertwo_skill1  03
+  rotate: false
+  xy: 413, 214
+  size: 254, 157
+  orig: 268, 176
+  offset: 12, 8
+  index: -1
+smokertwo_skill1  06
+  rotate: false
+  xy: 171, 66
+  size: 433, 146
+  orig: 465, 181
+  offset: 13, 9
+  index: -1
+smokertwo_skill1  07
+  rotate: false
+  xy: 644, 689
+  size: 155, 137
+  orig: 187, 160
+  offset: 19, 11
+  index: -1
+smokertwo_skill2  01
+  rotate: true
+  xy: 484, 704
+  size: 133, 158
+  orig: 148, 158
+  offset: 8, 0
+  index: -1
+smokertwo_skill2  02
+  rotate: false
+  xy: 801, 672
+  size: 146, 137
+  orig: 159, 150
+  offset: 9, 5
+  index: -1
+smokertwo_skill2  03
+  rotate: true
+  xy: 337, 599
+  size: 166, 142
+  orig: 175, 152
+  offset: 5, 4
+  index: -1
+smokertwo_skill2  04
+  rotate: false
+  xy: 159, 482
+  size: 172, 146
+  orig: 187, 164
+  offset: 7, 6
+  index: -1
+smokertwo_skill2  05
+  rotate: true
+  xy: 860, 504
+  size: 166, 149
+  orig: 182, 158
+  offset: 6, 4
+  index: -1
+smokertwo_skill2  06
+  rotate: false
+  xy: 654, 526
+  size: 204, 144
+  orig: 217, 165
+  offset: 7, 8
+  index: -1
+smokertwo_skill2  07
+  rotate: false
+  xy: 2, 655
+  size: 155, 137
+  orig: 174, 153
+  offset: 12, 4
+  index: -1
+smokertwo_standby 01
+  rotate: true
+  xy: 850, 170
+  size: 178, 172
+  orig: 204, 189
+  offset: 9, 6
+  index: -1
+smokertwo_standby 02
+  rotate: false
+  xy: 606, 2
+  size: 196, 179
+  orig: 213, 194
+  offset: 7, 7
+  index: -1
+smokertwo_win 01
+  rotate: true
+  xy: 159, 630
+  size: 138, 176
+  orig: 153, 191
+  offset: 5, 8
+  index: -1
+smokertwo_win 02
+  rotate: true
+  xy: 481, 547
+  size: 140, 171
+  orig: 157, 189
+  offset: 11, 9
+  index: -1
+smokertwo_win 03
+  rotate: true
+  xy: 509, 373
+  size: 151, 233
+  orig: 176, 249
+  offset: 13, 8
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 525, 957
+  size: 21, 37
+  orig: 21, 37
+  offset: 0, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 698, 952
+  size: 26, 41
+  orig: 26, 41
+  offset: 0, 0
+  index: -1
+
+Hero_872.png
+size: 616,484
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+smokertwo_skill1  02
+  rotate: true
+  xy: 205, 2
+  size: 269, 222
+  orig: 291, 244
+  offset: 14, 12
+  index: -1
+smokertwo_skill1  04
+  rotate: false
+  xy: 205, 273
+  size: 408, 209
+  orig: 420, 231
+  offset: 9, 9
+  index: -1
+smokertwo_skill1  05
+  rotate: true
+  xy: 2, 19
+  size: 463, 201
+  orig: 485, 234
+  offset: 16, 17
+  index: -1
+smokertwo_win 04
+  rotate: true
+  xy: 429, 20
+  size: 251, 176
+  orig: 276, 198
+  offset: 18, 7
+  index: -1

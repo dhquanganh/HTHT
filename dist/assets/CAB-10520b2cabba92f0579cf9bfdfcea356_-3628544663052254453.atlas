@@ -1,0 +1,195 @@
+
+Cast_459.png
+size: 2036,1552
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Long vai phai truoc
+  rotate: true
+  xy: 1722, 185
+  size: 359, 209
+  orig: 359, 209
+  offset: 0, 0
+  index: -1
+ao choang sau
+  rotate: true
+  xy: 1469, 417
+  size: 510, 216
+  orig: 510, 216
+  offset: 0, 0
+  index: -1
+ao choang truoxc
+  rotate: false
+  xy: 2, 907
+  size: 989, 643
+  orig: 989, 643
+  offset: 0, 0
+  index: -1
+ban chan phai
+  rotate: true
+  xy: 532, 19
+  size: 61, 130
+  orig: 63, 132
+  offset: 1, 1
+  index: -1
+ban chan trai
+  rotate: true
+  xy: 403, 6
+  size: 74, 127
+  orig: 76, 129
+  offset: 1, 1
+  index: -1
+ban tay trai
+  rotate: false
+  xy: 664, 20
+  size: 58, 60
+  orig: 60, 62
+  offset: 1, 1
+  index: -1
+bdy
+  rotate: false
+  xy: 2, 400
+  size: 1066, 505
+  orig: 1066, 505
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 1687, 546
+  size: 201, 338
+  orig: 201, 338
+  offset: 0, 0
+  index: -1
+cang chan phai
+  rotate: true
+  xy: 917, 143
+  size: 255, 102
+  orig: 257, 104
+  offset: 1, 1
+  index: -1
+cang chan trai
+  rotate: true
+  xy: 1063, 78
+  size: 120, 266
+  orig: 123, 268
+  offset: 2, 1
+  index: -1
+chan phai
+  rotate: false
+  xy: 1455, 180
+  size: 265, 235
+  orig: 267, 237
+  offset: 1, 1
+  index: -1
+chan trai
+  rotate: false
+  xy: 1842, 1167
+  size: 168, 383
+  orig: 170, 385
+  offset: 1, 1
+  index: -1
+co tay trai
+  rotate: true
+  xy: 1925, 94
+  size: 79, 108
+  orig: 81, 110
+  offset: 1, 1
+  index: -1
+dau
+  rotate: false
+  xy: 2, 2
+  size: 399, 396
+  orig: 399, 396
+  offset: 0, 0
+  index: -1
+handa
+  rotate: false
+  xy: 1070, 200
+  size: 383, 355
+  orig: 385, 357
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 1572, 40
+  size: 138, 138
+  orig: 140, 140
+  offset: 1, 1
+  index: -1
+lightning
+  rotate: false
+  xy: 993, 989
+  size: 680, 120
+  orig: 682, 122
+  offset: 1, 1
+  index: -1
+long vai phai sau
+  rotate: false
+  xy: 1070, 557
+  size: 397, 370
+  orig: 397, 370
+  offset: 0, 0
+  index: -1
+long vai trai
+  rotate: true
+  xy: 1687, 749
+  size: 360, 334
+  orig: 360, 334
+  offset: 0, 0
+  index: -1
+long vai truoc
+  rotate: false
+  xy: 1331, 64
+  size: 239, 114
+  orig: 239, 114
+  offset: 0, 0
+  index: -1
+noise_11056_re
+  rotate: true
+  xy: 403, 142
+  size: 256, 512
+  orig: 256, 512
+  offset: 0, 0
+  index: -1
+sword
+  rotate: false
+  xy: 993, 1111
+  size: 847, 439
+  orig: 849, 441
+  offset: 1, 1
+  index: -1
+tay phai
+  rotate: true
+  xy: 1722, 84
+  size: 99, 201
+  orig: 99, 201
+  offset: 0, 0
+  index: -1
+tay trai
+  rotate: true
+  xy: 1933, 307
+  size: 237, 82
+  orig: 239, 84
+  offset: 1, 1
+  index: -1
+text1
+  rotate: false
+  xy: 993, 929
+  size: 659, 58
+  orig: 661, 60
+  offset: 1, 1
+  index: -1
+text2
+  rotate: false
+  xy: 403, 82
+  size: 658, 58
+  orig: 660, 60
+  offset: 1, 1
+  index: -1
+toctai
+  rotate: true
+  xy: 1933, 175
+  size: 130, 83
+  orig: 130, 83
+  offset: 0, 0
+  index: -1

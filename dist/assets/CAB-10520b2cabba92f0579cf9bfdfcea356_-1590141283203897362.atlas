@@ -1,0 +1,664 @@
+
+Hero_339.png
+size: 2036,396
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 1195, 2
+  size: 18, 29
+  orig: 18, 29
+  offset: 0, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 1163, 2
+  size: 18, 30
+  orig: 18, 30
+  offset: 0, 0
+  index: -1
+body_04
+  rotate: false
+  xy: 1628, 193
+  size: 42, 49
+  orig: 42, 49
+  offset: 0, 0
+  index: -1
+cloth_01
+  rotate: false
+  xy: 1087, 188
+  size: 86, 37
+  orig: 86, 37
+  offset: 0, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 896, 4
+  size: 24, 9
+  orig: 24, 9
+  offset: 0, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 1354, 3
+  size: 28, 20
+  orig: 28, 20
+  offset: 0, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 1866, 3
+  size: 42, 45
+  orig: 42, 45
+  offset: 0, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 1639, 10
+  size: 25, 19
+  orig: 25, 19
+  offset: 0, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 1510, 5
+  size: 27, 32
+  orig: 27, 32
+  offset: 0, 0
+  index: -1
+cloth_07
+  rotate: false
+  xy: 1271, 188
+  size: 39, 40
+  orig: 39, 40
+  offset: 0, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 1441, 189
+  size: 45, 51
+  orig: 45, 51
+  offset: 0, 0
+  index: -1
+cloth_09
+  rotate: false
+  xy: 1312, 191
+  size: 70, 37
+  orig: 70, 37
+  offset: 0, 0
+  index: -1
+cloth_10
+  rotate: true
+  xy: 1089, 5
+  size: 12, 21
+  orig: 12, 21
+  offset: 0, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 1027, 3
+  size: 14, 21
+  orig: 14, 21
+  offset: 0, 0
+  index: -1
+cloth_12
+  rotate: true
+  xy: 922, 4
+  size: 9, 20
+  orig: 9, 20
+  offset: 0, 0
+  index: -1
+cloth_13
+  rotate: true
+  xy: 1226, 2
+  size: 18, 19
+  orig: 23, 25
+  offset: 2, 2
+  index: -1
+cloth_14
+  rotate: false
+  xy: 1660, 10
+  size: 19, 25
+  orig: 27, 30
+  offset: 6, 2
+  index: -1
+cloth_15
+  rotate: false
+  xy: 2010, 192
+  size: 20, 16
+  orig: 23, 16
+  offset: 2, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 2010, 174
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 873, 3
+  size: 10, 21
+  orig: 10, 21
+  offset: 0, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 1597, 8
+  size: 27, 16
+  orig: 27, 16
+  offset: 0, 0
+  index: -1
+foot_R_04
+  rotate: true
+  xy: 2010, 229
+  size: 16, 23
+  orig: 16, 23
+  offset: 0, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 1335, 2
+  size: 17, 21
+  orig: 28, 30
+  offset: 2, 8
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 2010, 210
+  size: 17, 20
+  orig: 17, 20
+  offset: 0, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 935, 187
+  size: 49, 38
+  orig: 49, 38
+  offset: 0, 0
+  index: -1
+head_06
+  rotate: false
+  xy: 986, 187
+  size: 49, 38
+  orig: 49, 38
+  offset: 0, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 1071, 4
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 1050, 3
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 1465, 4
+  size: 28, 43
+  orig: 38, 47
+  offset: 5, 4
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 605, 149
+  size: 34, 44
+  orig: 34, 44
+  offset: 0, 0
+  index: -1
+usopputwo_beat_01
+  rotate: false
+  xy: 1403, 34
+  size: 119, 152
+  orig: 119, 152
+  offset: 0, 0
+  index: -1
+usopputwo_beat_02
+  rotate: false
+  xy: 1335, 242
+  size: 130, 152
+  orig: 130, 152
+  offset: 0, 0
+  index: -1
+usopputwo_beat_03
+  rotate: false
+  xy: 1756, 254
+  size: 128, 140
+  orig: 128, 140
+  offset: 0, 0
+  index: -1
+usopputwo_beat_04
+  rotate: true
+  xy: 1886, 266
+  size: 128, 140
+  orig: 128, 140
+  offset: 0, 0
+  index: -1
+usopputwo_beat_05
+  rotate: true
+  xy: 534, 5
+  size: 140, 150
+  orig: 140, 150
+  offset: 0, 0
+  index: -1
+usopputwo_beat_06
+  rotate: true
+  xy: 935, 227
+  size: 167, 151
+  orig: 167, 151
+  offset: 0, 0
+  index: -1
+usopputwo_beat_07
+  rotate: true
+  xy: 1251, 25
+  size: 161, 150
+  orig: 161, 150
+  offset: 0, 0
+  index: -1
+usopputwo_beat_08
+  rotate: false
+  xy: 1524, 37
+  size: 137, 150
+  orig: 137, 150
+  offset: 0, 0
+  index: -1
+usopputwo_beat_09
+  rotate: false
+  xy: 1617, 244
+  size: 137, 150
+  orig: 137, 150
+  offset: 0, 0
+  index: -1
+usopputwo_damage
+  rotate: false
+  xy: 1467, 244
+  size: 148, 150
+  orig: 148, 150
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_06
+  rotate: true
+  xy: 686, 4
+  size: 179, 152
+  orig: 192, 164
+  offset: 7, 7
+  index: -1
+usopputwo_skill1_07
+  rotate: true
+  xy: 565, 185
+  size: 209, 201
+  orig: 209, 201
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_08
+  rotate: true
+  xy: 210, 139
+  size: 255, 202
+  orig: 255, 202
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_09
+  rotate: false
+  xy: 2, 102
+  size: 206, 292
+  orig: 262, 354
+  offset: 24, 26
+  index: -1
+usopputwo_skill1_10
+  rotate: false
+  xy: 768, 187
+  size: 165, 207
+  orig: 165, 207
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1101
+  rotate: false
+  xy: 1002, 2
+  size: 23, 15
+  orig: 23, 15
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1102
+  rotate: false
+  xy: 1306, 2
+  size: 27, 21
+  orig: 27, 21
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1103
+  rotate: false
+  xy: 1405, 3
+  size: 28, 29
+  orig: 28, 29
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1104
+  rotate: false
+  xy: 1796, 47
+  size: 74, 60
+  orig: 74, 60
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1105
+  rotate: false
+  xy: 1384, 188
+  size: 55, 52
+  orig: 55, 52
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1106
+  rotate: false
+  xy: 1775, 109
+  size: 109, 86
+  orig: 109, 86
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1107
+  rotate: true
+  xy: 154, 7
+  size: 93, 82
+  orig: 93, 82
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1108
+  rotate: false
+  xy: 1488, 189
+  size: 53, 53
+  orig: 71, 53
+  offset: 18, 0
+  index: -1
+usopputwo_skill1_1109
+  rotate: false
+  xy: 1571, 8
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1110
+  rotate: true
+  xy: 1745, 16
+  size: 24, 58
+  orig: 24, 58
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1111
+  rotate: false
+  xy: 1775, 45
+  size: 19, 62
+  orig: 19, 62
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1112
+  rotate: false
+  xy: 1219, 188
+  size: 50, 40
+  orig: 50, 40
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1113
+  rotate: false
+  xy: 1037, 187
+  size: 48, 38
+  orig: 48, 38
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_1114
+  rotate: true
+  xy: 1273, 2
+  size: 21, 31
+  orig: 21, 31
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_12
+  rotate: true
+  xy: 414, 147
+  size: 247, 149
+  orig: 280, 194
+  offset: 15, 24
+  index: -1
+usopputwo_skill1_201
+  rotate: false
+  xy: 1543, 193
+  size: 83, 49
+  orig: 83, 49
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_202
+  rotate: true
+  xy: 1913, 2
+  size: 45, 42
+  orig: 45, 42
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_203
+  rotate: false
+  xy: 1247, 3
+  size: 24, 17
+  orig: 24, 17
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_204
+  rotate: true
+  xy: 1127, 2
+  size: 18, 34
+  orig: 18, 34
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_205
+  rotate: false
+  xy: 2010, 247
+  size: 23, 17
+  orig: 23, 17
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_206
+  rotate: false
+  xy: 1946, 57
+  size: 57, 44
+  orig: 57, 44
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_207
+  rotate: true
+  xy: 565, 147
+  size: 36, 38
+  orig: 36, 38
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_208
+  rotate: false
+  xy: 1805, 2
+  size: 59, 43
+  orig: 59, 43
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_209
+  rotate: true
+  xy: 1957, 103
+  size: 41, 58
+  orig: 41, 58
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_210
+  rotate: false
+  xy: 1957, 11
+  size: 44, 44
+  orig: 44, 44
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_211
+  rotate: false
+  xy: 1175, 188
+  size: 42, 39
+  orig: 42, 39
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_212
+  rotate: false
+  xy: 840, 2
+  size: 31, 11
+  orig: 31, 11
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_213
+  rotate: false
+  xy: 1544, 4
+  size: 25, 31
+  orig: 25, 31
+  offset: 0, 0
+  index: -1
+usopputwo_skill1_214
+  rotate: true
+  xy: 210, 110
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_02
+  rotate: true
+  xy: 2, 7
+  size: 93, 150
+  orig: 93, 150
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_03
+  rotate: false
+  xy: 1663, 42
+  size: 110, 149
+  orig: 110, 149
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_05
+  rotate: true
+  xy: 840, 15
+  size: 170, 160
+  orig: 170, 160
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_401
+  rotate: false
+  xy: 1615, 9
+  size: 22, 26
+  orig: 22, 26
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_402
+  rotate: false
+  xy: 651, 151
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_403
+  rotate: false
+  xy: 1672, 194
+  size: 66, 48
+  orig: 66, 48
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_404
+  rotate: false
+  xy: 1872, 49
+  size: 72, 58
+  orig: 72, 58
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_405
+  rotate: false
+  xy: 1740, 197
+  size: 58, 45
+  orig: 58, 45
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_407
+  rotate: true
+  xy: 1800, 197
+  size: 55, 44
+  orig: 55, 44
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_408
+  rotate: false
+  xy: 1681, 3
+  size: 41, 37
+  orig: 41, 37
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_409
+  rotate: true
+  xy: 1384, 3
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_411
+  rotate: false
+  xy: 1435, 3
+  size: 28, 29
+  orig: 28, 29
+  offset: 0, 0
+  index: -1
+usopputwo_skill2_601
+  rotate: false
+  xy: 1724, 6
+  size: 19, 34
+  orig: 22, 37
+  offset: 3, 0
+  index: -1
+usopputwo_squat
+  rotate: false
+  xy: 1886, 146
+  size: 122, 118
+  orig: 122, 118
+  offset: 0, 0
+  index: -1
+usopputwo_standby_01
+  rotate: true
+  xy: 385, 4
+  size: 133, 147
+  orig: 133, 147
+  offset: 0, 0
+  index: -1
+usopputwo_standby_02
+  rotate: true
+  xy: 238, 3
+  size: 134, 145
+  orig: 147, 156
+  offset: 9, 4
+  index: -1
+usopputwo_win_01
+  rotate: false
+  xy: 1088, 229
+  size: 121, 165
+  orig: 121, 165
+  offset: 0, 0
+  index: -1
+usopputwo_win_02
+  rotate: false
+  xy: 1127, 22
+  size: 122, 164
+  orig: 122, 164
+  offset: 0, 0
+  index: -1
+usopputwo_win_03
+  rotate: false
+  xy: 1002, 19
+  size: 123, 166
+  orig: 123, 166
+  offset: 0, 0
+  index: -1
+usopputwo_win_04
+  rotate: false
+  xy: 1211, 230
+  size: 122, 164
+  orig: 122, 164
+  offset: 0, 0
+  index: -1

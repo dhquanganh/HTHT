@@ -1,0 +1,139 @@
+
+Skill_128.png
+size: 1012,904
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_lucci_skill_1_chongjibo/000
+  rotate: false
+  xy: 769, 634
+  size: 56, 56
+  orig: 60, 58
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/001
+  rotate: false
+  xy: 756, 71
+  size: 56, 56
+  orig: 60, 58
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/002
+  rotate: true
+  xy: 756, 15
+  size: 54, 55
+  orig: 58, 57
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/003
+  rotate: false
+  xy: 607, 34
+  size: 147, 93
+  orig: 151, 95
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/004
+  rotate: false
+  xy: 854, 359
+  size: 147, 161
+  orig: 151, 165
+  offset: 2, 2
+  index: -1
+Char_lucci_skill_1_chongjibo/005
+  rotate: false
+  xy: 854, 208
+  size: 147, 149
+  orig: 151, 153
+  offset: 2, 2
+  index: -1
+Char_lucci_skill_1_chongjibo/006
+  rotate: false
+  xy: 444, 2
+  size: 161, 131
+  orig: 165, 135
+  offset: 2, 2
+  index: -1
+Char_lucci_skill_1_chongjibo/007
+  rotate: false
+  xy: 825, 49
+  size: 161, 157
+  orig: 165, 160
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/008
+  rotate: true
+  xy: 662, 129
+  size: 168, 161
+  orig: 172, 165
+  offset: 2, 2
+  index: -1
+Char_lucci_skill_1_chongjibo/009
+  rotate: true
+  xy: 854, 522
+  size: 168, 153
+  orig: 172, 158
+  offset: 2, 3
+  index: -1
+Char_lucci_skill_1_chongjibo/010
+  rotate: false
+  xy: 444, 135
+  size: 216, 162
+  orig: 223, 165
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/011
+  rotate: false
+  xy: 769, 692
+  size: 216, 210
+  orig: 221, 216
+  offset: 2, 2
+  index: -1
+Char_lucci_skill_1_chongjibo/012
+  rotate: false
+  xy: 385, 299
+  size: 329, 304
+  orig: 335, 307
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/013
+  rotate: false
+  xy: 2, 247
+  size: 371, 311
+  orig: 377, 316
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/014
+  rotate: false
+  xy: 2, 560
+  size: 381, 342
+  orig: 390, 345
+  offset: 2, 1
+  index: -1
+Char_lucci_skill_1_chongjibo/015
+  rotate: false
+  xy: 385, 605
+  size: 382, 297
+  orig: 391, 300
+  offset: 2, 0
+  index: -1
+Char_lucci_skill_1_chongjibo/016
+  rotate: true
+  xy: 2, 13
+  size: 232, 300
+  orig: 235, 306
+  offset: 1, 3
+  index: -1
+Char_lucci_skill_1_chongjibo/017
+  rotate: false
+  xy: 304, 5
+  size: 138, 240
+  orig: 145, 248
+  offset: 4, 3
+  index: -1
+Char_lucci_skill_1_chongjibo/018
+  rotate: false
+  xy: 716, 334
+  size: 136, 269
+  orig: 144, 275
+  offset: 5, 2
+  index: -1

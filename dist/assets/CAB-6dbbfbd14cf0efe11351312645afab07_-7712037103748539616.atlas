@@ -1,0 +1,76 @@
+
+Skill_142.png
+size: 844,632
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_crocodile_skill_2/000
+  rotate: true
+  xy: 426, 2
+  size: 201, 214
+  orig: 293, 218
+  offset: 3, 1
+  index: -1
+Char_crocodile_skill_2/001
+  rotate: false
+  xy: 642, 25
+  size: 200, 214
+  orig: 293, 218
+  offset: 3, 1
+  index: -1
+Char_crocodile_skill_2/002
+  rotate: true
+  xy: 644, 436
+  size: 193, 196
+  orig: 197, 200
+  offset: 3, 1
+  index: -1
+Char_crocodile_skill_2/003
+  rotate: true
+  xy: 644, 241
+  size: 193, 195
+  orig: 197, 199
+  offset: 3, 1
+  index: -1
+Char_crocodile_skill_2/004
+  rotate: false
+  xy: 204, 403
+  size: 220, 226
+  orig: 224, 230
+  offset: 3, 1
+  index: -1
+Char_crocodile_skill_2/005
+  rotate: false
+  xy: 204, 176
+  size: 220, 225
+  orig: 224, 230
+  offset: 3, 2
+  index: -1
+Char_crocodile_skill_2/006
+  rotate: false
+  xy: 2, 397
+  size: 200, 232
+  orig: 205, 235
+  offset: 3, 1
+  index: -1
+Char_crocodile_skill_2/007
+  rotate: false
+  xy: 2, 163
+  size: 200, 232
+  orig: 206, 235
+  offset: 3, 1
+  index: -1
+Char_crocodile_skill_2/008
+  rotate: true
+  xy: 426, 205
+  size: 211, 214
+  orig: 217, 219
+  offset: 3, 2
+  index: -1
+Char_crocodile_skill_2/009
+  rotate: true
+  xy: 426, 418
+  size: 211, 216
+  orig: 215, 220
+  offset: 2, 1
+  index: -1

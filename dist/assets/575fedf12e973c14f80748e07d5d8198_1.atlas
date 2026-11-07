@@ -1,0 +1,55 @@
+
+Hit_17.png
+size: 992,538
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill.65121007.hit.0.0
+  rotate: false
+  xy: 796, 46
+  size: 194, 217
+  orig: 194, 217
+  offset: 0, 0
+  index: -1
+skill.65121007.hit.0.1
+  rotate: true
+  xy: 322, 15
+  size: 246, 269
+  orig: 246, 269
+  offset: 0, 0
+  index: -1
+skill.65121007.hit.0.2
+  rotate: false
+  xy: 2, 258
+  size: 318, 278
+  orig: 318, 278
+  offset: 0, 0
+  index: -1
+skill.65121007.hit.0.3
+  rotate: false
+  xy: 322, 263
+  size: 313, 273
+  orig: 313, 273
+  offset: 0, 0
+  index: -1
+skill.65121007.hit.0.4
+  rotate: false
+  xy: 637, 265
+  size: 301, 271
+  orig: 301, 271
+  offset: 0, 0
+  index: -1
+skill.65121007.hit.0.5
+  rotate: false
+  xy: 2, 2
+  size: 298, 254
+  orig: 298, 254
+  offset: 0, 0
+  index: -1
+skill.65121007.hit.0.6
+  rotate: false
+  xy: 593, 39
+  size: 201, 222
+  orig: 201, 222
+  offset: 0, 0
+  index: -1

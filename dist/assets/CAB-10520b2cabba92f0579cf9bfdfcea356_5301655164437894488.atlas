@@ -1,0 +1,118 @@
+
+Cast_462.png
+size: 1652,484
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body 1
+  rotate: true
+  xy: 2, 2
+  size: 479, 493
+  orig: 480, 493
+  offset: 1, 0
+  index: -1
+body 2
+  rotate: true
+  xy: 497, 4
+  size: 477, 491
+  orig: 480, 493
+  offset: 2, 1
+  index: -1
+c1
+  rotate: true
+  xy: 1581, 89
+  size: 52, 62
+  orig: 52, 62
+  offset: 0, 0
+  index: -1
+c2
+  rotate: true
+  xy: 1158, 4
+  size: 46, 58
+  orig: 46, 58
+  offset: 0, 0
+  index: -1
+c3
+  rotate: true
+  xy: 1462, 228
+  size: 46, 56
+  orig: 46, 56
+  offset: 0, 0
+  index: -1
+chan phai 1
+  rotate: true
+  xy: 990, 2
+  size: 48, 59
+  orig: 48, 59
+  offset: 0, 0
+  index: -1
+chan trai 1
+  rotate: true
+  xy: 1581, 143
+  size: 54, 64
+  orig: 54, 64
+  offset: 0, 0
+  index: -1
+glow
+  rotate: true
+  xy: 1581, 199
+  size: 75, 64
+  orig: 79, 68
+  offset: 2, 2
+  index: -1
+head 1
+  rotate: true
+  xy: 1462, 276
+  size: 205, 188
+  orig: 207, 190
+  offset: 1, 1
+  index: -1
+head 2
+  rotate: true
+  xy: 1331, 13
+  size: 210, 248
+  orig: 212, 250
+  offset: 1, 1
+  index: -1
+mask_4026
+  rotate: true
+  xy: 1178, 225
+  size: 256, 164
+  orig: 256, 164
+  offset: 0, 0
+  index: -1
+pink 1
+  rotate: true
+  xy: 1218, 4
+  size: 219, 111
+  orig: 219, 111
+  offset: 0, 0
+  index: -1
+pink 2
+  rotate: true
+  xy: 1344, 226
+  size: 255, 116
+  orig: 255, 116
+  offset: 0, 0
+  index: -1
+pink3
+  rotate: false
+  xy: 1051, 3
+  size: 105, 47
+  orig: 105, 47
+  offset: 0, 0
+  index: -1
+smoke
+  rotate: true
+  xy: 990, 52
+  size: 429, 186
+  orig: 429, 186
+  offset: 0, 0
+  index: -1
+spark copy
+  rotate: true
+  xy: 1520, 230
+  size: 44, 43
+  orig: 48, 48
+  offset: 2, 3
+  index: -1

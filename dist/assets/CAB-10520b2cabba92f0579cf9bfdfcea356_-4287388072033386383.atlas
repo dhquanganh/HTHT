@@ -1,0 +1,461 @@
+
+Hero_408.png
+size: 1876,460
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2
+  rotate: true
+  xy: 260, 159
+  size: 256, 220
+  orig: 256, 256
+  offset: 0, 16
+  index: -1
+26.1
+  rotate: true
+  xy: 1660, 172
+  size: 100, 66
+  orig: 204, 254
+  offset: 73, 16
+  index: -1
+27.1
+  rotate: false
+  xy: 1133, 160
+  size: 170, 137
+  orig: 204, 254
+  offset: 14, 14
+  index: -1
+28.1
+  rotate: true
+  xy: 1348, 276
+  size: 182, 203
+  orig: 204, 254
+  offset: 5, 21
+  index: -1
+29
+  rotate: false
+  xy: 1558, 2
+  size: 63, 71
+  orig: 63, 76
+  offset: 0, 5
+  index: -1
+29.1
+  rotate: false
+  xy: 198, 5
+  size: 176, 152
+  orig: 204, 254
+  offset: 8, 75
+  index: -1
+30.1
+  rotate: false
+  xy: 2, 3
+  size: 194, 156
+  orig: 204, 254
+  offset: 0, 80
+  index: -1
+31.1
+  rotate: true
+  xy: 1539, 160
+  size: 112, 119
+  orig: 204, 254
+  offset: 30, 133
+  index: -1
+32.1
+  rotate: true
+  xy: 1623, 4
+  size: 69, 41
+  orig: 204, 254
+  offset: 64, 183
+  index: -1
+Dragon/bap-chan-phai
+  rotate: true
+  xy: 1764, 90
+  size: 62, 55
+  orig: 62, 55
+  offset: 0, 0
+  index: -1
+Dragon/bap-chan-trai
+  rotate: true
+  xy: 1763, 52
+  size: 36, 47
+  orig: 37, 47
+  offset: 0, 0
+  index: -1
+Dragon/cang-chan-trai
+  rotate: false
+  xy: 484, 36
+  size: 86, 62
+  orig: 86, 62
+  offset: 0, 0
+  index: -1
+Dragon/chan-rong-phai
+  rotate: false
+  xy: 1728, 154
+  size: 90, 65
+  orig: 95, 65
+  offset: 0, 0
+  index: -1
+Dragon/dau-rong
+  rotate: false
+  xy: 915, 8
+  size: 151, 161
+  orig: 151, 161
+  offset: 0, 0
+  index: -1
+Dragon/duoi-rong
+  rotate: false
+  xy: 1134, 299
+  size: 212, 159
+  orig: 212, 159
+  offset: 0, 0
+  index: -1
+Dragon/logn-ao-phai-2
+  rotate: false
+  xy: 1305, 167
+  size: 158, 107
+  orig: 158, 107
+  offset: 0, 0
+  index: -1
+Dragon/long-ao-phai
+  rotate: false
+  xy: 572, 38
+  size: 70, 60
+  orig: 70, 60
+  offset: 0, 0
+  index: -1
+Dragon/long-ao-trai
+  rotate: true
+  xy: 1646, 94
+  size: 64, 50
+  orig: 64, 50
+  offset: 0, 0
+  index: -1
+Dragon/rau-rong-1
+  rotate: true
+  xy: 1847, 273
+  size: 185, 26
+  orig: 185, 26
+  offset: 0, 0
+  index: -1
+Dragon/smoke_show_02
+  rotate: true
+  xy: 1698, 92
+  size: 60, 64
+  orig: 86, 85
+  offset: 13, 6
+  index: -1
+Dragon/smoke_show_03
+  rotate: false
+  xy: 644, 30
+  size: 61, 68
+  orig: 85, 85
+  offset: 12, 6
+  index: -1
+Dragon/smoke_show_04
+  rotate: false
+  xy: 1666, 26
+  size: 62, 64
+  orig: 85, 86
+  offset: 12, 7
+  index: -1
+Dragon/smoke_show_05
+  rotate: true
+  xy: 1068, 160
+  size: 49, 52
+  orig: 86, 86
+  offset: 19, 21
+  index: -1
+Dragon/smoke_show_06
+  rotate: false
+  xy: 1501, 3
+  size: 53, 56
+  orig: 85, 86
+  offset: 17, 20
+  index: -1
+Dragon/smoke_show_07
+  rotate: false
+  xy: 1447, 2
+  size: 52, 57
+  orig: 85, 85
+  offset: 17, 20
+  index: -1
+Dragon/smoke_show_08
+  rotate: true
+  xy: 1305, 279
+  size: 18, 26
+  orig: 86, 85
+  offset: 25, 51
+  index: -1
+Dragon/smoke_show_09
+  rotate: false
+  xy: 1698, 154
+  size: 15, 16
+  orig: 85, 85
+  offset: 25, 58
+  index: -1
+Dragon/than-rong-1
+  rotate: false
+  xy: 1739, 221
+  size: 106, 237
+  orig: 132, 245
+  offset: 13, 4
+  index: -1
+Dragon/than-rong-2
+  rotate: true
+  xy: 482, 100
+  size: 206, 223
+  orig: 206, 223
+  offset: 0, 0
+  index: -1
+Dragon/than-rong-3
+  rotate: false
+  xy: 707, 2
+  size: 128, 102
+  orig: 128, 102
+  offset: 0, 0
+  index: -1
+Dragon/toc
+  rotate: true
+  xy: 707, 106
+  size: 200, 123
+  orig: 210, 123
+  offset: 10, 0
+  index: -1
+ban chan phai
+  rotate: false
+  xy: 529, 15
+  size: 23, 19
+  orig: 25, 21
+  offset: 1, 1
+  index: -1
+ban chan trai
+  rotate: false
+  xy: 1666, 7
+  size: 25, 17
+  orig: 27, 19
+  offset: 1, 1
+  index: -1
+ban tay phai
+  rotate: false
+  xy: 1812, 51
+  size: 35, 37
+  orig: 37, 39
+  offset: 1, 1
+  index: -1
+ban tay trai
+  rotate: false
+  xy: 1034, 171
+  size: 30, 38
+  orig: 32, 40
+  offset: 1, 1
+  index: -1
+ban-tay-phai-2
+  rotate: false
+  xy: 1068, 2
+  size: 35, 28
+  orig: 35, 28
+  offset: 0, 0
+  index: -1
+ban-tay-trai-2
+  rotate: false
+  xy: 1730, 27
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+bap chan phai
+  rotate: false
+  xy: 1820, 176
+  size: 54, 43
+  orig: 57, 45
+  offset: 1, 1
+  index: -1
+bap chan trai
+  rotate: false
+  xy: 1371, 8
+  size: 40, 36
+  orig: 42, 38
+  offset: 1, 1
+  index: -1
+bap tay phai
+  rotate: true
+  xy: 1762, 15
+  size: 35, 45
+  orig: 37, 47
+  offset: 1, 1
+  index: -1
+bap tay trai
+  rotate: true
+  xy: 1809, 14
+  size: 35, 38
+  orig: 38, 41
+  offset: 1, 2
+  index: -1
+bgr_hero
+  rotate: false
+  xy: 1730, 59
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+blur
+  rotate: false
+  xy: 830, 322
+  size: 302, 136
+  orig: 552, 274
+  offset: 110, 61
+  index: -1
+cang chan phai
+  rotate: false
+  xy: 1333, 281
+  size: 13, 16
+  orig: 16, 19
+  offset: 1, 2
+  index: -1
+cang chan trai
+  rotate: false
+  xy: 1646, 76
+  size: 14, 16
+  orig: 17, 18
+  offset: 2, 1
+  index: -1
+cang tay phai
+  rotate: false
+  xy: 1328, 9
+  size: 41, 35
+  orig: 43, 37
+  offset: 1, 1
+  index: -1
+cang tay trai
+  rotate: false
+  xy: 1821, 136
+  size: 41, 38
+  orig: 43, 40
+  offset: 1, 1
+  index: -1
+dau
+  rotate: true
+  xy: 1034, 211
+  size: 109, 97
+  orig: 116, 102
+  offset: 5, 1
+  index: -1
+dau-2
+  rotate: false
+  xy: 1447, 61
+  size: 109, 97
+  orig: 114, 100
+  offset: 4, 0
+  index: -1
+dau-3
+  rotate: true
+  xy: 1465, 160
+  size: 114, 72
+  orig: 116, 72
+  offset: 2, 0
+  index: -1
+dau-rong
+  rotate: false
+  xy: 832, 171
+  size: 200, 149
+  orig: 218, 150
+  offset: 2, 0
+  index: -1
+glo_3047
+  rotate: false
+  xy: 1328, 46
+  size: 117, 119
+  orig: 128, 128
+  offset: 7, 6
+  index: -1
+glow_3003
+  rotate: false
+  xy: 1068, 32
+  size: 128, 126
+  orig: 128, 128
+  offset: 0, 2
+  index: -1
+glow_4078
+  rotate: false
+  xy: 1198, 32
+  size: 128, 126
+  orig: 128, 128
+  offset: 0, 1
+  index: -1
+glow_5066
+  rotate: false
+  xy: 1553, 274
+  size: 184, 184
+  orig: 256, 256
+  offset: 36, 36
+  index: -1
+rong
+  rotate: false
+  xy: 487, 308
+  size: 341, 150
+  orig: 415, 150
+  offset: 37, 0
+  index: -1
+texture_3018
+  rotate: false
+  xy: 2, 161
+  size: 256, 254
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+than
+  rotate: false
+  xy: 1558, 75
+  size: 86, 83
+  orig: 90, 92
+  offset: 4, 0
+  index: -1
+than-2
+  rotate: true
+  xy: 376, 62
+  size: 95, 104
+  orig: 95, 104
+  offset: 0, 0
+  index: -1
+toc
+  rotate: false
+  xy: 376, 6
+  size: 106, 54
+  orig: 111, 54
+  offset: 5, 0
+  index: -1
+trail_6000
+  rotate: true
+  xy: 2, 417
+  size: 41, 483
+  orig: 64, 512
+  offset: 10, 13
+  index: -1
+vai long phai
+  rotate: false
+  xy: 484, 9
+  size: 43, 25
+  orig: 45, 27
+  offset: 1, 1
+  index: -1
+vai long trai
+  rotate: true
+  xy: 1847, 232
+  size: 39, 27
+  orig: 39, 27
+  offset: 0, 0
+  index: -1
+vai that lung
+  rotate: false
+  xy: 1821, 97
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+vu khi
+  rotate: true
+  xy: 837, 2
+  size: 167, 76
+  orig: 169, 99
+  offset: 1, 15
+  index: -1

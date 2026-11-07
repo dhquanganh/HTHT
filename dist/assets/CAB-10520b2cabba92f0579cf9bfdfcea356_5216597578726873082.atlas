@@ -1,0 +1,482 @@
+
+Cast_429.png
+size: 1972,604
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+OT/04TenTen/images/smoke_1046
+  rotate: false
+  xy: 1736, 261
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+OT/04TenTen/images/smoke_5022
+  rotate: true
+  xy: 1859, 287
+  size: 64, 42
+  orig: 64, 64
+  offset: 0, 9
+  index: -1
+OT/Asset/Skill_104-Ren1_00
+  rotate: false
+  xy: 118, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_01
+  rotate: false
+  xy: 118, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_02
+  rotate: false
+  xy: 118, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_03
+  rotate: false
+  xy: 118, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_04
+  rotate: false
+  xy: 118, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren2_22
+  rotate: false
+  xy: 118, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren2_23
+  rotate: false
+  xy: 118, 2
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+OT/Asset/Skill_104-Ren1_05
+  rotate: false
+  xy: 1859, 353
+  size: 43, 51
+  orig: 380, 197
+  offset: 333, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_06
+  rotate: true
+  xy: 1016, 104
+  size: 130, 79
+  orig: 380, 197
+  offset: 247, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_07
+  rotate: false
+  xy: 725, 3
+  size: 219, 90
+  orig: 380, 197
+  offset: 159, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_08
+  rotate: true
+  xy: 1486, 291
+  size: 311, 95
+  orig: 380, 197
+  offset: 68, 23
+  index: -1
+OT/Asset/Skill_104-Ren1_09
+  rotate: true
+  xy: 855, 228
+  size: 374, 92
+  orig: 380, 197
+  offset: 2, 28
+  index: -1
+OT/Asset/Skill_104-Ren1_10
+  rotate: true
+  xy: 1189, 266
+  size: 336, 59
+  orig: 380, 197
+  offset: 1, 63
+  index: -1
+OT/Asset/Skill_104-Ren1_11
+  rotate: true
+  xy: 1583, 315
+  size: 287, 55
+  orig: 380, 197
+  offset: 0, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_12
+  rotate: false
+  xy: 1736, 546
+  size: 234, 56
+  orig: 380, 197
+  offset: 0, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_13
+  rotate: true
+  xy: 1547, 109
+  size: 180, 53
+  orig: 380, 197
+  offset: 0, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_14
+  rotate: true
+  xy: 1857, 11
+  size: 124, 48
+  orig: 380, 197
+  offset: 1, 68
+  index: -1
+OT/Asset/Skill_104-Ren1_15
+  rotate: true
+  xy: 1387, 281
+  size: 321, 36
+  orig: 380, 197
+  offset: 1, 70
+  index: -1
+OT/Asset/Skill_104-Ren1_16
+  rotate: true
+  xy: 1351, 274
+  size: 328, 34
+  orig: 380, 197
+  offset: 2, 71
+  index: -1
+OT/Asset/Skill_104-Ren1_17
+  rotate: true
+  xy: 1907, 6
+  size: 35, 55
+  orig: 380, 197
+  offset: 295, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_18
+  rotate: false
+  xy: 1815, 393
+  size: 35, 76
+  orig: 380, 197
+  offset: 296, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_19
+  rotate: true
+  xy: 661, 170
+  size: 35, 93
+  orig: 380, 197
+  offset: 296, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_20
+  rotate: false
+  xy: 1336, 3
+  size: 44, 104
+  orig: 380, 197
+  offset: 286, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_21
+  rotate: true
+  xy: 1857, 406
+  size: 63, 111
+  orig: 380, 197
+  offset: 266, 73
+  index: -1
+OT/Asset/Skill_104-Ren1_22
+  rotate: true
+  xy: 2, 2
+  size: 83, 114
+  orig: 380, 197
+  offset: 245, 74
+  index: -1
+OT/Asset/Skill_104-Ren1_23
+  rotate: true
+  xy: 1724, 161
+  size: 98, 78
+  orig: 380, 197
+  offset: 228, 113
+  index: -1
+OT/Asset/Skill_104-Ren2_00
+  rotate: false
+  xy: 1425, 273
+  size: 120, 11
+  orig: 468, 221
+  offset: 7, 2
+  index: -1
+OT/Asset/Skill_104-Ren2_01
+  rotate: false
+  xy: 1583, 298
+  size: 151, 15
+  orig: 468, 221
+  offset: 24, 2
+  index: -1
+OT/Asset/Skill_104-Ren2_02
+  rotate: false
+  xy: 573, 95
+  size: 181, 19
+  orig: 468, 221
+  offset: 48, 3
+  index: -1
+OT/Asset/Skill_104-Ren2_03
+  rotate: false
+  xy: 336, 88
+  size: 215, 26
+  orig: 468, 221
+  offset: 93, 5
+  index: -1
+OT/Asset/Skill_104-Ren2_04
+  rotate: true
+  xy: 1815, 137
+  size: 254, 42
+  orig: 468, 221
+  offset: 132, 7
+  index: -1
+OT/Asset/Skill_104-Ren2_05
+  rotate: false
+  xy: 118, 5
+  size: 270, 80
+  orig: 468, 221
+  offset: 191, 10
+  index: -1
+OT/Asset/Skill_104-Ren2_06
+  rotate: true
+  xy: 1700, 327
+  size: 217, 113
+  orig: 468, 221
+  offset: 251, 16
+  index: -1
+OT/Asset/Skill_104-Ren2_07
+  rotate: false
+  xy: 756, 100
+  size: 157, 105
+  orig: 468, 221
+  offset: 311, 25
+  index: -1
+OT/Asset/Skill_104-Ren2_08
+  rotate: true
+  xy: 574, 118
+  size: 87, 85
+  orig: 468, 221
+  offset: 381, 43
+  index: -1
+OT/Asset/Skill_104-Ren2_09
+  rotate: false
+  xy: 720, 117
+  size: 29, 51
+  orig: 468, 221
+  offset: 439, 75
+  index: -1
+OT/Asset/Skill_104-Ren2_10
+  rotate: true
+  xy: 1907, 96
+  size: 59, 60
+  orig: 468, 221
+  offset: 86, 127
+  index: -1
+OT/Asset/Skill_104-Ren2_11
+  rotate: true
+  xy: 1602, 124
+  size: 172, 62
+  orig: 468, 221
+  offset: 83, 116
+  index: -1
+OT/Asset/Skill_104-Ren2_12
+  rotate: true
+  xy: 1640, 319
+  size: 283, 58
+  orig: 468, 221
+  offset: 79, 111
+  index: -1
+OT/Asset/Skill_104-Ren2_13
+  rotate: true
+  xy: 1425, 286
+  size: 316, 59
+  orig: 468, 221
+  offset: 81, 112
+  index: -1
+OT/Asset/Skill_104-Ren2_14
+  rotate: false
+  xy: 390, 2
+  size: 333, 84
+  orig: 468, 221
+  offset: 83, 112
+  index: -1
+OT/Asset/Skill_104-Ren2_15
+  rotate: true
+  xy: 1250, 272
+  size: 330, 99
+  orig: 468, 221
+  offset: 87, 114
+  index: -1
+OT/Asset/Skill_104-Ren2_16
+  rotate: false
+  xy: 1046, 2
+  size: 288, 100
+  orig: 468, 221
+  offset: 129, 115
+  index: -1
+OT/Asset/Skill_104-Ren2_17
+  rotate: false
+  xy: 1382, 5
+  size: 222, 102
+  orig: 468, 221
+  offset: 195, 118
+  index: -1
+OT/Asset/Skill_104-Ren2_18
+  rotate: true
+  xy: 1227, 104
+  size: 160, 95
+  orig: 468, 221
+  offset: 257, 125
+  index: -1
+OT/Asset/Skill_104-Ren2_19
+  rotate: false
+  xy: 946, 10
+  size: 98, 84
+  orig: 468, 221
+  offset: 319, 136
+  index: -1
+OT/Asset/Skill_104-Ren2_20
+  rotate: true
+  xy: 1907, 359
+  size: 45, 63
+  orig: 468, 221
+  offset: 372, 157
+  index: -1
+OT/Asset/Skill_104-Ren2_21
+  rotate: true
+  xy: 872, 213
+  size: 13, 35
+  orig: 468, 221
+  offset: 404, 185
+  index: -1
+bis2back
+  rotate: true
+  xy: 574, 207
+  size: 395, 279
+  orig: 395, 279
+  offset: 0, 0
+  index: -1
+daubis2
+  rotate: false
+  xy: 915, 96
+  size: 99, 130
+  orig: 101, 133
+  offset: 1, 2
+  index: -1
+images/smoke_show_01
+  rotate: true
+  xy: 1907, 43
+  size: 51, 58
+  orig: 85, 85
+  offset: 17, 10
+  index: -1
+images/smoke_show_02
+  rotate: false
+  xy: 1907, 157
+  size: 60, 64
+  orig: 86, 85
+  offset: 13, 6
+  index: -1
+images/smoke_show_03
+  rotate: false
+  xy: 1907, 223
+  size: 61, 68
+  orig: 85, 85
+  offset: 12, 6
+  index: -1
+images/smoke_show_04
+  rotate: false
+  xy: 1907, 293
+  size: 62, 64
+  orig: 85, 86
+  offset: 12, 7
+  index: -1
+images/smoke_show_05
+  rotate: true
+  xy: 1666, 192
+  size: 49, 52
+  orig: 86, 86
+  offset: 19, 21
+  index: -1
+images/smoke_show_06
+  rotate: true
+  xy: 1666, 243
+  size: 53, 56
+  orig: 85, 86
+  offset: 17, 20
+  index: -1
+images/smoke_show_07
+  rotate: true
+  xy: 661, 116
+  size: 52, 57
+  orig: 85, 85
+  offset: 17, 20
+  index: -1
+images/smoke_show_08
+  rotate: false
+  xy: 553, 88
+  size: 18, 26
+  orig: 86, 85
+  offset: 25, 51
+  index: -1
+images/smoke_show_09
+  rotate: false
+  xy: 855, 210
+  size: 15, 16
+  orig: 85, 85
+  offset: 25, 58
+  index: -1
+kiem1
+  rotate: true
+  xy: 1606, 9
+  size: 113, 249
+  orig: 113, 249
+  offset: 0, 0
+  index: -1
+land1
+  rotate: true
+  xy: 2, 87
+  size: 515, 332
+  orig: 515, 332
+  offset: 0, 0
+  index: -1
+land2
+  rotate: true
+  xy: 336, 116
+  size: 486, 236
+  orig: 486, 332
+  offset: 0, 0
+  index: -1
+nguoi
+  rotate: false
+  xy: 949, 236
+  size: 238, 366
+  orig: 238, 368
+  offset: 0, 1
+  index: -1
+rau
+  rotate: true
+  xy: 1815, 471
+  size: 73, 151
+  orig: 73, 151
+  offset: 0, 0
+  index: -1
+sky
+  rotate: false
+  xy: 1097, 106
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+taybanh
+  rotate: true
+  xy: 1324, 109
+  size: 161, 221
+  orig: 165, 223
+  offset: 2, 1
+  index: -1

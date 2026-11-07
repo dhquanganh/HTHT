@@ -1,0 +1,118 @@
+
+Hero_447.png
+size: 220,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ao_choang sau
+  rotate: true
+  xy: 2, 48
+  size: 93, 72
+  orig: 93, 83
+  offset: 0, 11
+  index: -1
+ao_choang trai
+  rotate: true
+  xy: 70, 2
+  size: 44, 54
+  orig: 71, 54
+  offset: 27, 0
+  index: -1
+ao_choang_trai
+  rotate: true
+  xy: 76, 79
+  size: 62, 60
+  orig: 107, 60
+  offset: 0, 0
+  index: -1
+ban_chan_phai
+  rotate: false
+  xy: 196, 71
+  size: 21, 25
+  orig: 23, 27
+  offset: 1, 1
+  index: -1
+bap_chan_phai
+  rotate: true
+  xy: 131, 59
+  size: 18, 37
+  orig: 20, 39
+  offset: 1, 1
+  index: -1
+bap_tay_phai
+  rotate: false
+  xy: 170, 70
+  size: 24, 26
+  orig: 26, 29
+  offset: 1, 2
+  index: -1
+bap_tay_trai
+  rotate: true
+  xy: 138, 82
+  size: 21, 30
+  orig: 23, 32
+  offset: 1, 1
+  index: -1
+cang_chan_phai
+  rotate: false
+  xy: 203, 40
+  size: 14, 29
+  orig: 17, 33
+  offset: 2, 1
+  index: -1
+cang_tay_phai
+  rotate: true
+  xy: 76, 49
+  size: 28, 27
+  orig: 31, 29
+  offset: 1, 1
+  index: -1
+cang_tay_trai
+  rotate: true
+  xy: 105, 48
+  size: 29, 24
+  orig: 31, 26
+  offset: 1, 1
+  index: -1
+dau
+  rotate: true
+  xy: 170, 98
+  size: 43, 47
+  orig: 45, 49
+  offset: 1, 1
+  index: -1
+mong
+  rotate: false
+  xy: 189, 17
+  size: 28, 21
+  orig: 30, 23
+  offset: 1, 1
+  index: -1
+no_duoi
+  rotate: false
+  xy: 126, 9
+  size: 61, 37
+  orig: 63, 39
+  offset: 1, 1
+  index: -1
+no_sau
+  rotate: false
+  xy: 170, 51
+  size: 31, 17
+  orig: 33, 19
+  offset: 1, 1
+  index: -1
+than
+  rotate: true
+  xy: 2, 10
+  size: 36, 66
+  orig: 39, 66
+  offset: 1, 0
+  index: -1
+vai mong sau
+  rotate: true
+  xy: 138, 105
+  size: 36, 30
+  orig: 36, 30
+  offset: 0, 0
+  index: -1

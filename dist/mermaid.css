@@ -1,0 +1,149 @@
+/* Đảo Người Cá: Vực thẳm và Album (mermaid-ui.js). Tọa độ theo khung 1136×640 của #game-layer. */
+.mm-screen{position:absolute;inset:0;z-index:40;overflow:hidden;pointer-events:auto;background:#0b2233}
+.mm-popup{position:absolute;inset:0;z-index:50;display:grid;place-items:center;background:#000a;pointer-events:auto}
+#game-layer .mm-screen button,#game-layer .mm-popup button{min-width:0;min-height:0;padding:0;border:0;border-radius:0;box-shadow:none;background:none no-repeat center/100% 100%;cursor:pointer;font:inherit;color:inherit}
+#game-layer .mm-screen button:disabled,#game-layer .mm-popup button:disabled{cursor:default;filter:grayscale(.8);opacity:.75}
+.mm-screen img,.mm-popup img{pointer-events:none}
+#game-layer .mm-close{position:absolute;right:-18px;top:-18px;width:64px;height:64px;z-index:3}
+.mm-tile.ev-tile{width:62px;height:62px}
+
+/* ---- Vực thẳm (MainScene) */
+.abyss-scroll{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;touch-action:pan-x;cursor:grab}
+.abyss-scroll::-webkit-scrollbar{display:none}
+.abyss-map{position:relative;width:2272px;height:640px}
+.abyss-map>img{position:absolute;top:0;width:1136px;height:640px}
+.abyss-map>img.abyss-dot{width:20px;height:20px}
+.abyss-point{position:absolute;width:100px;height:100px}
+#game-layer .abyss-point>button{position:absolute;left:-10px;top:-26px;width:120px;height:152px}
+.abyss-point>b{position:absolute;left:14px;top:89px;width:72px;text-align:center;color:#fff;font-size:21px;text-shadow:0 1px 2px #000;pointer-events:none}
+.abyss-stars img{position:absolute;width:27px;height:26px}
+.abyss-complete{position:absolute;left:-15px;top:-30px;width:130px;height:110px;transform:rotate(-8deg)}
+.abyss-notify{position:absolute;right:4px;top:-28px;width:32px;height:32px}
+#game-layer .abyss-back{position:absolute;left:0;top:0;width:91px;height:91px}
+.abyss-time{position:absolute;left:0;right:0;top:14px;margin:0;text-align:center;color:#c7f851;font-size:22px;font-style:italic;font-weight:700;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;pointer-events:none}
+#game-layer .abyss-help{position:absolute;left:1044px;top:22px;width:66px;height:65px}
+#game-layer .abyss-gift{position:absolute;right:6px;bottom:8px;width:100px;height:100px}
+.abyss-gift .abyss-notify{right:-2px;top:-4px}
+
+/* PopupAbyssEnemy */
+.abyss-body{position:relative;width:866px;height:540px;box-sizing:border-box;padding:70px 26px 0;background:no-repeat center/100% 100%}
+.abyss-body>h2,.abyss-buy-body>h2,.abyss-gift-body>h2{position:absolute;left:0;right:0;top:8px;margin:0;text-align:center;color:#efe4ce;font-size:28px;font-weight:700}
+.abyss-fields{display:flex;justify-content:center;gap:50px;margin-bottom:10px}
+.abyss-field{position:relative;display:flex;align-items:center;width:218px;height:44px;padding-left:56px;box-sizing:border-box;background:no-repeat center/100% 100%;color:#fff;font-size:26px}
+.abyss-field.turn{width:166px}.abyss-field>img{position:absolute;left:-6px;top:-4px;width:52px;height:52px}.abyss-field b{flex:1;text-align:center}
+#game-layer .abyss-field>button{position:absolute;right:-60px;top:-4px;width:52px;height:52px}
+.abyss-lineup{position:relative;width:812px;height:152px;margin:0 auto;background:no-repeat center/100% 100%}
+.abyss-lineup>b{position:absolute;top:6px;color:#653f21;font-size:24px}.abyss-lineup .front{left:80px}.abyss-lineup .back{left:400px}.abyss-lineup .ship{left:665px}
+.abyss-lineup .row{position:absolute;top:42px;display:flex;gap:8px}.abyss-lineup .row.front{left:24px}.abyss-lineup .row.back{left:236px}
+.abyss-head{position:relative;display:block;width:96px;height:96px}
+.abyss-head.empty{background:#0002;border-radius:8px}
+.abyss-face{position:absolute;left:8px;top:8px;width:80px;height:80px;object-fit:cover}.abyss-border{position:absolute;inset:0;width:96px;height:96px}
+.abyss-faction{position:absolute;left:-6px;top:-6px;width:34px;height:34px}
+.abyss-head>b{position:absolute;right:4px;top:2px;color:#fff;font-size:18px;text-shadow:1px 1px 1px #000}
+.abyss-head-stars{position:absolute;left:0;right:0;bottom:2px;display:flex;justify-content:center}.abyss-head-stars .hero-stars>img{width:18px;height:18px}
+.abyss-ship{position:absolute;left:676px;top:42px;width:98px;height:98px;background:no-repeat center/100% 100%}
+.abyss-body h3{margin:8px 0 4px 20px;color:#583a12;font-size:21px}
+.abyss-quests{width:823px;margin:0 auto;padding:6px;box-sizing:border-box;background:no-repeat center/100% 100%;border:2px dashed #b79568;border-radius:6px}
+#game-layer .mm-popup .abyss-quest{position:relative;display:flex;align-items:center;width:100%;height:50px;margin:3px 0;padding:0 60px 0 50px;box-sizing:border-box;background-size:100% 100%;color:#583a12;font-size:18px;text-align:left}
+.abyss-quest-star{position:absolute;left:14px;width:27px;height:26px}
+.abyss-chest{position:absolute;right:14px;width:35px;height:28px}.abyss-chest.ready{animation:abyss-shake 1s infinite}
+@keyframes abyss-shake{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg) scale(1.15)}75%{transform:rotate(12deg) scale(1.15)}}
+#game-layer .abyss-attack{display:block;width:173px;height:63px;margin:12px auto 0;color:#82512a;font-size:26px;font-weight:700}
+
+/* PopupStageReward / trợ giúp */
+.abyss-reward-body{position:relative;width:465px;min-height:300px;box-sizing:border-box;padding:24px 26px 22px;background:no-repeat center/100% 100%;color:#fff;text-align:center}
+.abyss-reward-body h2{margin:0 0 10px;color:#ead754;font-size:26px}.abyss-reward-body p{margin:6px 0;font-size:22px}.abyss-reward-body p.help{font-size:18px;text-align:left;line-height:1.4}
+.abyss-reward-list{display:flex;justify-content:center;gap:10px;margin:10px 0 16px}
+#game-layer .abyss-reward-body>button{width:180px;height:68px;color:#323232;font-size:22px;font-weight:700}
+
+/* AbyssPopupBuyTurn */
+.abyss-buy-body{position:relative;width:597px;height:493px;display:flex;flex-direction:column;align-items:center;padding-top:80px;box-sizing:border-box;background:no-repeat center/100% 100%;color:#9c5a1e}
+.abyss-buy-body p{margin:8px 0;font-size:22px}
+.abyss-buy-item{position:relative;display:grid;place-items:center;width:95px;height:95px;background:no-repeat center/100% 100%}.abyss-buy-item img{width:57px;height:51px}.abyss-buy-item img.border{position:absolute;inset:-3px;width:100px;height:100px}
+.abyss-buy-count{display:flex;align-items:center;gap:20px}#game-layer .abyss-buy-count button{width:60px;height:60px}
+.abyss-buy-count b{display:grid;place-items:center;width:186px;height:45px;background:no-repeat center/100% 100%;color:#fff;font-size:28px}
+.abyss-buy-price{position:relative;display:grid;place-items:center;width:186px;height:45px;background:no-repeat center/100% 100%;color:#fff;font-size:25px}.abyss-buy-price img{position:absolute;left:-10px;width:50px;height:50px}
+#game-layer .abyss-buy-go{width:170px;height:60px;margin-top:16px;color:#9c5a1e;font-size:30px;font-weight:700}
+
+/* PopupSelectReward */
+.abyss-gift-body{position:relative;width:771px;height:582px;box-sizing:border-box;padding:70px 30px 0;background:no-repeat center/100% 100%;color:#53321a}
+.abyss-gift-desc{display:flex;align-items:center;gap:14px;width:710px;height:120px;padding:0 16px;box-sizing:border-box;background:no-repeat center/100% 100%}.abyss-gift-desc img{width:120px}.abyss-gift-desc p{margin:0;font-size:20px}
+.abyss-gift-info{margin:14px 0 6px;font-size:21px}.abyss-gift-info b{color:#e25934}.abyss-gift-info img{width:24px;vertical-align:middle}
+.abyss-cells{height:280px;overflow-y:auto;padding:10px;box-sizing:border-box;background:no-repeat center/100% 100%}
+.abyss-cell{display:flex;align-items:center;gap:16px;padding:6px 10px;margin-bottom:6px;border-radius:8px;background:#0001}.abyss-cell.ready{background:#ffe08a80}.abyss-cell.done{opacity:.6}
+.abyss-cell>b{width:70px;font-size:22px;color:#e25934}.abyss-cell>b img{width:24px;vertical-align:middle}
+.abyss-cell>div{display:flex;gap:12px}#game-layer .abyss-cell button{padding:3px;border-radius:8px}#game-layer .abyss-cell button.picked{outline:3px solid #3bb44a}
+
+/* ---- Album (PanelAlbumMain) */
+.album-bg{position:absolute;inset:0;background:no-repeat center/cover}
+.album-left{position:absolute;left:28px;top:56px;width:780px;height:584px}
+.album-right{position:absolute;left:810px;top:56px;width:310px;height:584px}
+#game-layer .album-back{position:absolute;left:4px;top:0;width:76px;height:72px;background:none}.album-back img{width:76px;height:72px}
+.album-cards{position:absolute;left:724px;top:6px;display:flex;align-items:center;width:212px;height:45px;padding-left:46px;box-sizing:border-box;background:no-repeat center/100% 100%;color:#fff;font-size:24px}
+.album-cards img{position:absolute;left:-4px;width:44px;height:44px}.album-cards b{flex:1;text-align:center}
+.album-name{position:absolute;left:0;top:76px;width:165px;height:50px;display:grid;place-items:center;background:no-repeat center/100% 100%;color:#fff;font-size:24px;font-style:italic;font-weight:700;text-shadow:1px 1px 1px #0008;z-index:2}
+.album-card{position:absolute;left:184px;top:92px;width:620px;height:476px;background:#f6efe2;box-shadow:2px 3px 6px #0005}
+.album-pin{position:absolute;left:12px;top:-34px;width:107px;height:77px;z-index:3}
+#game-layer .album-open{position:absolute;left:38px;top:24px;width:540px;height:386px;background:#fff;padding:5px;box-sizing:border-box}
+.album-photo{position:relative;width:100%;height:100%;overflow:hidden;background:no-repeat center/100% 100%}
+.album-photo .album-art{width:100%;height:100%;object-fit:cover}
+.album-photo.locked{display:flex;flex-direction:column;align-items:center;justify-content:center}.album-lock{width:145px;height:145px}
+.album-photo.locked>b{margin-top:-30px;color:#fff;font-size:24px;font-style:italic;text-shadow:1px 1px 2px #000}
+.album-grid{position:absolute;inset:0;display:grid}.album-grid span{background:#3b3b3b no-repeat center/cover}.album-grid span.open{background:none}.album-photo.lines .album-grid span{outline:2px solid #fff}
+.album-effect{position:absolute;left:16px;top:420px;width:340px;margin:0;color:#1a7f34;font-size:20px;font-style:italic;font-weight:700}
+.album-effect.wide{left:184px;top:580px;width:620px;text-align:center;z-index:2}
+.album-require{position:absolute;left:350px;top:418px;display:flex;align-items:center;gap:8px;color:#4f3520;font-size:17px}
+.album-require img{width:92px;height:46px}.album-require b{font-weight:700}
+.album-progress{position:absolute;left:370px;top:470px;width:250px;height:44px;display:grid;place-items:center;background:no-repeat center/100% 100%;color:#fff;font-size:20px;font-weight:700}
+#game-layer .album-arrow{position:absolute;top:286px;width:45px;height:62px}#game-layer .album-arrow.right{left:818px;transform:scaleX(-1)}#game-layer .album-arrow.left{left:128px}
+#game-layer .album-info{position:absolute;left:78px;top:522px;width:66px;height:65px}.album-info span{position:absolute;left:-22px;right:-22px;top:62px;color:#fff;font-size:18px;text-shadow:1px 1px 2px #000;white-space:nowrap}
+.album-side,.album-roll{position:absolute;left:878px;top:82px;width:233px;height:528px;background:no-repeat center/100% 100%}
+.album-title{position:absolute;left:-4px;top:-2px;width:235px;height:65px;display:grid;place-items:center;background:no-repeat center/100% 100%;color:#4f3520;font-size:22px;font-weight:700}
+.album-tabs{position:absolute;left:0;top:80px;width:233px;height:300px;overflow-y:auto;scrollbar-width:none}
+#game-layer .album-tab{position:relative;display:block;width:225px;height:68px;margin:8px 0 10px 4px;background-size:100% 100%;color:#4f3520}
+.album-kind{position:absolute;left:-6px;top:-10px;width:89px;height:35px}.album-tab>i{position:absolute;left:4px;top:-6px;width:70px;color:#fff;font-size:18px;font-style:normal;font-weight:700}
+.album-tab>b{position:absolute;left:96px;top:20px;font-size:22px}.album-tab-lock{position:absolute;right:14px;top:18px;width:31px;height:33px}
+#game-layer .album-overview{position:absolute;left:64px;top:400px;width:105px;height:105px}.album-overview span{position:absolute;left:-30px;right:-30px;bottom:-14px;color:#fff;font-size:19px;text-shadow:1px 1px 2px #000}
+
+/* PanelGridPicture + PanelRollPicture */
+.album-card.big{left:184px;top:92px;height:480px}
+.album-card.big .album-photo{position:absolute;left:48px;top:24px;width:530px;height:400px;border:5px solid #fff;box-sizing:border-box}
+.album-rows{position:absolute;left:10px;top:24px;width:30px;height:400px;display:flex;flex-direction:column;justify-content:space-around;color:#52230a;font-size:22px;text-align:center}
+.album-cols{position:absolute;left:48px;top:430px;width:530px;display:flex;justify-content:space-around;color:#52230a;font-size:22px}
+.album-bar{position:absolute;left:84px;top:16px;width:30px;height:380px;background:no-repeat center/100% 100%;display:flex;align-items:flex-end;overflow:hidden;border-radius:6px}
+.album-bar i{display:block;width:100%;background:#f2c940}
+.album-mark{position:absolute;left:6px;width:220px;height:50px}
+.album-mark-icon{position:absolute;left:0;top:-6px;width:53px;height:51px}.album-mark>b{position:absolute;left:0;width:53px;top:6px;text-align:center;color:#ffb800;font-size:20px}
+.album-mark-tag{position:absolute;left:112px;top:-14px;width:96px;height:25px;display:grid;place-items:center;background:no-repeat center/100% 100%;color:#fff;font-size:16px}.album-mark-tag.done{filter:grayscale(1)}
+.album-mark-coin{position:absolute;left:114px;top:14px;width:36px;height:34px}.album-mark>em{position:absolute;left:152px;top:18px;color:#fff;font-size:19px;font-style:normal;text-shadow:1px 1px 2px #000}
+.album-step{position:absolute;left:30px;top:404px;display:flex;align-items:center;gap:8px;color:#381a00;font-size:20px}.album-step img{width:50px;height:50px}
+#game-layer .album-roll-go{position:absolute;left:18px;top:462px;width:196px;height:66px;display:flex;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:30px;font-weight:700;text-shadow:1px 1px 2px #000}.album-roll-go>b{font-size:30px}
+.album-roll-go img{width:40px;height:40px}.album-roll-go em{font-style:normal;font-size:21px;margin-right:16px}
+
+/* PopupAlbumOverview */
+.album-ov{position:relative;width:1080px;height:600px;background:#3a2a1ee8;border-radius:10px}
+.album-ov-scroll{display:flex;gap:18px;height:100%;padding:16px;box-sizing:border-box;overflow-x:auto}
+.album-ov-col{flex:none;display:flex;flex-direction:column;gap:10px;width:230px;overflow-y:auto}.album-ov-col>p{margin:0;color:#fff;font-size:22px;text-align:center}
+#game-layer .album-ov-card{position:relative;flex:none;width:226px;height:160px;padding:8px;background:#f6efe2;box-sizing:border-box}
+.album-ov-tag{position:absolute;left:-4px;top:-6px;z-index:2;width:76px;height:30px;display:grid;place-items:center;background:no-repeat center/100% 100%;color:#fff;font-size:17px;font-weight:700}
+.album-photo.small .album-lock{width:70px;height:70px}.album-photo.small>b{margin-top:-14px;font-size:17px}
+
+/* PopupPointInfo */
+.album-points-body{position:relative;width:386px;min-height:373px;padding:40px 46px;box-sizing:border-box;background:no-repeat center/100% 100%;color:#fff}
+.album-points-body p{display:flex;justify-content:space-between;margin:6px 0;font-size:24px}.album-points-body p.none{display:block;margin-top:110px;text-align:center}
+
+.abyss-reward-body,.album-points-body{background:none!important;border:22px solid transparent;border-image-slice:24 fill;border-image-width:22px;border-image-repeat:stretch;padding:4px 20px 12px}
+.album-points-body{padding:20px 30px}.album-points-body p.none{margin-top:100px}
+.abyss-cells{background:#f6e7c4;border-radius:10px}
+#game-layer .album-points-body .mm-close,#game-layer .abyss-reward-body .mm-close{right:-40px;top:-40px}
+
+/* Đảo Người Cá: tên người chơi, lời thoại và dấu "!" của NPC (HeroDaoNguoiCaName) */
+.mm-tags{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.mm-tag{position:absolute;width:0;height:0}
+.mm-tag>b{position:absolute;left:-120px;width:240px;top:-14px;text-align:center;color:#fff;font-size:20px;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+.mm-notify{position:absolute;left:-37px;top:-40px;width:75px;height:75px;animation:mm-bob 1.2s ease-in-out infinite}
+@keyframes mm-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.mm-say{position:absolute;left:-10px;bottom:46px;width:318px;margin:0;padding:12px 18px;box-sizing:border-box;background:center/100% 100% no-repeat;color:#3a2412;font-size:16px;line-height:1.3}
+
+.abyss-chest-spine{position:absolute;right:-18px;top:-26px;width:100px;height:100px;pointer-events:none}
+.album-reveal{position:absolute;z-index:6;width:800px;height:800px;pointer-events:none}

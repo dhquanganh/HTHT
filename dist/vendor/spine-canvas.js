@@ -4893,7 +4893,8 @@ var spine;
 			var chars = "";
 			var charCount = 0;
 			for (var i = 0; i < byteCount;) {
-				var b = this.readByte();
+				// Local fix: readByte is signed, so UTF-8 names such as "ch\u00e2ntk2" never reached the multi-byte cases.
+				var b = this.readByte() & 0xFF;
 				switch (b >> 4) {
 					case 12:
 					case 13:

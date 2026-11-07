@@ -1,0 +1,251 @@
+
+SKill_336.png
+size: 1004,516
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Robin_2yl_skill1_xuli/000
+  rotate: true
+  xy: 2, 220
+  size: 294, 271
+  orig: 299, 271
+  offset: 3, 0
+  index: -1
+Char_Robin_2yl_skill1_xuli/001
+  rotate: true
+  xy: 275, 247
+  size: 267, 239
+  orig: 270, 246
+  offset: 3, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/002
+  rotate: true
+  xy: 205, 6
+  size: 212, 186
+  orig: 216, 190
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/003
+  rotate: false
+  xy: 2, 12
+  size: 201, 206
+  orig: 205, 213
+  offset: 2, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/004
+  rotate: true
+  xy: 393, 46
+  size: 199, 191
+  orig: 209, 196
+  offset: 6, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/005
+  rotate: false
+  xy: 516, 322
+  size: 187, 192
+  orig: 200, 200
+  offset: 7, 3
+  index: -1
+Char_Robin_2yl_skill1_xuli/006
+  rotate: true
+  xy: 586, 75
+  size: 191, 139
+  orig: 202, 149
+  offset: 6, 4
+  index: -1
+Char_Robin_2yl_skill1_xuli/007
+  rotate: true
+  xy: 727, 114
+  size: 152, 110
+  orig: 165, 120
+  offset: 8, 5
+  index: -1
+Char_Robin_2yl_skill1_xuli/008
+  rotate: false
+  xy: 819, 2
+  size: 127, 110
+  orig: 138, 118
+  offset: 6, 3
+  index: -1
+Char_Robin_2yl_skill1_xuli/009
+  rotate: true
+  xy: 948, 97
+  size: 95, 53
+  orig: 98, 56
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/010
+  rotate: true
+  xy: 948, 409
+  size: 105, 53
+  orig: 108, 56
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/011
+  rotate: false
+  xy: 635, 268
+  size: 114, 52
+  orig: 117, 55
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/012
+  rotate: true
+  xy: 948, 296
+  size: 111, 50
+  orig: 114, 53
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/013
+  rotate: false
+  xy: 801, 322
+  size: 92, 38
+  orig: 95, 41
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/014
+  rotate: false
+  xy: 856, 373
+  size: 90, 38
+  orig: 94, 41
+  offset: 3, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/015
+  rotate: true
+  xy: 883, 212
+  size: 74, 38
+  orig: 76, 41
+  offset: 1, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/016
+  rotate: true
+  xy: 895, 288
+  size: 83, 40
+  orig: 86, 43
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/017
+  rotate: false
+  xy: 705, 322
+  size: 94, 38
+  orig: 97, 41
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/018
+  rotate: true
+  xy: 705, 412
+  size: 102, 44
+  orig: 105, 47
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/019
+  rotate: true
+  xy: 806, 379
+  size: 87, 48
+  orig: 90, 52
+  offset: 2, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/020
+  rotate: true
+  xy: 948, 3
+  size: 92, 53
+  orig: 96, 56
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/021
+  rotate: false
+  xy: 705, 362
+  size: 99, 48
+  orig: 102, 52
+  offset: 2, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/022
+  rotate: true
+  xy: 751, 424
+  size: 90, 53
+  orig: 93, 57
+  offset: 2, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/023
+  rotate: true
+  xy: 948, 194
+  size: 100, 53
+  orig: 103, 56
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/024
+  rotate: false
+  xy: 708, 21
+  size: 109, 52
+  orig: 112, 56
+  offset: 2, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/025
+  rotate: false
+  xy: 516, 268
+  size: 117, 52
+  orig: 121, 55
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/026
+  rotate: false
+  xy: 589, 23
+  size: 117, 50
+  orig: 121, 53
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/027
+  rotate: false
+  xy: 492, 6
+  size: 95, 38
+  orig: 99, 41
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/028
+  rotate: true
+  xy: 839, 172
+  size: 68, 38
+  orig: 71, 41
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/029
+  rotate: true
+  xy: 843, 242
+  size: 78, 38
+  orig: 82, 41
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/030
+  rotate: false
+  xy: 727, 76
+  size: 88, 36
+  orig: 91, 39
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/031
+  rotate: false
+  xy: 393, 3
+  size: 97, 41
+  orig: 100, 44
+  offset: 2, 1
+  index: -1
+Char_Robin_2yl_skill1_xuli/032
+  rotate: false
+  xy: 839, 468
+  size: 106, 46
+  orig: 109, 50
+  offset: 2, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/033
+  rotate: false
+  xy: 751, 269
+  size: 90, 51
+  orig: 94, 55
+  offset: 2, 2
+  index: -1
+Char_Robin_2yl_skill1_xuli/034
+  rotate: false
+  xy: 856, 413
+  size: 70, 53
+  orig: 74, 58
+  offset: 2, 2
+  index: -1

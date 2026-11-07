@@ -1,0 +1,111 @@
+
+Skill_331_1a.png
+size: 1432,792
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+18/images/float
+  rotate: true
+  xy: 1277, 257
+  size: 54, 117
+  orig: 64, 128
+  offset: 5, 10
+  index: -1
+cutsc/images/buoctoc_01
+  rotate: true
+  xy: 301, 308
+  size: 481, 355
+  orig: 481, 357
+  offset: 0, 2
+  index: -1
+cutsc/images/buoctoc_02
+  rotate: true
+  xy: 2, 258
+  size: 531, 297
+  orig: 531, 297
+  offset: 0, 0
+  index: -1
+cutsc/images/buoctoc_05
+  rotate: false
+  xy: 480, 4
+  size: 246, 302
+  orig: 246, 302
+  offset: 0, 0
+  index: -1
+cutsc/images/buoctoc_06
+  rotate: true
+  xy: 301, 260
+  size: 46, 114
+  orig: 62, 118
+  offset: 6, 0
+  index: -1
+cutsc/images/buoctoc_09
+  rotate: false
+  xy: 417, 272
+  size: 29, 34
+  orig: 56, 51
+  offset: 14, 8
+  index: -1
+cutsc/images/buoctoc_17
+  rotate: true
+  xy: 892, 22
+  size: 289, 253
+  orig: 299, 281
+  offset: 5, 5
+  index: -1
+cutsc/images/buoctoc_19
+  rotate: true
+  xy: 728, 4
+  size: 307, 162
+  orig: 310, 162
+  offset: 0, 0
+  index: -1
+cutsc/images/momat_03
+  rotate: false
+  xy: 2, 2
+  size: 476, 254
+  orig: 488, 254
+  offset: 4, 0
+  index: -1
+cutsc/images/momat_05
+  rotate: true
+  xy: 920, 313
+  size: 476, 254
+  orig: 485, 254
+  offset: 7, 0
+  index: -1
+cutsc/images/momat_06
+  rotate: true
+  xy: 658, 313
+  size: 476, 260
+  orig: 488, 261
+  offset: 4, 1
+  index: -1
+cutsc/images/momat_07
+  rotate: true
+  xy: 1176, 313
+  size: 476, 252
+  orig: 485, 252
+  offset: 7, 0
+  index: -1
+glow_1042_re
+  rotate: false
+  xy: 1277, 193
+  size: 62, 62
+  orig: 64, 64
+  offset: 1, 0
+  index: -1
+glow_1044
+  rotate: false
+  xy: 1147, 215
+  size: 128, 96
+  orig: 128, 128
+  offset: 0, 14
+  index: -1
+glow_3013
+  rotate: false
+  xy: 1396, 247
+  size: 32, 64
+  orig: 32, 64
+  offset: 0, 0
+  index: -1

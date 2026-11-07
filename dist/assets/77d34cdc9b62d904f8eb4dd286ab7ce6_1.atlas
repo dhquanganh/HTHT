@@ -1,0 +1,55 @@
+
+Hit_223.png
+size: 785,466
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_hachi_skill_1_zhuti2/000
+  rotate: true
+  xy: 663, 110
+  size: 139, 120
+  orig: 143, 127
+  offset: 2, 1
+  index: -1
+Char_hachi_skill_1_zhuti2/001
+  rotate: false
+  xy: 255, 14
+  size: 212, 216
+  orig: 219, 223
+  offset: 5, 1
+  index: -1
+Char_hachi_skill_1_zhuti2/002
+  rotate: false
+  xy: 522, 251
+  size: 261, 213
+  orig: 268, 220
+  offset: 5, 1
+  index: -1
+Char_hachi_skill_1_zhuti2/003
+  rotate: false
+  xy: 2, 236
+  size: 266, 228
+  orig: 271, 235
+  offset: 5, 1
+  index: -1
+Char_hachi_skill_1_zhuti2/004
+  rotate: false
+  xy: 2, 2
+  size: 251, 232
+  orig: 254, 239
+  offset: 3, 1
+  index: -1
+Char_hachi_skill_1_zhuti2/005
+  rotate: false
+  xy: 270, 232
+  size: 250, 232
+  orig: 253, 239
+  offset: 3, 1
+  index: -1
+Char_hachi_skill_1_zhuti2/006
+  rotate: true
+  xy: 469, 9
+  size: 221, 192
+  orig: 225, 196
+  offset: 4, 1
+  index: -1

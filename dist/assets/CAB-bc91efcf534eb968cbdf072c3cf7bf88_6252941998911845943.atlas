@@ -1,0 +1,55 @@
+
+Cloud.png
+size: 1799,172
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 100 copy
+  rotate: false
+  xy: 2, 2
+  size: 1027, 168
+  orig: 1071, 184
+  offset: 1, 15
+  index: -1
+Layer 137
+  rotate: false
+  xy: 1523, 79
+  size: 274, 91
+  orig: 277, 94
+  offset: 2, 1
+  index: -1
+Layer 138
+  rotate: false
+  xy: 1031, 20
+  size: 109, 36
+  orig: 121, 51
+  offset: 11, 1
+  index: -1
+Layer 139
+  rotate: false
+  xy: 1223, 20
+  size: 190, 53
+  orig: 193, 57
+  offset: 2, 1
+  index: -1
+Layer 140
+  rotate: false
+  xy: 1223, 75
+  size: 298, 95
+  orig: 301, 103
+  offset: 2, 1
+  index: -1
+Layer 141
+  rotate: false
+  xy: 1523, 3
+  size: 211, 74
+  orig: 214, 76
+  offset: 1, 1
+  index: -1
+Layer 142
+  rotate: false
+  xy: 1031, 58
+  size: 190, 112
+  orig: 192, 114
+  offset: 1, 1
+  index: -1

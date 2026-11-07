@@ -1,0 +1,132 @@
+
+Avatar_effect.png
+size: 604,543
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 2
+  rotate: true
+  xy: 154, 22
+  size: 94, 93
+  orig: 96, 95
+  offset: 1, 1
+  index: -1
+Layer 3
+  rotate: true
+  xy: 72, 21
+  size: 64, 62
+  orig: 67, 67
+  offset: 2, 3
+  index: -1
+a (1)
+  rotate: false
+  xy: 296, 139
+  size: 87, 116
+  orig: 150, 150
+  offset: 1, 0
+  index: -1
+a (10)
+  rotate: false
+  xy: 306, 391
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (11)
+  rotate: false
+  xy: 154, 118
+  size: 140, 150
+  orig: 150, 150
+  offset: 10, 0
+  index: -1
+a (12)
+  rotate: true
+  xy: 303, 257
+  size: 132, 150
+  orig: 150, 150
+  offset: 18, 0
+  index: -1
+a (13)
+  rotate: true
+  xy: 154, 270
+  size: 119, 147
+  orig: 150, 150
+  offset: 31, 3
+  index: -1
+a (14)
+  rotate: false
+  xy: 296, 5
+  size: 98, 129
+  orig: 150, 150
+  offset: 52, 21
+  index: -1
+a (15)
+  rotate: false
+  xy: 496, 14
+  size: 87, 120
+  orig: 150, 150
+  offset: 63, 28
+  index: -1
+a (16)
+  rotate: false
+  xy: 2, 2
+  size: 68, 83
+  orig: 150, 150
+  offset: 81, 59
+  index: -1
+a (2)
+  rotate: false
+  xy: 396, 9
+  size: 98, 125
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (3)
+  rotate: true
+  xy: 458, 422
+  size: 119, 144
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (4)
+  rotate: true
+  xy: 455, 136
+  size: 132, 146
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (5)
+  rotate: false
+  xy: 458, 270
+  size: 143, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (6)
+  rotate: false
+  xy: 2, 391
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (7)
+  rotate: false
+  xy: 2, 239
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (8)
+  rotate: false
+  xy: 2, 87
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+a (9)
+  rotate: false
+  xy: 154, 391
+  size: 150, 150
+  orig: 150, 150
+  offset: 0, 0
+  index: -1

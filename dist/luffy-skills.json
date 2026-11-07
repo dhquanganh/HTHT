@@ -1,0 +1,163 @@
+[
+  {
+    "id": "rubber-whip",
+    "name": "Roi Cao Su",
+    "iconId": "685",
+    "assetKey": "447237939b10393458bc63d59879cee5_2",
+    "legacySkillId": "jet-gatling",
+    "passive": false,
+    "energy": 80,
+    "cooldown": 2,
+    "animation": "skill3",
+    "description": "Nộ: Gây sát thương (250%Công) địch và hồi máu đồng minh ít máu nhất (180%Công)",
+    "levels": [
+      {
+        "level": 1,
+        "sourceId": "938",
+        "description": "Nộ: Gây sát thương (250%Công) địch và hồi máu đồng minh ít máu nhất (180%Công)",
+        "values": {
+          "damage": 2.5,
+          "heal": 1.8,
+          "attackBuff": 0
+        }
+      },
+      {
+        "level": 2,
+        "sourceId": "1033",
+        "description": "Nộ: Gây sát thương (280%Công) địch và hồi máu đồng mình có máu thấp nhất (250%Công)",
+        "values": {
+          "damage": 2.8,
+          "heal": 2.5,
+          "attackBuff": 0
+        }
+      },
+      {
+        "level": 3,
+        "sourceId": "1135",
+        "description": "Nộ: Gây sát thương (320%Công) địch và hồi máu đồng minh có máu thấp nhất (560%Công). Bản thân tự tăng (60%Công) trong 2 lượt",
+        "values": {
+          "damage": 3.2,
+          "heal": 5.6,
+          "attackBuff": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "id": "polish",
+    "name": "Mài Dũa",
+    "iconId": "140",
+    "assetKey": "15261ee33854502489bcab2dfa61c29e_2",
+    "legacySkillId": "jet-pistol",
+    "passive": true,
+    "energy": 0,
+    "cooldown": 0,
+    "animation": "idling",
+    "description": "Bị động: Nhận sát thương từ Nộ & đánh thường sẽ giảm 9% chí mạng trong 3 lượt",
+    "levels": [
+      {
+        "level": 1,
+        "sourceId": "84",
+        "description": "Bị động: Nhận sát thương từ Nộ & đánh thường sẽ giảm 9% chí mạng trong 3 lượt",
+        "values": {
+          "critReduction": 0.09
+        }
+      },
+      {
+        "level": 2,
+        "sourceId": "218",
+        "description": "Bị động: Nhận sát thương từ Nộ & đánh thường sẽ giảm 15% chí mạng trong 3 lượt",
+        "values": {
+          "critReduction": 0.15
+        }
+      },
+      {
+        "level": 3,
+        "sourceId": "362",
+        "description": "Bị động: Nhận sát thương từ Nộ & đánh thường sẽ giảm 18% chí mạng trong 3 lượt",
+        "values": {
+          "critReduction": 0.18
+        }
+      }
+    ]
+  },
+  {
+    "id": "armament-haki",
+    "name": "Haki Vũ Trang",
+    "iconId": "183",
+    "assetKey": "88931f2c039d07245a53df2163676d72_2",
+    "legacySkillId": "gear-second",
+    "passive": true,
+    "energy": 0,
+    "cooldown": 0,
+    "animation": "idling",
+    "description": "Bị động: Tăng 32% Giáp và 20% Máu",
+    "levels": [
+      {
+        "level": 1,
+        "sourceId": "83",
+        "description": "Bị động: Tăng 32% Giáp và 20% Máu",
+        "values": {
+          "armor": 0.32,
+          "hp": 0.2
+        }
+      },
+      {
+        "level": 2,
+        "sourceId": "217",
+        "description": "Bị động: Tăng 32% Giáp và 30% Máu",
+        "values": {
+          "armor": 0.32,
+          "hp": 0.3
+        }
+      },
+      {
+        "level": 3,
+        "sourceId": "361",
+        "description": "Bị động: Tăng 40% Giáp và 40% Máu",
+        "values": {
+          "armor": 0.4,
+          "hp": 0.4
+        }
+      }
+    ]
+  },
+  {
+    "id": "desperation",
+    "name": "Tuyệt Cảnh",
+    "iconId": "160",
+    "assetKey": "55ac18857e24ac64185c4032ef8a6db2_2",
+    "legacySkillId": null,
+    "passive": true,
+    "energy": 0,
+    "cooldown": 0,
+    "animation": "idling",
+    "description": "Bị động: Khi máu dưới 30%, lập tức tăng bản thân 60% Giáp trong 3 lượt (Kích hoạt 1 lần)",
+    "levels": [
+      {
+        "level": 1,
+        "sourceId": "85",
+        "description": "Bị động: Khi máu dưới 30%, lập tức tăng bản thân 60% Giáp trong 3 lượt (Kích hoạt 1 lần)",
+        "values": {
+          "armor": 0.6
+        }
+      },
+      {
+        "level": 2,
+        "sourceId": "219",
+        "description": "Bị động: Khi máu dưới 30%, lập tức tăng bản thân 100% Giáp trong 3 lượt (Kích hoạt 1 lần)",
+        "values": {
+          "armor": 1.0
+        }
+      },
+      {
+        "level": 3,
+        "sourceId": "363",
+        "description": "Bị động: Khi máu dưới 30%, lập tức tăng bản thân 120% Giáp trong 3 lượt (Kích hoạt 1 lần)",
+        "values": {
+          "armor": 1.2
+        }
+      }
+    ]
+  }
+]

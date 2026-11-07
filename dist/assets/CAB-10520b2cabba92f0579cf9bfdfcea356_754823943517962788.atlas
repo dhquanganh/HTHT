@@ -1,0 +1,111 @@
+
+Hit_402.png
+size: 564,1064
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bum/10_guang_1
+  rotate: false
+  xy: 2, 797
+  size: 260, 263
+  orig: 270, 270
+  offset: 4, 3
+  index: -1
+set/dikeng_1
+  rotate: false
+  xy: 2, 539
+  size: 246, 256
+  orig: 256, 256
+  offset: 3, 0
+  index: -1
+set/hitset (1)
+  rotate: true
+  xy: 323, 6
+  size: 147, 134
+  orig: 175, 171
+  offset: 12, 12
+  index: -1
+set/hitset (2)
+  rotate: false
+  xy: 250, 548
+  size: 149, 137
+  orig: 175, 171
+  offset: 10, 9
+  index: -1
+set/hitset (3)
+  rotate: true
+  xy: 401, 523
+  size: 162, 147
+  orig: 175, 171
+  offset: 2, 4
+  index: -1
+set/hitset (4)
+  rotate: true
+  xy: 163, 3
+  size: 150, 158
+  orig: 175, 171
+  offset: 12, 7
+  index: -1
+set/hitset (5)
+  rotate: false
+  xy: 349, 175
+  size: 168, 162
+  orig: 175, 171
+  offset: 2, 3
+  index: -1
+set/smoke
+  rotate: false
+  xy: 459, 85
+  size: 87, 88
+  orig: 90, 97
+  offset: 1, 5
+  index: -1
+set/zgshandian_0
+  rotate: false
+  xy: 349, 339
+  size: 180, 182
+  orig: 200, 320
+  offset: 0, 138
+  index: -1
+set/zgshandian_1
+  rotate: false
+  xy: 2, 233
+  size: 166, 304
+  orig: 200, 320
+  offset: 0, 16
+  index: -1
+set/zgshandian_3
+  rotate: false
+  xy: 170, 155
+  size: 160, 87
+  orig: 200, 320
+  offset: 14, 31
+  index: -1
+set/zgshandian_4
+  rotate: false
+  xy: 170, 244
+  size: 177, 293
+  orig: 200, 320
+  offset: 5, 18
+  index: -1
+set/zgshandian_5
+  rotate: true
+  xy: 264, 876
+  size: 184, 296
+  orig: 200, 320
+  offset: 3, 14
+  index: -1
+set/zgshandian_6
+  rotate: true
+  xy: 264, 687
+  size: 187, 272
+  orig: 200, 320
+  offset: 8, 13
+  index: -1
+set/zgshandian_7
+  rotate: false
+  xy: 2, 2
+  size: 159, 229
+  orig: 200, 320
+  offset: 21, 20
+  index: -1

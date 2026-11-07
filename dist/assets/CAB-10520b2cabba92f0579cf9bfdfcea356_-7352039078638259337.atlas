@@ -1,0 +1,62 @@
+
+Cast_417.png
+size: 676,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+6
+  rotate: true
+  xy: 325, 11
+  size: 36, 24
+  orig: 43, 31
+  offset: 3, 4
+  index: -1
+7
+  rotate: true
+  xy: 294, 15
+  size: 32, 29
+  orig: 58, 70
+  offset: 14, 1
+  index: -1
+8
+  rotate: true
+  xy: 259, 7
+  size: 40, 33
+  orig: 58, 70
+  offset: 9, 6
+  index: -1
+9
+  rotate: false
+  xy: 214, 2
+  size: 43, 45
+  orig: 58, 70
+  offset: 8, 8
+  index: -1
+ban-tay-beat
+  rotate: true
+  xy: 604, 2
+  size: 267, 69
+  orig: 300, 94
+  offset: 20, 2
+  index: -1
+dam
+  rotate: true
+  xy: 2, 8
+  size: 39, 210
+  orig: 39, 210
+  offset: 0, 0
+  index: -1
+glow_1065
+  rotate: true
+  xy: 377, 37
+  size: 232, 225
+  orig: 256, 256
+  offset: 12, 17
+  index: -1
+skill/BG3
+  rotate: false
+  xy: 2, 49
+  size: 373, 220
+  orig: 373, 220
+  offset: 0, 0
+  index: -1

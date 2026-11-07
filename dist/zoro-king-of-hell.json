@@ -1,0 +1,494 @@
+{
+  "id": "zoro-king-of-hell",
+  "name": "Zoro King Of Hell",
+  "avatar": "576",
+  "faction": "light",
+  "class": "mage",
+  "grade": "SS",
+  "visual": {
+    "avatar": "576",
+    "art": "htth-zoro-art",
+    "head": "htth-zoro-head",
+    "card": "htth-zoro-card",
+    "skeleton": {
+      "name": "Hero_576_SkeletonData",
+      "skeleton": {
+        "name": "Hero_576.skel",
+        "src": "game-assets/zoro-king-of-hell/Hero_576.skel"
+      },
+      "atlases": [
+        {
+          "atlas": {
+            "name": "Hero_576.atlas",
+            "src": "game-assets/zoro-king-of-hell/Hero_576.atlas"
+          },
+          "textures": [
+            "htth-zoro-hero_576"
+          ]
+        }
+      ]
+    },
+    "cutscene": {
+      "name": "Cuts_576_SkeletonData",
+      "skeleton": {
+        "name": "Cuts_576.skel",
+        "src": "game-assets/zoro-king-of-hell/Cuts_576.skel"
+      },
+      "atlases": [
+        {
+          "atlas": {
+            "name": "Cuts_576.atlas",
+            "src": "game-assets/zoro-king-of-hell/Cuts_576.atlas"
+          },
+          "textures": [
+            "htth-zoro-cuts_576"
+          ]
+        }
+      ]
+    },
+    "skillEffect": {
+      "name": "Skill_576_SkeletonData",
+      "skeleton": {
+        "name": "Skill_576.skel",
+        "src": "game-assets/zoro-king-of-hell/Skill_576.skel"
+      },
+      "atlases": [
+        {
+          "atlas": {
+            "name": "Skill_576.atlas",
+            "src": "game-assets/zoro-king-of-hell/Skill_576.atlas"
+          },
+          "textures": [
+            "htth-zoro-skill_576"
+          ]
+        }
+      ]
+    }
+  },
+  "skills": [
+    {
+      "id": "hiryu-jigoku",
+      "name": "Ippyakusanjo Hiryu Jigoku",
+      "iconId": "588",
+      "assetKey": "htth-zoro-skill-icon-588",
+      "passive": false,
+      "energy": 100,
+      "cooldown": 0,
+      "animation": "skill",
+      "description": "Nộ: Bản thân tăng 40% Công duy trì 4 lượt, tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 2000% Công kèm sát thương bằng 50% Máu đã mất của mục tiêu (Tối đa 4000% Công bản thân), sau khi tấn công nếu máu của mục tiêu thấp hơn 25% trực tiếp Trảm Sát. (Trảm Sát: tiêu diệt kẻ địch ngay lập tức, bỏ qua bất tử, né tránh, kháng sát thương...).",
+      "levels": [
+        {
+          "level": 1,
+          "sourceId": "2581",
+          "name": "Ippyakusanjo Hiryu Jigoku [1]",
+          "description": "Nộ: Bản thân tăng 20% Công duy trì 2 lượt, tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 1000% Công kèm sát thương bằng 25% Máu đã mất của mục tiêu (Tối đa 2000% Công bản thân), sau khi tấn công nếu máu của mục tiêu thấp hơn 15% trực tiếp Trảm Sát. (Trảm Sát: tiêu diệt kẻ địch ngay lập tức, bỏ qua bất tử, né tránh, kháng sát thương...)."
+        },
+        {
+          "level": 2,
+          "sourceId": "2577",
+          "name": "Ippyakusanjo Hiryu Jigoku [2]",
+          "description": "Nộ: Bản thân tăng 30% Công duy trì 3 lượt, tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 1500% Công kèm sát thương bằng 35% Máu đã mất của mục tiêu (Tối đa 3000% Công bản thân), sau khi tấn công nếu máu của mục tiêu thấp hơn 20% trực tiếp Trảm Sát. (Trảm Sát: tiêu diệt kẻ địch ngay lập tức, bỏ qua bất tử, né tránh, kháng sát thương...)."
+        },
+        {
+          "level": 3,
+          "sourceId": "2573",
+          "name": "Ippyakusanjo Hiryu Jigoku [3]",
+          "description": "Nộ: Bản thân tăng 40% Công duy trì 4 lượt, tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 2000% Công kèm sát thương bằng 50% Máu đã mất của mục tiêu (Tối đa 4000% Công bản thân), sau khi tấn công nếu máu của mục tiêu thấp hơn 25% trực tiếp Trảm Sát. (Trảm Sát: tiêu diệt kẻ địch ngay lập tức, bỏ qua bất tử, né tránh, kháng sát thương...)."
+        }
+      ]
+    },
+    {
+      "id": "enma",
+      "name": "Địa Ngục Kiếm Enma",
+      "iconId": "589",
+      "assetKey": "htth-zoro-skill-icon-589",
+      "passive": true,
+      "energy": 0,
+      "cooldown": 0,
+      "animation": "idling",
+      "description": "Bị động: Tăng bản thân 70% Công, 70% ST Chuẩn, 30% Xuyên Thủ, 50 Nộ, 150 Tốc Độ, 60% Miễn ST Trực Tiếp, các đòn tấn công có 50% bỏ qua hiệu quả kháng sát thương ( miễn nhiễm, bất tử,...) của mục tiêu. Đánh thường tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 500% Công kèm sát thương bằng 35% Máu đã mất của mục tiêu (Tối đa 1000% Công bản thân) kèm giảm 30% Công mục tiêu duy trì 3 lượt.",
+      "levels": [
+        {
+          "level": 1,
+          "sourceId": "2582",
+          "name": "Địa Ngục Kiếm Enma [1]",
+          "description": "Bị động: Tăng bản thân 30% Công, 30% ST Chuẩn, 10% Xuyên Thủ, 50 Nộ, 80 Tốc Độ, 20% Miễn ST Trực Tiếp. Đánh thường tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 250% Công kèm sát thương bằng 15% Máu đã mất của mục tiêu (Tối đa 500% Công bản thân) kèm giảm 15% Công mục tiêu duy trì 2 lượt."
+        },
+        {
+          "level": 2,
+          "sourceId": "2578",
+          "name": "Địa Ngục Kiếm Enma [2]",
+          "description": "Bị động: Tăng bản thân 50% Công, 50% ST Chuẩn, 20% Xuyên Thủ, 50 Nộ, 100 Tốc Độ, 40% Miễn ST Trực Tiếp. Đánh thường tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 350% Công kèm sát thương bằng 25% Máu đã mất của mục tiêu (Tối đa 700% Công bản thân) kèm giảm 25% Công mục tiêu duy trì 2 lượt."
+        },
+        {
+          "level": 3,
+          "sourceId": "2574",
+          "name": "Địa Ngục Kiếm Enma [3]",
+          "description": "Bị động: Tăng bản thân 70% Công, 70% ST Chuẩn, 30% Xuyên Thủ, 50 Nộ, 150 Tốc Độ, 60% Miễn ST Trực Tiếp, các đòn tấn công có 50% bỏ qua hiệu quả kháng sát thương ( miễn nhiễm, bất tử,...) của mục tiêu. Đánh thường tấn công đơn kẻ địch Máu thấp nhất, gây sát thương bằng 500% Công kèm sát thương bằng 35% Máu đã mất của mục tiêu (Tối đa 1000% Công bản thân) kèm giảm 30% Công mục tiêu duy trì 3 lượt."
+        }
+      ]
+    },
+    {
+      "id": "conqueror-haki",
+      "name": "Haki Bá Vương",
+      "iconId": "590",
+      "assetKey": "htth-zoro-skill-icon-590",
+      "passive": true,
+      "energy": 0,
+      "cooldown": 0,
+      "animation": "idling",
+      "description": "Bị động: Trong 3 lượt đầu trận đấu, bản thân tăng 50% Công kèm khi bị tấn công có 80% cơ hội miễn dịch các hiệu ứng và sát thương gây ra từ kẻ địch có Công thấp hơn bản thân (không bao gồm sát thương cuối lượt và dấu ấn), nếu bản thân đứng ở hàng trước lượng Công tăng gấp đôi và tăng 50% Tốc Độ, không thể bị xóa.",
+      "levels": [
+        {
+          "level": 1,
+          "sourceId": "2583",
+          "name": "Haki Bá Vương [1]",
+          "description": "Bị động: Trong 2 lượt đầu trận đấu, bản thân tăng 30% Công kèm khi bị tấn công có 60% cơ hội miễn dịch các hiệu ứng và sát thương gây ra từ kẻ địch có Công thấp hơn bản thân (không bao gồm sát thương cuối lượt và dấu ấn), nếu bản thân đứng ở hàng trước lượng Công tăng gấp đôi và tăng 30% Tốc Độ, không thể bị xóa."
+        },
+        {
+          "level": 2,
+          "sourceId": "2579",
+          "name": "Haki Bá Vương [2]",
+          "description": "Bị động: Trong 2 lượt đầu trận đấu, bản thân tăng 50% Công kèm khi bị tấn công có 80% cơ hội miễn dịch các hiệu ứng và sát thương gây ra từ kẻ địch có Công thấp hơn bản thân (không bao gồm sát thương cuối lượt và dấu ấn), nếu bản thân đứng ở hàng trước lượng Công tăng gấp đôi và tăng 50% Tốc Độ, không thể bị xóa."
+        },
+        {
+          "level": 3,
+          "sourceId": "2575",
+          "name": "Haki Bá Vương [3]",
+          "description": "Bị động: Trong 3 lượt đầu trận đấu, bản thân tăng 50% Công kèm khi bị tấn công có 80% cơ hội miễn dịch các hiệu ứng và sát thương gây ra từ kẻ địch có Công thấp hơn bản thân (không bao gồm sát thương cuối lượt và dấu ấn), nếu bản thân đứng ở hàng trước lượng Công tăng gấp đôi và tăng 50% Tốc Độ, không thể bị xóa."
+        }
+      ]
+    },
+    {
+      "id": "decisive-strike",
+      "name": "Đòn Quyết Định",
+      "iconId": "591",
+      "assetKey": "htth-zoro-skill-icon-591",
+      "passive": true,
+      "energy": 0,
+      "cooldown": 0,
+      "animation": "idling",
+      "description": "Bị động: Khi bản thân dùng Nộ, có 40% cơ hội kích hoạt thêm 1 lần kỹ năng Nộ, nếu kỹ năng Nộ tiêu diệt được mục tiêu cơ hội kích hoạt tăng thành 80%. (Tối đa kích hoạt 1 lần mỗi hiệp đấu)",
+      "levels": [
+        {
+          "level": 1,
+          "sourceId": "2584",
+          "name": "Đòn Quyết Định [1]",
+          "description": "Bị động: Khi bản thân dùng Nộ, có 25% cơ hội kích hoạt thêm 1 lần kỹ năng Nộ, nếu kỹ năng Nộ tiêu diệt được mục tiêu cơ hội kích hoạt tăng thành 50%. (Tối đa kích hoạt 1 lần mỗi hiệp đấu)"
+        },
+        {
+          "level": 2,
+          "sourceId": "2580",
+          "name": "Đòn Quyết Định [2]",
+          "description": "Bị động: Khi bản thân dùng Nộ, có 30% cơ hội kích hoạt thêm 1 lần kỹ năng Nộ, nếu kỹ năng Nộ tiêu diệt được mục tiêu cơ hội kích hoạt tăng thành 60%. (Tối đa kích hoạt 1 lần mỗi hiệp đấu)"
+        },
+        {
+          "level": 3,
+          "sourceId": "2576",
+          "name": "Đòn Quyết Định [3]",
+          "description": "Bị động: Khi bản thân dùng Nộ, có 40% cơ hội kích hoạt thêm 1 lần kỹ năng Nộ, nếu kỹ năng Nộ tiêu diệt được mục tiêu cơ hội kích hoạt tăng thành 80%. (Tối đa kích hoạt 1 lần mỗi hiệp đấu)"
+        }
+      ]
+    }
+  ],
+  "sourceHeroes": [
+    {
+      "id": "576",
+      "avatar": "576",
+      "type": "light",
+      "name": "Zoro King Of Hell",
+      "attack_scale_origin": "19",
+      "hp_scale_origin": "80",
+      "class": "mage",
+      "armor_scale_origin": "6",
+      "star": "5",
+      "speed_origin": "200",
+      "active": "2581",
+      "passive1": "2582",
+      "passive2": "2583",
+      "passive3": "2584",
+      "point": "[7530,654,28149,742,50,220,160,0,210,0,100,0,0,300,7530,654,28149,742,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,200,200,200,300,0,300,300,300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,0,0,0,0,0,0,0,0]",
+      "rank": "6",
+      "release": 0
+    },
+    {
+      "id": "577",
+      "avatar": "576",
+      "type": "light",
+      "name": "Zoro King Of Hell",
+      "attack_scale_origin": "35",
+      "hp_scale_origin": "230",
+      "class": "mage",
+      "armor_scale_origin": "6.2",
+      "star": "6",
+      "speed_origin": "230",
+      "active": "2577",
+      "passive1": "2578",
+      "passive2": "2579",
+      "passive3": "2580",
+      "point": "[24069,923,121689,984,50,220,160,0,210,0,200,0,0,500,24069,923,121689,984,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,200,200,200,300,0,300,300,300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,400,0,0,0,0,0,0,0,0]",
+      "rank": "6",
+      "release": 0
+    },
+    {
+      "id": "578",
+      "avatar": "576",
+      "type": "light",
+      "name": "Zoro King Of Hell",
+      "attack_scale_origin": "105",
+      "hp_scale_origin": "900",
+      "class": "mage",
+      "armor_scale_origin": "8",
+      "star": "10",
+      "speed_origin": "290",
+      "active": "2573",
+      "passive1": "2574",
+      "passive2": "2575",
+      "passive3": "2576",
+      "point": "[142248,2072,968427,1478,50,220,160,0,210,0,300,0,0,700,142248,2072,968427,1478,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,200,200,200,200,300,0,300,300,300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,500,500,0,0,0,0,0,0,0,600,0,0,0,0,0,0,0,0]",
+      "rank": "6",
+      "release": 1
+    }
+  ],
+  "combat": {
+    "key": "576",
+    "name": "Ichiji",
+    "gender": "1",
+    "sizex": "1.2",
+    "sizey": "1.4",
+    "atk_range": "3",
+    "atk_range_skill": "2",
+    "scale": "1",
+    "skills": [
+      {
+        "type": "1",
+        "animation": "beat",
+        "delay_cast_eff": "0.45",
+        "delay_battle_eff": "0",
+        "need_move_up": "true",
+        "cast_effs": [],
+        "impact_effs": [
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "2",
+            "delay": "0",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "attack_punch",
+            "impact_pos": "1"
+          },
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "2",
+            "delay": "0.5",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "attack_punch",
+            "impact_pos": "1"
+          },
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "2",
+            "delay": "1.1",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "attack_punch",
+            "impact_pos": "1"
+          }
+        ],
+        "shake_cams": [
+          {
+            "delay": "0.4",
+            "duration": "0.5"
+          },
+          {
+            "delay": "1.3",
+            "duration": "0.5"
+          }
+        ],
+        "split_dmgs": [
+          {
+            "delay": "0.8"
+          },
+          {
+            "delay": "1.3"
+          }
+        ]
+      },
+      {
+        "type": "1",
+        "animation": "skill",
+        "delay_cast_eff": "0",
+        "delay_battle_eff": "0",
+        "need_move_up": "true",
+        "cast_effs": [
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "path": "_Pack2/Heroes/576/Cuts_576",
+            "sorting_layer": "BeyondCanvas",
+            "origin_pos_type": "1",
+            "delay": "0",
+            "animation": "Cast",
+            "offset_layer": "1000",
+            "scale": "1",
+            "impact_pos": "2"
+          },
+          {
+            "offsetx": "2.5",
+            "offsety": "-1.7",
+            "path": "_Pack2/Heroes/576/skill_576",
+            "sorting_layer": "Character",
+            "origin_pos_type": "1",
+            "delay": "12",
+            "animation": "Cast",
+            "offset_layer": "100",
+            "scale": "1",
+            "impact_pos": "2"
+          }
+        ],
+        "impact_effs": [
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "0",
+            "delay": "0",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "se_skill_fesdressrosa02_fujitora_e",
+            "impact_pos": "0"
+          },
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "0",
+            "delay": "4",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "se_skill_ace_kyokaen_a",
+            "impact_pos": "0"
+          },
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "0",
+            "delay": "10",
+            "offset_layer": "0",
+            "scale": "0",
+            "impact_pos": "0"
+          },
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "0",
+            "delay": "10",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "se_skill_adkizaru_kizaru_b",
+            "impact_pos": "0"
+          },
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "0",
+            "delay": "12",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "hetlen",
+            "impact_pos": "0"
+          },
+          {
+            "offsetx": "0",
+            "offsety": "0",
+            "origin_pos_type": "0",
+            "delay": "12.5",
+            "offset_layer": "0",
+            "scale": "0",
+            "sound": "thunder",
+            "impact_pos": "0"
+          }
+        ],
+        "shake_cams": [
+          {
+            "delay": "12.5",
+            "duration": "1"
+          }
+        ],
+        "split_dmgs": [
+          {
+            "delay": "13"
+          },
+          {
+            "delay": "13.2"
+          },
+          {
+            "delay": "13.4"
+          },
+          {
+            "delay": "13.6"
+          },
+          {
+            "delay": "13.8"
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "bundle": "database_ex",
+      "resource": "assets/resources/_pack2/db/db_heroes.txt"
+    },
+    {
+      "bundle": "database_ex",
+      "resource": "assets/resources/_pack2/db/db_hero_skill.txt"
+    },
+    {
+      "bundle": "database_ex",
+      "resource": "assets/resources/_pack2/db/db_battle_heroes.txt"
+    },
+    {
+      "bundle": "heroart_ex",
+      "resource": "assets/resources/_pack2/art/576.png"
+    },
+    {
+      "bundle": "herohead_ex",
+      "resource": "assets/resources/_pack2/herohead/576.png"
+    },
+    {
+      "bundle": "herothumb_ex",
+      "resource": "assets/resources/_pack2/herothumb/576.png"
+    },
+    {
+      "bundle": "herospineupdate",
+      "resource": "assets/resources/_pack2/heroes/576/hero_576_skeletondata.asset"
+    },
+    {
+      "bundle": "herospineupdate",
+      "resource": "assets/resources/_pack2/heroes/576/cuts_576_skeletondata.asset"
+    },
+    {
+      "bundle": "herospineupdate",
+      "resource": "assets/resources/_pack2/heroes/576/skill_576_skeletondata.asset"
+    },
+    {
+      "bundle": "skillicon_ex",
+      "resource": "assets/resources/_pack2/skillicon/skill_588.png"
+    },
+    {
+      "bundle": "skillicon_ex",
+      "resource": "assets/resources/_pack2/skillicon/skill_589.png"
+    },
+    {
+      "bundle": "skillicon_ex",
+      "resource": "assets/resources/_pack2/skillicon/skill_590.png"
+    },
+    {
+      "bundle": "skillicon_ex",
+      "resource": "assets/resources/_pack2/skillicon/skill_591.png"
+    }
+  ]
+}

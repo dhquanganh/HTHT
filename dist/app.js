@@ -1,8 +1,21 @@
 'use strict';
 const canvas=document.querySelector('#game'), ctx=canvas.getContext('2d'), select=document.querySelector('#scene');
 const W=1136,H=640,images=new Map(),skeletonData=new Map(),fonts=new Map(),texts=new Map();
+let canvasScaleX=1,canvasScaleY=1,canvasPixelDensity=0;
+function resizeCanvas(){
+ const bounds=canvas.getBoundingClientRect(),density=Math.min(3,window.devicePixelRatio||1);
+ const width=Math.max(1,Math.round(bounds.width*density)),height=Math.max(1,Math.round(bounds.height*density));
+ if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height}
+ canvasScaleX=width/W;canvasScaleY=height/H;
+ canvasPixelDensity=window.devicePixelRatio||1;
+ ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+}
+function logicalCanvasMatrix(){const m=ctx.getTransform();return new DOMMatrix([m.a/canvasScaleX,m.b/canvasScaleY,m.c/canvasScaleX,m.d/canvasScaleY,m.e/canvasScaleX,m.f/canvasScaleY])}
+new ResizeObserver(resizeCanvas).observe(canvas);
+window.addEventListener('resize',resizeCanvas);
+resizeCanvas();
 let assets={},catalog=[],samples=[],localization={},scene=null,sceneId=13,paused=false,lastTime=0,time=0,hits=[],hover=null,revision=0,loadErrors=[];
-let cloneId=100000,scrollOffsets=new Map(),itemSamples=[],equipmentTemplate=null,selectedHero=null;
+let cloneId=100000,scrollOffsets=new Map(),worldScroll=0,worldDrag=null,worldDragged=false,itemSamples=[],equipmentTemplate=null,selectedHero=null;
 window.uiDebug={get scene(){return scene},get hits(){return hits},get errors(){return loadErrors}};
 const labels={0:'Khởi động',1:'Đăng nhập',5:'Giải đấu All Stars',6:'Tế đàn',7:'Tướng',8:'Đấu trường',9:'Chiến đấu',10:'Sự kiện',11:'Bang hội',12:'Túi đồ',13:'Màn hình chính',14:'Ghép tướng',15:'Thú cưng',16:'Danh sách tướng',17:'Vòng quay',18:'Thành phố',19:'Đổi tướng',20:'Đỉnh cao',21:'Lò rèn',22:'Chiến bang',23:'Hầm ngục',24:'Triệu hồi nguyên tố',25:'Đổi triệu hồi',26:'Chiêu mộ',27:'Thử thách',28:'Bản đồ',29:'Vòng quay cao cấp',30:'Phiêu lưu',31:'Quán rượu',33:'Đấu trường vô địch',34:'Chiến dịch',35:'Thiên đảo',37:'Thế giới',38:'Vùng đất phong ấn',40:'Tháp thử thách',41:'Thử thách II',45:'Shuriken',46:'Marineford',47:'Sabaody',48:'Sự kiện đặc biệt'};
 const primary=[13,1,18,7,12,26,24,25,6,14,19,21,37,28,34,8,5,33,11,22,10,31,23,27,41,35,38,40,15,20,46,47,45,48,30];
@@ -79,19 +92,21 @@ function prepareScene(data){
  }
  // A Mask's own graphic is optional in Unity. Its children still render normally.
  for(const n of allNodes(data)){const mask=get(n,'Mask');if((mask&&!mask.showGraphic)||n.name==='MaskSpineBorder')n.hideGraphic=true}
+ window.GameRuntime?.prepareScene(data);
  return data;
 }
 async function showScene(id){
+ if(window.GameRuntime)id=window.GameRuntime.beforeScene(id);
  const rev=++revision;document.querySelector('#loading').hidden=false;hover=null;sceneId=id;select.value=id;
  const item=catalog.find(x=>String(x.id)===String(id));if(!item){document.querySelector('#loading').hidden=true;return}
  const data=prepareScene(await fetch(item.path).then(r=>{if(!r.ok)throw Error('Không tải được màn hình');return r.json()}));
  const jobs=[];for(const n of data.roots)traverse(n,n=>{for(const c of n.components){if(c.asset)jobs.push(loadImage(c.asset));if(c.font)jobs.push(loadFont(c.font));if(c.skeleton)jobs.push(loadSkeleton(c))}});
  await Promise.all(jobs);if(rev!==revision)return;
- scene=data;scrollOffsets.clear();time=0;document.title=(labels[id]||item.name)+' · Hải Tặc Phục Sinh';document.querySelector('#loading').hidden=true;
+ scene=data;scrollOffsets.clear();worldScroll=0;time=0;await window.GameRuntime?.onScene(data);document.title=(labels[id]||item.name)+' · Hải Tặc Phục Sinh';document.querySelector('#loading').hidden=true;
  if(location.hash!==`#${id}`)history.replaceState(null,'',`#${id}`);
  render(0);
 }
-function active(n){if(sceneId===1){if(['PanelInitData','PanelLoadingAsset','BoxRegister','BoxLogin','PanelBlock'].includes(n.name))return false;if(n.name==='BoxServers')return true;}return n.active}
+function active(n){if(sceneId===1){if(['PanelInitData','PanelLoadingAsset','BoxRegister','BoxLogin','PanelBlock'].includes(n.name))return false;if(n.name==='BoxServers')return !window.GameRuntime;}return n.active}
 function rect(n,pw,ph,override){
  const t=n.transform,amin=t.m_AnchorMin||{x:.5,y:.5},amax=t.m_AnchorMax||amin,p=t.m_Pivot||{x:.5,y:.5},a=t.m_AnchoredPosition||{x:0,y:0},sz=t.m_SizeDelta||{x:100,y:100};
  const w=pw*(amax.x-amin.x)+sz.x,h=ph*(amax.y-amin.y)+sz.y;
@@ -155,37 +170,43 @@ function drawNode(n,pw,ph,override){
  ctx.save();ctx.translate(r.x+p.x*r.w,r.y+(1-p.y)*r.h);const angle=-2*Math.atan2(q.z,q.w);if(angle)ctx.rotate(angle);ctx.scale(s.x,s.y);ctx.translate(-p.x*r.w,-(1-p.y)*r.h);
  const group=get(n,'CanvasGroup');if(group)ctx.globalAlpha*=group.alpha;
  for(const c of n.components){if((c.type==='Image'||c.type==='RawImage')&&!n.hideGraphic)drawImage(c,r.w,r.h);if(c.type==='Text')drawText(c,n,r.w,r.h);if(c.type==='SkeletonGraphic'&&c.instance){ctx.save();ctx.translate(p.x*r.w,(1-p.y)*r.h);ctx.scale(1,-1);try{spineRenderer.draw(c.instance)}catch(e){if(!c.renderError){loadErrors.push(c.skeleton.name+': '+e.message);c.renderError=true}}ctx.restore()}}
- if(get(n,'Button')&&r.w>0&&r.h>0){const m=ctx.getTransform();hits.push({name:n.name,node:n,matrix:m,inverse:m.inverse(),w:r.w,h:r.h});if(hover===n.id){ctx.save();ctx.globalAlpha=.10;ctx.fillStyle='#fff';ctx.fillRect(0,0,r.w,r.h);ctx.restore()}}
+ if(get(n,'Button')&&r.w>0&&r.h>0){const m=logicalCanvasMatrix();hits.push({name:n.name,node:n,matrix:m,inverse:m.inverse(),w:r.w,h:r.h});if(hover===n.id&&!worldContent()&&Number(sceneId)!==24){ctx.save();ctx.globalAlpha=.10;ctx.fillStyle='#fff';ctx.fillRect(0,0,r.w,r.h);ctx.restore()}}
  if(get(n,'Mask')||get(n,'RectMask2D')){ctx.beginPath();ctx.rect(0,0,r.w,r.h);ctx.clip()}
- const overrides=childRects(n,r.w,r.h);if(n.name==='Content')ctx.translate(0,-(scrollOffsets.get(n.id)||0));for(const ch of n.children)drawNode(ch,r.w,r.h,overrides.get(ch.id));ctx.restore();
+ const overrides=childRects(n,r.w,r.h);if(n.name==='Content')ctx.translate(n===worldContent()?-worldScroll:0,-(scrollOffsets.get(n.id)||0));for(const ch of n.children)drawNode(ch,r.w,r.h,overrides.get(ch.id));ctx.restore();
 }
 function render(dt){
- if(!scene)return;ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,W,H);ctx.fillStyle='#0a2c41';ctx.fillRect(0,0,W,H);hits=[];
+ if(!scene)return;ctx.setTransform(canvasScaleX,0,0,canvasScaleY,0,0);ctx.clearRect(0,0,W,H);ctx.fillStyle='#0a2c41';ctx.fillRect(0,0,W,H);hits=[];
+ if(window.GameRuntime?.render(ctx,dt))return;
  for(const root of scene.roots)traverse(root,n=>{for(const c of n.components){if(c.instance&&!paused){c.state.update(dt);c.state.apply(c.instance);c.instance.updateWorldTransform()}}});
  const roots=scene.roots.filter(n=>get(n,'Canvas')).sort((a,b)=>(get(a,'Canvas').sorting||0)-(get(b,'Canvas').sorting||0));
  for(const root of roots){if(!active(root))continue;const overrides=childRects(root,W,H);for(const ch of root.children)drawNode(ch,W,H,overrides.get(ch.id))}
  if(scene.prefab){ctx.fillStyle='#08121ddd';ctx.fillRect(0,0,W,H);for(const root of scene.roots){root.active=true;drawNode(root,W,H)}}
 }
-function frame(now){const dt=Math.min(.05,Math.max(0,(now-lastTime)/1000));lastTime=now;if(!paused)time+=dt;render(dt);requestAnimationFrame(frame)}
+function frame(now){requestAnimationFrame(frame);if(canvasPixelDensity!==(window.devicePixelRatio||1))resizeCanvas();const dt=Math.min(.05,Math.max(0,(now-lastTime)/1000));lastTime=now;if(!paused)time+=dt;render(dt)}
+function worldContent(){return allNodes(scene).find(n=>n.name==='ScrollWorld')?.children[0]?.children[0]}
+function scrollWorld(value){const content=worldContent();if(content)worldScroll=Math.max(0,Math.min(content.transform.m_SizeDelta.x-W,value))}
 function point(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*W,y:(e.clientY-r.top)/r.height*H}}
 function findHit(p){return [...hits].reverse().find(h=>{const q=new DOMPoint(p.x,p.y).matrixTransform(h.inverse);return q.x>=0&&q.y>=0&&q.x<h.w&&q.y<h.h})}
-canvas.addEventListener('pointermove',e=>{const h=findHit(point(e));hover=h?.node.id;canvas.style.cursor=h?'pointer':'default'});
+canvas.addEventListener('pointerdown',e=>{worldDragged=false;if(worldContent()&&e.button===0){worldDrag={x:point(e).x,left:worldScroll};canvas.setPointerCapture(e.pointerId)}});
+canvas.addEventListener('pointerup',()=>worldDrag=null);canvas.addEventListener('pointercancel',()=>worldDrag=null);
+canvas.addEventListener('pointermove',e=>{if(worldDrag){const moved=worldDrag.x-point(e).x;if(Math.abs(moved)>6)worldDragged=true;if(worldDragged)scrollWorld(worldDrag.left+moved)}const h=findHit(point(e));hover=h?.node.id;canvas.style.cursor=h?'pointer':'default'});
 canvas.addEventListener('pointerleave',()=>hover=null);
-canvas.addEventListener('wheel',e=>{if(!scene)return;const nodes=allNodes(scene).filter(n=>n.name==='Content'&&n.children.length);if(nodes.length){e.preventDefault();for(const n of nodes){const max=Math.max(0,n.transform.m_SizeDelta.y-500);scrollOffsets.set(n.id,Math.max(0,Math.min(max,(scrollOffsets.get(n.id)||0)+e.deltaY*.7)))}}},{passive:false});
-canvas.addEventListener('click',e=>{const hit=findHit(point(e));if(!hit)return;if(hit.node.hero){selectedHero=hit.node.hero;showScene(1156);return}let route=routes[hit.name];if(route===undefined){const name=hit.name.toLowerCase();for(const [keyword,id] of [['summon',26],['hero',7],['guild',11],['bag',12],['campaign',28],['arena',8],['tarven',31],['forge',21],['fuse',14],['altar',6],['world',37],['tower',40],['back',13]]){if(name.includes(keyword)){route=id;break}}}if(route!==undefined){showScene(route)}else toast('Bản xem giao diện · '+(hit.node.children.flatMap(n=>n.components.filter(c=>c.type==='Text').map(c=>c.text)).find(Boolean)||hit.name))});
+canvas.addEventListener('wheel',e=>{if(!scene)return;if(worldContent()){e.preventDefault();scrollWorld(worldScroll+e.deltaX+e.deltaY);return}const nodes=allNodes(scene).filter(n=>n.name==='Content'&&n.children.length);if(nodes.length){e.preventDefault();for(const n of nodes){const max=Math.max(0,n.transform.m_SizeDelta.y-500);scrollOffsets.set(n.id,Math.max(0,Math.min(max,(scrollOffsets.get(n.id)||0)+e.deltaY*.7)))}}},{passive:false});
+canvas.addEventListener('click',e=>{if(worldDragged){worldDragged=false;return}const hit=findHit(point(e));if(!hit)return;if(window.GameRuntime?.handleHit(hit))return;if(hit.node.hero){selectedHero=hit.node.hero;showScene(1156);return}let route=routes[hit.name];if(route===undefined){const name=hit.name.toLowerCase();for(const [keyword,id] of [['summon',26],['hero',7],['guild',11],['bag',12],['campaign',28],['arena',8],['tarven',31],['forge',21],['fuse',14],['altar',6],['world',37],['tower',40],['back',13]]){if(name.includes(keyword)){route=id;break}}}if(route!==undefined){showScene(route)}else toast('Bản xem giao diện · '+(hit.node.children.flatMap(n=>n.components.filter(c=>c.type==='Text').map(c=>c.text)).find(Boolean)||hit.name))});
 select.addEventListener('change',()=>showScene(Number(select.value)));
 function step(delta){const i=catalog.findIndex(x=>x.id===Number(sceneId));showScene(catalog[(i+delta+catalog.length)%catalog.length].id)}
 document.querySelector('#previous').onclick=()=>step(-1);document.querySelector('#next').onclick=()=>step(1);
 document.querySelector('#pause').onclick=()=>{paused=!paused;document.querySelector('#pause').textContent=paused?'Chạy chuyển động':'Dừng chuyển động'};
 document.querySelector('#fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{toast('Trình duyệt không hỗ trợ toàn màn hình')}};
 document.querySelector('#hide').onclick=()=>document.body.classList.add('clean');document.querySelector('#show').onclick=()=>document.body.classList.remove('clean');
-addEventListener('keydown',e=>{if(e.target.tagName==='SELECT')return;if(e.key.toLowerCase()==='h')document.body.classList.toggle('clean');if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+addEventListener('keydown',e=>{if(['SELECT','INPUT','TEXTAREA'].includes(e.target.tagName)||window.GameRuntime)return;if(e.key.toLowerCase()==='h')document.body.classList.toggle('clean');if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
 addEventListener('hashchange',()=>{const id=Number(location.hash.slice(1));if(catalog.some(x=>x.id===id))showScene(id)});
 async function init(){try{
  let template;[assets,catalog,samples,localization,itemSamples,template]=await Promise.all(['assets.json','catalog.json','samples.json','localization.json','items.json','scenes/1017.json'].map(url=>fetch(url).then(r=>r.json())));equipmentTemplate=template.roots[0];
  catalog=catalog.filter(x=>!x.prefab||/^(Popup|Panel|GG|TapPopup)/.test(x.name));catalog.sort((a,b)=>{const ia=primary.indexOf(a.id),ib=primary.indexOf(b.id);return(ia<0?100+a.id:ia)-(ib<0?100+b.id:ib)});
  const main=document.createElement('optgroup'),other=document.createElement('optgroup'),popups=document.createElement('optgroup');main.label='Màn hình game';other.label='Scene khác trong APK';popups.label='Cửa sổ & bảng giao diện';select.append(main,popups,other);
  for(const item of catalog){const o=document.createElement('option');o.value=item.id;o.textContent=labels[item.id]||item.name;(item.prefab?popups:primary.includes(item.id)?main:other).append(o)}
- const requested=location.hash?Number(location.hash.slice(1)):13;await showScene(catalog.some(x=>x.id===requested)?requested:13);requestAnimationFrame(frame)
+ const boot=await window.GameRuntime?.boot();const requested=boot?.sceneId??(location.hash?Number(location.hash.slice(1)):13);await showScene(catalog.some(x=>x.id===requested)?requested:13);requestAnimationFrame(frame)
  }catch(e){document.querySelector('#loading').textContent='Không tải được giao diện. Hãy tải lại trang.';loadErrors.push(e.message);console.error(e)}}
+window.GameView={get worldScroll(){return worldScroll},showScene,getScene:()=>scene,getSceneId:()=>Number(sceneId),allNodes,get,setText,setAsset,setTopLeft,findAsset,loadImage,readyImage,loadSkeleton,assets:()=>assets,samples:()=>samples,toast,ctx,canvas,cloneNode,drawText,get paused(){return paused},set paused(value){paused=value}};
 init();

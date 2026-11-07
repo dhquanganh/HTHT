@@ -1,0 +1,825 @@
+
+Hero_147.png
+size: 2036,588
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Sengoku_damage
+  rotate: true
+  xy: 192, 4
+  size: 140, 146
+  orig: 141, 147
+  offset: 1, 0
+  index: -1
+Sengoku_squat
+  rotate: false
+  xy: 1080, 72
+  size: 139, 135
+  orig: 140, 136
+  offset: 1, 0
+  index: -1
+Sengoku_standby_01
+  rotate: true
+  xy: 691, 316
+  size: 116, 188
+  orig: 117, 189
+  offset: 1, 0
+  index: -1
+Sengoku_standby_02
+  rotate: true
+  xy: 691, 194
+  size: 120, 187
+  orig: 121, 188
+  offset: 1, 0
+  index: -1
+Sengoku_win_01
+  rotate: true
+  xy: 494, 144
+  size: 108, 187
+  orig: 109, 188
+  offset: 1, 0
+  index: -1
+Sengoku_win_02
+  rotate: true
+  xy: 494, 31
+  size: 111, 187
+  orig: 112, 188
+  offset: 1, 0
+  index: -1
+Sengoku_win_03
+  rotate: true
+  xy: 892, 351
+  size: 105, 183
+  orig: 106, 184
+  offset: 1, 0
+  index: -1
+Sengoku_win_04
+  rotate: true
+  xy: 1447, 315
+  size: 105, 180
+  orig: 106, 181
+  offset: 1, 0
+  index: -1
+Sengoku_win_05
+  rotate: true
+  xy: 1077, 323
+  size: 105, 183
+  orig: 106, 184
+  offset: 1, 0
+  index: -1
+Sengoku_win_06
+  rotate: true
+  xy: 1262, 318
+  size: 105, 183
+  orig: 106, 184
+  offset: 1, 0
+  index: -1
+arm_L_04
+  rotate: true
+  xy: 1629, 315
+  size: 14, 30
+  orig: 15, 31
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 1505, 2
+  size: 18, 32
+  orig: 19, 33
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 880, 165
+  size: 53, 82
+  orig: 54, 83
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 1838, 2
+  size: 43, 23
+  orig: 44, 24
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 1948, 8
+  size: 30, 26
+  orig: 31, 27
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 1077, 430
+  size: 26, 24
+  orig: 27, 25
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: false
+  xy: 1569, 2
+  size: 28, 19
+  orig: 29, 20
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 1053, 179
+  size: 28, 24
+  orig: 29, 25
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 1629, 331
+  size: 47, 119
+  orig: 48, 120
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 1719, 25
+  size: 30, 50
+  orig: 31, 51
+  offset: 1, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 2024, 242
+  size: 10, 37
+  orig: 11, 50
+  offset: 1, 12
+  index: -1
+cloth_09
+  rotate: false
+  xy: 2010, 483
+  size: 24, 103
+  orig: 25, 104
+  offset: 1, 0
+  index: -1
+cloth_10
+  rotate: false
+  xy: 1685, 315
+  size: 15, 14
+  orig: 16, 15
+  offset: 1, 0
+  index: -1
+cloth_11
+  rotate: true
+  xy: 486, 2
+  size: 27, 58
+  orig: 28, 59
+  offset: 1, 0
+  index: -1
+cloth_12
+  rotate: false
+  xy: 2024, 214
+  size: 10, 26
+  orig: 11, 27
+  offset: 1, 0
+  index: -1
+cloth_13
+  rotate: false
+  xy: 1943, 114
+  size: 80, 71
+  orig: 81, 72
+  offset: 1, 0
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 1059, 323
+  size: 13, 26
+  orig: 14, 27
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: false
+  xy: 1629, 391
+  size: 16, 29
+  orig: 17, 30
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 862, 165
+  size: 27, 16
+  orig: 28, 17
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 1966, 50
+  size: 18, 20
+  orig: 19, 21
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 1926, 114
+  size: 15, 16
+  orig: 16, 20
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: false
+  xy: 1752, 172
+  size: 17, 20
+  orig: 18, 21
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 1569, 23
+  size: 61, 48
+  orig: 62, 49
+  offset: 1, 0
+  index: -1
+head_05
+  rotate: false
+  xy: 1632, 23
+  size: 61, 48
+  orig: 62, 49
+  offset: 1, 0
+  index: -1
+sengoku_beat_01
+  rotate: true
+  xy: 1828, 435
+  size: 151, 180
+  orig: 152, 181
+  offset: 1, 0
+  index: -1
+sengoku_beat_02
+  rotate: true
+  xy: 1289, 425
+  size: 161, 179
+  orig: 162, 180
+  offset: 1, 0
+  index: -1
+sengoku_beat_03
+  rotate: true
+  xy: 683, 43
+  size: 149, 177
+  orig: 150, 178
+  offset: 1, 0
+  index: -1
+sengoku_beat_04
+  rotate: false
+  xy: 511, 403
+  size: 178, 183
+  orig: 179, 184
+  offset: 1, 0
+  index: -1
+sengoku_beat_05
+  rotate: true
+  xy: 1106, 430
+  size: 156, 181
+  orig: 157, 182
+  offset: 1, 0
+  index: -1
+sengoku_skill1_02
+  rotate: false
+  xy: 511, 254
+  size: 178, 147
+  orig: 179, 148
+  offset: 1, 0
+  index: -1
+sengoku_skill1_03
+  rotate: false
+  xy: 1408, 165
+  size: 170, 148
+  orig: 171, 149
+  offset: 1, 0
+  index: -1
+sengoku_skill1_04_ef
+  rotate: false
+  xy: 892, 458
+  size: 212, 128
+  orig: 213, 129
+  offset: 1, 0
+  index: -1
+sengoku_skill1_401
+  rotate: false
+  xy: 1362, 76
+  size: 140, 87
+  orig: 141, 94
+  offset: 1, 2
+  index: -1
+sengoku_skill1_501
+  rotate: false
+  xy: 1579, 73
+  size: 138, 84
+  orig: 139, 85
+  offset: 1, 0
+  index: -1
+sengoku_skill1_502
+  rotate: false
+  xy: 723, 6
+  size: 57, 35
+  orig: 58, 36
+  offset: 1, 0
+  index: -1
+sengoku_skill1_503
+  rotate: false
+  xy: 1771, 40
+  size: 65, 50
+  orig: 66, 51
+  offset: 1, 0
+  index: -1
+sengoku_skill1_504
+  rotate: false
+  xy: 1926, 72
+  size: 48, 40
+  orig: 49, 41
+  offset: 1, 0
+  index: -1
+sengoku_skill1_505
+  rotate: true
+  xy: 1505, 22
+  size: 54, 62
+  orig: 55, 63
+  offset: 1, 0
+  index: -1
+sengoku_skill1_506
+  rotate: false
+  xy: 1960, 347
+  size: 35, 33
+  orig: 36, 34
+  offset: 1, 0
+  index: -1
+sengoku_skill1_601
+  rotate: false
+  xy: 1146, 4
+  size: 129, 66
+  orig: 130, 71
+  offset: 1, 2
+  index: -1
+sengoku_skill1_701
+  rotate: false
+  xy: 1221, 72
+  size: 139, 98
+  orig: 141, 108
+  offset: 1, 4
+  index: -1
+sengoku_skill2_01
+  rotate: true
+  xy: 1059, 209
+  size: 112, 174
+  orig: 113, 175
+  offset: 1, 0
+  index: -1
+sengoku_skill2_07_ef02
+  rotate: true
+  xy: 1851, 160
+  size: 83, 90
+  orig: 85, 91
+  offset: 2, 0
+  index: -1
+sengoku_skill2_08_ef02
+  rotate: false
+  xy: 2, 121
+  size: 187, 211
+  orig: 188, 212
+  offset: 1, 0
+  index: -1
+sengoku_skill2_09
+  rotate: false
+  xy: 2, 334
+  size: 319, 252
+  orig: 320, 253
+  offset: 1, 0
+  index: -1
+sengoku_skill2_12
+  rotate: false
+  xy: 323, 381
+  size: 186, 205
+  orig: 187, 206
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1501
+  rotate: false
+  xy: 782, 3
+  size: 47, 38
+  orig: 48, 39
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1502
+  rotate: true
+  xy: 1828, 347
+  size: 86, 130
+  orig: 87, 131
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1503
+  rotate: false
+  xy: 1504, 78
+  size: 73, 85
+  orig: 74, 86
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1504
+  rotate: false
+  xy: 1277, 2
+  size: 56, 68
+  orig: 57, 69
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1505
+  rotate: true
+  xy: 1750, 324
+  size: 54, 36
+  orig: 55, 37
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1506
+  rotate: true
+  xy: 1788, 324
+  size: 107, 38
+  orig: 108, 39
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1507
+  rotate: false
+  xy: 1647, 380
+  size: 139, 51
+  orig: 140, 52
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1508
+  rotate: false
+  xy: 1851, 245
+  size: 84, 100
+  orig: 85, 101
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1509
+  rotate: false
+  xy: 2010, 441
+  size: 24, 40
+  orig: 25, 41
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1510
+  rotate: false
+  xy: 1838, 47
+  size: 78, 30
+  orig: 79, 31
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1511
+  rotate: true
+  xy: 964, 178
+  size: 40, 87
+  orig: 41, 88
+  offset: 1, 0
+  index: -1
+sengoku_skill2_1512
+  rotate: true
+  xy: 862, 2
+  size: 161, 94
+  orig: 162, 95
+  offset: 1, 0
+  index: -1
+sengoku_skill2_206
+  rotate: false
+  xy: 1695, 19
+  size: 22, 52
+  orig: 23, 53
+  offset: 1, 0
+  index: -1
+sengoku_skill2_207
+  rotate: true
+  xy: 650, 7
+  size: 22, 31
+  orig: 23, 32
+  offset: 1, 0
+  index: -1
+sengoku_skill2_208
+  rotate: true
+  xy: 1863, 20
+  size: 25, 44
+  orig: 26, 45
+  offset: 1, 0
+  index: -1
+sengoku_skill2_801
+  rotate: true
+  xy: 546, 2
+  size: 27, 41
+  orig: 28, 42
+  offset: 1, 0
+  index: -1
+sengoku_skill2_802
+  rotate: false
+  xy: 1976, 75
+  size: 40, 37
+  orig: 41, 38
+  offset: 1, 0
+  index: -1
+sengoku_skill2_803
+  rotate: false
+  xy: 1335, 7
+  size: 45, 63
+  orig: 46, 64
+  offset: 1, 0
+  index: -1
+sengoku_skill2_804
+  rotate: false
+  xy: 1937, 281
+  size: 97, 64
+  orig: 106, 65
+  offset: 1, 0
+  index: -1
+sengoku_skill2_805
+  rotate: true
+  xy: 589, 4
+  size: 25, 59
+  orig: 26, 60
+  offset: 1, 0
+  index: -1
+sengoku_skill2_806
+  rotate: false
+  xy: 1382, 15
+  size: 61, 59
+  orig: 62, 60
+  offset: 1, 0
+  index: -1
+sengoku_skill2_807
+  rotate: false
+  xy: 683, 2
+  size: 38, 39
+  orig: 39, 40
+  offset: 1, 0
+  index: -1
+sengoku_skill2_808
+  rotate: true
+  xy: 1752, 194
+  size: 128, 97
+  orig: 129, 98
+  offset: 1, 0
+  index: -1
+sengoku_skill3_01
+  rotate: true
+  xy: 2, 2
+  size: 117, 188
+  orig: 118, 189
+  offset: 1, 0
+  index: -1
+sengoku_skill3_02
+  rotate: true
+  xy: 1470, 422
+  size: 164, 175
+  orig: 165, 176
+  offset: 1, 0
+  index: -1
+sengoku_skill3_03
+  rotate: false
+  xy: 1580, 159
+  size: 170, 154
+  orig: 171, 155
+  offset: 1, 0
+  index: -1
+sengoku_skill3_03_ef
+  rotate: false
+  xy: 341, 84
+  size: 151, 114
+  orig: 152, 115
+  offset: 1, 0
+  index: -1
+sengoku_skill3_04
+  rotate: true
+  xy: 1235, 172
+  size: 144, 171
+  orig: 145, 172
+  offset: 1, 0
+  index: -1
+sengoku_skill3_04_ef
+  rotate: false
+  xy: 1719, 57
+  size: 50, 100
+  orig: 51, 131
+  offset: 1, 0
+  index: -1
+sengoku_skill3_05
+  rotate: true
+  xy: 958, 4
+  size: 159, 120
+  orig: 160, 121
+  offset: 1, 0
+  index: -1
+sengoku_skill3_06
+  rotate: true
+  xy: 1647, 433
+  size: 153, 179
+  orig: 154, 180
+  offset: 1, 0
+  index: -1
+sengoku_skill3_07
+  rotate: false
+  xy: 191, 146
+  size: 148, 186
+  orig: 149, 187
+  offset: 1, 0
+  index: -1
+sengoku_skill3_08
+  rotate: false
+  xy: 691, 434
+  size: 199, 152
+  orig: 200, 153
+  offset: 1, 0
+  index: -1
+sengoku_skill3_09
+  rotate: true
+  xy: 341, 200
+  size: 179, 151
+  orig: 180, 152
+  offset: 1, 0
+  index: -1
+sengoku_skill3_10
+  rotate: true
+  xy: 881, 220
+  size: 129, 176
+  orig: 130, 177
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1101
+  rotate: true
+  xy: 831, 3
+  size: 38, 20
+  orig: 39, 21
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1102
+  rotate: false
+  xy: 1943, 187
+  size: 79, 92
+  orig: 80, 93
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1102a
+  rotate: true
+  xy: 1843, 79
+  size: 79, 81
+  orig: 80, 93
+  offset: 1, 11
+  index: -1
+sengoku_skill3_1103
+  rotate: true
+  xy: 1960, 382
+  size: 51, 74
+  orig: 52, 75
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1104
+  rotate: false
+  xy: 323, 336
+  size: 16, 43
+  orig: 17, 44
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1105
+  rotate: true
+  xy: 494, 349
+  size: 30, 15
+  orig: 31, 16
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1106
+  rotate: true
+  xy: 494, 324
+  size: 23, 15
+  orig: 24, 16
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1107
+  rotate: true
+  xy: 494, 299
+  size: 23, 15
+  orig: 24, 16
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1108
+  rotate: true
+  xy: 1771, 92
+  size: 100, 70
+  orig: 101, 71
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1201
+  rotate: false
+  xy: 1918, 40
+  size: 46, 30
+  orig: 47, 31
+  offset: 1, 0
+  index: -1
+sengoku_skill3_12011
+  rotate: false
+  xy: 1719, 2
+  size: 26, 21
+  orig: 27, 22
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1202
+  rotate: true
+  xy: 494, 270
+  size: 27, 13
+  orig: 28, 14
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1203
+  rotate: true
+  xy: 1997, 349
+  size: 31, 37
+  orig: 32, 38
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1203a
+  rotate: true
+  xy: 1909, 7
+  size: 31, 37
+  orig: 32, 38
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1204
+  rotate: false
+  xy: 1775, 3
+  size: 38, 35
+  orig: 43, 38
+  offset: 1, 2
+  index: -1
+sengoku_skill3_1205
+  rotate: false
+  xy: 1445, 15
+  size: 58, 59
+  orig: 59, 60
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1206
+  rotate: false
+  xy: 1815, 8
+  size: 20, 30
+  orig: 31, 33
+  offset: 3, 0
+  index: -1
+sengoku_skill3_1207
+  rotate: true
+  xy: 1626, 5
+  size: 16, 49
+  orig: 17, 50
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1208
+  rotate: false
+  xy: 1080, 2
+  size: 64, 68
+  orig: 65, 69
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1209
+  rotate: false
+  xy: 1539, 2
+  size: 28, 18
+  orig: 29, 19
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1210
+  rotate: false
+  xy: 1828, 325
+  size: 21, 20
+  orig: 22, 21
+  offset: 1, 0
+  index: -1
+sengoku_skill3_1212
+  rotate: false
+  xy: 340, 2
+  size: 144, 80
+  orig: 145, 81
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 1661, 315
+  size: 14, 22
+  orig: 15, 23
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: true
+  xy: 1599, 2
+  size: 19, 25
+  orig: 20, 26
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 1926, 132
+  size: 15, 26
+  orig: 17, 27
+  offset: 2, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 1747, 2
+  size: 21, 26
+  orig: 22, 27
+  offset: 1, 0
+  index: -1

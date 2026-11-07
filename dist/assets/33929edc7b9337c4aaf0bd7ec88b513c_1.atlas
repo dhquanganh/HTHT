@@ -1,0 +1,48 @@
+
+Hit_170.png
+size: 288,280
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Fx/Hit_2/0
+  rotate: false
+  xy: 144, 57
+  size: 104, 93
+  orig: 150, 153
+  offset: 19, 22
+  index: -1
+Fx/Hit_2/1
+  rotate: false
+  xy: 144, 152
+  size: 125, 126
+  orig: 150, 153
+  offset: 12, 11
+  index: -1
+Fx/Hit_2/2
+  rotate: false
+  xy: 2, 2
+  size: 137, 133
+  orig: 150, 153
+  offset: 7, 7
+  index: -1
+Fx/Hit_2/3
+  rotate: false
+  xy: 2, 137
+  size: 140, 141
+  orig: 150, 153
+  offset: 6, 4
+  index: -1
+Fx/Text/Out_light_text
+  rotate: false
+  xy: 141, 4
+  size: 91, 51
+  orig: 92, 53
+  offset: 1, 1
+  index: -1
+Fx/Text/Text
+  rotate: true
+  xy: 250, 73
+  size: 77, 36
+  orig: 77, 36
+  offset: 0, 0
+  index: -1

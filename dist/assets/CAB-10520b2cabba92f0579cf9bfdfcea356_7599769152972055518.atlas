@@ -1,0 +1,349 @@
+
+skill_vivi.png
+size: 1804,632
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+New folder/Water_01
+  rotate: true
+  xy: 1264, 156
+  size: 236, 32
+  orig: 250, 43
+  offset: 10, 3
+  index: -1
+New folder/Water_02
+  rotate: true
+  xy: 1162, 153
+  size: 237, 32
+  orig: 250, 43
+  offset: 10, 3
+  index: -1
+New folder/Water_03
+  rotate: true
+  xy: 1094, 151
+  size: 238, 33
+  orig: 250, 43
+  offset: 9, 2
+  index: -1
+New folder/Water_04
+  rotate: true
+  xy: 1126, 392
+  size: 238, 33
+  orig: 250, 43
+  offset: 9, 2
+  index: -1
+New folder/Water_05
+  rotate: false
+  xy: 1438, 464
+  size: 235, 32
+  orig: 250, 43
+  offset: 10, 2
+  index: -1
+New folder/Water_06
+  rotate: false
+  xy: 1438, 531
+  size: 236, 31
+  orig: 250, 43
+  offset: 10, 3
+  index: -1
+New folder/Water_07
+  rotate: false
+  xy: 1438, 330
+  size: 234, 32
+  orig: 250, 43
+  offset: 11, 2
+  index: -1
+New folder/Water_08
+  rotate: false
+  xy: 1438, 498
+  size: 236, 31
+  orig: 250, 43
+  offset: 10, 3
+  index: -1
+New folder/Water_09
+  rotate: true
+  xy: 1298, 394
+  size: 236, 32
+  orig: 250, 43
+  offset: 10, 2
+  index: -1
+New folder/Water_10
+  rotate: true
+  xy: 1094, 391
+  size: 239, 30
+  orig: 250, 43
+  offset: 8, 3
+  index: -1
+New folder/Water_11
+  rotate: true
+  xy: 1298, 156
+  size: 236, 32
+  orig: 250, 43
+  offset: 10, 2
+  index: -1
+New folder/Water_12
+  rotate: true
+  xy: 1227, 394
+  size: 236, 34
+  orig: 250, 43
+  offset: 10, 2
+  index: -1
+New folder/Water_13
+  rotate: false
+  xy: 1438, 364
+  size: 234, 33
+  orig: 250, 43
+  offset: 10, 3
+  index: -1
+New folder/Water_14
+  rotate: true
+  xy: 993, 390
+  size: 240, 32
+  orig: 250, 43
+  offset: 8, 2
+  index: -1
+New folder/Water_15
+  rotate: false
+  xy: 1438, 598
+  size: 236, 32
+  orig: 250, 43
+  offset: 10, 2
+  index: -1
+New folder/Water_16
+  rotate: true
+  xy: 1060, 391
+  size: 239, 32
+  orig: 250, 43
+  offset: 8, 1
+  index: -1
+New folder/Water_17
+  rotate: false
+  xy: 1438, 431
+  size: 235, 31
+  orig: 250, 43
+  offset: 9, 3
+  index: -1
+New folder/Water_18
+  rotate: true
+  xy: 1060, 150
+  size: 239, 32
+  orig: 250, 43
+  offset: 8, 3
+  index: -1
+New folder/Water_19
+  rotate: true
+  xy: 1027, 390
+  size: 240, 31
+  orig: 250, 43
+  offset: 7, 3
+  index: -1
+New folder/Water_20
+  rotate: true
+  xy: 1193, 393
+  size: 237, 32
+  orig: 250, 43
+  offset: 9, 2
+  index: -1
+New folder/Water_21
+  rotate: false
+  xy: 1438, 399
+  size: 235, 30
+  orig: 250, 43
+  offset: 9, 3
+  index: -1
+New folder/Water_22
+  rotate: true
+  xy: 1228, 156
+  size: 236, 34
+  orig: 250, 43
+  offset: 10, 3
+  index: -1
+New folder/Water_23
+  rotate: true
+  xy: 993, 148
+  size: 240, 32
+  orig: 250, 43
+  offset: 8, 2
+  index: -1
+New folder/Water_24
+  rotate: true
+  xy: 1027, 148
+  size: 240, 31
+  orig: 250, 43
+  offset: 8, 2
+  index: -1
+New folder/Water_25
+  rotate: true
+  xy: 1161, 392
+  size: 238, 30
+  orig: 250, 43
+  offset: 9, 3
+  index: -1
+New folder/Water_26
+  rotate: false
+  xy: 1438, 564
+  size: 236, 32
+  orig: 250, 43
+  offset: 10, 2
+  index: -1
+New folder/Water_27
+  rotate: true
+  xy: 1129, 152
+  size: 238, 31
+  orig: 250, 43
+  offset: 9, 2
+  index: -1
+New folder/Water_28
+  rotate: true
+  xy: 1263, 394
+  size: 236, 33
+  orig: 250, 43
+  offset: 10, 3
+  index: -1
+New folder/Water_29
+  rotate: true
+  xy: 1196, 154
+  size: 237, 30
+  orig: 250, 43
+  offset: 9, 3
+  index: -1
+Untitled-1
+  rotate: false
+  xy: 2, 8
+  size: 989, 622
+  orig: 989, 622
+  offset: 0, 0
+  index: -1
+waterc01
+  rotate: false
+  xy: 1332, 334
+  size: 98, 118
+  orig: 152, 200
+  offset: 30, 19
+  index: -1
+waterc02
+  rotate: false
+  xy: 1332, 490
+  size: 102, 140
+  orig: 152, 200
+  offset: 27, 17
+  index: -1
+waterc03
+  rotate: false
+  xy: 1323, 2
+  size: 113, 152
+  orig: 152, 200
+  offset: 22, 17
+  index: -1
+waterc04
+  rotate: false
+  xy: 1674, 170
+  size: 118, 173
+  orig: 152, 200
+  offset: 18, 16
+  index: -1
+waterc05
+  rotate: true
+  xy: 1467, 213
+  size: 115, 178
+  orig: 152, 200
+  offset: 20, 14
+  index: -1
+waterc06
+  rotate: false
+  xy: 1676, 345
+  size: 120, 177
+  orig: 152, 200
+  offset: 17, 13
+  index: -1
+waterc07
+  rotate: false
+  xy: 1534, 35
+  size: 130, 176
+  orig: 152, 200
+  offset: 11, 9
+  index: -1
+waterc08
+  rotate: false
+  xy: 1332, 158
+  size: 133, 170
+  orig: 152, 200
+  offset: 11, 6
+  index: -1
+waterc09
+  rotate: true
+  xy: 1163, 11
+  size: 140, 158
+  orig: 152, 200
+  offset: 5, 5
+  index: -1
+waterc10
+  rotate: true
+  xy: 993, 2
+  size: 144, 52
+  orig: 152, 200
+  offset: 5, 4
+  index: -1
+watere02
+  rotate: false
+  xy: 1467, 158
+  size: 65, 53
+  orig: 150, 63
+  offset: 35, 1
+  index: -1
+watere04
+  rotate: false
+  xy: 1666, 110
+  size: 109, 58
+  orig: 150, 63
+  offset: 15, 1
+  index: -1
+watere06
+  rotate: false
+  xy: 1676, 524
+  size: 123, 58
+  orig: 150, 63
+  offset: 12, 1
+  index: -1
+watere08
+  rotate: true
+  xy: 1438, 20
+  size: 136, 60
+  orig: 150, 63
+  offset: 5, 1
+  index: -1
+watere10
+  rotate: true
+  xy: 1047, 4
+  size: 142, 58
+  orig: 150, 63
+  offset: 2, 0
+  index: -1
+watere12
+  rotate: true
+  xy: 1107, 2
+  size: 147, 54
+  orig: 150, 63
+  offset: 0, 1
+  index: -1
+watere14
+  rotate: false
+  xy: 1676, 584
+  size: 125, 46
+  orig: 150, 63
+  offset: 15, 2
+  index: -1
+watere16
+  rotate: true
+  xy: 1666, 10
+  size: 98, 43
+  orig: 150, 63
+  offset: 15, 1
+  index: -1
+watere18
+  rotate: false
+  xy: 1332, 454
+  size: 101, 34
+  orig: 150, 63
+  offset: 11, 0
+  index: -1

@@ -1,0 +1,160 @@
+
+Hit_185.png
+size: 1012,592
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_robin_skill_1_hand/000
+  rotate: false
+  xy: 876, 521
+  size: 133, 68
+  orig: 135, 69
+  offset: 2, 0
+  index: -1
+Char_robin_skill_1_hand/001
+  rotate: false
+  xy: 741, 358
+  size: 137, 161
+  orig: 141, 162
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/002
+  rotate: false
+  xy: 876, 16
+  size: 98, 199
+  orig: 100, 200
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/003
+  rotate: false
+  xy: 662, 119
+  size: 72, 234
+  orig: 73, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/004
+  rotate: false
+  xy: 667, 355
+  size: 72, 234
+  orig: 73, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/005
+  rotate: false
+  xy: 2, 107
+  size: 144, 240
+  orig: 145, 241
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/006
+  rotate: false
+  xy: 436, 119
+  size: 123, 234
+  orig: 124, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/007
+  rotate: true
+  xy: 641, 2
+  size: 115, 233
+  orig: 116, 234
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/008
+  rotate: true
+  xy: 405, 2
+  size: 115, 234
+  orig: 118, 235
+  offset: 2, 0
+  index: -1
+Char_robin_skill_1_hand/009
+  rotate: false
+  xy: 452, 355
+  size: 121, 234
+  orig: 122, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/010
+  rotate: true
+  xy: 2, 4
+  size: 101, 236
+  orig: 102, 237
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/011
+  rotate: false
+  xy: 575, 355
+  size: 90, 234
+  orig: 91, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/012
+  rotate: false
+  xy: 148, 113
+  size: 147, 234
+  orig: 149, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/013
+  rotate: false
+  xy: 316, 355
+  size: 134, 234
+  orig: 136, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/014
+  rotate: false
+  xy: 297, 119
+  size: 137, 234
+  orig: 139, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/015
+  rotate: false
+  xy: 168, 355
+  size: 146, 234
+  orig: 147, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/016
+  rotate: false
+  xy: 561, 119
+  size: 99, 234
+  orig: 100, 235
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/017
+  rotate: false
+  xy: 736, 124
+  size: 125, 229
+  orig: 126, 232
+  offset: 1, 1
+  index: -1
+Char_robin_skill_1_hand/018
+  rotate: false
+  xy: 2, 349
+  size: 164, 240
+  orig: 166, 241
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/019
+  rotate: false
+  xy: 240, 4
+  size: 163, 107
+  orig: 165, 108
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/020
+  rotate: true
+  xy: 880, 369
+  size: 150, 115
+  orig: 151, 116
+  offset: 1, 0
+  index: -1
+Char_robin_skill_1_hand/021
+  rotate: true
+  xy: 880, 217
+  size: 150, 115
+  orig: 152, 116
+  offset: 2, 0
+  index: -1

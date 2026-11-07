@@ -1,0 +1,272 @@
+
+Hit_104.png
+size: 964,808
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fx/b (1)
+  rotate: true
+  xy: 309, 206
+  size: 117, 170
+  orig: 117, 170
+  offset: 0, 0
+  index: -1
+fx/b (2)
+  rotate: true
+  xy: 340, 325
+  size: 118, 173
+  orig: 118, 173
+  offset: 0, 0
+  index: -1
+fx/b (3)
+  rotate: false
+  xy: 600, 446
+  size: 123, 180
+  orig: 123, 180
+  offset: 0, 0
+  index: -1
+fx/b (4)
+  rotate: false
+  xy: 340, 445
+  size: 128, 181
+  orig: 128, 181
+  offset: 0, 0
+  index: -1
+fx/b (5)
+  rotate: false
+  xy: 470, 445
+  size: 128, 181
+  orig: 128, 181
+  offset: 0, 0
+  index: -1
+fx/b (6)
+  rotate: false
+  xy: 183, 205
+  size: 124, 168
+  orig: 124, 168
+  offset: 0, 0
+  index: -1
+fx/c (1)
+  rotate: false
+  xy: 183, 88
+  size: 163, 115
+  orig: 163, 115
+  offset: 0, 0
+  index: -1
+fx/c (2)
+  rotate: true
+  xy: 181, 375
+  size: 217, 157
+  orig: 217, 157
+  offset: 0, 0
+  index: -1
+fx/c (3)
+  rotate: true
+  xy: 2, 103
+  size: 236, 179
+  orig: 236, 179
+  offset: 0, 0
+  index: -1
+fx/c (4)
+  rotate: false
+  xy: 487, 628
+  size: 238, 178
+  orig: 238, 178
+  offset: 0, 0
+  index: -1
+fx/c (5)
+  rotate: false
+  xy: 241, 628
+  size: 244, 178
+  orig: 244, 178
+  offset: 0, 0
+  index: -1
+fx/c (6)
+  rotate: true
+  xy: 2, 341
+  size: 251, 177
+  orig: 251, 177
+  offset: 0, 0
+  index: -1
+fx/c (7)
+  rotate: false
+  xy: 727, 631
+  size: 219, 175
+  orig: 219, 175
+  offset: 0, 0
+  index: -1
+fx/c (8)
+  rotate: true
+  xy: 515, 291
+  size: 152, 100
+  orig: 152, 100
+  offset: 0, 0
+  index: -1
+fx/x (1)
+  rotate: true
+  xy: 866, 290
+  size: 108, 82
+  orig: 150, 150
+  offset: 42, 40
+  index: -1
+fx/x (2)
+  rotate: true
+  xy: 738, 218
+  size: 128, 126
+  orig: 150, 150
+  offset: 18, 11
+  index: -1
+fx/x (3)
+  rotate: true
+  xy: 348, 74
+  size: 130, 147
+  orig: 150, 150
+  offset: 12, 2
+  index: -1
+fx/x (4)
+  rotate: false
+  xy: 607, 138
+  size: 129, 150
+  orig: 150, 150
+  offset: 10, 0
+  index: -1
+fx/x (5)
+  rotate: true
+  xy: 727, 500
+  size: 129, 150
+  orig: 150, 150
+  offset: 9, 0
+  index: -1
+fx/x (6)
+  rotate: true
+  xy: 497, 2
+  size: 131, 150
+  orig: 150, 150
+  offset: 8, 0
+  index: -1
+fx/x (7)
+  rotate: true
+  xy: 649, 5
+  size: 131, 150
+  orig: 150, 150
+  offset: 8, 0
+  index: -1
+fx/x (8)
+  rotate: false
+  xy: 727, 348
+  size: 127, 150
+  orig: 150, 150
+  offset: 10, 0
+  index: -1
+fx/x (9)
+  rotate: true
+  xy: 801, 22
+  size: 114, 37
+  orig: 150, 150
+  offset: 21, 56
+  index: -1
+jinlong_bozi
+  rotate: true
+  xy: 617, 290
+  size: 154, 108
+  orig: 154, 108
+  offset: 0, 0
+  index: -1
+jinlong_bozi2
+  rotate: true
+  xy: 497, 135
+  size: 154, 108
+  orig: 154, 108
+  offset: 0, 0
+  index: -1
+jinlong_jijiao
+  rotate: false
+  xy: 856, 400
+  size: 106, 98
+  orig: 108, 100
+  offset: 1, 1
+  index: -1
+jinlong_shenti
+  rotate: false
+  xy: 2, 594
+  size: 237, 212
+  orig: 237, 212
+  offset: 0, 0
+  index: -1
+jinlong_tou
+  rotate: false
+  xy: 133, 2
+  size: 113, 84
+  orig: 115, 86
+  offset: 1, 1
+  index: -1
+jinlong_toumao
+  rotate: false
+  xy: 2, 20
+  size: 129, 81
+  orig: 129, 81
+  offset: 0, 0
+  index: -1
+jinlong_weibamao
+  rotate: true
+  xy: 248, 2
+  size: 70, 105
+  orig: 70, 105
+  offset: 0, 0
+  index: -1
+jinlong_xiaba
+  rotate: false
+  xy: 866, 199
+  size: 92, 89
+  orig: 94, 91
+  offset: 1, 1
+  index: -1
+jinlong_xiaojijao
+  rotate: false
+  xy: 840, 2
+  size: 60, 34
+  orig: 62, 36
+  offset: 1, 1
+  index: -1
+jinlong_youhoutui
+  rotate: false
+  xy: 879, 521
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1
+jinlong_youhuxu
+  rotate: true
+  xy: 832, 138
+  size: 59, 87
+  orig: 116, 139
+  offset: 31, 22
+  index: -1
+jinlong_youqianbi
+  rotate: true
+  xy: 879, 570
+  size: 59, 83
+  orig: 59, 83
+  offset: 0, 0
+  index: -1
+jinlong_zuohoutui
+  rotate: false
+  xy: 840, 38
+  size: 85, 98
+  orig: 85, 98
+  offset: 0, 0
+  index: -1
+jinlong_zuohuzi
+  rotate: false
+  xy: 738, 138
+  size: 92, 78
+  orig: 152, 138
+  offset: 31, 32
+  index: -1
+jinlong_zuoqianzhua
+  rotate: true
+  xy: 355, 3
+  size: 69, 117
+  orig: 69, 117
+  offset: 0, 0
+  index: -1

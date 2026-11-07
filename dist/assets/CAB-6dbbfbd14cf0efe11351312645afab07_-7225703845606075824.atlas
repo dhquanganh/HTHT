@@ -1,0 +1,495 @@
+
+Hero_157.png
+size: 1020,1000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 851, 951
+  size: 44, 46
+  orig: 45, 47
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 759, 955
+  size: 41, 40
+  orig: 42, 41
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 491, 868
+  size: 91, 109
+  orig: 92, 110
+  offset: 1, 0
+  index: -1
+buramenko_beat 301
+  rotate: false
+  xy: 183, 973
+  size: 25, 22
+  orig: 26, 23
+  offset: 1, 0
+  index: -1
+buramenko_beat 302
+  rotate: true
+  xy: 421, 968
+  size: 27, 31
+  orig: 28, 32
+  offset: 1, 0
+  index: -1
+buramenko_beat 303
+  rotate: true
+  xy: 580, 961
+  size: 34, 42
+  orig: 35, 43
+  offset: 1, 0
+  index: -1
+buramenko_beat 304
+  rotate: false
+  xy: 123, 788
+  size: 169, 102
+  orig: 170, 103
+  offset: 1, 0
+  index: -1
+buramenko_beat 305
+  rotate: true
+  xy: 741, 857
+  size: 93, 101
+  orig: 94, 102
+  offset: 1, 0
+  index: -1
+buramenko_beat 306
+  rotate: true
+  xy: 143, 907
+  size: 64, 74
+  orig: 65, 75
+  offset: 1, 0
+  index: -1
+buramenko_beat_04
+  rotate: false
+  xy: 2, 509
+  size: 163, 158
+  orig: 164, 159
+  offset: 1, 0
+  index: -1
+buramenko_beat_06_ef
+  rotate: false
+  xy: 219, 892
+  size: 157, 76
+  orig: 158, 77
+  offset: 1, 0
+  index: -1
+buramenko_damage
+  rotate: true
+  xy: 865, 673
+  size: 166, 150
+  orig: 175, 162
+  offset: 4, 6
+  index: -1
+buramenko_hinshi
+  rotate: true
+  xy: 357, 454
+  size: 164, 165
+  orig: 182, 170
+  offset: 14, 3
+  index: -1
+buramenko_skill2_02
+  rotate: true
+  xy: 732, 529
+  size: 142, 191
+  orig: 143, 192
+  offset: 1, 0
+  index: -1
+buramenko_skill2_03
+  rotate: true
+  xy: 167, 507
+  size: 143, 188
+  orig: 144, 189
+  offset: 1, 0
+  index: -1
+buramenko_skill2_04
+  rotate: true
+  xy: 2, 669
+  size: 117, 169
+  orig: 118, 170
+  offset: 1, 0
+  index: -1
+buramenko_skill2_04_ef
+  rotate: true
+  xy: 2, 808
+  size: 104, 119
+  orig: 105, 120
+  offset: 1, 0
+  index: -1
+buramenko_skill2_05
+  rotate: false
+  xy: 464, 261
+  size: 249, 164
+  orig: 250, 165
+  offset: 1, 0
+  index: -1
+buramenko_skill2_06
+  rotate: true
+  xy: 555, 590
+  size: 134, 175
+  orig: 135, 176
+  offset: 1, 0
+  index: -1
+buramenko_skill2_06_ef
+  rotate: false
+  xy: 173, 652
+  size: 210, 121
+  orig: 211, 122
+  offset: 1, 0
+  index: -1
+buramenko_skill2_07
+  rotate: false
+  xy: 524, 427
+  size: 200, 161
+  orig: 201, 162
+  offset: 1, 0
+  index: -1
+buramenko_skill2_08
+  rotate: false
+  xy: 2, 344
+  size: 200, 161
+  orig: 201, 162
+  offset: 1, 0
+  index: -1
+buramenko_skill3_03
+  rotate: false
+  xy: 204, 290
+  size: 258, 162
+  orig: 259, 163
+  offset: 1, 0
+  index: -1
+buramenko_skill3_04_ef
+  rotate: false
+  xy: 463, 750
+  size: 229, 111
+  orig: 230, 112
+  offset: 1, 0
+  index: -1
+buramenko_skill3_09
+  rotate: true
+  xy: 694, 726
+  size: 113, 169
+  orig: 114, 170
+  offset: 1, 0
+  index: -1
+buramenko_skill3_10
+  rotate: true
+  xy: 385, 620
+  size: 128, 168
+  orig: 129, 169
+  offset: 1, 0
+  index: -1
+buramenko_skill3_301
+  rotate: false
+  xy: 602, 863
+  size: 137, 91
+  orig: 138, 92
+  offset: 1, 0
+  index: -1
+buramenko_skill3_302
+  rotate: false
+  xy: 802, 952
+  size: 47, 43
+  orig: 48, 44
+  offset: 1, 0
+  index: -1
+buramenko_skill3_303
+  rotate: false
+  xy: 2, 914
+  size: 139, 58
+  orig: 140, 59
+  offset: 1, 0
+  index: -1
+buramenko_skill3_304
+  rotate: false
+  xy: 844, 841
+  size: 106, 105
+  orig: 107, 106
+  offset: 1, 0
+  index: -1
+buramenko_skill3_306
+  rotate: true
+  xy: 296, 971
+  size: 24, 43
+  orig: 25, 44
+  offset: 1, 0
+  index: -1
+buramenko_skill3_307
+  rotate: false
+  xy: 899, 948
+  size: 56, 47
+  orig: 57, 48
+  offset: 1, 0
+  index: -1
+buramenko_skill3_601
+  rotate: true
+  xy: 378, 879
+  size: 84, 111
+  orig: 95, 114
+  offset: 4, 2
+  index: -1
+buramenko_skill3_602
+  rotate: false
+  xy: 690, 956
+  size: 67, 39
+  orig: 70, 44
+  offset: 1, 2
+  index: -1
+buramenko_standby_01
+  rotate: true
+  xy: 2, 174
+  size: 168, 200
+  orig: 169, 201
+  offset: 1, 0
+  index: -1
+buramenko_standby_02
+  rotate: true
+  xy: 204, 120
+  size: 168, 198
+  orig: 169, 199
+  offset: 1, 0
+  index: -1
+buramenko_win_01
+  rotate: true
+  xy: 404, 91
+  size: 168, 196
+  orig: 169, 197
+  offset: 1, 0
+  index: -1
+buramenko_win_04
+  rotate: true
+  xy: 800, 28
+  size: 170, 178
+  orig: 171, 179
+  offset: 1, 0
+  index: -1
+buramenko_win_06
+  rotate: true
+  xy: 2, 2
+  size: 170, 178
+  orig: 171, 179
+  offset: 1, 0
+  index: -1
+buramenko_win_08
+  rotate: true
+  xy: 715, 200
+  size: 166, 179
+  orig: 167, 180
+  offset: 1, 0
+  index: -1
+buramenko_win_09
+  rotate: true
+  xy: 726, 368
+  size: 159, 235
+  orig: 160, 236
+  offset: 1, 0
+  index: -1
+buramenko_win_10
+  rotate: true
+  xy: 602, 30
+  size: 168, 196
+  orig: 169, 197
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 341, 970
+  size: 25, 44
+  orig: 26, 45
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 624, 957
+  size: 64, 38
+  orig: 65, 39
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 210, 973
+  size: 35, 22
+  orig: 36, 23
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 2, 981
+  size: 14, 34
+  orig: 15, 35
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 484, 965
+  size: 94, 30
+  orig: 95, 31
+  offset: 1, 0
+  index: -1
+cloth_13
+  rotate: false
+  xy: 387, 969
+  size: 32, 26
+  orig: 35, 27
+  offset: 1, 0
+  index: -1
+f-arm_L_04
+  rotate: true
+  xy: 103, 974
+  size: 21, 42
+  orig: 23, 43
+  offset: 2, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 247, 972
+  size: 23, 47
+  orig: 24, 48
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: false
+  xy: 294, 775
+  size: 167, 102
+  orig: 168, 103
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 81, 977
+  size: 18, 20
+  orig: 19, 21
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 957, 942
+  size: 53, 53
+  orig: 54, 54
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 147, 974
+  size: 21, 34
+  orig: 22, 35
+  offset: 1, 0
+  index: -1
+shank_R_04
+  rotate: false
+  xy: 454, 967
+  size: 28, 28
+  orig: 33, 33
+  offset: 3, 1
+  index: -1
+thigh_L_04
+  rotate: true
+  xy: 38, 979
+  size: 16, 19
+  orig: 17, 20
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 59, 979
+  size: 16, 20
+  orig: 17, 21
+  offset: 1, 0
+  index: -1
+
+Hero_1572.png
+size: 756,788
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+buramenko_beat_07_ef
+  rotate: false
+  xy: 446, 222
+  size: 292, 206
+  orig: 293, 207
+  offset: 1, 0
+  index: -1
+buramenko_skill2_05_ef
+  rotate: true
+  xy: 563, 430
+  size: 183, 188
+  orig: 184, 189
+  offset: 1, 0
+  index: -1
+buramenko_skill2_13
+  rotate: true
+  xy: 2, 18
+  size: 214, 228
+  orig: 215, 229
+  offset: 1, 0
+  index: -1
+buramenko_skill3_02
+  rotate: false
+  xy: 2, 249
+  size: 213, 189
+  orig: 214, 190
+  offset: 1, 0
+  index: -1
+buramenko_skill3_05
+  rotate: false
+  xy: 2, 615
+  size: 351, 171
+  orig: 352, 172
+  offset: 1, 0
+  index: -1
+buramenko_skill3_11
+  rotate: true
+  xy: 355, 615
+  size: 171, 237
+  orig: 172, 238
+  offset: 1, 0
+  index: -1
+buramenko_skill3_12
+  rotate: true
+  xy: 475, 2
+  size: 218, 274
+  orig: 219, 275
+  offset: 1, 0
+  index: -1
+buramenko_skill3_13
+  rotate: true
+  xy: 232, 6
+  size: 214, 241
+  orig: 215, 242
+  offset: 1, 0
+  index: -1
+buramenko_win_02
+  rotate: true
+  xy: 362, 431
+  size: 182, 199
+  orig: 183, 200
+  offset: 1, 0
+  index: -1
+buramenko_win_03
+  rotate: false
+  xy: 217, 234
+  size: 227, 195
+  orig: 228, 196
+  offset: 1, 0
+  index: -1
+buramenko_win_05
+  rotate: true
+  xy: 2, 440
+  size: 173, 178
+  orig: 174, 179
+  offset: 1, 0
+  index: -1
+buramenko_win_07
+  rotate: true
+  xy: 182, 440
+  size: 173, 178
+  orig: 174, 179
+  offset: 1, 0
+  index: -1

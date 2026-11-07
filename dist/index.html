@@ -8,12 +8,24 @@
   <link rel="icon" href="data:,">
   <title>Hải Tặc Phục Sinh — Giao diện</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="battle.css">
+  <link rel="stylesheet" href="reference-ui.css">
+  <link rel="stylesheet" href="campaign.css">
+  <link rel="stylesheet" href="mermaid.css">
+  <link rel="stylesheet" href="achievement.css">
   <script defer src="vendor/spine-canvas.js"></script>
+  <script defer src="spine-clipping.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="reference-ui.js"></script>
+  <script defer src="campaign-ui.js"></script>
+  <script defer src="mermaid-ui.js"></script>
+  <script defer src="game.js"></script>
 </head>
 <body>
   <main id="viewer">
-    <div id="stage"><canvas id="game" width="1136" height="640" aria-label="Giao diện game Hải Tặc Phục Sinh"></canvas><div id="loading" role="status">Đang tải giao diện…</div></div>
+    <div id="stage"><canvas id="game" width="1136" height="640" aria-label="Giao diện game Hải Tặc Phục Sinh"></canvas><div id="game-layer"><div id="screen-ui"></div><div id="dialog-ui"></div></div><div id="loading" role="status">Đang tải giao diện…</div></div>
   </main>
   <nav id="toolbar" aria-label="Chọn giao diện">
     <a class="brand" href="#13">HẢI TẶC <span>PHỤC SINH</span></a>

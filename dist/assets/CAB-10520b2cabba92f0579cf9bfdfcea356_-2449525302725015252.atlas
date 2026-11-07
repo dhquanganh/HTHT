@@ -1,0 +1,83 @@
+
+Hit_462.png
+size: 888,484
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body 2
+  rotate: true
+  xy: 2, 2
+  size: 477, 491
+  orig: 480, 493
+  offset: 2, 1
+  index: -1
+c1
+  rotate: false
+  xy: 820, 340
+  size: 52, 62
+  orig: 52, 62
+  offset: 0, 0
+  index: -1
+c2
+  rotate: true
+  xy: 820, 292
+  size: 46, 58
+  orig: 46, 58
+  offset: 0, 0
+  index: -1
+c3
+  rotate: true
+  xy: 602, 17
+  size: 46, 56
+  orig: 46, 56
+  offset: 0, 0
+  index: -1
+glow
+  rotate: true
+  xy: 820, 404
+  size: 75, 64
+  orig: 79, 68
+  offset: 2, 2
+  index: -1
+head 2
+  rotate: false
+  xy: 495, 231
+  size: 210, 248
+  orig: 212, 250
+  offset: 1, 1
+  index: -1
+mask_4026
+  rotate: false
+  xy: 495, 65
+  size: 256, 164
+  orig: 256, 164
+  offset: 0, 0
+  index: -1
+pink 1
+  rotate: true
+  xy: 707, 260
+  size: 219, 111
+  orig: 219, 111
+  offset: 0, 0
+  index: -1
+pink 2
+  rotate: true
+  xy: 753, 3
+  size: 255, 116
+  orig: 255, 116
+  offset: 0, 0
+  index: -1
+pink3
+  rotate: false
+  xy: 495, 16
+  size: 105, 47
+  orig: 105, 47
+  offset: 0, 0
+  index: -1
+spark copy
+  rotate: false
+  xy: 660, 20
+  size: 44, 43
+  orig: 48, 48
+  offset: 2, 3
+  index: -1

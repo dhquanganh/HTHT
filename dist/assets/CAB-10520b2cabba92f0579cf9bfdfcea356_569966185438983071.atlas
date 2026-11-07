@@ -1,0 +1,181 @@
+
+Hit_122.png
+size: 1838,260
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 20
+  rotate: false
+  xy: 1761, 69
+  size: 57, 57
+  orig: 59, 59
+  offset: 1, 1
+  index: -1
+OT2/Hashirama/images/cat_02
+  rotate: false
+  xy: 1243, 130
+  size: 124, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+OT2/Hashirama/images/hit_center1_01
+  rotate: false
+  xy: 1761, 16
+  size: 30, 51
+  orig: 85, 128
+  offset: 24, 1
+  index: -1
+OT2/Hashirama/images/hit_center1_02
+  rotate: false
+  xy: 1099, 4
+  size: 65, 99
+  orig: 86, 128
+  offset: 9, 1
+  index: -1
+OT2/Hashirama/images/hit_center1_03
+  rotate: false
+  xy: 1289, 4
+  size: 78, 124
+  orig: 85, 128
+  offset: 4, 2
+  index: -1
+OT2/Hashirama/images/hit_center1_04
+  rotate: true
+  xy: 1166, 22
+  size: 81, 121
+  orig: 85, 128
+  offset: 2, 3
+  index: -1
+OT2/Hashirama/images/hit_center1_05
+  rotate: false
+  xy: 1369, 11
+  size: 79, 117
+  orig: 86, 128
+  offset: 3, 6
+  index: -1
+OT2/Hashirama/images/hit_center1_06
+  rotate: false
+  xy: 1450, 12
+  size: 81, 116
+  orig: 85, 128
+  offset: 2, 6
+  index: -1
+OT2/Hashirama/images/hit_center1_07
+  rotate: false
+  xy: 1533, 16
+  size: 77, 112
+  orig: 85, 128
+  offset: 5, 8
+  index: -1
+OT2/Hashirama/images/hit_center1_08
+  rotate: false
+  xy: 1612, 18
+  size: 75, 110
+  orig: 86, 128
+  offset: 7, 9
+  index: -1
+OT2/Hashirama/images/hit_center1_09
+  rotate: false
+  xy: 1689, 23
+  size: 70, 103
+  orig: 85, 128
+  offset: 8, 14
+  index: -1
+OT2/Hashirama/images/hitauar_01
+  rotate: true
+  xy: 1099, 105
+  size: 153, 142
+  orig: 256, 256
+  offset: 40, 38
+  index: -1
+OT2/Hashirama/images/hitauar_02
+  rotate: true
+  xy: 881, 24
+  size: 234, 216
+  orig: 256, 256
+  offset: 10, 20
+  index: -1
+OT2/Hashirama/images/hitauar_03
+  rotate: true
+  xy: 430, 15
+  size: 243, 223
+  orig: 256, 256
+  offset: 6, 16
+  index: -1
+OT2/Hashirama/images/hitauar_04
+  rotate: true
+  xy: 655, 21
+  size: 237, 224
+  orig: 256, 256
+  offset: 14, 17
+  index: -1
+OT2/kisame/images/duoi_01
+  rotate: false
+  xy: 1369, 130
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/duoi_02
+  rotate: false
+  xy: 1435, 130
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/duoi_03
+  rotate: false
+  xy: 1501, 130
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/duoi_04
+  rotate: false
+  xy: 1567, 130
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/duoi_05
+  rotate: false
+  xy: 1633, 130
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/duoi_06
+  rotate: true
+  xy: 1699, 194
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/duoi_08
+  rotate: true
+  xy: 1699, 128
+  size: 64, 128
+  orig: 64, 128
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/noise_6007
+  rotate: false
+  xy: 2, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+OT2/kisame/images/smoke_1002
+  rotate: true
+  xy: 260, 2
+  size: 256, 168
+  orig: 256, 256
+  offset: 0, 40
+  index: -1
+blackdot1
+  rotate: true
+  xy: 1793, 27
+  size: 40, 43
+  orig: 40, 43
+  offset: 0, 0
+  index: -1

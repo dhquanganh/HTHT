@@ -1,0 +1,104 @@
+
+Skill_177.png
+size: 792,788
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_Jabra_skill_1_wolf/000
+  rotate: true
+  xy: 692, 53
+  size: 98, 71
+  orig: 103, 76
+  offset: 3, 2
+  index: -1
+Char_Jabra_skill_1_wolf/001
+  rotate: false
+  xy: 130, 9
+  size: 121, 113
+  orig: 126, 118
+  offset: 3, 2
+  index: -1
+Char_Jabra_skill_1_wolf/002
+  rotate: false
+  xy: 528, 10
+  size: 162, 141
+  orig: 167, 146
+  offset: 3, 2
+  index: -1
+Char_Jabra_skill_1_wolf/003
+  rotate: false
+  xy: 297, 267
+  size: 232, 157
+  orig: 238, 161
+  offset: 4, 2
+  index: -1
+Char_Jabra_skill_1_wolf/004
+  rotate: false
+  xy: 531, 153
+  size: 204, 147
+  orig: 209, 150
+  offset: 3, 1
+  index: -1
+Char_Jabra_skill_1_wolf/005
+  rotate: false
+  xy: 321, 426
+  size: 233, 161
+  orig: 237, 165
+  offset: 2, 1
+  index: -1
+Char_Jabra_skill_1_wolf/006
+  rotate: false
+  xy: 295, 74
+  size: 231, 191
+  orig: 235, 195
+  offset: 2, 1
+  index: -1
+Char_Jabra_skill_1_wolf/007
+  rotate: false
+  xy: 556, 302
+  size: 231, 211
+  orig: 234, 215
+  offset: 2, 1
+  index: -1
+Char_Jabra_skill_1_wolf/008
+  rotate: false
+  xy: 2, 284
+  size: 293, 240
+  orig: 296, 246
+  offset: 2, 2
+  index: -1
+Char_Jabra_skill_1_wolf/009
+  rotate: false
+  xy: 2, 526
+  size: 317, 258
+  orig: 321, 263
+  offset: 2, 2
+  index: -1
+Char_Jabra_skill_1_wolf/010
+  rotate: false
+  xy: 321, 589
+  size: 283, 195
+  orig: 288, 199
+  offset: 3, 2
+  index: -1
+Char_Jabra_skill_1_wolf/011
+  rotate: true
+  xy: 606, 515
+  size: 269, 179
+  orig: 274, 183
+  offset: 4, 2
+  index: -1
+Char_Jabra_skill_1_wolf/012
+  rotate: false
+  xy: 2, 124
+  size: 291, 158
+  orig: 296, 164
+  offset: 4, 3
+  index: -1
+Char_Jabra_skill_1_wolf/013
+  rotate: false
+  xy: 2, 2
+  size: 126, 120
+  orig: 132, 126
+  offset: 3, 3
+  index: -1

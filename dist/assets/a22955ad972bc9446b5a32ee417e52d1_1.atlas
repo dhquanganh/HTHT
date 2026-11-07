@@ -1,0 +1,48 @@
+
+Hit_182.png
+size: 373,506
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0
+  rotate: false
+  xy: 207, 2
+  size: 152, 151
+  orig: 168, 171
+  offset: 9, 10
+  index: -1
+1
+  rotate: false
+  xy: 207, 155
+  size: 164, 169
+  orig: 182, 181
+  offset: 8, 4
+  index: -1
+2
+  rotate: false
+  xy: 186, 326
+  size: 184, 178
+  orig: 208, 191
+  offset: 13, 6
+  index: -1
+3
+  rotate: true
+  xy: 2, 310
+  size: 194, 182
+  orig: 208, 191
+  offset: 9, 7
+  index: -1
+4
+  rotate: false
+  xy: 2, 127
+  size: 203, 181
+  orig: 217, 197
+  offset: 5, 11
+  index: -1
+5
+  rotate: true
+  xy: 2, 5
+  size: 120, 126
+  orig: 140, 150
+  offset: 16, 11
+  index: -1

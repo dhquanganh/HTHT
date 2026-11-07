@@ -1,0 +1,886 @@
+
+Hero_92.png
+size: 1024,996
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 829, 968
+  size: 26, 29
+  orig: 27, 30
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: false
+  xy: 477, 972
+  size: 42, 22
+  orig: 43, 23
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 371, 886
+  size: 48, 58
+  orig: 49, 59
+  offset: 1, 0
+  index: -1
+cloth_01
+  rotate: true
+  xy: 301, 974
+  size: 20, 58
+  orig: 21, 59
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: false
+  xy: 431, 883
+  size: 50, 49
+  orig: 51, 50
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: false
+  xy: 37, 946
+  size: 69, 31
+  orig: 70, 32
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 234, 975
+  size: 19, 34
+  orig: 20, 35
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: false
+  xy: 552, 929
+  size: 49, 38
+  orig: 50, 39
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: false
+  xy: 817, 925
+  size: 55, 41
+  orig: 56, 42
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 454, 934
+  size: 36, 42
+  orig: 37, 43
+  offset: 1, 0
+  index: -1
+cloth_08
+  rotate: false
+  xy: 2, 899
+  size: 55, 45
+  orig: 62, 51
+  offset: 4, 3
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 277, 940
+  size: 37, 32
+  orig: 38, 33
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 2, 947
+  size: 30, 33
+  orig: 31, 34
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: true
+  xy: 179, 976
+  size: 18, 24
+  orig: 19, 25
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 361, 973
+  size: 31, 21
+  orig: 32, 22
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: false
+  xy: 845, 868
+  size: 61, 55
+  orig: 62, 56
+  offset: 1, 0
+  index: -1
+killer_beat_03
+  rotate: false
+  xy: 2, 262
+  size: 265, 119
+  orig: 266, 120
+  offset: 1, 0
+  index: -1
+killer_beat_03_ef
+  rotate: false
+  xy: 332, 823
+  size: 241, 52
+  orig: 242, 53
+  offset: 1, 0
+  index: -1
+killer_beat_04
+  rotate: false
+  xy: 269, 233
+  size: 263, 119
+  orig: 264, 120
+  offset: 1, 0
+  index: -1
+killer_beat_05
+  rotate: false
+  xy: 2, 393
+  size: 134, 143
+  orig: 135, 144
+  offset: 1, 0
+  index: -1
+killer_beat_05_ef
+  rotate: false
+  xy: 664, 927
+  size: 151, 40
+  orig: 153, 41
+  offset: 1, 0
+  index: -1
+killer_beat_06
+  rotate: false
+  xy: 243, 106
+  size: 256, 125
+  orig: 257, 126
+  offset: 1, 0
+  index: -1
+killer_beat_06_ef
+  rotate: false
+  xy: 112, 895
+  size: 144, 46
+  orig: 145, 47
+  offset: 1, 0
+  index: -1
+killer_beat_07
+  rotate: false
+  xy: 725, 460
+  size: 262, 112
+  orig: 263, 113
+  offset: 1, 0
+  index: -1
+killer_skill1_03
+  rotate: false
+  xy: 144, 508
+  size: 175, 113
+  orig: 176, 114
+  offset: 1, 0
+  index: -1
+killer_skill1_04
+  rotate: false
+  xy: 551, 587
+  size: 245, 107
+  orig: 246, 108
+  offset: 1, 0
+  index: -1
+killer_skill1_05
+  rotate: false
+  xy: 701, 82
+  size: 236, 133
+  orig: 237, 134
+  offset: 1, 0
+  index: -1
+killer_skill1_06
+  rotate: false
+  xy: 2, 138
+  size: 239, 122
+  orig: 240, 123
+  offset: 1, 0
+  index: -1
+killer_skill1_07
+  rotate: false
+  xy: 477, 474
+  size: 246, 111
+  orig: 247, 112
+  offset: 1, 0
+  index: -1
+killer_skill1_08
+  rotate: false
+  xy: 292, 354
+  size: 241, 118
+  orig: 242, 119
+  offset: 1, 0
+  index: -1
+killer_skill1_09
+  rotate: false
+  xy: 693, 340
+  size: 233, 118
+  orig: 234, 119
+  offset: 1, 0
+  index: -1
+killer_skill1_1801
+  rotate: false
+  xy: 420, 973
+  size: 55, 21
+  orig: 56, 22
+  offset: 1, 0
+  index: -1
+killer_skill1_1802
+  rotate: false
+  xy: 603, 929
+  size: 59, 38
+  orig: 60, 39
+  offset: 1, 0
+  index: -1
+killer_skill1_1803
+  rotate: false
+  xy: 185, 943
+  size: 90, 30
+  orig: 91, 31
+  offset: 1, 0
+  index: -1
+killer_skill1_1804
+  rotate: true
+  xy: 599, 877
+  size: 50, 57
+  orig: 51, 58
+  offset: 1, 0
+  index: -1
+killer_skill1_1805
+  rotate: false
+  xy: 2, 982
+  size: 28, 12
+  orig: 29, 13
+  offset: 1, 0
+  index: -1
+killer_skill1_1806
+  rotate: false
+  xy: 713, 874
+  size: 72, 51
+  orig: 87, 61
+  offset: 7, 5
+  index: -1
+killer_skill1_1807
+  rotate: false
+  xy: 402, 936
+  size: 50, 35
+  orig: 51, 36
+  offset: 1, 0
+  index: -1
+killer_skill1_1808
+  rotate: false
+  xy: 205, 976
+  size: 27, 18
+  orig: 28, 19
+  offset: 1, 0
+  index: -1
+killer_skill1_1809
+  rotate: false
+  xy: 357, 938
+  size: 43, 33
+  orig: 44, 34
+  offset: 1, 0
+  index: -1
+killer_skill1_1810
+  rotate: false
+  xy: 258, 891
+  size: 51, 47
+  orig: 52, 48
+  offset: 1, 0
+  index: -1
+killer_skill1_1811
+  rotate: true
+  xy: 311, 889
+  size: 47, 58
+  orig: 48, 59
+  offset: 1, 0
+  index: -1
+killer_skill1_1812
+  rotate: true
+  xy: 575, 811
+  size: 64, 68
+  orig: 65, 69
+  offset: 1, 0
+  index: -1
+killer_skill1_1813
+  rotate: true
+  xy: 768, 797
+  size: 70, 75
+  orig: 71, 76
+  offset: 1, 0
+  index: -1
+killer_skill1_1814
+  rotate: false
+  xy: 787, 869
+  size: 56, 54
+  orig: 57, 55
+  offset: 1, 0
+  index: -1
+killer_skill1_201
+  rotate: true
+  xy: 108, 945
+  size: 31, 35
+  orig: 38, 42
+  offset: 1, 6
+  index: -1
+killer_skill1_202
+  rotate: true
+  xy: 874, 925
+  size: 41, 49
+  orig: 42, 50
+  offset: 1, 0
+  index: -1
+killer_skill1_203
+  rotate: false
+  xy: 860, 968
+  size: 47, 26
+  orig: 48, 27
+  offset: 1, 0
+  index: -1
+killer_skill1_204
+  rotate: false
+  xy: 537, 877
+  size: 60, 50
+  orig: 61, 51
+  offset: 1, 0
+  index: -1
+killer_skill1_205
+  rotate: true
+  xy: 941, 967
+  size: 27, 28
+  orig: 28, 29
+  offset: 1, 0
+  index: -1
+killer_skill1_206
+  rotate: false
+  xy: 32, 979
+  size: 18, 15
+  orig: 19, 16
+  offset: 1, 0
+  index: -1
+killer_skill1_208
+  rotate: false
+  xy: 122, 978
+  size: 34, 16
+  orig: 35, 17
+  offset: 1, 0
+  index: -1
+killer_skill1_209
+  rotate: true
+  xy: 394, 973
+  size: 21, 24
+  orig: 22, 25
+  offset: 1, 0
+  index: -1
+killer_skill1_210
+  rotate: false
+  xy: 52, 979
+  size: 28, 15
+  orig: 29, 16
+  offset: 1, 0
+  index: -1
+killer_skill1_211
+  rotate: false
+  xy: 82, 979
+  size: 38, 15
+  orig: 39, 16
+  offset: 1, 0
+  index: -1
+killer_skill1_212
+  rotate: false
+  xy: 145, 943
+  size: 38, 31
+  orig: 39, 32
+  offset: 1, 0
+  index: -1
+killer_skill1_213
+  rotate: true
+  xy: 925, 921
+  size: 44, 64
+  orig: 45, 65
+  offset: 1, 0
+  index: -1
+killer_skill1_214
+  rotate: false
+  xy: 94, 760
+  size: 90, 73
+  orig: 91, 74
+  offset: 1, 0
+  index: -1
+killer_skill1_215
+  rotate: true
+  xy: 184, 835
+  size: 58, 62
+  orig: 59, 63
+  offset: 1, 0
+  index: -1
+killer_skill1_216
+  rotate: false
+  xy: 498, 930
+  size: 52, 37
+  orig: 53, 38
+  offset: 1, 0
+  index: -1
+killer_skill2_03
+  rotate: false
+  xy: 138, 383
+  size: 152, 123
+  orig: 153, 124
+  offset: 1, 0
+  index: -1
+killer_skill2_04
+  rotate: false
+  xy: 281, 623
+  size: 108, 106
+  orig: 109, 107
+  offset: 1, 0
+  index: -1
+killer_skill2_05
+  rotate: false
+  xy: 403, 729
+  size: 96, 92
+  orig: 97, 93
+  offset: 1, 0
+  index: -1
+killer_skill2_06
+  rotate: true
+  xy: 304, 731
+  size: 90, 97
+  orig: 91, 98
+  offset: 1, 0
+  index: -1
+killer_skill2_10_ef
+  rotate: false
+  xy: 645, 805
+  size: 121, 67
+  orig: 122, 68
+  offset: 1, 0
+  index: -1
+killer_skill2_11_ef
+  rotate: false
+  xy: 521, 969
+  size: 306, 25
+  orig: 307, 26
+  offset: 1, 0
+  index: -1
+killer_skill2_14_ef
+  rotate: false
+  xy: 2, 842
+  size: 180, 51
+  orig: 181, 52
+  offset: 1, 0
+  index: -1
+killer_skill2_19
+  rotate: false
+  xy: 501, 86
+  size: 198, 129
+  orig: 199, 130
+  offset: 1, 0
+  index: -1
+killer_skill3_10_ef
+  rotate: false
+  xy: 685, 217
+  size: 334, 121
+  orig: 335, 122
+  offset: 1, 0
+  index: -1
+killer_skill3_16
+  rotate: false
+  xy: 2, 2
+  size: 148, 134
+  orig: 149, 135
+  offset: 1, 0
+  index: -1
+killer_skill3_18_ef
+  rotate: false
+  xy: 162, 633
+  size: 117, 105
+  orig: 118, 106
+  offset: 1, 0
+  index: -1
+killer_skill3_401
+  rotate: false
+  xy: 908, 862
+  size: 82, 57
+  orig: 83, 58
+  offset: 1, 0
+  index: -1
+killer_skill3_402
+  rotate: true
+  xy: 658, 875
+  size: 50, 53
+  orig: 51, 54
+  offset: 1, 0
+  index: -1
+killer_skill3_403
+  rotate: true
+  xy: 845, 791
+  size: 69, 110
+  orig: 70, 111
+  offset: 1, 0
+  index: -1
+killer_skill3_404
+  rotate: true
+  xy: 248, 826
+  size: 61, 82
+  orig: 62, 83
+  offset: 1, 0
+  index: -1
+killer_skill3_405
+  rotate: true
+  xy: 483, 879
+  size: 49, 52
+  orig: 50, 53
+  offset: 1, 0
+  index: -1
+killer_skill3_406
+  rotate: false
+  xy: 158, 977
+  size: 19, 17
+  orig: 20, 18
+  offset: 1, 0
+  index: -1
+killer_skill3_407
+  rotate: true
+  xy: 59, 898
+  size: 45, 51
+  orig: 46, 52
+  offset: 1, 0
+  index: -1
+killer_skill3_408
+  rotate: false
+  xy: 270, 975
+  size: 29, 19
+  orig: 30, 20
+  offset: 1, 0
+  index: -1
+killer_skill3_409
+  rotate: true
+  xy: 186, 740
+  size: 84, 116
+  orig: 85, 117
+  offset: 1, 0
+  index: -1
+killer_squat
+  rotate: false
+  xy: 535, 349
+  size: 156, 123
+  orig: 157, 124
+  offset: 1, 0
+  index: -1
+killer_win_03_ef
+  rotate: true
+  xy: 2, 768
+  size: 72, 90
+  orig: 73, 93
+  offset: 1, 0
+  index: -1
+killer_win_04_ef
+  rotate: false
+  xy: 534, 219
+  size: 149, 128
+  orig: 150, 129
+  offset: 1, 0
+  index: -1
+killer_win_06
+  rotate: true
+  xy: 2, 538
+  size: 115, 140
+  orig: 116, 141
+  offset: 1, 0
+  index: -1
+killer_win_07
+  rotate: true
+  xy: 321, 479
+  size: 118, 154
+  orig: 119, 155
+  offset: 1, 0
+  index: -1
+killer_win_08
+  rotate: true
+  xy: 798, 574
+  size: 112, 160
+  orig: 113, 161
+  offset: 1, 0
+  index: -1
+killer_win_09
+  rotate: true
+  xy: 2, 655
+  size: 103, 158
+  orig: 104, 159
+  offset: 1, 0
+  index: -1
+killer_win_10
+  rotate: true
+  xy: 501, 705
+  size: 98, 162
+  orig: 99, 163
+  offset: 1, 0
+  index: -1
+killer_win_11
+  rotate: true
+  xy: 665, 696
+  size: 99, 161
+  orig: 100, 162
+  offset: 1, 0
+  index: -1
+killer_win_12
+  rotate: true
+  xy: 828, 688
+  size: 101, 161
+  orig: 102, 162
+  offset: 1, 0
+  index: -1
+killer_win_13
+  rotate: true
+  xy: 391, 599
+  size: 104, 158
+  orig: 105, 159
+  offset: 1, 0
+  index: -1
+shank_L_04
+  rotate: false
+  xy: 909, 968
+  size: 30, 26
+  orig: 31, 27
+  offset: 1, 0
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 316, 940
+  size: 39, 32
+  orig: 40, 33
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: false
+  xy: 971, 967
+  size: 40, 27
+  orig: 41, 28
+  offset: 1, 0
+  index: -1
+
+Hero_922.png
+size: 976,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+killer_beat_02
+  rotate: false
+  xy: 484, 11
+  size: 196, 145
+  orig: 197, 146
+  offset: 1, 0
+  index: -1
+killer_beat_08
+  rotate: false
+  xy: 574, 382
+  size: 144, 173
+  orig: 145, 174
+  offset: 1, 0
+  index: -1
+killer_damage
+  rotate: true
+  xy: 528, 158
+  size: 220, 153
+  orig: 221, 154
+  offset: 1, 0
+  index: -1
+killer_skill1_01
+  rotate: false
+  xy: 683, 2
+  size: 143, 163
+  orig: 144, 164
+  offset: 1, 0
+  index: -1
+killer_skill1_13
+  rotate: false
+  xy: 683, 167
+  size: 208, 198
+  orig: 209, 199
+  offset: 1, 0
+  index: -1
+killer_skill1_16
+  rotate: true
+  xy: 210, 10
+  size: 160, 272
+  orig: 161, 273
+  offset: 1, 0
+  index: -1
+killer_skill1_17
+  rotate: false
+  xy: 387, 727
+  size: 327, 295
+  orig: 328, 296
+  offset: 1, 0
+  index: -1
+killer_skill3_10_ef_2
+  rotate: true
+  xy: 2, 338
+  size: 403, 242
+  orig: 404, 243
+  offset: 1, 0
+  index: -1
+killer_skill3_11_ef
+  rotate: true
+  xy: 716, 620
+  size: 402, 191
+  orig: 403, 192
+  offset: 1, 0
+  index: -1
+killer_skill3_11_ef_2
+  rotate: false
+  xy: 246, 380
+  size: 326, 175
+  orig: 327, 176
+  offset: 1, 0
+  index: -1
+killer_skill3_12_ef
+  rotate: false
+  xy: 246, 557
+  size: 355, 168
+  orig: 356, 169
+  offset: 1, 0
+  index: -1
+killer_skill3_12_ef_2
+  rotate: false
+  xy: 246, 172
+  size: 280, 206
+  orig: 281, 207
+  offset: 1, 0
+  index: -1
+killer_skill3_14_ef
+  rotate: false
+  xy: 2, 743
+  size: 383, 279
+  orig: 384, 280
+  offset: 1, 0
+  index: -1
+killer_skill3_15_ef
+  rotate: true
+  xy: 2, 2
+  size: 334, 206
+  orig: 335, 207
+  offset: 1, 0
+  index: -1
+killer_skill3_16_ef
+  rotate: false
+  xy: 720, 367
+  size: 216, 251
+  orig: 217, 252
+  offset: 1, 0
+  index: -1
+killer_win_02
+  rotate: true
+  xy: 828, 3
+  size: 162, 143
+  orig: 163, 144
+  offset: 1, 0
+  index: -1
+
+Hero_923.png
+size: 860,460
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+killer_skill2_18
+  rotate: false
+  xy: 193, 292
+  size: 169, 166
+  orig: 170, 167
+  offset: 1, 0
+  index: -1
+killer_skill3_03
+  rotate: false
+  xy: 562, 303
+  size: 152, 155
+  orig: 153, 156
+  offset: 1, 0
+  index: -1
+killer_skill3_05
+  rotate: false
+  xy: 147, 2
+  size: 190, 136
+  orig: 191, 137
+  offset: 1, 0
+  index: -1
+killer_skill3_06
+  rotate: false
+  xy: 364, 317
+  size: 196, 141
+  orig: 197, 142
+  offset: 1, 0
+  index: -1
+killer_skill3_07
+  rotate: false
+  xy: 516, 160
+  size: 196, 141
+  orig: 197, 142
+  offset: 1, 0
+  index: -1
+killer_skill3_08
+  rotate: false
+  xy: 516, 17
+  size: 196, 141
+  orig: 197, 142
+  offset: 1, 0
+  index: -1
+killer_skill3_17
+  rotate: false
+  xy: 343, 9
+  size: 144, 140
+  orig: 145, 141
+  offset: 1, 0
+  index: -1
+killer_skill3_17_ef
+  rotate: true
+  xy: 2, 281
+  size: 177, 189
+  orig: 178, 190
+  offset: 1, 0
+  index: -1
+killer_standby_01
+  rotate: false
+  xy: 714, 6
+  size: 141, 146
+  orig: 142, 147
+  offset: 1, 0
+  index: -1
+killer_standby_02
+  rotate: false
+  xy: 714, 154
+  size: 142, 147
+  orig: 143, 148
+  offset: 1, 0
+  index: -1
+killer_standby_03
+  rotate: false
+  xy: 716, 311
+  size: 142, 147
+  orig: 143, 148
+  offset: 1, 0
+  index: -1
+killer_win_03
+  rotate: true
+  xy: 364, 151
+  size: 164, 150
+  orig: 165, 151
+  offset: 1, 0
+  index: -1
+killer_win_04
+  rotate: false
+  xy: 2, 126
+  size: 143, 153
+  orig: 144, 154
+  offset: 1, 0
+  index: -1
+killer_win_05
+  rotate: false
+  xy: 193, 140
+  size: 148, 150
+  orig: 149, 151
+  offset: 1, 0
+  index: -1

@@ -1,0 +1,104 @@
+
+maid2.png
+size: 468,508
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer5
+  rotate: true
+  xy: 422, 370
+  size: 53, 23
+  orig: 55, 26
+  offset: 1, 2
+  index: -1
+armL
+  rotate: false
+  xy: 422, 425
+  size: 43, 78
+  orig: 45, 80
+  offset: 1, 1
+  index: -1
+armL2
+  rotate: true
+  xy: 229, 8
+  size: 43, 59
+  orig: 57, 62
+  offset: 13, 2
+  index: -1
+armR
+  rotate: true
+  xy: 2, 19
+  size: 29, 76
+  orig: 31, 79
+  offset: 1, 2
+  index: -1
+armR2
+  rotate: true
+  xy: 177, 2
+  size: 49, 50
+  orig: 51, 52
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 352, 80
+  size: 85, 138
+  orig: 85, 138
+  offset: 0, 0
+  index: -1
+boobs
+  rotate: false
+  xy: 352, 7
+  size: 79, 71
+  orig: 80, 72
+  offset: 0, 1
+  index: -1
+hairL
+  rotate: true
+  xy: 129, 368
+  size: 135, 291
+  orig: 135, 291
+  offset: 0, 0
+  index: -1
+hairR
+  rotate: false
+  xy: 2, 211
+  size: 125, 292
+  orig: 125, 292
+  offset: 0, 0
+  index: -1
+handr
+  rotate: false
+  xy: 433, 33
+  size: 32, 45
+  orig: 34, 47
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 2, 50
+  size: 173, 159
+  orig: 174, 159
+  offset: 1, 0
+  index: -1
+head2
+  rotate: false
+  xy: 177, 53
+  size: 173, 159
+  orig: 174, 159
+  offset: 1, 0
+  index: -1
+lowertail
+  rotate: false
+  xy: 295, 220
+  size: 165, 146
+  orig: 165, 146
+  offset: 0, 0
+  index: -1
+uppertail
+  rotate: true
+  xy: 129, 214
+  size: 152, 164
+  orig: 152, 164
+  offset: 0, 0
+  index: -1

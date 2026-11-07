@@ -1,0 +1,656 @@
+
+Hero_208.png
+size: 1004,1000
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L_04
+  rotate: true
+  xy: 692, 971
+  size: 27, 36
+  orig: 28, 37
+  offset: 1, 0
+  index: -1
+arm_R_04
+  rotate: true
+  xy: 942, 960
+  size: 38, 43
+  orig: 39, 44
+  offset: 1, 0
+  index: -1
+body_04
+  rotate: true
+  xy: 509, 900
+  size: 70, 81
+  orig: 71, 82
+  offset: 1, 0
+  index: -1
+cloth_41
+  rotate: false
+  xy: 451, 977
+  size: 78, 21
+  orig: 79, 22
+  offset: 1, 0
+  index: -1
+cloth_42
+  rotate: true
+  xy: 885, 962
+  size: 36, 55
+  orig: 37, 56
+  offset: 1, 0
+  index: -1
+cloth_43
+  rotate: true
+  xy: 365, 978
+  size: 20, 51
+  orig: 21, 52
+  offset: 1, 0
+  index: -1
+cloth_44
+  rotate: false
+  xy: 27, 984
+  size: 53, 14
+  orig: 54, 15
+  offset: 1, 0
+  index: -1
+cloth_45
+  rotate: false
+  xy: 108, 940
+  size: 75, 40
+  orig: 76, 41
+  offset: 1, 0
+  index: -1
+cloth_46
+  rotate: false
+  xy: 185, 934
+  size: 66, 44
+  orig: 67, 45
+  offset: 1, 0
+  index: -1
+cloth_47
+  rotate: true
+  xy: 387, 921
+  size: 55, 57
+  orig: 56, 58
+  offset: 1, 0
+  index: -1
+cloth_48
+  rotate: false
+  xy: 730, 970
+  size: 37, 28
+  orig: 44, 34
+  offset: 7, 3
+  index: -1
+cloth_49
+  rotate: false
+  xy: 591, 972
+  size: 39, 26
+  orig: 45, 33
+  offset: 3, 5
+  index: -1
+cloth_50
+  rotate: false
+  xy: 531, 977
+  size: 24, 21
+  orig: 33, 30
+  offset: 6, 5
+  index: -1
+cloth_51
+  rotate: false
+  xy: 806, 967
+  size: 39, 31
+  orig: 46, 34
+  offset: 2, 0
+  index: -1
+f-arm_L_04
+  rotate: false
+  xy: 175, 982
+  size: 60, 16
+  orig: 61, 17
+  offset: 1, 0
+  index: -1
+f-arm_R_04
+  rotate: true
+  xy: 237, 980
+  size: 18, 30
+  orig: 19, 31
+  offset: 1, 0
+  index: -1
+foot_L_04
+  rotate: false
+  xy: 418, 978
+  size: 31, 20
+  orig: 32, 21
+  offset: 1, 0
+  index: -1
+foot_R_01
+  rotate: false
+  xy: 329, 979
+  size: 34, 19
+  orig: 35, 20
+  offset: 1, 0
+  index: -1
+foot_R_04
+  rotate: false
+  xy: 269, 980
+  size: 26, 18
+  orig: 27, 19
+  offset: 1, 0
+  index: -1
+hand_L_04
+  rotate: true
+  xy: 632, 972
+  size: 26, 28
+  orig: 27, 29
+  offset: 1, 0
+  index: -1
+hand_R_04
+  rotate: true
+  xy: 662, 972
+  size: 26, 28
+  orig: 27, 29
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 253, 930
+  size: 48, 65
+  orig: 49, 66
+  offset: 1, 0
+  index: -1
+pel_newhead01_02
+  rotate: true
+  xy: 320, 928
+  size: 48, 65
+  orig: 49, 66
+  offset: 1, 0
+  index: -1
+pell_beat01
+  rotate: true
+  xy: 2, 326
+  size: 133, 137
+  orig: 150, 145
+  offset: 11, 5
+  index: -1
+pell_beat03
+  rotate: false
+  xy: 678, 66
+  size: 282, 143
+  orig: 299, 153
+  offset: 14, 3
+  index: -1
+pell_beat04
+  rotate: false
+  xy: 700, 482
+  size: 259, 131
+  orig: 280, 145
+  offset: 17, 8
+  index: -1
+pell_beat05
+  rotate: false
+  xy: 2, 18
+  size: 151, 143
+  orig: 172, 152
+  offset: 13, 4
+  index: -1
+pell_skill1_01
+  rotate: true
+  xy: 312, 426
+  size: 132, 151
+  orig: 146, 177
+  offset: 7, 18
+  index: -1
+pell_skill1_02
+  rotate: false
+  xy: 465, 357
+  size: 133, 132
+  orig: 144, 139
+  offset: 8, 3
+  index: -1
+pell_skill1_06
+  rotate: false
+  xy: 179, 570
+  size: 186, 116
+  orig: 208, 131
+  offset: 13, 4
+  index: -1
+pell_skill1_07
+  rotate: false
+  xy: 600, 348
+  size: 200, 132
+  orig: 232, 156
+  offset: 14, 10
+  index: -1
+pell_skill1_08
+  rotate: false
+  xy: 367, 560
+  size: 186, 116
+  orig: 205, 130
+  offset: 11, 2
+  index: -1
+pell_skill1_09
+  rotate: false
+  xy: 802, 348
+  size: 200, 132
+  orig: 225, 153
+  offset: 11, 5
+  index: -1
+pell_skill1_12
+  rotate: false
+  xy: 172, 148
+  size: 170, 140
+  orig: 185, 154
+  offset: 7, 10
+  index: -1
+pell_skill1_13
+  rotate: false
+  xy: 577, 211
+  size: 174, 135
+  orig: 192, 145
+  offset: 11, 3
+  index: -1
+pell_skill1_15
+  rotate: true
+  xy: 155, 2
+  size: 144, 154
+  orig: 166, 175
+  offset: 15, 10
+  index: -1
+pell_skill2_01
+  rotate: false
+  xy: 777, 847
+  size: 182, 111
+  orig: 188, 120
+  offset: 2, 5
+  index: -1
+pell_skill2_06
+  rotate: false
+  xy: 2, 831
+  size: 286, 97
+  orig: 309, 122
+  offset: 16, 9
+  index: -1
+pell_skill2_07
+  rotate: false
+  xy: 371, 678
+  size: 292, 98
+  orig: 314, 125
+  offset: 13, 12
+  index: -1
+pell_skill2_08
+  rotate: false
+  xy: 665, 615
+  size: 244, 115
+  orig: 292, 144
+  offset: 25, 14
+  index: -1
+pell_skill2_09
+  rotate: false
+  xy: 474, 778
+  size: 286, 97
+  orig: 318, 127
+  offset: 18, 15
+  index: -1
+pell_skill2_10
+  rotate: false
+  xy: 438, 219
+  size: 137, 136
+  orig: 163, 150
+  offset: 17, 6
+  index: -1
+pell_skill2_12
+  rotate: true
+  xy: 2, 461
+  size: 131, 153
+  orig: 151, 170
+  offset: 15, 7
+  index: -1
+pell_skill2_14
+  rotate: true
+  xy: 280, 290
+  size: 134, 156
+  orig: 165, 176
+  offset: 18, 9
+  index: -1
+pell_skill2_15
+  rotate: false
+  xy: 290, 804
+  size: 182, 113
+  orig: 199, 136
+  offset: 12, 16
+  index: -1
+pell_skill2_16
+  rotate: false
+  xy: 762, 732
+  size: 182, 113
+  orig: 194, 128
+  offset: 8, 7
+  index: -1
+pell_standby01
+  rotate: true
+  xy: 344, 77
+  size: 140, 160
+  orig: 156, 178
+  offset: 9, 8
+  index: -1
+pell_tunagi
+  rotate: false
+  xy: 555, 491
+  size: 143, 122
+  orig: 150, 132
+  offset: 5, 5
+  index: -1
+pell_win01
+  rotate: false
+  xy: 186, 688
+  size: 183, 114
+  orig: 197, 125
+  offset: 7, 4
+  index: -1
+pell_win05
+  rotate: true
+  xy: 2, 163
+  size: 137, 168
+  orig: 155, 176
+  offset: 10, 4
+  index: -1
+shank_L_04
+  rotate: true
+  xy: 557, 977
+  size: 21, 32
+  orig: 22, 33
+  offset: 1, 0
+  index: -1
+shank_R_01
+  rotate: true
+  xy: 2, 985
+  size: 13, 23
+  orig: 14, 24
+  offset: 1, 0
+  index: -1
+skill3_11
+  rotate: true
+  xy: 141, 302
+  size: 133, 137
+  orig: 150, 145
+  offset: 11, 5
+  index: -1
+skill3_13
+  rotate: true
+  xy: 446, 919
+  size: 56, 61
+  orig: 65, 67
+  offset: 4, 4
+  index: -1
+skill3_14
+  rotate: true
+  xy: 675, 877
+  size: 89, 100
+  orig: 108, 110
+  offset: 11, 4
+  index: -1
+skill3_15
+  rotate: true
+  xy: 769, 968
+  size: 30, 35
+  orig: 54, 58
+  offset: 10, 10
+  index: -1
+skill3_16
+  rotate: false
+  xy: 2, 945
+  size: 104, 37
+  orig: 129, 76
+  offset: 11, 21
+  index: -1
+skill3_18
+  rotate: false
+  xy: 506, 69
+  size: 170, 140
+  orig: 185, 154
+  offset: 7, 10
+  index: -1
+skill3_19
+  rotate: false
+  xy: 753, 211
+  size: 174, 135
+  orig: 192, 145
+  offset: 11, 3
+  index: -1
+skill3_21
+  rotate: true
+  xy: 157, 437
+  size: 131, 153
+  orig: 151, 170
+  offset: 15, 7
+  index: -1
+skill3_22
+  rotate: false
+  xy: 2, 716
+  size: 182, 113
+  orig: 199, 136
+  offset: 12, 16
+  index: -1
+skill3_23
+  rotate: true
+  xy: 592, 890
+  size: 80, 81
+  orig: 90, 87
+  offset: 7, 2
+  index: -1
+skill3_24
+  rotate: true
+  xy: 2, 594
+  size: 120, 175
+  orig: 142, 187
+  offset: 1, 4
+  index: -1
+skill3_25
+  rotate: false
+  xy: 111, 983
+  size: 62, 15
+  orig: 79, 22
+  offset: 1, 6
+  index: -1
+thigh_L_04
+  rotate: false
+  xy: 297, 980
+  size: 30, 18
+  orig: 31, 19
+  offset: 1, 0
+  index: -1
+thigh_R_01
+  rotate: true
+  xy: 82, 984
+  size: 14, 27
+  orig: 15, 28
+  offset: 1, 0
+  index: -1
+thigh_R_04
+  rotate: true
+  xy: 847, 964
+  size: 34, 36
+  orig: 35, 37
+  offset: 1, 0
+  index: -1
+
+Hero_2082.png
+size: 952,820
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+pell_beat02
+  rotate: false
+  xy: 2, 247
+  size: 168, 215
+  orig: 192, 225
+  offset: 17, 4
+  index: -1
+pell_damage
+  rotate: false
+  xy: 581, 491
+  size: 151, 147
+  orig: 159, 160
+  offset: 3, 6
+  index: -1
+pell_skill1_03
+  rotate: false
+  xy: 520, 640
+  size: 205, 178
+  orig: 222, 189
+  offset: 13, 2
+  index: -1
+pell_skill1_04
+  rotate: true
+  xy: 172, 122
+  size: 168, 155
+  orig: 186, 163
+  offset: 12, 3
+  index: -1
+pell_skill1_05
+  rotate: false
+  xy: 2, 464
+  size: 216, 199
+  orig: 233, 214
+  offset: 10, 10
+  index: -1
+pell_skill1_10
+  rotate: false
+  xy: 644, 171
+  size: 146, 154
+  orig: 169, 179
+  offset: 17, 10
+  index: -1
+pell_skill1_11
+  rotate: true
+  xy: 330, 318
+  size: 169, 148
+  orig: 184, 163
+  offset: 9, 8
+  index: -1
+pell_skill1_14
+  rotate: true
+  xy: 2, 37
+  size: 208, 168
+  orig: 225, 187
+  offset: 12, 10
+  index: -1
+pell_skill1_16
+  rotate: false
+  xy: 310, 651
+  size: 208, 167
+  orig: 220, 190
+  offset: 4, 10
+  index: -1
+pell_skill1_17
+  rotate: false
+  xy: 799, 6
+  size: 144, 153
+  orig: 170, 167
+  offset: 21, 5
+  index: -1
+pell_skill2_02
+  rotate: false
+  xy: 220, 489
+  size: 188, 160
+  orig: 217, 178
+  offset: 15, 9
+  index: -1
+pell_skill2_03
+  rotate: false
+  xy: 727, 646
+  size: 183, 172
+  orig: 225, 196
+  offset: 22, 10
+  index: -1
+pell_skill2_04
+  rotate: true
+  xy: 647, 327
+  size: 162, 145
+  orig: 175, 162
+  offset: 7, 6
+  index: -1
+pell_skill2_05
+  rotate: false
+  xy: 2, 665
+  size: 306, 153
+  orig: 345, 194
+  offset: 20, 19
+  index: -1
+pell_skill2_11
+  rotate: false
+  xy: 792, 161
+  size: 157, 161
+  orig: 174, 168
+  offset: 9, 6
+  index: -1
+pell_skill2_13
+  rotate: true
+  xy: 492, 2
+  size: 157, 159
+  orig: 173, 173
+  offset: 7, 9
+  index: -1
+pell_standby02
+  rotate: false
+  xy: 653, 2
+  size: 144, 157
+  orig: 154, 167
+  offset: 4, 4
+  index: -1
+pell_win02
+  rotate: false
+  xy: 480, 170
+  size: 162, 159
+  orig: 182, 177
+  offset: 13, 9
+  index: -1
+pell_win03
+  rotate: true
+  xy: 410, 492
+  size: 146, 169
+  orig: 161, 190
+  offset: 8, 7
+  index: -1
+pell_win04
+  rotate: true
+  xy: 734, 493
+  size: 151, 169
+  orig: 164, 183
+  offset: 6, 8
+  index: -1
+pell_win06
+  rotate: false
+  xy: 172, 292
+  size: 156, 170
+  orig: 166, 179
+  offset: 3, 3
+  index: -1
+pell_win07
+  rotate: false
+  xy: 480, 331
+  size: 165, 158
+  orig: 181, 176
+  offset: 7, 11
+  index: -1
+skill3_12
+  rotate: true
+  xy: 330, 165
+  size: 151, 146
+  orig: 172, 152
+  offset: 13, 1
+  index: -1
+skill3_17
+  rotate: true
+  xy: 794, 324
+  size: 167, 148
+  orig: 184, 163
+  offset: 9, 8
+  index: -1
+skill3_20
+  rotate: true
+  xy: 329, 2
+  size: 157, 161
+  orig: 174, 168
+  offset: 9, 6
+  index: -1

@@ -1,0 +1,55 @@
+
+Skill_175.png
+size: 1008,480
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Char_momonga_skill_1_daoguang/000
+  rotate: false
+  xy: 2, 8
+  size: 325, 241
+  orig: 330, 244
+  offset: 3, 1
+  index: -1
+Char_momonga_skill_1_daoguang/001
+  rotate: false
+  xy: 656, 2
+  size: 347, 244
+  orig: 351, 248
+  offset: 2, 2
+  index: -1
+Char_momonga_skill_1_daoguang/002
+  rotate: false
+  xy: 329, 3
+  size: 325, 243
+  orig: 333, 247
+  offset: 5, 2
+  index: -1
+Char_momonga_skill_1_daoguang/003
+  rotate: true
+  xy: 228, 251
+  size: 226, 232
+  orig: 233, 235
+  offset: 5, 1
+  index: -1
+Char_momonga_skill_1_daoguang/004
+  rotate: false
+  xy: 462, 248
+  size: 231, 229
+  orig: 239, 232
+  offset: 5, 1
+  index: -1
+Char_momonga_skill_1_daoguang/005
+  rotate: false
+  xy: 695, 248
+  size: 235, 229
+  orig: 239, 231
+  offset: 2, 0
+  index: -1
+Char_momonga_skill_1_daoguang/006
+  rotate: false
+  xy: 2, 253
+  size: 224, 224
+  orig: 232, 227
+  offset: 5, 1
+  index: -1

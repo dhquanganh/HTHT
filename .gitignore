@@ -4,3 +4,7 @@ extracted/
 *.log
 qa-output/
 outputs/
+.env
+.env.*
+!.env.example
+.runtime/

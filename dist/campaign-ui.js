@@ -1,0 +1,87 @@
+/* Campaign screens composed from the original CampaignScene/PopupFormation art. */
+(()=>{
+ 'use strict';
+ const V=()=>window.GameView;
+ let deckHeroes=[],chest=null,renderer=null,afkSnapshot=null,afkAt=0,afkShown=null;
+ const chestAnimation={empty:'Empty',full:'Full',overflow:'Full2'};
+ const styles=c=>`--panel-image:url('${c.assetSrc(c.named('popup_body'))}');--yellow:url('${c.assetSrc('1a2d3e7dc1dbacb46b77f62100c5477a_2')}');--green:url('${c.assetSrc('bd6a8ad4b068d0846ba2dcf60841fb34_2')}')`;
+ const chapter=c=>c.catalog.campaign.chapters.find(x=>x.id===c.chapterId)||c.catalog.campaign.chapters[0];
+ const stage=c=>c.catalog.stages.find(x=>x.id===c.stageId)||c.catalog.stages[0];
+ const locked=(c,s)=>s.id>c.player.adventure.unlockedStage||s.requireLevel>c.player.account.level;
+ function card(c,hero,{selected=false,action='campaign-hero',slot=null}={}){
+  const def=c.catalog.heroes.find(d=>d.id===hero.id);
+  return `<button class="campaign-hero-card ${selected?'selected':''}" data-action="${action}" data-hero="${hero.id}" ${slot!==null?'data-slot="'+slot+'"':''} draggable="true" aria-label="${c.escape(def.name)}" title="${c.escape(def.name)}">${c.img(c.named('frame_item'),'campaign-card-frame')}${c.img(def.visual.head,'campaign-card-head')}${c.img(c.named('faction_'+def.faction),'campaign-card-faction')}<b>${hero.level}</b><span class="campaign-card-stars">${window.heroStarsHtml(hero.stars)}</span>${selected?c.img(c.named('tick_green'),'campaign-card-check'):''}</button>`;
+ }
+ function map(c){
+  const chapters=c.catalog.campaign.chapters,unlocked=c.catalog.stages[Math.min(c.catalog.stages.length,c.player.adventure.unlockedStage)-1],pages=Math.ceil(chapters.length/2);
+  return `<section class="campaign-map" aria-label="Bản đồ phụ bản"><div class="campaign-ocean-scroll" tabindex="0" aria-label="Kéo để xem các đảo"><div class="campaign-ocean-track" style="width:${pages*1136}px;background-image:url('${c.assetSrc(c.catalog.campaign.ui.ocean)}')">${Array.from({length:pages},(_,i)=>c.catalog.campaign.ui.decor.map(d=>`<img class="campaign-terrain" src="${c.assetSrc(d.assetKey)}" alt="" style="left:${d.x+i*1136-d.width/2}px;top:${d.y-d.height/2}px;width:${d.width}px;height:${d.height}px">`).join('')).join('')}${chapters.map((ch,i)=>{const x=Math.floor(i/2)*1136+(i%2?812:185),y=i%2?467:233,isLocked=ch.stageIds[0]>c.player.adventure.unlockedStage;return `<button class="campaign-island ${isLocked?'locked':''}" data-action="campaign-chapter" data-chapter="${ch.id}" style="left:${x-160}px;top:${y-136}px" aria-label="${ch.id}. ${c.escape(ch.name)}${isLocked?' · Chưa mở khóa':''}">${c.img(ch.islandKey,'campaign-island-art')}<span class="campaign-island-label" style="background-image:url('${c.assetSrc(c.named('tag_name_home'))}')">${ch.id}. ${c.escape(ch.name)}</span>${ch.id===unlocked.chapter?'<span class="campaign-current-island">'+c.img(c.named('notify_dot'))+'</span>':''}</button>`}).join('')}</div></div><button class="campaign-back" data-action="home" aria-label="Về màn hình chính">${c.img(c.named('button_back'))}</button><button class="campaign-locate" data-action="campaign-locate" aria-label="Đảo hiện tại">${c.img(c.named('button_map'))}</button></section>`;
+ }
+ function deck(c){
+  const ch=chapter(c),s=stage(c),stages=ch.stageIds.map(id=>c.catalog.stages[id-1]),current=s.id===c.player.adventure.unlockedStage;
+  const nodes=stages.map((r,i)=>`<button class="campaign-stage ${r.id===s.id?'selected':''} ${c.player.adventure.cleared.includes(r.id)?'cleared':''}" data-action="stage" data-id="${r.id}" aria-label="Ải ${r.code}${locked(c,r)?' · Chưa mở khóa':''}" style="left:${i*184+28}px;top:${i%2?2:22}px">${c.img(c.named(locked(c,r)?'island_locked':'island'))}${c.player.adventure.cleared.includes(r.id)?c.img(c.named('tick_green'),'campaign-stage-check'):''}<strong>${r.code}</strong></button>`).join('');
+  const points=stages.map((_,i)=>`${i*184+78},${i%2?65:93}`).join(' ');
+  return `<section class="campaign-deck" aria-label="${c.escape(ch.name)}"><button class="campaign-back" data-action="campaign-map" aria-label="Bản đồ đảo">${c.img(c.named('button_back'))}</button><div class="campaign-wallet">${[['icon_gold',c.player.wallet.gold],['icon_spirit',c.player.hero.exp]].map(([key,value])=>`<span style="background-image:url('${c.assetSrc(c.named('box_field_1'))}')">${c.img(c.named(key))}<b>${c.short(value)}</b></span>`).join('')}</div><div class="campaign-chapter-banner" style="background-image:url('${c.assetSrc(c.named('board_campaign_name'))}')">${c.escape(ch.name)}</div><div class="campaign-deck-tools"><button data-action="campaign-team" aria-label="Đội hình">${c.img(c.named('button_top'))}</button><button data-action="campaign-help" aria-label="Hướng dẫn phụ bản">${c.img(c.named('button_help'))}</button></div><aside class="campaign-speech">Thường xuyên ghé thăm<br>để thu thập tài nguyên nhé</aside><button class="campaign-deck-map" data-action="campaign-map" aria-label="Chọn đảo">${c.img(c.named('button_map'))}</button><button class="campaign-primary" data-action="campaign-team" style="background-image:url('${c.assetSrc('1a2d3e7dc1dbacb46b77f62100c5477a_2')}')">${c.player.adventure.cleared.includes(s.id)?'Đánh lại':'Vượt ải'}</button><button class="campaign-chest-hit" data-action="campaign-afk" aria-label="Rương tự động đánh ải"></button><span class="campaign-current-stage">Ải ${s.code}${current?' · Ải hiện tại':''}</span><div class="campaign-stage-rail" style="background-image:url('${c.assetSrc(c.catalog.campaign.ui.rail)}')"><div class="campaign-stage-scroll"><div class="campaign-stage-track" style="width:${Math.max(1136,stages.length*184+56)}px"><svg width="${stages.length*184+56}" height="130" aria-hidden="true"><polyline points="${points}"/></svg>${nodes}</div></div></div></section>`;
+ }
+ function formation(c){
+  const s=stage(c),slots=c.draftSlots,team=slots.filter(Boolean).map(id=>c.player.heroes.find(h=>h.id===id)),canFight=!locked(c,s)&&team.length>0;
+  const roster=c.player.heroes.filter(h=>!c.formationFilter||c.catalog.heroes.find(d=>d.id===h.id).faction===c.formationFilter);
+  return `<div class="reference-shade campaign-formation-shade"><section class="reference-window campaign-formation" role="dialog" aria-modal="true" aria-label="Đội hình" style="${styles(c)}"><h2 class="reference-title">Đội hình</h2><button class="reference-close" data-action="close" aria-label="Đóng">${c.img(c.named('popup_close'))}</button><div class="campaign-team-power">${c.img(c.named('icon_power'))}<strong>${c.num(team.reduce((n,h)=>n+h.stats.power,0))}</strong><span>${team.length}/6 tướng · ${s.code} · ${c.escape(chapter(c).name)}</span></div><div class="campaign-formation-slots"><h3>Hàng trước</h3><h3>Hàng sau</h3><h3>Chiến hạm</h3><div class="campaign-six-slots">${Array.from({length:6},(_,i)=>{const h=c.player.heroes.find(h=>h.id===slots[i]);return `<div class="campaign-slot ${h?'occupied':''} ${i===c.selectedSlot?'focused':''}" data-slot="${i}" style="left:${i*104+(i>1?30:0)}px">${h?card(c,h,{action:'campaign-slot',slot:i}):`<button data-action="campaign-slot" data-slot="${i}" aria-label="${i<2?'Hàng trước':'Hàng sau'} · Ô ${i+1}">${c.img(c.named('frame_item'))}</button>`}</div>`}).join('')}</div><button class="campaign-ship-slot" data-action="campaign-ship" aria-label="Chiến hạm">${c.img(c.named('border_gear'))}${c.img(c.named('icon_gear'),'campaign-ship-symbol')}</button></div><div class="campaign-aura-box"><div class="campaign-aura-wheel">${c.img(c.named('bgr_aura_new'))}${Array.from({length:6},(_,i)=>`<span>${c.img(team[i]?c.named('faction_'+c.catalog.heroes.find(d=>d.id===team[i].id).faction):c.named('faction_aura'))}</span>`).join('')}</div><div class="campaign-aura-description"><strong>${team.length}/6 tướng xuất chiến${c.selectedSlot!==null?' · Đang chọn ô '+(c.selectedSlot+1):''}</strong><p>Chọn ô rồi chọn tướng để xếp hàng trước/sau. Chạm lại thẻ đã chọn trong danh sách để gỡ; kéo thẻ để đổi chỗ.</p></div></div><button class="ref-button campaign-save" style="--button-image:url('${c.assetSrc('1a2d3e7dc1dbacb46b77f62100c5477a_2')}')" data-action="campaign-save" data-submit ${team.length?'':'disabled'}>Lưu đội hình</button><button class="ref-button green campaign-fight" style="--button-image:url('${c.assetSrc('bd6a8ad4b068d0846ba2dcf60841fb34_2')}')" data-action="battle-start" data-id="${s.id}" data-submit ${canFight?'':'disabled'}>${canFight?'Chiến đấu':!team.length?'Chọn tướng':s.requireLevel>c.player.account.level?'Cần cấp '+s.requireLevel:'Chưa mở khóa'}</button></section><div class="campaign-reserves"><div class="campaign-reserve-scroll">${roster.map(h=>card(c,h,{selected:slots.includes(h.id)})).join('')}</div><button class="campaign-filter" data-action="campaign-filter" aria-label="Lọc hệ tướng">${c.img(c.named('button_filter'))}</button>${c.formationFilter?'<button class="campaign-filter-clear" data-action="campaign-filter">Tất cả</button>':''}</div></div>`;
+ }
+ function rewards(c){const s=stage(c);return `<div class="campaign-reward-summary"><p>Ải ${s.code} · Cấp yêu cầu ${s.requireLevel}</p>${[['Vàng',s.rewards.gold],['EXP thuyền trưởng',s.rewards.accountExp],['EXP tướng',s.rewards.heroExp]].map(([name,value])=>`<div class="stat">${name}<strong>+${c.num(value)}</strong></div>`).join('')}<div class="campaign-drop-list">${s.drops.map(d=>{const item=c.itemMap.get(d.itemId);return item?`<span>${c.img(item.assetKey)}${c.escape(item.name)} ×${d.quantity}</span>`:''}).join('')}</div><p class="muted">${c.escape(s.idleOutput)}</p></div>`}
+ // Server gửi ảnh chụp lúc phản hồi; client chỉ nội suy để đồng hồ và rương chạy tiếp, việc nhận vẫn do server tính.
+ function afkNow(c){
+  if(!c.player.afk||!c.catalog.economy.afk)return null;
+  const a=c.player.afk,{tickSeconds,maxSeconds,minClaimSeconds,overflowSeconds}=c.catalog.economy.afk;
+  if(a!==afkSnapshot){afkSnapshot=a;afkAt=Date.now()}
+  if(!a.rate)return a;
+  const seconds=Math.min(maxSeconds,a.seconds+Math.floor((Date.now()-afkAt)/1000)),ticks=Math.floor(seconds/tickSeconds)-Math.floor(a.seconds/tickSeconds),spirit=a.pending.spirit+ticks*a.rate.spirit;
+  return{...a,seconds,state:seconds<minClaimSeconds?'empty':seconds<overflowSeconds?'full':'overflow',pending:{gold:a.pending.gold+ticks*a.rate.gold,accountExp:a.pending.accountExp+ticks*a.rate.accountExp,spirit,stones:Math.floor(spirit/a.spiritPerStone)}};
+ }
+ const clock=seconds=>[seconds/3600,seconds/60%60,seconds%60].map(n=>String(Math.floor(n)).padStart(2,'0')).join(':');
+ function afkNote(c,a){
+  const hours=c.catalog.economy.afk.maxSeconds/3600;
+  if(!a.rate)return 'Vượt ải đầu tiên để thuyền viên bắt đầu tự động đánh.';
+  if(a.state==='empty')return 'Rương trống. Hãy đợi thuyền viên đánh tự động thêm một thời gian nữa.';
+  return a.seconds>=hours*3600?'Rương đã đầy, không thể chứa thêm. Hãy nhận ngay!':`Sau ${hours} tiếng rương sẽ đầy, không thể chứa thêm nữa.`;
+ }
+ function afk(c){
+  const a=afkNow(c),perHour=3600/c.catalog.economy.afk.tickSeconds,rate=key=>a.rate?a.rate[key]*perHour:0,stone=c.itemMap.get(c.catalog.economy.afk.stoneItem);
+  const rates=[[c.named('icon_gold'),rate('gold')],[c.named('icon_exp'),rate('accountExp')],[stone.assetKey,rate('spirit')/a.spiritPerStone]];
+  const loot=[['gold','Vàng',c.named('icon_gold')],['accountExp','Kinh nghiệm',c.named('icon_exp')],['stones',stone.name,stone.assetKey]];
+  return `<div class="reference-shade"><section class="reference-window campaign-afk" role="dialog" aria-modal="true" aria-label="Tự động đánh ải" style="${styles(c)}"><h2 class="reference-title">Tự động đánh ải</h2><button class="reference-close" data-action="close" aria-label="Đóng">${c.img(c.named('popup_close'))}</button><div class="campaign-afk-time"><span>Thời gian tự động đánh ải</span><strong data-afk="time">${clock(a.seconds)}</strong></div><div class="campaign-afk-rates" aria-label="Tốc độ theo ải ${a.stageCode||'chưa có'}">${rates.map(([key,value])=>`<span>${c.img(key)}<b>+${c.num(value)}/giờ</b></span>`).join('')}</div><div class="campaign-afk-loot"><h3>Tài nguyên:</h3><div class="campaign-afk-items">${loot.map(([id,name,key])=>`<div><div class="ref-material-icon">${c.img(key)}${c.img('0c8c5b028d3f86f4b962f8096732f7fb_2','ref-item-frame')}<span class="ref-item-quantity" data-afk="${id}">${c.short(a.pending[id])}</span></div><small>${c.escape(name)}</small></div>`).join('')}</div><p data-afk="note">${afkNote(c,a)}</p></div><div class="campaign-afk-actions"><button class="ref-button" style="--button-image:url('${c.assetSrc('1a2d3e7dc1dbacb46b77f62100c5477a_2')}')" data-action="campaign-rewards">Phần thưởng qua ải</button><button class="ref-button green" style="--button-image:url('${c.assetSrc('bd6a8ad4b068d0846ba2dcf60841fb34_2')}')" data-action="campaign-afk-claim" data-afk="claim" data-submit ${a.state==='empty'?'disabled':''}>Nhận</button></div></section></div>`;
+ }
+ function refreshAfk(c,a){
+  const box=document.querySelector('.campaign-afk');if(!box||afkShown===a.seconds)return;afkShown=a.seconds;
+  box.querySelector('[data-afk="time"]').textContent=clock(a.seconds);box.querySelector('[data-afk="note"]').textContent=afkNote(c,a);box.querySelector('[data-afk="claim"]').disabled=a.state==='empty';
+  for(const id of ['gold','accountExp','stones'])box.querySelector(`[data-afk="${id}"]`).textContent=c.short(a.pending[id]);
+ }
+ function openChest(){if(!chest?.instance)return;chest.state.setAnimation(0,'Open',false);chest.state.addAnimation(0,'Empty',true,0)}
+ function syncChest(state){if(!chest?.instance)return;const current=chest.state.getCurrent(0)?.animation.name;if(current!=='Open'&&current!==chestAnimation[state])chest.state.setAnimation(0,chestAnimation[state],true)}
+ async function prepare(c){
+  await Promise.all([V().loadImage(c.catalog.campaign.ui.ocean),V().loadImage(c.catalog.campaign.ui.deck)]);
+  const existing=new Map(deckHeroes.map(h=>[h.heroId,h])),slots=c.player.formation?.slots||[c.player.hero.id];
+  deckHeroes=slots.map((id,position)=>{if(!id)return null;const def=c.catalog.heroes.find(h=>h.id===id),controller=existing.get(id)||{heroId:id,skeleton:def.visual.skeleton,animation:'idling',loop:true};controller.position=position;return controller}).filter(Boolean);
+  await Promise.all(deckHeroes.filter(c=>!c.instance).map(c=>V().loadSkeleton(c)));
+  if(!chest){chest={skeleton:c.catalog.campaign.ui.lootChest,animation:'Empty',loop:true};await V().loadSkeleton(chest)}
+ }
+ function draw(c,ctx,dt,isMap){
+  const image=V().readyImage(c.catalog.campaign.ui[isMap?'ocean':'deck']);if(image)ctx.drawImage(image,0,0,1136,640);if(isMap)return true;
+  renderer??=new spine.canvas.SkeletonRenderer(ctx);renderer.triangleRendering=true;
+  const positions=[[255,400],[410,400],[150,300],[280,300],[410,300],[540,340]],members=deckHeroes.map(controller=>[controller,...positions[controller.position],210,deckHeroes.length>3?150:190]).sort((a,b)=>a[2]-b[2]);
+  for(const [controller,x,y,width,height] of [...members,[chest,1015,485,245,190]]){
+   if(!controller?.instance)continue;if(controller===chest)chest.instance.setToSetupPose();controller.state.update(dt);controller.state.apply(controller.instance);controller.instance.updateWorldTransform();
+   if(!controller.fit||controller.fit.height!==height){const off=new spine.Vector2(),size=new spine.Vector2();controller.instance.getBounds(off,size,[]);const scale=Math.min(width/size.x,height/size.y);controller.fit={height,scale,x:-(off.x+size.x/2)*scale,y:off.y*scale}}
+   const fit=controller.fit;ctx.save();ctx.translate(x+fit.x,y+fit.y);ctx.scale(fit.scale,-fit.scale);renderer.draw(controller.instance);ctx.restore();
+  }
+  const a=afkNow(c);if(a){syncChest(a.state);refreshAfk(c,a)}
+  return true;
+ }
+ function focus(c,isMap){requestAnimationFrame(()=>{const selector=isMap?'.campaign-island[data-chapter="'+c.chapterId+'"]':'.campaign-stage[data-id="'+c.stageId+'"]',el=document.querySelector(selector),scroll=document.querySelector(isMap?'.campaign-ocean-scroll':'.campaign-stage-scroll');if(el&&scroll)scroll.scrollLeft=Math.max(0,el.offsetLeft-(isMap?30:450))})}
+ document.addEventListener('wheel',e=>{const scroll=e.target.closest('.campaign-ocean-scroll,.campaign-stage-scroll');if(scroll&&!e.ctrlKey&&Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();scroll.scrollLeft+=e.deltaY}},{passive:false});
+ let drag=null,suppressClick=false;
+ document.addEventListener('pointerdown',e=>{const scroll=e.target.closest('.campaign-ocean-scroll,.campaign-stage-scroll');if(scroll&&e.pointerType==='mouse'&&e.button===0)drag={scroll,x:e.clientX,left:scroll.scrollLeft,moved:false}});
+ document.addEventListener('pointermove',e=>{if(!drag)return;if(Math.abs(e.clientX-drag.x)>6)drag.moved=true;if(drag.moved){e.preventDefault();drag.scroll.scrollLeft=drag.left+drag.x-e.clientX}});
+ document.addEventListener('pointerup',()=>{if(drag?.moved)suppressClick=true;drag=null});
+ document.addEventListener('click',e=>{if(suppressClick){suppressClick=false;e.preventDefault();e.stopImmediatePropagation()}},true);
+ window.CampaignUI={map,deck,formation,rewards,afk,openChest,chestState:()=>chest?.state?.getCurrent(0)?.animation.name,prepare,draw,focus,locked};
+})();
