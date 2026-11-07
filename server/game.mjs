@@ -13,6 +13,8 @@ import {rollChest,chestHero} from './chests.mjs';
 import {startBeast,finishBeast,claimBeast} from './beast.mjs';
 import {equipmentBonus,forgeItem} from './equipment.mjs';
 import {stoneGroups,unlockStone,upgradeStone,convertStone,applyStoneItem,stoneDust} from './hero-stones.mjs';
+import {specialView,applySpecial,upgradeSpecial} from './special-equip.mjs';
+import {trackDaily,dailyQuestView,claimDaily} from './daily-quests.mjs';
 import {claimMail,deleteMail} from './mail.mjs';
 import {albumView,albumGroups,rollAlbum} from './album.mjs';
 import {masteryView,claimMasteryQuest,claimMasteryMilestone,recordBossBattle} from './mastery.mjs';
@@ -37,6 +39,7 @@ export function heroStats(player){
  Object.assign(stats,bonus.combat);
  for(const id of Object.values(h.equipment)){const item=itemById.get(id);if(!item||item.points)continue;for(const [name,value] of Object.entries(item.stats||{})){const field=({hp:'maxHp',atk:'attack',armor:'defense'})[name]||name;if(field in stats&&Number.isFinite(value))stats[field]+=Math.round(value)}}
  stats.maxHp=Math.round(stats.maxHp*(1+haki.hp));stats.defense=Math.round(stats.defense*(1+haki.armor));
+ applySpecial(h,stats);
  if(zoro){const tier=heroLevels(h).enma,bonus=[.3,.5,.7][Math.min(3,tier)-1];stats.attack=Math.round(stats.attack*(1+bonus));stats.speed+=[80,100,150][Math.min(3,tier)-1]}
  stats.power=Math.round(stats.attack*2.4+stats.maxHp*.13+stats.defense*2);return stats;
 }
@@ -54,7 +57,7 @@ export function upgradeCosts(player){const h=player.hero;return{
  skills:Object.fromEntries(heroSkills(h).map(s=>{const level=heroLevels(h)[s.id];return[s.id,{gold:level*250,items:{[materials.skill]:level},maxLevel:Math.max(level,Math.min(economy.maxSkillLevel,2+h.rank*2))}]})),
 }}
 export function playerView(player,now=Date.now()){return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
-function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h})});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),mastery:masteryView(player),abyss:abyssView(player,now),activity:activity.slice(-20).reverse()}}
+function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),activity:activity.slice(-20).reverse()}}
 function addItem(p,id,qty){requireCondition(itemById.has(id),'Vật phẩm không tồn tại.');if(id===heroExpItem){p.wallet.spirit=(p.wallet.spirit||0)+qty;requireCondition(p.wallet.spirit>=0,'Không đủ Đá EXP.');return}p.inventory[id]=(p.inventory[id]||0)+qty;requireCondition(p.inventory[id]>=0,'Không đủ vật phẩm.')}
 function spend(p,cost){for(const [currency,amount] of Object.entries(cost)){requireCondition(Number.isSafeInteger(amount)&&amount>=0,'Chi phí không hợp lệ.');requireCondition((p.wallet[currency]||0)>=amount,`Không đủ ${({gold:'vàng',diamonds:'kim cương',spirit:'EXP tướng'})[currency]||currency}.`,400,'INSUFFICIENT_FUNDS');p.wallet[currency]-=amount;if(currency==='diamonds')trackEvent(p,'diamondSpend',amount)}}
 function spendItems(p,cost={}){for(const [id,amount] of Object.entries(cost)){requireCondition((id===heroExpItem?p.wallet.spirit:p.inventory[id]||0)>=amount,`Không đủ ${itemById.get(id)?.name||'vật phẩm'}.`);addItem(p,id,-amount)}}
@@ -65,6 +68,10 @@ function payReward(p,{itemId,quantity}){if(walletIds.has(itemId))spend(p,{[itemI
 function outsideBattle(p){requireCondition(!p.battle||p.battle.status!=='active','Hãy kết thúc trận chiến trước.',409,'BATTLE_ACTIVE')}
 function accountExp(p,amount){p.account.exp+=amount;while(p.account.level<100&&p.account.exp>=p.account.level*100){p.account.exp-=p.account.level*100;p.account.level++}}
 export function applyAction(p,action,input,now=Date.now(),context){
+ const beastActive=!!p.battle?.beast&&p.battle.status==='active',result=runAction(p,action,input,now,context);
+ trackDaily(p,{action,input,beastWon:beastActive&&p.battle?.status==='won'},now);return result;
+}
+function runAction(p,action,input,now,context){
  ensureRoster(p);startAfk(p,now);startSummon(p);if(p.hero.id==='luffy-gear-2')ensureLuffySkills(p);
  if(action==='formation-save'){outsideBattle(p);p.formation=validateFormation(p,input.slots);return{message:'Đã lưu đội hình.'}}
  if(action==='hero-select'){
@@ -164,6 +171,8 @@ export function applyAction(p,action,input,now=Date.now(),context){
   outsideBattle(p);const pay=(gold,dust)=>{spend(p,{gold});spendItems(p,{[stoneDust]:dust})};
   return action==='stone-unlock'?unlockStone(p.hero):action==='stone-upgrade'?upgradeStone(p.hero,pay):convertStone(p.hero,pay);
  }
+ if(action==='daily-quest-claim'){outsideBattle(p);return claimDaily(p,input,reward=>grantReward(p,reward),now)}
+ if(action==='special-upgrade'){outsideBattle(p);return upgradeSpecial(p.hero,input,cost=>{spend(p,{gold:cost.gold});spendItems(p,cost.items)})}
  if(action==='forge'){outsideBattle(p);const result=forgeItem(p,input,spendItems,addItem);trackEvent(p,'forge',result.quantity,now);return result}
  if(action==='battle-action')return battleRound(p,input,now);
  if(action==='chest-open'){
