@@ -17,7 +17,7 @@ function cookieOptions(req){return{httpOnly:true,sameSite:'lax',secure:req.secur
 function equal(a,b){if(typeof a!=='string'||typeof b!=='string')return false;const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length&&timingSafeEqual(x,y)}
 function rateLimiter(limit,windowMs){const buckets=new Map();let count=0;return(req,res,next)=>{const now=Date.now();const key=req.ip+'|'+(typeof req.body?.username==='string'?req.body.username.toLowerCase():'');let bucket=buckets.get(key);if(!bucket||bucket.until<now){bucket={count:0,until:now+windowMs};buckets.set(key,bucket)}bucket.count++;if(++count%200===0)for(const [k,v]of buckets)if(v.until<now)buckets.delete(k);if(bucket.count>limit){res.set('Retry-After',String(Math.ceil((bucket.until-now)/1000)));return next(new GameError('Bạn thao tác quá nhanh. Vui lòng thử lại sau.',429,'RATE_LIMITED'))}next()}}
 export function createApp(store,{adminPassword=process.env.ADMIN_PASSWORD}={}){
- const app=express();app.disable('x-powered-by');
+ const app=express();app.disable('x-powered-by');app.set('trust proxy',1);
  app.use(helmet({contentSecurityPolicy:{directives:{defaultSrc:["'self'"],scriptSrc:["'self'"],styleSrc:["'self'","'unsafe-inline'"],imgSrc:["'self'",'data:','blob:'],fontSrc:["'self'",'data:'],connectSrc:["'self'"],mediaSrc:["'self'"],objectSrc:["'none'"],upgradeInsecureRequests:null}},crossOriginEmbedderPolicy:false,hsts:process.env.NODE_ENV==='production'?undefined:false}));
  app.use(express.json({limit:'16kb',strict:true}));
  app.use('/api',(req,res,next)=>{res.set('Cache-Control','no-store');if(req.method!=='GET'&&req.headers.origin){requireCondition(req.headers.origin===`${req.protocol}://${req.get('host')}`,'Nguồn yêu cầu không hợp lệ.',403,'ORIGIN_REJECTED')}next()});

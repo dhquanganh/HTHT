@@ -29,6 +29,8 @@ Trong Vercel, để **Build Command** trống (hoặc chọn `Override` và nh�
 
 Trong MongoDB Atlas, cho phép kết nối từ Vercel (Network Access). Sau khi deploy, mở URL Vercel và kiểm tra `/api/health`. File `.env` chỉ dùng local và không được upload lên Vercel.
 
+Máy chủ nhận diện HTTPS qua proxy của Vercel để kiểm tra `Origin` và đặt cookie phiên đúng thuộc tính bảo mật. Nếu dùng reverse proxy khác, proxy đó cần truyền tiếp các header `X-Forwarded-Proto` và `X-Forwarded-Host`.
+
 
 ## Luồng chơi
 
