@@ -4,9 +4,11 @@ import {createApp} from '../server/app.mjs';
 let appPromise;
 
 function getApp(){
-  if(!process.env.MONGODB_URI)throw new Error('Thiếu biến môi trường MONGODB_URI trên Vercel.');
+  const uri=process.env.MONGODB_URI?.trim();
+  if(!uri)throw new Error('Thiếu biến môi trường MONGODB_URI trên Vercel.');
+  if(!/^mongodb(?:\+srv)?:\/\//.test(uri))throw new Error('MONGODB_URI phải bắt đầu bằng mongodb:// hoặc mongodb+srv://.');
   if(!appPromise){
-    const store=new Store(process.env.MONGODB_URI,process.env.MONGODB_DB||'haitacphucsinh_local');
+    const store=new Store(uri,process.env.MONGODB_DB||'haitacphucsinh_local');
     appPromise=store.connect()
       .then(()=>createApp(store))
       .catch(error=>{appPromise=undefined;throw error});

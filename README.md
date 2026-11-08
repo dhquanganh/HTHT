@@ -25,6 +25,8 @@ ADMIN_PASSWORD=...
 NODE_ENV=production
 ```
 
+Trong Vercel, để **Build Command** trống (hoặc chọn `Override` và nhập `None`), không đặt là `npm start` hay `npm run dev`. `MONGODB_URI` phải là toàn bộ URI thật, ví dụ bắt đầu bằng `mongodb+srv://`, không nhập giá trị đã che/mã hóa. Nếu đã đặt Build Command trong Project Settings, thiết lập đó có thể ghi đè `vercel.json`.
+
 Trong MongoDB Atlas, cho phép kết nối từ Vercel (Network Access). Sau khi deploy, mở URL Vercel và kiểm tra `/api/health`. File `.env` chỉ dùng local và không được upload lên Vercel.
 
 
