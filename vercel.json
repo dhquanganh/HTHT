@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "functions": {
+    "server/vercel.mjs": {
+      "runtime": "nodejs22.x",
+      "includeFiles": [
+        "dist/**"
+      ]
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/server/vercel.mjs"
+    }
+  ]
+}
