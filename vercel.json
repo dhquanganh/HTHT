@@ -2,9 +2,7 @@
   "version": 2,
   "functions": {
     "api/index.mjs": {
-      "includeFiles": [
-        "dist/**"
-      ]
+      "includeFiles": "dist/**"
     }
   },
   "rewrites": [
