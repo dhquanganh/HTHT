@@ -16,7 +16,7 @@ Máy khác: sao chép `.env.example` thành `.env`, điền `MONGODB_URI`. Datab
 
 ## Deploy lên Vercel
 
-Dự án đã có Vercel Function tại `api/index.mjs`; không dùng `npm start` để chạy server lâu dài trên Vercel. Import repository vào Vercel, giữ **Root Directory** là `web-ui` nếu repository chứa thư mục cha, sau đó khai báo các Environment Variables:
+Dự án đã có Vercel Function tại `index.mjs`; không dùng `npm start` để chạy server lâu dài trên Vercel. Import repository vào Vercel, giữ **Root Directory** là thư mục chứa `index.mjs` và `package.json`, sau đó khai báo các Environment Variables:
 
 ```text
 MONGODB_URI=mongodb+srv://...
