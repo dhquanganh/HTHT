@@ -1,6 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {starterPlayer,applyAction,playerView} from '../server/game.mjs';
+import {levelCap} from '../server/game.mjs';
 import {economy,itemById,materials} from '../server/catalog.mjs';
 import {rollHero,rollSummon,grantSummon,startSummon} from '../server/summon.mjs';
 
@@ -42,9 +43,14 @@ test('fifty generic shards roll a hero of five stars or more',()=>{
  const p=starterPlayer('Captain');p.inventory['shard:30000']=50;const result=applyAction(p,'shard-merge',{itemId:'shard:30000'});assert.ok(result.hero.avatar);assert.equal(p.inventory['shard:30000']||0,0);
  assert.throws(()=>applyAction(p,'shard-merge',{itemId:'consumable:16'}),/không ghép/);
 });
-test('stars go 5 yellow, 4 purple, 1 red, then L1-L5, with purple stars needing enhance stones',()=>{
- const p=starterPlayer('Captain');p.wallet.gold=1e9;p.account.level=100;p.hero.level=60;p.inventory['material:luffy-shard']=1e5;p.inventory['consumable:2']=1e5;
- for(let s=1;s<15;s++){if(s===5)assert.ok(playerView(p).costs.star.items['consumable:2'],'Purple needs enhance stones');p.hero.level=Math.max(p.hero.level,s*5);applyAction(p,'upgrade',{type:'star'})}
- assert.equal(p.hero.stars,15);assert.throws(()=>applyAction(p,'upgrade',{type:'star'}),/tối đa/);
- assert.equal(playerView(p).costs.level.maxLevel,170,'L5 raises the level cap');
+test('stars go 5 yellow, 4 purple, 5 red, then L1-L5; level caps 200..280 red, 300/350/400/500/600 for L1-L5',()=>{
+ const p=starterPlayer('Captain');p.wallet.gold=1e12;p.account.level=200;p.hero.level=60;p.inventory['material:luffy-shard']=1e6;p.inventory['consumable:2']=1e6;p.inventory['consumable:200019']=1e7;
+ const caps=[];
+ for(let s=1;s<19;s++){if(s===5)assert.ok(playerView(p).costs.star.items['consumable:2'],'Purple needs enhance stones');p.hero.level=Math.max(p.hero.level,playerView(p).costs.star.minLevel);applyAction(p,'upgrade',{type:'star'});caps.push(levelCap(p.hero.stars))}
+ assert.equal(p.hero.stars,19);assert.throws(()=>applyAction(p,'upgrade',{type:'star'}),/tối đa/);
+ assert.deepEqual(caps.slice(8),[200,220,240,260,280,300,350,400,500,600]);
+ assert.equal(playerView(p).hero.starLabel,'L5');
+ p.account.level=100;p.hero.stars=19;assert.equal(playerView(p).costs.level.maxLevel,600,'L5 lên được 600');
+ p.account.level=1;assert.equal(playerView(p).costs.level.maxLevel,600,'không phụ thuộc cấp thuyền trưởng');
+ p.hero.stars=13;p.hero.level=200;assert.throws(()=>applyAction(p,'upgrade',{type:'star'}),/Cần tướng cấp 260/,'red stars need the current level cap');
 });

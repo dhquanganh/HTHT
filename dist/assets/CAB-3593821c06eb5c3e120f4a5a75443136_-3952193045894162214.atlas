@@ -1,0 +1,90 @@
+
+Pett_17.png
+size: 380,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: false
+  xy: 351, 19
+  size: 16, 16
+  orig: 18, 18
+  offset: 1, 1
+  index: -1
+Layer 11
+  rotate: false
+  xy: 145, 70
+  size: 136, 71
+  orig: 138, 73
+  offset: 1, 1
+  index: -1
+Layer 12
+  rotate: false
+  xy: 283, 85
+  size: 55, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+Layer 13
+  rotate: true
+  xy: 145, 19
+  size: 49, 56
+  orig: 49, 58
+  offset: 0, 0
+  index: -1
+Layer 2
+  rotate: false
+  xy: 340, 98
+  size: 35, 43
+  orig: 37, 45
+  offset: 1, 1
+  index: -1
+Layer 3
+  rotate: true
+  xy: 203, 10
+  size: 30, 34
+  orig: 35, 37
+  offset: 1, 1
+  index: -1
+Layer 4
+  rotate: false
+  xy: 351, 37
+  size: 26, 59
+  orig: 26, 59
+  offset: 0, 0
+  index: -1
+Layer 4 copy
+  rotate: true
+  xy: 203, 42
+  size: 26, 59
+  orig: 26, 59
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: true
+  xy: 239, 4
+  size: 28, 49
+  orig: 28, 50
+  offset: 0, 0
+  index: -1
+Layer 5 copy
+  rotate: true
+  xy: 290, 4
+  size: 28, 49
+  orig: 28, 50
+  offset: 0, 0
+  index: -1
+Layer 7
+  rotate: false
+  xy: 283, 34
+  size: 66, 49
+  orig: 68, 51
+  offset: 1, 1
+  index: -1
+Layer 9
+  rotate: false
+  xy: 2, 2
+  size: 141, 139
+  orig: 141, 139
+  offset: 0, 0
+  index: -1

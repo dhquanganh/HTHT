@@ -30,6 +30,18 @@ for(const item of items){
 }
 // Vật phẩm từ bảng cache mới hơn: có tên và ảnh gốc nhưng chưa có công dụng, nên không vào Cửa hàng và không bán lại.
 for(const x of read('items-extra.json'))items.push({...x,extra:true,noShop:true,price:1000,priceCurrency:'gold'});
+// Bảo vật theo db_item_baovat (tools/export-artifacts.py): bậc = quality 1-6 cùng thang màu trang bị, chỉ số cộng thêm
+// là dòng effect của cấp hiện tại (vật phẩm trong túi là cấp 1); dòng có faction/clazz chỉ tính khi tướng đúng hệ/nghề.
+export const artifactData=read('artifacts.json');
+const artifactRarity={1:'gray',2:'green',3:'blue',4:'purple',5:'yellow',6:'red'};
+Object.assign(equipmentData.points,artifactData.points);
+for(const item of items){
+ const row=artifactData.items[item.id];if(item.category!=='artifact'||!row)continue;
+ const level=1,points=row.levels[level-1]||[],base=points.find(g=>!g.faction&&!g.clazz)?.point||[];
+ Object.assign(item,{tier:row.quality,rarity:artifactRarity[row.quality],rarityRank:row.quality,stars:level,points,levels:row.levels,released:row.release,
+  stats:Object.fromEntries(base.filter(([id])=>id===0||id===2).map(([id,value])=>[id===0?'attack':'maxHp',value])),
+  sellPrice:row.sellPrices[level-1]||item.sellPrice||1,price:(row.sellPrices[level-1]||250)*4,priceCurrency:'gold',noShop:item.noShop||row.quality>2});
+}
 export const heroExpItem='consumable:1';
 const effects={'consumable:57':{heroExp:100},'consumable:1000':{diamonds:10},'consumable:1001':{gold:1000},'consumable:1002':{accountExp:80}};
 // Rương chọn tướng: giá tự sinh quá rẻ so với một tướng SS nên không bán ở Cửa hàng.
@@ -42,7 +54,7 @@ for(const item of items){
  if(item.id==='consumable:1001'){item.price=30;item.priceCurrency='diamonds'}
  if(item.id==='consumable:16'){item.price=100;item.priceCurrency='diamonds'}
  if(heroChoices[item.id]){item.choice=heroChoices[item.id];item.noShop=true}
- if(!equipmentData.items[item.id])item.sellPrice=Math.max(1,Math.floor(item.price*(item.priceCurrency==='diamonds'?2:.25)));
+ if(!equipmentData.items[item.id]&&!artifactData.items[item.id])item.sellPrice=Math.max(1,Math.floor(item.price*(item.priceCurrency==='diamonds'?2:.25)));
 }
 export const chestData=read('chests.json');
 // Rương mở được nên giá tự sinh trở thành lỗ hổng: khóa mua bán như các món giá trị khác.
@@ -66,13 +78,15 @@ const campaignSource=read('campaign.json');
 export const stages=campaignSource.stages;
 const {stages:sourceStages,warnings:campaignWarnings,...campaignMetadata}=campaignSource;
 export const campaign=campaignMetadata;
-export const economy={initialGold:12000,initialDiamonds:500,dailyGold:1500,dailyDiamonds:50,maxHeroLevel:60,maxStars:15,maxRank:5,maxSkillLevel:3,afk:{tickSeconds:5,maxSeconds:36000,minClaimSeconds:60,overflowSeconds:3600,stoneItem:'consumable:1'},tower:{turnsPerDay:5},summon:{item:'consumable:16',factions:['fortress','shadow','abyss','forest'],counts:[1,10],rates:[[6,3],[5,12],[4,35],[3,50]],startItems:10,duplicateShards:8}};
+export const economy={initialGold:12000,initialDiamonds:500,dailyGold:1500,dailyDiamonds:50,maxHeroLevel:60,maxStars:19,maxRank:5,maxSkillLevel:3,afk:{tickSeconds:5,maxSeconds:36000,minClaimSeconds:60,overflowSeconds:3600,stoneItem:'consumable:1'},tower:{turnsPerDay:5},summon:{item:'consumable:16',factions:['fortress','shadow','abyss','forest'],counts:[1,10],rates:[[6,3],[5,12],[4,35],[3,50]],startItems:10,duplicateShards:8}};
 export const towerData=read('tower.json');
 export const beastData=read('beast.json');
 export const heroStoneData=read('hero-stones.json');
 export const albumData=read('album.json'),abyssData=read('abyss.json'),mermaidData=read('mermaid.json');
 const heroProfiles=read('hero-profiles.json'),heroVisuals={...campaign.visuals,...towerData.visuals,...read('hero-visuals.json')};
 const beastVisuals=Object.fromEntries(beastData.bosses.map(boss=>[boss.avatar,boss.visual]));
+// Quái Vành Đai Tĩnh Lặng (Giant Squid, Sea Cow, Lord of the Coast): spine chiến đấu từ tools/export-silentring.py.
+const silentVisuals=Object.fromEntries(Object.values(read('silent-ring.json').units).map(u=>[u.avatar,u.visual]));
 // Bản thử nghiệm dùng chung công thức chỉ số; bậc và lớp tạo khác biệt giữa các tướng.
 const gradeNames={1:'D',2:'C',3:'B',4:'A',5:'S',6:'SS'},gradeScales={1:.65,2:.75,3:.85,4:1,5:1.1,6:1.25};
 const classScales={warrior:{attack:.9,maxHp:1.2},mage:{attack:1.15,maxHp:.9},assassin:{attack:1.2,maxHp:.85},ranger:{attack:1.1,maxHp:.95},priest:{attack:.9,maxHp:1.05}};
@@ -80,6 +94,7 @@ const classScales={warrior:{attack:.9,maxHp:1.2},mage:{attack:1.15,maxHp:.9},ass
 // Các hiệu ứng khác trong mô tả (khiên, choáng, đốt...) chưa được mô phỏng.
 // Bộ kỹ năng đầy đủ (Nộ + bị động) đọc từ mô tả gốc cho trận đấu; chỉ dùng ở server.
 export const heroKits=new Map();
+export const profileForAvatar=avatar=>heroProfiles[avatar]||null;
 // Kẻ địch là tướng (Vực thẳm): dùng bộ kỹ năng theo avatar, kể cả avatar không triệu hồi được (109 Luffy - S).
 const avatarKits=new Map();
 export function kitForAvatar(avatar){if(heroKits.has('hero-'+avatar))return heroKits.get('hero-'+avatar);if(!avatarKits.has(avatar))avatarKits.set(avatar,heroProfiles[avatar]?.skills?.length?kitFromProfile(heroProfiles[avatar]):null);return avatarKits.get(avatar)}
@@ -121,4 +136,4 @@ if(itemById.get('consumable:60004')){Object.assign(itemById.get('consumable:6000
 // Beli và Đá EXP theo giờ: tính theo tốc độ rương tự động của ải cao nhất, như mô tả vật phẩm.
 for(const [offset,kind] of [[60,'gold'],[66,'stone']])[2,5,8,12,24,72].forEach((hours,i)=>{const item=itemById.get('consumable:'+(offset+i));if(item){item.afk={kind,hours};item.effect={}}});
 import {eventList,checkinRewards} from './events.mjs';
-export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals}},economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:eventList,checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points}}
+export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals,...silentVisuals}},economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:eventList,checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points}}

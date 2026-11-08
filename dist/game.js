@@ -32,7 +32,8 @@ const assetSrc=key=>V()?.assets()[key]?.src||'';
 const named=name=>V()?.findAsset(name);
 const img=(key,cls='',alt='')=>key?`<img src="${escape(assetSrc(key))}" class="${cls}" alt="${escape(alt)}" draggable="false">`:'';
 // Theo prefab HeroStars: 1-5 sao vàng, 6-9 sao tím, 10 sao đỏ, 11-15 là cánh star_e_bgr với số L.
-function heroStarsHtml(count,cls=''){const n=Math.max(1,count||1);const inner=n<=5?img(named('hero_star_1')).repeat(n):n<=9?img(named('hero_star_2')).repeat(n-5):n===10?img(named('hero_star_3')):`<span class="hero-star-e" style="background-image:url('${assetSrc(named('star_e_bgr'))}')">${img(named('hero_star_e'))}<b>${n-10}</b></span>`;return `<span class="hero-stars ${cls}">${inner}</span>`}
+// HeroStars: 1-5 vàng (hero_star_1), 6-9 tím (hero_star_2), 10-14 là 1-5 sao đỏ (hero_star_3), 15-19 là L1-L5 (star_e_bgr).
+function heroStarsHtml(count,cls=''){const n=Math.max(1,count||1);const inner=n<=5?img(named('hero_star_1')).repeat(n):n<=9?img(named('hero_star_2')).repeat(n-5):n<=14?img(named('hero_star_3')).repeat(n-9):`<span class="hero-star-e" style="background-image:url('${assetSrc(named('star_e_bgr'))}')">${img(named('hero_star_e'))}<b>${n-14}</b></span>`;return `<span class="hero-stars ${cls}">${inner}</span>`}
 window.heroStarsHtml=heroStarsHtml;
 const itemStars=item=>item.heroShard?img(named('icon_shard'),'item-shard-mark'):item.points&&item.stars?`<span class="item-stars">${img(named('item_star')).repeat(item.stars)}</span>`:'';
 const itemSparkle=item=>item.points&&item.tier===6&&item.stars===6?'<span class="item-sparkle"></span>':'';
@@ -180,14 +181,17 @@ function beastHit(hit){
 const forgeTabs=[['helmet','LBL_FORGE_SCENE_ACCESSORY','TabAccessory'],['armor','LBL_FORGE_SCENE_ARMOR','TabArmor'],['pants','LBL_FORGE_SCENE_WEAPON','TabWeapon'],['boots','LBL_FORGE_SCENE_SHOES','TabShoes']],forgeLabels={helmet:'Mũ',armor:'Áo',pants:'Quần',boots:'Giày'};
 const classNames={warrior:'Chiến binh',mage:'Pháp sư',ranger:'Xạ thủ',assassin:'Sát thủ',priest:'Mục sư'},clazzNames={1:'Pháp sư',2:'Chiến binh',3:'Mục sư',4:'Xạ thủ',5:'Sát thủ'};
 let forgeSlot='helmet',forgeSelected={},forgeCount=0;
-const pointNames={5:'Sát thương kĩ năng',9:'Sát thương chí mạng',12:'Giảm sát thương'};
+const pointNames={5:'Sát thương kĩ năng',9:'Sát thương chí mạng',12:'Giảm sát thương'},artifactFactionNames={1:'Hệ Sinh Khí',2:'Hệ Bền Bỉ',3:'Hệ Nhanh Nhẹn',4:'Hệ Chính xác',5:'Hệ Thông Minh',6:'Hệ Minh Mẫn'};
 function pointText([id,value]){const point=catalog.equipmentPoints[id];if(!point)return String(value);return `${point.percent?Math.round(value*point.rate*100)/100+'%':value} ${pointNames[id]||point.name}`}
 const pointLine=rows=>rows.map(pointText).join(', ');
 function equipmentSet(id){return catalog.equipmentSets.find(set=>set.items.includes(id))}
 // Nội dung theo PopupItemInfo: dòng chỉ số, rồi GroupEquipmentSet với ba hiệu ứng của bộ.
 function equipmentDetail(item){
  const set=equipmentSet(item.id),worn=set?set.items.filter(id=>Object.values(player.hero.equipment).includes(id)).length:0;
- return `${item.points.map(group=>`<p class="item-popup-stats">${group.clazz?`${clazzNames[group.clazz]}: `:''}${escape(pointLine(group.point))}</p>`).join('')}${set?`<div class="item-popup-set"><h3>Bộ trang bị ${escape(set.name)}</h3>${set.effects.map((effect,i)=>`<p class="${worn>=i+2?'on':''}" title="Cần ${i+2} món">${escape(pointLine(effect))}</p>`).join('')}</div>`:''}`;
+ // Bảo vật: dòng có faction chỉ tính cho tướng hệ đó (1..6 = Sinh Khí, Bền Bỉ, Nhanh Nhẹn, Chính xác, Thông Minh, Minh Mẫn); kèm bảng chỉ số theo cấp.
+ const groupLine=group=>`${group.faction?`${artifactFactionNames[group.faction]}: `:''}${group.clazz?`${clazzNames[group.clazz]}: `:''}${escape(pointLine(group.point))}`;
+ const levels=item.levels?.length>1?`<div class="item-popup-set artifact-levels"><h3>Chỉ số theo cấp</h3>${item.levels.map((level,i)=>`<p class="${i+1===(item.stars||1)?'on':''}">Cấp ${i+1}: ${level.map(groupLine).join(' · ')}</p>`).join('')}</div>`:'';
+ return `${item.points.map(group=>`<p class="item-popup-stats">${groupLine(group)}</p>`).join('')}${levels}${set?`<div class="item-popup-set"><h3>Bộ trang bị ${escape(set.name)}</h3>${set.effects.map((effect,i)=>`<p class="${worn>=i+2?'on':''}" title="Cần ${i+2} món">${escape(pointLine(effect))}</p>`).join('')}</div>`:''}`;
 }
 function itemDropPanel(item){return `<aside class="item-popup-drop" hidden><h3>Cách nhận:</h3>${item.forge?'<button data-action="item-drop-forge">Tiệm đồ</button>':''}<button data-action="item-drop-world">Phụ bản</button></aside>`}
 const forgeList=slot=>catalog.items.filter(item=>item.slot===slot&&item.forge).sort((a,b)=>a.tier-b.tier||a.stars-b.stars);
@@ -467,6 +471,7 @@ function syncScene(data){syncMailDot(data);
   hide(data,'BoxHotChat','ButtonSkins','ButtonFirstPurchase','ButtonTiktok','ButtonTest','ButtonFriend','ButtonFuse','ButtonAltar','FrameVip');
   for(const n of sceneNodes(data))if(n.name==='ImageAvatar')V().setAsset(n,catalog.hero.visual.head);
   syncHomeQuest(data);
+  syncActivity(data);
  }
  if([7,39].includes(data.id)){
   hide(data,'MiscInfo','BoxHeroes','TabFaction','ButtonDictionary');
@@ -508,6 +513,15 @@ async function mutation(url,body={},options={}){
 }
 function showHeroGains(before){heroGainLines=[['speed','Tốc độ'],['maxHp','Máu'],['defense','Thủ'],['attack','Công']].filter(([id])=>player.hero.stats[id]>before[id]).map(([id,label])=>`${label} +${num(player.hero.stats[id]-before[id])}`);heroGainUntil=Date.now()+2000}
 function setBusy(value){for(const b of document.querySelectorAll('[data-submit]'))b.disabled=value}
+// Toàn màn hình: nút nổi (ẩn khi đã toàn màn hình), xoay ngang trên điện thoại nếu trình duyệt cho phép.
+async function toggleFullscreen(){
+ try{if(document.fullscreenElement||document.webkitFullscreenElement){await (document.exitFullscreen||document.webkitExitFullscreen).call(document);return}
+  const el=document.documentElement;await (el.requestFullscreen||el.webkitRequestFullscreen).call(el,{navigationUI:'hide'});try{await screen.orientation?.lock?.('landscape')}catch{}}
+ catch{V().toast('Trình duyệt không hỗ trợ toàn màn hình')}
+}
+{const b=document.createElement('button');b.id='fullscreen-toggle';b.type='button';b.title='Toàn màn hình (F)';b.setAttribute('aria-label','Toàn màn hình');b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';b.onclick=toggleFullscreen;document.body.appendChild(b);
+ const sync=()=>document.body.classList.toggle('is-fullscreen',!!(document.fullscreenElement||document.webkitFullscreenElement));document.addEventListener('fullscreenchange',sync);document.addEventListener('webkitfullscreenchange',sync);
+ document.addEventListener('keydown',e=>{if((e.key==='f'||e.key==='F')&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName))toggleFullscreen()})}
 function scaled(){const el=$('#stage');$('#game-layer').style.transform=`scale(${el.getBoundingClientRect().width/1136})`}
 new ResizeObserver(scaled).observe($('#stage'));
 let mailSelection='';
@@ -580,6 +594,11 @@ function updateIsland(dt){
  if(s.tags.isConnected)s.actors.forEach((a,i)=>{const el=s.tags.children[i];el.style.left=(568+(a.x-s.cam)*unit)+'px';el.style.top=(320-(a.y+2.5)*unit)+'px'});
 }
 async function spineCanvas(canvas,desc,{loop=true,fit=.9,scale=null,onEnd=null}={}){
+ // Canvas nằm trong #game-layer (bị phóng bằng transform): giữ kích thước CSS, nhân độ phân giải vẽ theo tỉ lệ phóng × DPR
+ // để hoạt ảnh không vỡ hạt khi chơi toàn màn hình.
+ if(!canvas.dataset.cssSize){canvas.dataset.cssSize=canvas.width+'x'+canvas.height;canvas.style.width=canvas.width+'px';canvas.style.height=canvas.height+'px'}
+ const [cssW,cssH]=canvas.dataset.cssSize.split('x').map(Number),layer=$('#game-layer'),zoom=layer?layer.getBoundingClientRect().width/1136:1,density=Math.max(1,Math.min(3,zoom*(window.devicePixelRatio||1)));
+ canvas.width=Math.round(cssW*density);canvas.height=Math.round(cssH*density);if(scale!==null)scale*=density;
  const c={skeleton:desc.skeleton,animation:desc.animation,loop};await V().loadSkeleton(c);if(!canvas.isConnected||!c.instance)return;
  const data=c.instance.data,name=data.findAnimation(desc.animation)?.name||data.animations[0]?.name;c.state.setAnimation(0,name,loop);c.state.apply(c.instance);c.instance.updateWorldTransform();
  const offset=new spine.Vector2(),size=new spine.Vector2();c.instance.getBounds(offset,size,[]);const k=scale??Math.min(canvas.width/Math.max(1,size.x),canvas.height/Math.max(1,size.y))*fit;if(scale!==null){offset.x=offset.y=0;size.x=size.y=0}
@@ -588,6 +607,52 @@ async function spineCanvas(canvas,desc,{loop=true,fit=.9,scale=null,onEnd=null}=
  const frame=at=>{if(!canvas.isConnected)return;c.state.update(Math.min(.05,(at-last)/1000));last=at;c.state.apply(c.instance);c.instance.updateWorldTransform();ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.translate(canvas.width/2-(offset.x+size.x/2)*k,canvas.height/2+(offset.y+size.y/2)*k);ctx.scale(k,-k);renderer.draw(c.instance);ctx.restore();if(!ended||loop)requestAnimationFrame(frame)};
  requestAnimationFrame(frame);
 }
+// Nút "Hoạt động" (LuaJobAddActivity, cấp ≥ 50): chèn ButtonFunctionActivity vào PanelHomeBottom/GroupContent/GroupButton
+// ở vị trí thứ 2, nới ImageBgr thành 916x150 tại (-364,66). Chạm mở/đóng BoxSelect: Ngọc Vega (khóa dưới cấp 82),
+// Thú cưng, Trái Ác Quỷ (FFMain). Tên nút lấy từ db_lua_placeholder (đã nằm sẵn trong Text của prefab).
+let activityPrefab=null,activityLoading=false,activityOpen=false;const activityPending=new Set();
+function cloneActivity(n){return{...n,id:towerNodeId++,components:n.components.map(c=>({...c})),transform:JSON.parse(JSON.stringify(n.transform)),children:n.children.map(cloneActivity)}}
+function syncActivity(data){
+ const nodes=sceneNodes(data),content=nodes.find(n=>n.name==='GroupContent'&&n.children.some(c=>c.name==='GroupButton')),group=content?.children.find(c=>c.name==='GroupButton');if(!group)return;
+ const on=player.account.level>=50;group.children=group.children.filter(c=>!c.activity);if(!on)return;
+ // Prefab nằm trong devil-fruit.json (tải bất đồng bộ). Màn chính có thể đang nạp ảnh (chưa là getScene()) khi tải xong,
+ // nên chèn thẳng vào đúng dữ liệu màn đã gọi, không dựa vào refreshCanvas().
+ if(!activityPrefab){activityPending.add(data);if(!activityLoading){activityLoading=true;window.DevilFruitUI.load().then(d=>{activityPrefab=d.prefabs.ButtonFunctionActivity;for(const s of activityPending)if(player)syncActivity(s);activityPending.clear()}).catch(e=>{console.error('activity',e);activityLoading=false})}return}
+ const bgr=content.children.find(c=>c.name==='ImageBgr');if(bgr){bgr.transform.m_SizeDelta={x:916,y:150};bgr.transform.m_AnchoredPosition={x:-364,y:66}}
+ const button=cloneActivity(activityPrefab);button.activity=true;
+ V().allNodes({roots:[button]}).forEach(n=>{for(const c of n.components){if(c.asset)V().loadImage(c.asset);if(c.type==='Text'&&c.font)window.PrefabDOM.loadFont(c.font)}
+  if(n.name==='BoxSelect')n.active=activityOpen;
+  if(n.name==='ClickArea'){n.components.push({type:'Button'});n.activityAction='close'}
+  if(n.name==='ButtonAct')n.activityAction='toggle'});
+ const box=V().allNodes({roots:[button]}).find(n=>n.name==='ImageBox');
+ for(const holder of box.children){const lua=holder.children.find(c=>c.name==='ButtonLua');if(lua)lua.activityAction=holder.name.replace('ButtonFunction','')}
+ const locked=player.account.level<82;box.children.find(c=>c.name==='ButtonFunctionGemLock').active=locked;box.children.find(c=>c.name==='ButtonFunctionGem').active=!locked;
+ // ImageBox: HorizontalLayoutGroup giãn đều (childForceExpandWidth, spacing -10, đệm dưới 25) mà renderer canvas không chia
+ // phần dư: đặt sẵn tâm từng ô như Unity (415 rộng, 3 nút 100 → tâm 72,5 / 207,5 / 342,5).
+ const shown=box.children.filter(c=>c.active),slot=(415-(shown.length*100-10*(shown.length-1)))/shown.length;box.components=box.components.filter(c=>!/LayoutGroup$/.test(c.type));
+ shown.forEach((c,i)=>Object.assign(c.transform,{m_AnchorMin:{x:0,y:1},m_AnchorMax:{x:0,y:1},m_Pivot:{x:.5,y:.5},m_AnchoredPosition:{x:i*(100-10+slot)+(100+slot)/2,y:-57.5}}));
+ group.children.splice(1,0,button);
+}
+function activityHit(hit){
+ const action=hit.node.activityAction;if(!action)return false;
+ if(action==='toggle'||action==='close'){activityOpen=action==='toggle'?!activityOpen:false;refreshCanvas();return true}
+ activityOpen=false;refreshCanvas();
+ if(action==='GemLock')V().toast('Yêu cầu cấp độ 82');
+ else if(action==='FF')window.DevilFruitUI.open(fruitContext());
+ else if(action==='SR')window.PetUI.open(petContext());
+ else V().toast('Tính năng này đang được phát triển.');
+ return true;
+}
+// Thú cưng (dist/pet-ui.js): SRMain -> PetHome -> khu vực; ô Pet ở thông tin tướng (LuaJobAddEquipPet).
+function petContext(){return{player:()=>player,items:itemMap,assetSrc,named,assets:()=>V().assets(),num,short,mutation,toast:m=>V().toast(m),modal:(t,b)=>modal(t,b),spine:spineCanvas,
+ heroId:()=>player.hero.id,heroHead:id=>catalog.heroes.find(h=>h.id===id)?.visual.head,get catalog(){return catalog},img,
+ // Vành Đai Tĩnh Lặng: vào trận như Chiến Thần Thú, xong trận quay lại màn hộ vệ / boss của độ khó đó.
+ srBattle:async body=>{const r=await mutation('/api/sr/start',body,{render:false,message:false});if(!r){window.PetUI.openSilent(petContext(),{diff:body.diff,tab:body.target});return}srReturn={diff:body.diff,tab:body.target};await navigate(9)}}}
+let srReturn=null;
+async function srBack(){dialog.innerHTML='';const back=srReturn||{diff:player.battle?.silent?.diff,tab:player.battle?.silent?.target};await navigate(13);window.PetUI.openSilent(petContext(),back)}
+function fruitContext(){return{player:()=>player,get catalog(){return catalog},items:itemMap,assetSrc,assets:()=>V().assets(),named,img,short,num,mutation,toast:m=>V().toast(m),spine:spineCanvas,
+ rewardArt:id=>assetSrc(rewardArt(id==='gold'||id==='diamonds'?{kind:id}:{itemId:id}).key),
+ help:()=>modal('TRÁI ÁC QUỶ','<p class="item-description">Thu thập Trái Ác Quỷ từ Vòng quay Xu Ác Quỷ. Cường hóa (tối đa +20) tăng 5% chỉ số cơ bản mỗi cấp; nâng sao (tối đa 12 sao) tăng chỉ số đặc biệt. Đủ 4 trái của một bộ đạt 2/4/6 sao thì chỉ số cơ bản cả bộ tăng thêm. Tướng cấp 100 trở lên đặt vào ô Cộng hưởng sẽ nhận toàn bộ chỉ số các trái đã sở hữu.</p>')}}
 function mermaidContext(){return{get player(){return player},catalog,img,assetSrc,named,escape,short,num,eventTile,mutation,navigate,toast:m=>V().toast(m),render:renderUi,spine:spineCanvas}}
 function mermaidHit(name){
  if(name==='ButtonNui'){window.MermaidUI.openAbyss(mermaidContext());return true}
@@ -611,11 +676,16 @@ async function refreshPlayer(){try{const data=await api('/api/state');if(data?.p
 function profileDialog(){dialog.innerHTML=window.ReferenceUI.profile(referenceContext())}
 function eventsNeedAttention(){return !!catalog?.events.some(e=>e.milestones?.some((m,i)=>{const s=player?.events?.[e.id];return s&&s.count>=m.target&&!s.claimed.includes(i)}))}
 function syncMailDot(data){if(!data)return;const feast=sceneNodes(data).find(n=>n.name==='ButtonLuckySpin');if(feast&&!feast.feast){feast.feast=true;V().setText(feast.children.find(c=>c.name==='TextButton'),'Lễ Hội Ẩm Thực');const image=V().get(feast,'Image'),key=itemMap.get('consumable:57')?.assetKey;if(image&&key){image.asset=key;V().loadImage(key)}}const questButton=sceneNodes(data).find(n=>n.name==='ButtonQuest'),questDot=questButton?.children?.find(c=>c.name==='NotifySummon');if(questDot)questDot.active=!!player?.dailyQuest?.ready;for(const n of sceneNodes(data)){if(n.name==='NotifyMail')n.active=!!player?.mail?.some(m=>!m.claimedAt);if(n.name==='NotifyEvent')n.active=eventsNeedAttention();if(n.name==='GoNotify')n.active=!!player?.checkin?.canClaim}}
-function mailDialog(){dialog.innerHTML=window.ReferenceUI.mail(referenceContext());syncMailDot(V().getScene())}
+function mailDialog(fetch=true){dialog.innerHTML=window.ReferenceUI.mail(referenceContext());syncMailDot(V().getScene());if(fetch)syncMail().then(changed=>{if(changed&&dialog.querySelector('.reference-mail'))mailDialog(false)})}
+// Thư do Ban quản trị gửi được ghi thẳng vào DB: lấy lại hòm thư khi mở và định kỳ 20 giây (chỉ thay player.mail,
+// không đụng phần còn lại của trạng thái), để thư mới và chấm đỏ hiện ngay không cần F5.
+const mailKey=list=>(list||[]).map(m=>m.id+(m.claimedAt?'1':'0')).join();
+async function syncMail(){if(!player||busy)return false;try{const response=await fetch('/api/state',{credentials:'same-origin'});if(!response.ok)return false;const data=await response.json();if(!player||busy||!data.player)return false;const changed=mailKey(data.player.mail)!==mailKey(player.mail);if(changed){player.mail=data.player.mail;syncMailDot(V().getScene())}return changed}catch{return false}}
+setInterval(()=>{if(document.visibilityState==='visible'&&player)syncMail().then(changed=>{if(changed&&dialog.querySelector('.reference-mail'))mailDialog(false)})},20000);
 function header(){return '<div class="account-menu"><button class="account-icon" data-action="profile" aria-label="Thông tin tài khoản">'+img(catalog.hero.visual.head)+'</button><button class="account-icon" data-action="mail" aria-label="Hòm thư">'+img(named('button_mail'))+'</button></div>'}
 async function equipBatch(remove=false){
  if(busy)return;busy=true;setBusy(true);let count=0;
- try{for(const slot of catalog.equipmentSlots){const current=player.hero.equipment[slot];if(remove){if(current){await api('/api/hero/unequip',{slot});count++}continue}const score=item=>Object.entries(item.stats||{}).reduce((sum,[k,v])=>sum+v*({attack:2.4,hp:.13,maxHp:.13,defense:2,speed:.5}[k]||1),0);const best=catalog.items.filter(i=>i.slot===slot&&(player.inventory[i.id]>0||i.id===current)).sort((a,b)=>score(b)-score(a))[0];if(best&&best.id!==current){await api('/api/hero/equip',{itemId:best.id});count++}}V().toast(count?(remove?'Đã gỡ trang bị.':'Đã trang bị vật phẩm phù hợp nhất.'):'Không có trang bị cần thay đổi.');heroUi()}catch(e){V().toast(e.message);heroUi()}finally{busy=false;setBusy(false)}
+ try{for(const slot of catalog.equipmentSlots){const current=player.hero.equipment[slot];if(remove){if(current){await api('/api/hero/unequip',{slot});count++}continue}const score=item=>(item.tier||0)*1e6+(item.stars||0)*1e4+Object.entries(item.stats||{}).reduce((sum,[k,v])=>sum+v*({attack:2.4,hp:.13,maxHp:.13,defense:2,speed:.5}[k]||1),0);const best=catalog.items.filter(i=>i.slot===slot&&(player.inventory[i.id]>0||i.id===current)).sort((a,b)=>score(b)-score(a))[0];if(best&&best.id!==current){await api('/api/hero/equip',{itemId:best.id});count++}}V().toast(count?(remove?'Đã gỡ trang bị.':'Đã trang bị vật phẩm phù hợp nhất.'):'Không có trang bị cần thay đổi.');heroUi()}catch(e){V().toast(e.message);heroUi()}finally{busy=false;setBusy(false)}
 }
 function authUi(){
  const register=authMode==='register';screen.innerHTML=`<form class="auth panel" id="auth-form" autocomplete="on"><h2 class="title">${register?'TẠO THUYỀN TRƯỞNG':'CHÀO MỪNG TRỞ LẠI'}</h2><div class="tabs"><button type="button" data-action="auth-login" class="${!register?'active':''}">Đã có tài khoản</button><button type="button" data-action="auth-register" class="${register?'active':''}">Đăng ký</button></div><label for="username">Tên đăng nhập</label><input id="username" name="username" autocomplete="username" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" placeholder="Tên thuyền trưởng" required><label for="password">Mật khẩu</label><input id="password" name="password" type="password" autocomplete="${register?'new-password':'current-password'}" minlength="8" maxlength="128" placeholder="Tối thiểu 8 ký tự" required>${register?'<label for="password-confirm">Nhập lại mật khẩu</label><input id="password-confirm" name="confirm" type="password" autocomplete="new-password" minlength="8" maxlength="128" required>':''}<p class="error" id="auth-error" role="alert">${escape(bootError)}</p><button class="auth-submit green" type="submit" data-submit>${register?'Đăng ký & ra khơi':'Đăng nhập'}</button></form>`;
@@ -659,6 +729,8 @@ async function openHeroProfile(avatar,skillIndex=0){
  dialog.innerHTML=heroProfileHtml(h,heroProfiles[avatar],skillIndex);
 }
 function heroTabSprite(id){const pairs={stats:['8fd4da85aa0d7ce4884558df97df20ed_2','07963b4f9c382dd4cb228edb52f7e652_2'],equipment:['5ef10e3c6e40d444e86c7298e5f34224_2','1bbfb4c5edb956d40b9ae09f441531b8_2'],star:['535c72d764e98ed4387a59965335f3ca_2','19ddc6acc5da62544b2905162f3557b7_2'],special:['68415ab4b8abb2f4e8f946c1a9e80507_2','cc4c4f40b251e98498a316279868838d_2'],skills:['dc04a8264ac54be40a7fa15226b010b8_2','5ecb2bb61075da146b1358eafa00fbd4_2']};return(pairs[id]||pairs.star)[heroTab===id?0:1]}
+// Kỹ năng Germa đã kích hoạt cho ô kỹ năng i (0 là Nộ = Skill4, 1-3 là bị động 1-3), như ReLoadIconSkill.
+const germaSkillAt=i=>player.hero.germa?.skills?.find(s=>s.slot===(i===0?4:i))||null;
 function heroUi(){
  const h=player.hero,c=player.costs;
  const arrow=assetSrc(named('button_up'));
@@ -670,23 +742,33 @@ function heroUi(){
    '<div class="hero-ref-tier"><strong>Phẩm</strong><div class="hero-tier-slots" title="Bậc '+h.rank+'/'+catalog.economy.maxRank+'">'+Array.from({length:4},(_,i)=>img(named(i<h.rank?'gem_tier':'slot_tier'))).join('')+'</div></div>'+
    '<div class="hero-ref-upgrade"><div class="hero-ref-cost">'+money('gold',c.level.gold)+'<span class="currency">'+img(named('icon_spirit'))+num(c.level.heroExp)+'</span></div><button class="hero-up-arrow" style="background-image:url(\''+arrow+'\')" data-action="upgrade" data-type="level" data-submit aria-label="Nâng cấp" title="Nâng 1 cấp"></button><div class="hero-up-ten"><span>x10</span><button class="hero-up-arrow" style="background-image:url(\''+arrow+'\')" data-action="upgrade-many" data-submit aria-label="Nâng 10 cấp" title="Nâng tối đa 10 cấp"></button></div></div>'+
    '<section class="hero-ref-attributes"><div class="hero-ref-class">'+img(heroClassIcon(catalog.hero.class))+'<strong>'+(heroClasses[catalog.hero.class]||'Đấu Sĩ')+'</strong></div><button class="hero-attribute-info" data-action="hero-info" aria-label="Chi tiết thuộc tính">'+img('2561bd35acc8ab04dbdae3eaca88b74a_2')+'</button><div class="hero-ref-stat-grid">'+[['attack','Tấn công'],['maxHp','Máu'],['defense','Phòng thủ'],['speed','Tốc độ']].map(([id,label])=>'<div class="hero-ref-stat" title="'+label+'">'+img(statIcon[id])+'<strong>'+num(h.stats[id])+'</strong></div>').join('')+'</div></section>'+
-   '<div class="hero-ref-skills">'+catalog.skills.map((skill,i)=>'<button class="hero-round-skill" data-action="hero-skill" data-skill="'+skill.id+'" aria-label="'+escape(skill.name)+'" title="'+escape(skill.name)+'">'+img(skillIcon(i))+'<span class="hero-skill-level">'+h.skills[skill.id]+'</span></button>').join('')+'</div>';
+   '<div class="hero-ref-skills">'+catalog.skills.map((skill,i)=>'<button class="hero-round-skill" data-action="hero-skill" data-skill="'+skill.id+'" aria-label="'+escape(skill.name)+'" title="'+escape(skill.name)+'">'+img(skillIcon(i))+'<span class="hero-skill-level">'+(germaSkillAt(i)?4:h.skills[skill.id])+'</span></button>').join('')+'</div>';
  }else if(heroTab==='equipment'){
   body=window.ReferenceUI.equipment(referenceContext());
  }else if(heroTab==='star'){
   body=window.ReferenceUI.awakening(referenceContext());
  }else if(heroTab==='special'){
   body=window.ReferenceUI.special(referenceContext());
+ }else if(heroTab==='rank'&&h.germa){
+  body='';
  }else if(heroTab==='rank'){
   const star=heroTab==='star',cost=star?c.star:c.rank,count=star?h.stars:h.rank,max=star?catalog.economy.maxStars:catalog.economy.maxRank,material=star?Object.keys(c.star.items)[0]:'material:rank-stone',qty=Object.values(cost.items)[0];
   body='<section class="hero-ref-secondary hero-ref-progression"><h2>'+(star?'Nâng sao':'Đột phá')+'</h2><div class="hero-progression-emblem">'+(star?heroStarsHtml(h.stars):img(named('hero_quality_'+Math.min(7,4+h.rank))))+'</div><h3>'+(star?'Sao':'Bậc')+' '+count+' / '+max+'</h3><p>Cần tướng cấp '+cost.minLevel+'</p><div class="stat">Vàng <strong>'+num(cost.gold)+'</strong></div>'+(star?Object.entries(cost.items).map(([id,need])=>'<div class="stat">'+escape(itemMap.get(id)?.name||id)+' <strong>'+num(player.inventory[id]||0)+' / '+num(need)+'</strong></div>').join(''):'<div class="stat">Đá đột phá <strong>'+qty+' / '+(player.inventory[material]||0)+'</strong></div>')+'<button class="green" data-action="upgrade" data-type="'+heroTab+'" data-submit>'+(star?'Nâng sao':'Đột phá')+'</button></section>';
  }else{
-  body='<section class="hero-ref-secondary"><h2>Kỹ năng</h2>'+catalog.skills.map((skill,i)=>'<div class="skill-row">'+img(skillIcon(i))+'<div class="skill-main"><h3>'+escape(skill.name)+'</h3><p>Cấp '+h.skills[skill.id]+' · '+(skill.passive?'Nội tại':skill.energy?skill.energy+' nộ':'Đánh thường')+'</p><p class="muted">'+escape(skillDescription(skill))+'</p><p class="cost">'+num(c.skills[skill.id].gold)+' vàng · '+Object.values(c.skills[skill.id].items)[0]+' sách</p></div><button class="green" data-action="upgrade" data-type="skill" data-skill="'+skill.id+'" data-submit>Nâng</button></div>').join('')+'</section>';
+  body='<section class="hero-ref-secondary"><h2>Kỹ năng</h2>'+catalog.skills.map((skill,i)=>'<div class="skill-row">'+img(germaSkillAt(i)?germaSkillAt(i).icon:skillIcon(i))+'<div class="skill-main"><h3>'+escape(germaSkillAt(i)?.name||skill.name)+'</h3><p>Cấp '+(germaSkillAt(i)?'4 (Germa)':h.skills[skill.id])+' · '+(skill.passive?'Nội tại':skill.energy?skill.energy+' nộ':'Đánh thường')+'</p><p class="muted">'+escape(germaSkillAt(i)?.description||skillDescription(skill))+'</p><p class="cost">'+num(c.skills[skill.id].gold)+' vàng · '+Object.values(c.skills[skill.id].items)[0]+' sách</p></div><button class="green" data-action="upgrade" data-type="skill" data-skill="'+skill.id+'" data-submit>Nâng</button></div>').join('')+'</section>';
  }
- screen.innerHTML='<section class="hero-panel hero-ref" aria-label="Thông tin tướng">'+body+'</section><nav class="hero-side-tabs" aria-label="Thông tin tướng">'+nav.map(([id,label,asset])=>'<button class="'+(heroTab===id?'selected':'')+'" data-action="hero-tab" data-tab="'+id+'" aria-label="'+label+'" title="'+label+'">'+img(heroTabSprite(id))+'</button>').join('')+'</nav><div class="hero-ref-stars" aria-label="'+h.stars+' sao">'+heroStarsHtml(h.stars)+'</div>'+(Date.now()<heroGainUntil&&heroGainLines.length?'<aside class="hero-stat-gains" aria-live="polite">'+heroGainLines.map(line=>'<div>'+escape(line)+'</div>').join('')+'</aside>':'');
+ screen.innerHTML='<section class="hero-panel hero-ref'+(heroTab==='rank'&&h.germa?' germa-on':'')+'" aria-label="Thông tin tướng">'+body+'</section><nav class="hero-side-tabs" aria-label="Thông tin tướng">'+nav.map(([id,label,asset])=>'<button class="'+(heroTab===id?'selected':'')+'" data-action="hero-tab" data-tab="'+id+'" aria-label="'+label+'" title="'+label+'">'+img(heroTabSprite(id))+'</button>').join('')+'</nav><div class="hero-ref-stars" aria-label="'+h.stars+' sao">'+heroStarsHtml(h.stars)+'</div>'+(heroTab==='rank'&&h.germa?'<div class="germa-host"></div>':'')+(Date.now()<heroGainUntil&&heroGainLines.length?'<aside class="hero-stat-gains" aria-live="polite">'+heroGainLines.map(line=>'<div>'+escape(line)+'</div>').join('')+'</aside>':'');
+ if(heroTab==='rank'&&h.germa)mountGerma();
+ {const host=document.createElement('div');host.className='pet-equip-host';screen.appendChild(host);window.PetUI.mountEquip(host,petContext())}
 }
+// Ép Sao / Germa ở tab Đột phá khi tướng đạt L1 (dist/germa-ui.js).
+function mountGerma(){const host=screen.querySelector('.germa-host');if(host)window.GermaUI.mount(host,germaContext())}
+function germaContext(){return{player:()=>player,items:itemMap,assetSrc,assets:()=>V().assets(),named,num,short,mutation,toast:m=>V().toast(m),
+ avatar:()=>catalog.hero.avatar,heroHead:()=>catalog.hero.visual.head,shardId:()=>player.hero.id==='zoro-king-of-hell'?'material:zoro-shard':player.hero.id==='luffy-gear-2'?'material:luffy-shard':'heroshard:'+catalog.hero.avatar,
+ rerender:()=>{renderUi()},modal:(t,b)=>modal(t,b),
+ confirm:(text,title,price,ok)=>{modal(title,`<p class="item-description">${escape(text)}</p><div class="modal-actions"><button class="green" data-germa-confirm>${img(named('icon_gem'))} ${price}</button></div>`);dialog.querySelector('[data-germa-confirm]').onclick=()=>{dialog.innerHTML='';ok()}}}}
 function heroInfoDialog(){const h=player.hero;modal('THÔNG TIN TƯỚNG',`<h2>${escape(catalog.hero.name)}</h2><p class="item-description">${heroClasses[catalog.hero.class]||'Đấu Sĩ'} · ${heroFactions.find(([id])=>id===catalog.hero.faction)?.[1]||''} · Cấp ${h.level}/${player.costs.level.maxLevel}<br>${h.stars} sao · Bậc ${h.rank}/${catalog.economy.maxRank}</p><div class="divider"></div>${[['Tấn công',h.stats.attack],['Máu',h.stats.maxHp],['Phòng thủ',h.stats.defense],['Tốc độ',h.stats.speed],['Lực chiến',h.stats.power]].map(([name,value])=>`<div class="stat">${name}<strong>${num(value)}</strong></div>`).join('')}<div class="modal-actions"><button class="green" data-action="hero-tab" data-tab="skills">Kỹ năng</button></div>`)}
-function heroSkillDialog(id){const skill=catalog.skills.find(s=>s.id===id);if(!skill)return;const index=catalog.skills.indexOf(skill),cost=player.costs.skills[id],level=player.hero.skills[id],description=escape(skillDescription(skill)).replace(/(\d+%(?:Công| Giáp| Máu)?)/g,'<mark>$1</mark>').replace(/^(Nộ:|Bị động:)/,'<strong class="skill-kind '+(skill.passive?'passive':'active')+'">$1</strong>');modal(skill.name,`<div class="item-header">${img(skillIcon(index),'hero-skill-dialog-icon')}<h2><span>[${level}]</span> ${escape(skill.name)}</h2></div><p class="item-description">${description}</p><div class="skill-upgrade-cost">${level>=cost.maxLevel?'Đã đạt giới hạn cấp hiện tại':num(cost.gold)+' vàng · '+Object.values(cost.items)[0]+' sách kỹ năng'}</div><div class="modal-actions"><button data-action="hero-tab" data-tab="skills">Tất cả kỹ năng</button><button class="green" data-action="upgrade" data-type="skill" data-skill="${id}" data-submit ${level>=cost.maxLevel?'disabled':''}>Nâng kỹ năng</button></div>`,'luffy-skill-tooltip')}
+function heroSkillDialog(id){const base=catalog.skills.find(s=>s.id===id);if(!base)return;const index=catalog.skills.indexOf(base),germa=germaSkillAt(index),skill=germa?{...base,name:germa.name}:base,cost=player.costs.skills[id],level=germa?4:player.hero.skills[id],description=escape(germa?germa.description:skillDescription(skill)).replace(/(\d+%(?:Công| Giáp| Máu)?)/g,'<mark>$1</mark>').replace(/^(Nộ:|Bị động:)/,'<strong class="skill-kind '+(skill.passive?'passive':'active')+'">$1</strong>');modal(skill.name,`<div class="item-header">${img(germa?germa.icon:skillIcon(index),'hero-skill-dialog-icon')}<h2><span>[${level}]</span> ${escape(skill.name)}</h2></div><p class="item-description">${description}</p><div class="skill-upgrade-cost">${level>=cost.maxLevel?'Đã đạt giới hạn cấp hiện tại':num(cost.gold)+' vàng · '+Object.values(cost.items)[0]+' sách kỹ năng'}</div><div class="modal-actions"><button data-action="hero-tab" data-tab="skills">Tất cả kỹ năng</button><button class="green" data-action="upgrade" data-type="skill" data-skill="${id}" data-submit ${level>=cost.maxLevel?'disabled':''}>Nâng kỹ năng</button></div>`,'luffy-skill-tooltip')}
 async function upgradeTen(){
  if(busy)return;busy=true;setBusy(true);let count=0;const beforeStats={...player.hero.stats};
  try{while(count<10){const cost=player.costs.level;if(player.hero.level>=cost.maxLevel||(player.wallet.spirit||0)<cost.heroExp||player.wallet.gold<cost.gold)break;await api('/api/hero/upgrade',{type:'level'});count++}if(count)showHeroGains(beforeStats);V().toast(count?`Đã nâng ${count} cấp.`:'Không đủ vàng, kinh nghiệm hoặc đã đạt giới hạn cấp.');heroUi()}catch(e){V().toast(e.message);heroUi()}finally{busy=false;setBusy(false)}
@@ -1027,9 +1109,10 @@ async function fight(type){
 const endSpine={win:{name:'Win',skeleton:{name:'Win',src:'assets/battle-win.json'},atlases:[{atlas:{name:'Win.atlas',src:'assets/battle-win.atlas'},textures:['battle-win']}]},lose:{name:'Lose_op',skeleton:{name:'Lose_op',src:'assets/battle-lose.json'},atlases:[{atlas:{name:'Lose_op.atlas',src:'assets/battle-lose.atlas'},textures:['battle-lose']}]}};
 async function playEndSpine(canvas,won){
  const controller={skeleton:endSpine[won?'win':'lose'],animation:'Open',loop:false};await V().loadSkeleton(controller);if(!canvas.isConnected||!controller.instance)return;
+ const zoom=$('#game-layer').getBoundingClientRect().width/1136,density=Math.max(1,Math.min(3,zoom*(window.devicePixelRatio||1)));canvas.width=Math.round(1136*density);canvas.height=Math.round(340*density);
  const ctx=canvas.getContext('2d'),renderer=new spine.canvas.SkeletonRenderer(ctx),{instance,state}=controller;renderer.triangleRendering=true;
  state.setAnimation(0,'Open',false);state.addAnimation(0,'Loop',true,0);let last=performance.now();
- const frame=at=>{if(!canvas.isConnected)return;state.update(Math.min(.05,(at-last)/1000));last=at;state.apply(instance);instance.updateWorldTransform();ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.translate(568,won?172:170);ctx.scale(1,-1);renderer.draw(instance);ctx.restore();requestAnimationFrame(frame)};
+ const frame=at=>{if(!canvas.isConnected)return;state.update(Math.min(.05,(at-last)/1000));last=at;state.apply(instance);instance.updateWorldTransform();ctx.clearRect(0,0,canvas.width,canvas.height);ctx.save();ctx.scale(density,density);ctx.translate(568,won?172:170);ctx.scale(1,-1);renderer.draw(instance);ctx.restore();requestAnimationFrame(frame)};
  requestAnimationFrame(frame);
 }
 function battleEndScreen(b,{rewards=[],damage,lines=[],close}){
@@ -1041,6 +1124,7 @@ function battleEndScreen(b,{rewards=[],damage,lines=[],close}){
 }
 function showBattleResult(){
  const b=player.battle;if(!b)return;const r=b.reward||{},won=b.status==='won';
+ if(b.silent)return battleEndScreen(b,{damage:r.damage||0,rewards:r.items||[],lines:[r.target===3?`Tổng sát thương mùa: ${num(r.total||0)}`:`Máu hộ vệ còn: ${r.guardHp??100}%`,...(r.defeated?['Lord of the Coast đã bị đánh bại!']:[]),...(r.counted===false?['Mùa đã kết thúc nên trận này không được tính.']:[])],close:'sr-back'});
  if(b.beast)return battleEndScreen(b,{damage:r.damage||0,lines:[`Tích lũy: ${num(r.total||0)}`,...(r.counted===false?['Mùa đã kết thúc nên trận này không được tính.']:[])],close:'beast-back'});
  if(b.broken)return battleEndScreen(b,{rewards:r.items||[],lines:won&&!r.counted?['Tháng đã đổi nên trận này không được tính.']:[],close:'event-back'});
  if(b.tower)return battleEndScreen(b,{rewards:won?[{itemId:'gold',quantity:r.gold},...r.items]:[],close:'tower'});
@@ -1098,7 +1182,7 @@ window.GameRuntime={
  prepareScene(data){syncScene(data)},
  async onScene(data){currentScene=data.id;dialog.innerHTML='';window.MermaidUI?.close();island=null;document.querySelector('.mm-tags')?.remove();if(currentScene===1700){hide(data,'IconNoti','Warning18Plus');await prepareIsland(data)}if(currentScene!==7)heroAlbumOpen=false;if(currentScene===9)await setupBattle();else{clearTimeout(autoTimer);autoBattle=false;battleEffects=[];effectPool=[]}if([28,34].includes(currentScene)&&catalog)await CampaignUI.prepare(campaignContext());if(currentScene===37)prepareWorld(data);if(currentScene!==1600)beastDetail=null;if(currentScene===40)await prepareTower(data);if(currentScene===21)prepareForge(data);if(currentScene===10){await refreshEvents();prepareEvents(data)}if(currentScene===53)await prepareBeast(data);if(currentScene===1600)await prepareBeastBoss(data);if(currentScene===24)prepareSummon(data);renderUi()},
  render(ctx,dt){if(currentScene===1700&&island)updateIsland(dt);if(currentScene===9&&player?.battle)return drawBattle(ctx,dt);if([28,34].includes(currentScene)&&catalog)return CampaignUI.draw(campaignContext(),ctx,dt,currentScene===28);return false},
- handleHit(hit){if(!player)return true;if(hit.node.homeHeroId){openHomeHero(hit.node.homeHeroId);return true}if(hit.name==='GroupAvatar'){profileDialog();return true}if(hit.name==='ButtonMail'){mailDialog();return true}if(currentScene===40&&towerHit(hit.name))return true;if(currentScene===1700&&mermaidHit(hit.name))return true;if(hit.name==='B_Mermaid'){navigate(1700);return true}if(currentScene===21&&forgeHit(hit.name))return true;if(currentScene===10&&eventHit(hit.name))return true;if([53,1600].includes(currentScene)&&beastHit(hit))return true;if(currentScene===24&&summonHit(hit.name))return true;if(currentScene===1156&&hit.name==='ButtonBack'){navigate(7);return true}if(currentScene===7&&heroAlbumOpen&&hit.name==='ButtonBack'){heroAlbumOpen=false;rosterUi();return true}if(hit.name==='ButtonHelp'){modal('TƯỚNG',`<p class="item-description">Chọn hệ ở bên trái để lọc danh sách tướng. Chạm vào thẻ tướng để xem thuộc tính, nâng cấp, trang bị và kỹ năng.</p>`);return true}if(currentScene===1156&&['ButtonShare','ButtonNoLock'].includes(hit.name)){heroInfoDialog();return true}if(hit.node.hero||hit.name==='ClickArea'){heroTab='stats';navigate(1156);return true}const names={ButtonHeroes:7,ButtonHeroList:7,ButtonBag:12,ButtonItem:12,ButtonShop:1404,ButtonWorld:37,B_EventRaid:34,B_Tower:40,B_PlaceHolder2:53,ButtonCampaign:34,ButtonShip:34,ButtonSummon:24,ButtonScroll:1156,ButtonOrb:1156,ButtonForge:21,ButtonEvents:10,ButtonFuse:1156,ButtonAltar:1156,ButtonBack:13,ButtonClose:13};if(names[hit.name]){navigate(names[hit.name]);return true}if(hit.name==='ButtonLuckySpin'){openSpecial();return true}if(['ButtonRollcall','ButtonAddGold','ButtonAddGem'].includes(hit.name)){refreshEvents().then(dailyDialog);return true}if(['ClickBox','TagContent'].includes(hit.name)&&[13,36].includes(currentScene)){homeQuestTap();return true}if(hit.name==='ButtonAchievement'){achievementDialog();return true}if(hit.name==='ButtonQuest'){questDialog();return true}if(['GroupAvatar','ButtonChat'].includes(hit.name)){journalDialog();return true}V().toast(currentScene===37?'Tính năng này đang được phát triển.':'Hãy cùng Luffy khám phá hải trình.');return true},
+ handleHit(hit){if(!player)return true;if(window.DevilFruitUI?.isOpen()||window.PetUI?.isOpen())return true;if(activityHit(hit))return true;if(hit.node.homeHeroId){openHomeHero(hit.node.homeHeroId);return true}if(hit.name==='GroupAvatar'){profileDialog();return true}if(hit.name==='ButtonMail'){mailDialog();return true}if(currentScene===40&&towerHit(hit.name))return true;if(currentScene===1700&&mermaidHit(hit.name))return true;if(hit.name==='B_Mermaid'){navigate(1700);return true}if(currentScene===21&&forgeHit(hit.name))return true;if(currentScene===10&&eventHit(hit.name))return true;if([53,1600].includes(currentScene)&&beastHit(hit))return true;if(currentScene===24&&summonHit(hit.name))return true;if(currentScene===1156&&hit.name==='ButtonBack'){navigate(7);return true}if(currentScene===7&&heroAlbumOpen&&hit.name==='ButtonBack'){heroAlbumOpen=false;rosterUi();return true}if(hit.name==='ButtonHelp'){modal('TƯỚNG',`<p class="item-description">Chọn hệ ở bên trái để lọc danh sách tướng. Chạm vào thẻ tướng để xem thuộc tính, nâng cấp, trang bị và kỹ năng.</p>`);return true}if(currentScene===1156&&['ButtonShare','ButtonNoLock'].includes(hit.name)){heroInfoDialog();return true}if(hit.node.hero||hit.name==='ClickArea'){heroTab='stats';navigate(1156);return true}const names={ButtonHeroes:7,ButtonHeroList:7,ButtonBag:12,ButtonItem:12,ButtonShop:1404,ButtonWorld:37,B_EventRaid:34,B_Tower:40,B_PlaceHolder2:53,ButtonCampaign:34,ButtonShip:34,ButtonSummon:24,ButtonScroll:1156,ButtonOrb:1156,ButtonForge:21,ButtonEvents:10,ButtonFuse:1156,ButtonAltar:1156,ButtonBack:13,ButtonClose:13};if(names[hit.name]){navigate(names[hit.name]);return true}if(hit.name==='ButtonLuckySpin'){openSpecial();return true}if(['ButtonRollcall','ButtonAddGold','ButtonAddGem'].includes(hit.name)){refreshEvents().then(dailyDialog);return true}if(['ClickBox','TagContent'].includes(hit.name)&&[13,36].includes(currentScene)){homeQuestTap();return true}if(hit.name==='ButtonAchievement'){achievementDialog();return true}if(hit.name==='ButtonQuest'){questDialog();return true}if(['GroupAvatar','ButtonChat'].includes(hit.name)){journalDialog();return true}V().toast(currentScene===37?'Tính năng này đang được phát triển.':'Hãy cùng Luffy khám phá hải trình.');return true},
  get player(){return player},get catalog(){return catalog},get battleBusy(){return battleBusy},get actors(){return actors},get effects(){return battleEffects},get shakes(){return battleShakes},get battleTime(){return battleTime},get battleSpeed(){return battleSpeed},get formationDraft(){return campaignSlots},navigate,
 };
 document.addEventListener('submit',async e=>{if(e.target.id!=='auth-form')return;e.preventDefault();if(busy)return;const form=e.target,error=$('#auth-error'),username=form.elements.username.value,password=form.elements.password.value;if(authMode==='register'&&password!==form.elements.confirm.value){error.textContent='Mật khẩu nhập lại không khớp.';return}busy=true;setBusy(true);error.textContent='';try{await api('/api/auth/'+authMode,{username,password});form.reset();bootError='';await navigate(13)}catch(err){error.textContent=err.message}finally{busy=false;setBusy(false)}});
@@ -1117,6 +1201,7 @@ document.addEventListener('click',async e=>{
  if(action==='campaign-map')return navigate(28);
  if(action==='tower')return navigate(40);
  if(action==='beast-back')return navigate(1600);
+ if(action==='sr-back')return srBack();
  if(action==='item-drop'){const panel=dialog.querySelector('.item-popup-drop');if(panel)panel.hidden=!panel.hidden;return}
  if(action==='item-drop-forge'){if(lastItem){forgeSlot=itemMap.get(lastItem).slot;forgeSelected[forgeSlot]=lastItem}return navigate(21)}
  if(action==='item-drop-world')return navigate(37);
@@ -1245,7 +1330,7 @@ document.addEventListener('click',async e=>{
  if(action==='speed'){battleSpeed=battleSpeed===1?2:1;battleUi();return}
  if(action==='battle-log'){modal('DIỄN BIẾN TRẬN ĐẤU',`<div class="journal">${battleLines.map(line=>`<p>${escape(line)}</p>`).join('')||'<p>Trận đấu vừa bắt đầu.</p>'}</div>`);return}
  if(action==='battle-exit'){clearTimeout(autoTimer);autoBattle=false;battleUi();while(battleBusy)await new Promise(resolve=>setTimeout(resolve,50));if(player.battle.status!=='active')return;modal('RÚT LUI?',`<p class="item-description">Rút khỏi trận sẽ không nhận thưởng.</p><div class="modal-actions"><button data-action="battle-resume">Tiếp tục chiến đấu</button><button class="red" data-action="battle-leave" data-submit>Rút lui</button></div>`);return}
- if(action==='battle-leave'){clearTimeout(autoTimer);autoBattle=false;const fought=player.battle,result=await mutation('/api/battle/leave');if(result)await navigate(fought?.abyss?1700:fought?.broken?10:fought?.tower?40:fought?.beast?1600:34);return}
+ if(action==='battle-leave'){clearTimeout(autoTimer);autoBattle=false;const fought=player.battle,result=await mutation('/api/battle/leave');if(result&&fought?.silent){srReturn={diff:fought.silent.diff,tab:fought.silent.target};await srBack();return}if(result)await navigate(fought?.abyss?1700:fought?.broken?10:fought?.tower?40:fought?.beast?1600:34);return}
  if(action==='logout'){if(busy||battleBusy)return;busy=true;try{await api('/api/auth/logout',{});player=null;csrfToken='';authMode='login';clearTimeout(autoTimer);autoBattle=false;dialog.innerHTML='';await navigate(1)}catch(err){V().toast(err.message)}finally{busy=false}return}
 });
 V().canvas.addEventListener('click',e=>{if(currentScene!==9)return;const r=V().canvas.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*1136,y=(e.clientY-r.top)/r.height*640;const target=actors.find(a=>a.side==='enemy'&&a.hp>0&&Math.abs(a.x-x)<70&&y>a.y-210&&y<a.y+30);if(target){selectedTarget=target.id;V().toast('Mục tiêu: '+target.name)}});

@@ -330,3 +330,38 @@ Vực thẳm: đội địch là tướng nên mỗi tướng địch dùng bộ
 Chiêu đánh nhiều mục tiêu: client gom các đòn liên tiếp của cùng người, cùng loại (Nộ / đánh thường), mỗi mục tiêu một lần thành một đợt (`nextInWave` trong `replay`): mọi mục tiêu trúng đòn, hiện số sát thương và ngã cùng một khung hình, chỉ dừng sau đòn cuối. Mục tiêu bị đánh lại (chiêu nhiều đợt) mở đợt mới. QA: `tools/qa-aoe-wave.cjs` đo độ lệch thời điểm trúng đòn / ngã giữa các kẻ địch.
 
 Chữ sát thương trong trận (`drawFloaters`): theo prefab gốc TextHpLost (trắng, PoetsenOne 40), TextHpCrit (đỏ cam #ff2b00, 60), TextHpBuff (hồi máu, xanh lá #6ef23b), TextHpBlock (Asap-Bold 40: "Chặn", "Né", "Miễn dịch"), viền #242525; hiện số trần như prefab. Chuyển động giải mã từ AnimationClip HpLost / HpCrit / Ani_HpBuff / Ani_Block (streamed clip): nảy co giãn, nâng lên rồi mờ dần đúng mốc thời gian gốc. QA: `tools/qa-damage-text.cjs`.
+
+## Bảo vật
+
+`tools/export-artifacts.py` đọc `db_item_baovat` + `db_point_view` vào `dist/artifacts.json`; `server/catalog.mjs` gộp vào 448 bảo vật. Bậc = `quality` 1-6 theo thang màu trang bị (xám, xanh lá, xanh dương, tím, vàng, đỏ). Chỉ số cộng thêm là dòng `effect` của cấp hiện tại (vật phẩm trong túi là cấp 1, 1 sao); cả 6 cấp lưu ở `levels` và hiện trong popup. Dòng có `faction` 1-6 (Sinh Khí, Bền Bỉ, Nhanh Nhẹn, Chính xác, Thông Minh, Minh Mẫn) chỉ tính cho tướng đúng hệ, `clazz` 1-5 cho đúng nghề (`equipmentBonus`). Mã riêng của bảo vật: 4 Nộ vào trận, 35-39 ST vào nghề kiếm sĩ / chỉ huy / hỗ trợ / xạ thủ / đấu sĩ, 40-43 Miễn Câm lặng / Hóa đá / Choáng / Đóng băng; trận đấu áp dụng cả ba. Bảng gốc ghi "00,130" ở cấp 2 ĐIỂU SƯ là lỗi gõ của mã 100. Giá bán theo `sell_price` cấp 1. Chỉ số giả trước đây (+Công/+Máu tự sinh) đã bỏ. QA: `tools/qa-artifacts.cjs`.
+
+## Trái Ác Quỷ (lua_forbiddenfruit)
+- Dữ liệu: `tools/export-devil-fruit.py` xuất `dist/devil-fruit.json` (36 trái `db_devil_fruit`, 9 bộ `db_devil_fruit_set`, `db_config_devilFruit.json`, câu chỉ số `FFGenPoints`, ảnh và cây prefab FFRoot / FFCard / FFUpgradePopup / FFPopupHeroView / ...). Logic server ở `server/devil-fruit.mjs`, test ở `test/devil-fruit.test.mjs`.
+- Vào: sảnh cấp ≥ 50 có nút "Hoạt động" (ButtonFunctionActivity, chèn vị trí 2 của GroupButton như LuaJobAddActivity) → Trái Ác Quỷ. Ngọc Vega khóa dưới cấp 82; Ngọc Vega / Thú cưng chưa làm.
+- Giao diện dựng nguyên prefab bằng `dist/prefab-dom.js` (DOM theo RectTransform, 9-slice, rich text, layout group, ScrollRect) trong `dist/devil-fruit-ui.js`.
+- Luật: hợp thành đủ mảnh (hạng 1: 30, hạng 2-4: 50); cường hóa tối đa +20, mỗi cấp +5% chỉ số cơ bản, phí Tinh Chất + Beli theo hạng; nâng sao tối đa 12, chỉ số đặc biệt × scalestar, phí Gen + mảnh cùng trái; bộ 4 trái cùng đạt 2/4/6 sao → cơ bản +20/+30/+50%.
+- Vòng quay Xu Bạc / Xu Vàng 16 ô theo summonNormal / summonSpecial; trái đã có đổi thành đủ mảnh; "Bỏ qua hoạt cảnh" lưu `KEY_SKIP_FRUIT_WHEEL`.
+- Cộng hưởng: 3 ô mở sẵn, tối đa 50, mở ô bằng kim cương theo feeUnlocked (100, 200, ...); tướng cấp ≥ 100 nhận tổng chỉ số mọi trái đã sở hữu (mã 0-3/100-103 vào chỉ số, mã đặc biệt thành thuộc tính trận đấu).
+- QA: `node tools/qa-devil-fruit.cjs` (ảnh trong `qa-output/devil-fruit`).
+
+## Sao tướng và Ép Sao (Germa)
+- Hệ sao (prefab HeroStars): 1-5 vàng (`hero_star_1`), 6-9 tím (`hero_star_2`), 10-14 là 5 sao đỏ (`hero_star_3`), 15-19 là L1-L5 (`star_e_bgr`). Người chơi cũ có sao 11-15 (L1-L5 kiểu cũ) được dời lên 15-19 một lần (`player.starScheme=2`).
+- Cấp tối đa: vàng 60, tím 80-110, sao đỏ 200/220/240/260/280, L1-L5 300/350/400/500/600. Từ sao đỏ phải đạt cấp tối đa hiện tại mới thức tỉnh tiếp; từ L1 cần thêm Nước mắt Mansherry. Bảng phí thức tỉnh gốc nằm ở server nên số lượng do bản web đặt (`starCost` trong `server/game.mjs`).
+- Ép Sao (EventEpSao "Void"): tướng có trong `UpgradeVoidSkillData` (109 tướng) đạt L1 thì tab Đột phá chuyển thành bảng Germa. Dữ liệu `tools/export-germa.py` → `dist/germa.json`, logic `server/germa.mjs`, giao diện `dist/germa-ui.js` (prefab PanelEpSao, PopupEpSaoUpgradeLevel, PopupEpSaoUpgradeSkill).
+- 16 nút: Công Kích / Phòng Hộ (30 cấp), Uy Lực (10 cấp), nút 15 Tốc; chỉ số cộng thẳng theo `buff`, phí Nước mắt Mansherry theo `cost`. Ba nút một nhánh tối đa thì mở nút kỹ năng; kích hoạt kỹ năng (Công nghệ Germa 1-3 ×6 + nguyên liệu tướng) thay kỹ năng bằng bản Germa cấp 4 (mô tả từ db_hero_skill, áp vào trận) và mở nhánh sau. Bản gốc cần 5/10/15/20 tướng 10 sao; bản web không có tướng trùng nên mỗi tướng đổi thành 10 mảnh của chính tướng đó.
+- Thiết lập lại: 100 kim cương, hoàn trả toàn bộ nguyên liệu đã dùng. QA: `node tools/qa-germa.cjs`.
+
+## Thú cưng (lua_pet, SRMain)
+- Dữ liệu: `tools/export-pet.py` → `dist/pet.json` (63 thú cưng phát hành của `db_pet_2`, `db_pet_2_upgrade`, 268 kỹ năng bị động từ `db_hero_skill`, 271 ảnh, 69 spine `Pett_<id>`, 18 prefab). Logic `server/pet.mjs`, giao diện `dist/pet-ui.js`, test `test/pet.test.mjs`, QA `node tools/qa-pet.cjs`.
+- Vào: sảnh → Hoạt động → Thú cưng → SRMain (Thú Cưng / Vành Đai Tĩnh Lặng — Vành Đai chưa làm) → PetHome (Đảo Hoang = generic 1, Biển Sâu = generic 2) → bản đồ PMBG1/PMBG2: con mạnh nhất mỗi loài đi dạo trên `Line<line>` như PetGO; Chiêu mộ / Thú cưng / Thư viện / Thế giới.
+- Chiêu mộ: La Bàn (3002) ×1 / ×10, 24 giờ miễn phí 1 lần; mỗi lượt ra mảnh, Exp thú cưng (3004) hoặc cả con. Thư viện: đủ 50 mảnh thì triệu hồi.
+- Thú cưng (PetInventory): lên cấp (Vàng + Exp theo `levels`, giới hạn theo sao), Hoàn đồng (3003, quay lại Trưởng thành), Tẩy luyện (3001, quay chỉ số cơ bản rồi chọn Thay đổi), Lĩnh ngộ (3000, tỉ lệ/lùi cấp theo `tiers`), Thức tỉnh (hiến thú cưng cùng loại theo `stars`, từ sao 6 thêm thú cưng 5/6/9 sao, Đá cường hóa), tối đa 10 sao; kỹ năng mở/nâng theo `unlockSkill`.
+- Trang bị: ô Pet ở thông tin tướng (PetEquip, PopupPetEquip lọc Công kích / Sinh tồn / Nhanh nhẹn / Tất cả); chỉ số thú cưng cộng thẳng cho chủ nhân, kỹ năng bị động đã mở nhập vào bộ kỹ năng trận đấu.
+- Công thức chỉ số và tỉ lệ chiêu mộ nằm ở server gốc nên do bản web đặt (xem đầu `server/pet.mjs`).
+- `tools/export_ui.py`: cờ bool của Horizontal/VerticalLayoutGroup được căn 4 byte (trước đây đọc lệch), thêm `LayoutElement`; `dist/prefab-dom.js` dàn layout như Unity (control/force expand, ContentSizeFitter, ignoreLayout).
+
+## Vành Đai Tĩnh Lặng (lua_silentring)
+- Dữ liệu: `tools/export-silentring.py` → `dist/silent-ring.json` (`db_boss_silent` 5 độ khó; Giant Squid 30006, Sea Cow 30001, Lord of the Coast 30000 với chỉ số, kỹ năng, spine chiến đấu từ db_quai/db_heroes; kỹ năng đặc biệt Đại Nộ / Hộ thể cấp 0-5; 94 ảnh và 10 prefab). Logic `server/silent-ring.mjs`, giao diện trong `dist/pet-ui.js`, test `test/silent-ring.test.mjs`, QA `node tools/qa-silent-ring.cjs`.
+- Vào: Hoạt động → Thú cưng → Vành Đai Tĩnh Lặng. Báo danh tối đa 90 thuyền viên cấp ≥ 50 (Chọn nhanh theo lực chiến). Mỗi độ khó đánh hộ vệ 1 → hộ vệ 2 (1 lần mỗi mùa) rồi tới boss; máu hộ vệ còn lại (theo `hp_skill`) quyết định cấp Đại Nộ / Hộ thể của boss. 5 lượt đánh boss mỗi ngày, mỗi thuyền viên tham chiến 1 lần mỗi ngày.
+- Quà: Thưởng boss theo sát thương 1 trận (`rank_dmg`/`reward`), Thưởng mùa theo tổng sát thương (`rank_dmg_season`/`season_reward`, boss bị hạ thì nhân đôi), thành tựu theo mùa.
+- Do bản web đặt (bảng gốc ở server): mùa 7 ngày từ thứ Hai 10:00 giờ VN (6 ngày đánh, ngày cuối nhận quà mùa), máu boss chung mùa = mốc thưởng mùa cao nhất, máu hộ vệ = mốc thưởng trận đầu, chỉ số quái = chỉ số gốc × cấp / 100, danh sách thành tựu. `SR_TIME_SHIFT_MS` dịch đồng hồ sự kiện cho QA.

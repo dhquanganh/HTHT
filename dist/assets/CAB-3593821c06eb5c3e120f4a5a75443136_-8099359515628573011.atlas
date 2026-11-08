@@ -1,0 +1,48 @@
+
+Pett_37.png
+size: 308,92
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: true
+  xy: 248, 4
+  size: 40, 27
+  orig: 42, 29
+  offset: 1, 1
+  index: -1
+Layer 11
+  rotate: true
+  xy: 277, 49
+  size: 39, 26
+  orig: 41, 28
+  offset: 1, 1
+  index: -1
+Layer 15
+  rotate: false
+  xy: 277, 23
+  size: 23, 24
+  orig: 31, 27
+  offset: 4, 1
+  index: -1
+Layer 6
+  rotate: true
+  xy: 181, 10
+  size: 78, 65
+  orig: 78, 65
+  offset: 0, 0
+  index: -1
+Layer 7
+  rotate: true
+  xy: 2, 2
+  size: 86, 177
+  orig: 86, 177
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: true
+  xy: 248, 46
+  size: 42, 27
+  orig: 44, 29
+  offset: 1, 1
+  index: -1

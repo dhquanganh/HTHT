@@ -1,0 +1,97 @@
+
+Pett_63.png
+size: 556,556
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ/Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ_0
+  rotate: false
+  xy: 2, 78
+  size: 278, 91
+  orig: 334, 334
+  offset: 31, 164
+  index: -1
+Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ/Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ_1
+  rotate: true
+  xy: 386, 2
+  size: 281, 82
+  orig: 334, 334
+  offset: 32, 164
+  index: -1
+Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ/Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ_2
+  rotate: true
+  xy: 2, 171
+  size: 284, 88
+  orig: 334, 334
+  offset: 32, 165
+  index: -1
+Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ/Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ_3
+  rotate: false
+  xy: 2, 457
+  size: 284, 96
+  orig: 334, 334
+  offset: 33, 165
+  index: -1
+Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ/Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ_4
+  rotate: true
+  xy: 288, 2
+  size: 281, 96
+  orig: 334, 334
+  offset: 34, 165
+  index: -1
+Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ/Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ_5
+  rotate: true
+  xy: 191, 177
+  size: 278, 95
+  orig: 334, 334
+  offset: 36, 165
+  index: -1
+Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ/Elements - Liquid 023 Splash Trail Right Loop noCT noRSZ_6
+  rotate: true
+  xy: 92, 178
+  size: 277, 97
+  orig: 334, 334
+  offset: 35, 164
+  index: -1
+Layer 17
+  rotate: false
+  xy: 2, 11
+  size: 233, 65
+  orig: 235, 67
+  offset: 1, 1
+  index: -1
+Layer 17 copy
+  rotate: true
+  xy: 436, 320
+  size: 233, 40
+  orig: 233, 40
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 288, 285
+  size: 268, 146
+  orig: 268, 146
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 262, 54
+  size: 22, 21
+  orig: 29, 28
+  offset: 5, 4
+  index: -1
+fin
+  rotate: true
+  xy: 237, 23
+  size: 53, 23
+  orig: 53, 23
+  offset: 0, 0
+  index: -1
+iris
+  rotate: false
+  xy: 237, 8
+  size: 13, 13
+  orig: 15, 15
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,146 @@
+
+Pett_53.png
+size: 312,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: true
+  xy: 276, 12
+  size: 20, 19
+  orig: 20, 19
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: false
+  xy: 281, 99
+  size: 18, 12
+  orig: 18, 13
+  offset: 0, 1
+  index: -1
+Layer 13
+  rotate: false
+  xy: 270, 34
+  size: 18, 23
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+Layer 14
+  rotate: false
+  xy: 2, 38
+  size: 97, 104
+  orig: 97, 104
+  offset: 0, 0
+  index: -1
+Layer 15
+  rotate: true
+  xy: 251, 99
+  size: 43, 28
+  orig: 43, 28
+  offset: 0, 0
+  index: -1
+Layer 16
+  rotate: false
+  xy: 2, 2
+  size: 33, 34
+  orig: 33, 34
+  offset: 0, 0
+  index: -1
+Layer 17
+  rotate: false
+  xy: 101, 40
+  size: 41, 20
+  orig: 41, 20
+  offset: 0, 0
+  index: -1
+Layer 18
+  rotate: false
+  xy: 290, 38
+  size: 15, 19
+  orig: 17, 21
+  offset: 1, 1
+  index: -1
+Layer 19
+  rotate: false
+  xy: 151, 3
+  size: 70, 57
+  orig: 72, 59
+  offset: 1, 1
+  index: -1
+Layer 20
+  rotate: false
+  xy: 37, 2
+  size: 29, 34
+  orig: 29, 34
+  offset: 0, 0
+  index: -1
+Layer 22
+  rotate: true
+  xy: 281, 113
+  size: 29, 26
+  orig: 30, 26
+  offset: 1, 0
+  index: -1
+Layer 23 copy
+  rotate: true
+  xy: 251, 3
+  size: 24, 23
+  orig: 25, 23
+  offset: 1, 0
+  index: -1
+Layer 3
+  rotate: true
+  xy: 101, 62
+  size: 80, 148
+  orig: 80, 148
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: false
+  xy: 251, 59
+  size: 30, 38
+  orig: 30, 38
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: true
+  xy: 223, 12
+  size: 48, 26
+  orig: 51, 28
+  offset: 2, 1
+  index: -1
+Layer 6
+  rotate: false
+  xy: 96, 6
+  size: 53, 30
+  orig: 53, 30
+  offset: 0, 0
+  index: -1
+Layer 8
+  rotate: false
+  xy: 68, 3
+  size: 26, 33
+  orig: 26, 33
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: true
+  xy: 283, 78
+  size: 19, 18
+  orig: 19, 18
+  offset: 0, 0
+  index: -1
+Layer-25
+  rotate: true
+  xy: 283, 59
+  size: 17, 16
+  orig: 18, 16
+  offset: 0, 0
+  index: -1
+za
+  rotate: false
+  xy: 251, 29
+  size: 17, 28
+  orig: 17, 28
+  offset: 0, 0
+  index: -1

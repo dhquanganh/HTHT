@@ -1,0 +1,34 @@
+/* Trái Ác Quỷ: prefab gốc dựng bằng PrefabDOM (dist/prefab-dom.js), chỉ thêm phần tương tác và ô vật phẩm. */
+#game-layer .ff-root,#game-layer .ff-popup{pointer-events:auto!important;z-index:40;user-select:none;-webkit-user-select:none}
+#game-layer .ff-popup{z-index:45}
+#game-layer .ff-upgrade,#game-layer .ff-heroes{z-index:46}
+#game-layer .ff-checkin{z-index:47}
+#game-layer .pd-node{box-sizing:border-box}
+#game-layer .pd-text{display:block;width:100%;pointer-events:none}
+#game-layer .pd-button,#game-layer .ff-card,#game-layer .ff-hero-cell{cursor:pointer}
+#game-layer .pd-button:active,#game-layer .ff-card:active{filter:brightness(.88)}
+#game-layer .pd-viewport{touch-action:pan-y;scrollbar-width:none}
+#game-layer .pd-viewport::-webkit-scrollbar{display:none}
+#game-layer .ff-root .pd-viewport>.pd-node,#game-layer .ff-popup .pd-viewport>.pd-node{position:relative!important;left:0!important;top:0!important;width:100%!important}
+#game-layer .ff-item{position:absolute;width:92px;height:92px}
+#game-layer .ff-item>span{position:absolute;inset:0;background:center/100% 100% no-repeat}
+#game-layer .ff-item .ff-item-icon{inset:6px;background-size:contain}
+#game-layer .ff-item .ff-item-border{inset:-4px}
+#game-layer .ff-item b{position:absolute;left:-8px;right:-8px;bottom:2px;text-align:right;white-space:nowrap;color:#fff;font:normal 20px/1 GameFont,sans-serif;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+#game-layer .ff-item b.short{color:#ff5a4a}
+#game-layer .ff-item .ff-shard{position:absolute;left:2px;top:2px;width:30px;height:30px;background:center/contain no-repeat}
+#game-layer .ff-spine{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+#game-layer .ff-pick{position:absolute;width:96px;height:96px;padding:0;border:0;background:none;cursor:pointer}
+#game-layer .ff-pick img{position:absolute;pointer-events:none}
+#game-layer .ff-pick .ff-pick-head{left:6px;top:6px;width:84px;height:84px}
+#game-layer .ff-pick .ff-pick-border{inset:0;width:96px;height:96px}
+#game-layer .ff-pick .ff-pick-faction{left:2px;top:2px;width:28px;height:28px}
+#game-layer .ff-pick b{position:absolute;right:8px;top:6px;color:#fff;font:normal 18px/1 GameFont,sans-serif;text-shadow:1px 1px 0 #000,-1px -1px 0 #000}
+#game-layer .ff-pick .ff-pick-stars{position:absolute;left:0;right:0;bottom:4px;display:flex;justify-content:center}
+#game-layer .ff-pick .ff-pick-stars img{position:static;width:16px;height:16px}
+#game-layer .ff-pick.on::after{content:'';position:absolute;inset:0;border:3px solid #b1f144;border-radius:8px;box-shadow:0 0 10px #b1f144}
+#game-layer .ff-empty{position:absolute;left:0;right:0;top:120px;text-align:center;color:#fff3d6;font:normal 22px GameFont,sans-serif}
+#game-layer [data-name="TabFaction"]>.ff-on{filter:brightness(1.25) drop-shadow(0 0 6px #ffe27a)}
+#game-layer [data-name="CostItems"] .ff-item b{text-align:center;bottom:-22px;font-size:17px}
+#game-layer .ff-item,#game-layer .ff-pick,#game-layer .ff-card,#game-layer .ff-hero-cell,#game-layer .ff-empty{pointer-events:auto!important}
+#game-layer .pd-viewport{pointer-events:auto!important}

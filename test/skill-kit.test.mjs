@@ -88,3 +88,14 @@ test('Vực thẳm: tướng phe địch dùng bộ kỹ năng của mình (bị
  // Bị động cộng chỉ số khi vào trận cũng áp lên phe địch.
  assert.ok(foes.every(e=>e.kitApplied));
 });
+
+test('bảo vật trong trận: Nộ vào trận, miễn Đóng băng, ST vào nghề',()=>{
+ const p=starterPlayer('Art');p.account.level=100;grantSummon(p,{avatar:'453'});p.adventure.unlockedStage=12;
+ p.reserveHeroes['hero-453'].equipment={accessory:'artifact:200'};
+ applyAction(p,'battle-start',{stageId:12,formation:slots('hero-453')});const u=p.battle.allies[0];
+ assert.equal(u.startEnergy,50);assert.equal(u.heroClass,'assassin');
+ for(const e of p.battle.enemies){e.hp=e.maxHp=1e8;e.speed=e.baseSpeed=1;e.attack=e.baseAttack=1}
+ u.speed=u.baseSpeed=1e6;u.energy=35;u.kit=null;u.ultimate=null;
+ applyAction(p,'battle-action',{battleId:p.battle.id,turn:1,action:'auto'});
+ assert.ok(u.startEnergyApplied&&u.energy>=85,'35 + 50 Nộ từ bảo vật');
+});

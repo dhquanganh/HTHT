@@ -35,6 +35,8 @@ export function initializeTeamBattle(b){
  for(const u of [...b.allies,...b.enemies]){
   u.baseAttack??=u.attack;u.baseDefense??=u.defense;u.baseSpeed??=u.speed;u.effects??=[];u.cooldowns??={};u.critChance??=u.side==='enemy'?.2:0;u.statuses??=[];u.dots??=[];u.shields??=[];
   applyKitStats(u);
+  // Bảo vật: Nộ cộng thêm khi vào trận (mã 4).
+  if(u.startEnergy&&!u.startEnergyApplied){u.startEnergyApplied=true;u.energy=Math.min(100,(u.energy||0)+u.startEnergy)}
   if(isZoro(u)&&!u.teamInitialized){
    const haki=ztier(u,'conqueror-haki');u.effects.push({id:'conqueror-haki:'+u.id,skillId:'conqueror-haki',source:u.id,name:'Haki Bá Vương',attribute:'attack',value:haki.attack*(u.frontRow?2:1),expiresTurn:haki.duration});
    if(u.frontRow)u.effects.push({id:'haki-speed:'+u.id,skillId:'conqueror-haki',source:u.id,name:'Haki Bá Vương',attribute:'speed',value:haki.speed,expiresTurn:haki.duration});
@@ -81,6 +83,14 @@ export function teamRound(b,input={action:'auto'}){
   let amount=immune||miss?0:Math.max(1,Math.round(flat?flat*(1-Math.min(.9,target.damageReduction||0)):(normal*(1-resistance)+raw*(trueDamage+(target.passives?.includes('penetration')?0:Math.max(0,stat(source,'trueDamage',b.turn))))*(1-resistance))*guard*(.94+random()*.12)));
   // Lì Đòn giảm đòn chí mạng, Thôn Phệ giảm đòn nộ: mỗi mùa boss có một trong hai hoặc kỹ năng khác.
   if(target.passives&&(critical&&target.passives.includes('critical')||skill&&target.passives.includes('ultimate')))amount=Math.max(1,Math.round(amount*.01));
+  // Bảo vật "ST vào nghề ..." (mã 35-39): tăng sát thương lên tướng đúng nghề.
+  const versus=target.heroClass&&source.classDamage?.[target.heroClass==='fighter'?'warrior':target.heroClass];if(versus&&amount>0&&!flat)amount=Math.round(amount*(1+versus));
+  // Trái Ác Quỷ (tướng cộng hưởng): Tăng/Giảm % ST DOT, Tăng/Giảm % ST Đánh thường, Giảm % ST Tuyệt kỹ.
+  if(amount>0){
+   if(periodic)amount=Math.round(amount*(1+(source.dotDamage||0))*(1-Math.min(.9,target.dotReduction||0)));
+   else if(skill)amount=Math.round(amount*(1-Math.min(.9,target.skillReduction||0)));
+   else if(!flat)amount=Math.round(amount*(1+(source.basicDamage||0))*(1-Math.min(.9,target.basicReduction||0)));
+  }
   // Khiên: chặn N đợt sát thương hoặc hấp thụ một lượng máu.
   let absorbed=0;
   if(amount>0&&!bypass)for(const s of target.shields||[]){if(s.until<b.turn)continue;if(s.hits>0){s.hits--;absorbed=amount;amount=0;break}if(s.amount>0){const take=Math.min(s.amount,amount);s.amount-=take;amount-=take;absorbed+=take;if(!amount)break}}
@@ -119,7 +129,8 @@ export function teamRound(b,input={action:'auto'}){
   return ranked.slice(0,sel?.count||1);
  };
  const applyStatus=(u,t,e,skillId,name)=>{
-  if(!t.hp)return;const resist=Math.min(1,(t.resist?.[e.kind]||0)+Math.max(0,(t.controlResist||0)-(u.controlPierce||0)));
+  // Kháng: kháng riêng của bị động + Miễn khống chế từ bảo vật (mã 40-43) + Miễn chống (bị động và trang bị, mã 11).
+  if(!t.hp)return;const resist=Math.min(1,(t.resist?.[e.kind]||0)+(t.statusResist?.[e.kind]||0)+Math.max(0,(t.controlResist||0)+(t.debuffResist||0)-(u.controlPierce||0)));
   if(random()>=e.chance*(1-resist)){if(e.chance*(1-resist)<e.chance)emit({type:'resist',actor:t.id,target:t.id,skillId,name:statusNames[e.kind]});return}
   t.statuses=t.statuses.filter(s=>s.kind!==e.kind);t.statuses.push({kind:e.kind,until:b.turn+e.turns-1+(e.kind==='silence'?0:0),source:u.id});
   emit({type:'buff',actor:u.id,target:t.id,skillId,name:statusNames[e.kind],attribute:e.kind,value:0,expiresTurn:b.turn+e.turns-1});

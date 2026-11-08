@@ -3,6 +3,8 @@ import {definitionFor,heroDefinitions} from './catalog.mjs';
 export const newHero=definition=>({id:definition.id,level:1,exp:0,stars:1,rank:0,equipment:{},skills:Object.fromEntries(definition.skills.map(s=>[s.id,1]))});
 export function ensureRoster(player){
  player.reserveHeroes??={};player.mail??=[];
+ // Hệ sao cũ: 10 là sao đỏ duy nhất, 11-15 là L1-L5. Hệ mới thêm 5 sao đỏ (10-14) nên L1-L5 dời lên 15-19.
+ if(player.starScheme!==2){for(const hero of [player.hero,...Object.values(player.reserveHeroes)])if(hero&&hero.stars>=11)hero.stars+=4;player.starScheme=2}
  // EXP tướng là quỹ chung (lá xanh ở màn hình chính). Bản trước cộng riêng vào từng tướng: gộp lại một lần.
  if(player.wallet&&player.wallet.spirit===undefined){let pool=0;for(const hero of [player.hero,...Object.values(player.reserveHeroes)]){pool+=hero.exp||0;hero.exp=0}player.wallet.spirit=pool}
  // Đá EXP trong túi trước đây là vật phẩm riêng phải bấm Dùng; giờ chính là quỹ EXP tướng (1 viên = 1 EXP).

@@ -1,0 +1,216 @@
+
+Pett_58.png
+size: 416,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Beard_L
+  rotate: false
+  xy: 212, 190
+  size: 41, 85
+  orig: 41, 85
+  offset: 0, 0
+  index: -1
+Beard_L_Run
+  rotate: true
+  xy: 381, 368
+  size: 77, 33
+  orig: 77, 33
+  offset: 0, 0
+  index: -1
+Beard_R
+  rotate: false
+  xy: 394, 95
+  size: 20, 78
+  orig: 20, 78
+  offset: 0, 0
+  index: -1
+Beard_R1_Run
+  rotate: false
+  xy: 255, 263
+  size: 21, 32
+  orig: 21, 32
+  offset: 0, 0
+  index: -1
+Beard_R_Run
+  rotate: false
+  xy: 343, 30
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+Body_Back
+  rotate: false
+  xy: 300, 103
+  size: 53, 65
+  orig: 53, 65
+  offset: 0, 0
+  index: -1
+Body_Back_Run
+  rotate: false
+  xy: 222, 412
+  size: 139, 118
+  orig: 139, 118
+  offset: 0, 0
+  index: -1
+Body_Bot
+  rotate: true
+  xy: 214, 297
+  size: 106, 62
+  orig: 107, 62
+  offset: 1, 0
+  index: -1
+Body_Main
+  rotate: false
+  xy: 2, 230
+  size: 113, 173
+  orig: 113, 173
+  offset: 0, 0
+  index: -1
+Body_Run
+  rotate: false
+  xy: 2, 405
+  size: 218, 125
+  orig: 218, 125
+  offset: 0, 0
+  index: -1
+Body_Top
+  rotate: false
+  xy: 119, 93
+  size: 99, 77
+  orig: 99, 77
+  offset: 0, 0
+  index: -1
+Body_Up
+  rotate: true
+  xy: 117, 277
+  size: 126, 95
+  orig: 126, 95
+  offset: 0, 0
+  index: -1
+Body_extra_Run
+  rotate: true
+  xy: 372, 314
+  size: 52, 28
+  orig: 52, 28
+  offset: 0, 0
+  index: -1
+Hair_1
+  rotate: false
+  xy: 266, 20
+  size: 30, 85
+  orig: 31, 85
+  offset: 0, 0
+  index: -1
+Hair_1_Run
+  rotate: false
+  xy: 220, 107
+  size: 78, 61
+  orig: 78, 61
+  offset: 0, 0
+  index: -1
+Hair_2
+  rotate: false
+  xy: 255, 170
+  size: 82, 76
+  orig: 82, 76
+  offset: 0, 0
+  index: -1
+Hair_2_Run
+  rotate: true
+  xy: 2, 94
+  size: 134, 115
+  orig: 134, 115
+  offset: 0, 0
+  index: -1
+Hair_3
+  rotate: false
+  xy: 278, 248
+  size: 101, 64
+  orig: 102, 69
+  offset: 0, 0
+  index: -1
+Hair_3_Run
+  rotate: false
+  xy: 339, 175
+  size: 75, 71
+  orig: 75, 71
+  offset: 0, 0
+  index: -1
+Hair_4
+  rotate: false
+  xy: 381, 260
+  size: 25, 52
+  orig: 41, 73
+  offset: 16, 20
+  index: -1
+Hair_4_Run
+  rotate: false
+  xy: 343, 59
+  size: 38, 40
+  orig: 40, 42
+  offset: 1, 1
+  index: -1
+Hair_5
+  rotate: false
+  xy: 298, 2
+  size: 33, 23
+  orig: 33, 23
+  offset: 0, 0
+  index: -1
+Hair_5_Run
+  rotate: true
+  xy: 355, 101
+  size: 72, 37
+  orig: 72, 37
+  offset: 0, 0
+  index: -1
+Hair_6
+  rotate: true
+  xy: 298, 27
+  size: 74, 43
+  orig: 74, 43
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 119, 172
+  size: 103, 91
+  orig: 103, 92
+  offset: 0, 1
+  index: -1
+Head_Run
+  rotate: false
+  xy: 2, 17
+  size: 114, 75
+  orig: 126, 76
+  offset: 12, 0
+  index: -1
+Mouth
+  rotate: true
+  xy: 278, 314
+  size: 96, 92
+  orig: 97, 95
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: false
+  xy: 221, 20
+  size: 43, 85
+  orig: 43, 85
+  offset: 0, 0
+  index: -1
+Tail_Run
+  rotate: false
+  xy: 363, 447
+  size: 46, 83
+  orig: 47, 83
+  offset: 0, 0
+  index: -1
+Tongue_2
+  rotate: true
+  xy: 118, 3
+  size: 88, 101
+  orig: 88, 101
+  offset: 0, 0
+  index: -1

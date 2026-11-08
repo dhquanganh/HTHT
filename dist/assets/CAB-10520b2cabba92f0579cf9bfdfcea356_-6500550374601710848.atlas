@@ -1,0 +1,209 @@
+
+Hero_30000.png
+size: 1860,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_04
+  rotate: true
+  xy: 270, 17
+  size: 171, 198
+  orig: 341, 396
+  offset: 86, 98
+  index: -1
+cloth_01
+  rotate: true
+  xy: 1536, 7
+  size: 260, 59
+  orig: 261, 60
+  offset: 1, 0
+  index: -1
+cloth_02
+  rotate: true
+  xy: 1470, 269
+  size: 261, 66
+  orig: 262, 67
+  offset: 1, 0
+  index: -1
+cloth_03
+  rotate: true
+  xy: 1195, 252
+  size: 278, 74
+  orig: 279, 75
+  offset: 1, 0
+  index: -1
+cloth_04
+  rotate: true
+  xy: 1127, 247
+  size: 283, 66
+  orig: 284, 67
+  offset: 1, 0
+  index: -1
+cloth_05
+  rotate: true
+  xy: 1271, 252
+  size: 278, 66
+  orig: 279, 67
+  offset: 1, 0
+  index: -1
+cloth_06
+  rotate: true
+  xy: 1406, 265
+  size: 265, 62
+  orig: 266, 63
+  offset: 1, 0
+  index: -1
+cloth_07
+  rotate: true
+  xy: 1339, 258
+  size: 272, 65
+  orig: 273, 66
+  offset: 1, 0
+  index: -1
+cloth_41
+  rotate: true
+  xy: 1597, 253
+  size: 54, 55
+  orig: 108, 111
+  offset: 28, 27
+  index: -1
+cloth_42
+  rotate: true
+  xy: 223, 163
+  size: 25, 32
+  orig: 39, 44
+  offset: 6, 7
+  index: -1
+cloth_43
+  rotate: false
+  xy: 442, 191
+  size: 18, 27
+  orig: 30, 37
+  offset: 9, 4
+  index: -1
+cloth_44
+  rotate: false
+  xy: 195, 14
+  size: 73, 77
+  orig: 95, 102
+  offset: 11, 10
+  index: -1
+cloth_45
+  rotate: true
+  xy: 1654, 182
+  size: 105, 187
+  orig: 140, 238
+  offset: 23, 24
+  index: -1
+cloth_46
+  rotate: false
+  xy: 223, 111
+  size: 28, 50
+  orig: 39, 60
+  offset: 6, 4
+  index: -1
+fx/10
+  rotate: false
+  xy: 1379, 11
+  size: 155, 245
+  orig: 165, 247
+  offset: 5, 1
+  index: -1
+fx/11
+  rotate: false
+  xy: 975, 2
+  size: 137, 243
+  orig: 165, 247
+  offset: 14, 4
+  index: -1
+fx/12
+  rotate: true
+  xy: 2, 10
+  size: 81, 191
+  orig: 165, 247
+  offset: 39, 56
+  index: -1
+fx/9
+  rotate: false
+  xy: 1538, 309
+  size: 163, 221
+  orig: 165, 247
+  offset: 1, 0
+  index: -1
+head_04
+  rotate: true
+  xy: 1703, 289
+  size: 107, 138
+  orig: 139, 181
+  offset: 14, 21
+  index: -1
+head_41
+  rotate: false
+  xy: 1597, 16
+  size: 111, 164
+  orig: 151, 189
+  offset: 20, 14
+  index: -1
+head_42
+  rotate: false
+  xy: 1703, 398
+  size: 153, 132
+  orig: 183, 171
+  offset: 14, 15
+  index: -1
+kinkainonushi_beat_01
+  rotate: false
+  xy: 1114, 7
+  size: 263, 238
+  orig: 525, 476
+  offset: 132, 118
+  index: -1
+kinkainonushi_beat_02
+  rotate: true
+  xy: 904, 247
+  size: 283, 221
+  orig: 567, 441
+  offset: 143, 109
+  index: -1
+kinkainonushi_beat_03
+  rotate: false
+  xy: 690, 12
+  size: 283, 226
+  orig: 566, 452
+  offset: 143, 112
+  index: -1
+kinkainonushi_beat_04
+  rotate: true
+  xy: 677, 240
+  size: 290, 225
+  orig: 580, 451
+  offset: 146, 112
+  index: -1
+kinkainonushi_beat_05
+  rotate: true
+  xy: 223, 190
+  size: 340, 217
+  orig: 680, 435
+  offset: 171, 108
+  index: -1
+kinkainonushi_beat_06
+  rotate: true
+  xy: 2, 93
+  size: 437, 219
+  orig: 873, 438
+  offset: 219, 108
+  index: -1
+kinkainonushi_beat_07
+  rotate: true
+  xy: 442, 220
+  size: 310, 233
+  orig: 620, 467
+  offset: 156, 116
+  index: -1
+kinkainonusi_damage
+  rotate: true
+  xy: 470, 5
+  size: 213, 218
+  orig: 456, 482
+  offset: 121, 122
+  index: -1

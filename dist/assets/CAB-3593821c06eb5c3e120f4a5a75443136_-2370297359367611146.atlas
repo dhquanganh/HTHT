@@ -1,0 +1,181 @@
+
+Pett_35.png
+size: 184,780
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: true
+  xy: 61, 26
+  size: 41, 47
+  orig: 41, 47
+  offset: 0, 0
+  index: -1
+Layer 10 copy 2
+  rotate: true
+  xy: 61, 26
+  size: 41, 47
+  orig: 41, 47
+  offset: 0, 0
+  index: -1
+Layer 11
+  rotate: false
+  xy: 2, 290
+  size: 110, 66
+  orig: 110, 66
+  offset: 0, 0
+  index: -1
+Layer 13
+  rotate: true
+  xy: 2, 139
+  size: 40, 66
+  orig: 40, 66
+  offset: 0, 0
+  index: -1
+Layer 13 copy
+  rotate: true
+  xy: 70, 111
+  size: 40, 65
+  orig: 40, 66
+  offset: 0, 1
+  index: -1
+Layer 13 copy 2
+  rotate: true
+  xy: 82, 257
+  size: 31, 30
+  orig: 31, 32
+  offset: 0, 2
+  index: -1
+Layer 13 copy 3
+  rotate: true
+  xy: 2, 2
+  size: 38, 41
+  orig: 38, 41
+  offset: 0, 0
+  index: -1
+Layer 14
+  rotate: false
+  xy: 2, 83
+  size: 63, 54
+  orig: 63, 54
+  offset: 0, 0
+  index: -1
+Layer 15
+  rotate: true
+  xy: 132, 48
+  size: 43, 49
+  orig: 43, 50
+  offset: 0, 0
+  index: -1
+Layer 16
+  rotate: true
+  xy: 152, 199
+  size: 34, 23
+  orig: 34, 23
+  offset: 0, 0
+  index: -1
+Layer 18
+  rotate: false
+  xy: 2, 181
+  size: 75, 54
+  orig: 75, 54
+  offset: 0, 0
+  index: -1
+Layer 19
+  rotate: true
+  xy: 79, 153
+  size: 35, 70
+  orig: 35, 70
+  offset: 0, 0
+  index: -1
+Layer 22
+  rotate: true
+  xy: 79, 190
+  size: 43, 71
+  orig: 43, 71
+  offset: 0, 0
+  index: -1
+Layer 24
+  rotate: true
+  xy: 2, 358
+  size: 282, 175
+  orig: 282, 177
+  offset: 0, 2
+  index: -1
+Layer 25
+  rotate: true
+  xy: 2, 42
+  size: 39, 57
+  orig: 39, 57
+  offset: 0, 0
+  index: -1
+Layer 25 copy
+  rotate: true
+  xy: 2, 42
+  size: 39, 57
+  orig: 39, 57
+  offset: 0, 0
+  index: -1
+Layer 27
+  rotate: false
+  xy: 137, 93
+  size: 44, 58
+  orig: 44, 61
+  offset: 0, 0
+  index: -1
+Layer 28
+  rotate: true
+  xy: 114, 235
+  size: 44, 67
+  orig: 44, 67
+  offset: 0, 0
+  index: -1
+Layer 29
+  rotate: false
+  xy: 2, 237
+  size: 78, 51
+  orig: 78, 51
+  offset: 0, 0
+  index: -1
+Layer 30
+  rotate: true
+  xy: 152, 162
+  size: 35, 19
+  orig: 35, 19
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: true
+  xy: 114, 281
+  size: 75, 67
+  orig: 77, 69
+  offset: 1, 1
+  index: -1
+Layer 7
+  rotate: true
+  xy: 2, 642
+  size: 135, 180
+  orig: 136, 180
+  offset: 0, 0
+  index: -1
+Layer 8
+  rotate: true
+  xy: 67, 69
+  size: 40, 63
+  orig: 40, 102
+  offset: 0, 39
+  index: -1
+Layer 9
+  rotate: true
+  xy: 110, 14
+  size: 32, 39
+  orig: 32, 39
+  offset: 0, 0
+  index: -1
+eye close
+  rotate: false
+  xy: 82, 235
+  size: 28, 20
+  orig: 30, 22
+  offset: 1, 1
+  index: -1

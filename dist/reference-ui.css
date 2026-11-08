@@ -33,7 +33,7 @@
 .awakening-preview p{font-size:23px;margin:6px 0 14px}.awakening-preview strong{color:#35c600}
 .awakening-stars{display:flex;align-items:center;justify-content:center;gap:24px;height:35px}
 .awakening-stars .ref-item-stars{position:static;flex-direction:row;gap:2px}.awakening-stars img{width:26px;height:26px}
-.awakening-stars b{font-size:39px;color:#6ca432;text-shadow:1px 1px #315215;line-height:1}
+.awakening-stars>b{font-size:39px;color:#6ca432;text-shadow:1px 1px #315215;line-height:1}
 .reference-awakening>h2{position:absolute;top:235px;left:0;right:0;margin:0!important;text-align:center;font-size:28px!important}
 .awakening-materials{position:absolute;top:300px;left:50px;right:50px;display:flex;justify-content:space-between;gap:12px;text-align:center}
 .awakening-materials>div>span{display:block;text-align:left;font-size:18px;color:white;text-shadow:1px 2px #35281e;white-space:nowrap;margin-bottom:5px}
@@ -173,3 +173,24 @@
 .dq-check{width:41px;height:38px;margin-left:20px}
 .dq-cell.claimed{filter:saturate(.75)}
 #game-layer .dq-offline{text-align:center;font-size:22px;margin-top:150px;color:#8d3b22}
+
+.mail-row>img.mail-gift-read{filter:grayscale(1) brightness(1.08)}#dialog-ui .mail-row .mail-time{font-size:20px;font-weight:bold;color:#4a2a12;margin-top:16px}
+/* Hàng nguyên liệu Thức tỉnh: tối đa 4 ô (mảnh, Đá cường hóa, Nước mắt, Vàng) phải vừa khung 500px. */
+.awakening-materials{left:22px!important;right:22px!important;justify-content:space-evenly!important;gap:6px!important}
+.awakening-materials>div{flex:0 0 104px;width:104px;min-width:0;display:flex;flex-direction:column;align-items:center}
+.awakening-materials>div>span{width:100%;overflow:hidden;text-overflow:ellipsis;text-align:center!important;font-size:16px!important}
+.awakening-materials strong{font-size:18px!important;white-space:nowrap}
+.awakening-materials{left:12px!important;right:12px!important;gap:2px!important}
+.awakening-materials>div{flex:0 0 100px;width:100px}
+.awakening-materials .ref-material-icon,.awakening-materials .star-material,.awakening-materials>div>div{transform:scale(.86);transform-origin:center top;margin-bottom:-12px}
+.awakening-materials strong{font-size:17px!important}
+.awakening-materials{left:6px!important;right:58px!important;gap:0!important;justify-content:space-between!important}
+.awakening-materials>div{flex:0 0 90px;width:90px}
+.awakening-materials .ref-material-icon,.awakening-materials .star-material,.awakening-materials>div>div{transform:scale(.8)!important;margin-bottom:-18px!important}
+.awakening-materials>div>span{font-size:15px!important}
+/* Biểu tượng L1-L5 ở Thức tỉnh theo prefab HeroStars/GroupStarE: IconE 158x59, StarE 38x38, TextStarE trắng cỡ 24 (lệch xuống 4px),
+   viền đen mờ 39%. Kiểu "»" (xanh, cỡ 39) chỉ áp cho mũi tên, không áp cho số trong ngôi sao. */
+.awakening-stars .hero-star-e{width:158px;height:59px;background-size:100% 100%}
+.awakening-stars .hero-star-e img{width:38px!important;height:38px!important}
+.awakening-stars .hero-star-e b{position:absolute;inset:0;top:4px;display:flex;align-items:center;justify-content:center;font-size:24px;line-height:1;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.39),1px 1px 0 rgba(0,0,0,.39),0 0 2px rgba(0,0,0,.5)}
+.awakening-stars{height:59px}

@@ -1,0 +1,38 @@
+/* Thú cưng: prefab gốc dựng bằng PrefabDOM (dist/pet-ui.js). */
+#game-layer .pet-screen,#game-layer .pet-popup{pointer-events:auto!important;z-index:50;user-select:none;-webkit-user-select:none}
+#game-layer .pet-popup{z-index:56}
+#game-layer .pet-screen .pd-button,#game-layer .pet-popup .pd-button,#game-layer .pet-head,#game-layer .pet-go [data-name="ClickArea"]{cursor:pointer;pointer-events:auto!important}
+#game-layer .pet-screen .pd-button:active,#game-layer .pet-popup .pd-button:active{filter:brightness(.9)}
+#game-layer .pet-spine{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+#game-layer .pet-go{position:absolute}
+#game-layer .pet-value{position:absolute;right:6px;top:0;bottom:0;display:flex;align-items:center;font:inherit;color:inherit}
+#game-layer .pet-item{position:absolute;inset:0}
+#game-layer .pet-item>span{position:absolute;inset:4px;background:center/contain no-repeat}
+#game-layer .pet-item>b{position:absolute;right:4px;bottom:2px;color:#fff;font:normal 20px/1 GameFont,sans-serif;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+#game-layer div.pet-item:not([data-name]){width:92px;height:92px}
+#game-layer .pet-amount{position:absolute;left:-10px;right:-10px;bottom:-26px;text-align:center;font:normal 21px/1 GameFont,sans-serif;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;pointer-events:none}
+#game-layer .pet-skill-off [data-name="SpriteOn"],#game-layer .pet-skill-off [data-name="SpriteOff"]{filter:grayscale(1) brightness(.8)}
+#game-layer .pet-filter-on,#game-layer .pet-tab-on{filter:brightness(1.25) drop-shadow(0 0 6px #ffe27a)}
+#game-layer .pet-disabled{filter:grayscale(1)}
+#game-layer .pet-empty{position:absolute;left:0;right:0;top:120px;margin:0;text-align:center;color:#402b1f;font:normal 22px/1.4 GameFont,sans-serif;padding:0 60px}
+#game-layer .pet-equip-host{position:absolute;left:51px;top:492px;width:150px;height:150px;transform:scale(.75);transform-origin:0 0;pointer-events:auto;z-index:5}
+#game-layer .pet-equip{left:0!important;top:0!important}
+#game-layer .pet-equip [data-name="Btn"]{cursor:pointer}
+#game-layer .pet-item-framed>i{position:absolute;inset:0;background:center/100% 100% no-repeat}
+#game-layer .pet-item-framed>i:last-child{inset:-4px}
+#game-layer .pet-item-framed>span{inset:8px}
+#game-layer .sr-tile{position:absolute;width:92px;height:92px}
+#game-layer .sr-tab-on{filter:brightness(1.15) drop-shadow(0 0 8px #ffe27a)}
+#game-layer .sr-pick{position:absolute;width:96px;height:96px;padding:0;border:0;background:none;cursor:pointer;pointer-events:auto}
+#game-layer .sr-pick img{position:absolute;pointer-events:none}
+#game-layer .sr-pick .sr-pick-head{left:6px;top:6px;width:84px;height:84px}
+#game-layer .sr-pick .sr-pick-border{inset:0;width:96px;height:96px}
+#game-layer .sr-pick .sr-pick-faction{left:2px;top:2px;width:28px;height:28px}
+#game-layer .sr-pick b{position:absolute;right:8px;top:6px;color:#fff;font:normal 18px/1 GameFont,sans-serif;text-shadow:1px 1px 0 #000,-1px -1px 0 #000}
+#game-layer .sr-pick .sr-pick-stars{position:absolute;left:0;right:0;bottom:4px;display:flex;justify-content:center}
+#game-layer .sr-pick .sr-pick-stars img{position:static;width:16px;height:16px}
+#game-layer .sr-pick.on::after{content:'';position:absolute;inset:0;border:3px solid #b1f144;border-radius:8px;box-shadow:0 0 10px #b1f144}
+#game-layer .sr-pick.used{filter:grayscale(1) brightness(.7)}
+#game-layer .sr-inline{display:flex!important;justify-content:center;align-items:center;gap:8px;left:0!important;right:0;width:auto!important}
+#game-layer .sr-inline>.pd-node{position:static!important;width:auto!important;white-space:nowrap}
+#game-layer .sr-inline>.pd-node>.pd-text{white-space:nowrap}

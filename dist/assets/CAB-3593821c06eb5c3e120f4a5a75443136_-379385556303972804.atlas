@@ -1,0 +1,104 @@
+
+Pett_26.png
+size: 516,96
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: true
+  xy: 441, 41
+  size: 51, 47
+  orig: 54, 49
+  offset: 1, 1
+  index: -1
+Layer 11 copy 2
+  rotate: false
+  xy: 296, 6
+  size: 28, 25
+  orig: 29, 25
+  offset: 0, 0
+  index: -1
+Layer 13 copy
+  rotate: false
+  xy: 326, 9
+  size: 26, 22
+  orig: 26, 22
+  offset: 0, 0
+  index: -1
+Layer 15
+  rotate: true
+  xy: 2, 3
+  size: 89, 96
+  orig: 89, 96
+  offset: 0, 0
+  index: -1
+Layer 16
+  rotate: false
+  xy: 215, 21
+  size: 79, 71
+  orig: 79, 71
+  offset: 0, 0
+  index: -1
+Layer 19
+  rotate: false
+  xy: 396, 4
+  size: 40, 30
+  orig: 40, 30
+  offset: 0, 0
+  index: -1
+Layer 21
+  rotate: true
+  xy: 490, 51
+  size: 41, 22
+  orig: 41, 22
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: false
+  xy: 362, 2
+  size: 32, 32
+  orig: 34, 34
+  offset: 1, 1
+  index: -1
+Layer 6
+  rotate: true
+  xy: 441, 7
+  size: 32, 60
+  orig: 34, 62
+  offset: 1, 1
+  index: -1
+Layer 8
+  rotate: false
+  xy: 215, 4
+  size: 45, 15
+  orig: 47, 17
+  offset: 1, 1
+  index: -1
+ca-to
+  rotate: false
+  xy: 100, 8
+  size: 113, 84
+  orig: 113, 87
+  offset: 0, 0
+  index: -1
+eye-close
+  rotate: true
+  xy: 503, 20
+  size: 29, 11
+  orig: 29, 11
+  offset: 0, 0
+  index: -1
+head2
+  rotate: true
+  xy: 296, 33
+  size: 59, 64
+  orig: 67, 71
+  offset: 4, 1
+  index: -1
+mu
+  rotate: false
+  xy: 362, 36
+  size: 77, 56
+  orig: 77, 56
+  offset: 0, 0
+  index: -1

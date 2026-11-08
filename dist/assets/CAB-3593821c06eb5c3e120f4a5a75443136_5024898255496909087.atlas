@@ -1,0 +1,125 @@
+
+Pett_2.png
+size: 292,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 164, 193
+  size: 75, 76
+  orig: 75, 76
+  offset: 0, 0
+  index: -1
+2
+  rotate: true
+  xy: 241, 64
+  size: 30, 40
+  orig: 32, 41
+  offset: 1, 1
+  index: -1
+3
+  rotate: false
+  xy: 241, 223
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: false
+  xy: 150, 3
+  size: 43, 48
+  orig: 47, 48
+  offset: 0, 0
+  index: -1
+Layer 12 copy
+  rotate: false
+  xy: 169, 137
+  size: 37, 54
+  orig: 40, 54
+  offset: 0, 0
+  index: -1
+Layer 12 copy 2
+  rotate: false
+  xy: 233, 13
+  size: 47, 47
+  orig: 47, 48
+  offset: 0, 0
+  index: -1
+Layer 12 copy 3
+  rotate: true
+  xy: 241, 96
+  size: 46, 44
+  orig: 51, 45
+  offset: 1, 1
+  index: -1
+Layer 13
+  rotate: true
+  xy: 208, 144
+  size: 47, 60
+  orig: 47, 60
+  offset: 0, 0
+  index: -1
+Layer 14
+  rotate: true
+  xy: 2, 127
+  size: 142, 89
+  orig: 156, 89
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: true
+  xy: 184, 62
+  size: 73, 55
+  orig: 74, 58
+  offset: 0, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 100, 2
+  size: 48, 49
+  orig: 53, 51
+  offset: 4, 1
+  index: -1
+Layer 6
+  rotate: true
+  xy: 2, 10
+  size: 115, 96
+  orig: 116, 96
+  offset: 1, 0
+  index: -1
+Layer 8
+  rotate: true
+  xy: 93, 158
+  size: 111, 69
+  orig: 111, 69
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: false
+  xy: 100, 53
+  size: 82, 82
+  orig: 82, 82
+  offset: 0, 0
+  index: -1
+Layer-2
+  rotate: true
+  xy: 195, 3
+  size: 57, 36
+  orig: 57, 36
+  offset: 0, 0
+  index: -1
+chan-sau
+  rotate: true
+  xy: 133, 143
+  size: 13, 34
+  orig: 13, 34
+  offset: 0, 0
+  index: -1
+eyeclose
+  rotate: false
+  xy: 93, 137
+  size: 38, 19
+  orig: 40, 21
+  offset: 1, 1
+  index: -1

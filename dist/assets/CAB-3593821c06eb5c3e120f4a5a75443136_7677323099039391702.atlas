@@ -1,0 +1,153 @@
+
+Pett_48.png
+size: 256,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: false
+  xy: 221, 139
+  size: 33, 16
+  orig: 33, 16
+  offset: 0, 0
+  index: -1
+Layer 11
+  rotate: true
+  xy: 186, 66
+  size: 43, 41
+  orig: 43, 41
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: false
+  xy: 176, 211
+  size: 68, 59
+  orig: 68, 59
+  offset: 0, 0
+  index: -1
+Layer 13
+  rotate: true
+  xy: 198, 2
+  size: 41, 18
+  orig: 41, 19
+  offset: 0, 0
+  index: -1
+Layer 19
+  rotate: false
+  xy: 147, 2
+  size: 49, 34
+  orig: 49, 40
+  offset: 0, 0
+  index: -1
+Layer 23
+  rotate: false
+  xy: 186, 45
+  size: 53, 19
+  orig: 55, 21
+  offset: 1, 1
+  index: -1
+Layer 24
+  rotate: true
+  xy: 176, 157
+  size: 52, 62
+  orig: 52, 62
+  offset: 0, 0
+  index: -1
+Layer 25
+  rotate: true
+  xy: 147, 38
+  size: 58, 37
+  orig: 58, 37
+  offset: 0, 0
+  index: -1
+Layer 26
+  rotate: true
+  xy: 229, 68
+  size: 18, 22
+  orig: 20, 24
+  offset: 1, 1
+  index: -1
+Layer 27
+  rotate: true
+  xy: 241, 49
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+Layer 28
+  rotate: false
+  xy: 160, 98
+  size: 11, 11
+  orig: 13, 13
+  offset: 1, 1
+  index: -1
+Layer 29
+  rotate: false
+  xy: 160, 157
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: false
+  xy: 2, 98
+  size: 156, 69
+  orig: 159, 81
+  offset: 0, 8
+  index: -1
+Layer 5
+  rotate: false
+  xy: 2, 3
+  size: 109, 93
+  orig: 109, 93
+  offset: 0, 0
+  index: -1
+Layer 6
+  rotate: true
+  xy: 160, 111
+  size: 44, 59
+  orig: 44, 59
+  offset: 0, 0
+  index: -1
+Layer 7
+  rotate: true
+  xy: 229, 88
+  size: 24, 22
+  orig: 36, 25
+  offset: 12, 0
+  index: -1
+Layer 8
+  rotate: false
+  xy: 218, 16
+  size: 19, 27
+  orig: 20, 27
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: true
+  xy: 221, 114
+  size: 23, 27
+  orig: 23, 28
+  offset: 0, 0
+  index: -1
+bounc
+  rotate: true
+  xy: 240, 192
+  size: 17, 14
+  orig: 18, 14
+  offset: 1, 0
+  index: -1
+mai-rua
+  rotate: false
+  xy: 2, 169
+  size: 172, 101
+  orig: 174, 108
+  offset: 0, 0
+  index: -1
+mai-rua2
+  rotate: true
+  xy: 113, 5
+  size: 91, 32
+  orig: 92, 40
+  offset: 1, 0
+  index: -1

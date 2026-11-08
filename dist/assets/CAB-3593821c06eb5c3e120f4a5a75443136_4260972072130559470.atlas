@@ -1,0 +1,146 @@
+
+Pett_36.png
+size: 112,772
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body 2
+  rotate: false
+  xy: 2, 312
+  size: 87, 64
+  orig: 89, 75
+  offset: 1, 1
+  index: -1
+chan chay 2
+  rotate: true
+  xy: 69, 184
+  size: 23, 32
+  orig: 25, 34
+  offset: 1, 1
+  index: -1
+chan phai 2
+  rotate: false
+  xy: 97, 439
+  size: 11, 23
+  orig: 14, 25
+  offset: 1, 1
+  index: -1
+chan phai 22
+  rotate: false
+  xy: 69, 244
+  size: 36, 28
+  orig: 36, 28
+  offset: 0, 0
+  index: -1
+chan trai 2
+  rotate: false
+  xy: 91, 348
+  size: 19, 28
+  orig: 21, 30
+  offset: 1, 1
+  index: -1
+chan trai 22
+  rotate: false
+  xy: 69, 274
+  size: 36, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+co
+  rotate: false
+  xy: 91, 319
+  size: 14, 27
+  orig: 15, 28
+  offset: 0, 1
+  index: -1
+eyes closed
+  rotate: false
+  xy: 69, 209
+  size: 35, 33
+  orig: 37, 35
+  offset: 1, 1
+  index: -1
+eyes closed 2
+  rotate: false
+  xy: 2, 114
+  size: 56, 31
+  orig: 58, 33
+  offset: 1, 1
+  index: -1
+head 1
+  rotate: false
+  xy: 2, 521
+  size: 106, 75
+  orig: 194, 77
+  offset: 1, 1
+  index: -1
+head 2
+  rotate: false
+  xy: 2, 378
+  size: 93, 84
+  orig: 95, 86
+  offset: 1, 1
+  index: -1
+head 3
+  rotate: true
+  xy: 2, 655
+  size: 113, 107
+  orig: 116, 109
+  offset: 1, 1
+  index: -1
+long duoi
+  rotate: true
+  xy: 2, 598
+  size: 55, 107
+  orig: 55, 107
+  offset: 0, 0
+  index: -1
+long duoi 1
+  rotate: false
+  xy: 53, 38
+  size: 45, 29
+  orig: 47, 31
+  offset: 1, 1
+  index: -1
+mao 1
+  rotate: true
+  xy: 60, 69
+  size: 53, 50
+  orig: 55, 52
+  offset: 1, 1
+  index: -1
+mao 2
+  rotate: false
+  xy: 2, 147
+  size: 60, 47
+  orig: 62, 49
+  offset: 1, 1
+  index: -1
+tail 2
+  rotate: false
+  xy: 2, 464
+  size: 99, 55
+  orig: 99, 55
+  offset: 0, 0
+  index: -1
+wing 2
+  rotate: true
+  xy: 64, 124
+  size: 58, 46
+  orig: 60, 46
+  offset: 1, 0
+  index: -1
+wing 3
+  rotate: true
+  xy: 2, 196
+  size: 114, 65
+  orig: 114, 65
+  offset: 0, 0
+  index: -1
+wing 4
+  rotate: true
+  xy: 2, 2
+  size: 110, 49
+  orig: 110, 49
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,83 @@
+
+Hero_lvlup.png
+size: 1070,518
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+comm/fadong_10
+  rotate: true
+  xy: 915, 75
+  size: 222, 153
+  orig: 256, 256
+  offset: 11, 56
+  index: -1
+comm/fadong_2
+  rotate: true
+  xy: 2, 260
+  size: 256, 255
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+comm/fadong_3
+  rotate: true
+  xy: 2, 2
+  size: 256, 247
+  orig: 256, 256
+  offset: 0, 9
+  index: -1
+comm/fadong_4
+  rotate: true
+  xy: 489, 10
+  size: 255, 229
+  orig: 256, 256
+  offset: 1, 18
+  index: -1
+comm/fadong_5
+  rotate: true
+  xy: 727, 299
+  size: 217, 195
+  orig: 256, 256
+  offset: 21, 40
+  index: -1
+comm/fadong_6
+  rotate: false
+  xy: 251, 4
+  size: 236, 254
+  orig: 256, 256
+  offset: 19, 2
+  index: -1
+comm/fadong_7
+  rotate: false
+  xy: 259, 267
+  size: 235, 249
+  orig: 256, 256
+  offset: 16, 6
+  index: -1
+comm/fadong_8
+  rotate: false
+  xy: 496, 282
+  size: 229, 234
+  orig: 256, 256
+  offset: 15, 13
+  index: -1
+comm/fadong_9
+  rotate: true
+  xy: 720, 52
+  size: 228, 193
+  orig: 256, 256
+  offset: 13, 44
+  index: -1
+comm/flare_yellow_001_0
+  rotate: true
+  xy: 924, 403
+  size: 113, 116
+  orig: 128, 128
+  offset: 9, 6
+  index: -1
+lvlup/tialua
+  rotate: false
+  xy: 720, 7
+  size: 43, 43
+  orig: 49, 49
+  offset: 3, 3
+  index: -1

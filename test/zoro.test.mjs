@@ -16,7 +16,7 @@ test('roster migration and switching preserve Luffy upgrades, equipment and wall
  assert.equal(playerView(p).heroes.length,2);applyAction(p,'hero-select',{heroId:'zoro-king-of-hell'});
  assert.deepEqual(Object.values(p.hero.skills),[3,3,3,3]);assert.equal(playerView(p).hero.name,'Zoro King Of Hell');
  applyAction(p,'upgrade',{type:'level'});const zoro=structuredClone(p.hero);applyAction(p,'hero-select',{heroId:'luffy-gear-2'});assert.deepEqual(p.hero,old);
- applyAction(p,'hero-select',{heroId:'zoro-king-of-hell'});assert.deepEqual(p.hero,zoro);assert.equal(p.wallet.gold,wallet.gold-140);assert.deepEqual(p.inventory,inventory);
+ applyAction(p,'hero-select',{heroId:'zoro-king-of-hell'});assert.deepEqual(p.hero,zoro);assert.equal(p.wallet.gold,wallet.gold-144);assert.deepEqual(p.inventory,inventory);
  applyAction(p,'battle-start',{stageId:1},500);assert.equal(p.battle.hero.energy,100);assert.throws(()=>applyAction(p,'hero-select',{heroId:'luffy-gear-2'}),/trận chiến/);
  const r=applyAction(p,'battle-action',{battleId:p.battle.id,turn:1,action:'auto'});assert.ok(r.events.some(e=>e.type==='skill'&&e.skillId==='hiryu-jigoku'));assert.equal(p.battle.status,'won');
  assert.throws(()=>applyAction(p,'battle-action',{battleId:p.battle.id,turn:1,action:'auto'}));

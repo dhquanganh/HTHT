@@ -1,0 +1,118 @@
+
+Pett_55.png
+size: 336,140
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_L
+  rotate: false
+  xy: 230, 12
+  size: 34, 25
+  orig: 34, 25
+  offset: 0, 0
+  index: -1
+Arm_L1
+  rotate: false
+  xy: 284, 28
+  size: 42, 34
+  orig: 42, 34
+  offset: 0, 0
+  index: -1
+Arm_L_Idle
+  rotate: true
+  xy: 230, 39
+  size: 37, 52
+  orig: 37, 52
+  offset: 0, 0
+  index: -1
+Arm_R1_Idle
+  rotate: false
+  xy: 295, 64
+  size: 37, 72
+  orig: 37, 72
+  offset: 0, 0
+  index: -1
+Arm_R_Idle
+  rotate: true
+  xy: 266, 2
+  size: 24, 33
+  orig: 24, 33
+  offset: 0, 0
+  index: -1
+Arm_Run_R
+  rotate: false
+  xy: 301, 3
+  size: 32, 23
+  orig: 34, 25
+  offset: 1, 1
+  index: -1
+Arm_Run_R1
+  rotate: false
+  xy: 123, 3
+  size: 40, 32
+  orig: 42, 34
+  offset: 1, 1
+  index: -1
+Body
+  rotate: false
+  xy: 78, 37
+  size: 86, 36
+  orig: 86, 36
+  offset: 0, 0
+  index: -1
+Body_1
+  rotate: false
+  xy: 2, 71
+  size: 74, 65
+  orig: 74, 65
+  offset: 0, 0
+  index: -1
+Body_Idle
+  rotate: false
+  xy: 166, 30
+  size: 62, 45
+  orig: 62, 45
+  offset: 0, 0
+  index: -1
+Body_Idle_2
+  rotate: false
+  xy: 2, 6
+  size: 69, 63
+  orig: 69, 63
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 223, 78
+  size: 70, 58
+  orig: 72, 60
+  offset: 1, 1
+  index: -1
+Head_Idle
+  rotate: false
+  xy: 151, 77
+  size: 70, 59
+  orig: 72, 61
+  offset: 1, 1
+  index: -1
+Head_Idle_1
+  rotate: false
+  xy: 78, 75
+  size: 71, 61
+  orig: 74, 63
+  offset: 1, 1
+  index: -1
+Tail
+  rotate: false
+  xy: 73, 5
+  size: 48, 30
+  orig: 48, 30
+  offset: 0, 0
+  index: -1
+Tail_Idle
+  rotate: false
+  xy: 165, 2
+  size: 48, 26
+  orig: 48, 26
+  offset: 0, 0
+  index: -1

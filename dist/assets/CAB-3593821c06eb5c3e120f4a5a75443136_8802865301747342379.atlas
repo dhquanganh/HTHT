@@ -1,0 +1,167 @@
+
+Pett_12.png
+size: 524,80
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 12
+  rotate: false
+  xy: 436, 7
+  size: 22, 27
+  orig: 25, 29
+  offset: 1, 1
+  index: -1
+Layer 12 copy
+  rotate: false
+  xy: 460, 7
+  size: 22, 27
+  orig: 25, 29
+  offset: 1, 1
+  index: -1
+Layer 13
+  rotate: false
+  xy: 234, 2
+  size: 23, 15
+  orig: 23, 16
+  offset: 0, 1
+  index: -1
+Layer 13 copy
+  rotate: false
+  xy: 334, 6
+  size: 23, 14
+  orig: 23, 16
+  offset: 0, 2
+  index: -1
+Layer 13 copy 2
+  rotate: false
+  xy: 283, 4
+  size: 49, 16
+  orig: 52, 18
+  offset: 1, 1
+  index: -1
+Layer 14
+  rotate: false
+  xy: 139, 3
+  size: 8, 8
+  orig: 10, 10
+  offset: 1, 1
+  index: -1
+Layer 14 copy
+  rotate: false
+  xy: 139, 3
+  size: 8, 8
+  orig: 10, 10
+  offset: 1, 1
+  index: -1
+Layer 15 copy
+  rotate: false
+  xy: 484, 8
+  size: 20, 26
+  orig: 22, 28
+  offset: 1, 1
+  index: -1
+Layer 15 copy 2
+  rotate: false
+  xy: 359, 2
+  size: 19, 25
+  orig: 20, 25
+  offset: 0, 0
+  index: -1
+Layer 15 copy 3
+  rotate: true
+  xy: 259, 2
+  size: 15, 22
+  orig: 17, 25
+  offset: 1, 1
+  index: -1
+Layer 2
+  rotate: true
+  xy: 399, 36
+  size: 42, 86
+  orig: 42, 86
+  offset: 0, 0
+  index: -1
+Layer 2 copy
+  rotate: false
+  xy: 100, 8
+  size: 37, 70
+  orig: 37, 71
+  offset: 0, 0
+  index: -1
+Layer 2 copy 2
+  rotate: false
+  xy: 234, 19
+  size: 31, 59
+  orig: 31, 59
+  offset: 0, 0
+  index: -1
+Layer 3
+  rotate: false
+  xy: 139, 13
+  size: 60, 65
+  orig: 60, 65
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: false
+  xy: 267, 22
+  size: 44, 56
+  orig: 44, 56
+  offset: 0, 0
+  index: -1
+Layer 6
+  rotate: false
+  xy: 201, 17
+  size: 31, 61
+  orig: 31, 62
+  offset: 0, 0
+  index: -1
+Layer 6 copy
+  rotate: false
+  xy: 313, 22
+  size: 28, 56
+  orig: 28, 56
+  offset: 0, 0
+  index: -1
+Layer 6 copy 2
+  rotate: false
+  xy: 368, 30
+  size: 29, 48
+  orig: 30, 48
+  offset: 1, 0
+  index: -1
+Layer 7
+  rotate: true
+  xy: 487, 37
+  size: 41, 34
+  orig: 44, 36
+  offset: 1, 1
+  index: -1
+Layer 7 copy
+  rotate: true
+  xy: 406, 5
+  size: 29, 28
+  orig: 32, 30
+  offset: 1, 1
+  index: -1
+Layer 7 copy 2
+  rotate: true
+  xy: 380, 2
+  size: 26, 24
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: false
+  xy: 2, 2
+  size: 96, 76
+  orig: 98, 81
+  offset: 0, 4
+  index: -1
+eye close
+  rotate: true
+  xy: 343, 29
+  size: 49, 23
+  orig: 52, 26
+  offset: 2, 2
+  index: -1

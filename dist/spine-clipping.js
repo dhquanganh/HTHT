@@ -4,7 +4,19 @@
  */
 (()=>{
  'use strict';
- const prototype=spine.canvas.SkeletonRenderer.prototype,baseDraw=prototype.drawTriangles,triangle=prototype.drawTriangle;
+ const prototype=spine.canvas.SkeletonRenderer.prototype,baseDraw=prototype.drawTriangles;
+ // Canvas 2D khử răng cưa từng vùng clip tam giác nên giữa các tam giác của mesh lộ đường kẻ mảnh (thấy rõ ở ảnh lớn như
+ // "pet chieu mo"). Nới vùng clip ra ~0,6 px màn hình quanh trọng tâm, vẫn ánh xạ ảnh theo đỉnh gốc, để các tam giác phủ khít.
+ const triangle=function(img,x0,y0,u0,v0,x1,y1,u1,v1,x2,y2,u2,v2){
+  const ctx=this.ctx,m=ctx.getTransform(),scale=Math.sqrt(Math.abs(m.a*m.d-m.b*m.c))||1,grow=.6/scale;
+  const cx=(x0+x1+x2)/3,cy=(y0+y1+y2)/3,out=(x,y)=>{const dx=x-cx,dy=y-cy,l=Math.hypot(dx,dy)||1;return[x+dx/l*grow,y+dy/l*grow]};
+  const [p0,q0]=out(x0,y0),[p1,q1]=out(x1,y1),[p2,q2]=out(x2,y2);
+  u0*=img.width;v0*=img.height;u1*=img.width;v1*=img.height;u2*=img.width;v2*=img.height;
+  ctx.beginPath();ctx.moveTo(p0,q0);ctx.lineTo(p1,q1);ctx.lineTo(p2,q2);ctx.closePath();
+  x1-=x0;y1-=y0;x2-=x0;y2-=y0;u1-=u0;v1-=v0;u2-=u0;v2-=v0;
+  const det=1/(u1*v2-u2*v1),a=(v2*x1-v1*x2)*det,b=(v2*y1-v1*y2)*det,c=(u1*x2-u2*x1)*det,d=(u1*y2-u2*y1)*det,e=x0-a*u0-c*v0,f=y0-b*u0-d*v0;
+  ctx.save();ctx.transform(a,b,c,d,e,f);ctx.clip();ctx.drawImage(img,0,0);ctx.restore();
+ };
  // The canvas runtime reads each slot's blend mode but never applies it, so additive art shows its black box.
  const composite=new Map([[spine.BlendMode.Additive,'lighter'],[spine.BlendMode.Multiply,'multiply'],[spine.BlendMode.Screen,'screen']]);
  const draw=function(skeleton){

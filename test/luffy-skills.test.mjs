@@ -19,7 +19,7 @@ test('an existing legacy battle keeps its HP snapshot and remaining ultimate coo
  const result=round(p);assert.equal(b.id,id);assert.equal(h.maxHp,900);assert.ok(h.hp>0&&h.hp<500);assert.equal(h.cooldowns['rubber-whip'],2);assert.ok(result.events.some(e=>e.type==='attack'&&e.actor==='hero'));assert.equal(result.events.some(e=>e.type==='skill'),false);
 });
 test('Haki adds forty percent armor and health once, including equipment-independent base stats',()=>{
- const p=starterPlayer('Captain');p.hero.skills['armament-haki']=3;const stats=heroStats(p);assert.equal(stats.maxHp,Math.round(882*1.4));assert.equal(stats.defense,Math.round(29*1.4));assert.equal(heroStats(p).maxHp,stats.maxHp);
+ const p=starterPlayer('Captain');p.hero.skills['armament-haki']=3;const stats=heroStats(p);assert.equal(stats.maxHp,Math.round(883*1.4));assert.equal(stats.defense,Math.round(29*1.4));assert.equal(heroStats(p).maxHp,stats.maxHp);
 });
 test('Roi Cao Su hits one enemy, heals the only ally, and buffs the next two attack turns',()=>{
  const p=durableBattle({'rubber-whip':3,'armament-haki':3}),b=p.battle,h=b.hero;h.energy=80;h.hp=100;b.enemies[0].attack=1;b.enemies.push({...b.enemies[0],id:'enemy-1'});

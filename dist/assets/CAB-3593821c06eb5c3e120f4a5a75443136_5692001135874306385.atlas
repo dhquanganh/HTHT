@@ -1,0 +1,76 @@
+
+Pett_62.png
+size: 206,206
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm_L
+  rotate: true
+  xy: 137, 4
+  size: 42, 28
+  orig: 42, 28
+  offset: 0, 0
+  index: -1
+Arm_R
+  rotate: false
+  xy: 167, 22
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+Body_action
+  rotate: false
+  xy: 2, 105
+  size: 112, 99
+  orig: 112, 99
+  offset: 0, 0
+  index: -1
+Body_idle
+  rotate: false
+  xy: 2, 5
+  size: 84, 98
+  orig: 84, 98
+  offset: 0, 0
+  index: -1
+Face_1
+  rotate: true
+  xy: 116, 95
+  size: 45, 67
+  orig: 47, 69
+  offset: 1, 1
+  index: -1
+Face_2
+  rotate: false
+  xy: 88, 44
+  size: 45, 49
+  orig: 45, 49
+  offset: 0, 0
+  index: -1
+Face_3
+  rotate: false
+  xy: 88, 2
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1
+Face_ruin
+  rotate: false
+  xy: 135, 48
+  size: 42, 45
+  orig: 42, 45
+  offset: 0, 0
+  index: -1
+Hat
+  rotate: false
+  xy: 116, 142
+  size: 86, 62
+  orig: 89, 64
+  offset: 1, 1
+  index: -1
+Sweat
+  rotate: true
+  xy: 88, 96
+  size: 7, 13
+  orig: 9, 15
+  offset: 1, 1
+  index: -1

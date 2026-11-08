@@ -1,0 +1,139 @@
+
+Pett_32.png
+size: 772,176
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: true
+  xy: 486, 80
+  size: 94, 86
+  orig: 96, 88
+  offset: 1, 1
+  index: -1
+Layer 11
+  rotate: false
+  xy: 574, 86
+  size: 83, 88
+  orig: 83, 88
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: false
+  xy: 708, 90
+  size: 39, 45
+  orig: 41, 47
+  offset: 1, 1
+  index: -1
+Layer 13
+  rotate: true
+  xy: 746, 19
+  size: 32, 21
+  orig: 34, 23
+  offset: 1, 1
+  index: -1
+Layer 14 copy
+  rotate: true
+  xy: 362, 72
+  size: 102, 122
+  orig: 102, 122
+  offset: 0, 0
+  index: -1
+Layer 17
+  rotate: false
+  xy: 659, 118
+  size: 47, 56
+  orig: 49, 58
+  offset: 1, 1
+  index: -1
+Layer 19
+  rotate: true
+  xy: 490, 13
+  size: 65, 100
+  orig: 65, 100
+  offset: 0, 0
+  index: -1
+Layer 20
+  rotate: true
+  xy: 380, 6
+  size: 64, 108
+  orig: 66, 110
+  offset: 1, 1
+  index: -1
+Layer 21
+  rotate: false
+  xy: 157, 61
+  size: 203, 113
+  orig: 203, 113
+  offset: 0, 0
+  index: -1
+Layer 22
+  rotate: true
+  xy: 281, 10
+  size: 49, 97
+  orig: 49, 97
+  offset: 0, 0
+  index: -1
+Layer 23
+  rotate: true
+  xy: 688, 53
+  size: 34, 71
+  orig: 34, 71
+  offset: 0, 0
+  index: -1
+Layer 25
+  rotate: true
+  xy: 659, 89
+  size: 27, 47
+  orig: 28, 47
+  offset: 0, 0
+  index: -1
+Layer 26
+  rotate: true
+  xy: 708, 137
+  size: 37, 50
+  orig: 37, 50
+  offset: 0, 0
+  index: -1
+Layer 3
+  rotate: false
+  xy: 157, 2
+  size: 122, 57
+  orig: 122, 58
+  offset: 0, 1
+  index: -1
+Layer 4
+  rotate: true
+  xy: 688, 16
+  size: 35, 56
+  orig: 37, 58
+  offset: 1, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 634, 24
+  size: 52, 60
+  orig: 52, 60
+  offset: 0, 0
+  index: -1
+Layer 8 copy
+  rotate: false
+  xy: 592, 3
+  size: 40, 81
+  orig: 42, 82
+  offset: 1, 0
+  index: -1
+Layer 9
+  rotate: true
+  xy: 2, 4
+  size: 170, 153
+  orig: 199, 153
+  offset: 0, 0
+  index: -1
+eyeclose
+  rotate: false
+  xy: 634, 6
+  size: 32, 16
+  orig: 34, 18
+  offset: 1, 1
+  index: -1

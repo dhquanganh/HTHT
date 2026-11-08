@@ -1,0 +1,55 @@
+
+Pett_38.png
+size: 224,244
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 15
+  rotate: false
+  xy: 106, 98
+  size: 23, 24
+  orig: 31, 27
+  offset: 4, 1
+  index: -1
+Layer 2
+  rotate: true
+  xy: 2, 2
+  size: 67, 142
+  orig: 67, 142
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: true
+  xy: 146, 35
+  size: 87, 59
+  orig: 88, 60
+  offset: 0, 0
+  index: -1
+Layer 6
+  rotate: true
+  xy: 106, 124
+  size: 116, 113
+  orig: 118, 115
+  offset: 1, 1
+  index: -1
+Layer 7
+  rotate: false
+  xy: 106, 79
+  size: 21, 17
+  orig: 24, 19
+  offset: 1, 1
+  index: -1
+Layer 8
+  rotate: false
+  xy: 146, 16
+  size: 19, 17
+  orig: 21, 19
+  offset: 1, 1
+  index: -1
+Layer 9
+  rotate: false
+  xy: 2, 71
+  size: 102, 169
+  orig: 104, 171
+  offset: 1, 1
+  index: -1

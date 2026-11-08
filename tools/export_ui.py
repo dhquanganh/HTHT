@@ -101,8 +101,9 @@ def component(o):
     elif name=='CanvasScaler': c.update(resolution=floats(raw,44,2),match=floats(raw,56))
     elif name in ('HorizontalLayoutGroup','VerticalLayoutGroup','GridLayoutGroup'):
         c.update(padding=[integer(raw,x) for x in (32,36,40,44)],align=integer(raw,48))
-        if name!='GridLayoutGroup':c.update(spacing=floats(raw,52),forceWidth=bool(raw[56]),forceHeight=bool(raw[57]),controlWidth=bool(raw[58]),controlHeight=bool(raw[59]),scaleWidth=bool(raw[60]),scaleHeight=bool(raw[61]),reverse=bool(raw[62]))
+        if name!='GridLayoutGroup':c.update(spacing=floats(raw,52),**{k:bool(raw[56+4*i]) if len(raw)>56+4*i else False for i,k in enumerate(('forceWidth','forceHeight','controlWidth','controlHeight','scaleWidth','scaleHeight','reverse'))})  # mỗi bool được căn 4 byte
         else:c.update(cell=floats(raw,60,2),spacing=floats(raw,68,2),constraint=integer(raw,76),constraintCount=integer(raw,80))
+    elif name=='LayoutElement': c.update(ignore=bool(raw[32]),minWidth=floats(raw,36),minHeight=floats(raw,40),preferredWidth=floats(raw,44),preferredHeight=floats(raw,48),flexibleWidth=floats(raw,52),flexibleHeight=floats(raw,56))
     elif name=='ContentSizeFitter': c.update(horizontal=integer(raw,32),vertical=integer(raw,36))
     elif name=='CanvasGroup': pass
     elif name=='Mask': c['showGraphic']=bool(raw[32])
