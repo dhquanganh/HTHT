@@ -20,7 +20,7 @@ Link Sites của bản trước vẫn là bản giao diện tĩnh. Backend Node.
 
 1. **Đăng ký** tên 3–24 ký tự ASCII, số, `_`; mật khẩu 8–128 ký tự. Đăng ký thành công tự đăng nhập.
 2. Nhận Luffy Gear 2 và Zoro King Of Hell cấp 1, **12.000 vàng**, **500 kim cương**, kinh nghiệm và nguyên liệu khởi đầu; có một món mỗi ô trang bị. Tài khoản cũ cũng có Zoro; chọn thẻ tướng để chuyển nhân vật đang dùng. Zoro có sẵn bốn kỹ năng cấp 3 theo ảnh tham chiếu.
-3. **Tướng → Thuộc tính**: nâng cấp; **Thức tỉnh**: nâng sao; **Đột phá**: nâng bậc. **Trang bị**: chọn đồ, trang bị nhanh hoặc gỡ toàn bộ. **Trang bị đặc thù** hiển thị trạng thái khóa. **Kỹ năng**: Roi Cao Su, Mài Dũa, Haki Vũ Trang và Tuyệt Cảnh, dùng đúng 4 icon gốc và thông số ba cấp trong APK.
+3. **Tướng → Thuộc tính**: nâng cấp; **Thức tỉnh**: nâng sao; **Đột phá**: nâng bậc. **Trang bị**: chọn đồ, trang bị nhanh hoặc gỡ toàn bộ. **Trang bị đặc thù**: mở khi tướng cấp 30; món *Vai trò* (Công, Huy Hiệu theo nghề) và *Nhóm hạng* (Máu, Huy Hiệu Rank S/SS, chỉ tướng hạng S trở lên). Bấm huy hiệu để mở popup gốc: **Cường hóa** nâng cấp độ (tối đa bằng cấp tướng, tốn vàng + Đá nâng đồ, từ cấp 250 thêm Đá Năng Lượng), **Phẩm đồ** nâng 15 sao (cần cấp độ 20×phẩm, tốn Huy Hiệu + Sách Hệ + Đá nâng đồ + vàng). Số liệu chi phí/chỉ số là số tự đặt vì bảng gốc do server gửi. **Kỹ năng**: Roi Cao Su, Mài Dũa, Haki Vũ Trang và Tuyệt Cảnh, dùng đúng 4 icon gốc và thông số ba cấp trong APK.
 4. **Túi đồ**: xem đồ sở hữu, dùng đồ có hiệu ứng, trang bị, bán. **Từ điển vật phẩm** xem toàn bộ catalog. **Cửa hàng** mua theo giá server.
 5. **Phụ bản** trên màn hình chính: chọn đảo/ải → Vượt ải → xếp tối đa sáu tướng ở hàng trước/sau, có thể dùng cả Luffy và Zoro → Chiến đấu. Kéo thẻ để đổi chỗ, chạm thẻ đã chọn trong danh sách để gỡ. Có 999 ải trong 95 chương từ dữ liệu gốc và 119 mẫu đối thủ. Bản đồ đảo, boong tàu, thanh ải và bảng đội hình dùng asset gốc.
 6. Vào trận tự chiến đấu theo lượt: Luffy đánh thường để tích nộ, tự dùng Roi Cao Su khi đủ 80 nộ và hết hồi chiêu. Zoro tự dùng Ippyakusanjo Hiryu Jigoku khi đủ 100 nộ, dùng cảnh thi triển và hiệu ứng chém gốc từ cache. Nút ⓘ xem kỹ năng, tạm dừng sau lượt hiện tại hoặc tiếp tục. Có đổi tốc độ ×1/×2 và bỏ qua hoạt ảnh đến kết quả. Tải lại trang tự tiếp tục trận còn dang dở. Chi tiết nguồn asset và luật Zoro: [ZORO-KING-OF-HELL.md](docs/ZORO-KING-OF-HELL.md).
@@ -84,7 +84,12 @@ Không chạy test ghi dữ liệu trong database tài khoản thật. `npm test
 | `dist/app.js` | Bộ dựng scene/Spine Unity |
 | `dist/game.js` / `game.css` | Giao diện chơi, API client, phát animation trận |
 | `dist/hero.css` | Bố cục và kiểu hiển thị hai màn Tướng theo ảnh tham chiếu |
-| `dist/reference-ui.js` / `reference-ui.css` | Thông tin, Hòm thư, Túi đồ, Trang bị, Thức tỉnh và Trang bị đặc thù theo ảnh mẫu |
+| `dist/reference-ui.js` / `reference-ui.css` | Thông tin, Hòm thư, Túi đồ, Trang bị, Thức tỉnh, Trang bị đặc thù và popup nâng cấp (prefab PanelSpecialEquip / PopupSpecialEquipUpgrade) |
+| `tools/export-attack-effects.cjs` | Thêm hiệu ứng đòn đánh thường gốc (skill `beat` trong `db_battle_heroes`) vào `hero-effects.json`; đọc cache HTTH bằng `tools/unityfs.cjs`, không cần Python |
+| `tools/qa-attack-effects.cjs` | QA: vào ải 20, xác nhận hiệu ứng đòn thường gốc (Hit_189, MagicHit_1…) chạy trong trận |
+| `server/daily-quests.mjs` | Nhiệm vụ hằng ngày (PopupDailyQuest): 10 nhiệm vụ gốc, làm mới 0h giờ Việt Nam, thưởng từng nhiệm vụ (20.000×n vàng, 500×n EXP tướng) và thưởng hoàn thành 10/10 (100 kim cương, 15 Bụi ma thuật) |
+| `tools/qa-daily-quests.cjs` | QA: mở Nhiệm vụ từ sảnh, chiêu mộ, nhận thưởng |
+| `server/special-equip.mjs` | Logic Trang bị đặc thù: mở khóa, Cường hóa, Phẩm đồ, cộng chỉ số |
 | `tools/qa-reference-ui.cjs` | Kiểm tra bố cục, sửa tên, nhận quà, trang bị và thức tỉnh với database `htps_reference_*` riêng |
 | `tools/qa-resolution.cjs` | Kiểm tra giới hạn khung 4K, canvas DPR 1/2/3, đổi mật độ điểm ảnh, tọa độ bấm, điện thoại và Spine; dùng database `htps_resolution_*` riêng |
 | `dist/battle.css` / `battle-reference.json` | HUD chiến đấu theo ảnh mẫu và bộ xương lính áo tím gốc |
