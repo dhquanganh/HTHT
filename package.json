@@ -7,7 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "node server/index.mjs",
+    "start": "node --env-file=.env server/index.mjs",
     "dev": "node --watch --env-file=.env server/index.mjs",
     "check": "node tools/validate.cjs && node --check dist/app.js && node --check dist/game.js && node --check dist/reference-ui.js && node --check server/index.mjs",
     "test": "node --test test/*.test.mjs",

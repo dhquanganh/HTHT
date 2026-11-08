@@ -14,6 +14,19 @@ Mở **http://127.0.0.1:4173/**. Tạo tài khoản ở màn đăng ký; không 
 
 Máy khác: sao chép `.env.example` thành `.env`, điền `MONGODB_URI`. Database mặc định `haitacphucsinh_local`; không sửa database khác trong cluster. MongoDB Atlas cần cho phép IP của máy chạy Node.js. Chạy `npm run dev` để Node tự khởi động lại khi mã server thay đổi.
 
+## Deploy lên Vercel
+
+Dự án đã có Vercel Function tại `api/index.mjs`; không dùng `npm start` để chạy server lâu dài trên Vercel. Import repository vào Vercel, giữ **Root Directory** là `web-ui` nếu repository chứa thư mục cha, sau đó khai báo các Environment Variables:
+
+```text
+MONGODB_URI=mongodb+srv://...
+MONGODB_DB=haitacphucsinh_local
+ADMIN_PASSWORD=...
+NODE_ENV=production
+```
+
+Trong MongoDB Atlas, cho phép kết nối từ Vercel (Network Access). Sau khi deploy, mở URL Vercel và kiểm tra `/api/health`. File `.env` chỉ dùng local và không được upload lên Vercel.
+
 
 ## Luồng chơi
 
