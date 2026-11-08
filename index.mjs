@@ -19,6 +19,16 @@ function getApp(){
 }
 
 export default async function handler(req,res){
-  const app=await getApp();
-  return app(req,res);
+  try{
+    const app=await getApp();
+    return app(req,res);
+  }catch(error){
+    console.error(JSON.stringify({
+      event:'vercel_initialization_failed',
+      name:error.name,
+      code:error.code||null,
+      message:error.message
+    }));
+    if(!res.headersSent)res.status(500).json({error:{code:'FUNCTION_INITIALIZATION_FAILED',message:'Không thể khởi động máy chủ. Kiểm tra Function Logs và Environment Variables trên Vercel.'}});
+  }
 }
