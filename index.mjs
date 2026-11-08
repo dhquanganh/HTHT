@@ -1,6 +1,8 @@
+import express from 'express';
 import {Store} from './server/store.mjs';
 import {createApp} from './server/app.mjs';
 
+void express;
 let appPromise;
 
 function getApp(){
