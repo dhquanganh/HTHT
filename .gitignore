@@ -8,3 +8,4 @@ outputs/
 .env.*
 !.env.example
 .runtime/
+HTTH/
