@@ -8,7 +8,10 @@ let heroGainLines=[],heroGainUntil=0;
 let campaignChapterId=null,campaignStageId=null,campaignSlots=null,campaignSelectedSlot=null,campaignFilter=null;
 let battleActiveActorId=null,battleMenuHeroId=null;
 let battleReference=null,battleMenuOpen=false,skipBattleAnimations=false;
-let battleEffects=[],effectPool=[];
+let battleEffects=[],effectPool=[],battleShakes=[];
+// shake_cams của db_battle_heroes: {delay, duration} giây tính từ lúc ra chiêu; rate là tỉ lệ nén thời gian của chiêu.
+function addShakes(list,rate=1,from=battleTime){if(skipBattleAnimations||!list?.length)return;for(const s of list)battleShakes.push({start:from+s.delay/rate,end:from+(s.delay+s.duration)/rate})}
+function shakeOffset(){battleShakes=battleShakes.filter(s=>s.end>battleTime);const s=battleShakes.find(s=>s.start<=battleTime);if(!s)return null;const k=1-.6*(battleTime-s.start)/Math.max(.01,s.end-s.start),amp=9*k;return{x:(Math.random()*2-1)*amp,y:(Math.random()*2-1)*amp}}
 let battleTime=0,lastBattleFrame=0,battleWaitUntil=null;
 // Nộ: cutscene rồi nhát chém beat (khung mạnh nhất ở giây 2,6). Beat có lớp tối toàn màn nên không dùng cho đòn thường.
 const zoroTiming={cutRate:4,slashRate:2,hitTime:.50,beatHit:2.6};
@@ -17,7 +20,7 @@ const zoroTiming={cutRate:4,slashRate:2,hitTime:.50,beatHit:2.6};
 // Cutscene dùng .75 thay cho .64 để khung 1922×892 phủ kín màn 16:9.
 const zoroStage={cutX:568,cutY:320,cutScale:.75,slashX:820,slashY:451,slashScale:.877};
 // Cùng phép quy đổi cho mọi tướng: đơn vị camera gốc (64px) sang bố cục web quanh tâm đội địch.
-const fxBackdrop=e=>e.layer!=='BeyondCanvas'&&/^(bgr(black)?|bg|backgroud|background)$/i.test(e.animation);
+const fxBackdrop=e=>e.layer!=='BeyondCanvas'&&(e.order<0||/^(bgr(black)?|bg|backgroud|background)$/i.test(e.animation));
 const fxUsable=e=>heroEffects.effects[e.key]?.atlases.every(a=>a.textures.every(Boolean));
 const fxStagePoint=(x,y)=>({x:902+1.37*(568+64*x-788),y:385+1.37*(320-64*y-381)}),fxMaxSeconds=3.4,fxImpactSlots=6;
 let heroEffects=null;
@@ -417,6 +420,31 @@ function summonHit(name){
  if(name==='ButtonHelp'){const rates=catalog.economy.summon.rates.map(([rank,weight])=>`${rank>=4?heroGrades[rank]:'B trở xuống'} ${weight}%`).join(', ');modal('Chiêu mộ',`<p class="item-description">Chọn hệ rồi dùng Thùng bia để chiêu mộ. Tỉ lệ: ${rates}. Chiêu mộ x10 chắc chắn có ít nhất một tướng bậc A trở lên. Tướng mới vào danh sách tướng và ra trận được ngay; tướng đã có đổi thành mảnh để nâng sao.</p>`);return true}
  return false;
 }
+// Nhiệm vụ chính ở sảnh (PanelHome2Quest): chữ theo db_home_quest_template, ô bên trái là phần quà đầu tiên
+// (bgr_item_consumable + icon + border_item + số lượng như ItemConsumableUI), Fx_mission sáng khi đã xong.
+function syncHomeQuest(data){
+ const panel=sceneNodes(data).find(n=>n.name==='PanelHomeQuest'),q=player.homeQuest;if(!panel)return;
+ panel.active=!!q&&!q.finished;if(!panel.active)return;
+ const all=V().allNodes({roots:[panel]}),tag=all.find(n=>n.name==='TagContent'),inTag=name=>tag.children.find(n=>n.name===name);
+ V().setText(inTag('TextDesc'),q.text);V().setText(inTag('TextProgress'),`Hoàn thành: ${num(q.progress)}/${num(q.target)}`);
+ // TagContent là VerticalLayoutGroup (padding trái 80, căn giữa-trái) mà renderer canvas chưa dàn: đặt tay hai dòng 190x24.
+ [['TextDesc',48.5],['TextProgress',24.5]].forEach(([name,y])=>{const n=inTag(name),text=V().get(n,'Text');n.transform.m_AnchoredPosition={x:80+95,y};n.transform.m_SizeDelta={x:190,y:24};Object.assign(text,{align:3,bestFit:true,minSize:12,maxSize:18})});
+ // Fx_mission (khung sáng 280x120 ôm viền hộp) đứng trước ImageBox trong prefab nên bị hộp che kín; vẽ ngay sau ImageBox.
+ const fx=all.find(n=>n.name==='EffectCompleted'),content=fx&&all.find(n=>n.children.includes(fx));fx.active=q.done;
+ if(content&&content.children.indexOf(fx)<content.children.findIndex(n=>n.name==='ImageBox')){content.children=content.children.filter(n=>n!==fx);content.children.splice(content.children.findIndex(n=>n.name==='ImageBox')+1,0,fx)}
+ const item=all.find(n=>n.name==='GameItem'),reward=q.rewards[0];
+ if(!item.questNumber){const source=V().allNodes({roots:[item]}).find(n=>n.name==='TextNumber'&&V().get(n,'Text')?.size===22);item.questNumber=source.components.map(c=>({...c}))}
+ if(!reward){item.children=[];return}
+ const art=eventReward(reward),keys=['791558cd9af3633458a85b4422832b12_2',art.key,'938db414d92c30c46aa481c7004a52b4_2'];
+ item.children=[towerNode('QuestItemBgr',0,0,82,82,[{type:'Image',asset:keys[0],color:[1,1,1,1]}]),towerNode('QuestItemIcon',0,0,80,80,[{type:'Image',asset:art.key,color:[1,1,1,1],preserve:true}]),towerNode('QuestItemBorder',0,0,90,90,[{type:'Image',asset:keys[2],color:[1,1,1,1]}]),
+  towerNode('QuestItemNumber',1.4,-26.9,72,30,item.questNumber.map(c=>c.type==='Text'?{...c,text:short(reward.quantity).replace(/\.0(?=[KMB])/,'')}:c))];
+ for(const key of keys)V().loadImage(key);
+}
+async function homeQuestTap(){
+ const q=player.homeQuest;if(!q||q.finished)return;
+ if(q.done){const data=await mutation('/api/home-quest/claim',{},{close:false});if(data)refreshCanvas();return}
+ const target={campaign:34,tower:40,heroes:7,hero:1156}[q.go];V().toast(q.text);if(target)navigate(target);
+}
 function syncScene(data){syncMailDot(data);
  if(!player)return;patchText(data,'TextGold',short(player.wallet.gold));patchText(data,'TextGem',short(player.wallet.diamonds));patchText(data,'TextSpirit',short(player.wallet.spirit||0));patchText(data,'TextPlayername',player.displayName);patchText(data,'TextLv','Lv.'+player.account.level);
  if([13,36].includes(data.id)){
@@ -438,6 +466,7 @@ function syncScene(data){syncMailDot(data);
   });
   hide(data,'BoxHotChat','ButtonSkins','ButtonFirstPurchase','ButtonTiktok','ButtonTest','ButtonFriend','ButtonFuse','ButtonAltar','FrameVip');
   for(const n of sceneNodes(data))if(n.name==='ImageAvatar')V().setAsset(n,catalog.hero.visual.head);
+  syncHomeQuest(data);
  }
  if([7,39].includes(data.id)){
   hide(data,'MiscInfo','BoxHeroes','TabFaction','ButtonDictionary');
@@ -675,12 +704,30 @@ function stageUi(){
 }
 function campaignContext(){campaignStageId??=Math.min(player.adventure.unlockedStage,catalog.stages.length);campaignChapterId??=catalog.stages[campaignStageId-1].chapter;return{...referenceContext(),chapterId:campaignChapterId,stageId:campaignStageId,draftSlots:campaignSlots||player.formation?.slots||[player.hero.id,null,null,null,null,null],selectedSlot:campaignSelectedSlot,formationFilter:campaignFilter}}
 function openCampaignTeam(){campaignSlots=[...(player.formation?.slots||[player.hero.id,null,null,null,null,null])];campaignSelectedSlot=null;dialog.innerHTML=CampaignUI.formation(campaignContext())}
+// Gỡ tướng khỏi đội hình: chạm thẻ trong ô thì thẻ co lại mờ dần cùng hiệu ứng chạm hit_cham_tay
+// (HitMove của Đảo Người Cá), xong mới vẽ lại đội hình. Tướng mới vào ô thì thẻ bật lên.
+const tapBurst={skeleton:{name:'hit_cham_tay_SkeletonData',skeleton:{name:'hit_cham_tay',src:'assets/CAB-bc91efcf534eb968cbdf072c3cf7bf88_-1423486090316652979.json'},atlases:[{atlas:{name:'hit_cham_tay.atlas',src:'assets/CAB-bc91efcf534eb968cbdf072c3cf7bf88_-7644207151409222545.atlas'},textures:['CAB-bc91efcf534eb968cbdf072c3cf7bf88_2412801438897531845']}]},animation:'hit'};
+let campaignRemoving=false;
+function burstAt(el){
+ const layer=$('#game-layer'),box=layer.getBoundingClientRect(),r=el.getBoundingClientRect(),k=box.width/1136,size=170;
+ const canvas=document.createElement('canvas');canvas.className='formation-burst';canvas.width=canvas.height=size;
+ canvas.style.left=((r.left+r.width/2-box.left)/k-size/2)+'px';canvas.style.top=((r.top+r.height/2-box.top)/k-size/2)+'px';
+ layer.appendChild(canvas);spineCanvas(canvas,tapBurst,{loop:false,fit:1,onEnd:()=>canvas.remove()});setTimeout(()=>canvas.remove(),1500);
+}
+function removeCampaignHero(position){
+ if(campaignRemoving||!campaignSlots?.[position])return;
+ const slot=dialog.querySelector(`.campaign-slot[data-slot="${position}"]`);
+ const done=()=>{campaignRemoving=false;campaignSlots[position]=null;campaignSelectedSlot=null;dialog.innerHTML=CampaignUI.formation(campaignContext())};
+ if(!slot)return done();
+ campaignRemoving=true;burstAt(slot);slot.classList.add('leaving');setTimeout(done,260);
+}
+function popCampaignSlot(id){const i=campaignSlots.indexOf(id);if(i>=0)dialog.querySelector(`.campaign-slot[data-slot="${i}"]`)?.classList.add('entering')}
 function editCampaignHero(id){
  if(!player.heroes.some(h=>h.id===id))return;const previous=campaignSlots.indexOf(id);
  if(campaignSelectedSlot!==null){const displaced=campaignSlots[campaignSelectedSlot];if(previous>=0)campaignSlots[previous]=displaced;campaignSlots[campaignSelectedSlot]=id}
  else if(previous>=0)campaignSlots[previous]=null;
  else{const empty=campaignSlots.indexOf(null);if(empty<0){V().toast('Đội hình đã đủ 6 tướng.');return}campaignSlots[empty]=id}
- campaignSelectedSlot=null;dialog.innerHTML=CampaignUI.formation(campaignContext());
+ campaignSelectedSlot=null;dialog.innerHTML=CampaignUI.formation(campaignContext());popCampaignSlot(id);
 }
 function modal(title,body,classes=''){dialog.innerHTML=`<div class="modal-shade"><section class="modal panel ${classes}" role="dialog" aria-modal="true" aria-label="${escape(title)}"><button class="close" aria-label="Đóng" data-action="close">×</button><h2 class="title">${escape(title)}</h2>${body}</section></div>`;setBusy(busy)}
 let heroChoice=null,chestTables=null,chestChoice=null;
@@ -789,12 +836,12 @@ function scheduleBattleTurn(delay=450/battleSpeed){
  if(currentScene===9&&autoBattle&&!battleBusy&&player?.battle?.status==='active')autoTimer=setTimeout(()=>fight('auto'),skipBattleAnimations?0:delay);
 }
 async function setupBattle(resume=true){
- clearTimeout(autoTimer);autoBattle=false;battleMenuOpen=false;skipBattleAnimations=false;selectedTarget=null;floaters=[];battleEffects=[];battleLines=[];battleTime=0;lastBattleFrame=0;battleActiveActorId=null;battleMenuHeroId=null;const b=player.battle;if(!b)return;displayBattle=structuredClone(b);
+ clearTimeout(autoTimer);autoBattle=false;battleMenuOpen=false;skipBattleAnimations=false;selectedTarget=null;floaters=[];battleEffects=[];battleShakes=[];battleLines=[];battleTime=0;lastBattleFrame=0;battleActiveActorId=null;battleMenuHeroId=null;const b=player.battle;if(!b)return;displayBattle=structuredClone(b);
  const bg=(b.chapter||b.stageId)===1?catalog.visuals.battleBackgrounds.find(bg=>bg.visual.key==='445ca4b1a92f9a34c9cde142ac0deb50_2')||catalog.visuals.battleBackgrounds[2]:catalog.visuals.battleBackgrounds[((b.chapter||b.stageId)-1)%12];battleBackground=await V().loadImage(bg.visual.key);
  const heroPositions=b.combatVersion===2?[[385,360],[385,555],[100,265],[100,465],[230,350],[230,565]]:[[360,500],[400,590],[165,300],[165,445],[165,570],[290,520]];
  actors=battleAllies(b).map(u=>{const def=definitionById(u.heroId||player.hero.id),pos=Number.isInteger(u.position)?heroPositions[u.position]:[205,555];return{id:u.id,side:'ally',heroId:def.id,avatar:def.avatar,faction:def.faction,x:pos[0],y:pos[1],scale:1.10,flip:1,hp:u.hp,maxHp:u.maxHp,energy:u.energy,name:u.name||def.name,level:u.level||player.hero.level,attackConfig:def.combat?.skills[0]||battleReference.combatAnimations.hero.attack,controller:{skeleton:def.visual.skeleton,animation:'idling',loop:true}}});
  const enemyPositions={1:[1015,220],2:[1015,380],3:[1015,545],4:[790,255],5:[790,410],6:[790,560]};
- b.enemies.forEach((enemy,i)=>{const position=enemyPositions[enemy.position]||[[795,335],[1015,440],[930,555],[1040,220],[810,510],[960,320]][i],visual=catalog.campaign?.visuals[enemy.avatar];actors.push({id:enemy.id,side:'enemy',avatar:enemy.avatar,faction:enemy.faction||'abyss',x:enemy.boss?850:position[0],y:enemy.boss?500:position[1],scale:enemy.boss?.62*(visual?.scale||1):1.05,bossAvatar:enemy.boss?enemy.avatar:null,flip:-1,hp:enemy.hp,maxHp:enemy.maxHp,energy:enemy.energy||0,name:enemy.name,level:enemy.level,attackConfig:visual?.combat?.skills?.[0],controller:{skeleton:visual?.skeleton||battleReference?.enemies?.find(e=>e.name==='Hero_237_SkeletonData')||catalog.visuals.enemies[i%catalog.visuals.enemies.length].skeleton,animation:'idling',loop:true}})});
+ b.enemies.forEach((enemy,i)=>{const position=enemyPositions[enemy.position]||[[795,335],[1015,440],[930,555],[1040,220],[810,510],[960,320]][i],visual=catalog.campaign?.visuals[enemy.avatar],heroDef=enemy.heroId?catalog.heroes.find(h=>h.id===enemy.heroId):null;actors.push({id:enemy.id,side:'enemy',avatar:enemy.avatar,...(heroDef?{heroId:heroDef.id,attackConfig:heroDef.combat?.skills[0]}:{}),faction:enemy.faction||'abyss',x:enemy.boss?850:position[0],y:enemy.boss?500:position[1],scale:enemy.boss?.62*(visual?.scale||1):1.05,bossAvatar:enemy.boss?enemy.avatar:null,flip:-1,hp:enemy.hp,maxHp:enemy.maxHp,energy:enemy.energy||0,name:enemy.name,level:enemy.level,attackConfig:visual?.combat?.skills?.[0],controller:{skeleton:visual?.skeleton||battleReference?.enemies?.find(e=>e.name==='Hero_237_SkeletonData')||catalog.visuals.enemies[i%catalog.visuals.enemies.length].skeleton,animation:'idling',loop:true}})});
  await prepareBattleEffects();await Promise.all([...actors.map(a=>V().loadSkeleton(a.controller)),...Object.values(battleArt).map(key=>V().loadImage(key)),...actors.filter(a=>a.side==='ally').flatMap(a=>definitionById(a.heroId).skills).map(s=>V().loadImage(s.assetKey)),...['fortress','abyss','forest','shadow','dark','light'].map(id=>V().loadImage(named('faction_'+id)))]);for(const a of actors){a.statusEffects=battleUnits(b).find(u=>u.id===a.id).effects||[];if(a.hp<=0)a.deathAt=-1;const c=a.controller;if(c.instance){const offset=new spine.Vector2(),size=new spine.Vector2();c.state.apply(c.instance);c.instance.updateWorldTransform();c.instance.getBounds(offset,size,[]);a.visualHeight=Math.max(100,Math.min(260,(offset.y+size.y)*a.scale));}}if(b.status!=='active')showBattleResult();else{autoBattle=resume;scheduleBattleTurn(900)}
 }
 function playActor(actor,name,loop=false,rate=1){if(!actor?.controller.instance)return;const {instance,state}=actor.controller;const desired=instance.data.findAnimation(name)?.name||instance.data.findAnimation(name==='win'?'idling':'beat')?.name;if(!desired)return;
@@ -806,7 +853,7 @@ function playActor(actor,name,loop=false,rate=1){if(!actor?.controller.instance)
 async function prepareBattleEffects(){
  effectPool=Object.entries(battleReference?.effects||{}).flatMap(([kind,config])=>Array.from({length:kind==='impact'?12:6},()=>({kind,skeleton:config.skeleton,animation:config.animation,loop:false})));
  if(actors.some(a=>a.heroId==='zoro-king-of-hell'))for(const [kind,key] of [['zoro-cutscene','cutscene'],['zoro-slash','skillEffect']])effectPool.push({kind,skeleton:definitionById('zoro-king-of-hell').visual[key],animation:'Cast',loop:false});
- const avatars=[...new Set([...actors.filter(a=>a.side==='ally').map(a=>definitionById(a.heroId)).filter(d=>d?.ultimate).map(d=>d.avatar),...actors.filter(a=>a.bossAvatar).map(a=>a.bossAvatar)])];
+ const avatars=[...new Set([...actors.filter(a=>a.side==='ally'||a.heroId).map(a=>definitionById(a.heroId)).filter(d=>d?.ultimate).map(d=>d.avatar),...actors.filter(a=>a.bossAvatar).map(a=>a.bossAvatar)])];
  const attackAvatars=[...new Set(actors.map(a=>a.avatar).filter(a=>a&&a!=='576'))];
  if(avatars.length||attackAvatars.length){
   if(!heroEffects)heroEffects=await fetch('hero-effects.json').then(r=>r.ok?r.json():null).catch(()=>null);
@@ -822,22 +869,26 @@ async function prepareBattleEffects(){
  }
  await Promise.all(effectPool.map(c=>V().loadSkeleton(c)));
 }
-function fxStart(controller,name){const data=controller.instance.data,animation=data.findAnimation(name)||data.animations.find(a=>a.name.toLowerCase()===String(name).toLowerCase())||data.animations[0];controller.instance.setToSetupPose();controller.state.clearTracks();controller.state.setAnimation(0,animation.name,false);controller.state.apply(controller.instance);controller.instance.updateWorldTransform();return animation}
+// Thiếu animation đúng tên (Sengoku: Hit gọi "animation" nhưng Skill_147 chỉ có cutsceen/hit) thì hiệu ứng trúng đòn lấy clip hit.
+function fxStart(controller,name){const data=controller.instance.data,animation=data.findAnimation(name)||data.animations.find(a=>a.name.toLowerCase()===String(name).toLowerCase())||(controller.kind==='hero-hit'&&data.animations.find(a=>/hit/i.test(a.name)))||data.animations[0];controller.instance.setToSetupPose();controller.state.clearTracks();controller.state.setAnimation(0,animation.name,false);controller.state.apply(controller.instance);controller.instance.updateWorldTransform();return animation}
 // Khung cắt của mỗi cutscene một cỡ: phóng cho phủ kín màn 16:9 và đặt tâm khung vào tâm màn.
 function fxCover(controller,e){
  const slot=controller.instance.slots.find(s=>s.attachment instanceof spine.ClippingAttachment),base=(e.scale||1)*zoroStage.cutScale;if(!slot)return{x:zoroStage.cutX,y:zoroStage.cutY,scale:base};
  const v=[];slot.attachment.computeWorldVertices(slot,0,slot.attachment.worldVerticesLength,v,0,2);const xs=v.filter((_,i)=>i%2===0),ys=v.filter((_,i)=>i%2===1),scale=Math.max(1136/(Math.max(...xs)-Math.min(...xs)),640/(Math.max(...ys)-Math.min(...ys)))*1.06;
  return{x:568-(Math.min(...xs)+Math.max(...xs))*.5*scale,y:320+(Math.min(...ys)+Math.max(...ys))*.5*scale,scale};
 }
-function spawnHeroSkill(target,fx,animationLength){
+// Tướng phe địch (Vực thẳm) ra chiêu: hiệu ứng đặt theo sân (origin 1) và hướng được lật sang phía đội ta.
+function spawnHeroSkill(target,fx,animationLength,caster=null){const mirror=caster?.side==='enemy';
  if(skipBattleAnimations)return null;
- const cast=fx.cast.map(e=>({e,controller:effectPool.find(c=>c.kind==='hero-fx'&&c.key===e.key&&c.instance&&!battleEffects.some(f=>f.controller===c))})).filter(x=>x.controller);if(!cast.length)return null;
  battleEffects=battleEffects.filter(f=>!['hero-fx','hero-hit'].includes(f.controller.kind));
+ const taken=new Set(),cast=fx.cast.map(e=>{const controller=effectPool.find(c=>c.kind==='hero-fx'&&c.key===e.key&&c.instance&&!taken.has(c)&&!battleEffects.some(f=>f.controller===c));if(controller)taken.add(controller);return{e,controller}}).filter(x=>x.controller);if(!cast.length)return null;
  const timed=cast.map(x=>({...x,animation:fxStart(x.controller,x.e.animation)})),end=Math.max(animationLength,...timed.map(x=>x.e.delay+x.animation.duration)),firstHit=fx.hits.length?Math.min(...fx.hits):end*.85,rate=Math.max(1,end/fxMaxSeconds);
  for(const {e,controller,animation} of timed){
   const cinematic=e.layer==='BeyondCanvas',behind=fxBackdrop(e),stage=e.origin==='1'&&!behind,cover=cinematic?fxCover(controller,e):null,at=cover||(behind?{x:zoroStage.cutX,y:zoroStage.cutY}:stage?fxStagePoint(e.x,e.y):{x:target.x,y:target.y-(target.visualHeight||175)*.5}),scale=cover?cover.scale:(e.scale||1)*(behind?zoroStage.cutScale:stage?zoroStage.slashScale:.7*target.scale);
-  battleEffects.push({controller,behind,x:at.x,y:at.y,scale,flip:1,startAt:battleTime+e.delay/rate,rate,elapsed:-e.delay,duration:animation.duration,skill:true,targetId:target.id});
+  if(mirror&&stage&&!cover)at.x=1136-at.x;
+  battleEffects.push({controller,behind,x:at.x,y:at.y,scale,flip:mirror&&!cover&&!behind?-1:1,startAt:battleTime+e.delay/rate,rate,elapsed:-e.delay,duration:animation.duration,skill:true,targetId:target.id});
  }
+ addShakes(fx.shake,rate);
  return{rate,hitAt:firstHit/rate,duration:end/rate};
 }
 function spawnHeroImpact(target,fx){
@@ -853,8 +904,9 @@ function fxAttackPoint(e,actor,target){
 }
 function spawnAttackFx(list,actor,target){
  if(skipBattleAnimations||!list?.length||!actor||!target)return false;let shown=false;
- for(const e of list){const controller=effectPool.find(c=>c.kind==='atk-fx'&&c.key===e.key&&c.instance&&!battleEffects.some(f=>f.controller===c));if(!controller)continue;const animation=fxStart(controller,e.animation),at=fxAttackPoint(e,actor,target);
-  battleEffects.push({controller,x:at.x,y:at.y,scale:(e.scale||.7)*(e.origin==='1'?zoroStage.slashScale/1.6:target.scale),flip:-actor.flip,startAt:battleTime+e.delay,rate:1,elapsed:-e.delay,duration:animation.duration});shown=true}
+ for(const e of list){const controller=effectPool.find(c=>c.kind==='atk-fx'&&c.key===e.key&&c.instance&&!battleEffects.some(f=>f.controller===c));if(!controller)continue;const animation=fxStart(controller,e.animation),behind=fxBackdrop(e),at=behind?{x:zoroStage.cutX,y:zoroStage.cutY}:fxAttackPoint(e,actor,target);
+  // offset_layer âm (Zoro Wano mượn Bgr_hit tím của Cast_74, -10000) là nền phủ màn hình, vẽ sau nhân vật như chiêu nộ.
+  battleEffects.push({controller,behind,x:at.x,y:at.y,scale:behind?zoroStage.cutScale:(e.scale||.7)*(e.origin==='1'?zoroStage.slashScale/1.6:target.scale),flip:behind?1:-actor.flip,startAt:battleTime+e.delay,rate:1,elapsed:-e.delay,duration:animation.duration});shown=true}
  return shown;
 }
 function spawnZoroSkill(target){
@@ -879,7 +931,7 @@ function spawnBattleImpact(target,source,skill=false){
  }
 }
 function drawBattleEffects(ctx,dt,behind=false){
- if(skipBattleAnimations){battleEffects=[];return}
+ if(skipBattleAnimations){battleEffects=[];battleShakes=[];return}
  for(const effect of battleEffects){
   if(!!effect.behind!==behind)continue;
   const previous=effect.elapsed;effect.elapsed=(battleTime-effect.startAt)*(effect.rate||1);if(effect.elapsed<0||effect.elapsed>=effect.duration)continue;
@@ -896,20 +948,51 @@ function spawnBattleHeal(target){
  controller.instance.setToSetupPose();controller.state.clearTracks();controller.state.setAnimation(0,config.animation,false);controller.state.apply(controller.instance);controller.instance.updateWorldTransform();
   battleEffects.push({controller,x:target.x,y:target.y,flip:1,scale:config.scale*target.scale,startAt:battleTime,elapsed:0,duration:controller.instance.data.findAnimation(config.animation).duration,skill:false});
 }
+// Chữ sát thương theo prefab gốc: TextHpLost (trắng, PoetsenOne 40), TextHpCrit (đỏ cam, 60), TextHpBuff (xanh lá, 40),
+// TextHpBlock (Asap-Bold 40, "Chặn"); viền #242525 2px. Chuyển động lấy từ AnimationClip HpLost / HpCrit / Ani_HpBuff /
+// Ani_Block: [thời điểm giây, giá trị] nội suy tuyến tính; y là độ cao so với điểm hiện (anchoredPosition gốc trừ mốc đầu).
+const floaterFonts={number:{family:'font_ef92121f084bb95428ba536d0756f006_3',src:'assets/ef92121f084bb95428ba536d0756f006_3.ttf'},label:{family:'font_1241e6a2ad0f2e740a05308d4f5fdcd4_3',src:'assets/1241e6a2ad0f2e740a05308d4f5fdcd4_3.ttf'}};
+for(const f of Object.values(floaterFonts))if(typeof FontFace!=='undefined')new FontFace(f.family,`url(${JSON.stringify(f.src)})`).load().then(face=>document.fonts.add(face)).catch(()=>{});
+const floaterStyles={
+ lost:{font:'number',size:40,color:'#ffffff',length:.833,sx:[[0,1.6],[.1,1],[.167,1.2],[.233,1]],sy:[[0,1.2],[.1,1],[.167,1.2],[.233,1]],y:[[0,0],[.233,0],[.533,50],[.6,50],[.833,70]],a:[[0,1],[.6,1],[.833,0]]},
+ crit:{font:'number',size:60,color:'#ff2b00',length:.833,sx:[[0,1],[.033,2],[.1,2],[.217,1.017],[.283,1.2],[.383,1]],sy:[[0,1],[.033,1.8],[.1,1.8],[.217,1.017],[.283,1.2],[.383,1]],y:[[0,0],[.383,0],[.6,50],[.833,65]],a:[[0,1],[.6,1],[.833,0]]},
+ heal:{font:'number',size:40,color:'#6ef23b',length:.885,y:[[0,-50],[.462,50],[.885,50]],a:[[0,0],[.154,1],[.692,1],[.885,0]]},
+ block:{font:'label',size:40,color:'#ffffff',length:1.083,y:[[0,0],[.867,55],[1.083,55]],a:[[0,1],[.867,1],[1.083,0]]},
+ buff:{font:'label',size:22,color:'#c8ed67',length:1.1,y:[[0,0],[1.1,55]],a:[[0,1],[.75,1],[1.1,0]]},
+};
+const curveAt=(keys,t)=>{if(!keys)return null;if(t<=keys[0][0])return keys[0][1];for(let i=1;i<keys.length;i++)if(t<=keys[i][0]){const [t0,v0]=keys[i-1],[t1,v1]=keys[i];return v0+(v1-v0)*(t-t0)/(t1-t0||1)}return keys.at(-1)[1]};
+function drawFloaters(ctx,now){
+ floaters=floaters.filter(f=>now-f.at<(floaterStyles[f.kind||(f.heal?'heal':f.buff?'buff':'lost')].length*1000));
+ for(const f of floaters){
+  const style=floaterStyles[f.kind||(f.heal?'heal':f.buff?'buff':'lost')],t=Math.max(0,(now-f.at)/1000),font=floaterFonts[style.font];
+  const sx=curveAt(style.sx,t)??1,sy=curveAt(style.sy,t)??1,alpha=curveAt(style.a,t),rise=curveAt(style.y,t);
+  ctx.save();ctx.globalAlpha=Math.max(0,Math.min(1,alpha));ctx.translate(f.x,f.y-rise);ctx.scale(sx,sy);
+  ctx.font=`${style.size}px ${font.family},GameFont,sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineJoin='round';
+  ctx.strokeStyle='#242525';ctx.lineWidth=style.size>=60?6:4;ctx.strokeText(f.text,0,0);ctx.fillStyle=style.color;ctx.fillText(f.text,0,0);ctx.restore();
+ }
+}
+// Một "đợt" là các đòn liên tiếp của cùng một người, cùng loại (Nộ / đánh thường), mỗi mục tiêu một lần: chiêu đánh toàn
+// bộ kẻ địch trúng, hiện số sát thương và ngã cùng lúc; mục tiêu bị đánh lại (chiêu nhiều đợt) mở đợt mới.
+const waveSkip=new Set(['death','execute','resist','unit-state']);
+function nextInWave(events,i,wave){
+ for(let j=i+1;j<events.length;j++){const n=events[j];if(waveSkip.has(n.type)||n.type==='heal'&&n.skillId==='lifesteal')continue;
+  return n.type==='damage'&&wave&&n.actor===wave.actor&&!!n.skill===wave.skill&&!wave.targets.has(n.target)}
+ return false;
+}
 async function replay(events){
- let skillActor=null,skillDuration=0,skillDelay=0,skillAt=0;
+ let skillActor=null,skillDuration=0,skillDelay=0,skillAt=0,wave=null;
  for(let i=0;i<events.length;i++){
   const e=events[i],actor=actors.find(a=>a.id===e.actor),target=actors.find(a=>a.id===e.target);
   if(skipBattleAnimations){if(['damage','heal','execute'].includes(e.type)&&target)target.hp=e.hp;continue}
   if(e.type==='unit-turn'){battleActiveActorId=e.actor;if(actor){actor.energy=e.energy;const view=displayUnit(actor.id);if(view)view.energy=e.energy}battleUi()}
   if(e.type==='unit-state'&&actor){actor.energy=e.energy;const view=displayUnit(actor.id);if(view){view.energy=e.energy;view.hp=e.hp}battleUi()}
   if(e.energy!==undefined&&actor&&e.type==='skill'){actor.energy=e.energy;const view=displayUnit(actor.id);if(view)view.energy=e.energy}
-  if(e.type==='attack'){const quick=actor?.heroId==='zoro-king-of-hell',config=quick?{animation:'run',delay_cast_eff:.36}:actor?.attackConfig||battleReference?.combatAnimations?.[actor?.id==='hero'?'hero':'enemy']?.attack;playActor(actor,config?.animation||e.animation,false,1);const atkFx=!quick&&actor?heroEffects?.heroes[actor.avatar]?.attack:null;if(atkFx?.cast.length)setTimeout(()=>spawnAttackFx(atkFx.cast,actor,target),Number(config?.delay_cast_eff||.36)*600);if(actor){actor.moveMode='attack';actor.moveStart=battleTime*1000;actor.moveDuration=650;actor.moveTo=target?{x:target.x-actor.flip*90,y:target.y}:null}await sleep(Number(config?.delay_cast_eff||.36)*1000)}
+  if(e.type==='attack'){const quick=actor?.heroId==='zoro-king-of-hell',config=quick?{animation:'run',delay_cast_eff:.36}:actor?.attackConfig||battleReference?.combatAnimations?.[actor?.id==='hero'?'hero':'enemy']?.attack;playActor(actor,config?.animation||e.animation,false,1);const atkFx=!quick&&actor?heroEffects?.heroes[actor.avatar]?.attack:null;addShakes(atkFx?.shake);if(atkFx?.cast.length)setTimeout(()=>spawnAttackFx(atkFx.cast,actor,target),Number(config?.delay_cast_eff||.36)*600);if(actor){actor.moveMode='attack';actor.moveStart=battleTime*1000;actor.moveDuration=650;actor.moveTo=target?{x:target.x-actor.flip*90,y:target.y}:null}await sleep(Number(config?.delay_cast_eff||.36)*1000)}
   if(e.type==='skill'){
-   const zoro=actor?.heroId==='zoro-king-of-hell',definition=actor?.side==='ally'?definitionById(actor.heroId):null,summoned=!!definition?.ultimate,boss=actor?.bossAvatar,fx=summoned?heroEffects?.heroes[definition.avatar]:boss?heroEffects?.heroes[boss]:null,config=zoro?definition.combat.skills[1]:summoned?definition.combat.skills.find(s=>/skill/i.test(s.animation))||{animation:fx?.animation||'skill'}:boss?{animation:fx?.animation||'beat'}:battleReference?.combatAnimations?.hero?.skill;
-   const animationLength=actor?.controller.instance?.data.findAnimation(config?.animation||e.animation)?.duration||1.87,scene=fx?.cast.length?spawnHeroSkill(target,fx,animationLength):null,skillRate=zoro?zoroTiming.cutRate:scene?scene.rate:summoned?Math.max(1,animationLength/2.2):1;playActor(actor,config?.animation||e.animation,false,skillRate);
+   const zoro=actor?.heroId==='zoro-king-of-hell',definition=actor?.side==='ally'||actor?.heroId?definitionById(actor.heroId):null,summoned=!!definition?.ultimate,boss=actor?.bossAvatar,fx=summoned?heroEffects?.heroes[definition.avatar]:boss?heroEffects?.heroes[boss]:null,config=zoro?definition.combat.skills[1]:summoned?definition.combat.skills.find(s=>/skill/i.test(s.animation))||{animation:fx?.animation||'skill'}:boss?{animation:fx?.animation||'beat'}:battleReference?.combatAnimations?.hero?.skill;
+   const animationLength=actor?.controller.instance?.data.findAnimation(config?.animation||e.animation)?.duration||1.87,scene=fx?.cast.length?spawnHeroSkill(target,fx,animationLength,actor):null,skillRate=zoro?zoroTiming.cutRate:scene?scene.rate:summoned?Math.max(1,animationLength/2.2):1;playActor(actor,config?.animation||e.animation,false,skillRate);
    skillActor=actor;skillDuration=scene?scene.duration:zoro?animationLength:animationLength/skillRate;skillDelay=scene?scene.hitAt:summoned?Math.min(Number(config?.delay_cast_eff||.73),skillDuration*.6):Number(config?.delay_cast_eff||.73);skillAt=battleTime*1000;
-   const zoroScene=zoro?spawnZoroSkill(target):null;if(zoroScene){skillDelay=zoroScene.hitAt;skillDuration=zoroScene.duration}
+   const zoroScene=zoro?spawnZoroSkill(target):null;if(zoroScene){skillDelay=zoroScene.hitAt;skillDuration=zoroScene.duration;addShakes((heroEffects?.shakes?.['576']||[]).map(s=>({delay:zoroScene.hitAt,duration:s.duration})))}
    const targets=actors.filter(a=>a.side!==actor?.side&&a.hp>0);if(actor&&targets.length&&!zoro&&!scene){actor.moveMode='skill';actor.moveStart=battleTime*1000;actor.moveDuration=skillDuration*1000;actor.moveTo={x:Math.min(...targets.map(a=>a.x))-225,y:Math.max(555,actor.y,targets.reduce((sum,a)=>sum+a.y,0)/targets.length)}}
    battleLines.push(actor.name+': '+e.name);
    if(zoroScene){await sleep(zoroScene.cutEnd*1000);skillDelay-=zoroScene.cutEnd;playActor(actor,'beat',false,zoroTiming.slashRate);actor.moveMode='skill';actor.moveStart=battleTime*1000;actor.moveDuration=1550;actor.moveTo=target?{x:target.x-actor.flip*90,y:target.y}:null}
@@ -917,16 +1000,19 @@ async function replay(events){
   }
   if(e.type==='turn'&&displayBattle){displayBattle.turn=e.turn;battleUi()}
   if(e.type==='defend'){battleLines.push(actor.name+' phòng thủ, tích thêm nộ.');await sleep(300)}
-  if(e.type==='heal'&&target){target.hp=e.hp;const view=displayUnit(target.id);if(view)view.hp=e.hp;if(e.amount>0){spawnBattleHeal(target);floaters.push({x:target.x,y:target.y-150,text:'+'+num(e.amount),at:battleTime*1000,heal:true});battleLines.push(target.name+' hồi '+num(e.amount)+' máu.');await sleep(350)}}
-  if(e.type==='buff'&&target){target.statusEffects??=[];target.statusEffects=target.statusEffects.filter(f=>f.skillId!==e.skillId);target.statusEffects.push(e);battleLines.push(e.name+': '+target.name);floaters.push({x:target.x,y:target.y-175,text:e.name,at:battleTime*1000,buff:true});await sleep(200)}
+  if(e.type==='heal'&&target){if(e.revive&&target.deathAt!==undefined){delete target.deathAt;playActor(target,'idling',true);floaters.push({x:target.x,y:target.y-175,text:'Hồi sinh',at:battleTime*1000,buff:true})}target.hp=e.hp;const view=displayUnit(target.id);if(view)view.hp=e.hp;if(e.amount>0){spawnBattleHeal(target);floaters.push({x:target.x,y:target.y-150,text:String(e.amount),at:battleTime*1000,kind:'heal'});battleLines.push(target.name+' hồi '+num(e.amount)+' máu.');if(!(e.skillId==='lifesteal'&&nextInWave(events,i,wave)))await sleep(350)}}
+  if(e.type==='buff'&&target){target.statusEffects??=[];target.statusEffects=target.statusEffects.filter(f=>f.skillId!==e.skillId);target.statusEffects.push(e);battleLines.push(e.name+': '+target.name);floaters.push({x:target.x,y:target.y-175-(events[i-1]?.type==='buff'&&events[i-1]?.target===e.target?24:0),text:e.name,at:battleTime*1000,buff:true});
+   // Bị động sinh nhiều hiệu ứng cùng lúc: chỉ dừng ở hiệu ứng đầu của một chuỗi, các dòng sau hiện chồng lên nhau.
+   if(events[i+1]?.type!=='buff')await sleep(events[i-1]?.type==='buff'?120:200)}
   if(e.type==='effect-expired'&&target)target.statusEffects=(target.statusEffects||[]).filter(f=>f.skillId!==e.skillId);
-  if(e.type==='damage'&&target){target.hp=e.hp;target.lastHitAt=battleTime;if(e.energy!==undefined)target.energy=e.energy;const view=displayUnit(target.id);if(view){view.hp=e.hp;view.energy=target.energy}
+  if(e.type==='damage'&&target){if(!(wave&&e.actor===wave.actor&&!!e.skill===wave.skill&&!wave.targets.has(e.target)))wave={actor:e.actor,skill:!!e.skill,targets:new Set(),at:battleTime};wave.targets.add(e.target);target.hp=e.hp;target.lastHitAt=battleTime;if(e.energy!==undefined)target.energy=e.energy;const view=displayUnit(target.id);if(view){view.hp=e.hp;view.energy=target.energy}
    if(e.amount>0){playActor(target,e.hp<=0?'dead':'damage');const fx=e.skill&&actor?heroEffects?.heroes[actor.avatar]:null,atk=!e.skill&&actor?.heroId!=='zoro-king-of-hell'?heroEffects?.heroes[actor?.avatar]?.attack:null;if(!(actor?.heroId==='zoro-king-of-hell'&&e.skill)&&!(fx&&(spawnHeroImpact(target,fx)||fx.cast.some(c=>c.layer!=='BeyondCanvas')))&&!(atk&&spawnAttackFx(atk.impact,actor,target)))spawnBattleImpact(target,actor,e.skill)}
-   floaters.push({x:target.x,y:target.y-140,text:e.immune?'MIỄN DỊCH':e.miss?'NÉ TRÁNH':'−'+num(e.amount),at:battleTime*1000,skill:e.skill});battleLines.push(`${actor?.name||catalog.hero.name} gây ${e.amount} sát thương.`);await sleep(e.skill?100:350)}
-  if(e.type==='execute'&&target){target.hp=0;const view=displayUnit(target.id);if(view)view.hp=0;floaters.push({x:target.x,y:target.y-160,text:'TRẢM SÁT',at:battleTime*1000,skill:true});battleLines.push('Trảm Sát: '+target.name);await sleep(300)}
+   floaters.push({x:target.x,y:target.y-140,text:e.immune?'Miễn dịch':e.miss?'Né':String(e.amount),at:wave.at*1000,kind:e.immune||e.miss?'block':e.critical?'crit':'lost'});if(e.blocked&&!e.immune&&!e.miss)floaters.push({x:target.x,y:target.y-185,text:'Chặn',at:wave.at*1000,kind:'block'});battleLines.push(`${actor?.name||catalog.hero.name} gây ${e.amount} sát thương.`);if(!nextInWave(events,i,wave))await sleep(e.skill?100:350)}
+  if(!['damage','death','execute','resist','unit-state'].includes(e.type)&&!(e.type==='heal'&&e.skillId==='lifesteal'))wave=null;
+  if(e.type==='execute'&&target){target.hp=0;const view=displayUnit(target.id);if(view)view.hp=0;floaters.push({x:target.x,y:target.y-160,text:'Trảm Sát',at:battleTime*1000,kind:'crit'});battleLines.push('Trảm Sát: '+target.name);await sleep(300)}
   if(e.type==='trigger'){battleLines.push(e.name);floaters.push({x:actor.x,y:actor.y-180,text:e.name,at:battleTime*1000,buff:true})}
   if(skillActor&&(!events[i+1]||!['damage','death','heal','buff','execute'].includes(events[i+1].type))){await sleep(Math.max(0,skillDuration*1000-(battleTime*1000-skillAt)));skillActor.moveStart=null;skillActor=null}
-  if(e.type==='death'&&target){if(target.deathAt===undefined)playActor(target,'dead');await sleep(400)}
+  if(e.type==='death'&&target){if(target.deathAt===undefined)playActor(target,'dead');if(!nextInWave(events,i,wave)&&events[i+1]?.type!=='death')await sleep(400)}
   if(e.type==='victory'){for(const a of actors.filter(a=>a.side==='ally'&&a.hp>0))playActor(a,'win');battleLines.push('Chiến thắng! Đã nhận thưởng.');await sleep(650)}
   if(e.type==='defeat'){battleLines.push('Thất bại. Nâng tướng và thử lại.');await sleep(500)}
  }
@@ -964,7 +1050,8 @@ function showBattleResult(){
 }
 let selectedTarget=null;
 let combatRenderer=null;
-function drawBattle(ctx,dt){
+function drawBattle(ctx,dt){const s=player?.battle?shakeOffset():null;if(!s)return drawBattleFrame(ctx,dt);ctx.save();ctx.translate(s.x,s.y);try{return drawBattleFrame(ctx,dt)}finally{ctx.restore()}}
+function drawBattleFrame(ctx,dt){
  const b=player?.battle;if(!b)return false;
  const frameNow=performance.now(),elapsed=lastBattleFrame&&!V().paused&&!document.hidden?Math.max(0,(frameNow-lastBattleFrame)/1000)*battleSpeed:0;lastBattleFrame=frameNow;
  // Render the awaited impact frame before advancing to the following event,
@@ -996,7 +1083,7 @@ function drawBattle(ctx,dt){
   }
  }
  if(combatRenderer)drawBattleEffects(ctx,dt);
- floaters=floaters.filter(f=>now-f.at<1100);for(const f of floaters){const age=now-f.at;ctx.save();ctx.globalAlpha=Math.min(1,(1100-age)/350);ctx.font=`bold ${f.buff?20:f.skill?40:31}px GameFont,sans-serif`;ctx.textAlign='center';ctx.strokeStyle='#211c1b';ctx.lineWidth=4;ctx.strokeText(f.text,f.x,f.y-age*.05);ctx.fillStyle=f.heal?'#62ff5a':f.buff?'#c8ed67':f.skill?'#ffe251':'#ffffff';ctx.fillText(f.text,f.x,f.y-age*.05);ctx.restore()}
+ drawFloaters(ctx,now);
  return true;
 }
 function navigate(id){dialog.innerHTML='';return V().showScene(id)}
@@ -1011,8 +1098,8 @@ window.GameRuntime={
  prepareScene(data){syncScene(data)},
  async onScene(data){currentScene=data.id;dialog.innerHTML='';window.MermaidUI?.close();island=null;document.querySelector('.mm-tags')?.remove();if(currentScene===1700){hide(data,'IconNoti','Warning18Plus');await prepareIsland(data)}if(currentScene!==7)heroAlbumOpen=false;if(currentScene===9)await setupBattle();else{clearTimeout(autoTimer);autoBattle=false;battleEffects=[];effectPool=[]}if([28,34].includes(currentScene)&&catalog)await CampaignUI.prepare(campaignContext());if(currentScene===37)prepareWorld(data);if(currentScene!==1600)beastDetail=null;if(currentScene===40)await prepareTower(data);if(currentScene===21)prepareForge(data);if(currentScene===10){await refreshEvents();prepareEvents(data)}if(currentScene===53)await prepareBeast(data);if(currentScene===1600)await prepareBeastBoss(data);if(currentScene===24)prepareSummon(data);renderUi()},
  render(ctx,dt){if(currentScene===1700&&island)updateIsland(dt);if(currentScene===9&&player?.battle)return drawBattle(ctx,dt);if([28,34].includes(currentScene)&&catalog)return CampaignUI.draw(campaignContext(),ctx,dt,currentScene===28);return false},
- handleHit(hit){if(!player)return true;if(hit.node.homeHeroId){openHomeHero(hit.node.homeHeroId);return true}if(hit.name==='GroupAvatar'){profileDialog();return true}if(hit.name==='ButtonMail'){mailDialog();return true}if(currentScene===40&&towerHit(hit.name))return true;if(currentScene===1700&&mermaidHit(hit.name))return true;if(hit.name==='B_Mermaid'){navigate(1700);return true}if(currentScene===21&&forgeHit(hit.name))return true;if(currentScene===10&&eventHit(hit.name))return true;if([53,1600].includes(currentScene)&&beastHit(hit))return true;if(currentScene===24&&summonHit(hit.name))return true;if(currentScene===1156&&hit.name==='ButtonBack'){navigate(7);return true}if(currentScene===7&&heroAlbumOpen&&hit.name==='ButtonBack'){heroAlbumOpen=false;rosterUi();return true}if(hit.name==='ButtonHelp'){modal('TƯỚNG',`<p class="item-description">Chọn hệ ở bên trái để lọc danh sách tướng. Chạm vào thẻ tướng để xem thuộc tính, nâng cấp, trang bị và kỹ năng.</p>`);return true}if(currentScene===1156&&['ButtonShare','ButtonNoLock'].includes(hit.name)){heroInfoDialog();return true}if(hit.node.hero||hit.name==='ClickArea'){heroTab='stats';navigate(1156);return true}const names={ButtonHeroes:7,ButtonHeroList:7,ButtonBag:12,ButtonItem:12,ButtonShop:1404,ButtonWorld:37,B_EventRaid:34,B_Tower:40,B_PlaceHolder2:53,ButtonCampaign:34,ButtonShip:34,ButtonSummon:24,ButtonScroll:1156,ButtonOrb:1156,ButtonForge:21,ButtonEvents:10,ButtonFuse:1156,ButtonAltar:1156,ButtonBack:13,ButtonClose:13};if(names[hit.name]){navigate(names[hit.name]);return true}if(hit.name==='ButtonLuckySpin'){openSpecial();return true}if(['ButtonRollcall','ButtonAddGold','ButtonAddGem'].includes(hit.name)){refreshEvents().then(dailyDialog);return true}if(hit.name==='ButtonAchievement'){achievementDialog();return true}if(hit.name==='ButtonQuest'){questDialog();return true}if(['GroupAvatar','ButtonChat'].includes(hit.name)){journalDialog();return true}V().toast(currentScene===37?'Tính năng này đang được phát triển.':'Hãy cùng Luffy khám phá hải trình.');return true},
- get player(){return player},get catalog(){return catalog},get battleBusy(){return battleBusy},get actors(){return actors},get effects(){return battleEffects},get battleTime(){return battleTime},get battleSpeed(){return battleSpeed},get formationDraft(){return campaignSlots},navigate,
+ handleHit(hit){if(!player)return true;if(hit.node.homeHeroId){openHomeHero(hit.node.homeHeroId);return true}if(hit.name==='GroupAvatar'){profileDialog();return true}if(hit.name==='ButtonMail'){mailDialog();return true}if(currentScene===40&&towerHit(hit.name))return true;if(currentScene===1700&&mermaidHit(hit.name))return true;if(hit.name==='B_Mermaid'){navigate(1700);return true}if(currentScene===21&&forgeHit(hit.name))return true;if(currentScene===10&&eventHit(hit.name))return true;if([53,1600].includes(currentScene)&&beastHit(hit))return true;if(currentScene===24&&summonHit(hit.name))return true;if(currentScene===1156&&hit.name==='ButtonBack'){navigate(7);return true}if(currentScene===7&&heroAlbumOpen&&hit.name==='ButtonBack'){heroAlbumOpen=false;rosterUi();return true}if(hit.name==='ButtonHelp'){modal('TƯỚNG',`<p class="item-description">Chọn hệ ở bên trái để lọc danh sách tướng. Chạm vào thẻ tướng để xem thuộc tính, nâng cấp, trang bị và kỹ năng.</p>`);return true}if(currentScene===1156&&['ButtonShare','ButtonNoLock'].includes(hit.name)){heroInfoDialog();return true}if(hit.node.hero||hit.name==='ClickArea'){heroTab='stats';navigate(1156);return true}const names={ButtonHeroes:7,ButtonHeroList:7,ButtonBag:12,ButtonItem:12,ButtonShop:1404,ButtonWorld:37,B_EventRaid:34,B_Tower:40,B_PlaceHolder2:53,ButtonCampaign:34,ButtonShip:34,ButtonSummon:24,ButtonScroll:1156,ButtonOrb:1156,ButtonForge:21,ButtonEvents:10,ButtonFuse:1156,ButtonAltar:1156,ButtonBack:13,ButtonClose:13};if(names[hit.name]){navigate(names[hit.name]);return true}if(hit.name==='ButtonLuckySpin'){openSpecial();return true}if(['ButtonRollcall','ButtonAddGold','ButtonAddGem'].includes(hit.name)){refreshEvents().then(dailyDialog);return true}if(['ClickBox','TagContent'].includes(hit.name)&&[13,36].includes(currentScene)){homeQuestTap();return true}if(hit.name==='ButtonAchievement'){achievementDialog();return true}if(hit.name==='ButtonQuest'){questDialog();return true}if(['GroupAvatar','ButtonChat'].includes(hit.name)){journalDialog();return true}V().toast(currentScene===37?'Tính năng này đang được phát triển.':'Hãy cùng Luffy khám phá hải trình.');return true},
+ get player(){return player},get catalog(){return catalog},get battleBusy(){return battleBusy},get actors(){return actors},get effects(){return battleEffects},get shakes(){return battleShakes},get battleTime(){return battleTime},get battleSpeed(){return battleSpeed},get formationDraft(){return campaignSlots},navigate,
 };
 document.addEventListener('submit',async e=>{if(e.target.id!=='auth-form')return;e.preventDefault();if(busy)return;const form=e.target,error=$('#auth-error'),username=form.elements.username.value,password=form.elements.password.value;if(authMode==='register'&&password!==form.elements.confirm.value){error.textContent='Mật khẩu nhập lại không khớp.';return}busy=true;setBusy(true);error.textContent='';try{await api('/api/auth/'+authMode,{username,password});form.reset();bootError='';await navigate(13)}catch(err){error.textContent=err.message}finally{busy=false;setBusy(false)}});
 document.addEventListener('input',e=>{if(e.target.id==='coin-count'){const box=document.querySelector('.coin-buy'),max=Number(box.dataset.max),value=Math.max(0,Math.min(max,Math.floor(Number(e.target.value)||0)));$('#coin-total').textContent=num(value*Number(box.dataset.price));const buy=box.querySelector('[data-action=coin-buy]');buy.disabled=!value;return}if(e.target.id==='item-search'){search=e.target.value;page=0;const start=e.target.selectionStart,toolsOpen=$('.bag-tools')?.open;inventoryUi(currentScene===1404);if(toolsOpen&&$('.bag-tools'))$('.bag-tools').open=true;const input=$('#item-search');input.focus();input.setSelectionRange(start,start)}});
@@ -1093,7 +1180,7 @@ document.addEventListener('click',async e=>{
  if(action==='campaign-locate'){campaignStageId=Math.min(player.adventure.unlockedStage,catalog.stages.length);campaignChapterId=catalog.stages[campaignStageId-1].chapter;CampaignUI.focus(campaignContext(),true);return}
  if(action==='campaign-team'){openCampaignTeam();return}
  if(action==='campaign-hero'){editCampaignHero(button.dataset.hero);return}
- if(action==='campaign-slot'){const position=Number(button.dataset.slot);campaignSelectedSlot=campaignSelectedSlot===position?null:position;dialog.innerHTML=CampaignUI.formation(campaignContext());return}
+ if(action==='campaign-slot'){const position=Number(button.dataset.slot);if(campaignSlots?.[position]){removeCampaignHero(position);return}campaignSelectedSlot=campaignSelectedSlot===position?null:position;dialog.innerHTML=CampaignUI.formation(campaignContext());return}
  if(action==='campaign-save'){const result=await mutation('/api/formation',{slots:campaignSlots},{render:false});if(result){await CampaignUI.prepare(campaignContext());renderUi()}return}
  if(action==='campaign-filter'){campaignFilter=campaignFilter?null:catalog.hero.faction;dialog.innerHTML=CampaignUI.formation(campaignContext());return}
  if(action==='campaign-rewards'){modal('Phần thưởng',CampaignUI.rewards(campaignContext()));return}

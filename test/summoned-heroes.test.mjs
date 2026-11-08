@@ -22,7 +22,8 @@ test('a summoned hero fights in the formation and uses its ultimate',()=>{
 });
 
 test('below full rage the hero attacks and builds rage instead',()=>{
- const p=owned(['624']),id='hero-624';applyAction(p,'battle-start',{stageId:1,formation:slots(id)});const unit=p.battle.allies[0];unit.speed=1e6;for(const e of p.battle.enemies){e.hp=e.maxHp=1e6}
+ // 624 có bị động +75/+50 Nộ nên vào trận đã đủ Nộ; 435 không có bị động Nộ.
+ const p=owned(['435']),id='hero-435';applyAction(p,'battle-start',{stageId:1,formation:slots(id)});const unit=p.battle.allies[0];unit.speed=1e6;for(const e of p.battle.enemies){e.hp=e.maxHp=1e6}
  const events=applyAction(p,'battle-action',{battleId:p.battle.id,turn:1,action:'auto'}).events;assert.ok(events.some(e=>e.type==='attack'&&e.actor===unit.id));assert.ok(!events.some(e=>e.type==='skill'));assert.ok(unit.energy>35);
 });
 
@@ -80,7 +81,8 @@ test('a skill with no readable effect still does something',()=>{assert.equal(re
 
 function fight(ultimate,setup=()=>{}){
  const p=owned(['624']),id='hero-624';applyAction(p,'battle-start',{stageId:1,formation:slots(id,'zoro-king-of-hell')});
- const unit=p.battle.allies[0],other=p.battle.allies[1];unit.ultimate={...unit.ultimate,...ultimate};unit.energy=100;unit.speed=1e7;other.speed=1;other.energy=0;for(const e of p.battle.enemies){e.hp=e.maxHp=1e6;e.speed=1;e.attack=1}setup(p,unit,other);
+ // Kiểm tra nhánh Tuyệt kỹ chung (không có bộ kỹ năng đọc từ mô tả).
+ const unit=p.battle.allies[0],other=p.battle.allies[1];delete unit.kit;unit.ultimate={...unit.ultimate,...ultimate};unit.energy=100;unit.speed=1e7;other.speed=1;other.energy=0;for(const e of p.battle.enemies){e.hp=e.maxHp=1e6;e.speed=1;e.attack=1}setup(p,unit,other);
  return{p,unit,other,events:applyAction(p,'battle-action',{battleId:p.battle.id,turn:1,action:'auto'}).events};
 }
 test('the lowest-health enemy is really the one hit',()=>{

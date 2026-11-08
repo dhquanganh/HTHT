@@ -46,7 +46,7 @@ def effect(row):
     if not ptr:return None
     key=row['path'].replace('\\','/').lower();fx_store[key]=skeleton(ptr)
     n=lambda v,d=0.0:float(v) if v not in (None,'') else d
-    return{'key':key,'animation':row.get('animation') or 'animation','delay':n(row.get('delay')),'x':n(row.get('offsetx')),'y':n(row.get('offsety')),'scale':n(row.get('scale'),1.0),'origin':str(row.get('origin_pos_type') or ''),'target':str(row.get('impact_pos') or '')}
+    return{'key':key,'animation':row.get('animation') or 'animation','delay':n(row.get('delay')),'x':n(row.get('offsetx')),'y':n(row.get('offsety')),'scale':n(row.get('scale'),1.0),'origin':str(row.get('origin_pos_type') or ''),'target':str(row.get('impact_pos') or ''),'layer':row.get('sorting_layer') or '','order':n(row.get('offset_layer'))}
 
 fx_store={};fx_heroes={};bosses=[]
 for index,(key,avatar) in enumerate(order):
@@ -57,7 +57,7 @@ for index,(key,avatar) in enumerate(order):
         hero=heroes[row['link']]
         variants.append({'monsterId':row['id'],'heroId':hero['id'],'faction':hero['type'].lower(),'skills':[skill(hero['passive2']),skill(hero['passive1'])]})
     combat=battle[avatar]['skills'][0]
-    fx_heroes[avatar]={'animation':combat['animation'],'delay':float(combat.get('delay_cast_eff') or 0),'hits':[float(d.get('delay') or 0) for d in combat.get('split_dmgs') or []],'cast':[e for e in map(effect,combat.get('cast_effs') or []) if e],'impact':[e for e in map(effect,combat.get('impact_effs') or []) if e]}
+    fx_heroes[avatar]={'animation':combat['animation'],'delay':float(combat.get('delay_cast_eff') or 0),'hits':[float(d.get('delay') or 0) for d in combat.get('split_dmgs') or []],'shake':[{'delay':float(x.get('delay') or 0),'duration':float(x.get('duration') or 0)} for x in combat.get('shake_cams') or [] if float(x.get('duration') or 0)>0],'cast':[e for e in map(effect,combat.get('cast_effs') or []) if e],'impact':[e for e in map(effect,combat.get('impact_effs') or []) if e]}
     bosses.append({'key':key,'index':index,'heroId':avatar,'avatar':avatar,'name':base['name'],'class':base['class'].lower(),'level':int(rows[0]['level']),'star':int(rows[0]['star']),'rank':int(base['rank']),
         'point':{'attack':point[0],'armor':point[1],'hp':point[2],'speed':point[3]},'active':skill(base['active']),'variants':variants,
         'visual':{'avatar':avatar,'head':head(avatar),'skeleton':spine(f'{avatar}/hero_{avatar}'),'scale':float(battle[avatar]['scale']),'combat':{'skills':[{'animation':combat['animation'],'delay_cast_eff':combat.get('delay_cast_eff')}]}}})

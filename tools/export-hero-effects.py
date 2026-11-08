@@ -52,15 +52,23 @@ def number(value,default=0.0):
 def effect(row):
     key=skeleton(row['path']) if row.get('path') else None
     if not key:return None
-    return {'key':key,'animation':row.get('animation') or 'animation','delay':number(row.get('delay')),'x':number(row.get('offsetx')),'y':number(row.get('offsety')),'scale':number(row.get('scale')),'origin':str(row.get('origin_pos_type') or ''),'target':str(row.get('impact_pos') or ''),'layer':row.get('sorting_layer') or ''}
-heroes={}
+    # order = offset_layer: âm là vẽ sau nhân vật (Bgr_hit -1000/-10000), dương là vẽ trước.
+    return {'key':key,'animation':row.get('animation') or 'animation','delay':number(row.get('delay')),'x':number(row.get('offsetx')),'y':number(row.get('offsety')),'scale':number(row.get('scale')),'origin':str(row.get('origin_pos_type') or ''),'target':str(row.get('impact_pos') or ''),'layer':row.get('sorting_layer') or '','order':number(row.get('offset_layer'))}
+# shake_cams: rung camera {delay, duration} tính từ lúc tung chiêu.
+shakes_of=lambda skill:[{'delay':number(s.get('delay')),'duration':number(s.get('duration'))} for s in skill.get('shake_cams') or [] if number(s.get('duration'))>0]
+pick=lambda skills:next((s for s in skills if re.search('skill',str(s.get('animation')),re.I)),skills[1] if len(skills)>1 else None)
+heroes={};shakes={}
 for hero in album:
     avatar=hero['avatar']
-    if avatar in ('109','576') or avatar not in battle:continue
+    if avatar not in battle:continue
     skills=battle[avatar].get('skills') or []
-    skill=next((s for s in skills if re.search('skill',str(s.get('animation')),re.I)),skills[1] if len(skills)>1 else None)
+    skill=pick(skills)
     if not skill:continue
-    heroes[avatar]={'animation':skill.get('animation'),'delay':number(skill.get('delay_cast_eff')),'hits':[number(d.get('delay')) for d in skill.get('split_dmgs') or []],'cast':[e for e in map(effect,skill.get('cast_effs') or []) if e],'impact':[e for e in map(effect,skill.get('impact_effs') or []) if e]}
+    # Luffy Gear 2 và Zoro King Of Hell có hoạt cảnh riêng; chỉ lấy lịch rung màn hình của chiêu.
+    if avatar in ('109','576'):shakes[avatar]=shakes_of(skill);continue
+    heroes[avatar]={'animation':skill.get('animation'),'delay':number(skill.get('delay_cast_eff')),'hits':[number(d.get('delay')) for d in skill.get('split_dmgs') or []],'shake':shakes_of(skill),'cast':[e for e in map(effect,skill.get('cast_effs') or []) if e],'impact':[e for e in map(effect,skill.get('impact_effs') or []) if e]}
+# _Pack/HeroCommonSkill/Hit_223 và Hit_236 có material với _MainTex rỗng và Hit_223.png / Hit_236.png không có trong
+# APK lẫn cache HTTH (bản gốc tải lúc chạy), nên hai hiệu ứng này giữ texture null và client bỏ qua (fxUsable).
 save()
-out.write_text(json.dumps({'effects':effects,'heroes':heroes},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+out.write_text(json.dumps({'effects':effects,'heroes':heroes,'shakes':shakes},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 print('DONE',len(heroes),'heroes;',len(effects),'effects; missing',sorted(missing),'failed',failed,flush=True)

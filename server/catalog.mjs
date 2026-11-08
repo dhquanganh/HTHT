@@ -1,5 +1,6 @@
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
+import {kitFromProfile,selectOf} from './skill-kit.mjs';
 const read=name=>JSON.parse(readFileSync(fileURLToPath(new URL('../dist/'+name,import.meta.url)),'utf8'));
 const imported=read('game-catalog.json');
 const assets=read('assets.json');
@@ -77,12 +78,18 @@ const gradeNames={1:'D',2:'C',3:'B',4:'A',5:'S',6:'SS'},gradeScales={1:.65,2:.75
 const classScales={warrior:{attack:.9,maxHp:1.2},mage:{attack:1.15,maxHp:.9},assassin:{attack:1.2,maxHp:.85},ranger:{attack:1.1,maxHp:.95},priest:{attack:.9,maxHp:1.05}};
 // Tuyệt kỹ đọc từ mô tả gốc rồi nén về thang của bản thử nghiệm: số mục tiêu, cách chọn mục tiêu, % Công, số lần đánh, hồi máu và tăng Công.
 // Các hiệu ứng khác trong mô tả (khiên, choáng, đốt...) chưa được mô phỏng.
+// Bộ kỹ năng đầy đủ (Nộ + bị động) đọc từ mô tả gốc cho trận đấu; chỉ dùng ở server.
+export const heroKits=new Map();
+// Kẻ địch là tướng (Vực thẳm): dùng bộ kỹ năng theo avatar, kể cả avatar không triệu hồi được (109 Luffy - S).
+const avatarKits=new Map();
+export function kitForAvatar(avatar){if(heroKits.has('hero-'+avatar))return heroKits.get('hero-'+avatar);if(!avatarKits.has(avatar))avatarKits.set(avatar,heroProfiles[avatar]?.skills?.length?kitFromProfile(heroProfiles[avatar]):null);return avatarKits.get(avatar)}
 export function ultimateFrom(skill,id){
  const text=skill.description,clamp=(value,low,high)=>Math.min(high,Math.max(low,value));
  const number=pattern=>{const match=pattern.exec(text);return match?Number(match[1]):null};
  const damagePercent=number(/(?:sát thương|\bST\b)[^.;]{0,30}?\(?(\d+)\s*%\s*Công/i)??number(/\(?(\d+)\s*%\s*Công\)?[^.;]{0,14}(?:sát thương|\bST\b)/i);
  const repeats=number(/(\d+)\s*lần\s*(?:sát thương|\bST\b)/i)||1;
- const targets=/(toàn bộ|tất cả|toàn)\s*(kẻ\s*)?địch/i.test(text)?6:number(/(\d+)\s*(?:kẻ\s*)?địch/i)||1;
+ // Cùng cách đọc mục tiêu với bộ kỹ năng trận đấu (toàn thể phe địch, hàng sau đội địch, N kẻ địch...).
+ const targets=selectOf(text).count;
  const pick=/địch[^.;]{0,24}(máu|HP)\s*(hiện tại\s*)?thấp nhất/i.test(text)?'lowest':/địch[^.;]{0,24}Nộ cao nhất/i.test(text)?'rage':/ngẫu nhiên/i.test(text)?'random':/hàng sau/i.test(text)?'back':'front';
  const healAttack=number(/hồi[^.;]{0,36}?\(?(\d+)\s*%\s*Công/i),healLife=number(/hồi[^.;]{0,24}?(\d+)\s*%\s*Máu/i),healTeam=/hồi[^.;]{0,40}(toàn đội|toàn bộ đồng minh|tất cả đồng minh)|(toàn đội|toàn bộ đồng minh|tất cả đồng minh)[^.;]{0,30}hồi/i.test(text);
  const teamBuff=/tăng\s+toàn\s+đội[^.;]{0,30}?(\d+)\s*%\s*Công/i.exec(text),selfBuff=/(?:bản thân\s+tăng|tăng\s+bản thân)\s+(\d+)\s*%\s*Công/i.exec(text),buff=teamBuff||selfBuff;
@@ -97,6 +104,7 @@ for(const hero of heroAlbum.heroes){
  if(heroDefinitions.some(h=>h.avatar===hero.avatar)||!visual?.skeleton||!visual.head||!profile)continue;
  const id='hero-'+hero.avatar,scale=gradeScales[hero.rank]||1,shape=classScales[hero.class]||{attack:1,maxHp:1};
  const skills=profile.skills.map((skill,i)=>({id:`${id}-${i}`,name:skill.name,assetKey:skill.icon,passive:skill.passive,energy:skill.passive?0:100,cooldown:0,animation:'skill',description:skill.description,levels:[{level:1,description:skill.description}]}));
+heroKits.set(id,kitFromProfile(profile));
  heroDefinitions.push({id,name:hero.name,avatar:hero.avatar,faction:hero.faction,class:hero.class,grade:gradeNames[hero.rank],rank:hero.rank,visual:{card:hero.card,head:visual.head,art:profile.art,skeleton:visual.skeleton},skills,combat:{skills:(visual.combat?.skills||[]).map(s=>({animation:s.animation,delay_cast_eff:s.delay_cast_eff}))},statScale:{attack:scale*shape.attack,maxHp:scale*shape.maxHp},ultimate:ultimateFrom(profile.skills[0],skills[0].id)});
 }
 // Asset chỉ có mảnh chung; mảnh riêng theo hero_shard_id của db_tower. 50 mảnh ghép thành 1 tướng, như thẻ chọn tướng.

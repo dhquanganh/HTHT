@@ -1,6 +1,6 @@
 import {randomUUID} from 'node:crypto';
 import {GameError,requireCondition,integer} from './errors.mjs';
-import {materials,itemById,items,economy,skills,stages,legacyStages,equipmentSlots,heroDefinition,definitionFor,campaign,heroAlbum,heroDefinitions,heroShardMerge,heroExpItem} from './catalog.mjs';
+import {materials,itemById,items,economy,skills,stages,legacyStages,equipmentSlots,heroDefinition,definitionFor,campaign,heroAlbum,heroDefinitions,heroShardMerge,heroExpItem,heroKits,kitForAvatar} from './catalog.mjs';
 import {skillLevels,skillTier,ensureLuffySkills,battleSkillState,effectiveStat} from './luffy-skills.mjs';
 import {ensureRoster,heroSkills,heroLevels,heroTier,shardFor} from './hero-roster.mjs';
 import {zoroRound} from './zoro-combat.mjs';
@@ -19,6 +19,7 @@ import {claimMail,deleteMail} from './mail.mjs';
 import {albumView,albumGroups,rollAlbum} from './album.mjs';
 import {masteryView,claimMasteryQuest,claimMasteryMilestone,recordBossBattle} from './mastery.mjs';
 import {achievementView,claimAchievement,countSummons} from './achievements.mjs';
+import {homeQuestView,claimHomeQuest,homeQuestEvent} from './home-quest.mjs';
 import {abyssView,startAbyss,finishAbyss,claimAbyssQuest,buyAbyssTurn,claimAbyssMilestone} from './abyss.mjs';
 import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
 
@@ -57,7 +58,7 @@ export function upgradeCosts(player){const h=player.hero;return{
  skills:Object.fromEntries(heroSkills(h).map(s=>{const level=heroLevels(h)[s.id];return[s.id,{gold:level*250,items:{[materials.skill]:level},maxLevel:Math.max(level,Math.min(economy.maxSkillLevel,2+h.rank*2))}]})),
 }}
 export function playerView(player,now=Date.now()){return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
-function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),activity:activity.slice(-20).reverse()}}
+function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),activity:activity.slice(-20).reverse()}}
 function addItem(p,id,qty){requireCondition(itemById.has(id),'Vật phẩm không tồn tại.');if(id===heroExpItem){p.wallet.spirit=(p.wallet.spirit||0)+qty;requireCondition(p.wallet.spirit>=0,'Không đủ Đá EXP.');return}p.inventory[id]=(p.inventory[id]||0)+qty;requireCondition(p.inventory[id]>=0,'Không đủ vật phẩm.')}
 function spend(p,cost){for(const [currency,amount] of Object.entries(cost)){requireCondition(Number.isSafeInteger(amount)&&amount>=0,'Chi phí không hợp lệ.');requireCondition((p.wallet[currency]||0)>=amount,`Không đủ ${({gold:'vàng',diamonds:'kim cương',spirit:'EXP tướng'})[currency]||currency}.`,400,'INSUFFICIENT_FUNDS');p.wallet[currency]-=amount;if(currency==='diamonds')trackEvent(p,'diamondSpend',amount)}}
 function spendItems(p,cost={}){for(const [id,amount] of Object.entries(cost)){requireCondition((id===heroExpItem?p.wallet.spirit:p.inventory[id]||0)>=amount,`Không đủ ${itemById.get(id)?.name||'vật phẩm'}.`);addItem(p,id,-amount)}}
@@ -93,7 +94,14 @@ function runAction(p,action,input,now,context){
  if(action==='album-roll'){outsideBattle(p);return rollAlbum(p,input,cost=>payReward(p,cost),reward=>grantReward(p,reward))}
  if(action==='abyss-start'){
   outsideBattle(p);const teamFormation=validateFormation(p,input.formation??formationView(p).slots),{floor,enemies,meta}=startAbyss(p,input,now),{row,strength}=floorEnemies(floor);
-  openBattle(p,enemies.heroes.map((h,i)=>enemyUnit({...h,sourceId:'hero-'+h.avatar},{position:h.position},i,strength)),{chapter:1+(row.floor-1)%12,stageId:null,abyss:meta},teamFormation,p.formation?.position??0,now);
+  // Đội địch Vực thẳm là đội tướng: mỗi tướng dùng bộ kỹ năng (Nộ + bị động) đọc từ mô tả như tướng phe ta.
+  // Hàng trước (ô 1-2 trong popup) đứng ở cột trước của phe địch (ô 4-5), hàng sau ở ô 1-3 và 6.
+  const column={1:4,2:5,3:1,4:2,5:3,6:6};
+  const foes=enemies.heroes.map((h,i)=>{const unit=enemyUnit({...h,sourceId:'hero-'+h.avatar},{position:column[h.position]},i,strength),heroId='hero-'+h.avatar,kit=kitForAvatar(h.avatar),definition=heroKits.has(heroId)?definitionFor(heroId):null;
+   return kit?{...unit,heroId,kit,ultScale:1,...(definition?.ultimate?{ultimate:definition.ultimate}:{})}:unit});
+  openBattle(p,foes,{chapter:1+(row.floor-1)%12,stageId:null,abyss:meta},teamFormation,p.formation?.position??0,now);
+  // openBattle đặt Nộ địch = 0 và hàng theo ô; tướng địch vào trận với 35 Nộ như phe ta, hàng theo đội hình gốc.
+  p.battle.enemies.forEach((e,i)=>{e.frontRow=enemies.heroes[i].position<=2;if(e.kit)e.energy=35});
   return{message:`Bắt đầu Ải ${meta.stage}.`,battleId:p.battle.id};
  }
  if(action==='mastery-claim'){outsideBattle(p);return claimMasteryQuest(p,input,reward=>grantReward(p,reward))}
@@ -169,8 +177,10 @@ function runAction(p,action,input,now,context){
  }
  if(['stone-unlock','stone-upgrade','stone-convert'].includes(action)){
   outsideBattle(p);const pay=(gold,dust)=>{spend(p,{gold});spendItems(p,{[stoneDust]:dust})};
-  return action==='stone-unlock'?unlockStone(p.hero):action==='stone-upgrade'?upgradeStone(p.hero,pay):convertStone(p.hero,pay);
+  if(action==='stone-upgrade'){const result=upgradeStone(p.hero,pay);homeQuestEvent(p,5,1);return result}
+  return action==='stone-unlock'?unlockStone(p.hero):convertStone(p.hero,pay);
  }
+ if(action==='home-quest-claim'){outsideBattle(p);return claimHomeQuest(p,reward=>grantReward(p,reward))}
  if(action==='daily-quest-claim'){outsideBattle(p);return claimDaily(p,input,reward=>grantReward(p,reward),now)}
  if(action==='special-upgrade'){outsideBattle(p);return upgradeSpecial(p.hero,input,cost=>{spend(p,{gold:cost.gold});spendItems(p,cost.items)})}
  if(action==='forge'){outsideBattle(p);const result=forgeItem(p,input,spendItems,addItem);trackEvent(p,'forge',result.quantity,now);return result}
@@ -216,7 +226,7 @@ function openBattle(p,enemies,meta,teamFormation,position,now){
  p.battle={id:randomUUID(),campaignVersion:1,...meta,status:'active',turn:1,seed:Math.floor(now%4294967295)||1,hero:{id:'hero',heroId:p.hero.id,name:definitionFor(p.hero.id).name,...heroSnapshot,hp:heroSnapshot.maxHp,position,frontRow:position<2,energy:p.hero.id==='zoro-king-of-hell'?100:35,cooldowns:{},skills:{...p.hero.skills}},enemies,events:[],createdAt:new Date(now).toISOString(),reward:null};
  if(!teamFormation)return;
  const owned=ownedHeroes(p),allies=[];
- teamFormation.slots.forEach((heroId,position)=>{if(!heroId)return;const h=owned.get(heroId),stats=heroStats({...p,hero:h}),definition=definitionFor(heroId);allies.push({id:allies.length?'ally-'+heroId:'hero',heroId,side:'ally',name:definition.name,faction:definition.faction,avatar:definition.avatar,level:h.level,stars:h.stars,...stats,hp:stats.maxHp,energy:heroId==='zoro-king-of-hell'?100:35,position,frontRow:position<2,skills:heroLevels(h),cooldowns:{},...(definition.ultimate?{ultimate:scaledUltimate(definition.ultimate,heroLevels(h)[definition.ultimate.id])}:{})})});
+ teamFormation.slots.forEach((heroId,position)=>{if(!heroId)return;const h=owned.get(heroId),stats=heroStats({...p,hero:h}),definition=definitionFor(heroId);allies.push({id:allies.length?'ally-'+heroId:'hero',heroId,side:'ally',name:definition.name,faction:definition.faction,avatar:definition.avatar,level:h.level,stars:h.stars,...stats,hp:stats.maxHp,energy:heroId==='zoro-king-of-hell'?100:35,position,frontRow:position<2,skills:heroLevels(h),cooldowns:{},...(definition.ultimate?{ultimate:scaledUltimate(definition.ultimate,heroLevels(h)[definition.ultimate.id])}:{}),...(heroKits.get(heroId)?{kit:heroKits.get(heroId),ultScale:1+.1*((heroLevels(h)[definition.ultimate?.id]||1)-1)}:{})})});
  p.formation=teamFormation;p.battle.combatVersion=2;p.battle.allies=allies;
  for(const e of enemies){e.side='enemy';e.frontRow=e.position>=4;e.energy=0}
  initializeTeamBattle(p.battle);

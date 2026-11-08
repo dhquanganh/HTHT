@@ -71,5 +71,5 @@ test('Vực thẳm Ải 1 fields the original enemy team and every stage has six
  assert.ok(one.heroes.every(h=>h.level===160&&h.stars===7));assert.equal(one.power,318338);
  for(let s=1;s<=20;s++){const e=stageEnemies(s);assert.equal(e.heroes.length,6);assert.ok(e.heroes.filter(h=>h.faction===stageFaction(s)).length>=2,'stage '+s)}
  const p=starterPlayer('abyss-enemy',now);p.account.level=90;applyAction(p,'abyss-start',{stage:1},now);
- assert.deepEqual(p.battle.enemies.map(e=>e.avatar),['92','69','109','182','143','123']);assert.deepEqual(p.battle.enemies.map(e=>e.position),[1,2,3,4,5,6]);
+ assert.deepEqual(p.battle.enemies.map(e=>e.avatar),['92','69','109','182','143','123']);assert.deepEqual(p.battle.enemies.map(e=>e.position),[4,5,1,2,3,6]);assert.deepEqual(p.battle.enemies.map(e=>e.frontRow),[true,true,false,false,false,false]);
 });
