@@ -17,7 +17,9 @@ const database='htps_world_'+crypto.randomBytes(6).toString('hex'),url='http://1
  await page.mouse.move(...at(500,300));await page.mouse.down();await page.mouse.move(...at(800,300),{steps:6});await page.mouse.up();await page.waitForTimeout(100);assert.equal(await page.evaluate(()=>Math.round(GameView.worldScroll)),0);
  await click(760,470);await page.waitForSelector('.arena-hub');assert.equal(await page.evaluate(()=>GameView.getSceneId()),37);await page.locator('.arena-hub [data-name="ButtonBack"]').click();await page.waitForFunction(()=>!document.querySelector('.arena-layer'));
  await click(148,207);await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>GameView.getSceneId()),37);
- await click(470,410);await scene(34);await page.waitForSelector('.campaign-deck');
+ // Đảo Chiến dịch (B_EventRaid) mở PopupEventRaid; màn ải Chiến dịch vẫn vào từ nút Chiến dịch ở màn chính.
+ await click(470,410);await page.waitForSelector('.raid-hub');assert.equal(await page.evaluate(()=>GameView.getSceneId()),37);await page.locator('.raid-hub [data-name="ButtonClose"]').click();await page.waitForFunction(()=>!document.querySelector('.raid-layer'));
+ await page.evaluate(()=>GameRuntime.navigate(34));await scene(34);await page.waitForSelector('.campaign-deck');
  await page.locator('[data-action="campaign-map"]').first().click();await scene(28);await page.locator('.campaign-map [data-action="home"]').click();await scene(37);
  await page.waitForTimeout(300);await click(50,45);await scene(13);
  await page.waitForTimeout(300);await click(1044,570);await scene(34);

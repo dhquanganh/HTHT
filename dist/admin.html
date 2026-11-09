@@ -10,6 +10,7 @@
   <script defer src="admin.js"></script>
   <script defer src="admin-beast.js"></script>
   <script defer src="admin-events.js"></script>
+  <script defer src="admin-raid.js"></script>
 </head>
 <body>
   <main id="login" class="card login" hidden>
@@ -21,9 +22,10 @@
     </form>
   </main>
   <div id="app" hidden>
-    <header><h1>Quản trị</h1><nav class="main-tabs" role="tablist" aria-label="Khu vực quản trị"><button id="tab-players" type="button" role="tab" aria-selected="true" class="ghost on">Tài khoản</button><button id="tab-beast" type="button" role="tab" aria-selected="false" class="ghost">Chiến Thần Thú</button><button id="tab-events" type="button" role="tab" aria-selected="false" class="ghost">Sự kiện</button></nav><button id="logout" class="ghost">Đăng xuất</button></header>
+    <header><h1>Quản trị</h1><nav class="main-tabs" role="tablist" aria-label="Khu vực quản trị"><button id="tab-players" type="button" role="tab" aria-selected="true" class="ghost on">Tài khoản</button><button id="tab-beast" type="button" role="tab" aria-selected="false" class="ghost">Chiến Thần Thú</button><button id="tab-events" type="button" role="tab" aria-selected="false" class="ghost">Sự kiện</button><button id="tab-raid" type="button" role="tab" aria-selected="false" class="ghost">Chiến dịch</button></nav><button id="logout" class="ghost">Đăng xuất</button></header>
     <div id="beast-tab" class="beast-admin" hidden></div>
     <div id="events-tab" class="events-admin" hidden></div>
+    <div id="raid-tab" class="events-admin" hidden></div>
     <div class="columns" id="players-tab">
       <section class="card">
         <form id="search-form" class="row"><input id="search" type="search" placeholder="Tìm theo tên đăng nhập hoặc tên thuyền trưởng" aria-label="Tìm tài khoản"><button type="submit">Tìm</button></form>

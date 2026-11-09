@@ -33,6 +33,7 @@ import {arenaModes,dayKey,freeTickets,ticketItem,ticketPrice,ticketBuyLimit,alls
 import {guildState,techBonus,applyTech,techView,techAction,guildCoin,createCost,createLevel,validName,rollCall,donations,donateLimit,bossFreeAttacks,bossBuyPrice,bossBuyLimit,bossRounds,stageData,bossMonster,vnDay,guildData} from './guild.mjs';
 import {excView,excAction,excLevel,excPoints,excTierStats,excSkill} from './exc.mjs';
 import {tthView,tthBuy,tthSpend,tthFinish,tthDay,bossUnit,bossOfDay,battleRounds as tthRounds} from './tth.mjs';
+import {raidSmash,raidBuy,raidPrepare,raidFinish,raidEnemyStats,raidModes,vnDay as raidDay} from './raid.mjs';
 import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
 
 export function starterPlayer(username){
@@ -256,6 +257,22 @@ function runAction(p,action,input,now,context){
  ensureRoster(p);startAfk(p,now);startSummon(p);if(p.hero.id==='luffy-gear-2')ensureLuffySkills(p);
  if(action.startsWith('arena-')||action==='allstar-bet')return arenaAction(p,action,input,now,context);
  if(action.startsWith('guild-'))return guildAction(p,action,input,now,context);
+ if(action==='raid-buy'){outsideBattle(p);requireCondition(context?.raid,'Chưa tải cấu hình Chiến dịch.',503);return raidBuy(p,input,context.raid,n=>spend(p,{diamonds:n}),now)}
+ if(action==='raid-smash'){outsideBattle(p);requireCondition(context?.raid,'Chưa tải cấu hình Chiến dịch.',503);return raidSmash(p,input,context.raid,reward=>grantReward(p,reward),now)}
+ if(action==='raid-start'){
+  // Chiến dịch: đội địch 3-6 tướng có bộ kỹ năng, chia đều lực chiến của mức; thưởng lấy từ cấu hình lúc bắt đầu trận.
+  outsideBattle(p);requireCondition(context?.raid,'Chưa tải cấu hình Chiến dịch.',503);
+  const {mode,index,level}=raidPrepare(p,input,context.raid,now),teamFormation=validateFormation(p,input.formation??formationView(p).slots),saved=p.formation;
+  const count=Math.min(6,3+Math.floor((index-1)/3)),stats=raidEnemyStats(level.power,count),pool=heroDefinitions.filter(d=>heroKits.has(d.id)&&d.id!=='luffy-gear-2'&&d.id!=='zoro-king-of-hell');
+  const seed=[...mode].reduce((n,c)=>n*31+c.charCodeAt(0),index*7919),slots=[4,5,1,2,3,6];
+  const foes=Array.from({length:count},(_,i)=>{const d=pool[(seed+i*37)%pool.length],heroId=d.id;return{id:'enemy-'+i,name:d.name,avatar:d.avatar,faction:d.faction,heroClass:d.class==='fighter'?'warrior':d.class,level:Math.min(600,20+index*15),stars:Math.min(14,2+index),position:slots[i],
+   maxHp:stats.maxHp,hp:stats.maxHp,attack:stats.attack,defense:stats.defense,speed:90+index*8,visualIndex:i,heroId,kit:heroKits.get(heroId),ultScale:1}});
+  openBattle(p,foes,{chapter:1+(index-1)%12,stageId:null,raid:{mode,index,name:raidModes[mode].title,day:raidDay(now),rewards:level.rewards}},teamFormation,saved?.position??0,now);
+  if(saved)p.formation=saved;else delete p.formation;
+  for(const e of p.battle.enemies){e.frontRow=e.position>=4;e.energy=35}
+  if(input.skip===true)while(p.battle.status==='active')battleRound(p,{battleId:p.battle.id,turn:p.battle.turn,action:'auto'},now);
+  return{message:`Khiêu chiến ${raidModes[mode].title} mức ${index}.`,battleId:p.battle.id};
+ }
  if(action==='tth-buy'){outsideBattle(p);return tthBuy(p,now,n=>spend(p,{diamonds:n}))}
  if(action==='tth-attack'){
   // Tân Tứ Hoàng: boss của ngày (kỹ năng gốc của tướng qua bộ kỹ năng đọc từ mô tả), không chết, đánh hết battleRounds hiệp.
@@ -473,6 +490,7 @@ function battleRound(p,input,now){
   events.push(...teamRound(b,input));
   if(b.silent){if(!b.allies.some(u=>u.hp>0)||!b.enemies.some(u=>u.hp>0)||b.turn>=b.silent.rounds){b.status='won';srFinish(p,b,reward=>grantReward(p,reward),now);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.beast){if(!b.allies.some(u=>u.hp>0)||b.turn>=b.beast.rounds){b.status='won';finishBeast(p,b);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
+  else if(b.raid){if(!b.enemies.some(u=>u.hp>0)){b.status='won';raidFinish(p,b,reward=>grantReward(p,reward),now);event(b,events,{type:'victory',reward:b.reward})}else if(!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status='lost';raidFinish(p,b,()=>{},now);event(b,events,{type:'defeat'})}else b.turn++}
   else if(b.tth){if(!b.allies.some(u=>u.hp>0)||b.turn>=b.tth.rounds){b.status='won';tthFinish(p,b,reward=>grantReward(p,reward));event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.guildBoss){if(!b.allies.some(u=>u.hp>0)||!b.enemies.some(u=>u.hp>0)||b.turn>=b.guildBoss.rounds){b.status='won';b.reward={damage:guildBossDamage(b).reduce((n,x)=>n+x.damage,0),...b.guildBoss.reward};event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.arena){if(!b.enemies.some(u=>u.hp>0)){b.status='won';event(b,events,{type:'victory',reward:null})}else if(!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status='lost';event(b,events,{type:'defeat'})}else b.turn++}

@@ -76,8 +76,8 @@
   if(e.target.id!=='grant-id')hideMatches();
   const id=e.target.id;
   try{
-   if(['tab-players','tab-beast','tab-events'].includes(id)){$('#players-tab').hidden=id!=='tab-players';for(const tab of ['#tab-players','#tab-beast','#tab-events']){const on=tab==='#'+id;$(tab).classList.toggle('on',on);$(tab).setAttribute('aria-selected',on)}if(id==='tab-beast')await window.AdminBeast.show();else window.AdminBeast.hide();if(id==='tab-events')await window.AdminEvents.show();else window.AdminEvents.hide();return}
-   if(e.target.closest('#beast-tab,#events-tab'))return;
+   if(['tab-players','tab-beast','tab-events','tab-raid'].includes(id)){$('#players-tab').hidden=id!=='tab-players';for(const tab of ['#tab-players','#tab-beast','#tab-events','#tab-raid']){const on=tab==='#'+id;$(tab).classList.toggle('on',on);$(tab).setAttribute('aria-selected',on)}if(id==='tab-beast')await window.AdminBeast.show();else window.AdminBeast.hide();if(id==='tab-events')await window.AdminEvents.show();else window.AdminEvents.hide();if(id==='tab-raid')await window.AdminRaid.show();else window.AdminRaid.hide();return}
+   if(e.target.closest('#beast-tab,#events-tab,#raid-tab'))return;
    if(id==='logout'){await api('/api/admin/logout',{});csrf='';$('#detail').hidden=true;showLogin()}
    if(id==='previous'&&page>0){page--;await loadPlayers()}
    if(id==='next'&&page+1<pages){page++;await loadPlayers()}

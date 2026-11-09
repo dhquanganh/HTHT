@@ -14,13 +14,14 @@ import {ensureRoster} from './hero-roster.mjs';
 import {installArena} from './arena-store.mjs';
 import {installGuild} from './guild-store.mjs';
 import {installTth} from './tth-store.mjs';
+import {defaultRaidConfig,validateRaidConfig,raidView} from './raid.mjs';
 const scrypt=promisify(scryptCallback),sha=value=>createHash('sha256').update(value).digest('hex');
 export async function passwordHash(password){const salt=randomBytes(16).toString('hex');const hash=await scrypt(password,salt,64,{N:16384,r:8,p:1});return`scrypt:${salt}:${hash.toString('hex')}`}
 async function verifyPassword(password,encoded){const [scheme,salt,expected]=encoded.split(':');if(scheme!=='scrypt'||!salt||!expected)return false;const hash=await scrypt(password,salt,64,{N:16384,r:8,p:1});const saved=Buffer.from(expected,'hex');return hash.length===saved.length&&timingSafeEqual(hash,saved)}
 const summary=user=>({...(ensureRoster(user.player),{}),id:user._id.toHexString(),username:user.usernameKey,displayName:user.player.displayName,level:user.player.account.level,gold:user.player.wallet.gold,diamonds:user.player.wallet.diamonds,stage:user.player.adventure.unlockedStage,towerFloor:user.player.tower?.floor||1,heroes:1+Object.keys(user.player.reserveHeroes||{}).length,locked:!!user.locked,createdAt:user.createdAt,updatedAt:user.updatedAt});
 export class Store {
  constructor(uri,dbName){this.client=new MongoClient(uri,{serverSelectionTimeoutMS:15000,connectTimeoutMS:10000,maxPoolSize:15});this.db=this.client.db(dbName);this.users=this.db.collection('players');this.sessions=this.db.collection('sessions');this.adminLog=this.db.collection('admin_log');this.ranking=this.db.collection('tower_ranking');for(const [field,name] of [['beastBosses','beast_bosses'],['beastConfig','beast_config'],['beastRewards','beast_rewards'],['beastSeasons','beast_seasons'],['beastRanking','beast_ranking'],['beastPayouts','beast_payouts']])this[field]=this.db.collection(name)}
- async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
+ async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
  async close(){clearInterval(this.beastTimer);clearInterval(this.arenaTimer);clearInterval(this.tthTimer);await this.client.close()}
  // ---- Chiến Thần Thú ----
  async setupBeast(){
@@ -145,6 +146,15 @@ export class Store {
   const ahead=mine?await this.ranking.countDocuments({...visible,$or:[{floors:{$gt:mine.floors}},{floors:mine.floors,reachedAt:{$lt:mine.reachedAt}},{floors:mine.floors,reachedAt:mine.reachedAt,userId:{$lt:mine.userId}}]}):0;
   return{total,top:rows.map((doc,i)=>({...row(doc,i+1),me:doc.userId.equals(_id)})),me:mine?row(mine,ahead+1):null};
  }
+ // ---- Chiến dịch: cấu hình phần thưởng / lực chiến / cấp mở trong raid_config (admin sửa), mặc định theo bảng gốc.
+ async raidConfig(){const doc=await this.raidConfigs.findOne({_id:'config'});return doc?.config||defaultRaidConfig()}
+ async raidStatus(userId){const user=await this.getUser(userId);requireCondition(user,'Tài khoản không tồn tại.',401);return raidView(user.player,await this.raidConfig())}
+ async raidAdmin(){const doc=await this.raidConfigs.findOne({_id:'config'});return{config:doc?.config||defaultRaidConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultRaidConfig(),rewardItems:rewardItems()}}
+ async setRaidConfig(input,ip){
+  if(input?.reset===true){await this.raidConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Chiến dịch về mặc định',ip)}
+  else{await this.raidConfigs.updateOne({_id:'config'},{$set:{config:validateRaidConfig(input?.config,isRewardId),updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Chiến dịch',ip)}
+  return this.raidAdmin();
+ }
  async createUser(username,password){const doc={usernameKey:username.toLowerCase(),passwordHash:await passwordHash(password),createdAt:new Date(),updatedAt:new Date(),player:starterPlayer(username)};try{const {insertedId}=await this.users.insertOne(doc);await this.saveRanking(insertedId,doc.player,false);return{...doc,_id:insertedId}}catch(e){if(e.code===11000)throw new GameError('Tên đăng nhập đã được sử dụng.',409,'USERNAME_TAKEN');throw e}}
  async authenticate(username,password){const user=await this.users.findOne({usernameKey:username.toLowerCase()});const valid=await verifyPassword(password,user?.passwordHash||this.dummyHash);requireCondition(user&&valid,'Tên đăng nhập hoặc mật khẩu không đúng.',401,'INVALID_CREDENTIALS');requireCondition(!user.locked,'Tài khoản đã bị khóa.',403,'ACCOUNT_LOCKED');return user}
  async createSession(userId){const token=randomBytes(32).toString('base64url'),csrfToken=randomBytes(24).toString('base64url');const session={userId,tokenHash:sha(token),csrfToken,createdAt:new Date(),expiresAt:new Date(Date.now()+7*86400000)};await this.sessions.insertOne(session);return{token,session}}
@@ -190,7 +200,7 @@ export class Store {
    const user=await this.getUser(userId);requireCondition(user,'Phiên đăng nhập không hợp lệ.',401);
    const receipt=user.player.receipts.find(r=>r.key===requestKey);
    if(receipt){requireCondition(receipt.fingerprint===fingerprint,'Mã thao tác đã được dùng cho nội dung khác.',409,'IDEMPOTENCY_CONFLICT');return{player:playerView(user.player),result:receipt.result,replayed:true}}
-   const context=extraContext??(action.startsWith('beast-')?await this.beastContext(userId):undefined);
+   const context=extraContext??(action.startsWith('beast-')?await this.beastContext(userId):action.startsWith('raid-')?{raid:await this.raidConfig()}:undefined);
    const next=structuredClone(user.player),result=applyAction(next,action,input,Date.now(),context);
    next.version++;next.receipts.push({key:requestKey,fingerprint,result,at:new Date().toISOString()});next.receipts=next.receipts.slice(-150);
    next.activity.push({action,message:result.message,at:new Date().toISOString(),version:next.version});next.activity=next.activity.slice(-100);

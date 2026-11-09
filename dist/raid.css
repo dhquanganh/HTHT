@@ -1,0 +1,14 @@
+/* Chiến dịch (raid-ui.js): PopupEventRaid / PopupListRaidChallenge trên bản đồ thế giới. */
+.raid-layer{z-index:45;pointer-events:auto!important}.raid-list{z-index:46}
+body:has(.raid-layer) #dialog-ui{z-index:60}
+.raid-layer .pd-button{cursor:pointer}.raid-layer .pd-button:hover{filter:brightness(1.08)}
+.raid-layer>[data-name="Shade"]{animation:raid-fade .18s ease-out}
+.raid-layer>.pd-node:not([data-name="Shade"]){animation:raid-pop .26s cubic-bezier(.2,1.4,.45,1) both}
+.raid-hub [data-name^="Image"].pd-node{transition:transform .15s}
+.raid-hub .raid-locked{filter:grayscale(.8) brightness(.85)}
+.raid-list [data-name="Viewport"]{overflow-y:auto!important;scrollbar-width:thin}
+.raid-list [data-name="Content"]>.pd-node{left:0!important;width:100%!important}
+.raid-rewards{position:absolute;inset:0;display:flex;align-items:center;gap:8px;pointer-events:auto}
+.raid-rewards .ev-tile{width:74px;height:74px}.raid-rewards .ev-tile img{width:60px;height:60px}
+@keyframes raid-pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes raid-fade{from{opacity:0}}
