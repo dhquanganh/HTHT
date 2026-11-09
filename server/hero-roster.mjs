@@ -18,6 +18,15 @@ export function ensureRoster(player){
  }
 }
 export function heroSkills(hero){return definitionFor(hero.id).skills}
-export function heroLevels(hero){return Object.fromEntries(heroSkills(hero).map(s=>{const v=hero.skills?.[s.id]??hero.skills?.[s.legacySkillId]??1;return[s.id,Number.isSafeInteger(v)&&v>0?v:1]}))}
+// Kỹ năng tự nâng khi thức tỉnh, như bản gốc (mỗi mức sao của tướng dùng một bản kỹ năng [1]-[4] trong db_heroes),
+// rút gọn để mọi tướng max cấp 4 khi tới sao tím: 1-2 sao cấp 1, 3-4 sao cấp 2, 5 sao cấp 3, từ 6 sao (sao tím) cấp 4.
+// Không còn nâng bằng sách nên cấp chỉ phụ thuộc số sao; skills đã lưu từ bản trước bị bỏ qua.
+export const maxSkillLevel=4;
+export const starSkillLevel=stars=>stars>=6?4:stars>=5?3:stars>=3?2:1;
+export function heroLevels(hero){
+ // Đơn vị trong trận (không có sao) giữ cấp đã chụp lúc vào trận.
+ if(hero.stars===undefined)return Object.fromEntries(heroSkills(hero).map(s=>{const v=hero.skills?.[s.id]??hero.skills?.[s.legacySkillId]??1;return[s.id,Math.min(maxSkillLevel,Number.isSafeInteger(v)&&v>0?v:1)]}));
+ const level=starSkillLevel(hero.stars);return Object.fromEntries(heroSkills(hero).map(s=>[s.id,level]));
+}
 export function heroTier(hero,id){const s=heroSkills(hero).find(s=>s.id===id);return s.levels[Math.min(s.levels.length,heroLevels(hero)[id]||1)-1]}
 export const shardFor=hero=>hero.id==='zoro-king-of-hell'?'material:zoro-shard':hero.id==='luffy-gear-2'?'material:luffy-shard':'heroshard:'+definitionFor(hero.id).avatar;

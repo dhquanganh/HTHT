@@ -43,12 +43,15 @@ test('the normal upgrade loop works on a summoned hero',()=>{
  const p=owned(['624']),id='hero-624';applyAction(p,'hero-select',{heroId:id});assert.equal(p.hero.id,id);
  p.wallet.spirit=99999;p.wallet.gold=1e7;applyAction(p,'upgrade',{type:'level'});assert.equal(p.hero.level,2);
  p.hero.level=30;p.inventory['heroshard:624']=50;applyAction(p,'upgrade',{type:'star'});assert.equal(p.hero.stars,2);
- const skill=definitionFor(id).skills[0].id;p.inventory['material:skill-book']=50;p.hero.rank=1;applyAction(p,'upgrade',{type:'rank'});assert.equal(p.hero.rank,2);applyAction(p,'upgrade',{type:'skill',skillId:skill});assert.equal(p.hero.skills[skill],2);
+ const skill=definitionFor(id).skills[0].id;p.inventory['material:skill-book']=50;p.hero.rank=1;applyAction(p,'upgrade',{type:'rank'});assert.equal(p.hero.rank,2);assert.throws(()=>applyAction(p,'upgrade',{type:'skill',skillId:skill}),/tự động/);p.hero.stars=3;assert.equal(playerView(p).hero.skills[skill],2);p.hero.stars=6;assert.equal(playerView(p).hero.skills[skill],4);
  const view=playerView(p);assert.equal(view.hero.name,definitionFor(id).name);assert.ok(view.costs.star.items['heroshard:624']);assert.ok(itemById.has('heroshard:624'));
 });
 
 test('skill level raises the ultimate',()=>{
- const p=owned(['624']),id='hero-624',ultimate=definitionFor(id).ultimate;p.reserveHeroes[id].skills[ultimate.id]=3;applyAction(p,'battle-start',{stageId:1,formation:slots(id)});assert.ok(Math.abs(p.battle.allies[0].ultimate.damage-ultimate.damage*1.2)<1e-9);
+ const p=owned(['537']),id='hero-537',levels=definitionFor(id).ultimates;p.reserveHeroes[id].stars=6;applyAction(p,'battle-start',{stageId:1,formation:slots(id)});const ally=p.battle.allies[0];
+ assert.equal(ally.ultimate.damage,levels[3].damage);assert.ok(levels[3].damage>levels[0].damage);assert.equal(ally.ultScale,1);
+ // Bộ kỹ năng trận đấu dùng mô tả [4] gốc: Tốc Kiếm Yoru 1000% Công thay vì 300% ở cấp 1.
+ assert.ok(ally.kit.ultimate.effects.find(e=>e.type==='damage').mult>2);
 });
 
 test('heroes stored by the earlier collection become real heroes once',()=>{

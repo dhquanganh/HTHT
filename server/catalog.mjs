@@ -38,7 +38,7 @@ Object.assign(equipmentData.points,artifactData.points);
 for(const item of items){
  const row=artifactData.items[item.id];if(item.category!=='artifact'||!row)continue;
  const level=1,points=row.levels[level-1]||[],base=points.find(g=>!g.faction&&!g.clazz)?.point||[];
- Object.assign(item,{tier:row.quality,rarity:artifactRarity[row.quality],rarityRank:row.quality,stars:level,points,levels:row.levels,released:row.release,
+ Object.assign(item,{tier:row.quality,rarity:artifactRarity[row.quality],rarityRank:row.quality,stars:level,points,levels:row.levels,released:row.release,sellPrices:row.sellPrices,
   stats:Object.fromEntries(base.filter(([id])=>id===0||id===2).map(([id,value])=>[id===0?'attack':'maxHp',value])),
   sellPrice:row.sellPrices[level-1]||item.sellPrice||1,price:(row.sellPrices[level-1]||250)*4,priceCurrency:'gold',noShop:item.noShop||row.quality>2});
 }
@@ -59,11 +59,36 @@ for(const item of items){
 export const chestData=read('chests.json');
 // Rương mở được nên giá tự sinh trở thành lỗ hổng: khóa mua bán như các món giá trị khác.
 for(const item of items)if(chestData[item.id]){item.chest=chestData[item.id].mode;item.noShop=true}
-export const itemById=new Map(items.map(x=>[x.id,x]));
+// Bảo vật đã nâng cấp là biến thể "artifact:<id>@<sao>:<exp>" (server/artifact-upgrade.mjs): tra theo bảo vật gốc,
+// chỉ số là dòng effect của sao đó. Biến thể chỉ nằm trong Map tra cứu, không vào danh sách cửa hàng/từ điển.
+export const artifactVariant=/^(artifact:\d+)@(\d+):(\d+)$/;
+export function variantOf(base,stars,exp){
+ const level=Math.max(1,Math.min(stars,base.levels.length)),points=base.levels[level-1]||[],plain=points.find(g=>!g.faction&&!g.clazz)?.point||[];
+ return{...base,id:`${base.id}@${level}:${exp}`,variantOf:base.id,stars:level,artifactExp:exp,points,
+  stats:Object.fromEntries(plain.filter(([id])=>id===0||id===2).map(([id,value])=>[id===0?'attack':'maxHp',value])),
+  sellPrice:base.sellPrices?.[level-1]||base.sellPrice,noShop:true};
+}
+class ItemMap extends Map{
+ get(id){const own=super.get(id);if(own||typeof id!=='string')return own;const m=artifactVariant.exec(id),base=m&&super.get(m[1]);if(!base?.levels||m[2]==='1'&&m[3]==='0')return undefined;
+  const item=variantOf(base,Number(m[2]),Number(m[3]));if(item.id!==id)return undefined;super.set(id,item);return item}
+ has(id){return!!this.get(id)}
+}
+export const itemById=new ItemMap(items.map(x=>[x.id,x]));
 export const equipmentSlots=['pants','armor','boots','helmet','accessory'];
 export const skills=read('luffy-skills.json');
+// Cấp 4 (max, sao tím). Luffy Gear 2 (avatar 109) không có bản [4] trong dữ liệu gốc: tăng tiếp theo nhịp [1]-[3].
+const luffyLevel4={
+ 'rubber-whip':{description:'Nộ: Gây sát thương (360%Công) địch và hồi máu đồng minh có máu thấp nhất (650%Công). Bản thân tự tăng (80%Công) trong 2 lượt',values:{damage:3.6,heal:6.5,attackBuff:.8}},
+ polish:{description:'Bị động: Nhận sát thương từ Nộ & đánh thường sẽ giảm 22% chí mạng trong 3 lượt',values:{critReduction:.22}},
+ 'armament-haki':{description:'Bị động: Tăng 50% Giáp và 50% Máu',values:{armor:.5,hp:.5}},
+ desperation:{description:'Bị động: Khi máu dưới 30%, lập tức tăng bản thân 150% Giáp trong 3 lượt (Kích hoạt 1 lần)',values:{armor:1.5}},
+};
+for(const s of skills)if(s.levels.length===3)s.levels.push({level:4,sourceId:null,...luffyLevel4[s.id]});
 export const heroDefinition={id:'luffy-gear-2',name:'Luffy Gear 2',avatar:'109',faction:'abyss',class:'fighter',visual:luffy,skills};
 export const zoroDefinition=read('zoro-king-of-hell.json');
+// Zoro King Of Hell: bản [4] gốc là kỹ năng void (db_hero_skill 2569-2572, dist/germa.json avatar 576).
+{const void4=Object.fromEntries(read('germa.json').heroes['576'].skills.map((s,i)=>[['enma','conqueror-haki','decisive-strike','hiryu-jigoku'][i],s]));
+ for(const s of zoroDefinition.skills)if(s.levels.length===3&&void4[s.id])s.levels.push({level:4,sourceId:void4[s.id].id,name:void4[s.id].name+' [4]',description:void4[s.id].description})}
 export const heroDefinitions=[heroDefinition,zoroDefinition];
 export const heroAlbum=read('hero-album.json');
 export const definitionFor=id=>heroDefinitions.find(h=>h.id===id)||heroDefinition;
@@ -78,7 +103,7 @@ const campaignSource=read('campaign.json');
 export const stages=campaignSource.stages;
 const {stages:sourceStages,warnings:campaignWarnings,...campaignMetadata}=campaignSource;
 export const campaign=campaignMetadata;
-export const economy={initialGold:12000,initialDiamonds:500,dailyGold:1500,dailyDiamonds:50,maxHeroLevel:60,maxStars:19,maxRank:5,maxSkillLevel:3,afk:{tickSeconds:5,maxSeconds:36000,minClaimSeconds:60,overflowSeconds:3600,stoneItem:'consumable:1'},tower:{turnsPerDay:5},summon:{item:'consumable:16',factions:['fortress','shadow','abyss','forest'],counts:[1,10],rates:[[6,3],[5,12],[4,35],[3,50]],startItems:10,duplicateShards:8}};
+export const economy={initialGold:12000,initialDiamonds:500,dailyGold:1500,dailyDiamonds:50,maxHeroLevel:60,maxStars:19,maxRank:5,maxSkillLevel:4,afk:{tickSeconds:5,maxSeconds:36000,minClaimSeconds:60,overflowSeconds:3600,stoneItem:'consumable:1'},tower:{turnsPerDay:5},summon:{item:'consumable:16',factions:['fortress','shadow','abyss','forest'],counts:[1,10],rates:[[6,3],[5,12],[4,35],[3,50]],startItems:10,duplicateShards:8}};
 export const towerData=read('tower.json');
 export const beastData=read('beast.json');
 export const heroStoneData=read('hero-stones.json');
@@ -97,6 +122,15 @@ export const heroKits=new Map();
 export const profileForAvatar=avatar=>heroProfiles[avatar]||null;
 // Kẻ địch là tướng (Vực thẳm): dùng bộ kỹ năng theo avatar, kể cả avatar không triệu hồi được (109 Luffy - S).
 const avatarKits=new Map();
+// Mô tả kỹ năng theo cấp [1]-[4] từ db_heroes / void (tools/export-skill-levels.py).
+const skillLevelData=read('skill-levels.json'),levelKits=new Map();
+/** Bộ kỹ năng trận đấu theo cấp từng ô kỹ năng (thứ tự profile: Nộ, bị động 1-3); `override` thay mô tả của ô (Germa). */
+export function levelKit(avatar,levels,override={}){
+ const profile=heroProfiles[avatar];if(!profile?.skills?.length)return null;
+ const key=avatar+':'+levels.join(',')+':'+Object.keys(override).join(',');
+ if(!levelKits.has(key)){const data=skillLevelData[avatar];levelKits.set(key,kitFromProfile({...profile,skills:profile.skills.map((s,i)=>override[i]?{...s,...override[i]}:{...s,description:data?.[i]?.[Math.min(4,levels[i]||1)-1]?.description||s.description})}))}
+ return levelKits.get(key);
+}
 export function kitForAvatar(avatar){if(heroKits.has('hero-'+avatar))return heroKits.get('hero-'+avatar);if(!avatarKits.has(avatar))avatarKits.set(avatar,heroProfiles[avatar]?.skills?.length?kitFromProfile(heroProfiles[avatar]):null);return avatarKits.get(avatar)}
 export function ultimateFrom(skill,id){
  const text=skill.description,clamp=(value,low,high)=>Math.min(high,Math.max(low,value));
@@ -118,9 +152,11 @@ for(const hero of heroAlbum.heroes){
  const visual=heroVisuals[hero.avatar],profile=heroProfiles[hero.avatar];
  if(heroDefinitions.some(h=>h.avatar===hero.avatar)||!visual?.skeleton||!visual.head||!profile)continue;
  const id='hero-'+hero.avatar,scale=gradeScales[hero.rank]||1,shape=classScales[hero.class]||{attack:1,maxHp:1};
- const skills=profile.skills.map((skill,i)=>({id:`${id}-${i}`,name:skill.name,assetKey:skill.icon,passive:skill.passive,energy:skill.passive?0:100,cooldown:0,animation:'skill',description:skill.description,levels:[{level:1,description:skill.description}]}));
+ const perLevel=skillLevelData[hero.avatar];
+ const skills=profile.skills.map((skill,i)=>({id:`${id}-${i}`,name:skill.name,assetKey:skill.icon,passive:skill.passive,energy:skill.passive?0:100,cooldown:0,animation:'skill',description:skill.description,levels:perLevel?.[i]?perLevel[i].map(l=>({level:l.level,description:l.description})):[{level:1,description:skill.description}]}));
 heroKits.set(id,kitFromProfile(profile));
- heroDefinitions.push({id,name:hero.name,avatar:hero.avatar,faction:hero.faction,class:hero.class,grade:gradeNames[hero.rank],rank:hero.rank,visual:{card:hero.card,head:visual.head,art:profile.art,skeleton:visual.skeleton},skills,combat:{skills:(visual.combat?.skills||[]).map(s=>({animation:s.animation,delay_cast_eff:s.delay_cast_eff}))},statScale:{attack:scale*shape.attack,maxHp:scale*shape.maxHp},ultimate:ultimateFrom(profile.skills[0],skills[0].id)});
+ heroDefinitions.push({id,name:hero.name,avatar:hero.avatar,faction:hero.faction,class:hero.class,grade:gradeNames[hero.rank],rank:hero.rank,visual:{card:hero.card,head:visual.head,art:profile.art,skeleton:visual.skeleton},skills,combat:{skills:(visual.combat?.skills||[]).map(s=>({animation:s.animation,delay_cast_eff:s.delay_cast_eff}))},statScale:{attack:scale*shape.attack,maxHp:scale*shape.maxHp},ultimate:ultimateFrom(profile.skills[0],skills[0].id),
+  ultimates:[1,2,3,4].map(l=>ultimateFrom({...profile.skills[0],description:skills[0].levels[Math.min(l,skills[0].levels.length)-1].description},skills[0].id))});
 }
 // Asset chỉ có mảnh chung; mảnh riêng theo hero_shard_id của db_tower. 50 mảnh ghép thành 1 tướng, như thẻ chọn tướng.
 export const heroShardMerge=50;
@@ -136,4 +172,4 @@ if(itemById.get('consumable:60004')){Object.assign(itemById.get('consumable:6000
 // Beli và Đá EXP theo giờ: tính theo tốc độ rương tự động của ải cao nhất, như mô tả vật phẩm.
 for(const [offset,kind] of [[60,'gold'],[66,'stone']])[2,5,8,12,24,72].forEach((hours,i)=>{const item=itemById.get('consumable:'+(offset+i));if(item){item.afk={kind,hours};item.effect={}}});
 import {eventList,checkinRewards} from './events.mjs';
-export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals,...silentVisuals}},economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:eventList,checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points}}
+export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals,...silentVisuals}},economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:eventList,checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points,artifactUpgrade:read('artifact-upgrade.json')}}

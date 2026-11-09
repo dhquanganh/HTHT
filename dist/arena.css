@@ -1,0 +1,67 @@
+/* Chiến trường (arena-ui.js): scene 8 / 20 / 33 / 5 và các popup gốc dựng bằng PrefabDOM trên bản đồ thế giới. */
+.arena-layer{z-index:44;pointer-events:auto!important}
+.arena-popup{z-index:46}
+body:has(.arena-layer) #dialog-ui{z-index:60}
+.arena-layer .pd-button{cursor:pointer}
+.arena-layer .pd-button:hover{filter:brightness(1.08)}
+.arena-popup>[data-name="Shade"]{animation:arena-fade .18s ease-out}
+.arena-popup>.pd-node:not([data-name="Shade"]){animation:arena-pop .26s cubic-bezier(.2,1.4,.45,1) both}
+@keyframes arena-pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes arena-fade{from{opacity:0}}
+/* Sảnh: các thẻ Đơn đấu / Liên đấu / Võ đấu bấm được cả thẻ. */
+.arena-hub [data-name^="Box"].pd-button{cursor:pointer;transition:transform .12s}
+.arena-hub [data-name^="Box"].pd-button:hover{transform:translateY(-3px)}
+/* HTML chèn vào node prefab */
+.arena-html{position:absolute;inset:0;pointer-events:none}.arena-html>*{pointer-events:auto}
+.arena-empty{position:absolute;left:0;right:0;top:45%;text-align:center;color:#f2dfbd;font-size:22px;text-shadow:1px 1px #000}
+.arena-reward-row{position:absolute;inset:0;display:flex;align-items:center;gap:10px;padding:0 6px}
+.arena-tile.ev-tile{width:76px;height:76px}.arena-tile.ev-tile img{width:62px;height:62px}
+[data-name="CellArenaReward"] .arena-reward-row,[data-name="CellSeasonRewards"] .arena-reward-row,[data-name="CellKnockOutRewards"] .arena-reward-row{justify-content:flex-end;padding-right:40px}
+.arena-tab-off{filter:saturate(.75) brightness(.93)}
+/* Bảng thưởng Liên đấu (PopupRewardTrailOfChampion): các bậc hạng dưới dòng mô tả. */
+.arena-reward-table{position:absolute;left:0;right:0;top:4px;display:flex;flex-direction:column;gap:8px}
+.arena-reward-line{position:relative;height:88px;border-radius:10px;background:#f3e6cc;box-shadow:inset 0 0 0 2px #d8c09a}
+.arena-reward-line .arena-reward-row{left:auto;right:30px;justify-content:flex-end}
+.arena-rank{position:absolute;left:60px;top:50%;transform:translateY(-50%);font-size:24px;color:#5b3a1d}.arena-rank img{width:46px;height:50px}
+/* Thẻ tướng */
+.arena-card{position:relative;display:block;width:90px;height:90px;overflow:hidden;isolation:isolate;color:#fff;flex:none}
+.arena-card.mini{width:100%;height:100%}
+.arena-card-frame{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.arena-card-head{position:absolute;left:8%;top:8%;width:84%;height:84%;object-fit:cover;z-index:1}
+.arena-card-faction{position:absolute;left:3%;top:3%;width:30%;height:30%;z-index:3}
+.arena-card>b{position:absolute;right:8%;top:4%;font-size:21px;line-height:1;text-shadow:1px 2px #000,-1px -1px #000;z-index:3}
+.arena-card-stars{position:absolute;left:0;right:0;bottom:5%;display:flex;justify-content:center;z-index:3}
+.arena-card-stars .hero-stars>img{width:15px;height:15px}.arena-card-stars .hero-star-e{width:62px;height:24px}.arena-card-stars .hero-star-e img{width:18px!important;height:18px!important}.arena-card-stars .hero-star-e b{top:4px;font-size:10px}
+.arena-card-check{position:absolute;left:27%;top:27%;width:46%;height:44%;z-index:4}
+/* Đội hình thủ */
+.arena-defense [data-name^="SlotHero"].pd-button{cursor:pointer}
+.arena-defense .arena-row-on{box-shadow:0 0 0 3px #ffd24a,0 0 14px 4px #ffb02e88;border-radius:8px}
+.arena-hero-strip{display:flex;gap:10px;align-items:center;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin}
+.arena-html.bottom{inset:auto 0 0 0;height:150px;pointer-events:auto}
+.arena-html.bottom .arena-hero-strip{position:absolute;left:110px;right:200px;bottom:8px;height:124px;padding:0 18px;border:5px solid #8a5a2c;border-radius:10px;background:#3b2316e8;box-shadow:inset 0 0 0 2px #c08a4a}
+.arena-html.in-list .arena-hero-strip{position:absolute;inset:0;padding:0 8px}
+.arena-hero-pick{all:unset;cursor:pointer;flex:none;width:94px;height:94px;display:block}
+.arena-hero-pick:hover{filter:brightness(1.12)}
+.arena-hero-pick.used .arena-card-head{filter:brightness(.6)}
+.arena-save{all:unset;position:absolute;right:32px;bottom:38px;width:150px;height:58px;display:grid;place-items:center;cursor:pointer;border-radius:10px;background:linear-gradient(#b8ea6c,#7fbd35);box-shadow:inset 0 0 0 3px #dff7a8,0 4px 0 #44691f;color:#29470f;font:700 26px/1 GameFont,sans-serif}
+.arena-save:hover{filter:brightness(1.08)}
+/* Thông tin người chơi */
+.arena-player-foot{position:absolute;left:50%;transform:translateX(-50%);top:360px;width:640px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;pointer-events:auto}
+.arena-extra-team{display:flex;align-items:center;gap:8px;color:#5b3a1d;font-size:20px}.arena-extra-team .arena-card{width:72px;height:72px}
+.arena-mail{all:unset;cursor:pointer;width:210px;height:62px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(#ffe27a,#f2b631);box-shadow:inset 0 0 0 3px #fff1b0,0 4px 0 #8b5a1c;color:#6a3d12;font:700 25px/1 GameFont,sans-serif}
+/* Liên đấu: kết quả 3 trận */
+.arena-league-result{text-align:center}.arena-league-result .arena-score{font-size:44px;color:#9b541f;margin:6px 0 10px}
+.arena-league-result ol{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
+.arena-league-result li{display:flex;justify-content:space-between;padding:8px 16px;border-radius:8px;background:#efdfb6;font-size:20px}
+.arena-league-result li.win b{color:#3d8a1f}.arena-league-result li.lose b{color:#b0331f}
+.arena-last{list-style:none;padding:0;margin:0;display:grid;gap:6px}.arena-last li{display:grid;grid-template-columns:34px 46px 1fr auto;align-items:center;gap:10px;padding:5px 10px;border-radius:8px;background:#efdfb6;font-size:18px}.arena-last img{width:44px;height:44px;border-radius:6px}.arena-last em{font-style:normal;color:#9b541f}
+.arena-bet-tag{position:absolute;right:120px;bottom:6px;color:#ffe9a6;font-size:16px;text-shadow:1px 1px #000;pointer-events:none}
+/* Sảnh: "Kết thúc sau:" + đồng hồ trên một dòng (HorizontalLayoutGroup + ContentSizeFitter của Unity). */
+.arena-layer [data-name="GroupTime"],.arena-layer [data-name="CountDown"]{display:flex!important;justify-content:center;align-items:center;gap:10px}
+.arena-layer [data-name="GroupTime"]>.pd-node,.arena-layer [data-name="CountDown"]>.pd-node{position:static!important;width:auto!important;flex:none}
+.arena-layer [data-name="GroupTime"] .pd-text,.arena-layer [data-name="CountDown"] .pd-text{white-space:nowrap}
+/* RewardContainer / LayoutElementReward là khung bố cục (Image trắng không sprite trong prefab): không vẽ nền. */
+.arena-layer [data-name="RewardContainer"],.arena-layer [data-name="LayoutElementReward"],.arena-layer [data-name="GroupReward"]{background:none!important;border-image:none!important}
+.arena-layer [data-name="RewardContainer"]>.pd-image,.arena-layer [data-name="LayoutElementReward"]>.pd-image{display:none}
+.arena-knockout [data-name="CountDown"]{justify-content:flex-start!important;overflow:visible;margin-left:-70px}
+.arena-knockout [data-name="TextCountDownRefresh"] .pd-text{font-size:20px!important}

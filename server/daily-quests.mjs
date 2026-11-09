@@ -14,7 +14,7 @@ export const dailyQuests=[
  {id:'wine',name:'Tặng bình rượu cho bạn bè 1 lần',target:1,go:'events',source:'Điểm danh Lễ Hội Ẩm Thực'},
  {id:'spin',name:'Quay vòng quay may mắn 1 lần',target:1,go:'events',source:'Vòng Quay May Mắn'},
  {id:'forge',name:'Rèn trang bị 1 lần',target:1,go:'forge',source:'Tiệm rèn'},
- {id:'arena',name:'Khiêu chiến Đơn đấu 2 lần',target:2,go:'tower',source:'Khiêu chiến Tháp'},
+ {id:'arena',name:'Khiêu chiến Đơn đấu 2 lần',target:2,go:'arena',source:'Đơn đấu ở Chiến trường'},
  {id:'afk',name:'Thu thập thưởng treo máy 2 lần',target:2,go:'afk',source:'Nhận thưởng treo máy'},
  {id:'raid',name:'Đánh thắng Event Raid 1 lần',target:1,go:'beast',source:'Đánh xong Boss Máy Chủ'},
 ].map((q,i)=>({...q,rewards:[{itemId:'gold',quantity:20000*(i+1)},{itemId:'spirit',quantity:500*(i+1)}]}));
@@ -36,7 +36,7 @@ export function trackDaily(p,{action,input={},beastWon=false},now=Date.now()){
  if(action==='event-rollcall')keys.push('wine');
  if(action==='event-spin')keys.push('spin');
  if(action==='forge')keys.push('forge');
- if(action==='tower-start')keys.push('arena');
+ if(action==='arena-start'&&input.mode==='solo')keys.push('arena');
  if(action==='afk-claim')keys.push('afk');
  if(beastWon)keys.push('raid');
  if(!keys.length)return;

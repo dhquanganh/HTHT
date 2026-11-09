@@ -11,14 +11,15 @@ import {isRewardId} from './game.mjs';
 import {beastBosses,bossByKey,bracketIndex,classLabel,beastEntry,beastTurns,defaultBoss,defaultConfig,defaultRewards,rankBrackets,rewardItems,rewardView,variantOf,validateBossStats,validateConfig,validateRewards} from './beast.mjs';
 import {itemById,itemIcon} from './catalog.mjs';
 import {ensureRoster} from './hero-roster.mjs';
+import {installArena} from './arena-store.mjs';
 const scrypt=promisify(scryptCallback),sha=value=>createHash('sha256').update(value).digest('hex');
 export async function passwordHash(password){const salt=randomBytes(16).toString('hex');const hash=await scrypt(password,salt,64,{N:16384,r:8,p:1});return`scrypt:${salt}:${hash.toString('hex')}`}
 async function verifyPassword(password,encoded){const [scheme,salt,expected]=encoded.split(':');if(scheme!=='scrypt'||!salt||!expected)return false;const hash=await scrypt(password,salt,64,{N:16384,r:8,p:1});const saved=Buffer.from(expected,'hex');return hash.length===saved.length&&timingSafeEqual(hash,saved)}
 const summary=user=>({...(ensureRoster(user.player),{}),id:user._id.toHexString(),username:user.usernameKey,displayName:user.player.displayName,level:user.player.account.level,gold:user.player.wallet.gold,diamonds:user.player.wallet.diamonds,stage:user.player.adventure.unlockedStage,towerFloor:user.player.tower?.floor||1,heroes:1+Object.keys(user.player.reserveHeroes||{}).length,locked:!!user.locked,createdAt:user.createdAt,updatedAt:user.updatedAt});
 export class Store {
  constructor(uri,dbName){this.client=new MongoClient(uri,{serverSelectionTimeoutMS:15000,connectTimeoutMS:10000,maxPoolSize:15});this.db=this.client.db(dbName);this.users=this.db.collection('players');this.sessions=this.db.collection('sessions');this.adminLog=this.db.collection('admin_log');this.ranking=this.db.collection('tower_ranking');for(const [field,name] of [['beastBosses','beast_bosses'],['beastConfig','beast_config'],['beastRewards','beast_rewards'],['beastSeasons','beast_seasons'],['beastRanking','beast_ranking'],['beastPayouts','beast_payouts']])this[field]=this.db.collection(name)}
- async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
- async close(){clearInterval(this.beastTimer);await this.client.close()}
+ async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
+ async close(){clearInterval(this.beastTimer);clearInterval(this.arenaTimer);await this.client.close()}
  // ---- Chiến Thần Thú ----
  async setupBeast(){
   await this.beastRanking.createIndex({season:1,boss:1,userId:1},{unique:true});await this.beastRanking.createIndex({season:1,boss:1,hidden:1,damage:-1,reachedAt:1,userId:1});await this.beastPayouts.createIndex({userId:1,claimedAt:1});await this.beastPayouts.createIndex({season:1,boss:1,userId:1},{unique:true});
@@ -175,14 +176,14 @@ export class Store {
   const _id=this.adminId(id),update=await this.users.updateOne({_id},{$set:{locked}});requireCondition(update.matchedCount,'Tài khoản không tồn tại.',404);
   await this.ranking.updateOne({userId:_id},{$set:{hidden:locked}});await this.beastRanking.updateMany({userId:_id},{$set:{hidden:locked}});if(locked)await this.sessions.deleteMany({userId:_id});await this.adminLog.insertOne({userId:_id,at:new Date(),detail:locked?'Khóa tài khoản':'Mở khóa tài khoản',ip});
  }
- async mutate(userId,requestKey,action,input){
+ async mutate(userId,requestKey,action,input,extraContext){
   requireCondition(typeof requestKey==='string'&&/^[A-Za-z0-9_-]{12,100}$/.test(requestKey),'Thiếu mã chống lặp thao tác.',400,'IDEMPOTENCY_REQUIRED');
   const fingerprint=sha(JSON.stringify({action,input}));
   for(let attempt=0;attempt<10;attempt++){
    const user=await this.getUser(userId);requireCondition(user,'Phiên đăng nhập không hợp lệ.',401);
    const receipt=user.player.receipts.find(r=>r.key===requestKey);
    if(receipt){requireCondition(receipt.fingerprint===fingerprint,'Mã thao tác đã được dùng cho nội dung khác.',409,'IDEMPOTENCY_CONFLICT');return{player:playerView(user.player),result:receipt.result,replayed:true}}
-   const context=action.startsWith('beast-')?await this.beastContext(userId):undefined;
+   const context=extraContext??(action.startsWith('beast-')?await this.beastContext(userId):undefined);
    const next=structuredClone(user.player),result=applyAction(next,action,input,Date.now(),context);
    next.version++;next.receipts.push({key:requestKey,fingerprint,result,at:new Date().toISOString()});next.receipts=next.receipts.slice(-150);
    next.activity.push({action,message:result.message,at:new Date().toISOString(),version:next.version});next.activity=next.activity.slice(-100);
@@ -192,9 +193,14 @@ export class Store {
     // Bảng phụ không được làm hỏng thao tác game đã lưu; lần khởi động sau syncRanking sẽ sửa lại.
     if(JSON.stringify(before)!==JSON.stringify(after))await this.saveRanking(user._id,next,after.floors>before.floors).catch(e=>console.error(JSON.stringify({event:'ranking_write_failed',name:e.name})));
     await this.saveBeast(user._id,user.player,next).catch(e=>console.error(JSON.stringify({event:'beast_ranking_write_failed',name:e.name})));
-    return{player:playerView(next),result,replayed:false};
+    // Chiến trường: chốt điểm hai bên khi trận vừa kết thúc; lưu đội hình thủ thì cập nhật snapshot trên bảng.
+    const arena=await this.arenaAfter(user._id,user.player,next,result).catch(e=>{console.error(JSON.stringify({event:'arena_settle_failed',name:e.name,message:e.message}));return null});
+    if(action==='arena-defense')await this.arenaJoin({...user,player:next},input.mode).catch(()=>{});
+    return{player:playerView(next),result:arena?{...result,arena:{...(result.arena||{}),...arena}}:result,replayed:false};
    }
   }
   throw new GameError('Có thao tác đồng thời. Hãy thử lại.',409,'WRITE_CONFLICT');
  }
 }
+
+installArena(Store);

@@ -15,7 +15,7 @@ const database='htps_world_'+crypto.randomBytes(6).toString('hex'),url='http://1
  await page.mouse.move(...at(900,300));await page.mouse.wheel(0,3000);await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>GameView.worldScroll),1164);await shot('world-right');await page.mouse.wheel(0,-3000);await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>GameView.worldScroll),0);
  await page.mouse.move(...at(800,300));await page.mouse.down();await page.mouse.move(...at(500,300),{steps:6});await page.mouse.up();await page.waitForTimeout(100);assert.equal(await page.evaluate(()=>Math.round(GameView.worldScroll)),300);assert.equal(await page.evaluate(()=>GameView.getSceneId()),37);
  await page.mouse.move(...at(500,300));await page.mouse.down();await page.mouse.move(...at(800,300),{steps:6});await page.mouse.up();await page.waitForTimeout(100);assert.equal(await page.evaluate(()=>Math.round(GameView.worldScroll)),0);
- await click(760,470);await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>GameView.getSceneId()),37);assert.match(await toast(),/đang được phát triển/);
+ await click(760,470);await page.waitForSelector('.arena-hub');assert.equal(await page.evaluate(()=>GameView.getSceneId()),37);await page.locator('.arena-hub [data-name="ButtonBack"]').click();await page.waitForFunction(()=>!document.querySelector('.arena-layer'));
  await click(148,207);await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>GameView.getSceneId()),37);
  await click(470,410);await scene(34);await page.waitForSelector('.campaign-deck');
  await page.locator('[data-action="campaign-map"]').first().click();await scene(28);await page.locator('.campaign-map [data-action="home"]').click();await scene(37);

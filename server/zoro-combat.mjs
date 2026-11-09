@@ -1,16 +1,16 @@
 import {heroLevels} from './hero-roster.mjs';
 
-// Level 1–3 values transcribed from cache db_hero_skill (2581–2573).
+// Level 1–3 values transcribed from cache db_hero_skill (2581–2573); level 4 from the void [4] skills (2569–2572).
 export const zoroTiers={
- 'hiryu-jigoku':[{attack:.2,duration:2,damage:10,missing:.25,cap:20,execute:.15},{attack:.3,duration:3,damage:15,missing:.35,cap:30,execute:.2},{attack:.4,duration:4,damage:20,missing:.5,cap:40,execute:.25}],
- enma:[{trueDamage:.3,penetration:.1,reduction:.2,bypass:0,basic:2.5,missing:.15,cap:5,weaken:.15,duration:2},{trueDamage:.5,penetration:.2,reduction:.4,bypass:0,basic:3.5,missing:.25,cap:7,weaken:.25,duration:2},{trueDamage:.7,penetration:.3,reduction:.6,bypass:.5,basic:5,missing:.35,cap:10,weaken:.3,duration:3}],
- 'conqueror-haki':[{duration:2,attack:.3,immunity:.6,speed:.3},{duration:2,attack:.5,immunity:.8,speed:.5},{duration:3,attack:.5,immunity:.8,speed:.5}],
- 'decisive-strike':[{chance:.25,killChance:.5},{chance:.3,killChance:.6},{chance:.4,killChance:.8}],
+ 'hiryu-jigoku':[{attack:.2,duration:2,damage:10,missing:.25,cap:20,execute:.15},{attack:.3,duration:3,damage:15,missing:.35,cap:30,execute:.2},{attack:.4,duration:4,damage:20,missing:.5,cap:40,execute:.25},{attack:.5,duration:5,damage:25,missing:1,cap:50,execute:.35,refund:100}],
+ enma:[{trueDamage:.3,penetration:.1,reduction:.2,bypass:0,basic:2.5,missing:.15,cap:5,weaken:.15,duration:2},{trueDamage:.5,penetration:.2,reduction:.4,bypass:0,basic:3.5,missing:.25,cap:7,weaken:.25,duration:2},{trueDamage:.7,penetration:.3,reduction:.6,bypass:.5,basic:5,missing:.35,cap:10,weaken:.3,duration:3},{trueDamage:1,penetration:.5,reduction:.8,bypass:.5,basic:7.5,missing:.5,cap:15,weaken:.5,duration:3}],
+ 'conqueror-haki':[{duration:2,attack:.3,immunity:.6,speed:.3},{duration:2,attack:.5,immunity:.8,speed:.5},{duration:3,attack:.5,immunity:.8,speed:.5},{duration:3,attack:1,immunity:1,speed:1}],
+ 'decisive-strike':[{chance:.25,killChance:.5},{chance:.3,killChance:.6},{chance:.4,killChance:.8},{chance:.5,killChance:.9}],
 };
 
 export function zoroRound(b,type,{random,emit}){
  const h=b.hero,levels=heroLevels({id:'zoro-king-of-hell',skills:h.skills});
- const tier=id=>zoroTiers[id][Math.min(3,levels[id])-1],enma=tier('enma'),haki=tier('conqueror-haki'),ultimate=tier('hiryu-jigoku');
+ const tier=id=>zoroTiers[id][Math.min(4,levels[id])-1],enma=tier('enma'),haki=tier('conqueror-haki'),ultimate=tier('hiryu-jigoku');
  const units=[h,...b.enemies];for(const u of units){u.effects??=[];u.baseAttack??=u.attack;u.baseDefense??=u.defense}
  const effect=(u,id,name,attribute,value,expiresTurn)=>{u.effects=u.effects.filter(e=>e.id!==id);const e={id,skillId:id,name,attribute,value,expiresTurn};u.effects.push(e);emit({type:'buff',actor:'hero',target:u.id,skillId:id,name,attribute,value,expiresTurn})};
  if(!h.zoroInitialized){h.zoroInitialized=true;h.baseSpeed=h.speed;effect(h,'conqueror-haki','Haki Bá Vương','attack',haki.attack*(h.frontRow===false?1:2),haki.duration)}

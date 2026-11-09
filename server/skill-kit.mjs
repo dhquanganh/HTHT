@@ -45,7 +45,7 @@ export const statOf=text=>{for(const [re,attr] of STATS)if(re.test(text))return 
 
 const STATUS=[[/choáng|ngưng\s*động|trói\s*buộc|áp\s*chế/i,'stun'],[/đóng\s*băng|băng\s*phong|băng\s*giá/i,'freeze'],[/câm\s*lặng|trầm\s*mặc|im\s*lặng/i,'silence'],[/uy\s*hiếp|sợ\s*hãi/i,'fear'],[/hóa\s*đá/i,'petrify'],[/hoảng\s*loạn/i,'panic']];
 const DOT=[[/thiêu\s*đốt|viêm\s*hỏa|bỏng(?!\s*điện)|cháy|\bđốt/i,'burn'],[/trúng\s*độc|\bđộc\b/i,'poison'],[/chảy\s*máu/i,'bleed']];
-export const statusNames={stun:'Choáng',freeze:'Đóng băng',silence:'Câm lặng',fear:'Uy hiếp',petrify:'Hóa đá',panic:'Hoảng loạn',burn:'Thiêu đốt',poison:'Trúng độc',bleed:'Chảy máu'};
+export const statusNames={stun:'Choáng',freeze:'Đóng băng',silence:'Câm lặng',fear:'Uy hiếp',petrify:'Hóa đá',panic:'Hoảng loạn',burn:'Thiêu đốt',poison:'Trúng độc',bleed:'Chảy máu',frostbite:'Bỏng Lạnh',seal:'Phong Ấn'};
 
 const turnsIn=t=>{const m=/(\d+)\s*(?:lượt|hiệp|lươt)/i.exec(t);if(m)return Number(m[1]);if(/vĩnh viễn|đến chết/i.test(t))return 99;return null};
 const chanceIn=t=>{const m=/(\d+(?:[.,]\d+)?)\s*%\s*(?:cơ hội|xác suất|tỉ lệ|tỷ lệ|khả năng)|(?:có|với)\s*(\d+(?:[.,]\d+)?)\s*%(?!\s*(?:Công|Máu|Thủ))/i.exec(t);return m?clamp(num(m[1]||m[2])/100,0,1):1};

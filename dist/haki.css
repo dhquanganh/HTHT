@@ -1,0 +1,7 @@
+/* Bảng Haki (haki-ui.js): prefab PanelESkill trong khung Thông tin tướng và popup PopupHeroESkill. */
+.haki-host{position:absolute;inset:0;pointer-events:none}
+.haki-panel{pointer-events:none!important}
+.haki-node,.haki-option{cursor:pointer;pointer-events:auto!important}
+.haki-node:hover [data-name="Frame"],.haki-option:hover [data-name="Frame"]{filter:brightness(1.25)}
+.haki-popup{pointer-events:auto!important;z-index:48}
+.haki-popup [data-name="ButtonClose"],.haki-panel [data-name="ButtonSwitchSkill"],.haki-popup [data-name="ButtonActivate"],.haki-panel [data-name="ButtonActivate"]{cursor:pointer}

@@ -1,6 +1,6 @@
 import {randomUUID} from 'node:crypto';
 import {GameError,requireCondition,integer} from './errors.mjs';
-import {materials,itemById,items,economy,skills,stages,legacyStages,equipmentSlots,heroDefinition,definitionFor,campaign,heroAlbum,heroDefinitions,heroShardMerge,heroExpItem,heroKits,kitForAvatar,profileForAvatar} from './catalog.mjs';
+import {materials,itemById,items,economy,skills,levelKit,stages,legacyStages,equipmentSlots,heroDefinition,definitionFor,campaign,heroAlbum,heroDefinitions,heroShardMerge,heroExpItem,heroKits,kitForAvatar,profileForAvatar} from './catalog.mjs';
 import {skillLevels,skillTier,ensureLuffySkills,battleSkillState,effectiveStat} from './luffy-skills.mjs';
 import {ensureRoster,heroSkills,heroLevels,heroTier,shardFor} from './hero-roster.mjs';
 import {zoroRound} from './zoro-combat.mjs';
@@ -22,10 +22,14 @@ import {achievementView,claimAchievement,countSummons} from './achievements.mjs'
 import {homeQuestView,claimHomeQuest,homeQuestEvent} from './home-quest.mjs';
 import {germaView,germaStats,upgradeGerma,resetGerma,activeGermaSkills,germaUnlockStar} from './germa.mjs';
 import {kitFromProfile} from './skill-kit.mjs';
+import {hakiView,hakiStats,hakiUnit,pickHaki} from './haki.mjs';
+import {upgradeArtifact} from './artifact-upgrade.mjs';
+import {talentView,talentStats,talentLevelBonus,talentPassives,talentKit,talentAction} from './talent.mjs';
 import {srView,srCheckIn,srStart,srFinish,srClaimAchievement,srClaimSeason} from './silent-ring.mjs';
 import {petView,recruitPets,combinePet,levelPet,growthPet,erasePet,enlightPet,starUpPet,equipPet,heroPet} from './pet.mjs';
 import {devilFruitView,combineFruit,levelUpFruit,starUpFruit,rollWheel,setResonance,unlockResonance,fruitBonus} from './devil-fruit.mjs';
 import {abyssView,startAbyss,finishAbyss,claimAbyssQuest,buyAbyssTurn,claimAbyssMilestone} from './abyss.mjs';
+import {arenaModes,dayKey,freeTickets,ticketItem,ticketPrice,ticketBuyLimit,allstarAttacks,allstarAttackPrice,allstarBuyLimit,betItem,betAmount,asEnemies,series} from './arena.mjs';
 import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
 
 export function starterPlayer(username){
@@ -44,16 +48,23 @@ function withPetKit(kit,pet){
  const extra=petKits.get(key),stats={...kit.stats};for(const [k,v] of Object.entries(extra.stats))stats[k]=(stats[k]||0)+v;
  return{...kit,passives:[...kit.passives,...extra.passives],stats,triggers:[...kit.triggers,...extra.triggers]};
 }
-const germaKits=new Map();
-/** Bộ kỹ năng trận đấu khi đã kích hoạt kỹ năng Germa: thay bị động 1-3 / Nộ bằng bản cấp 4 rồi dựng lại như kitFromProfile. */
-function germaKit(h,definition){
- const actives=activeGermaSkills(h,definition.avatar),profile=profileForAvatar(definition.avatar);if(!actives.length||!profile)return null;
- const key=definition.avatar+':'+actives.map(a=>a.slot).join();
- if(!germaKits.has(key)){const skills=profile.skills.map(s=>({...s}));for(const {slot,skill} of actives){const i=slot===4?0:slot;if(skills[i])skills[i]={...skills[i],name:skill.name,level:4,description:skill.description}}germaKits.set(key,kitFromProfile({...profile,skills}))}
- return germaKits.get(key);
+// Kỹ năng Thiên phú đã chọn là bị động cộng vào bộ kỹ năng trận đấu (kể cả Luffy / Zoro, khi đó chỉ có phần bị động).
+
+function withTalentKit(kit,h){
+ const extra=talentKit(h);if(!extra.passives.length)return kit;
+ const base=kit||{ultimate:null,passives:[],stats:{},triggers:[]},stats={...base.stats};
+ for(const [k,v] of Object.entries(extra.stats))stats[k]=(stats[k]||0)+v;
+ return{...base,passives:[...base.passives,...extra.passives],stats,triggers:[...base.triggers,...extra.triggers]};
+}
+/** Bộ kỹ năng trận đấu theo cấp kỹ năng hiện tại (tự lên theo sao); kỹ năng Germa đã kích hoạt thay ô tương ứng. */
+function battleKit(h,definition){
+ if(!profileForAvatar(definition.avatar))return null;
+ const levels=heroLevels(h),override={};
+ for(const {slot,skill} of activeGermaSkills(h,definition.avatar)){const i=slot===4?0:slot;override[i]={name:skill.name,level:4,description:skill.description}}
+ return levelKit(definition.avatar,definition.skills.map(s=>levels[s.id]||1),override);
 }
 export function heroStats(player){
- const h=player.hero,zoro=h.id==='zoro-king-of-hell',scale=definitionFor(h.id).statScale,haki=zoro||scale?{hp:0,armor:0}:skillTier(h.skills,'armament-haki').values,rank=1+h.rank*.16,star=1+(h.stars-1)*.20;
+ const h=player.hero,zoro=h.id==='zoro-king-of-hell',scale=definitionFor(h.id).statScale,haki=zoro||scale?{hp:0,armor:0}:heroTier(h,'armament-haki').values,rank=1+h.rank*.16,star=1+(h.stars-1)*.20;
  // Tăng trưởng mỗi cấp tăng dần theo cấp: cấp L được nhân (1 + L/150), nên cấp 600 mạnh gấp ~5 lần mỗi cấp so với cấp đầu.
  const grow=h.level*(1+h.level/150);
  const stats={maxHp:Math.round((800+grow*82)*rank*star),attack:Math.round((100+grow*14)*rank*star),defense:Math.round((25+grow*4)*rank*star),speed:Math.round(100+h.level*(1+h.level/600))};
@@ -64,13 +75,17 @@ export function heroStats(player){
  {const pet=heroPet(player,h.id);if(pet){stats.attack+=pet.stats.atk;stats.defense+=pet.stats.def;stats.maxHp+=pet.stats.hp;stats.speed+=pet.stats.spd}}
  // Ép Sao / Germa: Công, Máu, Tốc cộng thẳng từ các nút chỉ số.
  for(const [field,value] of Object.entries(germaStats(h)))stats[field]+=value;
+ // Thiên phú: Công, Máu, Tốc cộng thẳng theo cấp Thiên phú (point_level_data).
+ for(const [field,value] of Object.entries(talentStats(h)))stats[field]+=value;
  for(const [field,value] of Object.entries(bonus.percent))stats[field]=Math.round(stats[field]*(1+value));
  Object.assign(stats,bonus.combat);
  for(const [field,value] of Object.entries(fruit.combat))stats[field]=(stats[field]||0)+value;
  for(const id of Object.values(h.equipment)){const item=itemById.get(id);if(!item||item.points)continue;for(const [name,value] of Object.entries(item.stats||{})){const field=({hp:'maxHp',atk:'attack',armor:'defense'})[name]||name;if(field in stats&&Number.isFinite(value))stats[field]+=Math.round(value)}}
  stats.maxHp=Math.round(stats.maxHp*(1+haki.hp));stats.defense=Math.round(stats.defense*(1+haki.armor));
+ // Bảng Haki (E-skill): % Máu, % Công và Tốc của các Haki đã kích hoạt.
+ {const e=hakiStats(h);stats.maxHp=Math.round(stats.maxHp*(1+e.maxHp));stats.attack=Math.round(stats.attack*(1+e.attack));stats.speed+=e.speed}
  applySpecial(h,stats);
- if(zoro){const tier=heroLevels(h).enma,bonus=[.3,.5,.7][Math.min(3,tier)-1];stats.attack=Math.round(stats.attack*(1+bonus));stats.speed+=[80,100,150][Math.min(3,tier)-1]}
+ if(zoro){const tier=Math.min(4,heroLevels(h).enma),bonus=[.3,.5,.7,1][tier-1];stats.attack=Math.round(stats.attack*(1+bonus));stats.speed+=[80,100,150,200][tier-1]}
  stats.power=Math.round(stats.attack*2.4+stats.maxHp*.13+stats.defense*2);return stats;
 }
 // Sao 1-5 vàng, 6-9 tím, 10-14 là 5 sao đỏ, 15-19 là L1-L5 (prefab HeroStars: hero_star_1/2/3, star_e_bgr).
@@ -88,13 +103,12 @@ function starCost(h,shard){
 export function upgradeCosts(player){const h=player.hero;return{
  // Cấp tối đa của tướng chỉ phụ thuộc số sao (levelCap), không phụ thuộc cấp thuyền trưởng.
  // Phí lên cấp tăng nhanh hơn theo cấp: × (1 + L/40) — cấp 100 gấp 3,5 lần, cấp 600 gấp 16 lần công thức cũ.
- level:{gold:Math.round(h.level*140*(1+h.level/40)),heroExp:Math.round(h.level*45*(1+h.level/40)),maxLevel:levelCap(h.stars)},
+ level:{gold:Math.round(h.level*140*(1+h.level/40)),heroExp:Math.round(h.level*45*(1+h.level/40)),maxLevel:levelCap(h.stars)+talentLevelBonus(h)},
  star:{...starCost(h,shardFor(h)),nextCap:levelCap(Math.min(economy.maxStars,h.stars+1))},
  rank:{gold:(h.rank+1)*700,items:{[materials.rank]:(h.rank+1)*3},minLevel:(h.rank+1)*3},
- skills:Object.fromEntries(heroSkills(h).map(s=>{const level=heroLevels(h)[s.id];return[s.id,{gold:level*250,items:{[materials.skill]:level},maxLevel:Math.max(level,Math.min(economy.maxSkillLevel,2+h.rank*2))}]})),
 }}
 export function playerView(player,now=Date.now()){return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
-function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),activity:activity.slice(-20).reverse()}}
+function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),activity:activity.slice(-20).reverse()}}
 function addItem(p,id,qty){requireCondition(itemById.has(id),'Vật phẩm không tồn tại.');if(id===heroExpItem){p.wallet.spirit=(p.wallet.spirit||0)+qty;requireCondition(p.wallet.spirit>=0,'Không đủ Đá EXP.');return}p.inventory[id]=(p.inventory[id]||0)+qty;requireCondition(p.inventory[id]>=0,'Không đủ vật phẩm.')}
 function spend(p,cost){for(const [currency,amount] of Object.entries(cost)){requireCondition(Number.isSafeInteger(amount)&&amount>=0,'Chi phí không hợp lệ.');requireCondition((p.wallet[currency]||0)>=amount,`Không đủ ${({gold:'vàng',diamonds:'kim cương',spirit:'EXP tướng'})[currency]||currency}.`,400,'INSUFFICIENT_FUNDS');p.wallet[currency]-=amount;if(currency==='diamonds')trackEvent(p,'diamondSpend',amount)}}
 function spendItems(p,cost={}){for(const [id,amount] of Object.entries(cost)){requireCondition((id===heroExpItem?p.wallet.spirit:p.inventory[id]||0)>=amount,`Không đủ ${itemById.get(id)?.name||'vật phẩm'}.`);addItem(p,id,-amount)}}
@@ -105,12 +119,80 @@ function payReward(p,{itemId,quantity}){if(walletIds.has(itemId))spend(p,{[itemI
 function outsideBattle(p){requireCondition(!p.battle||p.battle.status!=='active','Hãy kết thúc trận chiến trước.',409,'BATTLE_ACTIVE')}
 export const maxAccountLevel=100;
 function accountExp(p,amount){p.account.exp+=amount;while(p.account.level<maxAccountLevel&&p.account.exp>=p.account.level*100){p.account.exp-=p.account.level*100;p.account.level++}}
+// ---- Chiến trường: vé Giấy Thách Đấu (Đơn đấu / Liên đấu) và lượt đánh Võ đấu làm mới lúc 21:00 UTC mỗi ngày.
+function arenaState(p,now){
+ const a=p.arena??={};a.defense??={};a.attacks??={used:0,bought:0};const day=dayKey(now);
+ if(a.day!==day){a.day=day;a.bought=0;a.attacks={used:0,bought:0};if((p.inventory[ticketItem]||0)<freeTickets)p.inventory[ticketItem]=freeTickets}
+ return a;
+}
+function arenaView(p,now){
+ const a=p.arena||{},fresh=a.day!==dayKey(now),tickets=fresh?Math.max(freeTickets,p.inventory[ticketItem]||0):p.inventory[ticketItem]||0;
+ const attacks=fresh?{used:0,bought:0}:a.attacks||{used:0,bought:0};
+ return{tickets,ticketPrice,ticketBuyLeft:ticketBuyLimit-(fresh?0:a.bought||0),attacksLeft:allstarAttacks+attacks.bought-attacks.used,attackPrice:allstarAttackPrice,attackBuyLeft:allstarBuyLimit-attacks.bought,
+  defense:Object.fromEntries(Object.keys(arenaModes).map(mode=>[mode,arenaDefenseTeams(p,mode)])),betItem,betAmount};
+}
+const arenaMode=mode=>{requireCondition(Object.hasOwn(arenaModes,mode),'Chế độ không tồn tại.',404);return mode};
+function arenaLevel(p,mode){const need=arenaModes[mode].minLevel;requireCondition(p.account.level>=need,`Yêu cầu người chơi cấp độ ${need} trở lên.`,403,'LEVEL_REQUIRED')}
+/** Đội hình thủ đã lưu (Liên đấu 3 đội, các chế độ khác 1 đội); chưa lưu thì đội 1 là đội hình chính. Tướng không còn sở hữu bị bỏ. */
+export function arenaDefenseTeams(p,mode){
+ const owned=ownedHeroes(p),saved=p.arena?.defense?.[mode],used=new Set();
+ return Array.from({length:arenaModes[mode].teams},(_,i)=>{const src=saved?.[i]??(i===0?formationView(p).slots:[]);return Array.from({length:6},(_,k)=>{const id=src[k]??null;if(!id||!owned.has(id)||used.has(id))return null;used.add(id);return id})});
+}
+const heroHead=(p,id,slot)=>{const h=ownedHeroes(p).get(id),d=definitionFor(id);return{slot,heroId:id,avatar:d.avatar,faction:d.faction,cls:d.class,level:h.level,stars:h.stars}};
+/** Snapshot đội phòng thủ lưu trong bảng Chiến trường: đơn vị trận đấu đã tính sẵn + đầu tướng để hiển thị. */
+export function arenaSnapshot(p,mode){
+ const teams=arenaDefenseTeams(p,mode).map(slots=>{const units=teamUnits(p,slots);return{power:units.reduce((n,u)=>n+(u.power||0),0),heads:slots.map((id,slot)=>id&&heroHead(p,id,slot)).filter(Boolean),units}});
+ return{displayName:p.displayName,avatar:definitionFor(p.hero.id).avatar,level:p.account.level,power:teams.reduce((n,t)=>n+t.power,0),teams};
+}
+function arenaAttackTeams(p,mode,input){
+ const n=arenaModes[mode].teams,raw=input.teams??(input.formation?[input.formation]:null),used=new Set();
+ if(!raw)return n===1?[formationView(p).slots]:arenaDefenseTeams(p,mode);
+ requireCondition(Array.isArray(raw)&&raw.length===n,'Đội hình không hợp lệ.');
+ return raw.map(slots=>{const f=validateFormation(p,slots);for(const id of f.slots)if(id){requireCondition(!used.has(id),'Mỗi tướng chỉ được ở một đội.',400,'DUPLICATE_HERO');used.add(id)}return f.slots});
+}
+function arenaAction(p,action,input,now,context){
+ const a=arenaState(p,now);
+ if(action==='arena-buy'){
+  const count=integer(input.count??1,1,20,'Số lượng');
+  if(input.kind==='attack'){requireCondition(a.attacks.bought+count<=allstarBuyLimit,'Đã hết lượt mua hôm nay.',409,'BUY_LIMIT');spend(p,{diamonds:allstarAttackPrice*count});a.attacks.bought+=count;return{message:`Đã mua ${count} lượt đánh.`}}
+  requireCondition(a.bought+count<=ticketBuyLimit,'Đã hết lượt mua hôm nay.',409,'BUY_LIMIT');spend(p,{diamonds:ticketPrice*count});a.bought+=count;addItem(p,ticketItem,count);
+  return{message:`Đã mua ${count} Giấy Thách Đấu.`,rewards:[{itemId:ticketItem,quantity:count}]};
+ }
+ if(action==='allstar-bet'){
+  const bet=context?.bet;requireCondition(bet?.open,'Trận này không nhận cược.',409,'BET_CLOSED');requireCondition(['even','odd'].includes(input.pick),'Hãy chọn Chẵn hoặc Lẻ.');
+  spendItems(p,{[betItem]:betAmount});return{message:'Bạn đã đặt cược thành công',bet:{matchId:bet.matchId,pick:input.pick,amount:betAmount}};
+ }
+ const mode=arenaMode(input.mode);arenaLevel(p,mode);
+ if(action==='arena-defense'){
+  outsideBattle(p);requireCondition(Array.isArray(input.teams)&&input.teams.length===arenaModes[mode].teams,'Đội hình không hợp lệ.');
+  a.defense[mode]=arenaAttackTeams(p,mode,{teams:input.teams});return{message:'Đã lưu đội hình thủ.'};
+ }
+ if(action==='arena-start'){
+  outsideBattle(p);const ctx=context?.arena;requireCondition(ctx?.mode===mode&&ctx.opponent,'Đối thủ không hợp lệ.',409,'ARENA_RIVAL');
+  const teams=arenaAttackTeams(p,mode,input),opp=ctx.opponent;
+  if(mode==='allstars'){requireCondition(a.attacks.used<allstarAttacks+a.attacks.bought,'Đã hết lượt đánh. Hãy mua thêm.',409,'NO_ATTACKS');a.attacks.used++}
+  else spendItems(p,{[ticketItem]:1});
+  if(mode==='league'){
+   const result=series(teams.map(slots=>teamUnits(p,slots)),opp.teams.map(t=>t.units),Math.floor(now%4294967295)||1);
+   const bouts=result.bouts.map((r,i)=>({team:i+1,win:r.win,turns:r.turns}));
+   return{message:result.win?'Chiến thắng!':'Thất bại.',arena:{mode,season:ctx.season,opponentId:opp.id,win:result.win,bouts,score:result.score,battleId:randomUUID()}};
+  }
+  const saved=p.formation;
+  openBattle(p,asEnemies(opp.teams[0].units),{chapter:1,stageId:null,arena:{mode,season:ctx.season,opponentId:opp.id,name:opp.name,avatar:opp.avatar,level:opp.level,revenge:!!input.revenge}},{version:2,slots:teams[0]},saved?.position??0,now);
+  if(saved)p.formation=saved;else delete p.formation;
+  for(const e of p.battle.enemies){e.frontRow=e.position>=4;e.energy=e.heroId==='zoro-king-of-hell'?100:35}
+  if(input.skip===true)while(p.battle.status==='active')battleRound(p,{battleId:p.battle.id,turn:p.battle.turn,action:'auto'},now);
+  return{message:`Khiêu chiến ${opp.name}.`,battleId:p.battle.id};
+ }
+ throw new GameError('Thao tác không tồn tại.',404);
+}
 export function applyAction(p,action,input,now=Date.now(),context){
  const beastActive=!!p.battle?.beast&&p.battle.status==='active',result=runAction(p,action,input,now,context);
  trackDaily(p,{action,input,beastWon:beastActive&&p.battle?.status==='won'},now);return result;
 }
 function runAction(p,action,input,now,context){
  ensureRoster(p);startAfk(p,now);startSummon(p);if(p.hero.id==='luffy-gear-2')ensureLuffySkills(p);
+ if(action.startsWith('arena-')||action==='allstar-bet')return arenaAction(p,action,input,now,context);
  if(action==='formation-save'){outsideBattle(p);p.formation=validateFormation(p,input.slots);return{message:'Đã lưu đội hình.'}}
  if(action==='hero-select'){
   outsideBattle(p);requireCondition(typeof input.heroId==='string','Tướng không hợp lệ.');
@@ -168,7 +250,7 @@ function runAction(p,action,input,now,context){
   if(type==='level'){requireCondition(h.level<costs.level.maxLevel,'Tướng đã đạt cấp tối đa, hãy thức tỉnh để nâng thêm.');requireCondition(p.wallet.spirit>=costs.level.heroExp,'Không đủ Đá EXP. Hãy nhận thêm từ ải, tự động đánh hoặc vượt ải.');spend(p,{gold:costs.level.gold,spirit:costs.level.heroExp});h.level++}
   else if(type==='star'){requireCondition(h.stars<economy.maxStars,'Tướng đã đạt số sao tối đa.');requireCondition(h.level>=costs.star.minLevel,`Cần tướng cấp ${costs.star.minLevel}.`);spend(p,{gold:costs.star.gold});spendItems(p,costs.star.items);h.stars++}
   else if(type==='rank'){requireCondition(h.rank<economy.maxRank,'Tướng đã đạt bậc tối đa.');requireCondition(h.level>=costs.rank.minLevel,`Cần tướng cấp ${costs.rank.minLevel}.`);spend(p,{gold:costs.rank.gold});spendItems(p,costs.rank.items);h.rank++}
-  else if(type==='skill'){const skill=heroSkills(h).find(s=>s.id===input.skillId);requireCondition(skill,'Kỹ năng không tồn tại.');const c=costs.skills[skill.id];requireCondition(h.skills[skill.id]<c.maxLevel,'Cần đột phá bậc tướng để nâng kỹ năng.');spend(p,{gold:c.gold});spendItems(p,c.items);h.skills[skill.id]++}
+  else if(type==='skill')throw new GameError('Kỹ năng tự động nâng cấp khi thức tỉnh tướng (sao tím cấp 2, sao đỏ cấp 3).',409,'SKILL_AUTO');
   else throw new GameError('Loại nâng cấp không hợp lệ.');return{message:'Nâng cấp thành công.',type};
  }
  if(action==='equip'){
@@ -237,6 +319,9 @@ function runAction(p,action,input,now,context){
  if(action==='pet-enlight'){outsideBattle(p);return enlightPet(p,input,cost=>payReward(p,cost))}
  if(action==='pet-star'){outsideBattle(p);return starUpPet(p,input,cost=>payReward(p,cost))}
  if(action==='pet-equip'){outsideBattle(p);return equipPet(p,input,id=>ownedHeroes(p).has(id))}
+ if(action==='haki-pick'){outsideBattle(p);return pickHaki(p.hero,input)}
+ if(action==='talent'){outsideBattle(p);const h=p.hero;return talentAction(h,input,{pay:cost=>spendItems(p,cost),grant:rewards=>{for(const r of rewards)addItem(p,r.itemId,r.quantity)},spendDiamonds:n=>spend(p,{diamonds:n}),shard:shardFor(h)})}
+ if(action==='artifact-upgrade'){outsideBattle(p);return upgradeArtifact(p,input,{spend:spendItems,add:addItem})}
  if(action==='germa-upgrade'){outsideBattle(p);const h=p.hero;return upgradeGerma(p,h,input,{pay:cost=>payReward(p,cost),grant:reward=>grantReward(p,reward),shard:shardFor(h),avatar:definitionFor(h.id).avatar})}
  if(action==='germa-reset'){outsideBattle(p);return resetGerma(p,p.hero,{pay:cost=>payReward(p,cost),grant:reward=>grantReward(p,reward)})}
  if(action==='fruit-combine'){outsideBattle(p);return combineFruit(p,input)}
@@ -278,7 +363,7 @@ function runAction(p,action,input,now,context){
   p.wallet.gold+=payout.gold;accountExp(p,payout.accountExp);if(payout.stones)addItem(p,economy.afk.stoneItem,payout.stones);
   return{message:`Đã nhận ${amount(payout.gold)} vàng, ${amount(payout.accountExp)} kinh nghiệm${payout.stones?`, ${amount(payout.stones)} Đá EXP`:''}.`,reward:{gold:payout.gold,accountExp:payout.accountExp,items,seconds:payout.seconds},rewards:[{itemId:'gold',quantity:payout.gold},{itemId:'consumable:1002',quantity:payout.accountExp},...items].filter(r=>r.quantity>0)};
  }
- if(action==='battle-leave'){requireCondition(p.battle?.status==='active','Không có trận chiến đang diễn ra.');if(p.battle.silent){p.battle.status='won';srFinish(p,p.battle,reward=>grantReward(p,reward),now);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.beast){p.battle.status='won';finishBeast(p,p.battle);recordBossBattle(p,p.battle);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}p.battle.status='abandoned';return{message:'Đã rút lui. Không nhận thưởng.'}}
+ if(action==='battle-leave'){requireCondition(p.battle?.status==='active','Không có trận chiến đang diễn ra.');if(p.battle.silent){p.battle.status='won';srFinish(p,p.battle,reward=>grantReward(p,reward),now);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.beast){p.battle.status='won';finishBeast(p,p.battle);recordBossBattle(p,p.battle);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.arena){p.battle.status='lost';return{message:'Đã rút lui. Trận đấu tính là thua.'}}p.battle.status='abandoned';return{message:'Đã rút lui. Không nhận thưởng.'}}
  throw new GameError('Thao tác không tồn tại.',404);
 }
 function enemyUnit(source,slot,i,strength){const maxHp=Math.round((240+strength*100)*(1+i*.13));return{id:'enemy-'+i,name:source.name,avatar:source.avatar,faction:source.faction,heroClass:source.class||null,level:source.level,stars:source.stars,monsterId:source.sourceId,position:slot.position,maxHp,hp:maxHp,attack:25+strength*15+i*8,defense:9+strength*4,speed:70+i*4,visualIndex:i}}
@@ -288,13 +373,18 @@ function scaledUltimate(ultimate,level){
 }
 function openBattle(p,enemies,meta,teamFormation,position,now){
  const heroSnapshot=heroStats(p);p.formation={position};
- p.battle={id:randomUUID(),campaignVersion:1,...meta,status:'active',turn:1,seed:Math.floor(now%4294967295)||1,hero:{id:'hero',heroId:p.hero.id,name:definitionFor(p.hero.id).name,...heroSnapshot,hp:heroSnapshot.maxHp,position,frontRow:position<2,energy:p.hero.id==='zoro-king-of-hell'?100:35,cooldowns:{},skills:{...p.hero.skills}},enemies,events:[],createdAt:new Date(now).toISOString(),reward:null};
+ p.battle={id:randomUUID(),campaignVersion:1,...meta,status:'active',turn:1,seed:Math.floor(now%4294967295)||1,hero:{id:'hero',heroId:p.hero.id,name:definitionFor(p.hero.id).name,...heroSnapshot,hp:heroSnapshot.maxHp,position,frontRow:position<2,energy:p.hero.id==='zoro-king-of-hell'?100:35,cooldowns:{},skills:{...p.hero.skills,...heroLevels(p.hero)},...hakiUnit(p.hero,heroSnapshot)},enemies,events:[],createdAt:new Date(now).toISOString(),reward:null};
  if(!teamFormation)return;
- const owned=ownedHeroes(p),allies=[];
- teamFormation.slots.forEach((heroId,position)=>{if(!heroId)return;const h=owned.get(heroId),stats=heroStats({...p,hero:h}),definition=definitionFor(heroId);allies.push({id:allies.length?'ally-'+heroId:'hero',heroId,side:'ally',name:definition.name,faction:definition.faction,avatar:definition.avatar,heroClass:definition.class,level:h.level,stars:h.stars,...stats,hp:stats.maxHp,energy:heroId==='zoro-king-of-hell'?100:35,position,frontRow:position<2,skills:heroLevels(h),cooldowns:{},...(definition.ultimate?{ultimate:scaledUltimate(definition.ultimate,heroLevels(h)[definition.ultimate.id])}:{}),...(heroKits.get(heroId)?{kit:withPetKit(germaKit(h,definition)||heroKits.get(heroId),heroPet(p,heroId)),ultScale:1+.1*((heroLevels(h)[definition.ultimate?.id]||1)-1)}:{})})});
+ const allies=teamUnits(p,teamFormation.slots);
  p.formation=teamFormation;p.battle.combatVersion=2;p.battle.allies=allies;
  for(const e of enemies){e.side='enemy';e.frontRow=e.position>=4;e.energy=0}
  initializeTeamBattle(p.battle);
+}
+/** Đơn vị trận đấu của một đội hình 6 ô (chỉ số, Haki, Nộ, bộ kỹ năng + thú cưng + Thiên phú). Dùng cho trận thường và snapshot Chiến trường. */
+export function teamUnits(p,slots){
+ const owned=ownedHeroes(p),allies=[];
+ slots.forEach((heroId,position)=>{if(!heroId||!owned.has(heroId))return;const h=owned.get(heroId),stats=heroStats({...p,hero:h}),definition=definitionFor(heroId);allies.push({id:allies.length?'ally-'+heroId:'hero',heroId,side:'ally',name:definition.name,faction:definition.faction,avatar:definition.avatar,heroClass:definition.class,level:h.level,stars:h.stars,...stats,...hakiUnit(h,stats),hp:stats.maxHp,energy:heroId==='zoro-king-of-hell'?100:35,position,frontRow:position<2,skills:heroLevels(h),cooldowns:{},...(definition.ultimate?{ultimate:definition.ultimates?{...definition.ultimates[(heroLevels(h)[definition.ultimate.id]||1)-1]}:scaledUltimate(definition.ultimate,heroLevels(h)[definition.ultimate.id])}:{}),...(heroKits.get(heroId)?{kit:withTalentKit(withPetKit(battleKit(h,definition)||heroKits.get(heroId),heroPet(p,heroId)),h),ultScale:1}:talentPassives(h).length?{kit:withTalentKit(null,h)}:{})})});
+ return allies;
 }
 function random(b){let x=b.seed>>>0;x^=x<<13;x^=x>>>17;x^=x<<5;b.seed=x>>>0;return b.seed/4294967296}
 function damage(b,attack,defense,multiplier=1){return Math.max(1,Math.round((attack*multiplier-defense*.6)*(.94+random(b)*.12)))}
@@ -308,6 +398,7 @@ function battleRound(p,input,now){
   events.push(...teamRound(b,input));
   if(b.silent){if(!b.allies.some(u=>u.hp>0)||!b.enemies.some(u=>u.hp>0)||b.turn>=b.silent.rounds){b.status='won';srFinish(p,b,reward=>grantReward(p,reward),now);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.beast){if(!b.allies.some(u=>u.hp>0)||b.turn>=b.beast.rounds){b.status='won';finishBeast(p,b);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
+  else if(b.arena){if(!b.enemies.some(u=>u.hp>0)){b.status='won';event(b,events,{type:'victory',reward:null})}else if(!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status='lost';event(b,events,{type:'defeat'})}else b.turn++}
   else if(!b.enemies.some(u=>u.hp>0)){b.status='won';settleVictory(p,b,now);event(b,events,{type:'victory',reward:b.reward})}
   else if(!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status='lost';event(b,events,{type:'defeat'})}else b.turn++;
   b.events.push(...events);if(b.beast&&b.status==='won')recordBossBattle(p,b);return{message:b.status==='won'?'Chiến thắng!':b.status==='lost'?'Thất bại. Hãy nâng cấp đội hình.':'Đã kết thúc vòng.',events,battleId:b.id};

@@ -5,7 +5,7 @@ import {statusNames} from './skill-kit.mjs';
 const alive=units=>units.filter(u=>u.hp>0);
 const isZoro=u=>u.heroId==='zoro-king-of-hell';
 const isLuffy=u=>u.heroId==='luffy-gear-2';
-const ztier=(u,id)=>zoroTiers[id][Math.min(3,Math.max(1,u.skills?.[id]||1))-1];
+const ztier=(u,id)=>zoroTiers[id][Math.min(4,Math.max(1,u.skills?.[id]||1))-1];
 // Công / Thủ / Tốc nhân theo %, các chỉ số còn lại (chí mạng, xuyên thủ, giảm ST...) cộng thẳng.
 const scaled=new Set(['attack','defense','speed']);
 function stat(u,key,round){
@@ -26,7 +26,12 @@ function applyKitStats(u){
  u.baseDefense=Math.round(u.baseDefense*(1+(s.defense||0))+(s.defenseFlat||0));u.defense=u.baseDefense;
  u.baseSpeed=Math.round(u.baseSpeed*(1+(s.speed||0))+(s.speedFlat||0));u.speed=u.baseSpeed;
  u.energy=Math.min(100,(u.energy||0)+(s.energy||0));
- for(const key of ['critChance','critDamage','critResist','penetration','penResist','trueDamage','skillDamage','damageReduction','dodgeChance','block','accuracy','lifesteal','controlResist','controlPierce','healTaken','healPower'])if(s[key])u[key]=(u[key]||0)+s[key];
+ for(const key of ['critChance','critDamage','critResist','penetration','penResist','trueDamage','skillDamage','damageReduction','dodgeChance','block','accuracy','lifesteal','controlResist','controlPierce','healTaken','healPower',
+  // Thiên phú: Kháng Chí Mạng, Bỏ Qua Né Tránh / Giới Hạn ST / Bất Tử, Miễn Chống, ST & Giảm ST đánh thường / Nộ / cuối lượt, Hiệu Quả Hồi Nộ, bỏ qua sát thương.
+  'critAvoid','dodgePierce','capPierce','immortalPierce','debuffResist','basicDamage','basicReduction','skillReduction','dotDamage','dotReduction','energyGain','evade'])if(s[key])u[key]=(u[key]||0)+s[key];
+ if(s.healCutImmune)u.healCutImmune=true;
+ // Hộ Nguyên: N lượt đầu, mỗi đòn nhận vào không vượt quá x% Máu tối đa.
+ if(s.damageCap)u.damageCap={ratio:s.damageCap,rounds:s.damageCapRounds||3};
  u.critChance=Math.min(1,u.critChance||0);u.dodgeChance=Math.min(.85,u.dodgeChance||0);u.damageReduction=Math.min(.9,u.damageReduction||0);
  u.resist={};for(const t of u.kit.triggers)if(t.on==='battleStart')for(const e of t.effects)if(e.type==='resist')u.resist[e.kind]=Math.max(u.resist[e.kind]||0,e.value);
 }
@@ -34,7 +39,7 @@ export function initializeTeamBattle(b){
  b.hero=b.allies[0];
  for(const u of [...b.allies,...b.enemies]){
   u.baseAttack??=u.attack;u.baseDefense??=u.defense;u.baseSpeed??=u.speed;u.effects??=[];u.cooldowns??={};u.critChance??=u.side==='enemy'?.2:0;u.statuses??=[];u.dots??=[];u.shields??=[];
-  applyKitStats(u);
+  applyKitStats(u);u.baseMaxHp??=u.maxHp;
   // Bảo vật: Nộ cộng thêm khi vào trận (mã 4).
   if(u.startEnergy&&!u.startEnergyApplied){u.startEnergyApplied=true;u.energy=Math.min(100,(u.energy||0)+u.startEnergy)}
   if(isZoro(u)&&!u.teamInitialized){
@@ -48,16 +53,22 @@ export function teamRound(b,input={action:'auto'}){
  initializeTeamBattle(b);const events=[],emit=e=>{const v={id:b.events.length+events.length,turn:b.turn,...e};events.push(v);return v};
  const random=()=>{let x=b.seed>>>0;x^=x<<13;x^=x>>>17;x^=x<<5;b.seed=x>>>0;return b.seed/4294967296};
  const side=u=>u.side==='ally'?b.allies:b.enemies,opponents=u=>u.side==='ally'?b.enemies:b.allies;
+ const revertHp=(u,e)=>{if(!e.delta)return;u.maxHp=Math.max(1,u.maxHp-e.delta);if(u.hp>u.maxHp)u.hp=u.maxHp;emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy,maxHp:u.maxHp})};
  const addEffect=(source,target,skillId,name,attribute,value,expiresTurn,stack=false)=>{
   if(target.immuneDebuff&&source.side!==target.side)return;
-  if(source.side!==target.side&&(target.debuffResist||0)>0&&random()<target.debuffResist){emit({type:'resist',actor:target.id,target:target.id,skillId,name});return}
-  const id=skillId+':'+source.id+':'+attribute+(stack?':'+b.turn:'');target.effects=target.effects.filter(e=>e.id!==id);target.effects.push({id,skillId,source:source.id,name,attribute,value,expiresTurn});emit({type:'buff',actor:source.id,target:target.id,skillId,name,attribute,value,expiresTurn});
+  if(source.side!==target.side&&random()<Math.max(0,(target.debuffResist||0)-(source.controlPierce||0))+(target.evade||0)){emit({type:'resist',actor:target.id,target:target.id,skillId,name});return}
+  const id=skillId+':'+source.id+':'+attribute+(stack?':'+b.turn:''),old=target.effects.find(e=>e.id===id);if(old)revertHp(target,old);target.effects=target.effects.filter(e=>e.id!==id);
+  // Máu tối đa: đổi thẳng maxHp (và máu hiện tại khi tăng), hoàn lại khi hết hiệu lực.
+  let delta;if(attribute==='maxHp'){delta=Math.round((target.baseMaxHp||target.maxHp)*value);target.maxHp=Math.max(1,target.maxHp+delta);target.hp=Math.max(target.hp>0?1:0,Math.min(target.maxHp,target.hp+Math.max(0,delta)));emit({type:'unit-state',actor:target.id,hp:target.hp,energy:target.energy,maxHp:target.maxHp})}
+  target.effects.push({id,skillId,source:source.id,name,attribute,value,expiresTurn,...(delta?{delta}:{})});emit({type:'buff',actor:source.id,target:target.id,skillId,name,attribute,value,expiresTurn});
  };
  // Phản ứng bị động phát sinh trong lúc đánh (bị đánh, máu thấp, chết) chạy sau khi hành động hiện tại xong.
  const pending=[];
- const triggersOf=(u,on)=>(u.kit?.triggers||[]).filter(t=>t.on===on);
+ // Phong Ấn (Thiên phú Phong Hồn): vô hiệu hóa N bị động dạng kích hoạt đầu tiên của mục tiêu.
+ const triggersOf=(u,on)=>{const sealed=(u.statuses||[]).find(s=>s.kind==='seal'&&s.until>=b.turn);return(u.kit?.triggers||[]).filter((t,i)=>t.on===on&&!(sealed&&i<sealed.passives))};
+ const gain=(u,n)=>{u.energy=Math.min(100,(u.energy||0)+n*(1+(u.energyGain||0)))};
  for(const u of [...b.allies,...b.enemies]){
-  for(const e of u.effects.filter(e=>e.expiresTurn<b.turn))emit({type:'effect-expired',actor:e.source,target:u.id,skillId:e.skillId,name:e.name});
+  for(const e of u.effects.filter(e=>e.expiresTurn<b.turn)){revertHp(u,e);emit({type:'effect-expired',actor:e.source,target:u.id,skillId:e.skillId,name:e.name})}
   u.effects=u.effects.filter(e=>e.expiresTurn>=b.turn);u.statuses=(u.statuses||[]).filter(s=>s.until>=b.turn);u.shields=(u.shields||[]).filter(s=>s.until>=b.turn&&(s.amount>0||s.hits>0));
   for(const key of Object.keys(u.cooldowns))u.cooldowns[key]=Math.max(0,u.cooldowns[key]-1);
  }
@@ -66,13 +77,13 @@ export function teamRound(b,input={action:'auto'}){
   if(isZoro(unit))return available.sort((a,c)=>a.hp-c.hp||a.position-c.position)[0];
   const front=available.filter(u=>u.frontRow);return(front.length?front:available).sort((a,c)=>a.position-c.position||a.id.localeCompare(c.id))[0];
  };
- const heal=(source,target,amount,skillId)=>{if(!target.hp)return;const value=Math.min(target.maxHp-target.hp,Math.round(amount*(1+(source.healPower||0))*(1+(target.healTaken||0))));if(value<=0)return;target.hp+=value;emit({type:'heal',actor:source.id,target:target.id,skillId,amount:value,hp:target.hp})};
- const hit=(source,target,{multiplier=1,skill=false,skillId,bypass=false,missing=0,cap=0,execute=0,trueDamage=0,penetration=0,flat=0,forceCritical=false,periodic=false}={})=>{
+ const heal=(source,target,amount,skillId)=>{if(!target.hp)return;const taken=stat(target,'healTaken',b.turn),value=Math.min(target.maxHp-target.hp,Math.round(amount*(1+(source.healPower||0))*Math.max(0,1+(target.healCutImmune?Math.max(0,taken):taken))));if(value<=0)return;target.hp+=value;emit({type:'heal',actor:source.id,target:target.id,skillId,amount:value,hp:target.hp})};
+ const hit=(source,target,{multiplier=1,skill=false,skillId,bypass=false,missing=0,cap=0,execute=0,trueDamage=0,penetration=0,flat=0,forceCritical=false,periodic=false,passive=false}={})=>{
   if(target.passives?.includes('penetration')){penetration=0;trueDamage=0}
   const attack=stat(source,'attack',b.turn),haki=isZoro(target)?ztier(target,'conqueror-haki'):null;
-  const immune=!bypass&&(target.damageImmune||haki&&b.turn<=haki.duration&&stat(source,'attack',b.turn)<stat(target,'attack',b.turn)&&random()<haki.immunity);
-  const dodge=Math.min(.85,stat(target,'dodgeChance',b.turn)),miss=!bypass&&dodge>0&&random()<dodge;
-  const chance=stat(source,'critChance',b.turn),critical=!flat&&(forceCritical||chance>0&&random()<chance);
+  const immune=!bypass&&(target.damageImmune||haki&&b.turn<=haki.duration&&stat(source,'attack',b.turn)<stat(target,'attack',b.turn)&&random()<haki.immunity||(target.evade||0)>0&&random()<target.evade);
+  const dodge=Math.min(.85,stat(target,'dodgeChance',b.turn))-(source.dodgePierce||0),miss=!bypass&&!immune&&dodge>0&&random()<dodge;
+  const chance=Math.max(0,stat(source,'critChance',b.turn)-(target.critAvoid||0)),critical=!flat&&(forceCritical||chance>0&&random()<chance);
   const raw=(attack*multiplier+Math.min(Math.max(0,target.maxHp-target.hp)*missing,attack*cap))*(skill?1+stat(source,'skillDamage',b.turn):1);
   const pierce=Math.max(0,Math.min(1,penetration+(target.passives?.includes('penetration')?0:stat(source,'penetration',b.turn))-(target.penResist||0)));
   const critBonus=Math.max(0,.5+stat(source,'critDamage',b.turn)-(target.critResist||0));
@@ -87,23 +98,36 @@ export function teamRound(b,input={action:'auto'}){
   const versus=target.heroClass&&source.classDamage?.[target.heroClass==='fighter'?'warrior':target.heroClass];if(versus&&amount>0&&!flat)amount=Math.round(amount*(1+versus));
   // Trái Ác Quỷ (tướng cộng hưởng): Tăng/Giảm % ST DOT, Tăng/Giảm % ST Đánh thường, Giảm % ST Tuyệt kỹ.
   if(amount>0){
-   if(periodic)amount=Math.round(amount*(1+(source.dotDamage||0))*(1-Math.min(.9,target.dotReduction||0)));
+   if(periodic)amount=Math.round(amount*(1+stat(source,'dotDamage',b.turn))*(1-Math.min(.9,Math.max(0,stat(target,'dotReduction',b.turn)))));
    else if(skill)amount=Math.round(amount*(1-Math.min(.9,target.skillReduction||0)));
    else if(!flat)amount=Math.round(amount*(1+(source.basicDamage||0))*(1-Math.min(.9,target.basicReduction||0)));
+  }
+  // Thiên phú: Phong Ấn giảm ST gây ra, Suy Yếu tăng ST phải nhận, Khai Thế tăng ST đòn bị động (phản kích, liên kích...).
+  if(amount>0){const dealt=stat(source,'damageDealt',b.turn),taken=stat(target,'vulnerability',b.turn),extra=passive?stat(source,'passiveDamage',b.turn):0;if(dealt||taken||extra)amount=Math.max(1,Math.round(amount*Math.max(0,1+dealt)*(1+taken)*(1+extra)))}
+  // Bảng Haki: [2] Quan Sát giảm ST khi bị chí mạng; [5] Quan Sát: đòn không chí mạng gây thêm sát thương.
+  if(amount>0&&!flat&&!periodic){
+   if(critical&&target.hakiCritTaken)amount=Math.max(1,Math.round(amount*(1-Math.min(.9,target.hakiCritTaken))));
+   if(!critical&&source.hakiNoCrit)amount=Math.round(amount*(1+source.hakiNoCrit));
   }
   // Khiên: chặn N đợt sát thương hoặc hấp thụ một lượng máu.
   let absorbed=0;
   if(amount>0&&!bypass)for(const s of target.shields||[]){if(s.until<b.turn)continue;if(s.hits>0){s.hits--;absorbed=amount;amount=0;break}if(s.amount>0){const take=Math.min(s.amount,amount);s.amount-=take;amount-=take;absorbed+=take;if(!amount)break}}
-  if(target.immortal&&!bypass)amount=Math.min(amount,Math.max(0,target.hp-1));
-  const before=target.hp;target.hp=Math.max(0,target.hp-amount);if(!hasStatus(target,'fear',b.turn))target.energy=Math.min(100,(target.energy||0)+12);
+  // Hộ Nguyên: trong N lượt đầu, mỗi đòn không vượt quá x% Máu tối đa (Tuyệt Sát có tỉ lệ bỏ qua giới hạn).
+  if(amount>0&&target.damageCap&&b.turn<=target.damageCap.rounds&&!(source.capPierce>0&&random()<source.capPierce))amount=Math.min(amount,Math.max(1,Math.round(target.maxHp*target.damageCap.ratio)));
+  if(target.immortal&&!bypass&&!(source.immortalPierce>0&&random()<source.immortalPierce))amount=Math.min(amount,Math.max(0,target.hp-1));
+  const before=target.hp;target.hp=Math.max(0,target.hp-amount);if(!hasStatus(target,'fear',b.turn))gain(target,12);
   if(target.endless){target.damageTaken+=amount;if(!target.hp)target.hp=target.maxHp}
   emit({type:'damage',actor:source.id,target:target.id,amount,hp:target.hp,energy:target.energy,skill,skillId,bypass,immune:!!immune,miss:!!miss,critical,blocked,...(absorbed?{absorbed}:{})});
   if(amount>0&&stat(source,'lifesteal',b.turn)>0)heal(source,source,amount*stat(source,'lifesteal',b.turn),'lifesteal');
+  if(amount>0&&critical&&source.hakiCritLeech&&source.hp>0)heal(source,source,amount*source.hakiCritLeech,'haki');
+  // [5] Vũ Trang: máu xuống dưới 50% thì miễn nhiễm N lần sát thương kế tiếp (một lần mỗi trận).
+  if(target.hakiLowShield&&!target.hakiShieldUsed&&target.hp>0&&target.hp/target.maxHp<.5){target.hakiShieldUsed=true;(target.shields??=[]).push({hits:target.hakiLowShield,until:999});emit({type:'trigger',actor:target.id,skillId:'haki',name:'Haki Vũ Trang'});emit({type:'buff',actor:target.id,target:target.id,skillId:'haki',name:'Haki Vũ Trang',attribute:'shield',value:0,expiresTurn:999})}
   if(execute&&!target.endless&&target.hp>0&&target.hp/target.maxHp<execute){const remaining=target.hp;target.hp=0;emit({type:'execute',actor:source.id,target:target.id,amount:remaining,hp:0,name:'Trảm Sát'})}
   if(!target.hp){
    const revive=triggersOf(target,'death').flatMap(t=>t.effects).find(e=>e.type==='revive');
-   if(revive&&!target.revived){target.revived=true;target.hp=Math.max(1,Math.round(target.maxHp*revive.maxHp));target.statuses=[];target.dots=[];emit({type:'trigger',actor:target.id,skillId:'revive',name:'Hồi sinh'});emit({type:'heal',actor:target.id,target:target.id,skillId:'revive',amount:target.hp,hp:target.hp,revive:true});return{dead:false,landed:true,critical,amount}}
+   if(revive&&!target.revived&&!(source.immortalPierce>0&&random()<source.immortalPierce)){target.revived=true;for(const t of triggersOf(target,'death'))if(t.effects.some(e=>e.type!=='revive'))pending.push({unit:target,trigger:t,cause:source});target.hp=Math.max(1,Math.round(target.maxHp*revive.maxHp));target.statuses=[];target.dots=[];emit({type:'trigger',actor:target.id,skillId:'revive',name:'Hồi sinh'});emit({type:'heal',actor:target.id,target:target.id,skillId:'revive',amount:target.hp,hp:target.hp,revive:true});return{dead:false,landed:true,critical,amount}}
    emit({type:'death',actor:source.id,target:target.id});
+   for(const x of alive(opponents(target)))for(const t of triggersOf(x,'enemyDeath'))pending.push({unit:x,trigger:t,cause:source});
    for(const t of triggersOf(target,'death'))if(t.effects.some(e=>e.type!=='revive'))pending.push({unit:target,trigger:t,cause:source,dead:true});
    return{dead:true,landed:!immune&&!miss,critical,amount};
   }
@@ -111,6 +135,7 @@ export function teamRound(b,input={action:'auto'}){
    addEffect(target,source,'polish','Mài Dũa','critChance',skillTier(target.skills,'polish').values.critReduction,b.turn+3);
    if(!target.desperationUsed&&target.hp/target.maxHp<.3){target.desperationUsed=true;addEffect(target,target,'desperation','Tuyệt Cảnh','defense',skillTier(target.skills,'desperation').values.armor,b.turn+2)}
   }
+  if(miss&&target.kit)for(const t of triggersOf(target,'dodge'))pending.push({unit:target,trigger:t,cause:source});
   if(amount>0&&target.kit&&!periodic){
    for(const t of triggersOf(target,'hurt'))if(t.from==='any'||t.from==='critical'&&critical||t.from==='ultimate'&&skill)pending.push({unit:target,trigger:t,cause:source});
    for(const t of triggersOf(target,'lowHp'))if(!target['low:'+t.skill]&&before/target.maxHp>=t.threshold&&target.hp/target.maxHp<t.threshold){target['low:'+t.skill]=true;pending.push({unit:target,trigger:t,cause:source})}
@@ -131,7 +156,7 @@ export function teamRound(b,input={action:'auto'}){
  const applyStatus=(u,t,e,skillId,name)=>{
   // Kháng: kháng riêng của bị động + Miễn khống chế từ bảo vật (mã 40-43) + Miễn chống (bị động và trang bị, mã 11).
   if(!t.hp)return;const resist=Math.min(1,(t.resist?.[e.kind]||0)+(t.statusResist?.[e.kind]||0)+Math.max(0,(t.controlResist||0)+(t.debuffResist||0)-(u.controlPierce||0)));
-  if(random()>=e.chance*(1-resist)){if(e.chance*(1-resist)<e.chance)emit({type:'resist',actor:t.id,target:t.id,skillId,name:statusNames[e.kind]});return}
+  if(random()>=e.chance*(1-resist)*(1-(t.evade||0))){if(e.chance*(1-resist)<e.chance)emit({type:'resist',actor:t.id,target:t.id,skillId,name:statusNames[e.kind]});return}
   t.statuses=t.statuses.filter(s=>s.kind!==e.kind);t.statuses.push({kind:e.kind,until:b.turn+e.turns-1+(e.kind==='silence'?0:0),source:u.id});
   emit({type:'buff',actor:u.id,target:t.id,skillId,name:statusNames[e.kind],attribute:e.kind,value:0,expiresTurn:b.turn+e.turns-1});
  };
@@ -148,14 +173,21 @@ export function teamRound(b,input={action:'auto'}){
    if(!u.hp&&e.type!=='damage')continue;
    const victims=()=>e.select?pickTargets(u,e.select,preferred).filter(t=>e.cond!=='slower'||stat(t,'speed',b.turn)<stat(u,'speed',b.turn)):hitTargets.length?hitTargets.filter(t=>t.hp>0):cause&&cause.side!==u.side&&cause.hp>0?[cause]:pickTargets(u,{count:1},preferred);
    if(e.type==='damage'){
-    if(e.followUp){if(random()>=(e.chance??1))continue;const t=hitTargets.find(x=>x.hp>0)||pickTargets(u,e.select,preferred)[0];if(t)hit(u,t,{multiplier:e.mult*scale,skill,skillId});continue}
+    if(e.followUp){if(random()>=(e.chance??1))continue;const t=hitTargets.find(x=>x.hp>0)||pickTargets(u,e.select,preferred)[0];if(t)hit(u,t,{multiplier:e.mult*scale,skill,skillId,passive:true});continue}
     const targets=pickTargets(u,e.select,preferred);if(!targets.length)continue;hitTargets=targets;
     const attack=Math.max(1,stat(u,'attack',b.turn)),mult=((e.mult||0)+(e.hpMult?e.hpMult*u.maxHp/attack:0)+(e.defMult?e.defMult*stat(u,'defense',b.turn)/attack:0))*scale||1;
     for(let i=0;i<(e.hits||1);i++)for(const t of targets)if(t.hp>0){const per=e.foeHp?Math.min(e.cap||4,e.foeHp*t.maxHp/attack)*scale:0;const r=hit(u,t,{multiplier:(mult+per)/(e.hits>1?Math.sqrt(e.hits):1),skill,skillId,trueDamage:e.pierce?.3:0,forceCritical:e.critical});lastDamage+=r.amount||0}
    }
    else if(e.type==='status')for(const t of victims())applyStatus(u,t,e,skillId,name);
    else if(e.type==='dot'){const amount=Math.max(1,Math.round(stat(u,'attack',b.turn)*e.mult*scale));for(const t of victims())if(t.hp>0&&random()<(e.chance??1)){t.dots.push({kind:e.kind,amount,until:b.turn+Math.min(e.turns,20)-1,source:u.id,skillId});emit({type:'buff',actor:u.id,target:t.id,skillId,name:statusNames[e.kind],attribute:e.kind,value:amount,expiresTurn:b.turn+Math.min(e.turns,20)-1})}}
-   else if(e.type==='stat'){const list=e.on==='team'?alive(side(u)):e.on==='self'?[u]:e.on==='enemies'?alive(opponents(u)).filter(t=>e.cond!=='slower'||stat(t,'speed',b.turn)<stat(u,'speed',b.turn)):victims();for(const x of list)applyStat(u,x,e,skillId,name)}
+   else if(e.type==='stat'){const list=e.on==='team'?alive(side(u)):e.on==='self'?[u]:e.on==='enemies'?alive(opponents(u)).filter(t=>e.cond!=='slower'||stat(t,'speed',b.turn)<stat(u,'speed',b.turn)):victims();for(const x of list)if(e.chance===undefined||random()<e.chance)applyStat(u,x,e,skillId,name)}
+   // Huyết Lực: mất x% máu hiện tại, tăng Công bằng lượng máu đã mất trong N lượt.
+   else if(e.type==='bloodPact'){const lost=Math.floor(u.hp*e.ratio);if(lost>0){u.hp-=lost;emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy});addEffect(u,u,skillId+':blood',name,'attack',lost*e.attack/Math.max(1,u.baseAttack),b.turn+e.turns-1)}}
+   // Phong Ấn: một kẻ địch ngẫu nhiên (+ cơ hội thêm một kẻ khác) giảm ST gây ra và mất N bị động kích hoạt.
+   else if(e.type==='seal'){const foes=alive(opponents(u)).map(t=>[random(),t]).sort((a,c)=>a[0]-c[0]).map(x=>x[1]),list=foes.slice(0,random()<e.extraChance?2:1);
+    for(const t of list){if(t.immuneDebuff||random()<(t.evade||0)){emit({type:'resist',actor:t.id,target:t.id,skillId,name:'Phong Ấn'});continue}
+     t.statuses=t.statuses.filter(s=>s.kind!=='seal');t.statuses.push({kind:'seal',until:b.turn+e.turns-1,source:u.id,passives:e.passives});emit({type:'buff',actor:u.id,target:t.id,skillId,name:'Phong Ấn',attribute:'seal',value:0,expiresTurn:b.turn+e.turns-1});
+     addEffect(u,t,skillId+':seal',name,'damageDealt',e.damage,b.turn+e.turns-1)}}
    else if(e.type==='heal'){const team=alive(side(u)),list=e.on==='team'?team:e.on==='lowest'?[...team].sort((a,c)=>a.hp/a.maxHp-c.hp/c.maxHp)[0]?[[...team].sort((a,c)=>a.hp/a.maxHp-c.hp/c.maxHp)[0]]:[]:e.on==='some'?[...team].sort((a,c)=>a.hp/a.maxHp-c.hp/c.maxHp).slice(0,e.count||2):[u];
     for(const x of list)heal(u,x,e.attack?stat(u,'attack',b.turn)*e.attack*scale:x.maxHp*e.maxHp,skillId)}
    else if(e.type==='shield'){const list=e.on==='team'?alive(side(u)):[u];for(const x of list){x.shields.push(e.block?{hits:e.block,until:b.turn+e.turns-1}:{amount:Math.round(e.maxHp?u.maxHp*e.maxHp:stat(u,'attack',b.turn)*e.attack),until:b.turn+e.turns-1});emit({type:'buff',actor:u.id,target:x.id,skillId,name:'Khiên chắn',attribute:'shield',value:0,expiresTurn:b.turn+e.turns-1})}}
@@ -166,14 +198,16 @@ export function teamRound(b,input={action:'auto'}){
    }
    else if(e.type==='cleanse'){for(const x of e.on==='team'?alive(side(u)):[u]){let n=e.count;x.statuses=x.statuses.filter(()=>n-->0?false:true);x.dots=x.dots.slice(Math.max(0,n));x.effects=x.effects.filter(f=>!(f.value<0&&f.source!==x.id&&n-->0))}}
    else if(e.type==='dispel'){for(const t of victims())if(random()<(e.chance??1)){let n=e.count;t.effects=t.effects.filter(f=>!(f.value>0&&n-->0));t.shields=n>0?[]:t.shields}}
-   else if(e.type==='counter'&&cause&&cause.hp>0&&cause.side!==u.side&&u.counterTurn!==b.turn&&random()<(e.chance??1)){u.counterTurn=b.turn;emit({type:'trigger',actor:u.id,skillId,name:'Phản công'});kitBasic(u,cause,depth+1)}
+   else if(e.type==='counter'&&cause&&cause.hp>0&&cause.side!==u.side&&u.counterTurn!==b.turn&&random()<(e.chance??1)){u.counterTurn=b.turn;emit({type:'trigger',actor:u.id,skillId,name:'Phản công'});kitBasic(u,cause,depth+1,true)}
    else if(e.type==='castUlt'&&depth===0&&random()<(e.chance??1)&&!hasStatus(u,'silence',b.turn)){emit({type:'trigger',actor:u.id,skillId,name});castKitUltimate(u,null,depth+1,true)}
-   else if(e.type==='extraAction'&&depth===0&&random()<(e.chance??1)){emit({type:'trigger',actor:u.id,skillId,name});kitBasic(u,firstTarget(u),depth+1)}
+   else if(e.type==='extraAction'&&depth===0&&random()<(e.chance??1)){emit({type:'trigger',actor:u.id,skillId,name});kitBasic(u,firstTarget(u),depth+1,true)}
   }
   return{hitTargets,lastDamage};
  };
  const flushPending=()=>{let guard=0;while(pending.length&&guard++<40){const {unit,trigger,cause,dead}=pending.shift();if(!dead&&!unit.hp)continue;if(random()>=(trigger.chance??1))continue;emit({type:'trigger',actor:unit.id,skillId:'passive',name:trigger.skill});runEffects(unit,trigger.effects.filter(e=>e.type!=='revive'),{skillId:'passive',name:trigger.skill,cause})}};
  const afterUltimate=caster=>{
+  // [5] Bá Vương: dùng kỹ năng Nộ có cơ hội hồi lại 100 nộ.
+  if(caster.hakiUltRefund&&caster.hp>0&&random()<caster.hakiUltRefund){caster.energy=100;emit({type:'trigger',actor:caster.id,skillId:'haki',name:'Haki Bá Vương'});emit({type:'unit-state',actor:caster.id,hp:caster.hp,energy:caster.energy})}
   for(const t of triggersOf(caster,'selfUlt'))pending.push({unit:caster,trigger:t});
   // "Bất cứ tướng nào sử dụng Nộ" gồm cả bản thân; "khi đồng đội dùng Nộ" chỉ đồng đội cùng phe.
  for(const x of alive([...b.allies,...b.enemies]))for(const t of triggersOf(x,'allyUlt'))if(t.scope==='any'||x!==caster&&x.side===caster.side)pending.push({unit:x,trigger:t});
@@ -185,21 +219,23 @@ export function teamRound(b,input={action:'auto'}){
   runEffects(u,ult.effects,{skill:true,skillId:base.id,name:base.name,preferred,scale:u.ultScale||1,depth});
   afterUltimate(u);
  }
- function kitBasic(u,target,depth=0){
+ function kitBasic(u,target,depth=0,passive=false){
   const replace=triggersOf(u,'attack').find(t=>t.replace),riders=triggersOf(u,'attack').filter(t=>!t.replace);
   emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});
   let hitTargets=[target];
   if(replace)hitTargets=runEffects(u,replace.effects,{skillId:'basic',name:replace.skill,preferred:target,depth}).hitTargets;
-  else hit(u,target);
-  for(const t of riders)if(random()<(t.chance??1))runEffects(u,t.effects,{skillId:'basic',name:t.skill,preferred:target,depth,cause:null,...{}}),void 0;
-  if(!hasStatus(u,'fear',b.turn))u.energy=Math.min(100,u.energy+35);
+  else hit(u,target,{passive});
+  basicRiders(u,target,depth,riders);
+  if(!hasStatus(u,'fear',b.turn))gain(u,35);
   return hitTargets;
  }
 
+ // Bị động "khi đánh thường" chạy sau đòn đánh thường của mọi tướng (kể cả Luffy, Zoro, tướng không có bộ kỹ năng).
+ function basicRiders(u,target,depth=0,riders=triggersOf(u,'attack').filter(t=>!t.replace)){for(const t of riders)if(u.hp>0&&random()<(t.chance??1))runEffects(u,t.effects,{skillId:'basic',name:t.skill,preferred:target,depth})}
  // Đầu hiệp: bị động "đầu mỗi hiệp" (và "vào trận" ở hiệp 1).
  for(const u of alive([...b.allies,...b.enemies])){
   if(b.turn===1)for(const t of triggersOf(u,'battleStart')){const effects=t.effects.filter(e=>e.type!=='resist');if(effects.length)runEffects(u,effects,{skillId:'passive',name:t.skill})}
-  for(const t of triggersOf(u,'roundStart'))if(random()<(t.chance??1))runEffects(u,t.effects,{skillId:'passive',name:t.skill});
+  for(const t of triggersOf(u,'roundStart'))if((!t.round||t.round===b.turn)&&random()<(t.chance??1))runEffects(u,t.effects,{skillId:'passive',name:t.skill});
  }
  flushPending();
 
@@ -215,7 +251,7 @@ export function teamRound(b,input={action:'auto'}){
   const manual=u.side==='ally'&&u.id===b.hero.id&&action!=='auto'?alive(opponents(u)).find(t=>t.id===input.targetId):null;
   const target=manual||firstTarget(u);if(!target)break;
   if(action==='defend'){
-   u.energy=Math.min(100,u.energy+20);addEffect(u,u,'defend','Phòng thủ','defense',1.2,b.turn);emit({type:'defend',actor:u.id,name:'Phòng thủ',energy:u.energy});continue;
+   gain(u,20);addEffect(u,u,'defend','Phòng thủ','defense',1.2,b.turn);emit({type:'defend',actor:u.id,name:'Phòng thủ',energy:u.energy});continue;
   }
   if(u.boss){
    // Skill 100208: đánh tất cả, 20% máu tối đa của mục tiêu, không quá 1500% công. Boss không có đòn thường.
@@ -230,7 +266,9 @@ export function teamRound(b,input={action:'auto'}){
     const castOnce=()=>{const t=firstTarget(u);if(!t)return false;addEffect(u,u,'hiryu-jigoku','Ippyakusanjo Hiryu Jigoku','attack',ultimate.attack,b.turn+ultimate.duration-1);emit({type:'skill',actor:u.id,target:t.id,skillId:'hiryu-jigoku',animation:'skill',name:'Ippyakusanjo Hiryu Jigoku',energy:u.energy});return strike(t,true)};
     const killed=castOnce(),follow=ztier(u,'decisive-strike');if(alive(opponents(u)).length&&random()<(killed?follow.killChance:follow.chance)){emit({type:'trigger',actor:u.id,skillId:'decisive-strike',name:'Đòn Quyết Định'});castOnce()}
     afterUltimate(u);
-   }else{emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});strike(target,false);u.energy=Math.min(100,u.energy+35)}
+    // [4] Ippyakusanjo Hiryu Jigoku: bản thân hồi phục 100 Nộ.
+    if(ultimate.refund&&u.hp>0){u.energy=Math.min(100,u.energy+ultimate.refund);emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy})}
+   }else{emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});strike(target,false);basicRiders(u,target);gain(u,35)}
   }else if(isLuffy(u)){
    const cast=!silenced&&(action==='skill'||action==='auto'&&u.energy>=80&&!u.cooldowns['rubber-whip']);
    if(cast){
@@ -240,7 +278,7 @@ export function teamRound(b,input={action:'auto'}){
     const amount=Math.min(healed.maxHp-healed.hp,Math.round(attack*values.heal));healed.hp+=amount;emit({type:'heal',actor:u.id,target:healed.id,skillId:'rubber-whip',amount,hp:healed.hp});
     if(values.attackBuff)addEffect(u,u,'rubber-whip','Roi Cao Su','attack',values.attackBuff,b.turn+2);
     afterUltimate(u);
-   }else{emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});hit(u,target,{multiplier:1.12});u.energy=Math.min(100,u.energy+35)}
+   }else{emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});hit(u,target,{multiplier:1.12});basicRiders(u,target);gain(u,35)}
   }else if(u.kit?.ultimate){
    if(!silenced&&u.energy>=100&&(action==='skill'||action==='auto'))castKitUltimate(u,manual);
    else kitBasic(u,target);
@@ -254,7 +292,7 @@ export function teamRound(b,input={action:'auto'}){
    if(ult.heal){const attack=stat(u,'attack',b.turn),living=alive(side(u)),healed=ult.heal.team?living:[...living].sort((a,c)=>a.hp/a.maxHp-c.hp/c.maxHp||a.position-c.position).slice(0,1);
     for(const ally of healed){const amount=Math.min(ally.maxHp-ally.hp,Math.round(ult.heal.attack?attack*ult.heal.attack:ally.maxHp*ult.heal.maxHp));ally.hp+=amount;emit({type:'heal',actor:u.id,target:ally.id,skillId:ult.id,amount,hp:ally.hp})}}
    afterUltimate(u);
-  }else{emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});hit(u,target);if(!hasStatus(u,'fear',b.turn))u.energy=Math.min(100,u.energy+35)}
+  }else{emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});hit(u,target);basicRiders(u,target);if(!hasStatus(u,'fear',b.turn))gain(u,35)}
   flushPending();
   emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy});
   if(!alive(b.allies).length||!alive(b.enemies).length)break;
@@ -266,6 +304,16 @@ export function teamRound(b,input={action:'auto'}){
    u.dots=u.dots.filter(d=>d.until>b.turn);
   }
   for(const u of alive([...b.allies,...b.enemies]))for(const t of triggersOf(u,'roundEnd'))if(random()<(t.chance??1))runEffects(u,t.effects,{skillId:'passive',name:t.skill});
+  // Bảng Haki cuối lượt: [3] Quan Sát hồi % máu đã mất, [3] Vũ Trang tăng Công theo số tướng còn sống (cả hai phe)
+  // cho lượt kế, [3] Bá Vương có cơ hội loại bỏ ngẫu nhiên 1 hiệu ứng bất lợi.
+  for(const u of alive([...b.allies,...b.enemies])){
+   if(u.hakiRoundHeal)heal(u,u,(u.maxHp-u.hp)*u.hakiRoundHeal,'haki');
+   if(u.hakiRoundAttack)addEffect(u,u,'haki-attack','Haki Vũ Trang','attack',u.hakiRoundAttack*alive([...b.allies,...b.enemies]).length,b.turn+1);
+   if(u.hakiRoundCleanse&&random()<u.hakiRoundCleanse){
+    const bad=[...u.statuses.map(s=>['statuses',s]),...u.dots.map(d=>['dots',d]),...u.effects.filter(f=>f.source!==u.id&&(f.attribute==='critChance'?f.value>0:f.value<0)).map(f=>['effects',f])];
+    if(bad.length){const [list,item]=bad[Math.floor(random()*bad.length)];u[list]=u[list].filter(x=>x!==item);emit({type:'trigger',actor:u.id,skillId:'haki',name:'Haki Bá Vương'});if(list==='effects')emit({type:'effect-expired',actor:item.source,target:u.id,skillId:item.skillId,name:item.name})}
+   }
+  }
   flushPending();
  }
  b.hero=b.allies[0];return events;

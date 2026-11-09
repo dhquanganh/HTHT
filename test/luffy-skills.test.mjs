@@ -4,7 +4,8 @@ import {starterPlayer,applyAction,heroStats,playerView} from '../server/game.mjs
 import {skills} from '../server/catalog.mjs';
 import {effectiveStat,skillTier} from '../server/luffy-skills.mjs';
 const round=(p,action='auto')=>applyAction(p,'battle-action',{battleId:p.battle.id,turn:p.battle.turn,action});
-function durableBattle(levels={}){const p=starterPlayer('Captain');Object.assign(p.hero.skills,levels);applyAction(p,'battle-start',{stageId:1},12345);const e=p.battle.enemies[0];e.hp=e.maxHp=100000;e.critChance=0;return p}
+// Cấp kỹ năng theo sao: 5 sao là cấp 3 cho cả bộ kỹ năng.
+function durableBattle(levels={}){const p=starterPlayer('Captain');if(Object.keys(levels).length)p.hero.stars={1:1,2:3,3:5,4:6}[Math.max(...Object.values(levels))];applyAction(p,'battle-start',{stageId:1},12345);const e=p.battle.enemies[0];e.hp=e.maxHp=100000;e.critChance=0;return p}
 
 test('four original icon IDs and level-three descriptions match the reference',()=>{
  assert.deepEqual(skills.map(s=>s.iconId),['685','140','183','160']);assert.deepEqual(skills.map(s=>s.name),['Roi Cao Su','Mài Dũa','Haki Vũ Trang','Tuyệt Cảnh']);
@@ -12,14 +13,14 @@ test('four original icon IDs and level-three descriptions match the reference',(
 });
 test('legacy upgrades remain stored and map to the current skill set without charging currency',()=>{
  const p=starterPlayer('Captain');p.hero.skills={'jet-pistol':2,'jet-gatling':4,'gear-second':3};const gold=p.wallet.gold,inventory=structuredClone(p.inventory);
- applyAction(p,'profile-update',{displayName:'Captain Two'});assert.equal(p.hero.skills['jet-gatling'],4);assert.equal(p.hero.skills['rubber-whip'],4);assert.equal(p.hero.skills.polish,2);assert.equal(p.hero.skills['armament-haki'],3);assert.equal(p.hero.skills.desperation,1);assert.equal(p.wallet.gold,gold);assert.deepEqual(p.inventory,inventory);assert.equal(skillTier(p.hero.skills,'rubber-whip').level,3);assert.equal(Object.keys(playerView(p).hero.skills).length,4);
+ applyAction(p,'profile-update',{displayName:'Captain Two'});assert.equal(p.hero.skills['jet-gatling'],4);assert.equal(p.hero.skills['rubber-whip'],4);assert.equal(p.hero.skills.polish,2);assert.equal(p.hero.skills['armament-haki'],3);assert.equal(p.hero.skills.desperation,1);assert.equal(p.wallet.gold,gold);assert.deepEqual(p.inventory,inventory);assert.equal(Object.keys(playerView(p).hero.skills).length,4);assert.deepEqual(Object.values(playerView(p).hero.skills),[1,1,1,1]);
 });
 test('an existing legacy battle keeps its HP snapshot and remaining ultimate cooldown',()=>{
  const p=durableBattle(),b=p.battle,h=b.hero;p.hero.skills={'jet-pistol':2,'jet-gatling':2,'gear-second':2};h.skills={...p.hero.skills};h.hp=500;h.maxHp=900;h.energy=100;h.cooldowns={'jet-gatling':3};const id=b.id;
  const result=round(p);assert.equal(b.id,id);assert.equal(h.maxHp,900);assert.ok(h.hp>0&&h.hp<500);assert.equal(h.cooldowns['rubber-whip'],2);assert.ok(result.events.some(e=>e.type==='attack'&&e.actor==='hero'));assert.equal(result.events.some(e=>e.type==='skill'),false);
 });
 test('Haki adds forty percent armor and health once, including equipment-independent base stats',()=>{
- const p=starterPlayer('Captain');p.hero.skills['armament-haki']=3;const stats=heroStats(p);assert.equal(stats.maxHp,Math.round(883*1.4));assert.equal(stats.defense,Math.round(29*1.4));assert.equal(heroStats(p).maxHp,stats.maxHp);
+ const p=starterPlayer('Captain');p.hero.stars=5;const grow=1+1/150,stats=heroStats(p);assert.equal(stats.maxHp,Math.round(Math.round((800+grow*82)*1.8)*1.4));assert.equal(stats.defense,Math.round(Math.round((25+grow*4)*1.8)*1.4));assert.equal(heroStats(p).maxHp,stats.maxHp);
 });
 test('Roi Cao Su hits one enemy, heals the only ally, and buffs the next two attack turns',()=>{
  const p=durableBattle({'rubber-whip':3,'armament-haki':3}),b=p.battle,h=b.hero;h.energy=80;h.hp=100;b.enemies[0].attack=1;b.enemies.push({...b.enemies[0],id:'enemy-1'});

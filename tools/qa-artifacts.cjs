@@ -27,7 +27,8 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  }
  console.log(JSON.stringify(report,null,1));
  assert.ok(report.every(r=>r.lines));const dieu=report.find(r=>r.id==='artifact:130').lines.join('\n');
- assert.match(dieu,/Hệ Sinh Khí: 115 Tốc độ/);assert.match(dieu,/Cấp 6:/);
+ // Popup như PopupItemInfo gốc: chỉ số của sao hiện tại, dòng theo hệ ghi rõ hệ; nút nâng cấp thay cho bảng cấp.
+ assert.match(dieu,/Hệ Sinh Khí: Tăng 115 Tốc độ/);assert.doesNotMatch(dieu,/Cấp 6:/);
  // Bán bảo vật nhận đúng giá gốc cấp 1.
  const gold=await page.evaluate(()=>GameRuntime.player.wallet.gold);
  const sold=await page.evaluate(async()=>{const s=await(await fetch('/api/auth/session',{credentials:'same-origin'})).json();const r=await fetch('/api/items/sell',{method:'POST',credentials:'same-origin',headers:{Accept:'application/json','Content-Type':'application/json','Idempotency-Key':crypto.randomUUID(),'X-CSRF-Token':s.csrfToken},body:JSON.stringify({itemId:'artifact:17',quantity:1})});return r.status});
