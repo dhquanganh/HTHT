@@ -176,6 +176,11 @@ export class Store {
   const _id=this.adminId(id),update=await this.users.updateOne({_id},{$set:{locked}});requireCondition(update.matchedCount,'Tài khoản không tồn tại.',404);
   await this.ranking.updateOne({userId:_id},{$set:{hidden:locked}});await this.beastRanking.updateMany({userId:_id},{$set:{hidden:locked}});if(locked)await this.sessions.deleteMany({userId:_id});await this.adminLog.insertOne({userId:_id,at:new Date(),detail:locked?'Khóa tài khoản':'Mở khóa tài khoản',ip});
  }
+ async adminSetPassword(id,password,ip){
+  // Ghi đè mật khẩu cũ bằng hash mới và đăng xuất mọi phiên đang mở của tài khoản.
+  const _id=this.adminId(id),update=await this.users.updateOne({_id},{$set:{passwordHash:await passwordHash(password),updatedAt:new Date()}});requireCondition(update.matchedCount,'Tài khoản không tồn tại.',404);
+  await this.sessions.deleteMany({userId:_id});await this.adminLog.insertOne({userId:_id,at:new Date(),detail:'Đặt lại mật khẩu',ip});
+ }
  async mutate(userId,requestKey,action,input,extraContext){
   requireCondition(typeof requestKey==='string'&&/^[A-Za-z0-9_-]{12,100}$/.test(requestKey),'Thiếu mã chống lặp thao tác.',400,'IDEMPOTENCY_REQUIRED');
   const fingerprint=sha(JSON.stringify({action,input}));
