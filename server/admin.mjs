@@ -70,6 +70,11 @@ export function mountAdmin(app,store,password,limiter){
  app.post('/api/admin/beast/boss/:boss',guard,async(req,res)=>{await store.setBeastBoss(req.params.boss,req.body?.reset===true?'reset':req.body,req.ip);res.json(await store.beastAdmin())});
  app.post('/api/admin/beast/config',guard,async(req,res)=>{await store.setBeastConfig(req.body,req.ip);res.json(await store.beastAdmin())});
  app.post('/api/admin/beast/season',guard,async(req,res)=>{await store.setBeastEnd(req.body?.endsAt,req.ip);res.json(await store.beastAdmin())});
+ app.post('/api/admin/players/:id/password',guard,async(req,res)=>{
+  const password=req.body?.password;
+  requireCondition(typeof password==='string'&&password.length>=8&&password.length<=128,'Mật khẩu phải có 8–128 ký tự.');
+  await store.adminSetPassword(req.params.id,password,req.ip);res.json(await store.adminPlayer(req.params.id));
+ });
  app.post('/api/admin/players/:id/lock',guard,async(req,res)=>{
   requireCondition(typeof req.body?.locked==='boolean','Dữ liệu không hợp lệ.');
   await store.adminLock(req.params.id,req.body.locked,req.ip);res.json(await store.adminPlayer(req.params.id));
