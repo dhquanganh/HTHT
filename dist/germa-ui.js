@@ -23,6 +23,10 @@
  const buffText=b=>{const out=[];if(b[0]!==undefined)out.push('Công +'+b[0]);if(b[2]!==undefined)out.push('Máu +'+b[2]);if(b[3]!==undefined)out.push('Tốc +'+b[3]);return out.join('\n')};
  const zeroBuff=n=>Object.fromEntries(Object.keys(n.buff[0]).map(k=>[k,0]));
 
+ // FieldItemEpSaoUpLevel neo theo Content của panel nên trên màn tướng web bị đẩy lên quá mép trên (y = -12):
+ // đặt lại ngang hàng các ô tài nguyên ở thanh trên (đỉnh y = 8, như ô vàng / EXP).
+ function alignField(){const f=find(root,'Bgr/Content/FieldItemEpSaoUpLevel'),layer=document.querySelector('#game-layer');if(!f||!layer)return;
+  f.style.transform='';const k=layer.getBoundingClientRect().width/1136,y=(f.getBoundingClientRect().y-layer.getBoundingClientRect().y)/k;f.style.transform=`translateY(${Math.round(8-y)}px)`;f.classList.add('germa-field')}
  function fill(){
   if(!root?.isConnected)return;const levels=germa().levels,active=indexActive(levels),skills=skillsOf();
   img(find(root,'Bgr/Content/FieldItemEpSaoUpLevel/Icon'),itemSrc(data.unlockItem));text(find(root,'Bgr/Content/FieldItemEpSaoUpLevel/Text'),c.num(have(data.unlockItem)),false);
@@ -107,7 +111,7 @@
  }
  async function mount(target,context){
   c=context;host=target;await load();if(host!==target||!target.isConnected)return;
-  root=D.render(data.prefabs.PanelEpSao,W,H,opts());root.classList.add('germa-root');target.appendChild(root);
+  root=D.render(data.prefabs.PanelEpSao,W,H,opts());root.classList.add('germa-root');target.appendChild(root);alignField();
   root.addEventListener('click',onClick);fill();
  }
  window.GermaUI={mount,load,refresh:fill,close:()=>{root?.remove();root=null;close('.germa-popup')}};
