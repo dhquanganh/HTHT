@@ -36,6 +36,7 @@
   <h3>Vàng và kim cương</h3><form id="grant-wallet" class="wallet"><label>Vàng (+/−)<input id="grant-gold" type="number" step="1"></label><label>Kim cương (+/−)<input id="grant-diamonds" type="number" step="1"></label><button type="submit">Cập nhật</button></form>
   <h3>Thư chờ nhận</h3><div class="list">${p.mail.map(m=>`<div><span class="grow"><b>${escape(m.title)}</b><br><small class="muted">${when(m.sentAt)}</small></span>${m.rewards.map(r=>`${icon(r.icon)}<strong>${num(r.quantity)}</strong>`).join('')}</div>`).join('')||'<div class="muted">Không có thư chờ nhận</div>'}</div><h3>Túi đồ</h3><div class="list">${p.inventory.map(i=>`<div>${icon(i.icon)}<span class="grow">${escape(i.name)}</span><strong>${num(i.quantity)}</strong></div>`).join('')||'<div class="muted">Túi đồ trống</div>'}</div>
   <h3>Lịch sử quản trị</h3><div class="list log">${p.log.map(l=>`<div><time>${when(l.at)}</time>${escape(l.detail)}</div>`).join('')||'<div class="muted">Chưa có thao tác</div>'}</div>
+  <h3>Mật khẩu</h3><p class="muted">Đặt mật khẩu mới sẽ ghi đè mật khẩu cũ và đăng xuất người chơi khỏi mọi thiết bị.</p><form id="set-password" class="wallet"><label>Mật khẩu mới<input id="new-password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></label><label>Nhập lại<input id="confirm-password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required></label><button type="submit">Đặt mật khẩu</button></form>
   <h3>Trạng thái</h3><button id="lock" class="danger" type="button" data-locked="${p.locked}">${p.locked?'Mở khóa tài khoản':'Khóa tài khoản'}</button>`;
  }
  async function refresh(p,message){renderDetail(p);await loadPlayers();toast(message)}
@@ -54,6 +55,7 @@
    if(form==='login-form'){$('#login-error').textContent='';({csrfToken:csrf}=await api('/api/admin/login',{password:$('#password').value}));$('#password').value='';await showApp()}
    if(form==='search-form'){query=$('#search').value.trim();page=0;await loadPlayers()}
    if(form==='grant-item'){if(!chosen)throw Error('Hãy chọn vật phẩm trong danh sách.');const name=chosen.name;await refresh(await api(`/api/admin/players/${selected}/grant`,{itemId:chosen.id,quantity:Number($('#grant-quantity').value),...letter()}),`Đã gửi ${name}.`);chosen=null}
+   if(form==='set-password'){const password=$('#new-password').value;if(password.length<8||password.length>128)throw Error('Mật khẩu phải có 8–128 ký tự.');if(password!==$('#confirm-password').value)throw Error('Hai mật khẩu không khớp.');if(!confirm('Ghi đè mật khẩu của tài khoản này? Người chơi sẽ bị đăng xuất ngay.'))return;await refresh(await api(`/api/admin/players/${selected}/password`,{password}),'Đã đặt mật khẩu mới.')}
    if(form==='grant-wallet'){const value=id=>$(id).value===''?undefined:Number($(id).value);await refresh(await api(`/api/admin/players/${selected}/grant`,{gold:value('#grant-gold'),diamonds:value('#grant-diamonds'),...letter()}),'Đã gửi. Số âm đã trừ ngay.')}
   }catch(error){if(form==='login-form')$('#login-error').textContent=error.message;else toast(error.message)}
  });
