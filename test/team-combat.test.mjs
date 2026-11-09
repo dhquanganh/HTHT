@@ -54,3 +54,11 @@ test('all fallen allies end a team battle even if its primary snapshot has stale
  const p=starterPlayer('Captain');applyAction(p,'battle-start',{stageId:1,formation:slots});p.battle.hero=structuredClone(p.battle.hero);for(const u of p.battle.allies)u.hp=0;
  applyAction(p,'battle-action',{battleId:p.battle.id,turn:1,action:'auto'});assert.equal(p.battle.status,'lost');assert.equal(p.battle.reward,null);assert.equal(p.adventure.wins,0);
 });
+
+test('passive extra action after the last enemy dies does not crash (arena TypeError regression)',async()=>{
+ const {initializeTeamBattle,teamRound}=await import('../server/team-combat.mjs');
+ const kit={ultimate:null,passives:[],stats:{},triggers:[{on:'enemyDeath',effects:[{type:'extraAction',chance:1}],chance:1,skill:'Truy kích'}]};
+ const unit=(id,side,hp,extra={})=>({id,side,name:id,hp,maxHp:hp,attack:500,defense:10,speed:side==='ally'?300:50,position:0,frontRow:true,energy:0,skills:{},cooldowns:{},...extra});
+ const b={id:'t',status:'active',turn:1,seed:7,allies:[unit('hero','ally',5000,{kit,heroId:'hero-x'})],enemies:[unit('enemy-0','enemy',1)],events:[]};
+ initializeTeamBattle(b);assert.doesNotThrow(()=>teamRound(b,{action:'auto'}));assert.equal(b.enemies[0].hp,0);
+});

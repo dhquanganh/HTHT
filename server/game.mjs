@@ -32,6 +32,7 @@ import {abyssView,startAbyss,finishAbyss,claimAbyssQuest,buyAbyssTurn,claimAbyss
 import {arenaModes,dayKey,freeTickets,ticketItem,ticketPrice,ticketBuyLimit,allstarAttacks,allstarAttackPrice,allstarBuyLimit,betItem,betAmount,asEnemies,series} from './arena.mjs';
 import {guildState,techBonus,applyTech,techView,techAction,guildCoin,createCost,createLevel,validName,rollCall,donations,donateLimit,bossFreeAttacks,bossBuyPrice,bossBuyLimit,bossRounds,stageData,bossMonster,vnDay,guildData} from './guild.mjs';
 import {excView,excAction,excLevel,excPoints,excTierStats,excSkill} from './exc.mjs';
+import {tthView,tthBuy,tthSpend,tthFinish,tthDay,bossUnit,bossOfDay,battleRounds as tthRounds} from './tth.mjs';
 import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
 
 export function starterPlayer(username){
@@ -124,7 +125,7 @@ export function upgradeCosts(player){const h=player.hero;return{
  rank:{gold:(h.rank+1)*700,items:{[materials.rank]:(h.rank+1)*3},minLevel:(h.rank+1)*3},
 }}
 export function playerView(player,now=Date.now()){return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
-function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
+function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),tth:tthView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
 function addItem(p,id,qty){requireCondition(itemById.has(id),'Vật phẩm không tồn tại.');if(id===heroExpItem){p.wallet.spirit=(p.wallet.spirit||0)+qty;requireCondition(p.wallet.spirit>=0,'Không đủ Đá EXP.');return}p.inventory[id]=(p.inventory[id]||0)+qty;requireCondition(p.inventory[id]>=0,'Không đủ vật phẩm.')}
 function spend(p,cost){for(const [currency,amount] of Object.entries(cost)){requireCondition(Number.isSafeInteger(amount)&&amount>=0,'Chi phí không hợp lệ.');requireCondition((p.wallet[currency]||0)>=amount,`Không đủ ${({gold:'vàng',diamonds:'kim cương',spirit:'EXP tướng'})[currency]||currency}.`,400,'INSUFFICIENT_FUNDS');p.wallet[currency]-=amount;if(currency==='diamonds')trackEvent(p,'diamondSpend',amount)}}
 function spendItems(p,cost={}){for(const [id,amount] of Object.entries(cost)){requireCondition((id===heroExpItem?p.wallet.spirit:p.inventory[id]||0)>=amount,`Không đủ ${itemById.get(id)?.name||'vật phẩm'}.`);addItem(p,id,-amount)}}
@@ -255,6 +256,17 @@ function runAction(p,action,input,now,context){
  ensureRoster(p);startAfk(p,now);startSummon(p);if(p.hero.id==='luffy-gear-2')ensureLuffySkills(p);
  if(action.startsWith('arena-')||action==='allstar-bet')return arenaAction(p,action,input,now,context);
  if(action.startsWith('guild-'))return guildAction(p,action,input,now,context);
+ if(action==='tth-buy'){outsideBattle(p);return tthBuy(p,now,n=>spend(p,{diamonds:n}))}
+ if(action==='tth-attack'){
+  // Tân Tứ Hoàng: boss của ngày (kỹ năng gốc của tướng qua bộ kỹ năng đọc từ mô tả), không chết, đánh hết battleRounds hiệp.
+  outsideBattle(p);const day=tthDay(now),teamFormation=validateFormation(p,input.formation??formationView(p).slots),saved=p.formation;tthSpend(p,now);
+  const b=bossOfDay(day),unit=bossUnit(day),kit=kitForAvatar(b.avatar),heroId='hero-'+b.avatar,definition=heroKits.has(heroId)?definitionFor(heroId):null;
+  openBattle(p,[kit?{...unit,heroId,kit,ultScale:1,...(definition?.ultimate?{ultimate:definition.ultimate}:{})}:unit],{chapter:1+(day-1)%12,stageId:null,tth:{day,bossIndex:b.index,name:b.name,rounds:tthRounds}},teamFormation,saved?.position??0,now);
+  if(saved)p.formation=saved;else delete p.formation;
+  for(const e of p.battle.enemies){e.frontRow=true;if(e.kit)e.energy=35}
+  if(input.skip===true)while(p.battle.status==='active')battleRound(p,{battleId:p.battle.id,turn:p.battle.turn,action:'auto'},now);
+  return{message:`Khiêu chiến ${b.name}.`,battleId:p.battle.id};
+ }
  if(action==='formation-save'){outsideBattle(p);p.formation=validateFormation(p,input.slots);return{message:'Đã lưu đội hình.'}}
  if(action==='hero-select'){
   outsideBattle(p);requireCondition(typeof input.heroId==='string','Tướng không hợp lệ.');
@@ -426,7 +438,7 @@ function runAction(p,action,input,now,context){
   p.wallet.gold+=payout.gold;accountExp(p,payout.accountExp);if(payout.stones)addItem(p,economy.afk.stoneItem,payout.stones);
   return{message:`Đã nhận ${amount(payout.gold)} vàng, ${amount(payout.accountExp)} kinh nghiệm${payout.stones?`, ${amount(payout.stones)} Đá EXP`:''}.`,reward:{gold:payout.gold,accountExp:payout.accountExp,items,seconds:payout.seconds},rewards:[{itemId:'gold',quantity:payout.gold},{itemId:'consumable:1002',quantity:payout.accountExp},...items].filter(r=>r.quantity>0)};
  }
- if(action==='battle-leave'){requireCondition(p.battle?.status==='active','Không có trận chiến đang diễn ra.');if(p.battle.silent){p.battle.status='won';srFinish(p,p.battle,reward=>grantReward(p,reward),now);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.beast){p.battle.status='won';finishBeast(p,p.battle);recordBossBattle(p,p.battle);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.arena){p.battle.status='lost';return{message:'Đã rút lui. Trận đấu tính là thua.'}}if(p.battle.guildBoss){p.battle.status='won';p.battle.reward={damage:guildBossDamage(p.battle).reduce((n,x)=>n+x.damage,0),...p.battle.guildBoss.reward};return{message:'Đã rút lui. Sát thương vẫn được tính.'}}p.battle.status='abandoned';return{message:'Đã rút lui. Không nhận thưởng.'}}
+ if(action==='battle-leave'){requireCondition(p.battle?.status==='active','Không có trận chiến đang diễn ra.');if(p.battle.silent){p.battle.status='won';srFinish(p,p.battle,reward=>grantReward(p,reward),now);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.beast){p.battle.status='won';finishBeast(p,p.battle);recordBossBattle(p,p.battle);return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.arena){p.battle.status='lost';return{message:'Đã rút lui. Trận đấu tính là thua.'}}if(p.battle.tth){p.battle.status='won';tthFinish(p,p.battle,reward=>grantReward(p,reward));return{message:'Đã rút lui. Sát thương vẫn được tính.'}}if(p.battle.guildBoss){p.battle.status='won';p.battle.reward={damage:guildBossDamage(p.battle).reduce((n,x)=>n+x.damage,0),...p.battle.guildBoss.reward};return{message:'Đã rút lui. Sát thương vẫn được tính.'}}p.battle.status='abandoned';return{message:'Đã rút lui. Không nhận thưởng.'}}
  throw new GameError('Thao tác không tồn tại.',404);
 }
 function enemyUnit(source,slot,i,strength){const maxHp=Math.round((240+strength*100)*(1+i*.13));return{id:'enemy-'+i,name:source.name,avatar:source.avatar,faction:source.faction,heroClass:source.class||null,level:source.level,stars:source.stars,monsterId:source.sourceId,position:slot.position,maxHp,hp:maxHp,attack:25+strength*15+i*8,defense:9+strength*4,speed:70+i*4,visualIndex:i}}
@@ -461,6 +473,7 @@ function battleRound(p,input,now){
   events.push(...teamRound(b,input));
   if(b.silent){if(!b.allies.some(u=>u.hp>0)||!b.enemies.some(u=>u.hp>0)||b.turn>=b.silent.rounds){b.status='won';srFinish(p,b,reward=>grantReward(p,reward),now);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.beast){if(!b.allies.some(u=>u.hp>0)||b.turn>=b.beast.rounds){b.status='won';finishBeast(p,b);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
+  else if(b.tth){if(!b.allies.some(u=>u.hp>0)||b.turn>=b.tth.rounds){b.status='won';tthFinish(p,b,reward=>grantReward(p,reward));event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.guildBoss){if(!b.allies.some(u=>u.hp>0)||!b.enemies.some(u=>u.hp>0)||b.turn>=b.guildBoss.rounds){b.status='won';b.reward={damage:guildBossDamage(b).reduce((n,x)=>n+x.damage,0),...b.guildBoss.reward};event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.arena){if(!b.enemies.some(u=>u.hp>0)){b.status='won';event(b,events,{type:'victory',reward:null})}else if(!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status='lost';event(b,events,{type:'defeat'})}else b.turn++}
   else if(!b.enemies.some(u=>u.hp>0)){b.status='won';settleVictory(p,b,now);event(b,events,{type:'victory',reward:b.reward})}

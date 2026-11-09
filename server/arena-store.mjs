@@ -4,11 +4,11 @@
 import {ObjectId} from 'mongodb';
 import {randomUUID} from 'node:crypto';
 import {requireCondition} from './errors.mjs';
-import {starterPlayer,arenaSnapshot} from './game.mjs';
+import {starterPlayer,arenaSnapshot,levelCap} from './game.mjs';
 import {heroDefinitions,heroKits} from './catalog.mjs';
 import {newHero} from './hero-roster.mjs';
 import {sendMail} from './mail.mjs';
-import {arenaData,arenaModes,startPoints,seasonWindow,dayKey,nextDaily,allstarPhase,knockoutRounds,groupEndOffset,eloDelta,rewardFor,pointsPerHour,allstarSeasonReward,knockoutReward,botName,botProfile,seeded,series,knockoutSize} from './arena.mjs';
+import {arenaData,arenaModes,startPoints,seasonWindow,dayKey,nextDaily,allstarPhase,knockoutRounds,groupEndOffset,eloDelta,rewardFor,pointsPerHour,allstarSeasonReward,knockoutReward,botName,botProfile,botVersion,seeded,series,knockoutSize} from './arena.mjs';
 
 const botCount={solo:60,league:40,allstars:40},HOUR=3600000;
 const entryId=(mode,season,key)=>`${mode}:${season}:${key}`;
@@ -19,11 +19,17 @@ const publicEntry=(e,rank)=>({id:e._id,rank,name:e.name,avatar:e.avatar,level:e.
 function botEntry(mode,season,i,total){
  const prof=botProfile(mode,i,total),rand=seeded(season*7919+i*104729+mode.length*31),pool=heroDefinitions.filter(d=>heroKits.has(d.id)&&d.id!=='luffy-gear-2'&&d.id!=='zoro-king-of-hell');
  const picks=[];while(picks.length<6*arenaModes[mode].teams&&picks.length<pool.length){const d=pool[Math.floor(rand()*pool.length)];if(!picks.includes(d))picks.push(d)}
- const p=starterPlayer(botName(i));p.account.level=Math.min(100,Math.max(arenaModes[mode].minLevel,prof.level));
- const heroes=picks.map(d=>({...newHero(d),level:prof.level,stars:prof.stars}));p.hero=heroes[0];p.reserveHeroes=Object.fromEntries(heroes.slice(1).map(h=>[h.id,h]));
+ const p=starterPlayer(botName(i));p.account.level=Math.min(100,Math.max(arenaModes[mode].minLevel,Math.round(prof.level/6)));
+ // Sao thấp nhất đủ trần cấp (cấp 600 = L5), kỹ năng tự lên theo sao.
+ let stars=1;while(stars<19&&levelCap(stars)<prof.level)stars++;const level=Math.min(prof.level,levelCap(stars));
+ const heroes=picks.map(d=>({...newHero(d),level,stars}));p.hero=heroes[0];p.reserveHeroes=Object.fromEntries(heroes.slice(1).map(h=>[h.id,h]));
  p.arena={defense:{[mode]:Array.from({length:arenaModes[mode].teams},(_,t)=>Array.from({length:6},(_,k)=>heroes[t*6+k]?.id??null))}};
- const snap=arenaSnapshot(p,mode);
- return{_id:entryId(mode,season,'bot'+i),mode,season,userId:null,bot:true,botIndex:i,name:snap.displayName,avatar:snap.avatar,level:snap.level,power:snap.power,teams:snap.teams,points:prof.points,apoints:0,rank:i+1,hidden:false,updatedAt:new Date(0)};
+  const snap=arenaSnapshot(p,mode);
+ // Cường hóa theo hạng: nhân Công / Máu / Thủ của từng tướng, tính lại lực chiến.
+ for(const team of snap.teams){for(const u of team.units){for(const k of ['attack','baseAttack','defense','baseDefense'])if(u[k])u[k]=Math.round(u[k]*prof.boost);u.maxHp=Math.round(u.maxHp*prof.boost);u.hp=u.maxHp;
+  u.power=Math.round(u.attack*2.4+u.maxHp*.13+u.defense*2)}team.power=team.units.reduce((n,u)=>n+u.power,0);for(const h of team.heads){h.level=level;h.stars=stars}}
+ snap.power=snap.teams.reduce((n,x)=>n+x.power,0);
+ return{_id:entryId(mode,season,'bot'+i),mode,season,userId:null,bot:true,botIndex:i,botVersion,name:snap.displayName,avatar:snap.avatar,level:snap.level,power:snap.power,teams:snap.teams,points:prof.points,apoints:0,rank:i+1,hidden:false,updatedAt:new Date(0)};
 }
 
 export function installArena(Store){
@@ -45,6 +51,11 @@ export function installArena(Store){
    const humans=await this.arenaEntries.countDocuments({mode,season:season.id,bot:{$ne:true}});
    if(mode==='allstars')docs.forEach((d,i)=>{d.rank=humans+i+1});
    await this.arenaEntries.bulkWrite(docs.map(d=>({updateOne:{filter:{_id:d._id},update:{$setOnInsert:d},upsert:true}})),{ordered:false});
+  }else if(await this.arenaEntries.findOne({mode,season:season.id,bot:true,botVersion:{$ne:botVersion}},{projection:{_id:1}})){
+   // Bot của mùa đang chạy sinh theo công thức cũ: dựng lại đội (cấp, sao, cường hóa), giữ điểm / hạng hiện tại.
+   const total=botCount[mode];
+   await this.arenaEntries.bulkWrite(Array.from({length:total},(_,i)=>{const d=botEntry(mode,season.id,i,total);
+    return{updateOne:{filter:{_id:d._id,botVersion:{$ne:botVersion}},update:{$set:{botVersion,name:d.name,avatar:d.avatar,level:d.level,power:d.power,teams:d.teams}}}}}),{ordered:false});
   }
   return season;
  };

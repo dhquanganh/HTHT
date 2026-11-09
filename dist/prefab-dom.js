@@ -57,6 +57,14 @@
    else{const y=pt+(al.v==='center'?(h-pt-pb-s.h)/2:al.v==='flex-end'?h-pt-pb-s.h:0);out.set(c,{x:cursor+inSlot,y,w:s.w,h:s.h});cursor+=(s.slot||s.w)+sp}});
   return{map:out,contentH:vertical?total+pt+pb:h};
  }
+ const tintCache=new Map();
+ function tintedSrc(src,color){
+  const key=src+'|'+color.slice(0,3).join(',');
+  if(!tintCache.has(key))tintCache.set(key,new Promise(resolve=>{const im=new Image();im.onload=()=>{try{
+   const cv=document.createElement('canvas');cv.width=im.naturalWidth;cv.height=im.naturalHeight;const g=cv.getContext('2d');g.drawImage(im,0,0);
+   const d=g.getImageData(0,0,cv.width,cv.height),p=d.data;for(let i=0;i<p.length;i+=4){p[i]*=color[0];p[i+1]*=color[1];p[i+2]*=color[2]}g.putImageData(d,0,0);resolve(cv.toDataURL())}catch{resolve(null)}};im.onerror=()=>resolve(null);im.src=src}));
+  return tintCache.get(key);
+ }
  function paintImage(host,c,assetSrc,assets){
   const color=c.color||[1,1,1,1],info=c.asset?assets?.[c.asset]:null;
   if(!c.asset){if(color[3]>0&&!c.noFill)host.style.background=css(color);return}
@@ -66,8 +74,11 @@
   let el=host;if(sliced||color[3]<1||color[0]<.99||color[1]<.99||color[2]<.99){el=document.createElement('div');el.className='pd-image';Object.assign(el.style,{position:'absolute',inset:'0',pointerEvents:'none'});host.prepend(el)}
   const url=`url('${assetSrc(c.asset)}')`,border=info?.border;
   const tinted=color[0]<.99||color[1]<.99||color[2]<.99;
-  if(c.mode===1&&border&&border.some(v=>v>0)&&!tinted){
+  if(c.mode===1&&border&&border.some(v=>v>0)){
    const [l,b,r,t]=border;el.style.borderStyle='solid';el.style.borderColor='transparent';el.style.borderWidth=`${t}px ${r}px ${b}px ${l}px`;el.style.borderImage=`${url} ${t} ${r} ${b} ${l} fill stretch`;el.style.boxSizing='border-box';
+   // 9-slice có tô màu: nhân màu vào ảnh gốc trên canvas (như Image.color của Unity) rồi dùng làm border-image,
+   // thay vì kéo giãn cả ảnh (vỡ hạt, méo viền hoa văn).
+   if(tinted)tintedSrc(assetSrc(c.asset),color).then(src=>{if(src)el.style.borderImage=`url('${src}') ${t} ${r} ${b} ${l} fill stretch`});
   }else{
    el.style.backgroundImage=url;el.style.backgroundRepeat='no-repeat';el.style.backgroundPosition='center';el.style.backgroundSize=c.preserve?'contain':'100% 100%';
    if(tinted){el.style.backgroundColor=css([color[0],color[1],color[2],1]);el.style.backgroundBlendMode='multiply';el.style.webkitMaskImage=url;el.style.maskImage=url;el.style.webkitMaskSize=el.style.maskSize=c.preserve?'contain':'100% 100%';el.style.webkitMaskRepeat=el.style.maskRepeat='no-repeat';el.style.webkitMaskPosition=el.style.maskPosition='center'}

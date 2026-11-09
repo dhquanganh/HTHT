@@ -170,7 +170,7 @@ function drawNode(n,pw,ph,override){
  ctx.save();ctx.translate(r.x+p.x*r.w,r.y+(1-p.y)*r.h);const angle=-2*Math.atan2(q.z,q.w);if(angle)ctx.rotate(angle);ctx.scale(s.x,s.y);ctx.translate(-p.x*r.w,-(1-p.y)*r.h);
  const group=get(n,'CanvasGroup');if(group)ctx.globalAlpha*=group.alpha;
  for(const c of n.components){if((c.type==='Image'||c.type==='RawImage')&&!n.hideGraphic)drawImage(c,r.w,r.h);if(c.type==='Text')drawText(c,n,r.w,r.h);if(c.type==='SkeletonGraphic'&&c.instance){ctx.save();ctx.translate(p.x*r.w,(1-p.y)*r.h);ctx.scale(1,-1);try{spineRenderer.draw(c.instance)}catch(e){if(!c.renderError){loadErrors.push(c.skeleton.name+': '+e.message);c.renderError=true}}ctx.restore()}}
- if(get(n,'Button')&&r.w>0&&r.h>0){const m=logicalCanvasMatrix();hits.push({name:n.name,node:n,matrix:m,inverse:m.inverse(),w:r.w,h:r.h});if(hover===n.id&&!worldContent()&&Number(sceneId)!==24){ctx.save();ctx.globalAlpha=.10;ctx.fillStyle='#fff';ctx.fillRect(0,0,r.w,r.h);ctx.restore()}}
+ if(get(n,'Button')&&r.w>0&&r.h>0){const m=logicalCanvasMatrix();hits.push({name:n.name,node:n,matrix:m,inverse:m.inverse(),w:r.w,h:r.h});}
  if(get(n,'Mask')||get(n,'RectMask2D')){ctx.beginPath();ctx.rect(0,0,r.w,r.h);ctx.clip()}
  const overrides=childRects(n,r.w,r.h);if(n.name==='Content')ctx.translate(n===worldContent()?-worldScroll:0,-(scrollOffsets.get(n.id)||0));for(const ch of n.children)drawNode(ch,r.w,r.h,overrides.get(ch.id));ctx.restore();
 }

@@ -200,7 +200,7 @@ export function teamRound(b,input={action:'auto'}){
    else if(e.type==='dispel'){for(const t of victims())if(random()<(e.chance??1)){let n=e.count;t.effects=t.effects.filter(f=>!(f.value>0&&n-->0));t.shields=n>0?[]:t.shields}}
    else if(e.type==='counter'&&cause&&cause.hp>0&&cause.side!==u.side&&u.counterTurn!==b.turn&&random()<(e.chance??1)){u.counterTurn=b.turn;emit({type:'trigger',actor:u.id,skillId,name:'Phản công'});kitBasic(u,cause,depth+1,true)}
    else if(e.type==='castUlt'&&depth===0&&random()<(e.chance??1)&&!hasStatus(u,'silence',b.turn)){emit({type:'trigger',actor:u.id,skillId,name});castKitUltimate(u,null,depth+1,true)}
-   else if(e.type==='extraAction'&&depth===0&&random()<(e.chance??1)){emit({type:'trigger',actor:u.id,skillId,name});kitBasic(u,firstTarget(u),depth+1,true)}
+   else if(e.type==='extraAction'&&depth===0&&random()<(e.chance??1)){const t=firstTarget(u);if(t){emit({type:'trigger',actor:u.id,skillId,name});kitBasic(u,t,depth+1,true)}}
   }
   return{hitTargets,lastDamage};
  };
@@ -220,6 +220,8 @@ export function teamRound(b,input={action:'auto'}){
   afterUltimate(u);
  }
  function kitBasic(u,target,depth=0,passive=false){
+  // Hết mục tiêu (phe địch đã gục trong lúc bị động / phản kích chạy): không ra đòn.
+  if(!target||target.hp<=0&&!alive(opponents(u)).length)return[];
   const replace=triggersOf(u,'attack').find(t=>t.replace),riders=triggersOf(u,'attack').filter(t=>!t.replace);
   emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});
   let hitTargets=[target];

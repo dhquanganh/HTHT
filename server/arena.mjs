@@ -52,11 +52,14 @@ const botNames=['Sói Biển Bạc','Thuyền Trưởng Gió','Mắt Ưng','Hổ
  'Rượu Rum','Kẻ Lang Thang','Tay Móc','Chân Gỗ','Bản Đồ Cổ','Mỏ Neo','Thần Gió','Cướp Biển Xám','Cánh Buồm Trắng','Ánh Trăng Biển'];
 export function botName(i){return botNames[i%botNames.length]+(i>=botNames.length?' '+(Math.floor(i/botNames.length)+1):'')}
 export function seeded(seed){let x=(seed>>>0)||1;return()=>{x^=x<<13;x^=x>>>17;x^=x<<5;x>>>=0;return x/4294967296}}
-/** Sức mạnh đối thủ máy theo thứ hạng: hạng cuối cấp 10, hạng đầu cấp 160 (Võ đấu mạnh hơn). */
+/** Sức mạnh đối thủ máy theo thứ hạng (index 0 = hạng 1). Cấp tăng mạnh về phía top (tối đa 600); top 10 có sàn cấp
+ * riêng (hạng 1 cấp 600, hạng 10 cấp 420) và hệ số cường hóa Công / Máu / Thủ: hạng cuối ×1, hạng 1 ×4,5. */
+export const botVersion=2;
 export function botProfile(mode,index,total){
- const top=1-index/Math.max(1,total-1),base=mode==='allstars'?60:mode==='league'?40:10,span=mode==='allstars'?160:mode==='league'?130:150;
- const level=Math.round(base+span*top**1.6),stars=Math.max(1,Math.min(14,Math.round(1+11*top**1.3)));
- return{level,stars,points:mode==='allstars'?0:Math.round(startPoints-120+380*top**1.2)};
+ const top=1-index/Math.max(1,total-1),lo=mode==='allstars'?120:mode==='league'?80:40;
+ let level=Math.round(lo+(600-lo)*top**1.5);if(index<10)level=Math.max(level,600-index*20);
+ const boost=Math.round((1+1.5*top**2+(index<10?(10-index)*.2:0))*100)/100;
+ return{level,boost,points:mode==='allstars'?0:Math.round(startPoints-120+380*top**1.2)+(index<10?(10-index)*40:0)};
 }
 
 // ---- Đội hình: snapshot đội của người chơi (đơn vị trận đấu đã tính sẵn chỉ số và bộ kỹ năng).

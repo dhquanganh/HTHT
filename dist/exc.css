@@ -30,3 +30,4 @@
 @keyframes exc-bump{0%{transform:scale(1)}40%{transform:scale(1.12);filter:brightness(1.4)}100%{transform:scale(1)}}
 @keyframes exc-glow{0%{background:#ffd24a88;box-shadow:0 0 18px #ffb02e}100%{background:transparent;box-shadow:none}}
 body:has(.exc-panel) #dialog-ui{z-index:60}
+body:has(.aui-info,.aui-panel,.germa-popup,.talent-root,.talent-popup,.exc-panel,.haki-popup,#dialog-ui:not(:empty)) .exc-entry{visibility:hidden}
