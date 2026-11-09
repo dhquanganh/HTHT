@@ -1,0 +1,59 @@
+/* Hạm đội (guild-ui.js): GuildScene và các popup gốc dựng bằng PrefabDOM trên bản đồ thế giới. */
+.guild-layer{z-index:44;pointer-events:auto!important}
+.guild-popup{z-index:46}
+body:has(.guild-layer) #dialog-ui{z-index:60}
+.guild-layer .pd-button{cursor:pointer}
+.guild-layer .pd-button:hover{filter:brightness(1.08)}
+.guild-popup>[data-name="Shade"]{animation:guild-fade .18s ease-out}
+.guild-popup>.pd-node:not([data-name="Shade"]){animation:guild-pop .26s cubic-bezier(.2,1.4,.45,1) both}
+@keyframes guild-pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes guild-fade{from{opacity:0}}
+.guild-scene [data-name="ButtonHall"].pd-button,.guild-scene [data-name="ButtonTech"].pd-button,.guild-scene [data-name="BuidingBoss"].pd-button,.guild-scene [data-name="ButtonMill"].pd-button,.guild-scene [data-name="BuidingWar"].pd-button{transition:transform .12s}
+.guild-scene [data-name^="Bu"].pd-button:hover{transform:translateY(-3px)}
+.guild-html{position:absolute;inset:0;pointer-events:none}.guild-html>*{pointer-events:auto}
+.guild-input{all:unset;pointer-events:auto;box-sizing:border-box;position:absolute;width:auto;inset:4px 14px;font:italic 700 24px/1.2 GameFont,sans-serif;color:#fff;background:none;cursor:text}
+textarea.guild-input{inset:8px 12px;font-style:normal;font-size:20px;color:#5b3a1d;resize:none;white-space:pre-wrap}
+.guild-input::placeholder{color:#cfc4b4}
+.guild-empty{position:absolute;left:0;right:0;top:42%;text-align:center;color:#6a4b2d;font-size:22px}.guild-empty.small{font-size:18px;top:30%}
+.guild-spine{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.guild-portrait{overflow:hidden;border-radius:14px 14px 40px 40px}
+.guild-locked{filter:grayscale(1) brightness(.7)}
+.guild-upped [data-name="BoxDetail"] [data-name="IconTech"]{animation:guild-flash .6s ease-out}
+@keyframes guild-flash{0%{filter:brightness(2.2) drop-shadow(0 0 14px #ffd84a)}100%{filter:none}}
+.guild-reward-row{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;gap:10px;padding-right:30px}
+.guild-reward-row .ev-tile{width:70px;height:70px}.guild-reward-row .ev-tile img{width:56px;height:56px}
+.guild-team{position:absolute;left:8px;bottom:8px;display:flex;gap:6px}
+.guild-team span{position:relative;width:54px;height:54px;border:2px solid #e7c06b;border-radius:8px;overflow:hidden;background:#3a2118}
+.guild-team img{width:100%;height:100%;object-fit:cover}.guild-team b{position:absolute;right:2px;bottom:0;color:#fff;font-size:13px;text-shadow:1px 1px #000,-1px -1px #000}
+.guild-donate{position:absolute;inset:14px 20px;display:flex;flex-direction:column;gap:12px;color:#5b3a1d;font-size:20px}
+.guild-donate-row{display:grid;grid-template-columns:1fr 1fr 1fr 150px;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;background:#f3e6cc;box-shadow:inset 0 0 0 2px #d8c09a}
+.guild-donate-row img{width:30px;height:30px;vertical-align:middle;margin-right:6px}
+.guild-donate-row button{all:unset;cursor:pointer;height:50px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(#ffe27a,#f2b631);box-shadow:inset 0 0 0 3px #fff1b0,0 4px 0 #8b5a1c;color:#6a3d12;font:700 20px/1 GameFont,sans-serif}
+.guild-donate-row button:disabled{filter:grayscale(.8);opacity:.6;cursor:not-allowed}
+.guild-top{position:absolute;inset:12px 20px;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;overflow:auto}
+.guild-top li{display:grid;grid-template-columns:36px 48px 1fr auto;align-items:center;gap:12px;padding:6px 14px;border-radius:8px;background:#f3e6cc;font-size:19px;color:#5b3a1d}
+.guild-top img{width:46px;height:46px;border-radius:6px}.guild-top em{font-style:normal;color:#9b541f}
+.guild-transfer{all:unset;position:absolute;right:40px;bottom:16px;cursor:pointer;padding:10px 18px;border-radius:10px;background:linear-gradient(#ffe27a,#f2b631);box-shadow:inset 0 0 0 3px #fff1b0,0 4px 0 #8b5a1c;color:#6a3d12;font:700 18px/1 GameFont,sans-serif}
+.guild-layer [data-name="TextFieldGuildCoin"] .pd-text,.guild-layer [data-name="TextFieldGold"] .pd-text{white-space:nowrap}
+/* Ô nhập thật đè lên InputField của prefab: ẩn chữ mẫu "Nhập..." của prefab để không bị hai lớp chữ. */
+.guild-layer [data-name="InputSearch"]>[data-name="Placeholder"],.guild-layer [data-name="InputSearch"]>[data-name="Text"],.guild-layer [data-name="InputName"]>[data-name="Placeholder"],.guild-layer [data-name="InputName"]>[data-name="Text"],.guild-layer [data-name="InputMotto"]>[data-name="Placeholder"],.guild-layer [data-name="InputMotto"]>[data-name="Text"]{display:none!important}
+.guild-input:focus{outline:none;caret-color:#ffe27a}
+
+/* Đánh Boss: thẻ ải hiện tại sáng viền, ải đã hạ tối màu, ải chưa mở xám. */
+.guild-raid [data-name="GuildBossUI"]{transition:transform .15s,filter .15s}
+.guild-raid .guild-card-current{filter:drop-shadow(0 0 12px #ffd24a)}
+.guild-raid .guild-card-current:hover{transform:translateY(-4px)}
+.guild-raid .guild-card-dead [data-name="ImageBgr"]{filter:grayscale(.7) brightness(.75)}
+.guild-raid .guild-card-locked{filter:saturate(.6) brightness(.92)}
+.guild-raid [data-name="ButtonHelp"]{transform:translate(-30px,-74px) scale(.8)}
+.guild-raid [data-name="MarkDeath"],.guild-raid [data-name="GoUnknown"]{z-index:3}
+/* Popup đánh boss */
+.guild-attack [data-name="Clip"]{border-radius:10px}
+.guild-attack.dead [data-name="Clip"] .guild-spine{filter:grayscale(.8) brightness(.7)}
+.guild-dead-stamp{position:absolute;left:0;right:0;top:16%;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none;color:#fff;text-shadow:2px 2px 0 #000,-1px -1px 0 #000}
+.guild-dead-stamp img{width:104px;height:111px;filter:drop-shadow(0 4px 6px #0008)}.guild-dead-stamp b{font-size:26px;color:#ff6b4a}.guild-dead-stamp small{font-size:17px}
+.guild-row-extra{position:absolute;right:16px;top:8px;display:flex;gap:12px;align-items:center;font-size:15px;color:#7a5532;pointer-events:none}
+.guild-row-reward{display:flex;align-items:center;gap:3px;color:#9b541f;font-weight:700}.guild-row-reward img{width:20px;height:20px;object-fit:contain}
+.guild-attack .guild-row-me{filter:drop-shadow(0 0 6px #ffcf3a)}
+.guild-rank-foot{position:absolute;left:14px;right:14px;bottom:-27px;display:flex;justify-content:space-between;font-size:15px;line-height:1;color:#5b3a1d}
+.guild-rank-foot b{color:#9b541f}

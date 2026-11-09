@@ -4,7 +4,7 @@ import {campaign,stages,legacyStages} from '../server/catalog.mjs';
 import {starterPlayer,applyAction,playerView} from '../server/game.mjs';
 
 test('999 original stages retain source enemies, positions, requirements and rewards',()=>{
- assert.equal(stages.length,999);assert.equal(campaign.chapters.length,95);assert.equal(Object.keys(campaign.visuals).length,119);
+ assert.equal(stages.length,999);assert.equal(campaign.chapters.length,95);assert.equal(Object.keys(campaign.visuals).length,126,'119 avatar Chiến dịch + 7 avatar quái Boss hạm đội (tools/export-guild.py)');
  assert.deepEqual(stages[0].sourceReward,{exp:55,gold:2400,spirit:360,itemId:'1'});assert.equal(stages[0].code,'1-1');assert.equal(stages.at(-1).code,'99-9');
  assert.deepEqual(stages[1].enemies.map(e=>e.position),[4,6]);assert.equal(campaign.chapters[2].name,'Làng Syrup');
  for(const s of stages)for(const e of s.enemies){assert.ok(e.position>=1&&e.position<=6);const m=campaign.enemies[e.monsterId];assert.ok(m);assert.ok(campaign.visuals[m.avatar].skeleton)}
