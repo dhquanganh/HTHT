@@ -14,7 +14,7 @@ export const achievements=[
  {id:'tower',text:'Vượt tầng %s Tháp Lãng Quên',targets:tiers(1,10,50,100,200,300,500,1000,1500,2000),progress:p=>Math.max(0,(p.tower?.floor||1)-1)},
  {id:'summon',text:'Triệu hồi Cao Cấp %s lần',targets:tiers(1,10,50,100,300,500,1000),progress:p=>p.stats?.summons||0},
 ];
-const heroesOf=p=>[p.hero,...Object.values(p.reserveHeroes||{})];
+const heroesOf=p=>[p.hero,...Object.values(p.reserveHeroes||{})].filter(Boolean);
 /** Quà của mốc thứ `tier` (bắt đầu từ 0): mốc đầu 10K Beli + 50 kim cương như ảnh gốc. */
 export const tierRewards=tier=>[{itemId:'gold',quantity:10000*(tier+1)},{itemId:'diamonds',quantity:50*(tier+1)}];
 const claimedOf=(p,id)=>p.achievements?.[id]||0;

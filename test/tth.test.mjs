@@ -43,3 +43,5 @@ describe('Tân Tứ Hoàng ranking on MongoDB',{skip:!process.env.MONGODB_URI},(
   const mails=(await store.getUser(a._id)).player.mail.filter(m=>m.title==='Thưởng Tân Tứ Hoàng');assert.equal(mails.length,1);assert.match(mails[0].text,/hạng 1/);
  });
 });
+// Các test này sửa trực tiếp tướng của tài khoản mới nên tắt phần mở đầu (tài khoản mới có Luffy).
+process.env.NEW_ACCOUNT_INTRO??='off';

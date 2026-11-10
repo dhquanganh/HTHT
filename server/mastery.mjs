@@ -23,7 +23,7 @@ export const milestones=[50,100,200,300,500,800,1200,1600,2000,3000].map((points
 const emptyStats=()=>({fights:0,damage:0,ultimates:0,attacks:0});
 const state=p=>p.mastery||(p.mastery={points:0,milestones:[],heroes:{}});
 const heroState=(p,heroId)=>{const m=state(p);return m.heroes[heroId]||(m.heroes[heroId]={lap:1,claimed:[],stats:emptyStats()})};
-const owned=p=>[p.hero,...Object.values(p.reserveHeroes||{})];
+const owned=p=>[p.hero,...Object.values(p.reserveHeroes||{})].filter(Boolean);
 
 /** Cộng số liệu trận boss cho từng tướng trong đội: số trận, sát thương, số lần xuất nộ và đánh thường. */
 export function recordBossBattle(p,b){

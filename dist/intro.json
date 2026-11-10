@@ -1,0 +1,49 @@
+{
+ "music": "assets/theme_story.mp3",
+ "story": {
+  "scene": 1207,
+  "step": 1160,
+  "panels": [
+   {
+    "image": "Image1",
+    "texts": [
+     "Text1",
+     "Text2"
+    ]
+   },
+   {
+    "image": "Image2",
+    "texts": [
+     "Text3"
+    ]
+   },
+   {
+    "image": "Image3",
+    "texts": [
+     "Text4",
+     "Text5"
+    ]
+   }
+  ],
+  "lines": {
+   "Text1": "Của cải, danh tiếng, quyền lực!",
+   "Text2": "Gol Roger một hải tặc huyền thoại tung hoành ngang dọc trên biển cả",
+   "Text3": "Trước khi bị hành hình ông ta đã tiết lộ một bí mật khiến mọi người đều đổ xô ra biển",
+   "Text4": "Các ngươi muốn lấy kho báu của ta!",
+   "Text5": "Hãy giỏi thì lấy đi! Ta để ở ngoài biển hết đó"
+  }
+ },
+ "guide": {
+  "scene": 1164,
+  "hand": 1131,
+  "welcome": [
+   "Chào mừng bạn đến với OnePiece. Hãy để mình hướng dẫn ngươi làm quen với trò chơi.",
+   "Hãy bắt đầu khám phá thế giới nhé, sau đây chúng tôi sẽ hướng dẫn bạn cách chơi!"
+  ],
+  "summon": [
+   "Đây là nơi chiêu mộ, sau một thời gian bạn có thể chiêu mộ miễn phí",
+   "Cuộn chiêu mộ \"Đại Hải Tặc\" có tỉ lệ ra thuyền viên mạnh cao hơn chiêu mộ hải tặc"
+  ],
+  "done": "Rất tốt! Bạn đã chiêu mộ được hai thuyền viên. Hãy thử sức thôi"
+ }
+}

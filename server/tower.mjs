@@ -19,7 +19,7 @@ export function towerView(p,now=Date.now()){
  return{floor:tower.floor,turns,maxTurns:turnsPerDay,maxFloor:floors.length,floors:floors.slice(tower.floor-1,tower.floor+3).map(summary)};
 }
 /** Dữ liệu một dòng trong collection tower_ranking. `floors` là số tầng đã vượt, không phải tầng đang đứng. */
-export const rankingEntry=p=>({displayName:p.displayName,heroId:p.hero.id,level:p.account.level,floors:Math.max(0,(p.tower?.floor||1)-1)});
+export const rankingEntry=p=>({displayName:p.displayName,heroId:p.hero?.id??null,level:p.account.level,floors:Math.max(0,(p.tower?.floor||1)-1)});
 /** Đội địch của một tầng, dùng lại cho sự kiện. Tầng vượt quá bảng thì lấy tầng cuối. */
 export function floorEnemies(floor){
  const row=floors[Math.min(floor,floors.length)-1];

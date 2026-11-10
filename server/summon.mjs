@@ -32,7 +32,8 @@ export const choicePool=item=>heroAlbum.heroes.filter(h=>playable.has(h.avatar)&
 export function grantSummon(p,hero){
  const definition=playable.get(hero.avatar);
  if(ownedHeroes(p).has(definition.id))return{avatar:hero.avatar,shardItem:shardFor(definition),shards:duplicateShards};
- (p.reserveHeroes??={})[definition.id]=newHero(definition);return{avatar:hero.avatar,fresh:true};
+ // Tướng đầu tiên của tài khoản mới (phần mở đầu) thành tướng chính.
+ if(!p.hero)p.hero=newHero(definition);else(p.reserveHeroes??={})[definition.id]=newHero(definition);return{avatar:hero.avatar,fresh:true};
 }
 /** Tặng lô Thùng bia ban đầu một lần cho tài khoản mới và tài khoản đã có. Trả về true nếu có thay đổi cần lưu. */
 export function startSummon(p){

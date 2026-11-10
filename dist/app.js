@@ -208,5 +208,7 @@ async function init(){try{
  for(const item of catalog){const o=document.createElement('option');o.value=item.id;o.textContent=labels[item.id]||item.name;(item.prefab?popups:primary.includes(item.id)?main:other).append(o)}
  const boot=await window.GameRuntime?.boot();const requested=boot?.sceneId??(location.hash?Number(location.hash.slice(1)):13);await showScene(catalog.some(x=>x.id===requested)?requested:13);requestAnimationFrame(frame)
  }catch(e){document.querySelector('#loading').textContent='Không tải được giao diện. Hãy tải lại trang.';loadErrors.push(e.message);console.error(e)}}
-window.GameView={get worldScroll(){return worldScroll},showScene,getScene:()=>scene,getSceneId:()=>Number(sceneId),allNodes,get,setText,setAsset,setTopLeft,findAsset,loadImage,readyImage,loadSkeleton,assets:()=>assets,samples:()=>samples,toast,ctx,canvas,cloneNode,drawText,get paused(){return paused},set paused(value){paused=value}};
+// Vùng chạm của nút theo tọa độ 1136x640 (#game-layer), dùng cho bàn tay hướng dẫn.
+function hitBox(name){const h=hits.find(x=>x.name===name);if(!h)return null;const a=h.matrix.transformPoint(new DOMPoint(0,0)),b=h.matrix.transformPoint(new DOMPoint(h.w,h.h));return{x:Math.min(a.x,b.x),y:Math.min(a.y,b.y),w:Math.abs(b.x-a.x),h:Math.abs(b.y-a.y)}}
+window.GameView={hitBox,get worldScroll(){return worldScroll},showScene,getScene:()=>scene,getSceneId:()=>Number(sceneId),allNodes,get,setText,setAsset,setTopLeft,findAsset,loadImage,readyImage,loadSkeleton,assets:()=>assets,samples:()=>samples,toast,ctx,canvas,cloneNode,drawText,get paused(){return paused},set paused(value){paused=value}};
 init();

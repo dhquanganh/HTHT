@@ -48,3 +48,5 @@ test('sweep only levels already won; it costs a turn and pays instantly',()=>{
  applyAction(p,'raid-start',{mode:'gold',level:1,skip:true},Date.now(),ctx);const gold=p.wallet.gold;
  applyAction(p,'raid-smash',{mode:'gold',level:1},Date.now(),ctx);assert.equal(p.wallet.gold,gold+20000);assert.equal(raidView(p,ctx.raid).modes[0].turns,0);assert.equal(p.battle.status,'won');
 });
+// Các test này sửa trực tiếp tướng của tài khoản mới nên tắt phần mở đầu (tài khoản mới có Luffy).
+process.env.NEW_ACCOUNT_INTRO??='off';

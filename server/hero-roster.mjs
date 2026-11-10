@@ -4,16 +4,16 @@ export const newHero=definition=>({id:definition.id,level:1,exp:0,stars:1,rank:0
 export function ensureRoster(player){
  player.reserveHeroes??={};player.mail??=[];
  // Hệ sao cũ: 10 là sao đỏ duy nhất, 11-15 là L1-L5. Hệ mới thêm 5 sao đỏ (10-14) nên L1-L5 dời lên 15-19.
- if(player.starScheme!==2){for(const hero of [player.hero,...Object.values(player.reserveHeroes)])if(hero&&hero.stars>=11)hero.stars+=4;player.starScheme=2}
+ if(player.starScheme!==2){for(const hero of [player.hero,...Object.values(player.reserveHeroes)].filter(Boolean))if(hero.stars>=11)hero.stars+=4;player.starScheme=2}
  // EXP tướng là quỹ chung (lá xanh ở màn hình chính). Bản trước cộng riêng vào từng tướng: gộp lại một lần.
- if(player.wallet&&player.wallet.spirit===undefined){let pool=0;for(const hero of [player.hero,...Object.values(player.reserveHeroes)]){pool+=hero.exp||0;hero.exp=0}player.wallet.spirit=pool}
+ if(player.wallet&&player.wallet.spirit===undefined){let pool=0;for(const hero of [player.hero,...Object.values(player.reserveHeroes)].filter(Boolean)){pool+=hero.exp||0;hero.exp=0}player.wallet.spirit=pool}
  // Đá EXP trong túi trước đây là vật phẩm riêng phải bấm Dùng; giờ chính là quỹ EXP tướng (1 viên = 1 EXP).
  if(player.inventory?.['consumable:1']){player.wallet.spirit=(player.wallet.spirit||0)+player.inventory['consumable:1'];delete player.inventory['consumable:1']}
  // Đá đột phá tự tạo trước đây đổi sang Đá cường hóa của asset (promostone).
  if(player.inventory?.['material:rank-stone']){player.inventory['consumable:2']=(player.inventory['consumable:2']||0)+player.inventory['material:rank-stone'];delete player.inventory['material:rank-stone']}
  // Bản trước lưu tướng chiêu được ở collection, chỉ để xem; chuyển thành tướng thật.
- if(player.collection){for(const avatar of Object.keys(player.collection)){const definition=heroDefinitions.find(h=>h.avatar===avatar);if(definition&&player.hero.id!==definition.id&&!player.reserveHeroes[definition.id])player.reserveHeroes[definition.id]=newHero(definition)}delete player.collection}
- if(player.hero.id!=='zoro-king-of-hell'&&!player.reserveHeroes['zoro-king-of-hell']){
+ if(player.collection){for(const avatar of Object.keys(player.collection)){const definition=heroDefinitions.find(h=>h.avatar===avatar);if(definition&&player.hero?.id!==definition.id&&!player.reserveHeroes[definition.id])player.reserveHeroes[definition.id]=newHero(definition)}delete player.collection}
+ if(player.hero&&player.intro===undefined&&player.hero.id!=='zoro-king-of-hell'&&!player.reserveHeroes['zoro-king-of-hell']){
   player.reserveHeroes['zoro-king-of-hell']={id:'zoro-king-of-hell',level:1,exp:0,stars:1,rank:0,equipment:{},skills:{'hiryu-jigoku':3,enma:3,'conqueror-haki':3,'decisive-strike':3}};
  }
 }

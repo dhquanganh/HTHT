@@ -103,3 +103,5 @@ describe('Chiến trường on MongoDB',{skip:!process.env.MONGODB_URI},()=>{
   assert.ok(scene.phase.label);
  });
 });
+// Các test này sửa trực tiếp tướng của tài khoản mới nên tắt phần mở đầu (tài khoản mới có Luffy).
+process.env.NEW_ACCOUNT_INTRO??='off';

@@ -87,3 +87,5 @@ describe('Hạm đội on MongoDB',{skip:!process.env.MONGODB_URI},()=>{
   await store.guildLeave(B,key());assert.equal(await store.guilds.countDocuments(),0);
  });
 });
+// Các test này sửa trực tiếp tướng của tài khoản mới nên tắt phần mở đầu (tài khoản mới có Luffy).
+process.env.NEW_ACCOUNT_INTRO??='off';

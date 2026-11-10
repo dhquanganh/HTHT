@@ -54,7 +54,7 @@ export function refreshBeast(p,context){
  return beast;
 }
 export const beastTurns=(p,context)=>p.beast?.season===context.season.id?p.beast.turns:context.config.turns;
-export const beastEntry=p=>({displayName:p.displayName,heroId:p.hero.id,level:p.account.level});
+export const beastEntry=p=>({displayName:p.displayName,heroId:p.hero?.id??null,level:p.account.level});
 
 const className={warrior:'Chiến binh',mage:'Pháp sư',ranger:'Xạ thủ',assassin:'Sát thủ',priest:'Mục sư'};
 export const classLabel=value=>className[value]||value;

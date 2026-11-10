@@ -36,11 +36,12 @@ import {tthView,tthBuy,tthSpend,tthFinish,tthDay,bossUnit,bossOfDay,battleRounds
 import {raidSmash,raidBuy,raidPrepare,raidFinish,raidEnemyStats,raidModes,vnDay as raidDay} from './raid.mjs';
 import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
 
-export function starterPlayer(username){
+// intro:true = tài khoản đăng ký mới: chưa có tướng, đi phần mở đầu. Mặc định (bot, test) vẫn có Luffy.
+export function starterPlayer(username,{intro=false}={}){
  const inventory={[materials.xp]:8,[materials.star]:25,[materials.rank]:12,[materials.skill]:12};
  const starterIds={pants:'equipment:1',armor:'equipment:22',boots:'equipment:43',helmet:'equipment:64',accessory:'artifact:1'};
  for(const slot of equipmentSlots){const item=itemById.get(starterIds[slot])||items.find(x=>x.slot===slot);if(item)inventory[item.id]=1}
- const player={version:0,starScheme:2,displayName:username,wallet:{gold:economy.initialGold,diamonds:economy.initialDiamonds,spirit:700},account:{level:1,exp:0},hero:{id:'luffy-gear-2',level:1,exp:0,stars:1,rank:0,skills:skillLevels(),equipment:{}},inventory,adventure:{unlockedStage:1,cleared:[],wins:0,lastDaily:null,afk:emptyAfk()},tower:emptyTower(),battle:null,receipts:[],activity:[]};
+ const player={version:0,starScheme:2,displayName:username,wallet:{gold:economy.initialGold,diamonds:economy.initialDiamonds,spirit:700},account:{level:1,exp:0},hero:intro?null:{id:'luffy-gear-2',level:1,exp:0,stars:1,rank:0,skills:skillLevels(),equipment:{}},...(intro?{intro:'story'}:{}),inventory,adventure:{unlockedStage:1,cleared:[],wins:0,lastDaily:null,afk:emptyAfk()},tower:emptyTower(),battle:null,receipts:[],activity:[]};
  startSummon(player);return player;
 }
 // Kỹ năng bị động của thú cưng ("Tăng cho chủ nhân ...") nhập vào bộ kỹ năng trận đấu của chủ nhân.
@@ -125,8 +126,23 @@ export function upgradeCosts(player){const h=player.hero;return{
  star:{...starCost(h,shardFor(h)),nextCap:levelCap(Math.min(economy.maxStars,h.stars+1))},
  rank:{gold:(h.rank+1)*700,items:{[materials.rank]:(h.rank+1)*3},minLevel:(h.rank+1)*3},
 }}
-export function playerView(player,now=Date.now()){return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
-function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),tth:tthView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
+// Phần mở đầu (TutorialStory gốc): 'story' -> 'summon' -> 'done'. Chưa có tướng thì chỉ được chiêu mộ.
+const introSteps=['story','summon','done'];
+export const introPending=p=>!!p.intro&&p.intro!=='done';
+function introStep(p,input){
+ const step=input?.step,from=introSteps.indexOf(p.intro??'done'),to=introSteps.indexOf(step);
+ requireCondition(to>=0,'Bước mở đầu không hợp lệ.');
+ if(to<=from)return{message:'',intro:p.intro};
+ requireCondition(step!=='done'||p.hero,'Hãy chiêu mộ thuyền viên đầu tiên trước.',409,'NO_HERO');
+ p.intro=step;return{message:'',intro:step};
+}
+// Chưa có tướng: chỉ gửi phần cần cho phần mở đầu và màn chiêu mộ.
+function introView(state){
+ return{...state,hero:null,heroes:[],formation:{version:2,slots:Array(6).fill(null)},costs:null,mail:state.mail||[],events:[],
+  afk:null,tower:null,albumState:null,achievements:null,homeQuest:null,devilFruit:null,pets:null,silentRing:null,mastery:null,abyss:null,dailyQuest:null,arena:null,tth:null,guild:null,activity:[]};
+}
+export function playerView(player,now=Date.now()){if(!player.hero){ensureRoster(player);return baseView(player,now)}return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
+function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;if(!state.hero)return introView(state);const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),tth:tthView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
 function addItem(p,id,qty){requireCondition(itemById.has(id),'Vật phẩm không tồn tại.');if(id===heroExpItem){p.wallet.spirit=(p.wallet.spirit||0)+qty;requireCondition(p.wallet.spirit>=0,'Không đủ Đá EXP.');return}p.inventory[id]=(p.inventory[id]||0)+qty;requireCondition(p.inventory[id]>=0,'Không đủ vật phẩm.')}
 function spend(p,cost){for(const [currency,amount] of Object.entries(cost)){requireCondition(Number.isSafeInteger(amount)&&amount>=0,'Chi phí không hợp lệ.');requireCondition((p.wallet[currency]||0)>=amount,`Không đủ ${({gold:'vàng',diamonds:'kim cương',spirit:'EXP tướng'})[currency]||currency}.`,400,'INSUFFICIENT_FUNDS');p.wallet[currency]-=amount;if(currency==='diamonds')trackEvent(p,'diamondSpend',amount)}}
 function spendItems(p,cost={}){for(const [id,amount] of Object.entries(cost)){requireCondition((id===heroExpItem?p.wallet.spirit:p.inventory[id]||0)>=amount,`Không đủ ${itemById.get(id)?.name||'vật phẩm'}.`);addItem(p,id,-amount)}}
@@ -254,7 +270,9 @@ export function applyAction(p,action,input,now=Date.now(),context){
  trackDaily(p,{action,input,beastWon:beastActive&&p.battle?.status==='won'},now);return result;
 }
 function runAction(p,action,input,now,context){
- ensureRoster(p);startAfk(p,now);startSummon(p);if(p.hero.id==='luffy-gear-2')ensureLuffySkills(p);
+ ensureRoster(p);startAfk(p,now);startSummon(p);if(p.hero?.id==='luffy-gear-2')ensureLuffySkills(p);
+ if(action==='intro')return introStep(p,input);
+ requireCondition(p.hero||action==='summon','Hãy chiêu mộ thuyền viên đầu tiên trước.',409,'NO_HERO');
  if(action.startsWith('arena-')||action==='allstar-bet')return arenaAction(p,action,input,now,context);
  if(action.startsWith('guild-'))return guildAction(p,action,input,now,context);
  if(action==='raid-buy'){outsideBattle(p);requireCondition(context?.raid,'Chưa tải cấu hình Chiến dịch.',503);return raidBuy(p,input,context.raid,n=>spend(p,{diamonds:n}),now)}

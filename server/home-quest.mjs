@@ -21,7 +21,7 @@ function current(p){
  while(s.index<homeQuests.length&&unsupportedTypes.has(homeQuests[s.index].type)){s.index++;s.count=0}
  return homeQuests[s.index]||null;
 }
-const heroesOf=p=>[p.hero,...Object.values(p.reserveHeroes||{})];
+const heroesOf=p=>[p.hero,...Object.values(p.reserveHeroes||{})].filter(Boolean);
 function progressOf(p,q){
  const [a,b]=q.data;
  if(q.type===1)return{progress:Math.max(0,(p.tower?.floor||1)-1),target:a};

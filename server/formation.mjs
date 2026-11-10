@@ -1,16 +1,16 @@
 import {heroDefinitions} from './catalog.mjs';
 import {requireCondition} from './errors.mjs';
 
-export function ownedHeroes(player){return new Map([player.hero,...Object.values(player.reserveHeroes||{})].map(h=>[h.id,h]))}
+export function ownedHeroes(player){return new Map([player.hero,...Object.values(player.reserveHeroes||{})].filter(Boolean).map(h=>[h.id,h]))}
 export function formationView(player){
  const owned=ownedHeroes(player),slots=Array(6).fill(null),seen=new Set();
  if(Array.isArray(player.formation?.slots)){
   for(let i=0;i<6;i++){const id=player.formation.slots[i];if(owned.has(id)&&!seen.has(id)){slots[i]=id;seen.add(id)}}
- }else{
+ }else if(player.hero){
   const position=player.formation?.position??0;slots[position>=0&&position<6?position:0]=player.hero.id;seen.add(player.hero.id);
   for(const id of owned.keys()){if(seen.has(id))continue;const index=slots.indexOf(null);if(index<0)break;slots[index]=id;seen.add(id)}
  }
- if(!seen.size)slots[0]=player.hero.id;
+ if(!seen.size&&player.hero)slots[0]=player.hero.id;
  return{version:2,slots};
 }
 export function validateFormation(player,input){
