@@ -297,7 +297,30 @@ export function teamRound(b,input={action:'auto'}){
   }else{emit({type:'attack',actor:u.id,target:target.id,animation:'beat'});hit(u,target);basicRiders(u,target);if(!hasStatus(u,'fear',b.turn))gain(u,35)}
   flushPending();
   emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy});
+  if(u.side==='ally'&&b.ship)shipCharge(25);
   if(!alive(b.allies).length||!alive(b.enemies).length)break;
+ }
+ // Chiến hạm (db_pet, PetRageBar trong trận): mỗi lượt đánh của phe mình nạp 25 Nộ chiến hạm; đầy 100 thì chiến hạm tung
+ // kỹ năng chủ động theo cấp (sát thương cố định lên N kẻ địch, khống chế, DoT, hồi máu / Nộ và tăng chỉ số cho N đồng minh,
+ // giảm Thủ / Tốc mục tiêu) rồi về 0.
+ function shipCharge(n){
+  const ship=b.ship;if(!ship?.skill||!alive(b.allies).length||!alive(b.enemies).length)return;
+  ship.energy=Math.min(100,(ship.energy||0)+n);emit({type:'ship-energy',actor:'ship',energy:ship.energy});
+  if(ship.energy<100)return;
+  const s=ship.skill,skillId='ship-'+ship.shipId,foes=alive(b.enemies);
+  const targets=s.front?(()=>{const f=foes.filter(u=>u.frontRow);return(f.length?f:foes).sort((a,c)=>a.position-c.position).slice(0,s.targets||1)})():pickTargets(ship,{count:s.targets||1,pick:'random'});
+  emit({type:'ship-skill',actor:'ship',shipId:ship.shipId,skillId,name:ship.skillName,targets:targets.map(t=>t.id)});
+  for(const t of targets){
+   if(t.hp<=0)continue;hit(ship,t,{flat:s.damage,skill:true,skillId,bypass:false});
+   if(t.hp>0&&s.status)applyStatus(ship,t,s.status,skillId,ship.skillName);
+   if(t.hp>0&&s.dot){t.dots.push({kind:s.dot.kind,amount:Math.round(s.dot.amount),until:b.turn+s.dot.turns,source:ship.id,skillId});emit({type:'buff',actor:ship.id,target:t.id,skillId,name:statusNames[s.dot.kind],attribute:s.dot.kind,value:s.dot.amount,expiresTurn:b.turn+s.dot.turns})}
+   if(t.hp>0&&s.debuff){if(s.debuff.defense)addEffect(ship,t,skillId+':def',ship.skillName,'defense',s.debuff.defense,b.turn+s.debuff.turns);if(s.debuff.speedFlat)addEffect(ship,t,skillId+':spd',ship.skillName,'speed',s.debuff.speedFlat/Math.max(1,t.baseSpeed||t.speed),b.turn+s.debuff.turns)}
+  }
+  const mates=n=>alive(b.allies).map(u=>[random(),u]).sort((a,c)=>a[0]-c[0]).map(x=>x[1]).slice(0,n);
+  if(s.heal)for(const u of mates(s.heal.count))heal(ship,u,u.maxHp*s.heal.ratio,skillId);
+  if(s.energy)for(const u of mates(s.energy.count)){gain(u,s.energy.amount);emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy})}
+  for(const buff of s.buffs||[])for(const u of mates(buff.count))addEffect(ship,u,skillId+':'+buff.attr,ship.skillName,buff.attr,buff.value,b.turn+buff.turns);
+  ship.energy=0;emit({type:'ship-energy',actor:'ship',energy:0});flushPending();
  }
  // Cuối hiệp: sát thương theo lượt (thiêu đốt, độc, chảy máu) rồi bị động "cuối mỗi hiệp".
  if(alive(b.allies).length&&alive(b.enemies).length){
@@ -318,5 +341,6 @@ export function teamRound(b,input={action:'auto'}){
   }
   flushPending();
  }
- b.hero=b.allies[0];return events;
+ return endTeam();
+ function endTeam(){b.hero=b.allies[0];return events}
 }

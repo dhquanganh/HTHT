@@ -48,7 +48,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  await click('.guild-scene [data-name="BuidingBoss"]');await page.waitForSelector('.guild-raid');await settle(page,1500);await shot('raid');
  await page.locator('.guild-raid [data-name="GuildBossUI"]').first().click();await page.waitForSelector('.guild-attack');await settle(page,1200);await shot('attack');
  await click('.guild-attack [data-name="ButtonInfo"]');await page.waitForSelector('.guild-boss-rewards');await shot('boss-rewards');await click('.guild-boss-rewards [data-name="ButtonClose"]');
- await click('.guild-attack [data-name="ButtonAttack"]');await page.waitForFunction(()=>window.GameRuntime.player.battle?.guildBoss&&GameView.getSceneId()===9&&document.querySelector('#loading').hidden,null,{timeout:30000});await page.waitForTimeout(1500);await shot('battle');
+ await click('.guild-attack [data-name="ButtonAttack"]');await page.locator('[data-action="team-fight"]').click();await page.waitForFunction(()=>window.GameRuntime.player.battle?.guildBoss&&GameView.getSceneId()===9&&document.querySelector('#loading').hidden,null,{timeout:30000});await page.waitForTimeout(1500);await shot('battle');
  await page.locator('[data-action="battle-skip"]').click().catch(()=>{});await page.waitForSelector('.battle-end [data-action="guild-back"]',{timeout:90000});await page.waitForTimeout(1000);await shot('battle-end');
  assert.ok((await page.locator('.battle-end').innerText()).includes('Đánh Boss hạm đội ải 1'));
  await click('.battle-end [data-action="guild-back"]');await page.waitForSelector('.guild-raid',{timeout:30000});await settle(page,1200);await shot('raid-after');
@@ -58,7 +58,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  assert.ok((await page.locator('.guild-attack').innerText()).includes('Hạng của bạn: 1'));
  // Hạ boss ải 1 (đặt máu còn 1) rồi xem lại bảng xếp hạng ải đã hạ: vẫn lưu trong database.
  await client.db(database).collection('guilds').updateOne({},{$set:{'boss.hp':[1,0,0,0]}});
- await click('.guild-attack [data-name="ButtonAttack"]');await page.waitForFunction(()=>window.GameRuntime.player.battle?.guildBoss&&GameView.getSceneId()===9,null,{timeout:30000});
+ await click('.guild-attack [data-name="ButtonAttack"]');await page.locator('[data-action="team-fight"]').click();await page.waitForFunction(()=>window.GameRuntime.player.battle?.guildBoss&&GameView.getSceneId()===9,null,{timeout:30000});
  await page.locator('[data-action="battle-skip"]').click().catch(()=>{});await page.waitForSelector('.battle-end [data-action="guild-back"]',{timeout:90000});await click('.battle-end [data-action="guild-back"]');
  await page.waitForSelector('.guild-raid',{timeout:30000});await settle(page,1200);await shot('raid-killed');
  await page.locator('.guild-raid [data-name="GuildBossUI"]').first().click();await page.waitForSelector('.guild-attack.dead');await settle(page,800);await shot('attack-dead');

@@ -26,3 +26,5 @@ body:has(.tth-layer) #dialog-ui{z-index:60}
 @keyframes tth-pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
 @keyframes tth-fade{from{opacity:0}}
 .tth-items,.tth-grid{pointer-events:auto}
+/* Đảo có nút Khiêu chiến (boss hôm nay) nằm trên các đảo khác để vùng chạm của đảo bên cạnh không che nút. */
+.tth-hub [data-name^="Island"]:has(>[data-name="ButtonFight"]:not([style*="display: none"])),.tth-hub [data-name^="Island"]:has([data-name="ButtonFight"]:not([style*="display: none"])){z-index:4}

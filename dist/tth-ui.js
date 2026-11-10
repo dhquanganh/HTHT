@@ -90,8 +90,8 @@
  }
  async function attack(){
   const s=st();if(s.attacksLeft<=0)return s.buyPrice>=0?askBuy():c.toast('Đã hết lượt khiêu chiến hôm nay');
-  const d=await c.mutation('/api/tth/attack',{},{render:false,message:false,bonus:false});if(!d)return;
-  if(d.player.battle?.status==='active'){close();c.navigate(9)}
+  c.pickTeam('Tân Tứ Hoàng · '+(st().bossName||''),async slots=>{const d=await c.mutation('/api/tth/attack',{formation:slots},{render:false,message:false,bonus:false});if(!d)return;
+  if(d.player.battle?.status==='active'){close();c.navigate(9)}})
  }
 
  // ---- Popup phần thưởng

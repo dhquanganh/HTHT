@@ -16,6 +16,9 @@ const custom=[
  {id:'material:zoro-shard',name:'Mảnh Zoro King Of Hell',category:'material',rarity:'red',assetKey:'htth-zoro-head',price:250},
  {id:'material:rank-stone',name:'Đá đột phá',category:'material',rarity:'blue',assetKey:'a4bdf0315e33de14b931ed3c9ad68295_2',price:220},
  {id:materials.skill,name:'Sách kỹ năng',category:'material',rarity:'blue',assetKey:'359c2692dfb2682488a1d574407bbad6_2',price:180},
+ // Chiến hạm: tài nguyên gốc của MonsterScene (FieldSoul icon_monster_soul, FieldChaos icon_monster_chaos).
+ {id:'material:ship-soul',name:'Hồn chiến hạm',category:'material',rarity:'purple',assetKey:'9c5967b993c02b044806ca05cb3d60ba_2',description:'Dùng để kích hoạt, lên cấp và nâng phẩm chiến hạm.',price:300,noShop:true},
+ {id:'material:ship-chaos',name:'Đá hỗn độn',category:'material',rarity:'orange',assetKey:'31ab3161e23496440b4185ed75ad12fc_2',description:'Dùng để nâng bảng kỹ năng và Phế tích chiến hạm.',price:300,noShop:true},
  {id:'supply:gold',name:'Rương vàng nhỏ',category:'consumable',rarity:'yellow',assetKey:key('icon_gold')||key('icon_guild_coin'),effect:{gold:2000},price:40,priceCurrency:'diamonds'},
 ];
 const list=Array.isArray(imported)?imported:imported.items;

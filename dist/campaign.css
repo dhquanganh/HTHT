@@ -71,3 +71,8 @@
 @keyframes formation-leave{0%{transform:scale(1);opacity:1}35%{transform:scale(1.08);opacity:1}100%{transform:scale(.2);opacity:0}}
 @keyframes formation-enter{0%{transform:scale(.3);opacity:0}100%{transform:scale(1);opacity:1}}
 .formation-burst{position:absolute;z-index:60;width:170px;height:170px;pointer-events:none}
+
+/* Chọn đội hình trước trận sự kiện / boss: nằm trên mọi lớp tính năng, nút Tấn công ở giữa. */
+#dialog-ui:has(.campaign-formation-shade){z-index:95!important}
+.campaign-formation .team-fight{left:50%!important;transform:translateX(-50%)}
+.campaign-formation .team-fight:hover{transform:translateX(-50%) translateY(-1px)}

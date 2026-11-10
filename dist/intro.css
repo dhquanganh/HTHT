@@ -18,3 +18,9 @@
 @keyframes intro-fade{from{opacity:0}}
 @keyframes intro-slide{from{transform:translateX(-120px);opacity:0}}
 @keyframes intro-nudge{50%{transform:translateX(6px)}}
+.tut-hand{z-index:82}
+.tut-guide .tut-skip{all:unset;position:absolute;right:16px;top:14px;z-index:2;padding:6px 14px;border-radius:14px;background:rgba(0,0,0,.55);color:#ffe7a8;font:700 16px/1.2 GameFont,sans-serif;cursor:pointer;pointer-events:auto}
+.tut-guide .tut-skip:hover{background:rgba(0,0,0,.75)}
+.tut-name-label{display:block;font-size:18px;margin:6px 0}#tut-name{width:100%;box-sizing:border-box}
+/* Lời dẫn và bàn tay hướng dẫn nằm trên cả cửa sổ Đội hình (z-index 95). */
+#game-layer .tut-guide{z-index:97}#game-layer .tut-hand{z-index:98}

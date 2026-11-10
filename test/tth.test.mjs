@@ -14,15 +14,18 @@ test('original TTHDb: 4 Yonko in hub order, daily rotation (day 19 = Shanks Yonk
  assert.equal(tthDay(Date.parse('2026-11-01T08:00:00+07:00')),1);assert.equal(rankReward(1)[0].quantity,500);assert.equal(buyPrice(10),-1);
 });
 
-const strong=()=>{const p=starterPlayer('Tth');p.hero.level=150;p.hero.stars=8;p.wallet.diamonds=5000;return p};
+const strong=()=>{const p=starterPlayer('Tth');p.hero.level=400;p.hero.stars=15;// boss mạnh lên mỗi ngày từ TTH_START_DATE: đội thử phải đủ mạnh để luôn đánh trúng
+ p.wallet.diamonds=5000;return p};
+// Boss mạnh lên theo ngày thật kể từ TTH_START_DATE: chạy ở ngày 1 để kết quả không phụ thuộc hôm nay là ngày nào.
+const DAY1=Date.parse('2026-11-01T12:00:00+07:00');
 test('10 free attacks a day, buy more with gems, boss never dies, best single hit and milestones are kept for the day',()=>{
- const p=strong(),v=playerView(p).tth;assert.equal(v.attacksLeft,freePerDay);assert.equal(v.bossName,bossOfDay(tthDay()).name);
- applyAction(p,'tth-attack',{skip:true});const b=p.battle;assert.equal(b.status,'won');assert.ok(b.enemies[0].hp>0,'boss không chết');assert.ok(b.reward.damage>0);
- const after=playerView(p).tth;assert.equal(after.attacksLeft,freePerDay-1);assert.equal(after.myBest,b.reward.damage);
+ const p=strong(),v=playerView(p,DAY1).tth;assert.equal(v.attacksLeft,freePerDay);assert.equal(v.bossName,bossOfDay(tthDay(DAY1)).name);
+ applyAction(p,'tth-attack',{skip:true},DAY1);const b=p.battle;assert.equal(b.status,'won');assert.ok(b.enemies[0].hp>0,'boss không chết');assert.ok(b.reward.damage>0);
+ const after=playerView(p,DAY1).tth;assert.equal(after.attacksLeft,freePerDay-1);assert.equal(after.myBest,b.reward.damage);
  const reached=milestones.filter((_,i)=>b.reward.damage>=after.milestones[i].threshold).length;assert.equal(after.milestones.filter(m=>m.claimed).length,reached);
- for(let i=1;i<freePerDay;i++)applyAction(p,'tth-attack',{skip:true});
- assert.throws(()=>applyAction(p,'tth-attack',{skip:true}),/hết lượt/);
- const gems=p.wallet.diamonds;applyAction(p,'tth-buy',{});assert.equal(p.wallet.diamonds,gems-50);applyAction(p,'tth-attack',{skip:true});
+ for(let i=1;i<freePerDay;i++)applyAction(p,'tth-attack',{skip:true},DAY1);
+ assert.throws(()=>applyAction(p,'tth-attack',{skip:true},DAY1),/hết lượt/);
+ const gems=p.wallet.diamonds;applyAction(p,'tth-buy',{},DAY1);assert.equal(p.wallet.diamonds,gems-50);applyAction(p,'tth-attack',{skip:true},DAY1);
 });
 
 describe('Tân Tứ Hoàng ranking on MongoDB',{skip:!process.env.MONGODB_URI},()=>{

@@ -1,0 +1,50 @@
+/* Chiến hạm (ship-ui.js): MonsterScene, PopupPet, PopupPetPreview, PopupSelectPet, chiêu trong trận. */
+.ship-layer{z-index:44;pointer-events:auto!important}
+.ship-layer .pd-button{cursor:pointer}.ship-layer .pd-button:hover{filter:brightness(1.08)}
+.ship-layer>[data-name="Shade"]{animation:ship-fade .18s ease-out}
+.ship-popup>.pd-node:not([data-name="Shade"]),.ship-preview>.pd-node:not([data-name="Shade"]),.ship-select>.pd-node:not([data-name="Shade"]){animation:ship-pop .26s cubic-bezier(.2,1.4,.45,1) both}
+.ship-popup.ship-flash [data-name="BoxInfo"]{animation:ship-flash .4s}
+.ship-spine{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.ship-hub [data-name^="CellPet"]{transition:transform .15s}.ship-hub [data-name^="CellPet"]:hover{transform:translateY(-4px)}
+.ship-select [data-name="Viewport"]{scrollbar-width:thin}
+.ship-cast{position:absolute;left:30px;top:130px;width:320px;height:440px;z-index:30;pointer-events:none;animation:ship-in .35s ease-out;transition:opacity .45s,transform .45s}
+.ship-cast.out{opacity:0;transform:translateX(-120px)}
+.ship-cast canvas{width:100%;height:100%}
+.ship-hit{position:absolute;width:260px;height:260px;z-index:31;pointer-events:none}
+.campaign-ship-head{border-radius:50%}
+@keyframes ship-pop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes ship-fade{from{opacity:0}}
+@keyframes ship-in{from{transform:translateX(-200px);opacity:0}}
+@keyframes ship-flash{50%{filter:brightness(1.35)}}
+.ship-layer{overflow:hidden}
+.ship-layer [data-name="ImageFrame"],.ship-layer [data-name="Frame"],.ship-layer [data-name="ImageName"]{pointer-events:none!important}
+body:has(.ship-layer) #dialog-ui{z-index:60}
+.ship-cast-name{position:absolute;left:0;right:0;bottom:6px;text-align:center;font:800 26px/1.2 GameFont,sans-serif;color:#ffe48a;text-shadow:0 2px 0 #4a1c05,0 0 6px #000}
+.ship-cinema{position:absolute;inset:0;z-index:32;pointer-events:none;animation:ship-fade .2s ease-out;transition:opacity .3s}
+.ship-cinema.out{opacity:0}
+.ship-cinema canvas{position:absolute;inset:0;width:1136px;height:640px}
+.ship-hit{width:300px;height:300px}
+.ship-select [data-name="Viewport"]{overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:thin}
+.ship-pick-row{position:absolute;left:0;top:0;bottom:0;display:flex;align-items:center;gap:22px;padding:0 18px;pointer-events:auto}
+.ship-pick-cell{all:unset;position:relative;flex:0 0 238px;height:296px;cursor:pointer;transition:transform .12s}
+.ship-pick-cell:hover{transform:translateY(-3px)}
+.ship-pick-cell>.bg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px)}
+.ship-pick-cell>.art{position:absolute;left:14px;right:14px;top:14px;bottom:14px;overflow:hidden;background:#3b6f9a}
+.ship-pick-cell>.art img{width:100%;height:100%;object-fit:cover}
+.ship-pick-cell>.art canvas{position:absolute;inset:0;width:100%;height:100%}
+.ship-pick-cell>.name{position:absolute;left:14px;right:14px;bottom:14px;height:54px;display:flex;align-items:center;justify-content:center;background:rgba(10,10,12,.78);color:#fff;font:800 26px/1 GameFont,sans-serif;text-shadow:0 2px 0 #000}
+.ship-pick-cell>.frame{position:absolute;inset:0;border:36px solid transparent;box-sizing:border-box;pointer-events:none}
+.ship-pick-cell.locked>.art,.ship-pick-cell.locked>.frame{filter:grayscale(1) brightness(1.08)}
+.ship-pick-cell>.tick{position:absolute;left:50%;top:44%;width:88px;height:84px;margin:-42px 0 0 -44px;display:none;filter:drop-shadow(0 3px 2px #0008)}
+.ship-pick-cell.picked>.tick{display:block;animation:ship-pop .2s}
+.ship-pick-cell>.ban{position:absolute;right:20px;top:20px;width:30px;height:30px}
+.ship-select{z-index:100!important}
+.campaign-ship-art{position:absolute;inset:14%;overflow:hidden;border-radius:6px;background:#3b6f9a;pointer-events:none}
+.campaign-ship-art img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.campaign-ship-art canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
+.ship-rage{position:absolute;left:116px;top:582px;width:280px;height:40px;z-index:6;pointer-events:none}
+.ship-rage>.bg{position:absolute;inset:0;border-style:solid;border-width:0 30px;box-sizing:border-box}
+.ship-rage>.fill{position:absolute;left:14px;top:4px;height:30px;width:0;border-style:solid;border-width:0 16px;box-sizing:border-box;transition:width .35s ease-out;min-width:32px;opacity:.98}
+.ship-rage:not(.full)>.fill[style*="width: 0px"]{opacity:0}
+.ship-rage.full>.fill{animation:ship-rage-glow .6s ease-in-out infinite alternate}
+@keyframes ship-rage-glow{to{filter:brightness(1.45) drop-shadow(0 0 6px #ffb347)}}

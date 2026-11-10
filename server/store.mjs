@@ -5,6 +5,7 @@ import {GameError,requireCondition} from './errors.mjs';
 import {starterPlayer,playerView,applyAction} from './game.mjs';
 import {startAfk} from './afk.mjs';
 import {startSummon} from './summon.mjs';
+import {shipGift} from './game.mjs';
 import {rankingEntry} from './tower.mjs';
 import {applyEventConfig,editableEvents,validateEventConfig} from './events.mjs';
 import {isRewardId} from './game.mjs';
@@ -161,7 +162,7 @@ export class Store {
  async getSession(token){if(typeof token!=='string'||!/^[A-Za-z0-9_-]{40,64}$/.test(token))return null;return this.sessions.findOne({tokenHash:sha(token),expiresAt:{$gt:new Date()}})}
  async deleteSession(token){if(typeof token==='string')await this.sessions.deleteOne({tokenHash:sha(token)})}
  async getUser(id){return this.users.findOne({_id:typeof id==='string'?new ObjectId(id):id})}
- async view(id){const user=await this.getUser(id);requireCondition(user,'Tài khoản không tồn tại.',401);const started=[startAfk(user.player),startSummon(user.player)].some(Boolean);if(started)await this.users.updateOne({_id:user._id,'player.version':user.player.version},{$set:{player:user.player}});return{...playerView(user.player),profile:{id:user._id.toHexString(),username:user.usernameKey}}}
+ async view(id){const user=await this.getUser(id);requireCondition(user,'Tài khoản không tồn tại.',401);const started=[startAfk(user.player),startSummon(user.player),shipGift(user.player)].some(Boolean);if(started)await this.users.updateOne({_id:user._id,'player.version':user.player.version},{$set:{player:user.player}});return{...playerView(user.player),profile:{id:user._id.toHexString(),username:user.usernameKey}}}
  adminId(id){requireCondition(typeof id==='string'&&ObjectId.isValid(id),'Tài khoản không tồn tại.',404);return new ObjectId(id)}
  async adminList({q='',page=0}){
   const size=25,skip=Math.max(0,Math.floor(page))*size,text=q.trim().slice(0,40).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');

@@ -205,8 +205,8 @@
  async function attack(stage){
   const me=c.player().guild;
   if(me.bossLeft<=0){if(me.bossBuyLeft<=0)return c.toast('Đã hết lượt đánh hôm nay.');return c.confirm(`Mua thêm 1 lượt đánh boss? (Còn ${me.bossBuyLeft} lượt mua hôm nay)`,'Đánh Boss',me.bossBuyPrice,async()=>{const d=await c.mutation('/api/guild/boss/buy',{},{render:false,bonus:false});if(d)attack(stage)})}
-  const d=await c.mutation('/api/guild/boss/attack',{},{render:false,bonus:false,message:false});if(!d)return;
-  if(d.player.battle?.status==='active'){closeAll();c.navigate(9)}
+  c.pickTeam('Boss Hạm đội',async slots=>{const d=await c.mutation('/api/guild/boss/attack',{formation:slots},{render:false,bonus:false,message:false});if(!d)return;
+  if(d.player.battle?.status==='active'){closeAll();c.navigate(9)}})
  }
 
  // ---- Nhiệm vụ (Cống hiến / Top)

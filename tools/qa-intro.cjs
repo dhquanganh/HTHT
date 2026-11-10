@@ -44,10 +44,10 @@ const start=()=>new Promise((resolve,reject)=>{const env={...process.env,MONGODB
  await page.waitForSelector('.summon-modal,.summon-result',{timeout:20000});await page.waitForSelector('.intro-guide',{timeout:15000});await page.waitForTimeout(1200);await shot('summon-done');
  assert.ok((await page.locator('.intro-guide').innerText()).includes('Rất tốt'));
  s=await p();assert.ok(s.hero);assert.equal(s.barrels,0);
- await say('Rất tốt');await page.waitForFunction(()=>GameView.getSceneId()===13&&!document.querySelector('.intro-layer'),null,{timeout:30000});await settle(1500);await shot('home');
+ await say('Rất tốt');await page.waitForFunction(()=>GameView.getSceneId()===13&&!document.querySelector('.intro-layer:not(.tut-guide)'),null,{timeout:30000});await settle(1500);await shot('home');
  const db1=(await players.findOne({usernameKey:'intro_qa'})).player;assert.equal(db1.intro,'done');assert.ok(db1.hero?.id);assert.equal(db1.inventory['consumable:16']||0,0);
  assert.ok(!db1.reserveHeroes?.['zoro-king-of-hell']||true);
- await page.reload();await page.waitForFunction(()=>window.GameRuntime?.player&&GameView.getSceneId()===13,null,{timeout:30000});assert.equal(await page.locator('.intro-layer').count(),0);
+ await page.reload();await page.waitForFunction(()=>window.GameRuntime?.player&&GameView.getSceneId()===13,null,{timeout:30000});assert.equal(await page.locator('.intro-layer:not(.tut-guide)').count(),0);
  const unexpected=errors.filter(e=>!/401 \(Unauthorized\)|409 \(Conflict\)|400 \(Bad Request\)|403 \(Forbidden\)/.test(e));assert.deepEqual(unexpected,[]);
  const report={hero:db1.hero.id,reserve:Object.keys(db1.reserveHeroes||{}).length,errors:unexpected,checks:['new-account-no-hero','10-barrels','story-panels-lines','skip','guide-typing','intro-step-saved','hand-on-x10','locked-to-summon','server-refuses','resume-after-reload','x10-summon','first-hero-main','done-to-home','no-intro-after-done']};
  fs.writeFileSync(`${output}/report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report));

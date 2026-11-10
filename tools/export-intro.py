@@ -29,5 +29,7 @@ intro={
           'summon':[t('MSG_TUTORIAL_ACTION_STORY_2'),t('MSG_TUTORIAL_ACTION_STORY_3')],
           'done':t('MSG_TUTORIAL_ACTION_STORY_4')},
 }
+# Hướng dẫn (TutorialManager): toàn bộ lời MSG_TUTORIAL_* và thông báo mở tính năng MISC_2_MSG_FEATURE_*.
+intro['tutorial']={k:t(k) for k in sorted(terms) if k.startswith(('MSG_TUTORIAL_ACTION','MSG_TUTORIALACTION','MISC_2_MSG_FEATURE_'))}
 (out/'intro.json').write_text(json.dumps(intro,ensure_ascii=False,indent=1),encoding='utf-8')
 print('intro.json',music.stat().st_size,'bytes mp3')

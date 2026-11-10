@@ -58,8 +58,8 @@
  }
  async function fight(m,l){
   if(m.turns<=0)return buy(m);
-  const d=await c.mutation('/api/raid/start',{mode:m.id,level:l.index},{render:false,message:false,bonus:false});if(!d)return;
-  if(d.player.battle?.status==='active'){close();c.navigate(9)}
+  c.pickTeam(`${m.title} · Mức ${l.index}`,async slots=>{const d=await c.mutation('/api/raid/start',{mode:m.id,level:l.index,formation:slots},{render:false,message:false,bonus:false});if(!d)return;
+  if(d.player.battle?.status==='active'){close();c.navigate(9)}})
  }
  async function smash(m,l){if(m.turns<=0)return buy(m);const d=await c.mutation('/api/raid/smash',{mode:m.id,level:l.index},{render:false});if(d)openList(m.id)}
  function close(){root?.remove();root=null;list?.remove();list=null}

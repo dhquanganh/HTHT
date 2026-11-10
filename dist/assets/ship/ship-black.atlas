@@ -1,0 +1,13 @@
+
+Black_bgr.png
+size: 16,24
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rate_bar
+  rotate: false
+  xy: 2, 2
+  size: 9, 19
+  orig: 9, 19
+  offset: 0, 0
+  index: -1

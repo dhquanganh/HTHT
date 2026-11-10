@@ -13,7 +13,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
   await page.waitForFunction(()=>window.GameRuntime?.player&&document.querySelector('#loading').hidden);return page};
  const settle=async(p,ms=900)=>{await p.waitForFunction(()=>[...document.images].every(i=>i.complete),null,{timeout:20000}).catch(()=>{});await p.waitForTimeout(ms)};
  const shot=async(name,p)=>{await settle(p);await p.screenshot({path:`${output}/${name}.png`})};
- const fight=async p=>{await p.locator('.tth-lobby [data-name="ButtonAttack"]').click();await p.waitForFunction(()=>window.GameRuntime.player.battle?.tth&&GameView.getSceneId()===9&&document.querySelector('#loading').hidden,null,{timeout:30000});
+ const fight=async p=>{await p.locator('.tth-lobby [data-name="ButtonAttack"]').click();await p.locator('[data-action="team-fight"]').click();await p.waitForFunction(()=>window.GameRuntime.player.battle?.tth&&GameView.getSceneId()===9&&document.querySelector('#loading').hidden,null,{timeout:30000});
   await p.waitForTimeout(1200);await p.locator('[data-action="battle-skip"]').click().catch(()=>{});await p.waitForSelector('.battle-end [data-action="tth-back"]',{timeout:90000});await p.waitForTimeout(800)};
  // Người chơi 2 đánh trước để có 2 dòng xếp hạng.
  const other=await open('Tth_Two');await players.updateOne({usernameKey:'tth_two'},{$set:{'player.hero.level':80,'player.hero.stars':5}});await other.reload();await other.waitForFunction(()=>window.GameRuntime?.player&&document.querySelector('#loading').hidden);

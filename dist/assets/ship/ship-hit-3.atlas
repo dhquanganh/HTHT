@@ -1,0 +1,216 @@
+
+Ship_hit3.png
+size: 1004,1016
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+battle/ball
+  rotate: false
+  xy: 906, 117
+  size: 59, 58
+  orig: 59, 58
+  offset: 0, 0
+  index: -1
+battle/cloud
+  rotate: true
+  xy: 607, 519
+  size: 233, 238
+  orig: 235, 239
+  offset: 2, 0
+  index: -1
+battle/flash2
+  rotate: false
+  xy: 2, 11
+  size: 192, 187
+  orig: 199, 191
+  offset: 7, 0
+  index: -1
+battle/heart
+  rotate: false
+  xy: 787, 177
+  size: 141, 131
+  orig: 210, 217
+  offset: 37, 36
+  index: -1
+battle/smok2
+  rotate: true
+  xy: 2, 399
+  size: 210, 212
+  orig: 210, 217
+  offset: 0, 0
+  index: -1
+fx/100002dilie
+  rotate: false
+  xy: 2, 611
+  size: 603, 403
+  orig: 603, 403
+  offset: 0, 0
+  index: -1
+fx/10_guang_1
+  rotate: true
+  xy: 607, 754
+  size: 260, 263
+  orig: 270, 270
+  offset: 4, 3
+  index: -1
+fx/somkexuelie_00001
+  rotate: true
+  xy: 973, 962
+  size: 52, 29
+  orig: 150, 60
+  offset: 82, 6
+  index: -1
+fx/somkexuelie_00002
+  rotate: false
+  xy: 818, 13
+  size: 116, 41
+  orig: 150, 60
+  offset: 21, 4
+  index: -1
+fx/somkexuelie_00003
+  rotate: false
+  xy: 777, 56
+  size: 127, 44
+  orig: 150, 60
+  offset: 12, 4
+  index: -1
+fx/somkexuelie_00004
+  rotate: false
+  xy: 646, 55
+  size: 129, 45
+  orig: 150, 60
+  offset: 11, 5
+  index: -1
+fx/somkexuelie_00005
+  rotate: false
+  xy: 685, 7
+  size: 131, 46
+  orig: 150, 60
+  offset: 10, 5
+  index: -1
+fx/somkexuelie_00006
+  rotate: false
+  xy: 646, 102
+  size: 139, 50
+  orig: 150, 60
+  offset: 4, 4
+  index: -1
+fx/somkexuelie_00007
+  rotate: false
+  xy: 544, 2
+  size: 139, 51
+  orig: 150, 60
+  offset: 4, 4
+  index: -1
+fx/somkexuelie_00008
+  rotate: false
+  xy: 402, 2
+  size: 140, 51
+  orig: 150, 60
+  offset: 3, 4
+  index: -1
+fx/somkexuelie_00009
+  rotate: true
+  xy: 936, 220
+  size: 88, 51
+  orig: 150, 60
+  offset: 2, 5
+  index: -1
+fx/yanbao_1
+  rotate: true
+  xy: 872, 691
+  size: 143, 98
+  orig: 220, 225
+  offset: 48, 4
+  index: -1
+fx/yanbao_10
+  rotate: true
+  xy: 216, 214
+  size: 195, 203
+  orig: 220, 225
+  offset: 12, 6
+  index: -1
+fx/yanbao_11
+  rotate: false
+  xy: 429, 213
+  size: 161, 201
+  orig: 220, 225
+  offset: 17, 14
+  index: -1
+fx/yanbao_12
+  rotate: false
+  xy: 847, 496
+  size: 149, 193
+  orig: 220, 225
+  offset: 20, 26
+  index: -1
+fx/yanbao_13
+  rotate: false
+  xy: 872, 836
+  size: 99, 178
+  orig: 220, 225
+  offset: 60, 20
+  index: -1
+fx/yanbao_14
+  rotate: false
+  xy: 561, 61
+  size: 83, 91
+  orig: 220, 225
+  offset: 59, 60
+  index: -1
+fx/yanbao_2
+  rotate: true
+  xy: 402, 55
+  size: 156, 157
+  orig: 220, 225
+  offset: 39, 0
+  index: -1
+fx/yanbao_3
+  rotate: false
+  xy: 592, 154
+  size: 193, 162
+  orig: 220, 225
+  offset: 19, 4
+  index: -1
+fx/yanbao_4
+  rotate: true
+  xy: 429, 416
+  size: 193, 175
+  orig: 220, 225
+  offset: 19, 4
+  index: -1
+fx/yanbao_5
+  rotate: false
+  xy: 807, 310
+  size: 194, 184
+  orig: 220, 225
+  offset: 19, 4
+  index: -1
+fx/yanbao_6
+  rotate: true
+  xy: 201, 19
+  size: 193, 199
+  orig: 220, 225
+  offset: 19, 3
+  index: -1
+fx/yanbao_7
+  rotate: true
+  xy: 216, 411
+  size: 198, 211
+  orig: 220, 225
+  offset: 15, 3
+  index: -1
+fx/yanbao_8
+  rotate: false
+  xy: 2, 200
+  size: 197, 197
+  orig: 220, 225
+  offset: 15, 3
+  index: -1
+fx/yanbao_9
+  rotate: false
+  xy: 606, 318
+  size: 199, 199
+  orig: 220, 225
+  offset: 13, 3
+  index: -1

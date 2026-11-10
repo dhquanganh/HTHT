@@ -24,9 +24,9 @@
   try{
    while(start<order.length){
     const mode=order[start].data.blendMode;let end=start+1;while(end<order.length&&order[end].data.blendMode===mode)end++;
-    ctx.globalCompositeOperation=composite.get(mode)||previous;skeleton.drawOrder=order.slice(start,end);baseDraw.call(this,skeleton);start=end;
+    ctx.globalCompositeOperation=composite.get(mode)||previous;this.__additive=mode===spine.BlendMode.Additive;skeleton.drawOrder=order.slice(start,end);baseDraw.call(this,skeleton);start=end;
    }
-  }finally{skeleton.drawOrder=order;ctx.globalCompositeOperation=previous}
+  }finally{skeleton.drawOrder=order;ctx.globalCompositeOperation=previous;this.__additive=false}
  };
  const visible=slot=>slot.bone.active&&slot.getAttachment()&&slot.color.a>0&&slot.getAttachment().color?.a!==0;
  // The canvas runtime only applies alpha; slot/attachment RGB tint is ignored, so effects tinted in Spine (Zoro Wano's
@@ -47,8 +47,21 @@
   while(pixels>pixelLimit&&tints.size>1){const [oldest,old]=tints.entries().next().value;tints.delete(oldest);pixels-=old.width*old.height;old.width=old.height=0}
   return canvas;
  };
+ // Blend cộng của Unity bỏ qua alpha: phần nền đen của ảnh hiệu ứng cộng 0 vào màn hình. Canvas 'lighter' lại cộng cả alpha
+ // nên trên canvas trong suốt (hiệu ứng vẽ riêng như chiêu chiến hạm) nền đen hiện thành ô vuông mờ. Với slot cộng, vẽ từ bản
+ // sao có alpha = độ sáng (màu chia lại để tích màu*alpha không đổi): trên nền đặc kết quả y hệt, trên nền trong suốt hết ô đen.
+ const additive=new WeakMap();
+ const additiveSource=img=>{
+  if(!img?.width||!img.height)return img;let out=additive.get(img);if(out)return out;
+  out=document.createElement('canvas');out.width=img.width;out.height=img.height;const c=out.getContext('2d',{willReadFrequently:true});c.drawImage(img,0,0);
+  try{const data=c.getImageData(0,0,out.width,out.height),d=data.data;
+   for(let i=0;i<d.length;i+=4){const a=d[i+3]/255,r=d[i]*a,g=d[i+1]*a,b=d[i+2]*a,m=Math.max(r,g,b);if(m<=0){d[i+3]=0;continue}d[i]=r*255/m;d[i+1]=g*255/m;d[i+2]=b*255/m;d[i+3]=m}
+   c.putImageData(data,0,0)}catch{out=img}
+  additive.set(img,out);return out;
+ };
  prototype.drawTriangle=function(texture,x0,y0,u0,v0,x1,y1,u1,v1,x2,y2,u2,v2){
   if(Math.abs((x1-x0)*(y2-y0)-(y1-y0)*(x2-x0))<.00001||Math.abs((u1-u0)*(v2-v0)-(v1-v0)*(u2-u0))<1e-12)return;
+  if(this.__additive){texture=additiveSource(texture);arguments[0]=texture}
   const tint=this.tempColor;
   if(tint&&(tint.r<.97||tint.g<.97||tint.b<.97)){const args=[...arguments];args[0]=tinted(texture,tint.r,tint.g,tint.b);return triangle.apply(this,args)}
   return triangle.apply(this,arguments);

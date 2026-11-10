@@ -21,7 +21,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  await page.locator('.raid-hub [data-name="ImageGold"] [data-name="ButtonEnter"]').click();await page.waitForSelector('.raid-list');await shot('gold');
  t=await listText();assert.ok(t.includes('Cướp Xu')&&t.includes('2/2')&&t.includes('Cấp 50 mở'),t.slice(0,300));
  const gold=await page.evaluate(()=>window.GameRuntime.player.wallet.gold);
- await page.locator('.raid-list [data-name="ButtonBattle"]').first().click();await page.waitForFunction(()=>window.GameRuntime.player.battle?.raid&&GameView.getSceneId()===9&&document.querySelector('#loading').hidden,null,{timeout:30000});
+ await page.locator('.raid-list [data-name="ButtonBattle"]').first().click();await page.waitForSelector('[data-action="team-fight"]');await shot('formation');await page.locator('[data-action="team-fight"]').click();await page.waitForFunction(()=>window.GameRuntime.player.battle?.raid&&GameView.getSceneId()===9&&document.querySelector('#loading').hidden,null,{timeout:30000});
  await page.waitForTimeout(1000);await page.locator('[data-action="battle-skip"]').click().catch(()=>{});await page.waitForSelector('.battle-end [data-action="raid-back"]',{timeout:90000});await shot('battle-end');
  assert.equal(await page.evaluate(()=>window.GameRuntime.player.battle.status),'won');assert.equal(await page.evaluate(()=>window.GameRuntime.player.wallet.gold),gold+20000);
  await page.locator('.battle-end [data-action="raid-back"]').click();await page.waitForSelector('.raid-list',{timeout:30000});await shot('gold-after');
