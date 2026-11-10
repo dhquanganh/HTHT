@@ -1,0 +1,31 @@
+/* Màn tải + đăng nhập gốc (login-ui.js). */
+.login-root{position:absolute;inset:0;z-index:150;pointer-events:auto!important;transition:opacity .45s}
+.login-root.leaving{pointer-events:none!important}.login-root.leaving *{pointer-events:none!important}
+.login-root.out{opacity:0}
+body.login-open #loading{opacity:0;pointer-events:none}
+.login-root>.pd-node,.login-root>form>.pd-node{position:absolute}
+.login-kaido{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+/* SplashInit: nền hiện dần, logo hiện dần và trượt lên. */
+.splash-init [data-name="ImageBgr"]{opacity:0;transition:opacity .9s}
+.splash-init [data-name="ImageLogo"]{opacity:0;transform:translateY(140px) scale(.85);transition:opacity .8s .5s,transform 1.1s .5s cubic-bezier(.2,1.1,.3,1)}
+.splash-init.play [data-name="ImageBgr"]{opacity:1}.splash-init.play [data-name="ImageLogo"]{opacity:1;transform:none}
+/* SplashTheme: Ace bay vào từ trái, tên từ phải, logo bật ra. */
+.splash-theme{opacity:0;transition:opacity .5s}.splash-theme.play{opacity:1}.splash-theme.out{opacity:0;transition:opacity .55s}
+.splash-theme [data-name="ImageChar"]{transform:translateX(-340px);opacity:0;transition:transform .8s .2s cubic-bezier(.2,1,.3,1),opacity .5s .2s}
+.splash-theme [data-name="ImageName"]{transform:translateX(320px);opacity:0;transition:transform .8s .45s cubic-bezier(.2,1,.3,1),opacity .5s .45s}
+.splash-theme [data-name="LogoVn"]{transform:scale(.5);opacity:0;transition:transform .6s .8s cubic-bezier(.2,1.5,.4,1),opacity .4s .8s}
+.splash-theme.play [data-name="ImageChar"],.splash-theme.play [data-name="ImageName"],.splash-theme.play [data-name="LogoVn"]{transform:none;opacity:1}
+/* BoxLogin / BoxRegister */
+.login-form{position:absolute;inset:0;margin:0;animation:login-pop .3s cubic-bezier(.2,1.3,.4,1)}
+.login-box{pointer-events:none}.login-box .pd-node{pointer-events:none}
+.login-input{all:unset;pointer-events:auto;position:absolute;inset:6px 14px;box-sizing:border-box;font:600 22px/36px GameFont,sans-serif;color:#fff;cursor:text;text-shadow:0 1px 0 #000}
+.login-input::placeholder{color:rgba(255,255,255,.45);font-weight:400}
+.login-hit{all:unset;pointer-events:auto;position:absolute;inset:0;cursor:pointer;border-radius:12px}
+.login-hit:focus-visible,.login-input:focus-visible{outline:2px solid #ffd76a;outline-offset:2px}
+.login-box [data-name="ButtonLogin"],.login-box [data-name="ButtonRegister"],.login-box [data-name="ButtonBack"]{transition:transform .1s,filter .1s}
+.login-box [data-name="ButtonLogin"]:hover,.login-box [data-name="ButtonRegister"]:hover,.login-box [data-name="ButtonBack"]:hover{filter:brightness(1.1)}
+.login-box [data-name="ButtonLogin"]:active,.login-box [data-name="ButtonRegister"]:active,.login-box [data-name="ButtonBack"]:active{transform:scale(.96)}
+.login-error{position:absolute;left:50%;top:600px;transform:translateX(-50%);margin:0;max-width:640px;padding:0 14px;border-radius:14px;background:rgba(0,0,0,.6);color:#ffd27a;font:600 20px/32px GameFont,sans-serif;text-align:center;pointer-events:none}
+.login-error:empty{display:none}
+@keyframes login-pop{from{transform:scale(.9);opacity:0}}
+.login-root .login-hit,.login-root .login-hit:hover,.login-root .login-hit:disabled{background:none!important;color:inherit;filter:none;transform:none;opacity:1}

@@ -84,7 +84,7 @@
  async function run(){
   if(running)return;running=true;
   try{
-   await load();playMusic();let p=c.player();
+   await load();await window.LoginUI?.whenHidden();playMusic();let p=c.player();
    if(p.intro==='story'||!p.intro){await story();await c.post('/api/intro',{step:'summon'});await say(data.guide.welcome);p=c.player()}
    await summonStep();
   }catch(e){running=false;c.toast(e.message)}

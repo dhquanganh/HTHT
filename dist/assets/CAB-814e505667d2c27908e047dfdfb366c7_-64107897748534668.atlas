@@ -1,0 +1,300 @@
+
+Splash_kaido.png
+size: 2020,1400
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: true
+  xy: 677, 43
+  size: 217, 362
+  orig: 217, 362
+  offset: 0, 0
+  index: -1
+Layer 18
+  rotate: true
+  xy: 1364, 352
+  size: 442, 388
+  orig: 444, 390
+  offset: 1, 1
+  index: -1
+Layer 2
+  rotate: true
+  xy: 1666, 112
+  size: 107, 98
+  orig: 107, 98
+  offset: 0, 0
+  index: -1
+Layer 3
+  rotate: false
+  xy: 1722, 4
+  size: 100, 106
+  orig: 100, 111
+  offset: 0, 5
+  index: -1
+Layer 4
+  rotate: false
+  xy: 1790, 1313
+  size: 210, 85
+  orig: 212, 87
+  offset: 1, 1
+  index: -1
+Layer 5
+  rotate: false
+  xy: 1854, 1087
+  size: 127, 81
+  orig: 127, 81
+  offset: 0, 0
+  index: -1
+Layer 9 copy 2
+  rotate: false
+  xy: 1037, 796
+  size: 343, 285
+  orig: 343, 285
+  offset: 0, 0
+  index: -1
+beard1
+  rotate: true
+  xy: 1897, 432
+  size: 363, 113
+  orig: 363, 113
+  offset: 0, 0
+  index: -1
+beard2
+  rotate: false
+  xy: 2, 3
+  size: 246, 257
+  orig: 246, 257
+  offset: 0, 0
+  index: -1
+body1
+  rotate: true
+  xy: 1041, 1083
+  size: 315, 747
+  orig: 315, 747
+  offset: 0, 0
+  index: -1
+body2
+  rotate: true
+  xy: 749, 786
+  size: 612, 286
+  orig: 612, 286
+  offset: 0, 0
+  index: -1
+body3
+  rotate: false
+  xy: 1382, 797
+  size: 634, 284
+  orig: 648, 285
+  offset: 14, 1
+  index: -1
+caocao
+  rotate: false
+  xy: 1790, 1170
+  size: 141, 141
+  orig: 148, 148
+  offset: 2, 5
+  index: -1
+cloud1
+  rotate: false
+  xy: 250, 9
+  size: 425, 251
+  orig: 425, 251
+  offset: 0, 0
+  index: -1
+cloud2
+  rotate: false
+  xy: 1389, 72
+  size: 275, 278
+  orig: 275, 278
+  offset: 0, 0
+  index: -1
+cloud3
+  rotate: false
+  xy: 1041, 2
+  size: 269, 312
+  orig: 269, 312
+  offset: 0, 0
+  index: -1
+eyes_LF
+  rotate: true
+  xy: 2, 262
+  size: 1136, 745
+  orig: 1138, 747
+  offset: 1, 1
+  index: -1
+flow
+  rotate: false
+  xy: 1754, 654
+  size: 141, 141
+  orig: 147, 147
+  offset: 3, 3
+  index: -1
+hair
+  rotate: false
+  xy: 749, 316
+  size: 613, 468
+  orig: 613, 468
+  offset: 0, 0
+  index: -1
+hand_Luffy1
+  rotate: false
+  xy: 1790, 1084
+  size: 62, 84
+  orig: 64, 86
+  offset: 1, 1
+  index: -1
+hat
+  rotate: true
+  xy: 1389, 4
+  size: 66, 103
+  orig: 68, 105
+  offset: 1, 1
+  index: -1
+huoba_0
+  rotate: false
+  xy: 1867, 368
+  size: 74, 62
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+huoba_1
+  rotate: true
+  xy: 1933, 1170
+  size: 74, 64
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+huoba_10
+  rotate: true
+  xy: 1766, 138
+  size: 73, 62
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+huoba_11
+  rotate: false
+  xy: 1896, 108
+  size: 72, 61
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+huoba_12
+  rotate: false
+  xy: 1933, 1246
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+huoba_13
+  rotate: false
+  xy: 1666, 286
+  size: 74, 64
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+huoba_14
+  rotate: false
+  xy: 1867, 236
+  size: 73, 63
+  orig: 90, 80
+  offset: 5, 6
+  index: -1
+huoba_15
+  rotate: false
+  xy: 1942, 236
+  size: 73, 63
+  orig: 90, 80
+  offset: 5, 6
+  index: -1
+huoba_16
+  rotate: false
+  xy: 1943, 368
+  size: 74, 62
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+huoba_17
+  rotate: true
+  xy: 1824, 63
+  size: 73, 62
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+huoba_18
+  rotate: false
+  xy: 1666, 221
+  size: 74, 63
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+huoba_2
+  rotate: false
+  xy: 1494, 5
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+huoba_3
+  rotate: false
+  xy: 1867, 301
+  size: 73, 65
+  orig: 90, 80
+  offset: 5, 6
+  index: -1
+huoba_4
+  rotate: true
+  xy: 1830, 139
+  size: 72, 64
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+huoba_5
+  rotate: false
+  xy: 1896, 171
+  size: 72, 63
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+huoba_6
+  rotate: false
+  xy: 1942, 301
+  size: 73, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+huoba_7
+  rotate: false
+  xy: 1570, 5
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+huoba_8
+  rotate: false
+  xy: 1646, 5
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+huoba_9
+  rotate: false
+  xy: 1766, 213
+  size: 73, 62
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+rock
+  rotate: true
+  xy: 1754, 277
+  size: 375, 111
+  orig: 377, 113
+  offset: 1, 1
+  index: -1
+t9ia
+  rotate: false
+  xy: 1312, 32
+  size: 75, 282
+  orig: 80, 307
+  offset: 2, 0
+  index: -1
