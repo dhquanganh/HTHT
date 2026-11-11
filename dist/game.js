@@ -474,6 +474,8 @@ async function homeQuestTap(){
 }
 function syncScene(data){syncMailDot(data);
  if(!player)return;patchText(data,'TextGold',short(player.wallet.gold));patchText(data,'TextGem',short(player.wallet.diamonds));patchText(data,'TextSpirit',short(player.wallet.spirit||0));patchText(data,'TextPlayername',player.displayName);patchText(data,'TextLv','Lv.'+player.account.level);
+ // Khung avatar ở mọi màn có PlayerInfo (màn chính, Đảo Người Cá...): ảnh đại diện đã chọn + VIP như màn chính.
+ patchText(data,'TextVip','V'+(player.vip||0));{const key=window.ProfileUI?.avatarKey(player)||catalog?.hero?.visual?.head;if(key)for(const n of sceneNodes(data))if(n.name==='ImageAvatar')V().setAsset(n,key)}
  if([13,36].includes(data.id)){
   const slots=sceneNodes(data).filter(n=>/^HeroHome2 \(/.test(n.name)).sort((a,b)=>a.name.localeCompare(b.name));
   const owned=new Map((player.heroes||[player.hero]).map(h=>[h.id,h])),seen=new Set();

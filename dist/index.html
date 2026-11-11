@@ -57,20 +57,10 @@
   <script defer src="pet-ui.js"></script>
   <script defer src="game.js"></script>
 </head>
-<body>
+<body class="playing">
   <main id="viewer">
     <div id="stage"><canvas id="game" width="1136" height="640" aria-label="Giao diện game Hải Tặc Phục Sinh"></canvas><div id="game-layer"><div id="screen-ui"></div><div id="dialog-ui"></div></div><div id="loading" role="status" aria-label="Đang tải"><div class="ld-box"><span class="ld-title">Đang tải dữ liệu</span><span class="ld-bar"><span class="ld-fill"></span><img class="ld-head l" src="assets/0b2f768ca932f5e4992ffe7142678e53_2.webp" alt=""><img class="ld-head r" src="assets/0b2f768ca932f5e4992ffe7142678e53_2.webp" alt=""></span></div></div></div>
   </main>
-  <nav id="toolbar" aria-label="Chọn giao diện">
-    <a class="brand" href="#13">HẢI TẶC <span>PHỤC SINH</span></a>
-    <select id="scene" aria-label="Màn hình"></select>
-    <button id="previous" title="Màn trước" aria-label="Màn trước">‹</button>
-    <button id="next" title="Màn tiếp" aria-label="Màn tiếp">›</button>
-    <button id="pause" title="Bật hoặc tắt chuyển động">Dừng chuyển động</button>
-    <button id="fullscreen" title="Toàn màn hình">Toàn màn hình</button>
-    <button id="hide" title="Ẩn thanh chọn màn hình (phím H)">Ẩn thanh</button>
-  </nav>
-  <button id="show" aria-label="Hiện thanh chọn màn hình">☰</button>
   <div id="toast" role="status"></div>
 </body>
 </html>

@@ -2,6 +2,8 @@
 
 Bản game thử nghiệm dùng giao diện, font, sprite và Spine trích từ APK và cache HTTH. Chạy **Node.js 22+**, Express và MongoDB Atlas. Có **Luffy Gear 2** và **Zoro King Of Hell**; mỗi tướng giữ riêng tiến trình và trang bị.
 
+Trang chỉ chạy game thật: chưa đăng nhập thì vào màn tải + Đăng nhập, đã đăng nhập thì vào game với dữ liệu tài khoản. Không còn chế độ xem scene mẫu (thanh chọn màn hình, dữ liệu tướng / đồ mẫu, điều hướng bằng `#id`).
+
 ## Chạy trên máy
 
 ```powershell
