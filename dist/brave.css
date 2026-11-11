@@ -1,0 +1,29 @@
+/* Luyện tập (brave-ui.js). */
+.brave-layer{z-index:46;pointer-events:auto!important}
+.brave-popup{z-index:48}
+body:has(.brave-layer) #dialog-ui{z-index:60}
+body:has(.brave-layer) .bonus-popup{z-index:70}
+.brave-layer .pd-button{cursor:pointer}.brave-layer .pd-button:hover{filter:brightness(1.08)}
+.brave-spine{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.brave-main [data-name="BraveMap"],.brave-main [data-name^="Path"],.brave-main [data-name="ArrowFocus"],.brave-main [data-name^="Group"],.brave-main [data-name="PanelTop"]{pointer-events:none!important}
+.brave-main .pd-button{pointer-events:auto!important}
+.brave-stage.locked{filter:grayscale(.75) brightness(.8)}
+.brave-stage.done{filter:grayscale(1) brightness(.75)}
+.brave-stage.current{filter:drop-shadow(0 0 8px #ffe66d)}
+.brave-ready{animation:brave-glow 1.1s ease-in-out infinite alternate}
+@keyframes brave-glow{from{filter:drop-shadow(0 0 2px #fff27a)}to{filter:drop-shadow(0 0 14px #fff27a) brightness(1.15)}}
+.brave-claimed{filter:grayscale(.8) brightness(.8)}
+.brave-locked{filter:grayscale(.9) brightness(.8)}
+.brave-rewards{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:auto}
+.brave-rewards .ev-tile{width:86px;height:86px}.brave-rewards .ev-tile img{width:70px;height:70px}
+.brave-altar-desc{position:absolute;left:14px;right:14px;top:70px;margin:0;color:#5b3a1d;font:600 19px/1.4 GameFont,sans-serif;text-align:center}
+.brave-altar-desc b{color:#2f8a1e}
+.brave-pick{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.brave-pick button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;width:120px;padding:10px;border-radius:12px;background:#f2dfb8;box-shadow:inset 0 0 0 2px #c79a5d;color:#5b3a1d;font:700 18px/1.2 GameFont,sans-serif;text-align:center}
+.brave-pick button:hover{filter:brightness(1.06)}
+.brave-pick img{width:80px;height:80px;object-fit:contain}
+.brave-modal-rewards{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.brave-popup [data-name="ImageFrame"],.brave-popup [data-name="GroupChest"],.brave-popup [data-name="Slider"]{pointer-events:none!important}.brave-popup .pd-button{pointer-events:auto!important}
+.brave-altar-desc{top:auto;bottom:16px;padding:10px 12px;border-radius:12px;background:rgba(32,18,8,.78);color:#fff3d6;font-size:18px;text-shadow:0 1px 2px #000}
+.brave-altar-desc b{color:#9cf06a}
+.brave-avatar{position:absolute;z-index:1;inset:9px;width:calc(100% - 18px);height:calc(100% - 18px);object-fit:cover;border-radius:10px;pointer-events:none}

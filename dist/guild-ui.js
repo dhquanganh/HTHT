@@ -140,7 +140,7 @@
   const s=await sceneJson(1464),n=clone(s.roots[0]),me=c.player().guild,t=me.tech[techClass],skill=t.skills[techIndex];
   txt(deep(n,'TextTitle'),classNames[techClass]);tag(deep(n,'ButtonClose'),{act:'close'});txt(deep(n,'TextGuildCoin'),c.short(me.coin));txt(deep(n,'TextGold'),c.short(c.player().wallet.gold));tag(deep(n,'ButtonHelp'),{act:'techHelp'});
   for(const [b,cls] of techTabs){const x=deep(n,b);tag(x,{act:'techTab',cls});on(kid(x,'ImageOn'),cls===techClass);on(kid(x,'ImageOff'),cls!==techClass)}
-  const box=deep(n,'BoxTech');pic(deep(box,'IconTechClass'),data.icons['tech_'+techClass]);txt(deep(box,'LevelTechClass'),I2('LBL_LEVEL','Cấp độ ')+t.tier);tag(deep(box,'ButtonRetset'),{act:'reset'});
+  const box=deep(n,'BoxTech');pic(deep(box,'IconTechClass'),data.icons['tech_'+techClass]);txt(deep(box,'LevelTechClass'),I2('LBL_LEVEL','Cấp độ').trimEnd()+' '+t.tier);tag(deep(box,'ButtonRetset'),{act:'reset'});
   t.skills.forEach((sk,i)=>{const b=deep(box,'ButtonTechSkill'+(i+1));tag(b,{act:'techPick',index:i});const icon=techIcon(techClass,sk.id);for(const k of ['ImageOn','ImageOff'])pic(kid(b,k),icon);on(kid(b,'ImageOn'),!sk.locked);on(kid(b,'ImageOff'),sk.locked);txt(kid(b,'TextLevel'),`${sk.level}/${sk.max}`);b.guildLocked=sk.locked;if(i===techIndex)b.guildSelected=true});
   const d=deep(n,'BoxDetail');pic(deep(d,'IconTech'),techIcon(techClass,skill.id));txt(deep(d,'TextTechName'),skill.name);txt(deep(d,'TextUpgradeDesc'),skill.level<skill.max?effectText(skill.effects,skill.level):effectText(skill.effects,skill.level-1).replace(/-> .*$/gm,'(tối đa)'));
   txt(deep(d,'TextRequire'),skill.locked?'Yêu cầu kĩ năng trước đạt cấp 10':'');
