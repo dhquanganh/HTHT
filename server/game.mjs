@@ -36,6 +36,8 @@ import {tthView,tthBuy,tthSpend,tthFinish,tthDay,bossUnit,bossOfDay,battleRounds
 import {raidSmash,raidBuy,raidPrepare,raidFinish,raidEnemyStats,raidModes,vnDay as raidDay} from './raid.mjs';
 import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
 import {shipView,shipAction,shipForBattle,shipItems} from './ship.mjs';
+import {profileAction,levelRewards,noteLevelUp} from './profile.mjs';
+import {applyAura} from './aura.mjs';
 // Chiến hạm mở ở cấp thuyền trưởng 20 (MISC_2_MSG_FEATURE_PET); lần đầu mở được tặng đủ Hồn để kích hoạt chiến hạm đầu tiên.
 export const shipLevel=20;
 export function shipGift(p){if(!p.hero||p.account.level<shipLevel||p.ships?.gift)return false;p.ships??={list:{},selected:null};p.ships.gift=true;p.inventory[shipItems.soul]=(p.inventory[shipItems.soul]||0)+300;p.inventory[shipItems.chaos]=(p.inventory[shipItems.chaos]||0)+200;return true}
@@ -171,7 +173,7 @@ export function grantReward(p,{itemId,quantity}){if(walletIds.has(itemId))p.wall
 function payReward(p,{itemId,quantity}){if(walletIds.has(itemId))spend(p,{[itemId]:quantity});else spendItems(p,{[itemId]:quantity})}
 function outsideBattle(p){requireCondition(!p.battle||p.battle.status!=='active','Hãy kết thúc trận chiến trước.',409,'BATTLE_ACTIVE')}
 export const maxAccountLevel=100;
-function accountExp(p,amount){p.account.exp+=amount;while(p.account.level<maxAccountLevel&&p.account.exp>=p.account.level*100){p.account.exp-=p.account.level*100;p.account.level++}}
+export function accountExp(p,amount){p.account.exp+=amount;while(p.account.level<maxAccountLevel&&p.account.exp>=p.account.level*100){p.account.exp-=p.account.level*100;p.account.level++;const rewards=levelRewards(p.account.level);for(const r of rewards)grantReward(p,r);noteLevelUp(p,p.account.level,rewards)}}
 // ---- Hạm đội (guild.mjs): phần nằm trong player — kỹ năng, điểm danh, cống hiến, lượt đánh boss. Hạm đội chung ở Store.
 function guildDaily(p,now){const g=guildState(p),day=vnDay(now);if(g.day!==day){g.day=day;g.rollCall=false;g.donated=0;g.bossUsed=0;g.bossBought=0}return g}
 function guildView(p,now){
@@ -332,10 +334,7 @@ function runAction(p,action,input,now,context){
   p.reserveHeroes[p.hero.id]=p.hero;delete p.reserveHeroes[input.heroId];p.hero=next;p.battle=null;
   return{message:`Đã chọn ${definitionFor(next.id).name}.`};
  }
- if(action==='profile-update'){
-  requireCondition(typeof input.displayName==='string','Tên thuyền trưởng không hợp lệ.');const name=input.displayName.trim();
-  requireCondition(name.length>=3&&name.length<=24&&!/[<>\u0000-\u001f]/.test(name),'Tên thuyền trưởng cần 3–24 ký tự.');p.displayName=name;return{message:'Đã đổi tên thuyền trưởng.'};
- }
+ if(action==='profile-update'){const op=input.op||'rename';return profileAction(p,{...input,op},{owned:ownedHeroes(p),pay:n=>spend(p,{diamonds:n})})}
  if(action==='daily')return claimCheckin(p,reward=>grantReward(p,reward),now);
  if(action==='event-spin')return spinEvent(p,input,cost=>payReward(p,cost),reward=>grantReward(p,reward),now);
  if(action==='event-free')return freeEventGift(p,input,reward=>grantReward(p,reward),now);
@@ -513,6 +512,8 @@ function openBattle(p,enemies,meta,teamFormation,position,now){
  p.formation=teamFormation;p.battle.combatVersion=2;p.battle.allies=allies;
  {const ship=shipForBattle(p,allies);if(ship)p.battle.ship=ship}
  for(const e of enemies){e.side='enemy';e.frontRow=e.position>=4;e.energy=0}
+ // Hiệu ứng đội hình gốc (cùng hệ +Máu/+Công, mỗi hệ +Giảm ST hoặc +Miễn chống) cho cả hai phe.
+ p.battle.aura={ally:applyAura(allies),enemy:applyAura(enemies.filter(e=>e.faction))};
  initializeTeamBattle(p.battle);
 }
 /** Đơn vị trận đấu của một đội hình 6 ô (chỉ số, Haki, Nộ, bộ kỹ năng + thú cưng + Thiên phú). Dùng cho trận thường và snapshot Chiến trường. */

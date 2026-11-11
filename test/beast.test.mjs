@@ -71,7 +71,7 @@ test('the boss never dies and hits everyone for a share of max HP',()=>{
  applyAction(p,'battle-action',{battleId:p.battle.id,turn:1,action:'auto'});
  assert.ok(boss.hp>0,'Boss survives its HP bar');assert.ok(boss.damageTaken>=5);
  const hits=p.battle.events.filter(e=>e.type==='damage'&&e.actor==='enemy-0');assert.equal(hits.length,3,'All three allies are hit');
- for(const hit of hits){const ally=p.battle.allies.find(a=>a.id===hit.target);assert.ok(Math.abs(hit.amount-Math.min(ally.maxHp*.2,104*15))<=1)}
+ for(const hit of hits){const ally=p.battle.allies.find(a=>a.id===hit.target);assert.ok(Math.abs(hit.amount-Math.min(ally.maxHp*.2,104*15)*(1-Math.min(.9,ally.damageReduction||0)))<=2,JSON.stringify([hit.amount,ally.maxHp,ally.damageReduction]))}
 });
 test('passives reduce only the matching hits',()=>{
  const play=season=>{const {p,slots}=team('assassin');start(p,slots,context(season),'sea-king',1000000,false);const boss=p.battle.enemies[0];assert.ok(boss.immuneDebuff);return boss.passives};

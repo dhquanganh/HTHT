@@ -1,0 +1,35 @@
+/* Hiệu ứng đội hình (aura-ui.js). */
+.aura-wheel{position:relative;width:116px;height:116px}
+.aura-wheel>.frame{position:absolute;inset:0;width:116px;height:116px}
+.aura-wheel>.hub{position:absolute;left:50%;top:50%;width:91px;height:80px;transform:translate(-50%,-50%)}
+.aura-wheel.ally>.hub{margin-left:4px}.aura-wheel.enemy>.hub{margin-left:-4px}
+.aura-wheel>.slot,.aura-wheel>.hole{position:absolute;width:30px;height:30px;transform:translate(-50%,-50%)}
+.aura-wheel>.hole{width:32px;height:32px}
+.aura-wheel.ally>.slot,.aura-wheel.ally>.hole{margin-left:4px}.aura-wheel.enemy>.slot,.aura-wheel.enemy>.hole{margin-left:-4px}
+.aura-wheel>.slot.fallen{filter:grayscale(1) brightness(.6)}
+.aura-wheel .aura-open{position:absolute;inset:0;width:100%;height:100%;cursor:pointer}
+/* Trong trận: thay khung cũ (battle.css) bằng vòng gốc, sát góc dưới như FrameAura1 (55,56) / FrameAura2 (-56,55). */
+#screen-ui .battle-aura{bottom:-2px;width:116px;height:116px;background:none}
+#screen-ui .battle-aura.ally{left:-3px}#screen-ui .battle-aura.enemy{right:-3px}
+#screen-ui .battle-aura .aura-open{padding:0;min-width:0;border:0;border-radius:0;background:none;box-shadow:none}
+/* Ô Đội hình: dòng hiệu ứng như ảnh gốc, vòng bấm để xem chi tiết. */
+.campaign-aura-wheel{cursor:pointer;transition:filter .12s}.campaign-aura-wheel:hover{filter:brightness(1.1)}
+.campaign-aura-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;min-height:76px;font-size:24px;color:#6b4425}
+.campaign-aura-line .aura-part b{font-weight:700}
+.campaign-aura-description>.campaign-aura-line+p{margin-top:-6px;font-size:16px}
+/* PopupInformationAuraNew */
+.aura-popup{position:absolute;inset:0;z-index:99;background:rgba(0,0,0,.55);pointer-events:auto;display:grid;place-items:center;animation:aura-fade .18s}
+.aura-popup>section{position:relative;width:968px;height:578px;box-sizing:border-box;border:46px solid transparent;color:#6b4425;font-family:GameFont,sans-serif;animation:aura-pop .25s cubic-bezier(.2,1.3,.45,1)}
+.aura-popup h2{position:absolute;left:50%;top:-58px;width:340px;height:45px;margin:0 0 0 -170px;background:center/100% 100% no-repeat;color:#fff3d0;font-size:26px;line-height:42px;text-align:center;text-shadow:0 2px 0 #5a1b10}
+.aura-popup .aura-close{all:unset;position:absolute;right:-68px;top:-72px;width:64px;height:64px;cursor:pointer}.aura-popup .aura-close img{width:100%}
+.aura-now{position:absolute;left:-6px;top:12px;right:-16px;display:flex;align-items:center;gap:22px}
+.aura-now>div:last-child{flex:1}.aura-now p{margin:0 0 6px;font-size:24px}
+.aura-now-box{min-height:84px;display:flex;flex-wrap:nowrap;align-items:center;gap:0 34px;padding:0 14px;border:10px solid transparent;box-sizing:border-box;font-size:25px;white-space:nowrap}
+.aura-now .aura-wheel{transform:scale(1.15)}
+.aura-desc{position:absolute;left:16px;top:166px;margin:0;font-size:22px}
+.aura-rows{position:absolute;left:16px;top:204px;margin:0;padding:0;list-style:none;font-size:22px;line-height:1.38}
+.aura-rows li.on{color:#2f9a1e}
+.aura-buffs{position:absolute;left:6px;right:-6px;bottom:-16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px 10px;font-size:21px}
+.aura-buffs span{display:flex;align-items:center;gap:8px}.aura-buffs span.on{color:#2f9a1e}
+.aura-buffs img{width:46px;height:46px}
+@keyframes aura-pop{from{transform:scale(.8);opacity:0}}@keyframes aura-fade{from{opacity:0}}

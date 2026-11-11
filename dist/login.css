@@ -29,3 +29,15 @@ body.login-open #loading{opacity:0;pointer-events:none}
 .login-error:empty{display:none}
 @keyframes login-pop{from{transform:scale(.9);opacity:0}}
 .login-root .login-hit,.login-root .login-hit:hover,.login-root .login-hit:disabled{background:none!important;color:inherit;filter:none;transform:none;opacity:1}
+
+/* Màn tải khi chuyển cảnh: thanh PanelLoadingAsset gốc (progress_bgr_1, progress_1, progress_head_1, chữ viền đen). */
+#loading{background:rgba(3,10,18,.72)!important;container-type:inline-size}
+#loading .ld-box{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);width:min(70cqw,800px);display:flex;flex-direction:column;align-items:center;gap:6px}
+#loading .ld-title{font:700 clamp(14px,2.6cqw,28px)/1.2 GameFont,system-ui,sans-serif;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,0 2px 4px #000}
+#loading .ld-title::after{content:'';display:inline-block;width:1.2em;text-align:left;animation:ld-dots 1.2s steps(4) infinite}
+#loading .ld-bar{position:relative;width:100%;height:clamp(22px,4.2cqw,48px);border-style:solid;border-width:0 26px;border-image:url('assets/513fe747b3095c7418fb91149d8fc0bf_2.webp') 0 26 fill / 0 26px stretch;box-sizing:border-box}
+#loading .ld-fill{position:absolute;left:-12px;top:12%;height:76%;width:0;border-style:solid;border-width:0 22px;border-image:url('assets/7ed79ef4d76906c4484e7dd830c1205e_2.webp') 0 22 fill / 0 22px stretch;box-sizing:border-box;animation:ld-fill 1.6s cubic-bezier(.3,.6,.4,1) infinite}
+#loading .ld-head{position:absolute;top:50%;height:116%;transform:translateY(-50%)}
+#loading .ld-head.l{left:-30px}#loading .ld-head.r{right:-30px;transform:translateY(-50%) scaleX(-1)}
+@keyframes ld-fill{0%{width:44px}80%,100%{width:calc(100% + 24px)}}
+@keyframes ld-dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}

@@ -13,7 +13,7 @@ test('four original icon IDs and level-three descriptions match the reference',(
 });
 test('legacy upgrades remain stored and map to the current skill set without charging currency',()=>{
  const p=starterPlayer('Captain');p.hero.skills={'jet-pistol':2,'jet-gatling':4,'gear-second':3};const gold=p.wallet.gold,inventory=structuredClone(p.inventory);
- applyAction(p,'profile-update',{displayName:'Captain Two'});assert.equal(p.hero.skills['jet-gatling'],4);assert.equal(p.hero.skills['rubber-whip'],4);assert.equal(p.hero.skills.polish,2);assert.equal(p.hero.skills['armament-haki'],3);assert.equal(p.hero.skills.desperation,1);assert.equal(p.wallet.gold,gold);assert.deepEqual(p.inventory,inventory);assert.equal(Object.keys(playerView(p).hero.skills).length,4);assert.deepEqual(Object.values(playerView(p).hero.skills),[1,1,1,1]);
+ applyAction(p,'profile-update',{op:'level-ack'});assert.equal(p.hero.skills['jet-gatling'],4);assert.equal(p.hero.skills['rubber-whip'],4);assert.equal(p.hero.skills.polish,2);assert.equal(p.hero.skills['armament-haki'],3);assert.equal(p.hero.skills.desperation,1);assert.equal(p.wallet.gold,gold);assert.deepEqual(p.inventory,inventory);assert.equal(Object.keys(playerView(p).hero.skills).length,4);assert.deepEqual(Object.values(playerView(p).hero.skills),[1,1,1,1]);
 });
 test('an existing legacy battle keeps its HP snapshot and remaining ultimate cooldown',()=>{
  const p=durableBattle(),b=p.battle,h=b.hero;p.hero.skills={'jet-pistol':2,'jet-gatling':2,'gear-second':2};h.skills={...p.hero.skills};h.hp=500;h.maxHp=900;h.energy=100;h.cooldowns={'jet-gatling':3};const id=b.id;

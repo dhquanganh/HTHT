@@ -1,0 +1,30 @@
+/* Thông tin tài khoản / ảnh đại diện / đổi tên / lên cấp (profile-ui.js). */
+.pf-layer{z-index:70;pointer-events:auto!important}
+.pf-layer .pd-button{cursor:pointer}.pf-layer .pd-button:hover{filter:brightness(1.08)}
+.pf-layer>[data-name="Shade"]{animation:pf-fade .18s ease-out}
+.pf-layer>.pd-node:not([data-name="Shade"]){animation:pf-pop .25s cubic-bezier(.2,1.3,.45,1) both}
+.pf-avatar,.pf-rename{z-index:72}
+.pf-exp-fill{position:absolute;left:3px;top:3px;bottom:3px;border-radius:12px;background:linear-gradient(#ffe36b,#f0a51d);box-shadow:inset 0 -2px 0 #b46a12;pointer-events:none}
+.pf-info [data-name="TextExp"]{z-index:2}
+.pf-avatar-grid{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;display:grid;grid-template-columns:repeat(6,92px);gap:12px 14px;justify-content:center;align-content:start;padding:16px 8px;pointer-events:auto;scrollbar-width:thin;scrollbar-color:#c9a06a #4a3426}
+.pf-avatar-grid::-webkit-scrollbar{width:8px}.pf-avatar-grid::-webkit-scrollbar-thumb{background:#c9a06a;border-radius:6px}.pf-avatar-grid::-webkit-scrollbar-track{background:#4a3426;border-radius:6px}
+/* CellAvatar gốc: mask_item bo góc, nền + ảnh 80x80 trong khung hero_head_border 92x92, dấu tick góc dưới phải. */
+.pf-avatar-cell,.pf-avatar-cell:hover,.pf-avatar-cell:focus{all:unset;position:relative;width:92px;height:92px;cursor:pointer;background:none!important;transition:transform .12s}
+.pf-avatar-cell:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.pf-avatar-cell:focus-visible{outline:2px solid #ffd76a;outline-offset:2px;border-radius:10px}
+.pf-avatar-cell>img{position:absolute;pointer-events:none}
+.pf-avatar-cell>.bg,.pf-avatar-cell>.art{left:7px;top:7px;width:78px;height:78px;border-radius:9px;object-fit:cover}
+.pf-avatar-cell>.border{inset:0;width:92px;height:92px}
+.pf-avatar-cell>.tick{right:-6px;bottom:-4px;width:40px;display:none;filter:drop-shadow(0 2px 2px #0008)}
+.pf-avatar-cell.picked>.tick{display:block;animation:pf-pop .2s}
+.pf-avatar-cell.picked>.border{filter:drop-shadow(0 0 5px #ffe27a) brightness(1.15)}
+.pf-avatar-cell.locked>.art{filter:grayscale(1) brightness(.7)}
+.pf-avatar-cell>.now{position:absolute;left:6px;right:6px;bottom:6px;padding:1px 0;border-radius:0 0 8px 8px;background:rgba(0,0,0,.62);text-align:center;font:700 12px/1.3 GameFont,sans-serif;color:#ffe48a;pointer-events:none}
+.pf-name-input{all:unset;pointer-events:auto;position:absolute;inset:4px 14px;font:600 22px/36px GameFont,sans-serif;color:#5b3a1d;cursor:text}
+.pf-levelup>[data-name="Shade"]>.pd-image{opacity:0}
+.pf-level-rewards{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:auto}
+.pf-level-rewards .ev-tile{animation:pf-pop .3s both}
+/* Lvlup gốc: SkeletonGraphic tỉ lệ 1 tại EffectLevelUp (0,-20); bgr phóng 4,56 lần là lớp tối toàn màn hình. */
+.pf-lvlup-spine{position:absolute;left:0;top:20px;width:1136px;height:640px;pointer-events:none}
+@keyframes pf-pop{from{transform:scale(.7);opacity:0}}
+@keyframes pf-fade{from{opacity:0}}
