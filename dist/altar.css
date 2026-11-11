@@ -1,0 +1,34 @@
+/* Huyết tế (altar-ui.js). */
+.altar-layer{z-index:44;pointer-events:auto!important}
+.altar-layer .pd-button{cursor:pointer}.altar-layer .pd-button:hover{filter:brightness(1.08)}
+body:has(.altar-layer) #dialog-ui{z-index:60}
+.alt-head{all:unset;position:relative;display:block;width:92px;height:92px;cursor:pointer;background:none!important;transition:transform .12s}
+.alt-head:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.alt-head>img,.alt-head>span,.alt-head>b{position:absolute;pointer-events:none}
+.alt-head>.frame{inset:1px;width:90px;height:90px}
+.alt-head>.face{left:8px;top:8px;width:76px;height:76px;border-radius:8px;overflow:hidden}
+.alt-head>.face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.alt-head>.border{left:6px;top:6px;width:80px;height:80px}
+.alt-head>.faction{left:1px;top:1px;width:30px;height:30px}
+.alt-head>.lv{right:6px;top:2px;font:800 18px/1 GameFont,sans-serif;color:#fff;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000}
+.alt-head>.stars{left:4px;right:4px;bottom:2px;display:flex;justify-content:center;gap:0}.alt-head>.stars img{width:16px;height:16px}
+.alt-head>.lock{left:28px;top:26px;width:36px;height:36px;filter:drop-shadow(0 2px 2px #000)}
+.alt-head>.tick{right:-4px;bottom:-4px;width:38px;display:none}
+.alt-head.picked>.tick{display:block}.alt-head.picked>.face{filter:brightness(.6)}
+.alt-head.main{opacity:.55}
+.alt-head.burning{animation:alt-burn .6s ease-in forwards}
+.alt-slots{position:absolute;left:0;top:0;width:400px;height:192px;display:grid;grid-template-columns:repeat(4,92px);grid-auto-rows:92px;gap:8px 11.8px;justify-content:center;pointer-events:auto}
+.alt-slot{width:92px;height:92px;background:center/100% 100% no-repeat}
+.alt-return-slot{position:absolute;left:50%;top:84px;width:92px;height:92px;margin-left:-46px;background:center/100% 100% no-repeat;pointer-events:auto}
+.alt-return-items{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;pointer-events:auto}
+.alt-btn-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 24px/1 GameFont,sans-serif;color:#633e17;pointer-events:none}
+.alt-heroes{position:absolute;inset:0;overflow-y:auto;display:grid;grid-template-columns:repeat(4,92px);grid-auto-rows:92px;gap:8px 6px;justify-content:center;align-content:start;padding:6px 0;pointer-events:auto;scrollbar-width:thin;scrollbar-color:#c9a06a #4a3426}
+.alt-empty{grid-column:1/-1;text-align:center;color:#f3dfbd;font-size:20px}
+.alt-flash{position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,#ffcf6a 0,#ff5a1f 35%,transparent 70%);mix-blend-mode:screen;pointer-events:none;animation:alt-flash .7s ease-out forwards}
+.alt-preview{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.alt-shop{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.alt-offer{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px;border-radius:8px;background:#efdfb6;border:1px solid #b28e58}
+.alt-offer small{font-size:14px;color:#7b5331}
+.alt-offer button{display:flex;align-items:center;gap:4px;font-size:16px!important;min-height:34px!important;padding:2px 10px!important}.alt-offer button img{width:24px;height:24px}
+@keyframes alt-burn{to{opacity:0;transform:scale(.6) translateY(-20px);filter:brightness(2) sepia(1) saturate(4) hue-rotate(-20deg)}}
+@keyframes alt-flash{0%{opacity:0;transform:scale(.4)}30%{opacity:1}100%{opacity:0;transform:scale(1.3)}}

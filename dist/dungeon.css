@@ -1,0 +1,24 @@
+/* Đảo Bánh (dungeon-ui.js). */
+.dungeon-layer{z-index:46;pointer-events:auto!important}
+.dungeon-popup{z-index:48}
+body:has(.dungeon-layer) #dialog-ui{z-index:60}
+body:has(.dungeon-layer) .bonus-popup{z-index:70}
+.dungeon-layer .pd-button{cursor:pointer}.dungeon-layer .pd-button:hover{filter:brightness(1.08)}
+.dungeon-spine{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.dungeon-spine.flip{transform:translate(-50%,-50%) scaleX(-1)}
+.dungeon-main [data-name="CanvasHero1"],.dungeon-main [data-name="CanvasHeroStage"],.dungeon-main [data-name="DungeonMerchantMen"],.dungeon-main [data-name="Mesh"],.dungeon-main [data-name="BottomPart"],.dungeon-main [data-name="AnchorLeft"]{pointer-events:none!important}
+.dungeon-main .pd-button{pointer-events:auto!important}
+.dungeon-collect{animation:dg-collect .35s ease-in forwards}
+@keyframes dg-collect{to{transform:translateY(-60px) scale(.4);opacity:0}}
+.dungeon-tile{position:absolute;inset:0;display:grid;place-items:center}
+.dungeon-tile .ev-tile{width:88px;height:88px}.dungeon-tile .ev-tile img{width:72px;height:72px}
+.dungeon-count{position:absolute;right:-12px;top:-46px;min-width:26px;height:26px;padding:0 6px;border-radius:13px;background:#d8331f;color:#fff;font:700 18px/26px GameFont,sans-serif;text-align:center;box-shadow:0 2px 4px #0006}
+.dungeon-shop{position:absolute;inset:0;overflow-y:auto;padding:10px 14px;display:flex;flex-direction:column;gap:10px;pointer-events:auto;scrollbar-width:thin}
+.dungeon-cell{position:relative;flex:none;height:100px;display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 10px;border-radius:12px;background:#f2dfb8;box-shadow:inset 0 0 0 2px #c79a5d}
+.dungeon-cell .dungeon-tile{position:relative;inset:auto;width:92px;height:92px}
+.dungeon-cell button{all:unset;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 22px;border-radius:12px;background:linear-gradient(#9be05a,#4f9e22);box-shadow:inset 0 -3px 0 #2f6d12,0 3px 6px #0005;color:#fff;font:800 22px/1 GameFont,sans-serif;text-shadow:0 2px 0 #2f5c12}
+.dungeon-cell button img{width:34px;height:34px}
+.dungeon-empty{margin:40px 30px;color:#6b4b2a;font:600 22px/1.4 GameFont,sans-serif;text-align:center}
+.dungeon-help{position:absolute;inset:0;overflow-y:auto;scrollbar-width:thin;padding:8px 16px;color:#5b3a1d;font:600 20px/1.45 GameFont,sans-serif;pointer-events:auto}
+.dungeon-help h3{margin:0 0 6px;font-size:24px;color:#8a3d12}.dungeon-help p{margin:0 0 10px}
+.dungeon-main [data-name^="ButtonLotionHp"] [data-name="TextNumber"]{z-index:2}

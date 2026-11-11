@@ -7,7 +7,7 @@
  'use strict';
  const table=[[0,0],[.02,.015],[.05,.035],[.08,.055],[.11,.075],[.14,.095],[.18,.12]];
  const special={abyss:['damageReduction',.02],forest:['damageReduction',.02],fortress:['damageReduction',.02],shadow:['damageReduction',.02],dark:['debuffResist',.04],light:['debuffResist',.04]};
- const labels={maxHp:'Máu',attack:'Công',debuffResist:'Miễn chống',damageReduction:'Giảm sát thương'};
+ const labels={maxHp:I2('LBL_BLOOD','Máu'),attack:'Công',debuffResist:'Miễn chống',damageReduction:'Giảm sát thương'};
  const factionIcon={abyss:'78a35568f2bcb2c4da9e7bf4e316fead_2',forest:'03febeb6e4c14c54f8f997d235058a15_2',fortress:'d78abaaee320fdc479c2348a6378d9e0_2',shadow:'7ac38e5c264dccb49b2f765aaf0ad869_2',light:'c1533442ee542c04592ff88312310b5a_2',dark:'d300068bd5f8ab04a8d65c3216362c86_2'};
  // Vị trí 6 ô hệ trong vòng (GroupFaction gốc, tâm vòng ở giữa): trên-phải, phải, dưới-phải, dưới-trái, trái, trên-trái.
  const spots=[[20,-34],[39,0],[19,34],[-19,34],[-39,0],[-19,-34]];

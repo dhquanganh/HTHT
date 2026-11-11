@@ -7,6 +7,7 @@ import {startAfk} from './afk.mjs';
 import {startSummon} from './summon.mjs';
 import {shipGift} from './game.mjs';
 import {rankingEntry} from './tower.mjs';
+import {dungeonClock} from './dungeon.mjs';
 import {applyEventConfig,editableEvents,validateEventConfig} from './events.mjs';
 import {isRewardId} from './game.mjs';
 import {beastBosses,bossByKey,bracketIndex,classLabel,beastEntry,beastTurns,defaultBoss,defaultConfig,defaultRewards,rankBrackets,rewardItems,rewardView,variantOf,validateBossStats,validateConfig,validateRewards} from './beast.mjs';
@@ -138,6 +139,15 @@ export class Store {
  }
  async saveRanking(userId,player,reached){
   const now=new Date();await this.ranking.updateOne({userId},{$set:{...rankingEntry(player),...(reached?{reachedAt:now}:{})},$setOnInsert:{hidden:false,...(reached?{}:{reachedAt:now})}},{upsert:true});
+ }
+ /** Top đảo bánh: người chơi cùng chu kỳ hiện tại, xếp theo số ải đã qua (player.dungeon.best). */
+ async dungeonRanking(userId,limit=50){
+  const _id=typeof userId==='string'?new ObjectId(userId):userId,cycle=dungeonClock().cycle,filter={'player.dungeon.cycle':cycle,'player.dungeon.best':{$gt:0},locked:{$ne:true}};
+  const project={projection:{'player.displayName':1,'player.hero.id':1,'player.account.level':1,'player.dungeon.best':1,updatedAt:1}};
+  const [rows,mine]=await Promise.all([this.users.find(filter,project).sort({'player.dungeon.best':-1,updatedAt:1,_id:1}).limit(limit).toArray(),this.users.findOne({_id},project)]);
+  const row=(doc,rank)=>({rank,name:doc.player.displayName,heroId:doc.player.hero?.id??null,level:doc.player.account.level,stages:doc.player.dungeon?.best||0});
+  const best=mine?.player?.dungeon?.cycle===cycle?mine.player.dungeon.best||0:0,ahead=best?await this.users.countDocuments({...filter,'player.dungeon.best':{$gt:best}}):0;
+  return{cycle,top:rows.map((doc,i)=>({...row(doc,i+1),me:doc._id.equals(_id)})),me:best?{...row(mine,ahead+1),stages:best}:null};
  }
  /** Bảng xếp hạng đọc thẳng từ tower_ranking. Cùng số tầng thì ai đạt trước xếp trên. */
  async towerRanking(userId,limit=50){

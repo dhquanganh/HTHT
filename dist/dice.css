@@ -1,0 +1,24 @@
+/* Đổ xúc xắc (dice-ui.js). */
+.dice-layer{z-index:47;pointer-events:auto!important}.dice-popup{z-index:49}
+.dice-layer .pd-button{cursor:pointer}.dice-layer .pd-button:hover{filter:brightness(1.08)}
+body:has(.dice-layer) #dialog-ui{z-index:60}body:has(.dice-layer) .bonus-popup{z-index:70}
+.dice-tab img{width:70%;height:70%;object-fit:contain}
+.dice-hero{position:absolute;width:140px;height:160px;margin:-100px 0 0 -70px;transform:scale(.85);transform-origin:50% 90%;transition:left .2s linear,top .2s linear;pointer-events:none;z-index:3}
+.dice-hero canvas{width:100%;height:100%}
+.dice-roll{position:absolute;left:-150px;top:-150px;width:300px;height:300px;pointer-events:none}
+.dice-face{position:absolute;left:-52px;top:-2px;width:104px;height:104px;animation:dice-pop .25s cubic-bezier(.2,1.5,.4,1);pointer-events:none}
+.dice-picked{filter:drop-shadow(0 0 8px #fff27a) brightness(1.15);transform:scale(1.08)}
+[data-name="ToggleSkip"]:not(.on) [data-name="Checkmark"]{display:none}
+.dice-card-back,.dice-card-face{position:absolute;inset:8px;border-radius:14px;pointer-events:none}
+.dice-card-back{background:radial-gradient(circle at 50% 40%,#7d3fb0,#2c0f45);border:4px solid #e7c060;box-shadow:inset 0 0 20px #000}
+.dice-card-back::after{content:'?';position:absolute;inset:0;display:grid;place-items:center;color:#ffe48a;font:900 110px/1 GameFont,sans-serif;text-shadow:0 4px 0 #3a1500}
+.dice-card-face{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;background:#f6e3b4;border:4px solid #c98f2c;animation:dice-flip .35s ease-out;color:#5b3a1d;text-align:center}
+.dice-card-face img{width:150px;height:150px;object-fit:contain}.dice-card-face b{font:800 26px/1.1 GameFont,sans-serif}.dice-card-face p{margin:0;font:600 18px/1.25 GameFont,sans-serif}
+.dice-tarot .pd-node:has(>.dice-card-back):hover{transform:translateY(-6px)}
+.dice-rewards{position:absolute;inset:0;overflow-y:auto;padding:6px;display:flex;flex-direction:column;gap:8px;pointer-events:auto;scrollbar-width:thin}
+.dice-reward-row{display:flex;align-items:center;gap:12px;padding:8px 14px;border-radius:10px;background:rgba(255,240,205,.85);border:2px solid #c99a5a}
+.dice-star{position:relative;width:72px;height:72px;flex:0 0 72px}.dice-star img{width:100%;height:100%}.dice-star b{position:absolute;inset:auto 0 -4px;text-align:center;color:#fff;font:800 20px/1 GameFont,sans-serif;text-shadow:1px 1px 0 #000,-1px -1px 0 #000}
+.dice-reward-row .arrow{width:40px}.dice-reward-row .tiles{flex:1;display:flex;gap:8px}
+.dice-reward-row .tick{width:52px}.dice-reward-row button{min-width:100px}
+@keyframes dice-pop{from{transform:scale(.3);opacity:0}}@keyframes dice-flip{from{transform:rotateY(90deg)}}
+.dice-reward-row button:disabled{filter:grayscale(1) brightness(.9);opacity:.75;cursor:not-allowed}

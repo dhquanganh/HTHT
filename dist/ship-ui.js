@@ -56,7 +56,7 @@
  }
  function activate(def){
   if(soul()<def.unlock)return c.toast(`Không đủ Hồn chiến hạm (cần ${def.unlock}).`);
-  c.confirm(`Kích hoạt ${def.name} với ${def.unlock} Hồn chiến hạm?`,'Kích hoạt',null,async()=>{const d=await c.mutation('/api/ship',{op:'activate',shipId:def.id},{render:false});if(d)openHub()});
+  c.confirm(`Kích hoạt ${def.name} với ${def.unlock} Hồn chiến hạm?`,I2('LBL_ACTIVATE','Kích hoạt'),null,async()=>{const d=await c.mutation('/api/ship',{op:'activate',shipId:def.id},{render:false});if(d)openHub()});
  }
  // ---------- PopupPet ----------
  async function openPopup(id){
@@ -69,12 +69,12 @@
   {const lv=deep(n,'PanelLevel');txt(deep(lv,'TextLvCaption'),'LV:');txt(deep(lv,'TextLv'),`${o.level}/${o.cap}`);txt(deep(lv,'TextTierCaption'),'Phẩm');
    const slots=deep(lv,'HorizontalSlotPoint'),tpl=slots.children[0];slots.children=[0,1,2].map(i=>{const t=on(structuredClone(tpl));t.name='Tier'+i;on(kid(t,'ItemOn'),i<o.tier);on(kid(t,'ItemOff'),i>=o.tier);return t});
    on(deep(lv,'ButtonUpTier'),!!o.tierCost);on(deep(lv,'ButtonUpLevel'),!!o.levelCost);
-   const max=o.level>=data.maxLevel;on(deep(lv,'BoxUpMaxLevel'),max);txt(deep(lv,'BoxUpMaxLevel/TextMax'),'Cấp tối đa');on(deep(lv,'BoxUpRequire'),!max);
+   const max=o.level>=data.maxLevel;on(deep(lv,'BoxUpMaxLevel'),max);txt(deep(lv,'BoxUpMaxLevel/TextMax'),I2('LBL_MAX_LEVEL','Cấp tối đa'));on(deep(lv,'BoxUpRequire'),!max);
    const cost=o.levelCost||o.tierCost||{gold:0,soul:0};txt(deep(lv,'ImgGoldLevel/TextGold'),fmt(cost.gold));txt(deep(lv,'ImgSoul/TextSoul'),fmt(cost.soul));
    const skill=def.active[Math.min(def.active.length,o.level)-1];const ts=deep(lv,'TextSkill');if(comp(ts,'Text'))comp(ts,'Text').size=22;txt(ts,`<color=#a8430c>${def.skillName}</color> (Cấp ${o.level})\n${skill.desc}${o.tierCost?`\n<color=#ff8a65>Cần Nâng phẩm để lên cấp tiếp.</color>`:''}`)}
   // Kỹ năng (bị động)
   {const ps=deep(n,'PanelPassiveBuff'),aura=o.aura||{};
-   const lines=Object.entries(aura).map(([type,value])=>({type,value,label:({maxHpFlat:'Máu',attackFlat:'Công',speedFlat:'Tốc độ',penetration:'Xuyên thủ',accuracy:'Chính xác',dodgeChance:'Né tránh',critChance:'Chí mạng',critDamage:'ST chí mạng',skillDamage:'ST kỹ năng',block:'Chặn',trueDamage:'ST chuẩn'})[type]||type}));
+   const lines=Object.entries(aura).map(([type,value])=>({type,value,label:({maxHpFlat:I2('LBL_BLOOD','Máu'),attackFlat:'Công',speedFlat:'Tốc độ',penetration:'Xuyên thủ',accuracy:'Chính xác',dodgeChance:'Né tránh',critChance:'Chí mạng',critDamage:'ST chí mạng',skillDamage:'ST kỹ năng',block:'Chặn',trueDamage:'ST chuẩn'})[type]||type}));
    on(deep(ps,'CellAuraDetail'),false);on(deep(ps,'GridAura'),false);
    for(let k=0;k<4;k++){const b=deep(ps,'ButtonPetSkill'+(k+1));img(kid(b,'SpriteOn'),data.passiveIcons[Math.min(2,k)]);img(kid(b,'SpriteOff'),data.passiveIcons[Math.min(2,k)]);on(kid(b,'SpriteOff'),o.tier<k);on(kid(b,'Selection'),k===skillIndex);txt(deep(b,'TextLevel'),o.passives[k]);b.skillIndex=k}
    const lvl=o.passives[skillIndex],cur=lvl?def.passives[skillIndex][lvl-1]:null,next=def.passives[skillIndex][Math.min(29,lvl)];on(deep(ps,'BoxPetSkillDesc'),false);
@@ -82,15 +82,15 @@
    txt(deep(ps,'TextBuffSum'),`<color=#ffe08a>Kỹ năng ${skillIndex+1} · Cấp ${lvl}/${o.passiveCap}</color>\n${cur?cur.map(statLine).join(', '):'Chưa học'}${lvl<30?`\n<color=#9be37a>Cấp ${lvl+1}: ${next.map(statLine).join(', ')}</color>`:''}\n<color=#bfe9ff>Cả đội: ${lines.length?lines.map(statLine).join(', '):'chưa có'}</color>`);
    const cost=o.passiveCosts[skillIndex],locked=o.tier<skillIndex,max=lvl>=30;
    on(deep(ps,'GroupRequireTier'),locked||(!cost&&!max));txt(deep(ps,'TextRequireTier'),`Yêu cầu chiến xa nâng lên phẩm ${locked?skillIndex:o.tier+1}`);
-   on(deep(ps,'BoxUpMaxLevel'),max);txt(deep(ps,'BoxUpMaxLevel/TextMax'),'Cấp tối đa');on(deep(ps,'GroupUpgrade'),!!cost);
+   on(deep(ps,'BoxUpMaxLevel'),max);txt(deep(ps,'BoxUpMaxLevel/TextMax'),I2('LBL_MAX_LEVEL','Cấp tối đa'));on(deep(ps,'GroupUpgrade'),!!cost);
    if(cost){txt(deep(ps,'ImgGoldSkill/TextGold'),fmt(cost.gold));txt(deep(ps,'ImgChaos/TextChaos'),fmt(cost.chaos));txt(deep(ps,'ButtonUpgrade/Text'),'Nâng cấp')}}
   // Phế tích
   {const pr=deep(n,'PanelRuin'),scale=(i,key)=>def.ruinScale[key]*Math.min(60,o.ruins[i]);
-   txt(deep(pr,'TextHpCap'),'Máu');txt(deep(pr,'TextAttackCap'),'Công');txt(deep(pr,'TextSpeedCap'),'Tốc độ');txt(deep(pr,'TextHp'),'+'+c.num(scale(0,'hp')));txt(deep(pr,'TextAttack'),'+'+c.num(scale(1,'attack')));txt(deep(pr,'TextSpeed'),'+'+c.num(scale(2,'speed')));
+   txt(deep(pr,'TextHpCap'),I2('LBL_BLOOD','Máu'));txt(deep(pr,'TextAttackCap'),'Công');txt(deep(pr,'TextSpeedCap'),'Tốc độ');txt(deep(pr,'TextHp'),'+'+c.num(scale(0,'hp')));txt(deep(pr,'TextAttack'),'+'+c.num(scale(1,'attack')));txt(deep(pr,'TextSpeed'),'+'+c.num(scale(2,'speed')));
    for(let i=0;i<3;i++){const b=deep(pr,'ButtonPetRuin'+(i+1));txt(kid(b,'TextLevel'),`${o.ruins[i]}/60`);on(kid(b,'Selection'),i===ruinIndex);b.ruinIndex=i}
-   txt(deep(pr,'Text1'),'Máu');txt(deep(pr,'Text2'),'Công');txt(deep(pr,'Text3'),'Tốc độ');
+   txt(deep(pr,'Text1'),I2('LBL_BLOOD','Máu'));txt(deep(pr,'Text2'),'Công');txt(deep(pr,'Text3'),'Tốc độ');
    const cost=o.ruinCosts[ruinIndex],group=deep(pr,'GroupUpgrade');on(deep(group,'BoxLockRuin'),!o.ruinsOpen);txt(deep(group,'BoxLockRuin/TextMax'),'Cần nâng cấp tối đa bảng kỹ năng chiến hạm mục 2');
-   on(deep(group,'BoxUpRequire'),!!cost);on(kid(pr,'ButtonUpgrade'),!!cost);on(deep(group,'BoxUpMaxLevel'),o.ruinsOpen&&!cost);txt(deep(group,'BoxUpMaxLevel/TextMax'),'Cấp tối đa');on(kid(pr,'ButtonUpgrade'),!!cost);txt(deep(pr,'ButtonUpgrade/Text'),'Nâng cấp');
+   on(deep(group,'BoxUpRequire'),!!cost);on(kid(pr,'ButtonUpgrade'),!!cost);on(deep(group,'BoxUpMaxLevel'),o.ruinsOpen&&!cost);txt(deep(group,'BoxUpMaxLevel/TextMax'),I2('LBL_MAX_LEVEL','Cấp tối đa'));on(kid(pr,'ButtonUpgrade'),!!cost);txt(deep(pr,'ButtonUpgrade/Text'),'Nâng cấp');
    if(cost){txt(deep(group,'ImgGoldSkill/TextGold'),fmt(cost.gold));txt(deep(group,'ImgChaos/TextChaos'),fmt(cost.chaos))}}
   const old=popup;popup=mount(n,'ship-popup',true);old?.remove();
   spineIn(D.find(popup,'BgrPet'),def.spine,{fit:.9});
@@ -98,7 +98,7 @@
   bind(popup,'TabLevel',()=>{tab='level';openPopup(id)});bind(popup,'TabSkill',()=>{tab='skill';openPopup(id)});bind(popup,'TabRuin',()=>{tab='ruin';openPopup(id)});
   const run=(op,extra={})=>c.mutation('/api/ship',{op,shipId:id,...extra},{render:false}).then(d=>{if(d){popup?.classList.add('ship-flash');openPopup(id)}});
   bind(popup,'ButtonUpLevel',()=>run('level'));bind(popup,'ButtonUpTier',()=>run('tier'));
-  bind(popup,'ButtonRebirth',()=>c.confirm('Tái tạo chiến hạm đưa chiến hạm về cấp độ 1. Các tài nguyên đã dùng để nâng cấp được hoàn lại (trừ beli)','Tái tạo',null,()=>run('rebirth')));
+  bind(popup,'ButtonRebirth',()=>c.confirm('Tái tạo chiến hạm đưa chiến hạm về cấp độ 1. Các tài nguyên đã dùng để nâng cấp được hoàn lại (trừ beli)',I2('LBL_REGENERATIVE','Tái tạo'),null,()=>run('rebirth')));
   for(const el of popup.querySelectorAll('.pd-node')){const n2=el._node;if(n2?.skillIndex!==undefined)bind(el,el,()=>{skillIndex=n2.skillIndex;openPopup(id)});if(n2?.ruinIndex!==undefined)bind(el,el,()=>{ruinIndex=n2.ruinIndex;openPopup(id)})}
   const skillUp=D.find(popup,'PanelPassiveBuff/GroupUpgrade/ButtonUpgrade');bind(popup,skillUp,()=>run('passive',{index:skillIndex}));
   const ruinUp=D.find(popup,'PanelRuin/ButtonUpgrade');bind(popup,ruinUp,()=>run('ruin',{index:ruinIndex}));

@@ -162,10 +162,14 @@ canvas.addEventListener('pointermove',e=>{if(worldDrag){const moved=worldDrag.x-
 canvas.addEventListener('pointerleave',()=>hover=null);
 canvas.addEventListener('wheel',e=>{if(!scene)return;if(worldContent()){e.preventDefault();scrollWorld(worldScroll+e.deltaX+e.deltaY);return}const nodes=allNodes(scene).filter(n=>n.name==='Content'&&n.children.length);if(nodes.length){e.preventDefault();for(const n of nodes){const max=Math.max(0,n.transform.m_SizeDelta.y-500);scrollOffsets.set(n.id,Math.max(0,Math.min(max,(scrollOffsets.get(n.id)||0)+e.deltaY*.7)))}}},{passive:false});
 canvas.addEventListener('click',e=>{if(worldDragged){worldDragged=false;return}const hit=findHit(point(e));if(!hit)return;if(window.GameRuntime?.handleHit(hit))return;let route=routes[hit.name];if(route===undefined){const name=hit.name.toLowerCase();for(const [keyword,id] of [['summon',26],['hero',7],['guild',11],['bag',12],['campaign',28],['arena',8],['tarven',31],['forge',21],['fuse',14],['altar',6],['world',37],['tower',40],['back',13]]){if(name.includes(keyword)){route=id;break}}}if(route!==undefined){showScene(route)}else toast('Bản xem giao diện · '+(hit.node.children.flatMap(n=>n.components.filter(c=>c.type==='Text').map(c=>c.text)).find(Boolean)||hit.name))});
+// Chữ gốc: I2('KHÓA', 'dự phòng', ...tham số {0}{1}) đọc localization.json (I2 + Lua LTr + language_*.txt); trước khi tải xong trả chữ dự phòng.
+window.I2=(term,fallback='',...args)=>String(localization[term]??fallback).replace(/\{(\d)\}/g,(m,i)=>args[i]??m);
 async function init(){try{
  // Chỉ chạy game thật: chưa đăng nhập thì GameRuntime.boot() trả về màn Đăng nhập, đã đăng nhập thì vào game với dữ liệu tài khoản.
  [assets,catalog,localization]=await Promise.all(['assets.json','catalog.json','localization.json'].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error(url);return r.json()})));
- if(document.readyState==='loading')await new Promise(r=>document.addEventListener('DOMContentLoaded',r,{once:true}));
+ // Các script defer (game.js...) chạy xong trước DOMContentLoaded; readyState đã là 'interactive' khi chúng còn đang chạy,
+ // nên chờ tới khi có GameRuntime (hoặc trang tải xong) thay vì chỉ xét 'loading'.
+ if(!window.GameRuntime)await new Promise(r=>{const t=setInterval(()=>{if(window.GameRuntime||document.readyState==='complete'){clearInterval(t);r()}},30)});
  if(!window.GameRuntime)throw Error('Không tải được mã game.');
  const boot=await window.GameRuntime.boot();await showScene(boot?.sceneId??1);requestAnimationFrame(frame)
  }catch(e){document.querySelector('#loading').textContent='Không tải được game. Hãy tải lại trang.';loadErrors.push(e.message);console.error(e)}}

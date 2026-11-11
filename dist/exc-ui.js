@@ -56,7 +56,7 @@
   on(kid(left,'Orb'),s.level>0);on(kid(left,'ButtonReset'),s.level>0);txt(kid(left,'TextLevel'),`Cấp: ${s.level}/${s.maxLevel}`);
   const tplPoint=data.prefabs.EXCPointView,points=s.level>0?[['Công','+'+pct(s.points.attackPct)],['Máu','+'+pct(s.points.maxHpPct)],['Tốc độ','+'+s.points.speed]]:[];
   kid(left,'PointContainer').children=points.map(([k,v])=>{const p=on(clone(tplPoint));txt(kid(p,'TextValue'),`${k} : ${v}`);return p});
-  const isMax=!s.cost||!Object.keys(s.cost).length;on(kid(left,'BarConsumeMaterial'),!isMax);on(kid(left,'ButtonLvUp'),!isMax);on(kid(left,'TextMax'),isMax);txt(kid(left,'TextMax'),'Đã đạt cấp tối đa');
+  const isMax=!s.cost||!Object.keys(s.cost).length;on(kid(left,'BarConsumeMaterial'),!isMax);on(kid(left,'ButtonLvUp'),!isMax);on(kid(left,'TextMax'),isMax);txt(kid(left,'TextMax'),I2('HC_DA_DAT_CAP_TOI_DA','Đã đạt cấp tối đa'));
   let enough=true;
   kid(left,'BarConsumeMaterial/CostContainer').children=isMax?[]:Object.entries(s.cost).map(([id,need])=>{const v=on(clone(data.prefabs.EXCConsumeCostView)),own=have(id);if(own<need)enough=false;
    const icon=kid(v,'IconItem'),im=comp(icon,'Image');if(im)im.asset=id==='gold'?c.named('icon_gold'):id==='diamonds'?c.named('icon_gem'):c.items.get(id)?.assetKey;

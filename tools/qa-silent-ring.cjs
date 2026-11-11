@@ -19,7 +19,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  await tap('toggle');await tap('SR');await page.waitForSelector('.pet-screen');await page.waitForTimeout(1000);
  await click('.pet-screen [data-name="SilentRingPanel"]',1500);await shot('01-start');
  await click(top+'[data-name="CheckBtn"]',1000);await shot('02-checkin');
- page.on('dialog',d=>d.accept());
+ page.on('dialog',d=>d.accept());const acceptMessages=()=>{const run=()=>new MutationObserver(()=>{const b=document.querySelector('.msg-layer [data-guild-confirm]');if(b&&!b.dataset.qaClicked){b.dataset.qaClicked='1';setTimeout(()=>b.click(),60)}}).observe(document.documentElement,{childList:true,subtree:true});page.addInitScript(run);return page.evaluate(run)};await acceptMessages();
  await click('.pet-popup [data-name="ButtonQuick"]',500);await click('.pet-popup [data-name="ButtonConfirm"]',1500);
  console.log('heroes',await page.evaluate(()=>GameRuntime.player.silentRing.heroes.length));
  await click(top+'[data-name="Group"] > [data-name="NextButton"]',1500);await shot('03-home');

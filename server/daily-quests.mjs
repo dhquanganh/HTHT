@@ -17,8 +17,9 @@ export const dailyQuests=[
  {id:'arena',name:'Khiêu chiến Đơn đấu 2 lần',target:2,go:'arena',source:'Đơn đấu ở Chiến trường'},
  {id:'afk',name:'Thu thập thưởng treo máy 2 lần',target:2,go:'afk',source:'Nhận thưởng treo máy'},
  {id:'raid',name:'Đánh thắng Event Raid 1 lần',target:1,go:'beast',source:'Đánh xong Boss Máy Chủ'},
-].map((q,i)=>({...q,rewards:[{itemId:'gold',quantity:20000*(i+1)},{itemId:'spirit',quantity:500*(i+1)}]}));
-export const dailyFinal={name:'Hoàn thành tất cả nhiệm vụ hàng ngày',rewards:[{itemId:'diamonds',quantity:100},{itemId:'consumable:3',quantity:15}]};
+].map((q,i)=>({...q,rewards:[{itemId:'gold',quantity:20000*(i+1)},{itemId:'spirit',quantity:500*(i+1)},{itemId:'vipExp',quantity:10}]}));
+// EXP VIP: mỗi nhiệm vụ ngày 10, hoàn thành cả 10 thêm 100 (ItemVipExpUI của CellDailyQuest gốc; số do bản web đặt).
+export const dailyFinal={name:'Hoàn thành tất cả nhiệm vụ hàng ngày',rewards:[{itemId:'diamonds',quantity:100},{itemId:'consumable:3',quantity:15},{itemId:'vipExp',quantity:100}]};
 const byId=new Map(dailyQuests.map(q=>[q.id,q]));
 
 function state(p,now){
@@ -34,7 +35,7 @@ export function trackDaily(p,{action,input={},beastWon=false},now=Date.now()){
  if(action==='event-exchange'||action==='event-buy')keys.push('trade');
  if(action==='mastery-claim')keys.push('tavern');
  if(action==='event-rollcall')keys.push('wine');
- if(action==='event-spin')keys.push('spin');
+ if(action==='event-spin'||action==='casino'&&!['buy','refresh'].includes(input.op))keys.push('spin');
  if(action==='forge')keys.push('forge');
  if(action==='arena-start'&&input.mode==='solo')keys.push('arena');
  if(action==='afk-claim')keys.push('afk');

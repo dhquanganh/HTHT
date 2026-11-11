@@ -1,0 +1,386 @@
+{
+ "levels": [
+  {
+   "level": 1,
+   "point": 100,
+   "autoBattle": 8,
+   "midas": 17,
+   "heroStorage": 20,
+   "tavern": 6,
+   "raidBuy": 1,
+   "bonus": [
+    {
+     "kind": "item",
+     "cat": 2,
+     "id": 68,
+     "quantity": 50,
+     "heroAvatar": "68",
+     "heroName": "Sanji - S"
+    }
+   ]
+  },
+  {
+   "level": 2,
+   "point": 250,
+   "autoBattle": 17,
+   "midas": 34,
+   "heroStorage": 30,
+   "tavern": 6,
+   "raidBuy": 2,
+   "bonus": [
+    {
+     "kind": "hero",
+     "avatar": "156",
+     "name": "Brook",
+     "stars": 1
+    },
+    {
+     "kind": "hero",
+     "avatar": "125",
+     "name": "Vergo",
+     "stars": 1
+    }
+   ]
+  },
+  {
+   "level": 3,
+   "point": 500,
+   "autoBattle": 25,
+   "midas": 51,
+   "heroStorage": 45,
+   "tavern": 7,
+   "raidBuy": 3,
+   "bonus": [
+    {
+     "kind": "hero",
+     "avatar": "88",
+     "name": "Sabo",
+     "stars": 1
+    },
+    {
+     "kind": "hero",
+     "avatar": "154",
+     "name": "Koby",
+     "stars": 1
+    }
+   ]
+  },
+  {
+   "level": 4,
+   "point": 1500,
+   "autoBattle": 38,
+   "midas": 68,
+   "heroStorage": 60,
+   "tavern": 8,
+   "raidBuy": 4,
+   "bonus": [
+    {
+     "kind": "hero",
+     "avatar": "157",
+     "name": "Blamenco",
+     "stars": 1
+    },
+    {
+     "kind": "hero",
+     "avatar": "140",
+     "name": "Aokiji",
+     "stars": 1
+    }
+   ]
+  },
+  {
+   "level": 5,
+   "point": 3000,
+   "autoBattle": 48,
+   "midas": 78,
+   "heroStorage": 90,
+   "tavern": 8,
+   "raidBuy": 7,
+   "bonus": [
+    {
+     "kind": "hero",
+     "avatar": "171",
+     "name": "Gladius",
+     "stars": 1
+    },
+    {
+     "kind": "hero",
+     "avatar": "157",
+     "name": "Blamenco",
+     "stars": 1
+    }
+   ]
+  },
+  {
+   "level": 6,
+   "point": 6000,
+   "autoBattle": 59,
+   "midas": 98,
+   "heroStorage": 120,
+   "tavern": 9,
+   "raidBuy": 10,
+   "bonus": [
+    {
+     "kind": "item",
+     "cat": 1,
+     "id": 36,
+     "quantity": 30
+    }
+   ]
+  },
+  {
+   "level": 7,
+   "point": 15000,
+   "autoBattle": 72,
+   "midas": 115,
+   "heroStorage": 140,
+   "tavern": 9,
+   "raidBuy": 14,
+   "bonus": [
+    {
+     "kind": "item",
+     "cat": 2,
+     "id": 107,
+     "quantity": 50,
+     "heroAvatar": "107",
+     "heroName": "Ace"
+    }
+   ]
+  },
+  {
+   "level": 8,
+   "point": 30000,
+   "autoBattle": 89,
+   "midas": 132,
+   "heroStorage": 170,
+   "tavern": 10,
+   "raidBuy": 15,
+   "bonus": [
+    {
+     "kind": "hero",
+     "avatar": "160",
+     "name": "Baby 5",
+     "stars": 1
+    },
+    {
+     "kind": "hero",
+     "avatar": "107",
+     "name": "Ace",
+     "stars": 1
+    },
+    {
+     "kind": "hero",
+     "avatar": "72",
+     "name": "Vista",
+     "stars": 1
+    },
+    {
+     "kind": "hero",
+     "avatar": "191",
+     "name": "Hordy",
+     "stars": 1
+    }
+   ]
+  },
+  {
+   "level": 9,
+   "point": 50000,
+   "autoBattle": 106,
+   "midas": 145,
+   "heroStorage": 200,
+   "tavern": 10,
+   "raidBuy": 20,
+   "bonus": [
+    {
+     "kind": "item",
+     "cat": 1,
+     "id": 36,
+     "quantity": 80
+    }
+   ]
+  },
+  {
+   "level": 10,
+   "point": 100000,
+   "autoBattle": 151,
+   "midas": 200,
+   "heroStorage": 240,
+   "tavern": 11,
+   "raidBuy": 25,
+   "bonus": [
+    {
+     "kind": "item",
+     "cat": 2,
+     "id": 40014,
+     "quantity": 50
+    },
+    {
+     "kind": "item",
+     "cat": 1,
+     "id": 36,
+     "quantity": 50
+    }
+   ]
+  },
+  {
+   "level": 11,
+   "point": 200000,
+   "autoBattle": 200,
+   "midas": 355,
+   "heroStorage": 270,
+   "tavern": 13,
+   "raidBuy": 30,
+   "bonus": [
+    {
+     "kind": "item",
+     "cat": 3,
+     "id": 6,
+     "quantity": 50
+    }
+   ]
+  },
+  {
+   "level": 12,
+   "point": 400000,
+   "autoBattle": 205,
+   "midas": 405,
+   "heroStorage": 300,
+   "tavern": 15,
+   "raidBuy": 35,
+   "bonus": [
+    {
+     "kind": "item",
+     "cat": 1,
+     "id": 53,
+     "quantity": 1
+    },
+    {
+     "kind": "item",
+     "cat": 3,
+     "id": 6,
+     "quantity": 50
+    }
+   ]
+  },
+  {
+   "level": 13,
+   "point": 600000,
+   "autoBattle": 205,
+   "midas": 405,
+   "heroStorage": 370,
+   "tavern": 16,
+   "raidBuy": 40,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 68
+    }
+   ]
+  },
+  {
+   "level": 14,
+   "point": 1200000,
+   "autoBattle": 210,
+   "midas": 455,
+   "heroStorage": 390,
+   "tavern": 18,
+   "raidBuy": 45,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 70
+    }
+   ]
+  },
+  {
+   "level": 15,
+   "point": 2000000,
+   "autoBattle": 220,
+   "midas": 505,
+   "heroStorage": 410,
+   "tavern": 20,
+   "raidBuy": 50,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 81
+    }
+   ]
+  },
+  {
+   "level": 16,
+   "point": 3000000,
+   "autoBattle": 230,
+   "midas": 525,
+   "heroStorage": 430,
+   "tavern": 22,
+   "raidBuy": 55,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 82
+    }
+   ]
+  },
+  {
+   "level": 17,
+   "point": 4500000,
+   "autoBattle": 240,
+   "midas": 545,
+   "heroStorage": 450,
+   "tavern": 24,
+   "raidBuy": 60,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 124
+    }
+   ]
+  },
+  {
+   "level": 18,
+   "point": 6000000,
+   "autoBattle": 250,
+   "midas": 575,
+   "heroStorage": 470,
+   "tavern": 28,
+   "raidBuy": 70,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 125
+    }
+   ]
+  },
+  {
+   "level": 19,
+   "point": 10000000,
+   "autoBattle": 270,
+   "midas": 600,
+   "heroStorage": 500,
+   "tavern": 32,
+   "raidBuy": 80,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 232
+    }
+   ]
+  },
+  {
+   "level": 20,
+   "point": 15000000,
+   "autoBattle": 300,
+   "midas": 630,
+   "heroStorage": 530,
+   "tavern": 36,
+   "raidBuy": 100,
+   "bonus": [
+    {
+     "kind": "avatar",
+     "id": 231
+    }
+   ]
+  }
+ ]
+}

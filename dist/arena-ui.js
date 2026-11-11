@@ -70,7 +70,7 @@
  function tick(el){clearInterval(timer);const update=()=>{for(const t of el.querySelectorAll('.pd-node')){const at=t._node?.arenaTime;if(at)D.setText(t,fmt(at-Date.now()))}};update();timer=setInterval(()=>{if(!root?.isConnected){clearInterval(timer);return}update()},1000)}
 
  // ---- Màn từng chế độ
- const sceneIds={solo:20,league:33,allstars:5},titles={solo:'Giải thách đấu',league:'Giải liên đấu',allstars:'Đấu trường Corrida'};
+ const sceneIds={solo:20,league:33,allstars:5},titles={solo:I2('LBL_CRYSTAL_CROWN_SCENE_TITILE','Giải thách đấu'),league:'Giải liên đấu',allstars:'Đấu trường Corrida'};
  async function openMode(m){
   mode=m;const [s,v]=await Promise.all([sceneJson(sceneIds[m]),c.api(`/api/arena/${m}${m==='allstars'?'?by='+(tab==='rank'?'rank':'points'):''}`),load()]);
   if(v.locked){c.toast(`Yêu cầu người chơi cấp độ ${v.minLevel} trở lên.`);if(!root)await openHub();return}
@@ -87,7 +87,7 @@
    txt(kid(cell,'TextPointCap'),'Điểm');txt(deep(cell,'TextPoint'),m==='allstars'?c.num(e.apoints):c.num(e.points));
    return cell}),{spacing:6,padding:[0,0,6,6]});
   if(m==='allstars'){
-   const tabs=deep(n,'TabTop');for(const [b,id] of [['ButtonTabRank','rank'],['ButtonTabPoint','points']]){const btn=kid(tabs,b);tag(btn,{act:'tab',tab:id});on(kid(btn,'ImageOn'),tab===id);on(kid(btn,'ImageOff'),tab!==id);for(const x of ['ImageOn','ImageOff'])txt(kid(btn,x+'/Text'),id==='rank'?'Hạng':'Điểm')}
+   const tabs=deep(n,'TabTop');for(const [b,id] of [['ButtonTabRank','rank'],['ButtonTabPoint','points']]){const btn=kid(tabs,b);tag(btn,{act:'tab',tab:id});on(kid(btn,'ImageOn'),tab===id);on(kid(btn,'ImageOff'),tab!==id);for(const x of ['ImageOn','ImageOff'])txt(kid(btn,x+'/Text'),id==='rank'?'Hạng':I2('LBL_POINT','Điểm'))}
   }
   // Ô thông tin bản thân
   const box=deep(n,'BoxInside');txt(deep(box,'TextName'),me.name);avatar(deep(box,'PlayerAvatar'),me);txt(deep(box,'TextPower'),c.num(me.power||0));
@@ -108,11 +108,11 @@
  async function openRivals(refresh=false){
   if(mode==='allstars'&&scene?.phase?.phase!=='group')return c.toast('Vòng bảng đã kết thúc');
   const [s,v]=await Promise.all([sceneJson(1329),refresh?c.post(`/api/arena/${mode}/rivals`,{}):c.api(`/api/arena/${mode}/rivals`)]);
-  const n=clone(s.roots[0]);txt(deep(n,'TextTitle'),'Đối thủ');tag(deep(n,'ButtonClose'),{act:'close'});
-  const refreshBtn=deep(n,'ButtonRefresh');tag(refreshBtn,{act:'refresh'});txt(kid(refreshBtn,'Text'),'Làm mới');txt(deep(kid(n,'PanelBody/BoxInfo'),'TextPower'),c.num(v.power));
+  const n=clone(s.roots[0]);txt(deep(n,'TextTitle'),I2('LBL_DEFENSER','Đối thủ'));tag(deep(n,'ButtonClose'),{act:'close'});
+  const refreshBtn=deep(n,'ButtonRefresh');tag(refreshBtn,{act:'refresh'});txt(kid(refreshBtn,'Text'),I2('LBL_REFRESH','Làm mới'));txt(deep(kid(n,'PanelBody/BoxInfo'),'TextPower'),c.num(v.power));
   const tpl=deep(n,'CellArenaRival'),content=deep(deep(n,'ScrollView'),'Content');on(tpl,false);
   rows(content,v.rivals.map(e=>{const cell=on(clone(tpl));avatar(kid(cell,'PlayerAvatar'),e);tag(kid(cell,'PlayerAvatar'),{act:'player',id:e.id});txt(kid(cell,'TextPlayerName'),e.name);
-   txt(kid(cell,'TextPointCap'),mode==='allstars'?'Hạng':'Điểm');txt(deep(cell,'TextPoint'),mode==='allstars'?e.ladder:c.num(e.points));txt(deep(cell,'TextPower'),c.num(e.power));
+   txt(kid(cell,'TextPointCap'),mode==='allstars'?'Hạng':I2('LBL_POINT','Điểm'));txt(deep(cell,'TextPoint'),mode==='allstars'?e.ladder:c.num(e.points));txt(deep(cell,'TextPower'),c.num(e.power));
    const b=kid(cell,'ButtonBattle');tag(b,{act:'fight',id:e.id});txt(kid(b,'Text'),'Chiến đấu');txt(deep(b,'TextCost'),1);return cell}),{spacing:8,padding:[0,0,8,8]});
   if(refresh)closeTop();mount(popupShell(n),'arena-rivals',{popup:true});
  }
@@ -190,7 +190,7 @@
   draft.forEach((slots,row)=>slots.forEach((id,i)=>{const node=deep(n,'SlotHero'+(i+1)+(row?row+1:''));if(!node)return;tag(node,{act:'slot',row,index:i});comp(node,'Button')||node.components.push({type:'Button'});const h=heroes.get(id);if(h){power+=h.stats.power;node.arenaHero=h}}));
   txt(deep(kid(body,'IconPower'),'TextPower'),c.num(power));
   // Nút hành động của prefab (Tấn công / Attack) là nút Lưu của đội hình thủ; danh sách tướng nằm trong PanelHeroList.
-  const action=deep(n,'ButtonAction');tag(action,{act:'defense-save'});txt(deep(action,'Text'),'Lưu');on(deep(n,'PanelFilter'),false);on(deep(n,'ButtonFilter'),false);on(deep(n,'ToggleSkip'),false);
+  const action=deep(n,'ButtonAction');tag(action,{act:'defense-save'});txt(deep(action,'Text'),I2('LBL_SAVE','Lưu'));on(deep(n,'PanelFilter'),false);on(deep(n,'ButtonFilter'),false);on(deep(n,'ToggleSkip'),false);
   if(three){for(const [name,from,to] of [['Button1Down',0,1],['Button2Up',1,0],['Button2Down',1,2],['Button3Up',2,1]])tag(deep(n,name),{act:'swap',from,to})}
   else{on(deep(n,'BoxAura'),false);const aura=deep(n,'BoxAuraNew');if(aura){on(deep(aura,'GroupContent'),false);const team=draft[0].map(id=>heroes.get(id)).filter(Boolean);all(aura,'GroupFaction').forEach(g=>g.children.forEach((f,i)=>{const h=team[i];if(h)pic(f,c.named('faction_'+c.faction(h.id)));on(f,!!h)}))}}
   const el=mount(popupShell(n),'arena-defense'+(three?' three':''),{popup:true});
@@ -230,10 +230,10 @@
 
  // ---- Võ đấu: Vô song, cược
  async function openKnockout(){
-  const [s,v]=await Promise.all([sceneJson(1450),c.api('/api/allstars/bracket')]);const n=clone(s.roots[0]);txt(deep(n,'TextTitle'),'Kết quả');tag(deep(n,'ButtonClose'),{act:'close'});
+  const [s,v]=await Promise.all([sceneJson(1450),c.api('/api/allstars/bracket')]);const n=clone(s.roots[0]);txt(deep(n,'TextTitle'),I2('LBL_RESULT','Kết quả'));tag(deep(n,'ButtonClose'),{act:'close'});
   for(const [b,id,label] of [['ButtonTop8','r16','Vòng 1/16'],['ButtonQuaterFinal','qf','Tứ Kết'],['ButtonSemiFinal','sf','Bán Kết'],['ButtonFinal','final','Chung Kết']]){
    const btn=deep(n,b),r=v.rounds.find(x=>x.id===id);tag(btn,{act:'round',round:id});txt(kid(btn,'Text'),label);
-   const cap=deep(btn,'TextNextRefresh');txt(cap,'Đã kết thúc');on(cap,r.resolved);const t=deep(btn,'TextCountDownRefresh');if(!r.resolved){t.arenaTime=r.at+(Date.now()-v.now);txt(t,fmt(r.at-v.now))}else txt(t,'');
+   const cap=deep(btn,'TextNextRefresh');txt(cap,I2('HC_DA_KET_THUC','Đã kết thúc'));on(cap,r.resolved);const t=deep(btn,'TextCountDownRefresh');if(!r.resolved){t.arenaTime=r.at+(Date.now()-v.now);txt(t,fmt(r.at-v.now))}else txt(t,'');
   }
   bracket=v;const el=mount(popupShell(n),'arena-knockout',{popup:true});tickPopup(el);
  }
@@ -247,24 +247,24 @@
    on(kid(cell,'ButtonPlay'),false);const bet=kid(cell,'ButtonBet');on(bet,!m.winner&&m.a&&m.b);tag(bet,{act:'bet',match:m.id});return cell}),{spacing:8,padding:[0,0,8,8]});
   const el=mount(popupShell(n),'arena-round',{popup:true});
   if(!r.matches.length)html(el,'ScrollView','<p class="arena-empty">Chưa có danh sách thi đấu. Vô song bắt đầu khi vòng bảng kết thúc.</p>');
-  for(const m of r.matches)if(m.bet||m.parity){const node=[...el.querySelectorAll('.pd-node')].find(x=>x._node?.arena?.match===m.id);if(node)html(node.parentElement,node.parentElement,`<span class="arena-bet-tag">${m.bet?'Cược: '+(m.bet==='even'?'Chẵn':'Lẻ'):''}${m.parity?' · Kết quả: '+(m.parity==='even'?'Chẵn':'Lẻ'):''}</span>`)}
+  for(const m of r.matches)if(m.bet||m.parity){const node=[...el.querySelectorAll('.pd-node')].find(x=>x._node?.arena?.match===m.id);if(node)html(node.parentElement,node.parentElement,`<span class="arena-bet-tag">${m.bet?'Cược: '+(m.bet==='even'?'Chẵn':I2('MISC_2_LBL_ODD','Lẻ')):''}${m.parity?' · Kết quả: '+(m.parity==='even'?'Chẵn':I2('MISC_2_LBL_ODD','Lẻ')):''}</span>`)}
  }
  let betPick='even',lastBet=null;
  async function openBet(matchId){
   lastBet=matchId;const s=await sceneJson(1051),n=clone(s.roots[0]),m=bracket.rounds.flatMap(r=>r.matches).find(x=>x.id===matchId);if(!m)return;
   txt(deep(n,'TextTile'),'Trận đấu');tag(deep(n,'ButtonClose'),{act:'close'});txt(deep(n,'TextGuildCoin'),c.num(c.player().inventory[c.player().arena.betItem]||0));pic(deep(n,'IconGuildCoin'),c.items.get(c.player().arena.betItem)?.assetKey);
   const place=deep(n,'PlaceABet');txt(kid(place,'TextTile'),'Tổng sát thương của tướng có sát thương cao nhất trong trận cuối là chẵn hay lẻ?');on(kid(place,'TextNote'),true);txt(kid(place,'TextNote'),'(*) Trận cuối là trận kết thúc của loạt đấu 3 trận');
-  for(const [b,id,label] of [['ButtonEven','even','Chẵn'],['ButtonOdd','odd','Lẻ']]){const btn=deep(place,b);tag(btn,{act:'pick',pick:id});txt(kid(btn,'Text'),label);on(kid(btn,'ImageOn'),betPick===id);on(kid(btn,'ImageOff'),betPick!==id);txt(deep(btn,'TextCoin'),c.num(c.player().arena.betAmount*2));pic(deep(btn,'ImageCoin'),c.items.get(c.player().arena.betItem)?.assetKey)}
+  for(const [b,id,label] of [['ButtonEven','even','Chẵn'],['ButtonOdd','odd',I2('MISC_2_LBL_ODD','Lẻ')]]){const btn=deep(place,b);tag(btn,{act:'pick',pick:id});txt(kid(btn,'Text'),label);on(kid(btn,'ImageOn'),betPick===id);on(kid(btn,'ImageOff'),betPick!==id);txt(deep(btn,'TextCoin'),c.num(c.player().arena.betAmount*2));pic(deep(btn,'ImageCoin'),c.items.get(c.player().arena.betItem)?.assetKey)}
   const ok=deep(place,'ButtonOk');tag(ok,{act:'bet-ok',match:matchId});txt(kid(ok,'Text'),'Đặt cược');
   for(const [k,e] of [['1',m.a],['2',m.b]]){avatar(deep(n,'BoxAvatar'+k),e);txt(deep(deep(n,'Player'+k),'TextNamePlayer'),e.name);txt(deep(deep(n,'Player'+k),'TextGuild'),`Lực chiến ${c.num(e.power)}`)}
   mount(popupShell(n),'arena-bet',{popup:true});
  }
  async function openBets(){
   const [s,v]=await Promise.all([sceneJson(1432),c.api('/api/allstars/bracket')]);const n=clone(s.roots[0]);bracket=v;
-  txt(deep(n,'TextTile'),'Lịch sử cược');txt(deep(n,'TextMatch'),'Trận đấu');on(deep(n,'Bet'),true);txt(deep(n,'Bet'),'Cược');txt(deep(n,'Result'),'Kết quả');tag(deep(n,'ButtonClose'),{act:'close'});
+  txt(deep(n,'TextTile'),I2('LBL_BET_HISTORY','Lịch sử cược'));txt(deep(n,'TextMatch'),'Trận đấu');on(deep(n,'Bet'),true);txt(deep(n,'Bet'),I2('LBL_BET','Cược'));txt(deep(n,'Result'),I2('LBL_RESULT','Kết quả'));tag(deep(n,'ButtonClose'),{act:'close'});
   const tpl=deep(n,'CellBetHistory'),content=deep(n,'Content'),matches=new Map(v.rounds.flatMap(r=>r.matches).map(m=>[m.id,m]));on(tpl,false);
   rows(content,v.bets.map(b=>{const m=matches.get(b.matchId)||{},cell=on(clone(tpl));for(const [k,e] of [['1',m.a],['2',m.b]]){avatar(kid(cell,'PlayerAvatar'+k),e||{});txt(kid(cell,'TextPlayer'+k),e?.name||'---');txt(kid(cell,'TextGuild'+k),'')}
-   txt(deep(cell,'TextBet'),b.pick==='even'?'Chẵn':'Lẻ');txt(deep(cell,'TextResult'),b.settled?(b.result?(b.result===b.pick?'Thắng':'Thua'):'Hoàn cược'):'Chờ');txt(deep(cell,'TextNumberBet'),c.num(b.amount));return cell}),{spacing:6,padding:[0,0,6,6]});
+   txt(deep(cell,'TextBet'),b.pick==='even'?'Chẵn':I2('MISC_2_LBL_ODD','Lẻ'));txt(deep(cell,'TextResult'),b.settled?(b.result?(b.result===b.pick?'Thắng':'Thua'):'Hoàn cược'):'Chờ');txt(deep(cell,'TextNumberBet'),c.num(b.amount));return cell}),{spacing:6,padding:[0,0,6,6]});
   const el=mount(popupShell(n),'arena-bets',{popup:true});if(!v.bets.length)html(el,'PanelBetHistory','<p class="arena-empty">Bạn chưa đặt cược trận nào.</p>');
  }
 

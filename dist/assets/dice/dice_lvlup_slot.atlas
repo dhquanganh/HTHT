@@ -1,0 +1,132 @@
+
+Dice_lvlup_slot.png
+size: 808,212
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+plusheal
+  rotate: true
+  xy: 746, 120
+  size: 88, 59
+  orig: 90, 62
+  offset: 1, 1
+  index: -1
+tialua
+  rotate: false
+  xy: 752, 75
+  size: 43, 43
+  orig: 49, 49
+  offset: 3, 3
+  index: -1
+vien (1)
+  rotate: false
+  xy: 752, 12
+  size: 23, 61
+  orig: 105, 107
+  offset: 5, 7
+  index: -1
+vien (10)
+  rotate: false
+  xy: 323, 101
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (11)
+  rotate: false
+  xy: 430, 101
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (12)
+  rotate: false
+  xy: 642, 101
+  size: 102, 107
+  orig: 105, 107
+  offset: 3, 0
+  index: -1
+vien (13)
+  rotate: true
+  xy: 111, 2
+  size: 97, 107
+  orig: 105, 107
+  offset: 8, 0
+  index: -1
+vien (14)
+  rotate: true
+  xy: 326, 9
+  size: 90, 104
+  orig: 105, 107
+  offset: 15, 3
+  index: -1
+vien (15)
+  rotate: false
+  xy: 606, 3
+  size: 81, 96
+  orig: 105, 107
+  offset: 24, 11
+  index: -1
+vien (16)
+  rotate: false
+  xy: 689, 10
+  size: 61, 89
+  orig: 105, 107
+  offset: 44, 18
+  index: -1
+vien (2)
+  rotate: true
+  xy: 432, 7
+  size: 92, 89
+  orig: 105, 107
+  offset: 0, 3
+  index: -1
+vien (3)
+  rotate: false
+  xy: 523, 2
+  size: 81, 97
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (4)
+  rotate: true
+  xy: 220, 9
+  size: 90, 104
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (5)
+  rotate: true
+  xy: 2, 2
+  size: 97, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (6)
+  rotate: false
+  xy: 537, 101
+  size: 103, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (7)
+  rotate: false
+  xy: 2, 101
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (8)
+  rotate: false
+  xy: 109, 101
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1
+vien (9)
+  rotate: false
+  xy: 216, 101
+  size: 105, 107
+  orig: 105, 107
+  offset: 0, 0
+  index: -1

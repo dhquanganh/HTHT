@@ -24,6 +24,16 @@
   const px=(a0.x+(a1.x-a0.x)*pv.x)*pw+pos.x,py=(a0.y+(a1.y-a0.y)*pv.y)*ph+pos.y;
   return{x:px-pv.x*w,y:ph-(py-pv.y*h)-h,w,h,pivot:pv};
  }
+ /** Kích thước ưu tiên của Text như Unity (preferredWidth / preferredHeight): đo chữ bằng canvas theo font, cỡ, kiểu.
+  * Unity dùng giá trị này cho layout group và ContentSizeFitter; thiếu nó thì chữ rộng 0 bị xuống dòng từng từ hoặc chồng nhau. */
+ const measure=document.createElement('canvas').getContext('2d');
+ function textSize(c){
+  const plain=String(c.text??'').replace(/<[^>]+>/g,''),lines=plain.split(String.fromCharCode(10)),size=c.size||14;
+  measure.font=`${c.style===1||c.style===3?'bold ':''}${size}px ${c.font?.family||'GameFont'},GameFont,sans-serif`;
+  return{x:Math.ceil(Math.max(0,...lines.map(l=>measure.measureText(l).width)))+4,y:Math.ceil(size*(c.lineSpacing||1.15)*lines.length)};
+ }
+ // Text rộng 0 (không giãn theo neo) thì dùng kích thước chữ đo được.
+ const zeroText=n=>{const c=get(n,'Text'),t=n.transform||{},a0=t.m_AnchorMin||{x:.5},a1=t.m_AnchorMax||{x:.5};return c&&Math.abs(a1.x-a0.x)<1e-6&&(t.m_SizeDelta?.x??0)<=1?c:null};
  const alignment=a=>({h:['flex-start','center','flex-end'][a%3],v:['flex-start','center','flex-end'][Math.floor(a/3)],text:['left','center','right'][a%3]});
  /** Layout group: trả khung mới cho từng con đang bật (theo thứ tự). */
  function layoutChildren(n,w,h){
@@ -91,14 +101,18 @@
   Object.assign(el.style,{display:'flex',justifyContent:al.h,alignItems:al.v,textAlign:al.text,color:css(c.color||[0,0,0,1]),fontFamily:`${c.font?.family||'GameFont'},GameFont,sans-serif`,fontSize:(c.size||14)+'px',lineHeight:String(c.lineSpacing||1.15),whiteSpace:c.overflow===1?'nowrap':'normal',fontWeight:c.style===1||c.style===3?'bold':'normal',fontStyle:c.style>=2?'italic':'normal'});
   if(outline){const o=css(outline.color||[0,0,0,1]),d=Math.max(1,Math.abs(outline.distance?.[0]||1));el.style.textShadow=outline.type==='Shadow'?`${d}px ${d}px 0 ${o}`:`${d}px 0 0 ${o},-${d}px 0 0 ${o},0 ${d}px 0 ${o},0 -${d}px 0 ${o},${d}px ${d}px 0 ${o},-${d}px -${d}px 0 ${o},${d}px -${d}px 0 ${o},-${d}px ${d}px 0 ${o}`}
   // Tràn ngang (Overflow): chữ rộng theo nội dung, căn theo neo nên chữ căn phải tràn sang trái như Unity.
-  if(c.overflow===1)Object.assign(span.style,{width:'max-content',flexShrink:'0',whiteSpace:'nowrap'});
+  // Text tự co theo chữ (rộng 0 / ContentSizeFitter ngang): không xuống dòng, chữ mới dài hơn tràn theo căn lề như Unity.
+  const auto=zeroText(n)||get(n,'ContentSizeFitter')?.horizontal===2;
+  if(c.overflow===1||auto){Object.assign(span.style,{width:'max-content',flexShrink:'0',whiteSpace:'nowrap'});if(auto)el.style.whiteSpace='nowrap'}
   el.appendChild(span);
  }
  /** ContentSizeFitter (PreferredSize = 2) với Horizontal/Vertical layout: kích thước = tổng con + khoảng cách + đệm. */
  function fitted(n){
-  const f=get(n,'ContentSizeFitter'),g=n.components?.find(c=>c.type==='HorizontalLayoutGroup'||c.type==='VerticalLayoutGroup');
+  const f=get(n,'ContentSizeFitter'),g=n.components?.find(c=>c.type==='HorizontalLayoutGroup'||c.type==='VerticalLayoutGroup'),tc=get(n,'Text');
+  // Text tự co theo chữ (ContentSizeFitter Preferred) hoặc rộng 0: kích thước = chữ đo được.
+  if(tc&&!g&&((f&&(f.horizontal===2||f.vertical===2))||zeroText(n))){const m=textSize(tc),sd={...(n.transform?.m_SizeDelta||{x:0,y:0})};if(f?.horizontal===2||zeroText(n))sd.x=m.x;if(f?.vertical===2||sd.y<=1)sd.y=Math.max(sd.y,m.y);return{...n.transform,m_SizeDelta:sd}}
   if(!f||!g||!(f.horizontal===2||f.vertical===2))return n.transform||{};
-  const kids=n.children.filter(c=>c.active&&!get(c,'LayoutElement')?.ignore),sz=kids.map(c=>{const le=get(c,'LayoutElement'),s=c.transform?.m_SizeDelta||{x:0,y:0};return{x:le?.preferredWidth>=0?le.preferredWidth:s.x,y:le?.preferredHeight>=0?le.preferredHeight:s.y}}),[pl,pr,pt,pb]=g.padding||[0,0,0,0],sp=g.spacing||0,h=g.type==='HorizontalLayoutGroup';
+  const kids=n.children.filter(c=>c.active&&!get(c,'LayoutElement')?.ignore),sz=kids.map(c=>{const le=get(c,'LayoutElement'),s=fitted(c).m_SizeDelta||{x:0,y:0};return{x:le?.preferredWidth>=0?le.preferredWidth:s.x,y:le?.preferredHeight>=0?le.preferredHeight:s.y}}),[pl,pr,pt,pb]=g.padding||[0,0,0,0],sp=g.spacing||0,h=g.type==='HorizontalLayoutGroup';
   const along=sz.reduce((t,s)=>t+(h?s.x:s.y),0)+sp*Math.max(0,kids.length-1),across=Math.max(0,...sz.map(s=>h?s.y:s.x));
   const w=h?along+pl+pr:across+pl+pr,hh=h?across+pt+pb:along+pt+pb,sd={...(n.transform.m_SizeDelta||{x:0,y:0})};
   if(f.horizontal===2)sd.x=w;if(f.vertical===2)sd.y=hh;return{...n.transform,m_SizeDelta:sd};

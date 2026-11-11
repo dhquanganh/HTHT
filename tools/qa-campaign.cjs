@@ -2,7 +2,7 @@ const {chromium}=require('playwright-core'),{MongoClient}=require('mongodb'),{sp
 const fs=require('fs'),crypto=require('crypto'),assert=require('assert/strict');try{process.loadEnvFile('.env')}catch{}
 const database='htps_campaign_'+crypto.randomBytes(6).toString('hex'),url='http://127.0.0.1:4182';let server,browser,client;
 (async()=>{
- fs.mkdirSync('qa-output/campaign',{recursive:true});server=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,MONGODB_DB:database,PORT:'4182',HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe']});
+ fs.mkdirSync('qa-output/campaign',{recursive:true});server=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,NEW_ACCOUNT_INTRO:'off',MONGODB_DB:database,PORT:'4182',HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe']});
  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('QA startup timeout')),30000);server.stdout.on('data',b=>{if(b.toString().includes('đang chạy')){clearTimeout(timer);resolve()}});server.once('exit',code=>reject(Error('QA server exited '+code)))});
  browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});const page=await browser.newPage({viewport:{width:1564,height:960}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(url);await page.waitForSelector('#auth-form');await page.locator('[data-action="auth-register"]').click();await page.locator('#username').fill('Campaign_QA');await page.locator('#password').fill('campaign-qa-password');await page.locator('#password-confirm').fill('campaign-qa-password');await page.locator('.auth-submit').click();await page.waitForFunction(()=>GameRuntime?.player&&document.querySelector('#loading').hidden);

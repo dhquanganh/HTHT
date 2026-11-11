@@ -1,0 +1,55 @@
+
+Card2.png
+size: 352,976
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+card_backside
+  rotate: true
+  xy: 2, 689
+  size: 220, 345
+  orig: 227, 355
+  offset: 3, 5
+  index: -1
+card_backside2
+  rotate: false
+  xy: 2, 2
+  size: 335, 463
+  orig: 419, 655
+  offset: 42, 96
+  index: -1
+card_front
+  rotate: true
+  xy: 2, 467
+  size: 220, 345
+  orig: 227, 355
+  offset: 3, 5
+  index: -1
+flowx
+  rotate: false
+  xy: 2, 956
+  size: 102, 15
+  orig: 104, 15
+  offset: 1, 0
+  index: -1
+line
+  rotate: false
+  xy: 106, 942
+  size: 138, 29
+  orig: 138, 29
+  offset: 0, 0
+  index: -1
+line2
+  rotate: false
+  xy: 2, 911
+  size: 138, 29
+  orig: 138, 29
+  offset: 0, 0
+  index: -1
+tialua
+  rotate: false
+  xy: 246, 928
+  size: 43, 43
+  orig: 49, 49
+  offset: 3, 3
+  index: -1

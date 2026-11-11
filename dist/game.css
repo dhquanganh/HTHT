@@ -6,3 +6,8 @@ body.playing #viewer{inset:0}body.playing #stage{width:min(100vw,calc(100dvh*113
 #fullscreen-toggle svg{width:100%;height:100%;display:block}
 body.playing #fullscreen-toggle{display:block}
 body.is-fullscreen #fullscreen-toggle{display:none}
+/* Hộp thoại gốc PopupMessage / PopupBuyConfirm (messageBox trong game.js): trên mọi popup module và #dialog-ui. */
+.msg-layer{z-index:95;pointer-events:auto!important}
+.msg-layer .pd-button{cursor:pointer}.msg-layer .pd-button:hover{filter:brightness(1.08)}
+.msg-layer [data-name="Body"]{animation:msg-pop .22s cubic-bezier(.2,1.3,.45,1) both}
+@keyframes msg-pop{from{transform:scale(.85);opacity:0}}

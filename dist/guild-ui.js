@@ -52,12 +52,12 @@
  // ---- Tìm đội / Lập đội
  async function openCreate(){
   const [s,list]=await Promise.all([sceneJson(1078),c.api('/api/guild/search?q='+encodeURIComponent(searchText)),load()]);const n=clone(s.roots[0]);
-  txt(deep(n,'TextTitle'),'Hạm đội');tag(deep(n,'ButtonClose'),{act:'leave'});
-  for(const [b,id,label] of [['ButtonTabSearch','search','Tìm đội'],['ButtonTabCreate','create','Lập đội']]){const t=deep(n,b);tag(t,{act:'createTab',tab:id});txt(kid(t,'Text'),label);on(kid(t,'ImageOn'),createTab===id);on(kid(t,'ImageOff'),createTab!==id)}
+  txt(deep(n,'TextTitle'),I2('LBL_FLEET_NO_COLON','Hạm đội'));tag(deep(n,'ButtonClose'),{act:'leave'});
+  for(const [b,id,label] of [['ButtonTabSearch','search',I2('LBL_POPUP_CREATE_GUILD_FIND_TEAM','Tìm đội')],['ButtonTabCreate','create',I2('LBL_POPUP_CREATE_GUILD_TEAM_UP','Lập đội')]]){const t=deep(n,b);tag(t,{act:'createTab',tab:id});txt(kid(t,'Text'),label);on(kid(t,'ImageOn'),createTab===id);on(kid(t,'ImageOff'),createTab!==id)}
   on(deep(n,'BoxSearch'),createTab==='search');on(deep(n,'BoxCreate'),createTab==='create');
   const search=deep(n,'BoxSearch');tag(deep(search,'ButtonSearch'),{act:'search'});txt(deep(deep(search,'ButtonSearch'),'Text'),'Tìm kiếm');
   const tpl=deep(search,'CellGuild'),content=deep(search,'Content');on(tpl,false);
-  rows(content,list.guilds.map(g=>{const cell=on(clone(tpl));pic(kid(cell,'ImageAvatar'),flag(g.flag));txt(kid(cell,'TextGuildName'),g.name);txt(kid(cell,'TextMember'),`${g.members}/${g.limit}`);txt(kid(cell,'TextLevelCap'),'Cấp');txt(deep(cell,'TextLevel'),g.level);
+  rows(content,list.guilds.map(g=>{const cell=on(clone(tpl));pic(kid(cell,'ImageAvatar'),flag(g.flag));txt(kid(cell,'TextGuildName'),g.name);txt(kid(cell,'TextMember'),`${g.members}/${g.limit}`);txt(kid(cell,'TextLevelCap'),I2('HC_CAP','Cấp'));txt(deep(cell,'TextLevel'),g.level);
    const b=kid(cell,'ButtonApply');tag(b,{act:'apply',id:g.id});txt(kid(b,'Text'),g.applied?'Đã xin':'Xin vào');return cell}),{spacing:8,padding:[0,0,6,6]});
   const box=deep(n,'BoxCreate');txt(deep(box,'TextNameCap'),'Tên đội');txt(deep(box,'TextAvatarCap'),'Cờ đội');pic(deep(box,'ButtonAvatar'),flag(flagPick));tag(deep(box,'ButtonAvatar'),{act:'flags',mode:'create'});
   const create=deep(box,'ButtonCreate');tag(create,{act:'create'});txt(kid(create,'Text'),'Lập đội');txt(deep(create,'TextCost'),c.player().guild.createCost);
@@ -79,7 +79,7 @@
   const [s]=await Promise.all([sceneJson(11),load(),refresh()]);if(!state.guild)return openCreate();
   const n=canvasOf(s),g=state.guild,me=c.player().guild;
   txt(deep(n,'TextGem'),c.short(c.player().wallet.diamonds));txt(deep(n,'TextGuildCoin'),c.short(me.coin));
-  const labels=[['BuidingWar','Chiến trường','war'],['ButtonTech','Kỹ năng','tech'],['ButtonHall','Hội trường','hall'],['BuidingBoss','Đánh Boss','boss'],['ButtonMill','Nhiệm vụ','mill']];
+  const labels=[['BuidingWar','Chiến trường','war'],['ButtonTech','Kỹ năng','tech'],['ButtonHall','Hội trường','hall'],['BuidingBoss','Đánh Boss','boss'],['ButtonMill',I2('LBL_MISSION','Nhiệm vụ'),'mill']];
   for(const [name,label,act] of labels){const b=deep(n,name);tag(b,{act});txt(deep(b,'TextTag'),label);for(const k of b.children)if(k.name!=='NameTag')tag(k,{act})}
   on(deep(n,'GoNotifyWar'),false);on(deep(n,'GoNotifyHall'),!me.rollCall||g.applications.length>0);on(deep(n,'GoNotifyBoss'),me.bossLeft>0);on(deep(n,'GoNotifyMill'),me.donated<me.donateLimit);
   tag(deep(n,'ButtonBack'),{act:'leave'});tag(deep(n,'ButtonShop'),{act:'shop'});
@@ -89,7 +89,7 @@
  // ---- Hội trường
  async function openHall(){
   const s=await sceneJson(1086);await refresh();const g=state.guild,me=c.player().guild,n=clone(s.roots[0]),boss=['leader','vice'].includes(g.role);
-  txt(deep(n,'TextTitle'),'Hạm đội');pic(deep(n,'ButtonAvatarGuild'),flag(g.flag));txt(deep(n,'TextGuildName'),g.name);txt(deep(n,'TextId'),'ID: '+g.shortId);
+  txt(deep(n,'TextTitle'),I2('LBL_FLEET_NO_COLON','Hạm đội'));pic(deep(n,'ButtonAvatarGuild'),flag(g.flag));txt(deep(n,'TextGuildName'),g.name);txt(deep(n,'TextId'),'ID: '+g.shortId);
   txt(deep(n,'TextNumMember'),`${g.members.length}/${g.memberLimit}`);txt(deep(n,'TextLevelCap'),'Lv');txt(deep(n,'TextLevel'),g.level);
   txt(deep(n,'TextProgress'),g.expNext?`${c.num(g.exp)}/${c.num(g.expNext)}`:'Tối đa');slider(deep(n,'SliderLevel'),g.expNext?g.exp/g.expNext:1);
   txt(deep(n,'TextMotto'),g.notice||'');on(deep(n,'ButtonSetting'),boss);tag(deep(n,'ButtonSetting'),{act:'edit'});on(deep(n,'BoxEditMember'),boss);tag(deep(n,'ButtonManageMember'),{act:'members'});
@@ -99,13 +99,13 @@
   rows(content,g.members.map(m=>{const cell=on(clone(tpl));avatar(deep(cell,'PlayerAvatar'),m);txt(kid(cell,'TextPlayername'),m.name);txt(kid(cell,'TextRole'),m.roleName);comp(kid(cell,'TextRole'),'Text').color=m.role==='leader'?[.86,.2,.2,1]:m.role==='vice'?[.2,.45,.85,1]:[.4,.27,.15,1];txt(kid(cell,'TextOnline'),m.online?'Đang Online':ago(m.lastSeen));return cell}),{spacing:8,padding:[0,0,6,6]});
   const menu=deep(n,'ButtonShowActionMenu');tag(menu,{act:'menu'});txt(kid(menu,'Text'),'Quản lí hạm đội');on(deep(menu,'NotifyApplication'),g.applications.length>0);on(menu,boss);
   const log=deep(n,'ButtonLogActivity');tag(log,{act:'log'});txt(kid(log,'Text'),'Hoạt động');tag(deep(kid(deep(n,'BoxMember'),'ButtonClose'),'ButtonClose')||kid(deep(n,'BoxMember'),'ButtonClose'),{act:'close'});
-  const pm=deep(n,'PanelManagerMenu');for(const [b,act,label] of [['ButtonProcessApplication','applications','Duyệt đăng ký'],['ButtonRecruit','recruit','Tuyển mộ'],['ButtonSendMail','mail','Gửi thư'],['ButtonMember','members','Thành viên']]){const x=deep(pm,b);tag(x,{act});const t=x.children.find(k=>comp(k,'Text'));if(t)txt(t,label)}
+  const pm=deep(n,'PanelManagerMenu');for(const [b,act,label] of [['ButtonProcessApplication','applications','Duyệt đăng ký'],['ButtonRecruit','recruit','Tuyển mộ'],['ButtonSendMail','mail',I2('LBL_SEND_MSG','Gửi thư')],['ButtonMember','members','Thành viên']]){const x=deep(pm,b);tag(x,{act});const t=x.children.find(k=>comp(k,'Text'));if(t)txt(t,label)}
   on(deep(pm,'GoNotifyApplication'),g.applications.length>0);tag(deep(n,'ButtonHelp'),{act:'help'});
   mount(popupShell(n),'guild-hall',{popup:true})
  }
  async function openEdit(){
-  const s=await sceneJson(1456),g=state.guild,n=clone(s.roots[0]);txt(deep(n,'TextTitle'),'Hạm đội');tag(deep(n,'ButtonClose'),{act:'close'});
-  txt(deep(n,'TextNameCap'),'Tên hạm đội');txt(deep(n,'TextName'),g.name);txt(deep(n,'TextAvatarCap'),'Cờ đội');pic(deep(n,'ButtonAvatar'),flag(flagPick=g.flag));tag(deep(n,'ButtonAvatar'),{act:'flags',mode:'edit'});
+  const s=await sceneJson(1456),g=state.guild,n=clone(s.roots[0]);txt(deep(n,'TextTitle'),I2('LBL_FLEET_NO_COLON','Hạm đội'));tag(deep(n,'ButtonClose'),{act:'close'});
+  txt(deep(n,'TextNameCap'),'Tên hạm đội');txt(deep(n,'TextName'),g.name);txt(deep(n,'TextAvatarCap'),I2('LBL_POPUP_CREATE_GUILD_FLAG_TEAM','Cờ đội'));pic(deep(n,'ButtonAvatar'),flag(flagPick=g.flag));tag(deep(n,'ButtonAvatar'),{act:'flags',mode:'edit'});
   txt(deep(n,'TextMottoCap'),'Thông tin hạm đội');const save=deep(n,'ButtonSave');tag(save,{act:'save'});txt(kid(save,'Text'),'Lưu thay đổi');on(deep(n,'ButtonRename'),false);
   const el=mount(popupShell(n),'guild-edit',{popup:true});html(nodeEl(el,'InputMotto'),`<textarea class="guild-input" id="guild-notice" maxlength="200" aria-label="Thông tin hạm đội">${c.escape(g.notice||'')}</textarea>`);
  }
@@ -114,14 +114,14 @@
   const tpl=deep(n,'CellGuildMember'),content=deep(n,'Content');on(tpl,false);
   rows(content,g.members.map((m,i)=>{const cell=on(clone(tpl));txt(kid(cell,'TextRank'),i+1);avatar(deep(cell,'PlayerAvatar'),m);txt(kid(cell,'TextPlayername'),m.name);txt(kid(cell,'TextRole'),m.roleName);
    const can=!m.me&&(g.role==='leader'||(g.role==='vice'&&m.role==='member')),pr=deep(cell,'ButtonPromote'),kick=deep(cell,'ButtonKick');
-   on(pr,!m.me&&g.role==='leader');tag(pr,{act:'promote',id:m.id});txt(kid(pr,'Text'),m.role==='vice'?'Bãi nhiệm':'Bổ nhiệm');on(kick,can);tag(kick,{act:'kick',id:m.id,name:m.name});txt(kid(kick,'Text'),'Khai trừ');return cell}),{spacing:8,padding:[0,0,6,6]});
+   on(pr,!m.me&&g.role==='leader');tag(pr,{act:'promote',id:m.id});txt(kid(pr,'Text'),m.role==='vice'?'Bãi nhiệm':'Bổ nhiệm');on(kick,can);tag(kick,{act:'kick',id:m.id,name:m.name});txt(kid(kick,'Text'),I2('LBL_KICK','Khai trừ'));return cell}),{spacing:8,padding:[0,0,6,6]});
   const el=mount(popupShell(n),'guild-members',{popup:true});
   if(g.role==='leader'&&g.members.some(m=>m.role==='vice')){const vice=g.members.find(m=>m.role==='vice');html(el.querySelector('[data-name="Body"]'),`<button class="guild-transfer" data-transfer="${c.escape(vice.id)}">Nhường Thuyền trưởng cho ${c.escape(vice.name)}</button>`).addEventListener('click',e=>{if(e.target.closest('[data-transfer]'))manage({op:'transfer',userId:vice.id})})}
  }
  async function openApplications(){
   const s=await sceneJson(1202),g=state.guild,n=clone(s.roots[0]);txt(deep(n,'TextTitle'),'Duyệt đăng ký');tag(deep(n,'ButtonClose'),{act:'close'});
   const tpl=deep(n,'CellGuildApplication'),content=deep(n,'Content');on(tpl,false);
-  rows(content,g.applications.map(a=>{const cell=on(clone(tpl));avatar(deep(cell,'PlayerAvatar'),a);txt(kid(cell,'TextPlayername'),a.name);txt(kid(cell,'TextLevelCap'),'Cấp');txt(deep(cell,'TextLevel'),a.level);
+  rows(content,g.applications.map(a=>{const cell=on(clone(tpl));avatar(deep(cell,'PlayerAvatar'),a);txt(kid(cell,'TextPlayername'),a.name);txt(kid(cell,'TextLevelCap'),I2('HC_CAP','Cấp'));txt(deep(cell,'TextLevel'),a.level);
    const r=kid(cell,'ButtonReject'),ok=kid(cell,'ButtonApprove');tag(r,{act:'reject',id:a.id});txt(kid(r,'Text'),'Từ chối');tag(ok,{act:'approve',id:a.id});txt(kid(ok,'Text'),'Đồng ý');return cell}),{spacing:8,padding:[0,0,6,6]});
   const el=mount(popupShell(n),'guild-applications',{popup:true});if(!g.applications.length)html(nodeEl(el,'BgrMember'),'<p class="guild-empty">Chưa có đơn xin vào.</p>');
  }
@@ -133,18 +133,18 @@
  }
 
  // ---- Kỹ năng hạm đội
- const techTabs=[['TabWarrior','warrior'],['TabMage','mage'],['TabRanger','ranger'],['TabAssassin','assassin'],['TabPriest','priest']],classNames={warrior:'Đấu Sĩ',mage:'Chỉ Huy',ranger:'Xạ Thủ',assassin:'Kiếm Sĩ',priest:'Hỗ Trợ'};
+ const techTabs=[['TabWarrior','warrior'],['TabMage','mage'],['TabRanger','ranger'],['TabAssassin','assassin'],['TabPriest','priest']],classNames={warrior:I2('LBL_WARRIOR','Đấu Sĩ'),mage:I2('LBL_MAGE','Chỉ Huy'),ranger:I2('LBL_RANGER','Xạ Thủ'),assassin:'Kiếm Sĩ',priest:I2('LBL_PRIEST','Hỗ Trợ')};
  const effectText=(e,level)=>e.map(([field,per])=>{const label={attackPct:'Công',maxHpPct:'Máu',speed:'Tốc độ',penetration:'Xuyên giáp',critChance:'Chí mạng',critDamage:'ST chí mạng',block:'Chặn',accuracy:'Chính xác',skillDamage:'ST kỹ năng'}[field]||({'resist.stun':'Kháng Choáng','resist.freeze':'Kháng Đóng băng','resist.petrify':'Kháng Hóa đá','resist.silence':'Kháng Câm lặng'})[field]||(field.startsWith('vs.')?'ST lên '+classNames[field.slice(3)]:field);
   const v=x=>field==='speed'?String(+(x).toFixed(1)):(+(x*100).toFixed(1))+'%';return `${label} ${v(per*level)} -> ${v(per*(level+1))}`}).join('\n');
  async function openTech(){
   const s=await sceneJson(1464),n=clone(s.roots[0]),me=c.player().guild,t=me.tech[techClass],skill=t.skills[techIndex];
   txt(deep(n,'TextTitle'),classNames[techClass]);tag(deep(n,'ButtonClose'),{act:'close'});txt(deep(n,'TextGuildCoin'),c.short(me.coin));txt(deep(n,'TextGold'),c.short(c.player().wallet.gold));tag(deep(n,'ButtonHelp'),{act:'techHelp'});
   for(const [b,cls] of techTabs){const x=deep(n,b);tag(x,{act:'techTab',cls});on(kid(x,'ImageOn'),cls===techClass);on(kid(x,'ImageOff'),cls!==techClass)}
-  const box=deep(n,'BoxTech');pic(deep(box,'IconTechClass'),data.icons['tech_'+techClass]);txt(deep(box,'LevelTechClass'),'Cấp độ '+t.tier);tag(deep(box,'ButtonRetset'),{act:'reset'});
+  const box=deep(n,'BoxTech');pic(deep(box,'IconTechClass'),data.icons['tech_'+techClass]);txt(deep(box,'LevelTechClass'),I2('LBL_LEVEL','Cấp độ ')+t.tier);tag(deep(box,'ButtonRetset'),{act:'reset'});
   t.skills.forEach((sk,i)=>{const b=deep(box,'ButtonTechSkill'+(i+1));tag(b,{act:'techPick',index:i});const icon=techIcon(techClass,sk.id);for(const k of ['ImageOn','ImageOff'])pic(kid(b,k),icon);on(kid(b,'ImageOn'),!sk.locked);on(kid(b,'ImageOff'),sk.locked);txt(kid(b,'TextLevel'),`${sk.level}/${sk.max}`);b.guildLocked=sk.locked;if(i===techIndex)b.guildSelected=true});
   const d=deep(n,'BoxDetail');pic(deep(d,'IconTech'),techIcon(techClass,skill.id));txt(deep(d,'TextTechName'),skill.name);txt(deep(d,'TextUpgradeDesc'),skill.level<skill.max?effectText(skill.effects,skill.level):effectText(skill.effects,skill.level-1).replace(/-> .*$/gm,'(tối đa)'));
   txt(deep(d,'TextRequire'),skill.locked?'Yêu cầu kĩ năng trước đạt cấp 10':'');
-  const maxed=skill.level>=skill.max,allMax=t.skills.every(x=>x.level>=x.max);on(deep(d,'GroupUpgrade'),!maxed||allMax&&t.tier<t.maxTier);on(deep(d,'GroupMaxed'),maxed&&!(allMax&&t.tier<t.maxTier));txt(deep(d,'TextMaxed'),'Cấp tối đa');
+  const maxed=skill.level>=skill.max,allMax=t.skills.every(x=>x.level>=x.max);on(deep(d,'GroupUpgrade'),!maxed||allMax&&t.tier<t.maxTier);on(deep(d,'GroupMaxed'),maxed&&!(allMax&&t.tier<t.maxTier));txt(deep(d,'TextMaxed'),I2('LBL_MAX_LEVEL','Cấp tối đa'));
   const up=deep(d,'ButtonUpgrade');
   if(allMax&&t.tier<t.maxTier){tag(up,{act:'tier'});txt(kid(up,'Text'),'Cấp độ '+(t.tier+1));txt(deep(d,'TextGoldCost'),'-');txt(deep(d,'TextGuildCoinCost'),'-');txt(deep(d,'TextRequire'),t.nextTierGuildLevel?`Yêu cầu bang đạt cấp độ ${t.nextTierGuildLevel}`:'')}
   else{tag(up,{act:'techUp'});txt(kid(up,'Text'),'Nâng cấp');if(skill.cost){txt(deep(d,'TextGoldCost'),c.short(skill.cost.gold));txt(deep(d,'TextGuildCoinCost'),c.short(skill.cost.coin))}}
@@ -173,7 +173,7 @@
  async function openAttack(stage){
   const [s,info]=await Promise.all([sceneJson(1179),c.api('/api/guild/boss?stage='+stage)]);boss=info;
   const n=clone(s.roots[0]),st=boss.stages[stage-1],me=c.player().guild,rank=info.ranking,cur=rank.state==='current',dead=rank.state==='dead';
-  txt(deep(n,'TextTitle'),'Ải '+stage);tag(deep(n,'ButtonClose'),{act:'close'});txt(deep(n,'TextPower'),c.num(st.power));
+  txt(deep(n,'TextTitle'),I2('HC_AI','Ải ')+stage);tag(deep(n,'ButtonClose'),{act:'close'});txt(deep(n,'TextPower'),c.num(st.power));
   const hp=cur?boss.hpPercent:dead?0:100;txt(deep(n,'TextHp'),hp+'%');slider(deep(n,'SliderHp'),hp/100);
   // Spine boss trong vùng Clip (Mask gốc) của khung boss.
   const clip=deep(n,'Clip');clip.guildAvatar=st.monsters[0].avatar;on(deep(clip,'CanvasHero'),false);
@@ -212,7 +212,7 @@
  // ---- Nhiệm vụ (Cống hiến / Top)
  async function openMill(){
   const s=await sceneJson(1409);await refresh();const n=clone(s.roots[0]),me=c.player().guild,g=state.guild;
-  txt(deep(n,'TextTitle'),{order:'Nhiệm vụ',donate:'Cống hiến',top:'Bảng cống hiến'}[millTab]);tag(deep(n,'ButtonClose'),{act:'close'});
+  txt(deep(n,'TextTitle'),{order:I2('LBL_MISSION','Nhiệm vụ'),donate:'Cống hiến',top:'Bảng cống hiến'}[millTab]);tag(deep(n,'ButtonClose'),{act:'close'});
   for(const [b,id] of [['TabOrder','order'],['TabDontate','donate'],['TabTop','top']]){const x=deep(n,b);tag(x,{act:'millTab',tab:id});on(kid(x,'ImageOn'),millTab===id);on(kid(x,'ImageOff'),millTab!==id)}
   const order=deep(n,'BoxOrder');on(order,true);on(deep(order,'CellMillOrder'),false);on(deep(order,'ButtonRequestOrder'),false);on(deep(order,'TextCountCap'),false);on(deep(order,'ScrollOrder'),false);
   txt(deep(order,'TextNote'),millTab==='order'?'Không có nhiệm vụ đang thực thi.':'');
@@ -253,16 +253,16 @@
    if(a.act==='mail')return c.toast('Tính năng gửi thư cho thành viên chưa mở.');
    if(a.act==='log')return openLog();
    if(a.act==='rollcall'){const d=await c.mutation('/api/guild/rollcall',{},{render:false});if(d){closeTop();openHall()}return}
-   if(a.act==='quit'){const g=state.guild;return c.confirm(g.members.length<=1?'Bạn là thành viên cuối cùng, rời đội sẽ giải tán hạm đội.':'Bạn chắc chắn rời khỏi liên minh?','Rời đội',null,async()=>{const d=await c.mutation('/api/guild/leave',{},{render:false});if(d){closeAll();openCreate()}})}
+   if(a.act==='quit'){const g=state.guild;return c.confirm(g.members.length<=1?'Bạn là thành viên cuối cùng, rời đội sẽ giải tán hạm đội.':'Bạn chắc chắn rời khỏi liên minh?',I2('LBL_POPUP_GUILD_HALL_LEAVE','Rời đội'),null,async()=>{const d=await c.mutation('/api/guild/leave',{},{render:false});if(d){closeAll();openCreate()}})}
    if(a.act==='approve'||a.act==='reject'){if(await manage({op:a.act,userId:a.id})){closeTop();return openHall().then(openApplications)}return}
    if(a.act==='promote'){if(await manage({op:'promote',userId:a.id})){closeTop();return openHall().then(openMembers)}return}
-   if(a.act==='kick')return c.confirm(`Bạn chắc chắn khai trừ ${a.name} ?`,'Khai trừ',null,async()=>{if(await manage({op:'kick',userId:a.id})){closeTop();await openHall();openMembers()}});
+   if(a.act==='kick')return c.confirm(`Bạn chắc chắn khai trừ ${a.name} ?`,I2('LBL_KICK','Khai trừ'),null,async()=>{if(await manage({op:'kick',userId:a.id})){closeTop();await openHall();openMembers()}});
    if(a.act==='help')return c.modal('HẠM ĐỘI','<p class="item-description">Điểm danh mỗi ngày nhận beli, Huy hiệu hạm đội và EXP hạm đội. Hạm đội lên cấp mở thêm chỗ cho thành viên và Cấp độ kỹ năng mới. Thuyền trưởng và Thuyền phó duyệt đơn xin vào, khai trừ thành viên.</p>');
    if(a.act==='techTab'){techClass=a.cls;techIndex=0;closeTop();return openTech()}
    if(a.act==='techPick'){techIndex=a.index;closeTop();return openTech()}
    if(a.act==='techUp'){const d=await c.mutation('/api/guild/tech',{op:'upgrade',cls:techClass,index:techIndex},{render:false,message:false,bonus:false});if(d){closeTop();await openTech();layers.at(-1)?.classList.add('guild-upped')}return}
    if(a.act==='tier'){const d=await c.mutation('/api/guild/tech',{op:'tier',cls:techClass},{render:false});if(d){closeTop();techIndex=0;return openTech()}return}
-   if(a.act==='reset'){const t=c.player().guild.tech[techClass];return c.confirm('Thiết lập lại hệ kỹ năng. Toàn bộ beli và huy hiệu bang sẽ được hoàn trả (Lần đầu thiết lập lại không mất phí)','Thiết lập lại',t.resets>0?100:null,async()=>{const d=await c.mutation('/api/guild/tech',{op:'reset',cls:techClass},{render:false});if(d){closeTop();openTech()}})}
+   if(a.act==='reset'){const t=c.player().guild.tech[techClass];return c.confirm('Thiết lập lại hệ kỹ năng. Toàn bộ beli và huy hiệu bang sẽ được hoàn trả (Lần đầu thiết lập lại không mất phí)',I2('LBL_RESET','Thiết lập lại'),t.resets>0?100:null,async()=>{const d=await c.mutation('/api/guild/tech',{op:'reset',cls:techClass},{render:false});if(d){closeTop();openTech()}})}
    if(a.act==='techHelp')return c.modal('KỸ NĂNG HẠM ĐỘI','<p class="item-description">Kỹ năng tăng chỉ số cho tướng cùng nghề khi bạn ở trong hạm đội. Mỗi kỹ năng 20 cấp; kỹ năng sau mở khi kỹ năng trước đạt cấp 10. Nâng tối đa 8 kỹ năng để lên Cấp độ kế (cần hạm đội đạt cấp yêu cầu). Thiết lập lại hoàn toàn bộ beli và Huy hiệu hạm đội, lần đầu miễn phí.</p>');
    if(a.act==='page'){raidPage=(raidPage+a.dir+20)%20;closeTop();return openRaid()}
    if(a.act==='dot'){raidPage=a.page;closeTop();return openRaid()}

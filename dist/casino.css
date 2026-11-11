@@ -1,0 +1,25 @@
+/* Vòng quay (casino-ui.js) và VIP (vip-ui.js). */
+.casino-layer,.vip-layer{z-index:46;pointer-events:auto!important}
+.casino-layer .pd-button,.vip-layer .pd-button{cursor:pointer}.casino-layer .pd-button:hover,.vip-layer .pd-button:hover{filter:brightness(1.08)}
+body:has(.casino-layer,.vip-layer) #dialog-ui{z-index:60}
+body:has(.casino-layer) .bonus-popup{z-index:70}
+.casino-choose>.pd-node:not([data-name="Shade"]){animation:cs-pop .25s cubic-bezier(.2,1.3,.45,1) both}
+.casino-locked{filter:grayscale(.85) brightness(.8)}
+.casino-wheel [data-name="SpinDisk"]{transform-origin:50% 50%}
+.casino-slot{position:absolute;inset:0;display:grid;place-items:center;transition:transform .2s,filter .2s,opacity .25s}
+.casino-slot .ev-tile{width:84px;height:84px}.casino-slot .ev-tile img{width:68px;height:68px}
+.casino-slot.out{opacity:0;transform:scale(.6)}
+.casino-slot.in{animation:cs-slot-in .45s cubic-bezier(.2,1.4,.45,1) both}
+@keyframes cs-slot-in{from{opacity:0;transform:scale(.4)}}
+.casino-refresh{z-index:3;mix-blend-mode:plus-lighter}
+.casino-slot.hit{transform:scale(1.18);filter:drop-shadow(0 0 10px #fff27a) brightness(1.2);z-index:2}
+.casino-spine{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.casino-spinning [data-name^="ButtonSpin"],.casino-spinning [data-name="ButtonRefresh"]{filter:grayscale(.4) brightness(.85)}
+.casino-help{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
+.vip-benefits{position:absolute;inset:0;overflow-y:auto;padding:4px 10px;color:#5b3a1d;font:600 20px/1.45 GameFont,sans-serif;pointer-events:auto;scrollbar-width:thin}
+.vip-benefits p{margin:0 0 4px}.vip-benefits b{color:#2f8a1e}.vip-need{font-size:22px}
+.vip-bonus{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 10px}.vip-bonus .ev-tile{width:76px;height:76px}.vip-bonus .ev-tile img{width:62px;height:62px}
+.vip-note{font-size:16px;color:#8a6a45}
+.vip-layer [data-name="fillProgress"]{transition:width .4s}
+@keyframes cs-pop{from{transform:scale(.8);opacity:0}}
+.casino-wheel [data-name="RouletteBorder"],.casino-wheel [data-name="SpinDisk"],.casino-wheel [data-name="RouletteCenter"],.casino-wheel [data-name="BoxSpin"],.casino-wheel [data-name="ImageNami"],.casino-wheel [data-name="ImageOctopus"],.casino-wheel [data-name="PointHideBox"],.casino-wheel [data-name^="Group"]{pointer-events:none!important}.casino-wheel .pd-button{pointer-events:auto!important}

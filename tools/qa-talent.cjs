@@ -3,7 +3,7 @@
 const {chromium}=require('playwright-core'),{MongoClient}=require('mongodb'),{spawn}=require('child_process');
 const fs=require('fs'),crypto=require('crypto'),assert=require('assert/strict');try{process.loadEnvFile('.env')}catch{}
 const database='htps_talent_'+crypto.randomBytes(6).toString('hex'),port=4233,url=`http://127.0.0.1:${port}`,output='qa-output/talent';let server,browser,client;
-const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,MONGODB_DB:database,PORT:String(port),HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe']});const timer=setTimeout(()=>reject(Error('QA startup timeout')),30000);s.stdout.on('data',b=>{if(b.toString().includes('đang chạy')){clearTimeout(timer);resolve(s)}});s.once('exit',code=>{clearTimeout(timer);reject(Error('QA server exited '+code))})});
+const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,NEW_ACCOUNT_INTRO:'off',MONGODB_DB:database,PORT:String(port),HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe']});const timer=setTimeout(()=>reject(Error('QA startup timeout')),30000);s.stdout.on('data',b=>{if(b.toString().includes('đang chạy')){clearTimeout(timer);resolve(s)}});s.once('exit',code=>{clearTimeout(timer);reject(Error('QA server exited '+code))})});
 (async()=>{
  fs.mkdirSync(output,{recursive:true});server=await start();client=new MongoClient(process.env.MONGODB_URI);await client.connect();assert.match(database,/^htps_talent_[a-f0-9]{12}$/);const players=client.db(database).collection('players');
  browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});const page=await browser.newPage({viewport:{width:1600,height:900},deviceScaleFactor:1}),errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -43,7 +43,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  await page.locator('.talent-popup [data-name="HLBIconSkillTableView1"]').click();await page.waitForFunction(()=>document.querySelector('.talent-popup [data-name="PopupMid"]>[data-name="BarName"]')?.innerText.includes('Cuồng Bạo'));
  assert.ok(await page.locator('.talent-popup [data-name="BarCost"]').isVisible());await shot('change-table');
  const gems=await page.evaluate(()=>window.GameRuntime.player.wallet.diamonds);
- await page.locator('.talent-popup [data-name="ButtonConfirm"]').click();await page.locator('.talent-confirm .talent-pay').click();await page.waitForFunction(()=>window.GameRuntime.player.hero.talent.table===1);
+ await page.locator('.talent-popup [data-name="ButtonConfirm"]').click();await page.locator('[data-guild-confirm]').click();await page.waitForFunction(()=>window.GameRuntime.player.hero.talent.table===1);
  assert.equal(await page.evaluate(()=>window.GameRuntime.player.wallet.diamonds),gems-500);
  assert.equal((await t()).skillIds[0],210002);await shot('cuong-bao');
  await page.locator('.talent-root [data-name="ButtonClose"]').click();await page.waitForSelector('.talent-root',{state:'detached'});await shot('hero-after');

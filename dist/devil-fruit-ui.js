@@ -170,7 +170,7 @@
   text(find(main,'Frame/LevelText'),'+'+lv,false);img(find(main,'Frame/FruitIcon'),art('fruitlarge/'+f.id));stars(find(main,'Frame/FFStarGroup'),sr);text(find(main,'Frame/FruitNameTag/Text'),f.name,false);
   img(find(main,'Frame'),art('ui/nang-'+realRank(f.rank)));
   const cur=scaleOf(f,lv,sr),next=scaleOf(f,lv+(mode===1?1:0),sr+(mode===2?1:0)),done=mode===1?lv>=maxLevel():sr>=maxStar();
-  show(find(main,'UpgradeBox'),!done);show(find(main,'MaxBox'),done);text(find(main,'MaxBox/MaxText'),mode===1?'Trái ác quỷ đã đạt cấp độ tối đa':'Trái ác quỷ đã đạt sao tối đa',false);
+  show(find(main,'UpgradeBox'),!done);show(find(main,'MaxBox'),done);text(find(main,'MaxBox/MaxText'),mode===1?'Trái ác quỷ đã đạt cấp độ tối đa':I2('HC_TRAI_AC_QUY_DA_DAT_SAO_TOI_DA','Trái ác quỷ đã đạt sao tối đa'),false);
   const box=find(main,'UpgradeBox');
   show(find(box,'UpgradeLevelBox'),mode===1);show(find(box,'FFStarGroupIn'),mode===2);show(find(box,'GroupTextStat'),mode===1);show(find(box,'InfoBox'),mode===1);show(find(box,'InfoBox2'),mode===2);
   text(find(box,'UpgradeLevelBox/TextLevel1'),`${f.name} +${lv}`,false);text(find(box,'UpgradeLevelBox/TextLevel2'),`${f.name} +${lv+1}`,false);
@@ -249,7 +249,7 @@
   const tab=b.closest('[data-name^="Tab"][data-name$="List"],[data-name="TabFruitGroup"],[data-name="TabFruitLibrary"]');
   if(b.classList.contains('ff-card')&&!b.closest('.ff-popup')){const mode=b.closest('[data-name="TabFruitGroup"]')?2:b.closest('[data-name="TabFruitLibrary"]')?3:1;state.selected[mode]=Number(b.dataset.fruit);refresh();return}
   if(b.classList.contains('ff-hero-cell')){const slot=Number(b.dataset.slot),st=fruitsState();
-   if(slot>=st.slots){const fee=st.unlockFee;if(fee===null)return c.toast('Đã mở tối đa ô cộng hưởng.');if(confirm(`Mở khóa tướng cộng hưởng với giá ${fee} kim cương?`)){const r=await act('/api/fruit/unlock',{});if(r)heroView()}return}
+   if(slot>=st.slots){const fee=st.unlockFee;if(fee===null)return c.toast('Đã mở tối đa ô cộng hưởng.');if(await GameMessage.ask(`Mở khóa tướng cộng hưởng với giá ${fee} kim cương?`,'Mở khóa',{price:fee})){const r=await act('/api/fruit/unlock',{});if(r)heroView()}return}
    checkIn(slot);return}
   if(b.closest('.ff-heroes')&&name==='ButtonConfirm'){const r=await act('/api/fruit/heroes',{heroes:heroDraft});if(r){document.querySelector('.ff-heroes')?.remove();c.toast('Đã lưu tướng cộng hưởng.')}return}
   if(b.closest('.ff-upgrade')&&name==='BtnUpgrade'){const u=b.closest('.ff-upgrade'),mode=Number(u.dataset.mode),r=await act(mode===1?'/api/fruit/level':'/api/fruit/star',{fruitId:Number(u.dataset.fruit)});if(r)playUpgradeFx(u);return}
@@ -271,7 +271,7 @@
   if(name==='BtnUpgradeOff')return c.toast('Trái đã nâng cấp độ tối đa!');
   if(name==='BtnStarUpOff')return c.toast('Trái đã nâng sao tối đa!');
   if(name==='BtnCombineDis')return c.toast('Chưa đủ mảnh để hợp thành!');
-  if(name==='BtnCombineOff')return c.toast('Trái đã sở hữu!');
+  if(name==='BtnCombineOff')return c.toast(I2('HC_TRAI_DA_SO_HUU','Trái đã sở hữu!'));
   if(name==='BtnCombine'){const r=await act('/api/fruit/combine',{fruitId:fruit.id});if(r)fruitView(fruit)}
  }
  function close(){root?.remove();root=null;for(const p of document.querySelectorAll('.ff-popup'))p.remove()}

@@ -1,0 +1,20 @@
+
+Refresh_spin.png
+size: 862,432
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+refresh upgrade/spin_re
+  rotate: false
+  xy: 2, 2
+  size: 428, 428
+  orig: 430, 430
+  offset: 1, 1
+  index: -1
+refresh upgrade/spineflow
+  rotate: false
+  xy: 432, 2
+  size: 428, 428
+  orig: 430, 430
+  offset: 1, 1
+  index: -1

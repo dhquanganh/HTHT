@@ -1,0 +1,153 @@
+
+Dice_rolling.png
+size: 1220,484
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rut/Layer 1
+  rotate: true
+  xy: 507, 169
+  size: 160, 174
+  orig: 184, 176
+  offset: 23, 1
+  index: -1
+rut/Layer 121
+  rotate: true
+  xy: 854, 167
+  size: 160, 173
+  orig: 184, 175
+  offset: 23, 1
+  index: -1
+rut/Layer 145
+  rotate: true
+  xy: 513, 6
+  size: 161, 176
+  orig: 181, 178
+  offset: 19, 1
+  index: -1
+rut/Layer 169
+  rotate: true
+  xy: 167, 174
+  size: 156, 168
+  orig: 177, 170
+  offset: 20, 1
+  index: -1
+rut/Layer 193
+  rotate: false
+  xy: 2, 333
+  size: 161, 147
+  orig: 180, 149
+  offset: 18, 1
+  index: -1
+rut/Layer 217
+  rotate: false
+  xy: 1020, 329
+  size: 163, 151
+  orig: 183, 153
+  offset: 19, 1
+  index: -1
+rut/Layer 25
+  rotate: false
+  xy: 683, 169
+  size: 169, 160
+  orig: 188, 165
+  offset: 18, 4
+  index: -1
+rut/Layer 49
+  rotate: true
+  xy: 869, 2
+  size: 163, 173
+  orig: 184, 175
+  offset: 20, 1
+  index: -1
+rut/Layer 73
+  rotate: true
+  xy: 672, 331
+  size: 149, 172
+  orig: 176, 174
+  offset: 26, 1
+  index: -1
+rut/Layer 97
+  rotate: true
+  xy: 328, 332
+  size: 148, 170
+  orig: 177, 172
+  offset: 28, 1
+  index: -1
+rut/red/Layer 1
+  rotate: true
+  xy: 1029, 167
+  size: 160, 174
+  orig: 184, 176
+  offset: 23, 1
+  index: -1
+rut/red/Layer 121
+  rotate: true
+  xy: 338, 7
+  size: 160, 173
+  orig: 184, 175
+  offset: 23, 1
+  index: -1
+rut/red/Layer 145
+  rotate: true
+  xy: 691, 4
+  size: 161, 176
+  orig: 181, 178
+  offset: 19, 1
+  index: -1
+rut/red/Layer 169
+  rotate: true
+  xy: 337, 174
+  size: 156, 168
+  orig: 177, 170
+  offset: 20, 1
+  index: -1
+rut/red/Layer 193
+  rotate: false
+  xy: 165, 333
+  size: 161, 147
+  orig: 180, 149
+  offset: 18, 1
+  index: -1
+rut/red/Layer 217
+  rotate: false
+  xy: 2, 180
+  size: 163, 151
+  orig: 183, 153
+  offset: 19, 1
+  index: -1
+rut/red/Layer 25
+  rotate: false
+  xy: 167, 12
+  size: 169, 160
+  orig: 188, 165
+  offset: 18, 4
+  index: -1
+rut/red/Layer 49
+  rotate: true
+  xy: 1044, 2
+  size: 163, 173
+  orig: 184, 175
+  offset: 20, 1
+  index: -1
+rut/red/Layer 73
+  rotate: true
+  xy: 846, 331
+  size: 149, 172
+  orig: 176, 174
+  offset: 26, 1
+  index: -1
+rut/red/Layer 97
+  rotate: true
+  xy: 500, 332
+  size: 148, 170
+  orig: 177, 172
+  offset: 28, 1
+  index: -1
+rut/shadow
+  rotate: false
+  xy: 2, 15
+  size: 163, 163
+  orig: 182, 182
+  offset: 10, 9
+  index: -1

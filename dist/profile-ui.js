@@ -39,7 +39,7 @@
   // Nhãn gốc co theo nội dung (ContentSizeFitter) rồi đặt giá trị ngay sau: gộp nhãn + giá trị vào một dòng.
   const line=(cap,val,text)=>{const n2=deep(box,cap);txt(n2,text);on(deep(box,val),false);const x=comp(n2,'Text');if(x){x.align=3;x.overflow=1}n2.transform={...n2.transform,m_AnchorMin:{x:.5,y:.5},m_AnchorMax:{x:.5,y:.5},m_SizeDelta:{x:340,y:30},m_Pivot:{x:0,y:.5},m_AnchoredPosition:{x:-184,y:n2.transform.m_AnchoredPosition.y}}};
   line('TextAccount','TextUsername','Tài khoản: '+(pl.profile?.username||pl.displayName));
-  txt(deep(box,'TextID'),'ID: '+(pl.profile?.id?.slice(-8)||'—'));line('TextGuild','TextGuildName','Hạm đội: '+(pl.guild?.name||'_ _ _'));
+  txt(deep(box,'TextID'),'ID: '+(pl.profile?.id?.slice(-8)||'—'));line('TextGuild','TextGuildName',I2('LBL_FLEET','Hạm đội: ')+(pl.guild?.name||'_ _ _'));
   line('TextServerCap','TextServer','Máy chủ: Máy chủ cục bộ');{const id=deep(box,'TextID'),x=comp(id,'Text');if(x)x.align=3;id.transform={...id.transform,m_AnchorMin:{x:.5,y:.5},m_AnchorMax:{x:.5,y:.5},m_SizeDelta:{x:340,y:30},m_Pivot:{x:0,y:.5},m_AnchoredPosition:{x:-184,y:id.transform.m_AnchoredPosition.y}}}
   for(const k of deep(box,'SliderExp/FillArea')?.children||[])on(k,false);txt(deep(box,'TextExp'),`${c.num(pl.account.exp)}/${c.num(need)}`);
   txt(deep(box,'ButtonChangeServer/Text'),'Đổi máy chủ');txt(deep(box,'ButtonLogOut/Text'),'Đăng xuất');
@@ -97,7 +97,7 @@
   try{
    const s=await scene(1466),n=structuredClone(s.roots[0]),level=Math.max(...list.map(x=>x.level)),merged=new Map();
    for(const x of list)for(const r of x.rewards)merged.set(r.itemId,(merged.get(r.itemId)||0)+r.quantity);
-   txt(deep(n,'TextLevel'),'Cấp '+level);txt(deep(n,'ButtonClose/Text'),'Đóng');const sp=comp(deep(n,'Spine'),'SkeletonGraphic');
+   txt(deep(n,'TextLevel'),I2('HC_CAP','Cấp ')+level);txt(deep(n,'ButtonClose/Text'),'Đóng');const sp=comp(deep(n,'Spine'),'SkeletonGraphic');
    const el=mount(n,'pf-levelup'),box=D.find(el,'BoxBonus'),row=document.createElement('div');row.className='pf-level-rewards';row.innerHTML=[...merged].map(([itemId,quantity])=>c.rewardTile({itemId,quantity})).join('');box.appendChild(row);
    const host=D.find(el,'EffectLevelUp');if(host&&sp?.skeleton){const cv=document.createElement('canvas');cv.width=W;cv.height=H;cv.className='pf-lvlup-spine';el.insertBefore(cv,el.children[1]);
     c.spine(cv,{skeleton:sp.skeleton,animation:'In'},{loop:false,scale:1,onEnd:()=>{if(cv.isConnected){cv.remove();const loop=document.createElement('canvas');loop.width=W;loop.height=H;loop.className='pf-lvlup-spine';el.insertBefore(loop,el.children[1]);c.spine(loop,{skeleton:sp.skeleton,animation:'Loop'},{loop:true,scale:1})}}})}

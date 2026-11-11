@@ -21,3 +21,10 @@ test('levelling up pays 20 diamonds per level (+gold every 10 levels) and queues
  assert.deepEqual(playerView(p).levelUps.map(x=>x.level),[10,11]);
  applyAction(p,'profile-update',{op:'level-ack'});assert.deepEqual(p.levelUps,[]);
 });
+
+test('captain level goes past 100 up to the original cap of 210',async()=>{
+ const {starterPlayer,accountExp,maxAccountLevel}=await import('../server/game.mjs');
+ assert.equal(maxAccountLevel,210);
+ const p=starterPlayer('Cap');p.account.level=100;p.account.exp=0;accountExp(p,100*100+101*100);assert.equal(p.account.level,102);
+ p.account.level=209;p.account.exp=0;accountExp(p,209*100+500000);assert.equal(p.account.level,210);assert.ok(p.levelUps.some(x=>x.level===210));
+});

@@ -9,7 +9,7 @@ const claim=(p,id,at=now)=>applyAction(p,'daily-quest-claim',{id},at);
 test('ten original daily quests with the rewards shown in the asset',()=>{
  assert.equal(dailyQuests.length,10);
  assert.deepEqual(dailyQuests.slice(0,3).map(q=>q.name),['Chiêu mộ thường 1 lần','Chiêu mộ cao cấp 1 lần','Dùng Khu giao dịch 1 lần']);
- assert.deepEqual(dailyQuests[2].rewards,[{itemId:'gold',quantity:60000},{itemId:'spirit',quantity:1500}]);
+ assert.deepEqual(dailyQuests[2].rewards,[{itemId:'gold',quantity:60000},{itemId:'spirit',quantity:1500},{itemId:'vipExp',quantity:10}]);
 });
 test('summons advance basic and premium quests and pay once',()=>{
  const p=starterPlayer('Daily');p.inventory['consumable:16']=11;

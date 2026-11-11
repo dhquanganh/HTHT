@@ -20,7 +20,7 @@
  const itemSrc=id=>c.assetSrc(c.items.get(id)?.assetKey);
  const skillsOf=()=>data.heroes[c.avatar()]?.skills||[];
  const indexActive=levels=>{let i=0;for(;i<levels.length;i++)if(levels[i]<=-1)break;return i};// số nút đầu đã mở (1-based: nút <= giá trị này đang mở)
- const buffText=b=>{const out=[];if(b[0]!==undefined)out.push('Công +'+b[0]);if(b[2]!==undefined)out.push('Máu +'+b[2]);if(b[3]!==undefined)out.push('Tốc +'+b[3]);return out.join('\n')};
+ const buffText=b=>{const out=[];if(b[0]!==undefined)out.push('Công +'+b[0]);if(b[2]!==undefined)out.push(I2('HC_MAU_2','Máu +')+b[2]);if(b[3]!==undefined)out.push(I2('HC_TOC_2','Tốc +')+b[3]);return out.join('\n')};
  const zeroBuff=n=>Object.fromEntries(Object.keys(n.buff[0]).map(k=>[k,0]));
 
  // FieldItemEpSaoUpLevel neo theo Content của panel nên trên màn tướng web bị đẩy lên quá mép trên (y = -12):

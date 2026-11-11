@@ -71,7 +71,7 @@
     on(kid(p,'ButtonStarUp/GoNotify'),enough);
    }else{
     stars(kid(p,'HLBStarView'),s.star);
-    kid(p,'PointContainer').children=[pointView('Cấp',`${s.level}/${s.levelCap}`),...points(s.level)];
+    kid(p,'PointContainer').children=[pointView(I2('HC_CAP','Cấp'),`${s.level}/${s.levelCap}`),...points(s.level)];
     const max=s.level>=data.levels.length;
     kid(p,'BarConsumeMaterial/CostContainer').children=max?[]:costs(r.cost);
     on(kid(p,'BarConsumeMaterial'),!max);on(kid(p,'ButtonLvUp'),!max);on(kid(p,'TextMax'),max);txt(kid(p,'TextMax'),'Tướng đã đạt thiên phú tối đa');
@@ -99,7 +99,7 @@
   if(name('ButtonPick')||name('HLBIconSkillTableView'))return selectTable();
   if(name('ButtonLvUp'))return act('level');
   if(name('ButtonStarUp'))return act('star');
-  if(name('ButtonRefresh'))return confirm('Cài lại sẽ hoàn trả tất cả tài nguyên nâng cấp và tài nguyên nâng thiên phú, bạn có muốn cài lại?','Cài lại',data.feeReset,()=>act('reset'));
+  if(name('ButtonRefresh'))return confirm('Cài lại sẽ hoàn trả tất cả tài nguyên nâng cấp và tài nguyên nâng thiên phú, bạn có muốn cài lại?',I2('HC_CAI_LAI','Cài lại'),data.feeReset,()=>act('reset'));
   const lot=e.target.closest('[data-name^="HLBSkillLotView"]');
   if(lot){const i=Number(lot.dataset.name.slice(-1)),s=state();
    if(i>s.star)return c.toast('Nâng sao thiên phú để mở khoá kĩ năng');
@@ -151,12 +151,8 @@
   });
  }
  // ---- Xác nhận trả kim cương (PopupBuyConfirm): nằm trên sổ và popup Thiên phú.
- function confirm(text,title,price,ok){
-  document.querySelector('.talent-detail')?.remove();const el=document.createElement('div');el.className='talent-detail talent-confirm';
-  el.innerHTML=`<div class="talent-detail-shade"></div><section class="modal item-popup talent-detail-box" style="--popup-frame:url('${c.assetSrc(art('round_rect_8'))}')"><div class="talent-detail-title"><h2>${c.escape(title)}</h2></div><p class="talent-detail-desc">${c.escape(text)}</p><div class="talent-detail-actions"><button class="talent-change talent-pay" style="--btn:url('${c.assetSrc(art('button_green'))}')"><img src="${c.assetSrc(c.named('icon_gem'))}" alt=""> ${price}</button></div></section>`;
-  c.layer().appendChild(el);
-  el.addEventListener('click',e=>{if(e.target.closest('.talent-pay')){el.remove();if(have('diamonds')<price)return c.toast('Không đủ kim cương.');ok();return}if(!e.target.closest('.talent-detail-box'))el.remove()});
- }
+ // Hộp xác nhận gốc (PopupBuyConfirm / PopupMessage) dùng chung: GameMessage trong game.js.
+ function confirm(text,title,price,ok){GameMessage.confirm(text,title,price,()=>{if(price&&have('diamonds')<price)return c.toast('Không đủ kim cương.');ok()})}
  // ---- Chi tiết kỹ năng (HLBPanelSkillDetail): icon, tên, mô tả gốc; nút Đổi khi xem ô đã chọn.
  function skillDetail(id,onChange){
   const s=data.skills[id];document.querySelector('.talent-detail')?.remove();

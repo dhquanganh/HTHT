@@ -219,7 +219,7 @@
     text(find(g,'Frame1/GrowthPanel/GrowthText'),String(pet.growth),false);text(find(g,'Frame1/GrowthPanel/GrowthName'),growthNames[pet.growthTier]);
     const bar=find(g,'Frame1/GrowthPanel/GrowthBar/Fill Area/Fill');if(bar)bar.style.width=Math.min(100,(pet.growth-b.intelligent[0])/(b.intelligent[1]-b.intelligent[0])*100)+'%';
     const it=gameItem(find(g,'Frame2/GameItem'),U.fee1);text(find(g,'Frame2/AmountBar/AmountText'),`${it.own}/${it.need}`,false);const af=find(g,'Frame2/AmountBar/Fill Area/Fill');if(af)af.style.width=Math.min(100,it.own/it.need*100)+'%';
-    onBtn(g,'GrowthButton',async()=>{if(pet.growthTier>=4&&!confirm('Thú cưng đang ở trang thái trưởng thành cao, thuyền trưởng có muốn hoàn đồng?'))return;const r=await act('/api/pet/growth',{uid:pet.uid});if(r)boxFx(find(main,'PetBox'))})}
+    onBtn(g,'GrowthButton',async()=>{if(pet.growthTier>=4&&!await GameMessage.ask('Thú cưng đang ở trang thái trưởng thành cao, thuyền trưởng có muốn hoàn đồng?'))return;const r=await act('/api/pet/growth',{uid:pet.uid});if(r)boxFx(find(main,'PetBox'))})}
    else if(foster===2){const e=find(fc,'PanelErase'),pend=pet.pending,diff=(k,v)=>{const d=Math.round((pend[k]-pet.basic[k])*10)/10;return `${pend[k]}<color=${d>=0?'#B7EB6CFF':'#DB6A62FF'}>(${d>=0?'+':''}${d})</color>/${b.basic[k][1]}`};
     for(const [n,k,v] of [['TextAttackCaption','atk','TextAttack'],['TextArmorCaption','def','TextArmor'],['TextHealthCaption','hp','TextHealth'],['TextSpeedCaption','spd','TextSpeed']])text(find(e,'GroupTextStat/'+n+'/'+v),pend?diff(k):`${pet.basic[k]}/${b.basic[k][1]}`);
     const it=gameItem(find(e,'Frame/GameItem'),U.fee2);text(find(e,'Frame/AmountText'),`<color=${it.own<it.need?'#FF0000FF':'#00FF00FF'}>${it.own}/${it.need}</color>`);
@@ -230,7 +230,7 @@
       text(find(e,`FrameUpgrade/GroupTextStat/${n}1`),pct(pet.basic[k]*cur.scaleBasic/1000)+cd,false);text(find(e,`FrameUpgrade/GroupTextStat/${n}2`),`${pct(pet.basic[k]*next.scaleBasic/1000)}(+${pct((next.scaleBasic-1000)/10)}%)`,false)}
      text(find(e,'FrameUpgrade/TextDesc'),`*Lv${pet.tier}\n*Tỉ lệ thành công ${next.percent/10}% \n*Thất bại giảm xuống Lv${next.lvlBackUp}`,false);
      const it=gameItem(find(e,'FrameUpgrade/GameItem'),U.fee3);text(find(e,'FrameUpgrade/AmountText'),`<color=${it.own<it.need?'#FF0000FF':'#00FF00FF'}>${it.own}/${it.need}</color>`);
-     onBtn(e,'FrameUpgrade/UpgradeButton',async()=>{if(pet.tier>=5&&!confirm(`Thất bại giảm xuống Lv${next.lvlBackUp}`))return;const r=await act('/api/pet/enlight',{uid:pet.uid});if(r){c.toast(r.result.message);boxFx(find(main,'PetBox'),r.result.success)}})}}
+     onBtn(e,'FrameUpgrade/UpgradeButton',async()=>{if(pet.tier>=5&&!await GameMessage.ask(`Thất bại giảm xuống Lv${next.lvlBackUp}`))return;const r=await act('/api/pet/enlight',{uid:pet.uid});if(r){c.toast(r.result.message);boxFx(find(main,'PetBox'),r.result.success)}})}}
   }
   function awakenPanel(p,pet,b){
    const req=pet.star<data.upgrade.maxstar?(()=>{const n=data.upgrade.stars.find(r=>r.star===pet.star+1);if(!n)return null;const extra=n.star>=6?[[5,n.star5pet],[6,n.star6pet],[9,n.star9pet],[10,n.star10pet]].find(([,x])=>x>0):null;return{n,same:n.star>=6&&n.samePet!=null?n.samePet:n.shard,extraStar:extra?.[0],extra:extra?.[1]||0}})():null;
@@ -257,7 +257,7 @@
   const list=st().list.filter(x=>x.uid!==pet.uid&&!other.includes(x.uid)&&(starReq!=null?x.star===starReq:x.setId===pet.setId)).sort((a,b)=>power(a)-power(b));
   const content=find(el,'PanelBody/GroupHeroes/BoxHeroes/Scroll View/Viewport/Content');
   const fill=()=>{content.innerHTML='';list.forEach((x,i)=>{const h=render('PetHeadUI2',92,92);head(h,base(x.setId),x,{level:true,check:sel.includes(x.uid)});Object.assign(h.style,{left:(8+(i%5)*112)+'px',top:(6+Math.floor(i/5)*100)+'px'});
-   h.onclick=()=>{if(sel.includes(x.uid))sel=sel.filter(u=>u!==x.uid);else if(sel.length<max){if(x.star>0&&starReq==null&&!confirm('Thú cưng này có phẩm chất cao \n thuyền trưởng có muốn sử dụng để thức tỉnh?'))return;sel.push(x.uid)}else c.toast('Đã đủ nguyên liệu');fill()};content.appendChild(h)});
+   h.onclick=async()=>{if(sel.includes(x.uid))sel=sel.filter(u=>u!==x.uid);else if(sel.length<max){if(x.star>0&&starReq==null&&!await GameMessage.ask('Thú cưng này có phẩm chất cao \n thuyền trưởng có muốn sử dụng để thức tỉnh?'))return;sel.push(x.uid)}else c.toast('Đã đủ nguyên liệu');fill()};content.appendChild(h)});
    content.style.height=(Math.ceil(list.length/5)*100+12)+'px';if(!list.length)content.innerHTML='<p class="pet-empty">Không có thú cưng phù hợp.</p>'};fill();
   onBtn(el,'PanelBody/ButtonClose',()=>el.remove());onBtn(el,'PanelBody/GroupHeroes/ButtonOk',()=>{el.remove();ok(sel)});
  }
@@ -383,7 +383,7 @@
   onBtn(el,'Content/LayoutGroup/PopupBot/ButtonQuick',()=>{sel=pool().slice(0,90).map(h=>h.id);fill()});
   onBtn(el,'Content/LayoutGroup/PopupBot/ButtonConfirm',async()=>{if(!sel.length)return c.toast('Vui lòng chọn Thuyền viên');
    if(attack){el.remove();closeAll();await c.srBattle({diff:target.diff,target:target.target,formation:Array.from({length:6},(_,i)=>sel[i]||null)});return}
-   if(sel.length<90&&!confirm('Chưa đủ 90 Thuyền viên, bạn có thể không tận dụng tối đa lực lượng chiến đấu'))return;
+   if(sel.length<90&&!await GameMessage.ask('Chưa đủ 90 Thuyền viên, bạn có thể không tận dụng tối đa lực lượng chiến đấu'))return;
    const r=await act('/api/sr/checkin',{heroes:sel},{message:true});if(r)el.remove()});
  }
  // ---- SilentRingPopupAchievement
