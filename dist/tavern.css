@@ -6,7 +6,7 @@ body:has(.tav-layer) .bonus-popup{z-index:70}
 .tav-layer .pd-button{cursor:pointer}.tav-layer .pd-button:hover{filter:brightness(1.06)}
 .tav-main [data-name="Viewport"]{overflow-y:auto!important;overflow-x:hidden!important;scrollbar-width:thin}
 .tav-reward{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-.tav-reward .ev-tile{width:92px;height:92px}.tav-reward .ev-tile img{width:78px;height:78px}
+.tav-reward .ev-tile{width:92px;height:92px}.tav-reward .ev-tile>img:not(.item-shard-mark){width:78px;height:78px}
 .tav-crew{position:absolute;left:63.5%;top:50%;transform:translateY(-50%);display:flex;gap:3px;pointer-events:none}
 .tav-crew img{width:38px;height:38px;border-radius:8px;border:2px solid #e7c06b;background:#3a2118;object-fit:cover}
 .tav-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;margin:0;color:#fff3d6;font:600 22px/1.4 GameFont,sans-serif;text-shadow:0 1px 2px #000}

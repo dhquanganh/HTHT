@@ -15,7 +15,7 @@ body:has(.arena-layer) #dialog-ui{z-index:60}
 .arena-html{position:absolute;inset:0;pointer-events:none}.arena-html>*{pointer-events:auto}
 .arena-empty{position:absolute;left:0;right:0;top:45%;text-align:center;color:#f2dfbd;font-size:22px;text-shadow:1px 1px #000}
 .arena-reward-row{position:absolute;inset:0;display:flex;align-items:center;gap:10px;padding:0 6px}
-.arena-tile.ev-tile{width:76px;height:76px}.arena-tile.ev-tile img{width:62px;height:62px}
+.arena-tile.ev-tile{width:76px;height:76px}.arena-tile.ev-tile>img:not(.item-shard-mark){width:62px;height:62px}
 [data-name="CellArenaReward"] .arena-reward-row,[data-name="CellSeasonRewards"] .arena-reward-row,[data-name="CellKnockOutRewards"] .arena-reward-row{justify-content:flex-end;padding-right:40px}
 .arena-tab-off{filter:saturate(.75) brightness(.93)}
 /* Bảng thưởng Liên đấu (PopupRewardTrailOfChampion): các bậc hạng dưới dòng mô tả. */

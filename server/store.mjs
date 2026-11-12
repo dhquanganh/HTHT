@@ -9,6 +9,7 @@ import {shipGift} from './game.mjs';
 import {rankingEntry} from './tower.mjs';
 import {dungeonClock} from './dungeon.mjs';
 import {applyEventConfig,editableEvents,validateEventConfig} from './events.mjs';
+import {applyRewardConfig,rewardTablesView,validateRewardRows} from './reward-config.mjs';
 import {isRewardId} from './game.mjs';
 import {beastBosses,bossByKey,bracketIndex,classLabel,beastEntry,beastTurns,defaultBoss,defaultConfig,defaultRewards,rankBrackets,rewardItems,rewardView,variantOf,validateBossStats,validateConfig,validateRewards} from './beast.mjs';
 import {itemById,itemIcon} from './catalog.mjs';
@@ -23,7 +24,7 @@ async function verifyPassword(password,encoded){const [scheme,salt,expected]=enc
 const summary=user=>({...(ensureRoster(user.player),{}),id:user._id.toHexString(),username:user.usernameKey,displayName:user.player.displayName,level:user.player.account.level,gold:user.player.wallet.gold,diamonds:user.player.wallet.diamonds,stage:user.player.adventure.unlockedStage,towerFloor:user.player.tower?.floor||1,heroes:(user.player.hero?1:0)+Object.keys(user.player.reserveHeroes||{}).length,locked:!!user.locked,createdAt:user.createdAt,updatedAt:user.updatedAt});
 export class Store {
  constructor(uri,dbName){this.client=new MongoClient(uri,{serverSelectionTimeoutMS:15000,connectTimeoutMS:10000,maxPoolSize:15});this.db=this.client.db(dbName);this.users=this.db.collection('players');this.sessions=this.db.collection('sessions');this.adminLog=this.db.collection('admin_log');this.ranking=this.db.collection('tower_ranking');for(const [field,name] of [['beastBosses','beast_bosses'],['beastConfig','beast_config'],['beastRewards','beast_rewards'],['beastSeasons','beast_seasons'],['beastRanking','beast_ranking'],['beastPayouts','beast_payouts']])this[field]=this.db.collection(name)}
- async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
+ async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.rewardConfig=this.db.collection('reward_config');applyRewardConfig(await this.rewardConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
  async close(){clearInterval(this.beastTimer);clearInterval(this.arenaTimer);clearInterval(this.tthTimer);await this.client.close()}
  // ---- Chiến Thần Thú ----
  async setupBeast(){
@@ -117,6 +118,13 @@ export class Store {
   if(input?.reset===true)await this.eventConfig.deleteOne({_id:id});
   else await this.eventConfig.updateOne({_id:id},{$set:{config:validateEventConfig(id,input?.config,isRewardId),updatedAt:new Date()}},{upsert:true});
   applyEventConfig(await this.eventConfig.find().toArray());await this.beastLog(`${input?.reset===true?'Trả về mặc định':'Sửa'} sự kiện ${id}`,ip);return this.eventAdmin();
+ }
+ // ---- Bảng thưởng toàn game (tab Phần thưởng): bản trong database đè lên mặc định, áp ngay vào bộ nhớ.
+ async rewardAdmin(){const saved=await this.rewardConfig.find({},{projection:{_id:1}}).toArray();return{tables:rewardTablesView(saved.map(d=>d._id)),rewardItems:rewardItems()}}
+ async setRewardConfig(id,input,ip){
+  if(input?.reset===true){validateRewardRows(id,null,isRewardId,true);await this.rewardConfig.deleteOne({_id:id})}
+  else await this.rewardConfig.updateOne({_id:id},{$set:{rows:validateRewardRows(id,input?.rows,isRewardId),updatedAt:new Date()}},{upsert:true});
+  applyRewardConfig(await this.rewardConfig.find().toArray());await this.beastLog(`${input?.reset===true?'Trả về mặc định':'Sửa'} bảng thưởng ${id}`,ip);return this.rewardAdmin();
  }
  async beastLog(detail,ip){await this.adminLog.insertOne({userId:null,at:new Date(),detail,ip})}
  async setBeastRewards(keys,ranks,ip){

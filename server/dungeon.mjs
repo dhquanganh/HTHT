@@ -17,6 +17,8 @@ export const dungeonConfig={minLevel:20,stages:60,teamSize:5,openDays:2,closedDa
  hpLotions:{1:.3,2:.6,3:1},buffs:{1:{stat:'attack',value:.03},2:{stat:'energy',value:5},3:{stat:'maxHp',value:.03}}};
 const it=(itemId,quantity)=>({itemId,quantity});
 // Gian thương: 1 Tiệm Mắt To, 2 Tiệm Hạt Đậu, 3 Tiệm Răng Sún. Mỗi món có giá gốc và giá bán rẻ.
+// Thưởng qua từng ải (sửa được ở trang quản trị, server/reward-config.mjs).
+export const dungeonStageTable=Array.from({length:dungeonConfig.stages},(_,i)=>{const stage=i+1;return[it('gold',4000+stage*600),...(stage%5===0?[it('diamonds',10+stage),it('consumable:2',100+stage*10)]:[])]});
 export const merchantGoods={
  1:[{reward:it('consumable:16',2),price:it('diamonds',60)},{reward:it('consumable:2',500),price:it('diamonds',50)},{reward:it('spirit',100000),price:it('gold',60000)},{reward:it('consumable:35',1),price:it('diamonds',90)}],
  2:[{reward:it('consumable:3',500),price:it('gold',80000)},{reward:it('consumable:178',1),price:it('diamonds',120)},{reward:it('gold',300000),price:it('diamonds',80)},{reward:it('consumable:1',10),price:it('gold',50000)}],
@@ -117,7 +119,7 @@ export function finishDungeon(p,b,grant,rand=Math.random,now=Date.now()){
  const ally=(b.allies||[])[0];if(ally){d.hp[meta.heroId]=ally.hp>0?Math.max(.01,ally.hp/ally.maxHp):0;d.rage[meta.heroId]=ally.hp>0?Math.min(100,ally.energy||0):0}
  const won=!b.enemies.some(e=>e.hp>0);
  if(!won){d.enemyHp=b.enemies.map(e=>e.hp/e.maxHp);return{won:false,stage:d.stage}}
- const stage=d.stage,rewards=[it('gold',4000+stage*600)];if(stage%5===0)rewards.push(it('diamonds',10+stage),it('consumable:2',100+stage*10));
+ const stage=d.stage,rewards=structuredClone(dungeonStageTable[stage-1]||[]);
  rewards.forEach(grant);d.stage++;d.best=Math.max(d.best,stage);d.enemyHp=null;
  if(d.stage<=dungeonConfig.stages){const r=rand();
   if(r<.45){const [kind,id]=pick(lotionPool,rand);d.node={type:'lotion',kind,id}}

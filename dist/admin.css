@@ -60,3 +60,17 @@ header{flex-wrap:wrap;gap:8px}.main-tabs{flex-wrap:wrap}
 
 /* Tab Chiến dịch */
 .raid-admin .raid-common{gap:16px;flex-wrap:wrap;margin:8px 0 14px}.raid-admin .raid-level{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.raid-admin .raid-index{min-width:64px}.raid-admin h3{margin:10px 0 6px}
+
+/* Tab Phần thưởng (admin-rewards.js). */
+.rw-admin .ev-list-admin input{width:100%;margin-bottom:8px}
+.rw-row{flex-wrap:wrap;align-items:center;gap:10px}
+.rw-label{min-width:150px;max-width:220px}
+.rw-field{display:flex;align-items:center;gap:6px}
+.rw-badge{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:10px;background:#f6c24a;color:#3a2600;font-size:12px;vertical-align:middle}
+.rw-actions{position:sticky;bottom:0;z-index:2;padding:10px 0;background:var(--card);border-top:1px solid var(--line)}
+.rw-picker-shade{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:rgba(0,0,0,.45)}
+.rw-picker{width:min(560px,92vw);max-height:80vh;display:flex;flex-direction:column;gap:8px;overflow:hidden;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.rw-picker .beast-matches{display:grid;grid-template-columns:1fr;gap:6px}
+.rw-picker .beast-matches button{display:flex;align-items:center;gap:10px;text-align:left}
+.rw-picker .row input{flex:1}
+.rw-picker .beast-matches{overflow:auto}

@@ -312,3 +312,12 @@ body.playing #toast{bottom:120px}
 #game-layer .hero-side-tabs{left:1014px;top:100px;width:77px;gap:0}
 #game-layer .hero-side-tabs>button{width:77px;height:77px}
 #game-layer .hero-side-tabs>button>img{width:78px;height:90px}
+/* Sao phẩm trong ô thưởng (.ev-tile): không bị quy tắc ".ev-tile img" (58px) và các biến thể kích thước ô phóng to. */
+.ev-tile .item-stars img{width:100%!important;height:auto!important}
+/* Biểu tượng tab sự kiện đặc biệt: một số ảnh gốc là ô vuông nền đặc (vd. Điểm chiến công) -> cắt theo hình lục giác của khung tab. */
+#dialog-ui .sp-tab img{width:76px;height:76px;clip-path:polygon(25% 3%,75% 3%,98% 50%,75% 97%,25% 97%,2% 50%)}
+/* Sự kiện: khối quỹ / số dư vật phẩm đổi quà (game.js eventsUi). */
+.ev-body.grid>.ev-pray{grid-column:1/-1}
+.ev-coins{flex-wrap:wrap}.ev-coins span{flex:none;display:inline-flex;align-items:center;gap:6px}.ev-coins img{width:32px;height:32px;object-fit:contain}.ev-coins .muted{flex:1 1 100%;font-size:16px;opacity:.85}
+.ev-fund .ev-cost{flex:none}
+.ev-locked{position:absolute;right:18px;top:50%;transform:translateY(-50%);padding:6px 12px;border-radius:8px;background:#7a5a33;color:#fff3d6;font-size:16px}

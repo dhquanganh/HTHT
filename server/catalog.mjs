@@ -19,6 +19,9 @@ const custom=[
  // Chiến hạm: tài nguyên gốc của MonsterScene (FieldSoul icon_monster_soul, FieldChaos icon_monster_chaos).
  {id:'material:ship-soul',name:'Hồn chiến hạm',category:'material',rarity:'purple',assetKey:'9c5967b993c02b044806ca05cb3d60ba_2',description:'Dùng để kích hoạt, lên cấp và nâng phẩm chiến hạm.',price:300,noShop:true},
  {id:'material:ship-chaos',name:'Đá hỗn độn',category:'material',rarity:'orange',assetKey:'31ab3161e23496440b4185ed75ad12fc_2',description:'Dùng để nâng bảng kỹ năng và Phế tích chiến hạm.',price:300,noShop:true},
+ // Mê cung: Sách phong ấn gốc (SEAL_BOOK_NORMAL icon_seal_book_normal, SEAL_BOOK_DL icon_seal_book_dl), tiền của Cửa hàng Mê cung.
+ {id:'material:seal-book',name:'Sách phong ấn',category:'material',rarity:'blue',assetKey:'55dbea5ec59b8bc43a49e0ef948bb4a9_2',description:'Nhận từ Mê cung. Dùng để đổi vật phẩm trong Cửa hàng Mê cung.',price:300,noShop:true},
+ {id:'material:seal-book-dl',name:'Sách phong ấn cao cấp',category:'material',rarity:'orange',assetKey:'af7d609e71f8f664794256bb454212e1_2',description:'Nhận khi vượt mốc ải Mê cung. Dùng để đổi vật phẩm quý trong Cửa hàng Mê cung.',price:300,noShop:true},
  {id:'supply:gold',name:'Rương vàng nhỏ',category:'consumable',rarity:'yellow',assetKey:key('icon_gold')||key('icon_guild_coin'),effect:{gold:2000},price:40,priceCurrency:'diamonds'},
 ];
 const list=Array.isArray(imported)?imported:imported.items;

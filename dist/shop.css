@@ -1,0 +1,10 @@
+/* Cửa hàng (shop-ui.js). */
+.shop-layer{z-index:46;pointer-events:auto!important}
+body:has(.shop-layer) #dialog-ui{z-index:60}
+body:has(.shop-layer) .bonus-popup{z-index:70}
+.shop-layer .pd-button{cursor:pointer}.shop-layer .pd-button:hover{filter:brightness(1.07)}
+.shop-layer [data-name="Viewport"]{overflow-y:auto!important;overflow-x:hidden!important;scrollbar-width:thin}
+.shop-reward{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.shop-reward .ev-tile{width:92px;height:92px}.shop-reward .ev-tile>img:not(.item-shard-mark){width:78px;height:78px}
+.shop-reward.sold{filter:grayscale(.85) brightness(.7)}
+.shop-limit{position:absolute;left:50%;top:-12px;transform:translateX(-50%);padding:1px 8px;border-radius:10px;background:rgba(32,18,8,.8);color:#ffe66d;font:700 14px GameFont,sans-serif;font-style:normal;white-space:nowrap}

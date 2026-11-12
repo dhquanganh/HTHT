@@ -64,6 +64,8 @@ export function mountAdmin(app,store,password,limiter){
  });
  app.get('/api/admin/events',guard,(req,res)=>res.json(store.eventAdmin()));
  app.post('/api/admin/events/:id',guard,async(req,res)=>res.json(await store.setEventConfig(req.params.id,req.body,req.ip)));
+ app.get('/api/admin/rewards',guard,async(req,res)=>res.json(await store.rewardAdmin()));
+ app.post('/api/admin/rewards/:id',guard,async(req,res)=>res.json(await store.setRewardConfig(req.params.id,req.body,req.ip)));
  app.get('/api/admin/raid',guard,async(req,res)=>res.json(await store.raidAdmin()));
  app.post('/api/admin/raid',guard,async(req,res)=>res.json(await store.setRaidConfig(req.body,req.ip)));
  app.get('/api/admin/beast',guard,async(req,res)=>res.json(await store.beastAdmin()));

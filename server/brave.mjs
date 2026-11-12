@@ -15,7 +15,9 @@ import {heroAlbum,campaign,towerData} from './catalog.mjs';
 export const braveConfig={minLevel:15,stages:15,cycleDays:2,altarStage:6,badgePrice:50,badgeBuyLimit:10,healRatio:.5,reviveRatio:.6,
  blessing:{rage:{stat:'attack',value:.2},rock:{stat:'maxHp',value:.3},storm:{stat:'speed',value:50}},milestones:[3,6,9,12,15]};
 const it=(itemId,quantity)=>({itemId,quantity});
-export const stageRewards=stage=>[it('gold',8000+stage*2500),it('consumable:2',60+stage*15),...(stage%5===0?[it('diamonds',20+stage*2)]:[])];
+// Bảng thưởng từng ải (sửa được ở trang quản trị, server/reward-config.mjs).
+export const braveStageTable=Array.from({length:15},(_,i)=>{const stage=i+1;return[it('gold',8000+stage*2500),it('consumable:2',60+stage*15),...(stage%5===0?[it('diamonds',20+stage*2)]:[])]});
+export const stageRewards=stage=>braveStageTable[stage-1]||[];
 export const milestoneRewards={3:[it('gold',50000),it('consumable:3',300)],6:[it('diamonds',60),it('consumable:16',1)],9:[it('gold',120000),it('consumable:2',600)],
  12:[it('diamonds',100),it('consumable:178',1)],15:[it('diamonds',200),it('consumable:37',1)]};
 const DAY=86400000,vnDay=now=>Math.floor((now+7*3600000)/DAY);

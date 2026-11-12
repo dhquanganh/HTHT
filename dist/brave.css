@@ -15,7 +15,7 @@ body:has(.brave-layer) .bonus-popup{z-index:70}
 .brave-claimed{filter:grayscale(.8) brightness(.8)}
 .brave-locked{filter:grayscale(.9) brightness(.8)}
 .brave-rewards{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;pointer-events:auto}
-.brave-rewards .ev-tile{width:86px;height:86px}.brave-rewards .ev-tile img{width:70px;height:70px}
+.brave-rewards .ev-tile{width:86px;height:86px}.brave-rewards .ev-tile>img:not(.item-shard-mark){width:70px;height:70px}
 .brave-altar-desc{position:absolute;left:14px;right:14px;top:70px;margin:0;color:#5b3a1d;font:600 19px/1.4 GameFont,sans-serif;text-align:center}
 .brave-altar-desc b{color:#2f8a1e}
 .brave-pick{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}

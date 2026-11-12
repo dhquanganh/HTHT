@@ -1,0 +1,17 @@
+/* Mê cung (sealed-ui.js). */
+.sealed-layer{z-index:46;pointer-events:auto!important}
+body:has(.sealed-layer) #dialog-ui{z-index:60}
+body:has(.sealed-layer) .bonus-popup{z-index:70}
+.sealed-layer .pd-button{cursor:pointer}.sealed-layer .pd-button:hover{filter:brightness(1.1)}
+.sealed-spine{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.sealed-layer [data-name="ImageBackgroundSelec"],.sealed-layer [data-name="ImageSelec"],.sealed-layer [data-name="CircleFrames"],.sealed-layer [data-name="SpineEffectCenter"],.sealed-layer [data-name="SpineEffectGlow"]{pointer-events:none!important}
+.sealed-layer .pd-button{pointer-events:auto!important}
+.sealed-layer [data-name^="Frames"]{transition:left .35s ease,top .35s ease}
+.sealed-picked{filter:drop-shadow(0 0 12px #ffe66d) brightness(1.1)}
+.sealed-layer [data-name="ViewPort"]{overflow-y:auto!important;overflow-x:hidden!important;scrollbar-width:thin}
+.sealed-rewards{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:6px;pointer-events:none}
+.sealed-rewards .ev-tile{width:68px;height:68px;flex:none}.sealed-rewards .ev-tile>img:not(.item-shard-mark){width:56px;height:56px}
+.sealed-locked{filter:grayscale(.7) brightness(.85)}
+.sealed-challenge{box-shadow:0 0 0 3px #ffe66d,0 0 14px #ffd23f;border-radius:14px}
+.sealed-title{position:absolute;left:50%;top:70px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:6px 18px;border-radius:22px;background:rgba(32,18,8,.82);box-shadow:inset 0 0 0 2px #c79a5d;color:#fff3d6;font:700 24px/1 GameFont,sans-serif;text-shadow:0 1px 2px #000;pointer-events:none;z-index:3}
+.sealed-title img{width:34px;height:34px}.sealed-title b{color:#ffe66d}
