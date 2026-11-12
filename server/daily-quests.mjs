@@ -10,7 +10,7 @@ export const dailyQuests=[
  {id:'summon-basic',name:'Chiêu mộ thường 1 lần',target:1,go:'summon',source:'Chiêu mộ 1 lượt'},
  {id:'summon-premium',name:'Chiêu mộ cao cấp 1 lần',target:1,go:'summon',source:'Chiêu mộ 10 lượt'},
  {id:'trade',name:'Dùng Khu giao dịch 1 lần',target:1,go:'events',source:'Đổi/mua vật phẩm ở sự kiện'},
- {id:'tavern',name:'Hoàn thành 1 nhiệm vụ Tửu quán',target:1,go:'mastery',source:'Nhận thưởng nhiệm vụ Thông thạo'},
+ {id:'tavern',name:'Hoàn thành 1 nhiệm vụ Tổng bộ',target:1,go:'tavern',source:'Nhận thưởng nhiệm vụ Tổng bộ'},
  {id:'wine',name:'Tặng bình rượu cho bạn bè 1 lần',target:1,go:'events',source:'Điểm danh Lễ Hội Ẩm Thực'},
  {id:'spin',name:'Quay vòng quay may mắn 1 lần',target:1,go:'events',source:'Vòng Quay May Mắn'},
  {id:'forge',name:'Rèn trang bị 1 lần',target:1,go:'forge',source:'Tiệm rèn'},
@@ -33,7 +33,7 @@ export function trackDaily(p,{action,input={},beastWon=false},now=Date.now()){
  const keys=[];
  if(action==='summon')keys.push(Number(input.count)>=10?'summon-premium':'summon-basic');
  if(action==='event-exchange'||action==='event-buy')keys.push('trade');
- if(action==='mastery-claim')keys.push('tavern');
+ if(action==='tavern'&&input.op==='claim')keys.push('tavern');
  if(action==='event-rollcall')keys.push('wine');
  if(action==='event-spin'||action==='casino'&&!['buy','refresh'].includes(input.op))keys.push('spin');
  if(action==='forge')keys.push('forge');

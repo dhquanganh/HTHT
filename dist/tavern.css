@@ -1,0 +1,39 @@
+/* Tổng bộ (tavern-ui.js). */
+.tav-layer{z-index:46;pointer-events:auto!important}
+.tav-popup{z-index:48}
+body:has(.tav-layer) #dialog-ui{z-index:60}
+body:has(.tav-layer) .bonus-popup{z-index:70}
+.tav-layer .pd-button{cursor:pointer}.tav-layer .pd-button:hover{filter:brightness(1.06)}
+.tav-main [data-name="Viewport"]{overflow-y:auto!important;overflow-x:hidden!important;scrollbar-width:thin}
+.tav-reward{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.tav-reward .ev-tile{width:92px;height:92px}.tav-reward .ev-tile img{width:78px;height:78px}
+.tav-crew{position:absolute;left:63.5%;top:50%;transform:translateY(-50%);display:flex;gap:3px;pointer-events:none}
+.tav-crew img{width:38px;height:38px;border-radius:8px;border:2px solid #e7c06b;background:#3a2118;object-fit:cover}
+.tav-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;margin:0;color:#fff3d6;font:600 22px/1.4 GameFont,sans-serif;text-shadow:0 1px 2px #000}
+.tav-req-miss{filter:grayscale(1) brightness(.75)}
+.tav-req-ok{filter:drop-shadow(0 0 5px #9cf06a)}
+.tav-slot-star{position:absolute;left:0;right:0;bottom:-2px;text-align:center;color:#ffe66d;font:800 16px/1 GameFont,sans-serif;text-shadow:0 1px 2px #000,0 0 3px #000;pointer-events:none}
+.tav-heroes{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);width:min(96%,1000px);display:flex;gap:8px;overflow-x:auto;padding:6px 10px;border-radius:14px;background:rgba(32,18,8,.85);box-shadow:inset 0 0 0 2px #c79a5d;scrollbar-width:thin;z-index:2}
+.tav-heroes p{margin:0;color:#fff3d6;font:600 18px GameFont,sans-serif}
+.tav-hero{all:unset;cursor:pointer;position:relative;flex:none;width:66px;height:66px;border-radius:10px;overflow:hidden;background:#3a2118;box-shadow:inset 0 0 0 2px #8b6a3e}
+.tav-hero>img:first-child{width:100%;height:100%;object-fit:cover}
+.tav-hero .tav-faction{position:absolute;left:2px;top:2px;width:22px;height:22px}
+.tav-hero i{position:absolute;right:4px;top:2px;color:#fff;font:700 14px GameFont,sans-serif;font-style:normal;text-shadow:0 1px 2px #000}
+.tav-hero b{position:absolute;left:0;right:0;bottom:1px;text-align:center;color:#ffe66d;font:800 14px GameFont,sans-serif;text-shadow:0 1px 2px #000}
+.tav-hero em{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6);color:#fff;font:700 13px GameFont,sans-serif;font-style:normal}
+.tav-hero.fit{box-shadow:inset 0 0 0 2px #9cf06a}
+.tav-hero.selected{box-shadow:inset 0 0 0 3px #ffe66d;filter:brightness(1.1)}
+.tav-hero.busy{cursor:not-allowed}
+.tav-rates{width:100%;border-collapse:collapse;color:#5b3a1d;font:600 18px GameFont,sans-serif;text-align:center}
+.tav-rates th,.tav-rates td{padding:6px;border-bottom:1px solid #c79a5d}.tav-rates td:first-child{color:#e0a020}
+/* Thanh tiến độ của ô nhiệm vụ: FillArea gốc có kích thước 0 (Slider tự co giãn lúc chạy). */
+.tav-main [data-name="SliderProgress"] [data-name="Fill"]{position:absolute!important;left:0!important;top:0!important;bottom:0!important;height:auto!important;right:auto!important;transform:none!important}
+.tav-main [data-name="SliderProgress"] [data-name="TextProgress"]{z-index:1}
+/* Hàng yêu cầu trong popup nhiệm vụ. */
+.tav-reqs{position:absolute;inset:-6px -30px;display:flex;align-items:center;justify-content:center;gap:8px;pointer-events:auto}
+.tav-req{display:flex;align-items:center;gap:5px;height:40px;padding:0 8px 0 4px;border-radius:20px;background:rgba(32,18,8,.78);box-shadow:inset 0 0 0 2px #8b6a3e;color:#fff3d6;font:700 16px/1 GameFont,sans-serif;white-space:nowrap;text-shadow:0 1px 2px #000}
+.tav-req img{width:30px;height:30px;object-fit:contain}
+.tav-req-star{display:flex;align-items:center;justify-content:center;width:34px;height:34px;color:#ffd23f;font-size:30px;font-style:normal;line-height:1}
+.tav-req b{min-width:30px;padding:3px 7px;border-radius:12px;font-size:16px;text-align:center}
+.tav-req.ok{box-shadow:inset 0 0 0 2px #7fd94f}.tav-req.ok b{background:#3f9a26;color:#fff}
+.tav-req.miss b{background:#a33a2a;color:#fff}
