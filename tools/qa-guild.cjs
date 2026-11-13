@@ -5,7 +5,11 @@ const fs=require('fs'),crypto=require('crypto'),assert=require('assert/strict');
 const database='htps_guildqa_'+crypto.randomBytes(6).toString('hex'),port=4253,url=`http://127.0.0.1:${port}`,output='qa-output/guild';let server,browser,client;
 const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,NEW_ACCOUNT_INTRO:'off',MONGODB_DB:database,PORT:String(port),HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe']});const timer=setTimeout(()=>reject(Error('QA startup timeout')),60000);s.stdout.on('data',b=>{if(b.toString().includes('đang chạy')){clearTimeout(timer);resolve(s)}});s.stderr.on('data',b=>process.stderr.write(b));s.once('exit',code=>{clearTimeout(timer);reject(Error('QA server exited '+code))})});
 (async()=>{
- fs.mkdirSync(output,{recursive:true});server=await start();client=new MongoClient(process.env.MONGODB_URI);await client.connect();assert.match(database,/^htps_guildqa_[a-f0-9]{12}$/);const players=client.db(database).collection('players');
+ fs.mkdirSync(output,{recursive:true});
+ // 62 ải boss (60 ải gốc + 2 ải quản trị thêm) để kiểm tra màn Đánh Boss không còn cố định 60 ải.
+ {const seed=new MongoClient(process.env.MONGODB_URI);await seed.connect();const st=JSON.parse(fs.readFileSync('dist/guild.json','utf8')).stages;const extra=[61,62].map(n=>({...structuredClone(st[59]),stage:n}));
+  await seed.db(database).collection('guild_boss_config').insertOne({_id:'stages',stages:[...st,...extra]});await seed.close()}
+ server=await start();client=new MongoClient(process.env.MONGODB_URI);await client.connect();assert.match(database,/^htps_guildqa_[a-f0-9]{12}$/);const players=client.db(database).collection('players');
  browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
  const errors=globalThis.__errors=[];
  const open=async name=>{const ctx=await browser.newContext({viewport:{width:1600,height:900},deviceScaleFactor:1}),page=await ctx.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
@@ -66,6 +70,20 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  assert.equal(await page.locator('.guild-attack [data-name="CellGuildBossDmg"]:visible').count(),1);await click('.guild-attack [data-name="ButtonClose"]');
  await page.locator('.guild-raid [data-name="GuildBossUI"]').nth(1).click();await page.waitForSelector('.guild-attack:not(.dead)');await settle(page,800);await shot('attack-stage2');await click('.guild-attack [data-name="ButtonClose"]');
  await click('.guild-raid [data-name="ButtonClose"]');
+ // Ải boss 61 (ải thêm mới): màn Đánh Boss mở đúng trang cuối 21/21, 2 thẻ, mũi tên phải quay về trang 1.
+ {const guilds=client.db(database).collection('guilds'),g=await guilds.findOne({}),before=g.boss;
+  await guilds.updateOne({_id:g._id},{$set:{boss:{stage:61,hp:Array(JSON.parse(fs.readFileSync('dist/guild.json','utf8')).stages[59].monsters.length).fill(100000000),damage:{}}}});
+  await click('.guild-scene [data-name="BuidingBoss"]');await page.waitForSelector('.guild-raid');await settle(page,1200);await shot('raid-stage61');
+  assert.match(await page.locator('.guild-raid [data-name="TextTitle"]').innerText(),/21\/21/);
+  assert.equal(await page.locator('.guild-raid [data-name="GuildBossUI"]:visible').count(),2);
+  assert.match(await page.locator('.guild-raid [data-name="GuildBossUI"]:visible').first().innerText(),/61/);
+  await click('.guild-raid [data-name="ButtonRight"]');await page.waitForSelector('.guild-raid');await settle(page,600);assert.match(await page.locator('.guild-raid [data-name="TextTitle"]').innerText(),/1\/21/);
+  await click('.guild-raid [data-name="ButtonClose"]');
+  // Đã hạ ải 60 khi chỉ có 60 ải (cleared) -> có ải 61 thì tự mở ải 61.
+  await guilds.updateOne({_id:g._id},{$set:{boss:{stage:60,hp:[0,0,0],damage:{},cleared:true,kills:{}}}});
+  await click('.guild-scene [data-name="BuidingBoss"]');await page.waitForSelector('.guild-raid');await settle(page,800);
+  assert.equal((await guilds.findOne({_id:g._id})).boss.stage,61);assert.equal((await guilds.findOne({_id:g._id})).boss.cleared,false);
+  await click('.guild-raid [data-name="ButtonClose"]');await guilds.updateOne({_id:g._id},{$set:{boss:before}})}
  // Nhiệm vụ: cống hiến + top
  await click('.guild-scene [data-name="ButtonMill"]');await page.waitForSelector('.guild-mill .guild-donate');await shot('mill');
  await click('.guild-mill [data-donate="0"]');await page.waitForFunction(()=>window.GameRuntime.player.guild.donated===1);await page.waitForSelector('.bonus-popup');await shot('donate-reward');await click('.bonus-popup [data-action="bonus-close"]');await page.waitForFunction(()=>document.querySelectorAll('.guild-mill').length===1&&document.querySelector('.guild-mill .guild-donate'));await page.waitForTimeout(400);

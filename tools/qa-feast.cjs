@@ -28,7 +28,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  await page.locator('.sp-tab:not(.dice-tab)').nth(2).click();await page.waitForSelector('.sp-roll');await images();await page.locator('[data-action=event-rollcall]').click();await closeBonus();await page.waitForSelector('.sp-tick');await page.waitForTimeout(300);await shot('rollcall');
  await page.locator('.sp-close').click();
  // Missing week events are listed.
- await page.evaluate(()=>GameRuntime.navigate(10));await page.waitForFunction(()=>GameView.getSceneId()===10&&document.querySelector('.ev-row'));assert.equal(await page.locator('.ev-row').count(),5);await images();await shot('week');
+ await page.evaluate(()=>GameRuntime.navigate(10));await page.waitForFunction(()=>GameView.getSceneId()===10&&document.querySelector('.ev-row'));assert.equal(await page.locator('.ev-row').count(),14);await images();await shot('week');
  // Admin edits reach the game.
  const admin=await browser.newPage({viewport:{width:1400,height:1000}});admin.on('pageerror',e=>errors.push(e.message));await admin.goto(url+'/admin.html');await admin.locator('#password').fill(secret);await admin.locator('#login-form button').click();await admin.waitForSelector('#tab-events:visible');await admin.locator('#tab-events').click();await admin.waitForSelector('.ev-admin');
  await admin.locator('[data-pick-event=feast]').click();await admin.waitForSelector('[data-num="offers.0.cost.quantity"]');await admin.locator('[data-num="offers.0.cost.quantity"]').fill('7');await admin.locator('#ev-save').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã lưu'));await admin.screenshot({path:output+'/admin.png'});

@@ -1,0 +1,27 @@
+
+Status_7.png
+size: 279,155
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+0
+  rotate: false
+  xy: 2, 2
+  size: 154, 151
+  orig: 160, 160
+  offset: 3, 4
+  index: -1
+1
+  rotate: false
+  xy: 158, 72
+  size: 119, 81
+  orig: 160, 160
+  offset: 18, 14
+  index: -1
+2
+  rotate: false
+  xy: 158, 17
+  size: 108, 53
+  orig: 160, 160
+  offset: 25, 70
+  index: -1

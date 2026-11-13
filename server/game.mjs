@@ -9,6 +9,7 @@ import {initializeTeamBattle,teamRound} from './team-combat.mjs';
 import {emptyAfk,startAfk,bankAfk,afkView,collectAfk,afkHours} from './afk.mjs';
 import {trackEvent,claimEvent,unlockEvent,exchangeEvent,prayEvent,eventsView,checkinView,claimCheckin,buyEventMaterial,startEventStage,finishEventStage,spinEvent,freeEventGift,rollcallEvent} from './events.mjs';
 import {emptyTower,towerView,spendTowerTurn,finishTower,floorEnemies} from './tower.mjs';
+import {adjustTowerUnit} from './tower-config.mjs';
 import {rollChest,chestHero} from './chests.mjs';
 import {startBeast,finishBeast,claimBeast} from './beast.mjs';
 import {equipmentBonus,forgeItem} from './equipment.mjs';
@@ -186,7 +187,7 @@ export function grantReward(p,{itemId,quantity,kind,avatar,id}){
  if(walletIds.has(itemId))p.wallet[itemId]=(p.wallet[itemId]||0)+quantity;else addItem(p,itemId,quantity)}
 function payReward(p,{itemId,quantity}){if(walletIds.has(itemId))spend(p,{[itemId]:quantity});else spendItems(p,{[itemId]:quantity})}
 const topHeroIds=p=>{const owned=ownedHeroes(p);return[...owned.keys()].sort((a,b)=>heroStats({...p,hero:owned.get(b)}).power-heroStats({...p,hero:owned.get(a)}).power).slice(0,6)};
-function sealedRef(p){if(!p.hero)return null;const owned=ownedHeroes(p);return referenceStats(topHeroIds(p).map(id=>heroStats({...p,hero:owned.get(id)})))}
+function sealedRef(p){if(!p.hero)return null;const owned=ownedHeroes(p);return referenceStats(topHeroIds(p).map(id=>({...heroStats({...p,hero:owned.get(id)}),level:owned.get(id).level})))}
 function outsideBattle(p){requireCondition(!p.battle||p.battle.status!=='active','Hãy kết thúc trận chiến trước.',409,'BATTLE_ACTIVE')}
 // Cấp thuyền trưởng tối đa theo db_player_exp gốc (210 cấp). EXP mỗi cấp vẫn là cấp × 100 như phần còn lại của bản web.
 export const maxAccountLevel=210;
@@ -373,15 +374,15 @@ function runAction(p,action,input,now,context){
  if(action==='event-rollcall')return rollcallEvent(p,input,reward=>grantReward(p,reward),now);
  if(action==='event-buy')return buyEventMaterial(p,input,cost=>payReward(p,cost),reward=>grantReward(p,reward),now);
  if(action==='album-roll'){outsideBattle(p);return rollAlbum(p,input,cost=>payReward(p,cost),reward=>grantReward(p,reward))}
- if(action==='dungeon'){outsideBattle(p);const owned=ownedHeroes(p);return dungeonAction(p,input,{owned:id=>owned.has(id),stats:id=>heroStats({...p,hero:owned.get(id)}),grant:r=>grantReward(p,r),pay:c=>payReward(p,c)},now)}
+ if(action==='dungeon'){outsideBattle(p);const owned=ownedHeroes(p);return dungeonAction(p,input,{owned:id=>owned.has(id),stats:id=>({...heroStats({...p,hero:owned.get(id)}),level:owned.get(id).level}),grant:r=>grantReward(p,r),pay:c=>payReward(p,c)},now)}
  if(action==='tavern'){outsideBattle(p);return tavernAction(p,input,{owned:ownedHeroes(p),grant:r=>grantReward(p,r),pay:c=>payReward(p,c),inventory:id=>p.inventory?.[id]||0,spendItem:(id,n)=>payReward(p,{itemId:id,quantity:n})},now)}
  if(action==='sealed'){outsideBattle(p);return sealedAction(p,input,{grant:r=>grantReward(p,r),pay:c=>payReward(p,c)},now)}
  if(action==='sealed-fight'){
   // Mê cung: khiêu chiến ải kế tiếp của một vùng, chỉ thuyền viên cùng hệ (server/sealed.mjs).
   outsideBattle(p);const teamFormation=validateFormation(p,input.formation),owned=ownedHeroes(p);
-  const fight=prepareSealedFight(p,input,teamFormation.slots,{faction:id=>definitionFor(id).faction,stats:id=>heroStats({...p,hero:owned.get(id)}),top:()=>topHeroIds(p)},now);
+  const fight=prepareSealedFight(p,input,teamFormation.slots,{faction:id=>definitionFor(id).faction,stats:id=>({...heroStats({...p,hero:owned.get(id)}),level:owned.get(id).level}),top:()=>topHeroIds(p)},now);
   const stars=Math.min(15,5+fight.meta.level),column={1:4,2:5,3:1,4:2,5:3,6:6};
-  const foes=fight.enemies.map((e,i)=>{const kit=kitForAvatar(e.avatar),unit={id:'enemy-'+i,name:e.name,avatar:e.avatar,faction:e.faction,heroClass:null,level:p.account.level,stars,monsterId:'hero-'+e.avatar,position:column[e.position],maxHp:e.maxHp,hp:e.maxHp,attack:e.attack,defense:e.defense,speed:e.speed,visualIndex:i};return kit?{...unit,heroId:'hero-'+e.avatar,kit,ultScale:1}:unit});
+  const foes=fight.enemies.map((e,i)=>{const kit=kitForAvatar(e.avatar),unit={id:'enemy-'+i,name:e.name,avatar:e.avatar,faction:e.faction,heroClass:null,level:e.level||p.account.level,stars,monsterId:'hero-'+e.avatar,position:column[e.position],maxHp:e.maxHp,hp:e.maxHp,attack:e.attack,defense:e.defense,speed:e.speed,visualIndex:i};return kit?{...unit,heroId:'hero-'+e.avatar,kit,ultScale:1}:unit});
   openBattle(p,foes,{chapter:2,stageId:null,sealed:fight.meta},teamFormation,p.formation?.position??0,now);
   p.battle.enemies.forEach((u,i)=>{u.frontRow=fight.enemies[i].position<=2;if(u.kit)u.energy=35});
   return{message:`Khiêu chiến ải ${fight.meta.level}.`,battleId:p.battle.id};
@@ -390,9 +391,9 @@ function runAction(p,action,input,now,context){
  if(action==='brave-fight'){
   // Luyện tập: đội 6 ô như trận thường, máu / nộ của thuyền viên và của đội địch giữ lại giữa các trận (server/brave.mjs).
   outsideBattle(p);const teamFormation=validateFormation(p,input.formation??formationView(p).slots),owned=ownedHeroes(p);
-  const fight=prepareBraveFight(p,teamFormation.slots,{stats:id=>heroStats({...p,hero:owned.get(id)}),top:()=>[...owned.keys()].sort((a,b)=>heroStats({...p,hero:owned.get(b)}).power-heroStats({...p,hero:owned.get(a)}).power).slice(0,6)},now);
+  const fight=prepareBraveFight(p,teamFormation.slots,{stats:id=>({...heroStats({...p,hero:owned.get(id)}),level:owned.get(id).level}),top:()=>[...owned.keys()].sort((a,b)=>heroStats({...p,hero:owned.get(b)}).power-heroStats({...p,hero:owned.get(a)}).power).slice(0,6)},now);
   const stars=Math.min(15,6+fight.meta.stage),column={1:4,2:5,3:1,4:2,5:3,6:6};
-  const foes=fight.enemies.map((e,i)=>{const kit=kitForAvatar(e.avatar),unit={id:'enemy-'+i,name:e.name,avatar:e.avatar,faction:e.faction,heroClass:null,level:p.account.level,stars,monsterId:'hero-'+e.avatar,position:column[e.position],maxHp:e.maxHp,hp:e.maxHp,attack:e.attack,defense:e.defense,speed:e.speed,visualIndex:i};return kit?{...unit,heroId:'hero-'+e.avatar,kit,ultScale:1}:unit});
+  const foes=fight.enemies.map((e,i)=>{const kit=kitForAvatar(e.avatar),unit={id:'enemy-'+i,name:e.name,avatar:e.avatar,faction:e.faction,heroClass:null,level:e.level||p.account.level,stars,monsterId:'hero-'+e.avatar,position:column[e.position],maxHp:e.maxHp,hp:e.maxHp,attack:e.attack,defense:e.defense,speed:e.speed,visualIndex:i};return kit?{...unit,heroId:'hero-'+e.avatar,kit,ultScale:1}:unit});
   openBattle(p,foes,{chapter:2,stageId:null,brave:fight.meta},teamFormation,p.formation?.position??0,now);
   const b=p.battle;
   for(const u of b.allies){const a=fight.allies[u.heroId];if(!a)continue;u.maxHp=Math.round(u.maxHp*fight.boost.maxHp);u.baseMaxHp=u.maxHp;u.baseAttack=Math.round(u.baseAttack*fight.boost.attack);u.attack=u.baseAttack;u.baseSpeed+=fight.boost.speed;u.speed=u.baseSpeed;u.hp=Math.max(1,Math.round(u.maxHp*a.ratio));if(a.rage)u.energy=Math.max(u.energy||0,a.rage)}
@@ -402,7 +403,7 @@ function runAction(p,action,input,now,context){
  if(action==='dungeon-fight'){
   // Đảo Bánh: 1 thuyền viên đánh đội hình của ải; máu và nộ hai bên được giữ giữa các trận (server/dungeon.mjs).
   outsideBattle(p);const fight=prepareDungeonFight(p,input,now),stars=Math.min(15,5+Math.floor(fight.meta.stage/10)),column={1:4,2:5,3:1,4:2,5:3,6:6};
-  const foes=fight.enemies.map((e,i)=>{const kit=kitForAvatar(e.avatar),unit={id:'enemy-'+i,name:e.name,avatar:e.avatar,faction:e.faction,heroClass:null,level:p.account.level,stars,monsterId:'hero-'+e.avatar,position:column[e.position],maxHp:e.maxHp,hp:e.maxHp,attack:e.attack,defense:e.defense,speed:e.speed,visualIndex:i};return kit?{...unit,heroId:'hero-'+e.avatar,kit,ultScale:1}:unit});
+  const foes=fight.enemies.map((e,i)=>{const kit=kitForAvatar(e.avatar),unit={id:'enemy-'+i,name:e.name,avatar:e.avatar,faction:e.faction,heroClass:null,level:e.level||p.account.level,stars,monsterId:'hero-'+e.avatar,position:column[e.position],maxHp:e.maxHp,hp:e.maxHp,attack:e.attack,defense:e.defense,speed:e.speed,visualIndex:i};return kit?{...unit,heroId:'hero-'+e.avatar,kit,ultScale:1}:unit});
   const slots=Array(6).fill(null);slots[1]=fight.heroId;
   // openBattle ghi đội hình trận vào p.formation: giữ lại đội hình chính của người chơi.
   const savedFormation=p.formation;openBattle(p,foes,{chapter:3,stageId:null,dungeon:fight.meta},{position:1,slots},1,now);p.formation=savedFormation;
@@ -434,7 +435,7 @@ function runAction(p,action,input,now,context){
  if(action==='abyss-milestone'){outsideBattle(p);return claimAbyssMilestone(p,input,reward=>grantReward(p,reward),now)}
  if(action==='event-stage'){
   outsideBattle(p);const teamFormation=validateFormation(p,input.formation??formationView(p).slots),{floor,meta}=startEventStage(p,input,cost=>payReward(p,cost),now),{row,sources,strength}=floorEnemies(floor);
-  openBattle(p,sources.map(({slot,source},i)=>enemyUnit(source,slot,i,strength)),{chapter:1+(row.floor-1)%12,stageId:null,broken:meta},teamFormation,p.formation?.position??0,now);
+  openBattle(p,sources.map(({slot,source},i)=>adjustTowerUnit(row,enemyUnit(source,slot,i,strength))),{chapter:1+(row.floor-1)%12,stageId:null,broken:meta},teamFormation,p.formation?.position??0,now);
   return{message:`Khiêu chiến ${meta.title}.`,battleId:p.battle.id};
  }
  if(action==='event-claim')return claimEvent(p,input,reward=>grantReward(p,reward),now);
@@ -473,7 +474,7 @@ function runAction(p,action,input,now,context){
  }
  if(action==='tower-start'){
   outsideBattle(p);const teamFormation=validateFormation(p,input.formation??formationView(p).slots),{row,sources,strength}=spendTowerTurn(p,now);
-  openBattle(p,sources.map(({slot,source},i)=>enemyUnit(source,slot,i,strength)),{chapter:1+(row.floor-1)%12,stageId:null,tower:{floor:row.floor}},teamFormation,p.formation?.position??0,now);
+  openBattle(p,sources.map(({slot,source},i)=>adjustTowerUnit(row,enemyUnit(source,slot,i,strength))),{chapter:1+(row.floor-1)%12,stageId:null,tower:{floor:row.floor}},teamFormation,p.formation?.position??0,now);
   return{message:`Bắt đầu tầng ${row.floor}.`,battleId:p.battle.id};
  }
  if(action==='beast-start'){
@@ -628,7 +629,7 @@ function battleRound(p,input,now){
   b.events.push(...events);return{message:b.status==='won'?'Chiến thắng!':b.status==='lost'?'Thất bại. Hãy nâng cấp tướng.':'Đã kết thúc lượt.',events,battleId:b.id};
  }
  battleSkillState(b);
- for(const unit of [h,...b.enemies]){const expired=unit.effects.filter(e=>e.expiresTurn<b.turn);unit.effects=unit.effects.filter(e=>e.expiresTurn>=b.turn);for(const effect of expired)event(b,events,{type:'effect-expired',target:unit.id,skillId:effect.skillId,name:effect.name})}
+ for(const unit of [h,...b.enemies]){const expired=unit.effects.filter(e=>e.expiresTurn<b.turn);unit.effects=unit.effects.filter(e=>e.expiresTurn>=b.turn);for(const effect of expired)event(b,events,{type:'effect-expired',target:unit.id,skillId:effect.skillId,name:effect.name,attribute:effect.attribute})}
  for(const name of Object.keys(h.cooldowns))h.cooldowns[name]=Math.max(0,h.cooldowns[name]-1);
  const cast=type==='skill'||(type==='auto'&&h.energy>=80&&!h.cooldowns['rubber-whip']),defend=type==='defend';
  const applyEffect=(unit,skillId,attribute,value,lastTurn)=>{
@@ -667,7 +668,7 @@ function battleRound(p,input,now){
 }
 function settleVictory(p,b,now){
  // Called inside the same versioned MongoDB document update as the last hit.
- if(b.tower){trackEvent(p,'tower',1,now);const reward=finishTower(p,b.tower.floor,now);p.wallet.gold+=reward.gold;for(const item of reward.items)addItem(p,item.itemId,item.quantity);b.reward=reward;return}
+ if(b.tower){trackEvent(p,'tower',1,now);const reward=finishTower(p,b.tower.floor,now);p.wallet.gold+=reward.gold;for(const item of reward.items)grantReward(p,item);b.reward=reward;return}
  if(b.abyss){b.reward=finishAbyss(p,b,now);return}
  if(b.broken){b.reward=finishEventStage(p,b.broken,reward=>grantReward(p,reward),now);return}
  trackEvent(p,'stage',1,now);bankAfk(p,now);

@@ -11,6 +11,7 @@
 // Số liệu máy chủ gốc (cấp mở, số lượt, giá, sức mạnh địch, thưởng) không có trong client nên do bản web đặt.
 import {requireCondition} from './errors.mjs';
 import {heroAlbum,campaign,towerData} from './catalog.mjs';
+import {allowedPool,overrideLineup,adjustStats,onContentChange} from './content.mjs';
 
 export const sealBook='material:seal-book',sealBookDL='material:seal-book-dl';
 export const sealedFactions=['abyss','shadow','fortress','forest','dark','light'];
@@ -19,6 +20,9 @@ const it=(itemId,quantity)=>({itemId,quantity});
 // Bảng thưởng khiêu chiến / càn quét từng ải (sửa được ở trang quản trị, server/reward-config.mjs).
 export const challengeTable=Array.from({length:20},(_,i)=>{const level=i+1;return[it(sealBook,20+level*5),it('diamonds',10+level*2),...(level%5===0?[it(sealBookDL,1+Math.floor(level/10))]:[])]});
 export const smashTable=Array.from({length:20},(_,i)=>{const level=i+1;return[it(sealBook,8+level*2),it('gold',20000+level*4000)]});
+const defaultChallenge=level=>[it(sealBook,20+level*5),it('diamonds',10+level*2),...(level%5===0?[it(sealBookDL,1+Math.floor(level/10))]:[])];
+const defaultSmash=level=>[it(sealBook,8+level*2),it('gold',20000+level*4000)];
+onContentChange(c=>{sealedConfig.levels=Math.max(1,c.counts?.sealed||20);while(challengeTable.length<sealedConfig.levels)challengeTable.push(defaultChallenge(challengeTable.length+1));while(smashTable.length<sealedConfig.levels)smashTable.push(defaultSmash(smashTable.length+1))});
 export const challengeRewards=level=>challengeTable[level-1]||[];
 export const smashRewards=level=>smashTable[level-1]||[];
 const DAY=86400000,vnDay=now=>Math.floor((now+7*3600000)/DAY);
@@ -31,15 +35,17 @@ const byAvatar=new Map(heroAlbum.heroes.map(h=>[h.avatar,h]));
 const hash=(a,b)=>{let x=(a*2246822519^b*3266489917)>>>0;x^=x<<13;x^=x>>>17;x^=x<<5;return x>>>0};
 export const sealedEnemyCount=level=>Math.min(6,3+Math.floor((level-1)/5));
 /** Thủ vệ của ải: cùng hệ với vùng, cố định theo (hệ, ải). */
+const fromOverride=list=>list.filter(a=>byAvatar.has(a)).slice(0,6).map((avatar,i)=>{const h=byAvatar.get(avatar);return{avatar,name:h.name,faction:h.faction,rank:h.rank,position:i+1}});
 export function sealedLineup(faction,level){
- const pool=pools[faction],n=sealedEnemyCount(level),picked=[],fi=sealedFactions.indexOf(faction);
+ const ov=overrideLineup('sealed',`${faction}-${level}`);if(ov)return fromOverride(ov);
+ const pool=allowedPool(pools[faction]),n=sealedEnemyCount(level),picked=[],fi=sealedFactions.indexOf(faction);
  for(let i=0;picked.length<n&&i<60;i++){const a=pool[hash(fi*131+level,i)%pool.length];if(!picked.includes(a))picked.push(a)}
  return picked.map((avatar,i)=>{const h=byAvatar.get(avatar);return{avatar,name:h.name,faction:h.faction,position:i+1}});
 }
 // Sức mạnh thủ vệ so với chỉ số trung bình 6 thuyền viên mạnh nhất của người chơi.
 export const sealedScale=level=>.45+level*.075;
-export function sealedEnemyStats(ref,level,i){const k=sealedScale(level)*(1+i*.04);return{maxHp:Math.round(ref.maxHp*k*1.3),attack:Math.round(ref.attack*k),defense:Math.round(ref.defense*k),speed:Math.round(ref.speed*(.85+level*.01))}}
-export const enemyPower=(ref,level)=>sealedLineup(sealedFactions[0],level).reduce((n,_,i)=>{const s=sealedEnemyStats(ref,level,i);return n+Math.round(s.attack*6+s.maxHp*.6+s.defense*4)},0);
+export function sealedEnemyStats(ref,level,i,faction,avatar){const k=sealedScale(level)*(1+i*.04);return adjustStats({maxHp:Math.round(ref.maxHp*k*1.3),attack:Math.round(ref.attack*k),defense:Math.round(ref.defense*k),speed:Math.round(ref.speed*(.85+level*.01))},'sealed',`${faction}-${level}`,avatar,ref.level)}
+export const enemyPower=(ref,level,faction=sealedFactions[0])=>sealedLineup(faction,level).reduce((n,e,i)=>{const s=sealedEnemyStats(ref,level,i,faction,e.avatar);return n+Math.round(s.attack*6+s.maxHp*.6+s.defense*4)},0);
 
 function state(p,now){
  p.sealed??={cleared:Object.fromEntries(sealedFactions.map(f=>[f,0])),lineups:{}};
@@ -53,7 +59,7 @@ export function sealedView(p,now=Date.now(),ref=null){
   attack:s.attack,smash:s.smash,feeAttack:sealedConfig.feeAttack,feeSmash:sealedConfig.feeSmash,buyAttackLeft:sealedConfig.buyLimit-s.boughtAttack,buySmashLeft:sealedConfig.buyLimit-s.boughtSmash,
   cleared:s.cleared,lineups:s.lineups,
   factions:Object.fromEntries(sealedFactions.map(f=>[f,Array.from({length:sealedConfig.levels},(_,i)=>{const level=i+1;
-   return{level,state:level<=s.cleared[f]?'smash':level===s.cleared[f]+1?'challenge':'locked',enemies:sealedLineup(f,level),power:ref?enemyPower(ref,level):0,challenge:challengeRewards(level),smash:smashRewards(level)}})]))};
+   return{level,state:level<=s.cleared[f]?'smash':level===s.cleared[f]+1?'challenge':'locked',enemies:sealedLineup(f,level),power:ref?enemyPower(ref,level,f):0,challenge:challengeRewards(level),smash:smashRewards(level)}})]))};
 }
 const requireOpen=p=>requireCondition(p.account.level>=sealedConfig.minLevel,`Yêu cầu cấp độ ${sealedConfig.minLevel}`,409,'SEALED_LEVEL');
 /** ctx: {pay, grant}. op: buy {kind: attack|smash}, smash {faction, level} */
@@ -79,9 +85,9 @@ export function prepareSealedFight(p,input,slots,ctx,now=Date.now()){
  const ids=slots.filter(Boolean);requireCondition(ids.length,'Hãy chọn thuyền viên.');
  requireCondition(ids.every(id=>ctx.faction(id)===f),'Chỉ thuyền viên cùng hệ với vùng mới được ra trận.',409,'SEALED_FACTION');
  requireCondition(s.attack>0,'Hết lượt khiêu chiến.',409,'SEALED_NO_ATTACK');
- const all=ctx.top().map(ctx.stats),avg=k=>Math.round(all.reduce((n,x)=>n+x[k],0)/Math.max(1,all.length)),ref={maxHp:avg('maxHp'),attack:avg('attack'),defense:avg('defense'),speed:avg('speed')};
+ const all=ctx.top().map(ctx.stats),avg=k=>Math.round(all.reduce((n,x)=>n+x[k],0)/Math.max(1,all.length)),ref={maxHp:avg('maxHp'),attack:avg('attack'),defense:avg('defense'),speed:avg('speed'),level:avg('level')||1};
  s.attack--;s.lineups[f]=slots;
- return{enemies:sealedLineup(f,level).map((e,i)=>({...e,...sealedEnemyStats(ref,level,i)})),meta:{faction:f,level,day:s.day}};
+ return{enemies:sealedLineup(f,level).map((e,i)=>({...e,...sealedEnemyStats(ref,level,i,f,e.avatar)})),meta:{faction:f,level,day:s.day}};
 }
 /** Sau trận: thắng thì mở ải và nhận thưởng khiêu chiến. */
 export function finishSealed(p,b,grant,now=Date.now()){
@@ -89,4 +95,4 @@ export function finishSealed(p,b,grant,now=Date.now()){
  const won=!b.enemies.some(e=>e.hp>0);if(!won||s.cleared[m.faction]!==m.level-1)return{won:false,...m};
  s.cleared[m.faction]=m.level;const rewards=challengeRewards(m.level);rewards.forEach(grant);return{won:true,...m,rewards};
 }
-export const referenceStats=(all)=>{const avg=k=>Math.round(all.reduce((n,x)=>n+x[k],0)/Math.max(1,all.length));return{maxHp:avg('maxHp'),attack:avg('attack'),defense:avg('defense'),speed:avg('speed')}};
+export const referenceStats=(all)=>{const avg=k=>Math.round(all.reduce((n,x)=>n+(x[k]||0),0)/Math.max(1,all.length));return{maxHp:avg('maxHp'),attack:avg('attack'),defense:avg('defense'),speed:avg('speed'),level:avg('level')||1}};

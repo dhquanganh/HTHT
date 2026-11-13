@@ -8,7 +8,7 @@
 (()=>{
  'use strict';
  const D=window.PrefabDOM,W=1136,H=640;
- let c=null,data=null,root=null,layers=[],state=null,boss=null,techClass='warrior',techIndex=0,raidPage=0,millTab='donate',createTab='search',flagPick=1,searchText='';
+ let c=null,data=null,root=null,layers=[],state=null,boss=null,techClass='warrior',techIndex=0,raidPage=0,raidPages=20,millTab='donate',createTab='search',flagPick=1,searchText='';
  const cache={};
  const load=()=>data?Promise.resolve(data):fetch('guild.json').then(r=>r.json()).then(d=>data=d);
  const sceneJson=id=>cache[id]??=fetch(`scenes/${id}.json`).then(r=>{if(!r.ok)throw Error('Không tải được giao diện.');return r.json()});
@@ -153,12 +153,14 @@
  }
 
  // ---- Đánh Boss
- async function openRaid(){
-  const [s]=await Promise.all([sceneJson(1122),load()]);boss=await c.api('/api/guild/boss');raidPage=Math.max(0,Math.min(19,raidPage));
-  const n=clone(s.roots[0]);txt(deep(n,'TextTitle'),'Đánh Boss');tag(deep(n,'ButtonClose'),{act:'close'});tag(deep(n,'ButtonLeft'),{act:'page',dir:-1});tag(deep(n,'ButtonRight'),{act:'page',dir:1});tag(deep(n,'ButtonHelp'),{act:'bossHelp'});
+ // Số trang theo số ải boss của server (60 ải gốc + ải quản trị thêm), 3 thẻ mỗi trang. jump: mở đúng trang có ải đang đánh.
+ async function openRaid(jump=false){
+  const [s]=await Promise.all([sceneJson(1122),load()]);boss=await c.api('/api/guild/boss');raidPages=Math.max(1,Math.ceil(boss.stages.length/3));
+  if(jump)raidPage=Math.floor((boss.current-1)/3);raidPage=Math.max(0,Math.min(raidPages-1,raidPage));
+  const n=clone(s.roots[0]);txt(deep(n,'TextTitle'),raidPages>20?`Đánh Boss · ${raidPage+1}/${raidPages}`:'Đánh Boss');tag(deep(n,'ButtonClose'),{act:'close'});tag(deep(n,'ButtonLeft'),{act:'page',dir:-1});tag(deep(n,'ButtonRight'),{act:'page',dir:1});tag(deep(n,'ButtonHelp'),{act:'bossHelp'});
   // GroupBoss giữ GridLayoutGroup gốc (3 thẻ 250×336); mỗi thẻ là GuildBossUI gốc.
   const tpl=deep(n,'GuildBossUI'),group=deep(n,'GroupBoss');on(tpl,false);
-  group.children=[0,1,2].map(k=>{const st=boss.stages[raidPage*3+k],card=on(clone(tpl));card.name='GuildBossUI';const normal=deep(card,'GroupNormalBoss');on(deep(card,'GroupPrayBoss'),false);
+  group.children=[0,1,2].map(k=>{const st=boss.stages[raidPage*3+k],card=on(clone(tpl));card.name='GuildBossUI';if(!st){card.active=false;return card}const normal=deep(card,'GroupNormalBoss');on(deep(card,'GroupPrayBoss'),false);
    txt(deep(normal,'TextNormalBossId'),st.stage);const dead=st.stage<boss.current||boss.cleared&&st.stage===boss.current,cur=st.stage===boss.current&&!boss.cleared,unknown=st.stage>boss.current;
    const bg=deep(normal,'ImageBgr');pic(bg,c.named(st.stage%2?'bgr_boss_1':'bgr_boss_2'));if(!unknown)bg.guildAvatar=st.monsters[0].avatar;
    on(deep(normal,'GroupDeath'),dead);on(deep(normal,'GoUnknown'),unknown);on(deep(normal,'CanvasHero'),false);
@@ -166,7 +168,8 @@
    const cd=deep(normal,'BoxCountDown');on(cd,cur);if(cur){const t=deep(cd,'TextCountdown');t.guildTime=boss.resetAt+(Date.now()-boss.now);txt(t,fmt(boss.resetAt-boss.now))}
    if(dead)card.guildClass='guild-card-dead';if(cur)card.guildClass='guild-card-current';if(unknown)card.guildClass='guild-card-locked';
    tag(card,{act:'stage',stage:st.stage,cur,dead,unknown});return card});
-  const dots=deep(n,'DotIndicator'),dot=deep(dots,'Dot');dots.components=[{type:'HorizontalLayoutGroup',spacing:14,align:4}];dots.children=Array.from({length:20},(_,i)=>{const d=on(clone(dot));on(kid(d,'ImageOn'),i===raidPage);on(kid(d,'ImageOff'),i!==raidPage);tag(d,{act:'dot',page:i});return d});
+  const dots=deep(n,'DotIndicator'),dot=deep(dots,'Dot');dots.components=[{type:'HorizontalLayoutGroup',spacing:14,align:4}];// Tối đa 20 chấm như prefab gốc; nhiều trang hơn thì chấm là cửa sổ 20 trang quanh trang đang xem.
+  const first=Math.max(0,Math.min(raidPages-20,raidPage-10));dots.children=Array.from({length:Math.min(20,raidPages)},(_,j)=>{const i=first+j,d=on(clone(dot));on(kid(d,'ImageOn'),i===raidPage);on(kid(d,'ImageOff'),i!==raidPage);tag(d,{act:'dot',page:i});return d});
   const el=mount(popupShell(n),'guild-raid',{popup:true});tick(el);
   for(const x of el.querySelectorAll('.pd-node'))if(x._node?.guildClass)x.classList.add(x._node.guildClass);
  }
@@ -240,7 +243,7 @@
    if(a.act==='create'){const name=layer.querySelector('#guild-name')?.value||'';const d=await c.mutation('/api/guild/create',{name,flag:flagPick},{render:false});if(d)return openScene();return}
    if(a.act==='hall')return openHall();
    if(a.act==='tech'){techIndex=0;return openTech()}
-   if(a.act==='boss')return openRaid();
+   if(a.act==='boss')return openRaid(true);
    if(a.act==='mill')return openMill();
    if(a.act==='war')return c.toast('Hạm đội chiến hiện không diễn ra.');
    if(a.act==='shop')return c.shop();
@@ -264,7 +267,7 @@
    if(a.act==='tier'){const d=await c.mutation('/api/guild/tech',{op:'tier',cls:techClass},{render:false});if(d){closeTop();techIndex=0;return openTech()}return}
    if(a.act==='reset'){const t=c.player().guild.tech[techClass];return c.confirm('Thiết lập lại hệ kỹ năng. Toàn bộ beli và huy hiệu bang sẽ được hoàn trả (Lần đầu thiết lập lại không mất phí)',I2('LBL_RESET','Thiết lập lại'),t.resets>0?100:null,async()=>{const d=await c.mutation('/api/guild/tech',{op:'reset',cls:techClass},{render:false});if(d){closeTop();openTech()}})}
    if(a.act==='techHelp')return c.modal('KỸ NĂNG HẠM ĐỘI','<p class="item-description">Kỹ năng tăng chỉ số cho tướng cùng nghề khi bạn ở trong hạm đội. Mỗi kỹ năng 20 cấp; kỹ năng sau mở khi kỹ năng trước đạt cấp 10. Nâng tối đa 8 kỹ năng để lên Cấp độ kế (cần hạm đội đạt cấp yêu cầu). Thiết lập lại hoàn toàn bộ beli và Huy hiệu hạm đội, lần đầu miễn phí.</p>');
-   if(a.act==='page'){raidPage=(raidPage+a.dir+20)%20;closeTop();return openRaid()}
+   if(a.act==='page'){raidPage=(raidPage+a.dir+raidPages)%raidPages;closeTop();return openRaid()}
    if(a.act==='dot'){raidPage=a.page;closeTop();return openRaid()}
    if(a.act==='stage'){if(a.unknown)return c.toast('Hạ boss các ải trước để mở ải này.');return openAttack(a.stage)}
    if(a.act==='rewards')return openBossRewards(a.stage);
@@ -275,7 +278,7 @@
  }
  window.GuildUI={
   init(ctx){c=ctx},
-  async open(panel){try{closeAll();await load();await refresh();if(!state.guild)return openCreate();await openScene();if(panel==='boss')await openRaid()}catch(e){c.toast(e.message)}},
+  async open(panel){try{closeAll();await load();await refresh();if(!state.guild)return openCreate();await openScene();if(panel==='boss')await openRaid(true)}catch(e){c.toast(e.message)}},
   close:closeAll,isOpen:()=>!!root,
  };
 })();

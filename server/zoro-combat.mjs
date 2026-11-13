@@ -14,7 +14,7 @@ export function zoroRound(b,type,{random,emit}){
  const units=[h,...b.enemies];for(const u of units){u.effects??=[];u.baseAttack??=u.attack;u.baseDefense??=u.defense}
  const effect=(u,id,name,attribute,value,expiresTurn)=>{u.effects=u.effects.filter(e=>e.id!==id);const e={id,skillId:id,name,attribute,value,expiresTurn};u.effects.push(e);emit({type:'buff',actor:'hero',target:u.id,skillId:id,name,attribute,value,expiresTurn})};
  if(!h.zoroInitialized){h.zoroInitialized=true;h.baseSpeed=h.speed;effect(h,'conqueror-haki','Haki Bá Vương','attack',haki.attack*(h.frontRow===false?1:2),haki.duration)}
- for(const u of units){for(const e of u.effects.filter(e=>e.expiresTurn<b.turn))emit({type:'effect-expired',target:u.id,skillId:e.skillId,name:e.name});u.effects=u.effects.filter(e=>e.expiresTurn>=b.turn)}
+ for(const u of units){for(const e of u.effects.filter(e=>e.expiresTurn<b.turn))emit({type:'effect-expired',target:u.id,skillId:e.skillId,name:e.name,attribute:e.attribute});u.effects=u.effects.filter(e=>e.expiresTurn>=b.turn)}
  const attack=u=>Math.round(u.baseAttack*(1+u.effects.filter(e=>e.attribute==='attack').reduce((n,e)=>n+e.value,0)));
  h.speed=Math.round(h.baseSpeed*(b.turn<=haki.duration&&h.frontRow!==false?1+haki.speed:1));
  const lowest=()=>b.enemies.filter(e=>e.hp>0).sort((a,c)=>a.hp-c.hp||a.id.localeCompare(c.id))[0];

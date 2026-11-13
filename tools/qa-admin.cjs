@@ -53,6 +53,50 @@ const json=async(path,options={},base=url)=>{const r=await fetch(base+path,{...o
  await admin.locator('[data-pick-table="brave-stage"]').click();await admin.waitForSelector('#rewards-tab h2:has-text("Luyện tập")');
  await admin.locator('#rw-reset').click();await admin.waitForFunction(()=>!document.querySelector('#rewards-tab .rw-badge'));
  {const r=await admin.evaluate(()=>fetch('/api/admin/rewards').then(r=>r.json()));assert.equal(r.tables.find(t=>t.id==='brave-stage').rows[0].rewards[0].itemId,'gold');assert.notEqual(r.tables.find(t=>t.id==='brave-stage').rows[0].rewards[0].quantity,123456)}
+ // Tab Phụ bản: sửa đội hình ải 1 Luyện tập + sức mạnh, thêm ải Đảo Bánh; tab Quái: chỉnh máu, tắt quái.
+ await admin.locator('#tab-stages').click();await admin.waitForSelector('#stages-tab .ct-stage');await admin.screenshot({path:output+'/admin-stages.png'});
+ await admin.locator('#stages-tab [data-edit="1"]').click();await admin.waitForSelector('.ct-editor');
+ while(await admin.locator('.ct-editor [data-unpick]').count())await admin.locator('.ct-editor [data-unpick]').first().click();
+ await admin.locator('.ct-editor [data-pick-monster]').nth(0).click();await admin.locator('.ct-editor [data-pick-monster]').nth(1).click();await admin.screenshot({path:output+'/admin-stage-editor.png'});
+ await admin.locator('.ct-editor [data-apply-editor]').click();await admin.locator('#stages-tab [data-scale="1"]').fill('150');await admin.locator('#stages-tab [data-level="1"]').fill('80');await admin.locator('#ct-save').click();
+ await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã lưu. Game dùng đội hình'));
+ {const r=await admin.evaluate(()=>fetch('/api/admin/content').then(r=>r.json()));const st=r.modes.brave.stages[0];assert.equal(st.override.enemies.length,2);assert.equal(st.override.scale,150);assert.equal(st.override.level,80);assert.deepEqual(st.lineup,st.override.enemies)}
+ await admin.locator('#stages-tab [data-mode="dungeon"]').click();await admin.waitForSelector('#stages-tab [data-count]');await admin.locator('#stages-tab [data-count]').fill('65');await admin.locator('#stages-tab [data-count]').dispatchEvent('change');await admin.locator('#ct-save').click();
+ await admin.waitForFunction(()=>[...document.querySelectorAll('#stages-tab .ev-pick')].some(b=>b.textContent.includes('65 ải')));
+ await admin.locator('#stages-tab [data-mode="sealed"]').click();await admin.waitForSelector('#stages-tab [data-faction="light"]');await admin.locator('#stages-tab [data-faction="light"]').click();await admin.screenshot({path:output+'/admin-stages-sealed.png'});
+ {const r=await admin.evaluate(()=>fetch('/api/admin/rewards').then(r=>r.json()));assert.equal(r.tables.find(t=>t.id==='dungeon-stage').rows.length,65)}
+ await admin.locator('#tab-monsters').click();await admin.waitForSelector('#monsters-tab .ct-mrow');
+ const firstMon=await admin.locator('#monsters-tab [data-key="hp"]').first().getAttribute('data-mon');
+ await admin.locator('#monsters-tab [data-key="hp"]').first().fill('200');await admin.locator('#monsters-tab [data-key="level"]').first().fill('120');await admin.locator('#monsters-tab [data-off]').nth(1).check();await admin.screenshot({path:output+'/admin-monsters.png'});await admin.locator('#ct-msave').click();
+ await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã lưu chỉ số quái'));
+ {const r=await admin.evaluate(()=>fetch('/api/admin/content').then(r=>r.json()));assert.equal(r.monsters.find(m=>m.avatar===firstMon).mod.hp,200);assert.equal(r.monsters.find(m=>m.avatar===firstMon).mod.level,120)}
+ await admin.locator('#ct-mreset').click();await admin.waitForFunction(()=>document.querySelector('#monsters-tab h2')?.textContent.includes('0 đã chỉnh'));
+ await admin.locator('#tab-stages').click();await admin.waitForSelector('#stages-tab .ct-stage');await admin.locator('#stages-tab [data-mode="dungeon"]').click();await admin.locator('#ct-reset').click();
+ await admin.waitForFunction(()=>[...document.querySelectorAll('#stages-tab .ev-pick')].some(b=>b.textContent.includes('60 ải')));
+ // Tab Boss hạm đội: sửa cấp quái (trên 1000) và thưởng ải 1, thêm ải boss mới, xoá, trả về mặc định.
+ await admin.locator('#tab-guildboss').click();await admin.waitForSelector('#guildboss-tab .gb-mon');await admin.screenshot({path:output+'/admin-guildboss.png'});
+ await admin.locator('#guildboss-tab [data-path="monsters.0.level"]').fill('2500');await admin.locator('#guildboss-tab [data-path="gold"]').fill('12345');
+ await admin.locator('#guildboss-tab [data-swap="1"]').click();await admin.waitForSelector('#gb-search');await admin.locator('#guildboss-tab [data-pick]').first().click();
+ await admin.locator('#gb-save').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã lưu ải 1'));
+ {const r=await admin.evaluate(()=>fetch('/api/admin/guild-boss').then(r=>r.json()));assert.equal(r.stages[0].monsters[0].level,2500);assert.equal(r.stages[0].gold,12345);assert.equal(r.edited,true)}
+ await admin.locator('#gb-add').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã thêm ải boss 61'));await admin.screenshot({path:output+'/admin-guildboss-new.png'});
+ {const r=await admin.evaluate(()=>fetch('/api/admin/guild-boss').then(r=>r.json()));assert.equal(r.stages.length,61)}
+ await admin.locator('#gb-remove').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã xoá ải cuối'));
+ await admin.locator('#gb-reset').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã trả về mặc định'));
+ {const r=await admin.evaluate(()=>fetch('/api/admin/guild-boss').then(r=>r.json()));assert.equal(r.edited,false);assert.equal(r.stages.length,60);assert.equal(r.stages[0].monsters[0].level,50)}
+ // Tab Leo tháp: đổi quái tầng 3 (vị trí 1), cấp 5000, thưởng; nhảy tới tầng 2301; thêm / xoá tầng; về mặc định.
+ await admin.locator('#tab-tower').click();await admin.waitForSelector('#tower-tab .tw-floor');await admin.screenshot({path:output+'/admin-tower.png'});
+ await admin.locator('#tower-tab .tw-floor[data-floor="3"]').click();await admin.waitForSelector('#tower-tab h2:has-text("Tầng 3")');
+ await admin.locator('#tower-tab [data-unpick="1"]').click();await admin.locator('#tower-tab [data-pick-slot="1"]').click();await admin.waitForSelector('#tw-search');await admin.locator('#tw-search').fill('kizaru');await admin.waitForSelector('#tower-tab [data-pick-monster]');await admin.locator('#tower-tab [data-pick-monster]').first().click();
+ await admin.locator('#tower-tab [data-field="level"]').fill('5000');await admin.locator('#tower-tab [data-field="gold"]').fill('424242');
+ await admin.locator('#tower-tab [data-add-drop]').click();await admin.locator('#tw-search').fill('kim cuong');await admin.waitForSelector('#tower-tab [data-pick-item="diamonds"]');await admin.locator('#tower-tab [data-pick-item="diamonds"]').click();
+ await admin.screenshot({path:output+'/admin-tower-edit.png'});await admin.locator('#tw-save').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã lưu tầng 3'));
+ {const r=await admin.evaluate(()=>fetch('/api/admin/tower?page=0').then(r=>r.json()));const f=r.floors.find(x=>x.floor===3);assert.equal(f.level,5000);assert.equal(f.gold,424242);assert.equal(f.drops.at(-1).itemId,'diamonds');assert.match(f.enemies.find(e=>e.position===1).name,/Kizaru/i);assert.deepEqual(r.edited,[3])}
+ await admin.locator('#tw-jump').fill('2301');await admin.locator('#tw-go').click();await admin.waitForSelector('#tower-tab h2:has-text("Tầng 2301")');
+ await admin.locator('#tw-add').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã thêm tầng 2302'));
+ await admin.locator('#tw-remove').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã xoá tầng cuối'));
+ await admin.locator('#tw-reset').click();await admin.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Đã trả về mặc định'));
+ {const r=await admin.evaluate(()=>fetch('/api/admin/tower?page=0').then(r=>r.json()));assert.equal(r.total,2301);assert.deepEqual(r.edited,[])}
  await admin.locator('#logout').click();await admin.waitForSelector('#login-form');assert.equal(await admin.evaluate(()=>fetch('/api/admin/players').then(r=>r.status)),401);
- assert.deepEqual(errors,[]);console.log(JSON.stringify({checks:['disabled-without-password','no-session','wrong-password','player-session-rejected','forged-cookie','cookie-flags','no-hash','csrf','regex-escaped','login-ui','grant-item','grant-wallet','player-receives','choice-l1','choice-l2','not-in-shop','lock','unlock','phone','rewards-edit','rewards-picker','rewards-reset','logout'],errors}));
+ assert.deepEqual(errors,[]);console.log(JSON.stringify({checks:['disabled-without-password','no-session','wrong-password','player-session-rejected','forged-cookie','cookie-flags','no-hash','csrf','regex-escaped','login-ui','grant-item','grant-wallet','player-receives','choice-l1','choice-l2','not-in-shop','lock','unlock','phone','rewards-edit','rewards-picker','rewards-reset','stage-lineup','stage-scale','add-stages','monster-tuning','monster-reset','stage-reset','guild-boss-edit','guild-boss-add','guild-boss-reset','tower-edit','tower-jump','tower-add','tower-reset','logout'],errors}));
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await browser?.close();client=new MongoClient(process.env.MONGODB_URI);await client.connect();assert.match(database,/^htps_admin_[a-f0-9]{12}$/);await client.db(database).dropDatabase();await client.close();server?.kill()});

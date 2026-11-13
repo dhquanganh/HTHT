@@ -1,0 +1,13 @@
+
+Status_4.png
+size: 62,95
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+silent
+  rotate: false
+  xy: 2, 2
+  size: 58, 91
+  orig: 60, 93
+  offset: 1, 1
+  index: -1

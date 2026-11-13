@@ -1,0 +1,20 @@
+
+Xich_top.png
+size: 76,56
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0statusbattle/xich1
+  rotate: true
+  xy: 2, 4
+  size: 47, 38
+  orig: 49, 40
+  offset: 1, 1
+  index: -1
+0statusbattle/xich2
+  rotate: true
+  xy: 42, 2
+  size: 49, 29
+  orig: 75, 30
+  offset: 13, 0
+  index: -1

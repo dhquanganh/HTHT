@@ -19,7 +19,15 @@ export function installGuild(Store){
   this.guildDamage=this.db.collection('guild_boss_damage');await this.guildDamage.createIndex({guildId:1,stage:1,userId:1},{unique:true});await this.guildDamage.createIndex({guildId:1,stage:1,damage:-1});
   await this.guilds.createIndex({nameKey:1},{unique:true});await this.guilds.createIndex({shortId:1},{unique:true});await this.guilds.createIndex({'members.userId':1});await this.guilds.createIndex({'applications.userId':1});
  };
- P.guildOf=function(userId){return this.guilds.findOne({'members.userId':new ObjectId(hex(userId))})};
+ // Hạm đội đã hạ ải boss cuối (cleared) mà quản trị thêm ải mới sau đó: tự mở ải kế khi đọc hạm đội.
+P.guildOf=async function(userId){
+ const g=await this.guilds.findOne({'members.userId':new ObjectId(hex(userId))});
+ if(!g?.boss?.cleared||g.boss.stage>=guildData.stages.length)return g;
+ const next=g.boss.stage+1;
+ await this.guilds.updateOne({_id:g._id,'boss.stage':g.boss.stage,'boss.cleared':true},{$set:{boss:{stage:next,hp:stageHp(next),damage:{},cleared:false,kills:g.boss.kills||{}}}});
+ await this.guildLog(g._id,`Boss hạm đội mở ải mới ${next}.`);
+ return this.guilds.findOne({_id:g._id});
+};
  /** Ghi vào player có khóa phiên bản (thư thưởng, vào / rời hạm đội do người khác duyệt). */
  P.guildPlayer=async function(userId,change){
   for(let attempt=0;attempt<10;attempt++){

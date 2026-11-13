@@ -74,3 +74,37 @@ header{flex-wrap:wrap;gap:8px}.main-tabs{flex-wrap:wrap}
 .rw-picker .beast-matches button{display:flex;align-items:center;gap:10px;text-align:left}
 .rw-picker .row input{flex:1}
 .rw-picker .beast-matches{overflow:auto}
+
+/* Tab Phụ bản / Quái (admin-content.js). */
+.ct-stage{flex-wrap:wrap;align-items:center;gap:10px}.ct-stage.custom{border-color:var(--accent)}
+.ct-lineup{display:flex;align-items:center;gap:4px;flex:1;min-width:260px}.ct-lineup.default .ct-head{opacity:.6}
+.ct-head img{width:44px;height:44px;border-radius:8px;border:1px solid var(--line);object-fit:cover;background:#0b1118}
+.ct-factions{flex-wrap:wrap;gap:6px}.ct-factions .on{background:var(--accent);color:#2a1c00}
+.ct-count input{width:90px}
+.ct-editor{width:min(760px,94vw)}
+.ct-slots{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.ct-slot{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px;border:1px dashed var(--line);border-radius:10px;background:transparent;color:var(--text)}
+.ct-slot.empty{opacity:.55}.ct-slot img{width:56px;height:56px}
+.ct-matches{max-height:44vh}
+.ct-monsters{display:flex;flex-direction:column;gap:10px}
+.ct-mlist{display:flex;flex-direction:column;gap:6px;max-height:62vh;overflow:auto}
+.ct-mrow{flex-wrap:wrap;align-items:center;gap:10px}.ct-mrow.off{opacity:.55}
+.ct-mrow .rw-label{display:flex;flex-direction:column;min-width:180px}
+.ct-mrow .ev-num input{width:80px}
+.ct-off{display:flex;align-items:center;gap:6px}
+
+/* Tab Boss hạm đội (admin-guild-boss.js). */
+.gb-nav{max-height:78vh;overflow:auto}
+.gb-tools{flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.gb-mon{flex-wrap:wrap;align-items:center;gap:8px}.gb-mon .rw-label{display:flex;flex-direction:column;min-width:150px}
+.gb-mon .ev-num input{width:96px}.gb-mon select{width:60px}
+.gb-row{flex-wrap:wrap;gap:10px;align-items:center}.gb-row b{min-width:90px}
+.gb-ranks{display:flex;flex-direction:column;gap:6px}
+.gb-nav .ev-pick,.gb-nav .gb-tools,.gb-nav p{flex:none}
+
+/* Tab Leo tháp (admin-tower.js). */
+.tw-floor{display:flex;flex-direction:column;gap:2px}
+.tw-heads{display:flex;gap:2px}.tw-heads img{width:26px;height:26px;border-radius:5px;object-fit:cover}
+.tw-edited{display:flex;flex-wrap:wrap;gap:4px;flex:none}
+#tw-jump{width:120px}
+#tower-tab .ct-slot small{max-width:96px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

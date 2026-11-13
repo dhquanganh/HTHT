@@ -1,0 +1,90 @@
+
+Stone.png
+size: 225,420
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 981
+  rotate: false
+  xy: 2, 340
+  size: 201, 78
+  orig: 212, 84
+  offset: 6, 3
+  index: -1
+Layer 982
+  rotate: true
+  xy: 2, 2
+  size: 50, 80
+  orig: 52, 82
+  offset: 1, 1
+  index: -1
+Layer 983
+  rotate: false
+  xy: 2, 270
+  size: 147, 68
+  orig: 149, 70
+  offset: 1, 1
+  index: -1
+Layer 984
+  rotate: false
+  xy: 149, 110
+  size: 74, 117
+  orig: 77, 119
+  offset: 2, 1
+  index: -1
+Layer 985
+  rotate: false
+  xy: 147, 31
+  size: 71, 77
+  orig: 73, 80
+  offset: 1, 1
+  index: -1
+Layer 986
+  rotate: true
+  xy: 2, 54
+  size: 72, 81
+  orig: 74, 83
+  offset: 1, 1
+  index: -1
+Layer 987
+  rotate: true
+  xy: 85, 74
+  size: 52, 60
+  orig: 54, 62
+  offset: 1, 1
+  index: -1
+Layer 988
+  rotate: false
+  xy: 2, 197
+  size: 145, 71
+  orig: 147, 73
+  offset: 1, 1
+  index: -1
+Layer 989
+  rotate: false
+  xy: 85, 3
+  size: 58, 69
+  orig: 60, 75
+  offset: 1, 1
+  index: -1
+Layer 990
+  rotate: false
+  xy: 102, 149
+  size: 42, 46
+  orig: 44, 48
+  offset: 1, 1
+  index: -1
+Layer 991
+  rotate: false
+  xy: 151, 229
+  size: 72, 109
+  orig: 74, 112
+  offset: 1, 1
+  index: -1
+Layer 992
+  rotate: false
+  xy: 2, 128
+  size: 98, 67
+  orig: 101, 69
+  offset: 2, 1
+  index: -1

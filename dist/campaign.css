@@ -75,4 +75,5 @@
 /* Chọn đội hình trước trận sự kiện / boss: nằm trên mọi lớp tính năng, nút Tấn công ở giữa. */
 #dialog-ui:has(.campaign-formation-shade){z-index:95!important}
 .campaign-formation .team-fight{left:50%!important;transform:translateX(-50%)}
-.campaign-formation .team-fight:hover{transform:translateX(-50%) translateY(-1px)}
+/* Nhấc nút khi rê chuột dùng `translate` (game.css), không đè transform căn giữa. */
+.campaign-formation .team-fight:hover{transform:translateX(-50%)}

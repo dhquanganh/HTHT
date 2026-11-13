@@ -1,0 +1,13 @@
+
+Stun.png
+size: 100,93
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Buff_fire/thieudot/new/stun
+  rotate: false
+  xy: 2, 2
+  size: 96, 89
+  orig: 98, 90
+  offset: 2, 0
+  index: -1

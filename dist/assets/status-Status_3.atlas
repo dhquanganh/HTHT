@@ -1,0 +1,13 @@
+
+Status_3.png
+size: 66,67
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+smoke
+  rotate: false
+  xy: 2, 2
+  size: 62, 63
+  orig: 86, 80
+  offset: 10, 9
+  index: -1

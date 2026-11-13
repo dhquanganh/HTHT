@@ -10,6 +10,10 @@ import {rankingEntry} from './tower.mjs';
 import {dungeonClock} from './dungeon.mjs';
 import {applyEventConfig,editableEvents,validateEventConfig} from './events.mjs';
 import {applyRewardConfig,rewardTablesView,validateRewardRows} from './reward-config.mjs';
+import {setContent,content} from './content.mjs';
+import {contentView,validateMonsters,validateStages} from './content-admin.mjs';
+import {applyGuildBoss,guildBossView,editGuildBoss} from './guild-config.mjs';
+import {applyTowerConfig,towerAdminView,editTower} from './tower-config.mjs';
 import {isRewardId} from './game.mjs';
 import {beastBosses,bossByKey,bracketIndex,classLabel,beastEntry,beastTurns,defaultBoss,defaultConfig,defaultRewards,rankBrackets,rewardItems,rewardView,variantOf,validateBossStats,validateConfig,validateRewards} from './beast.mjs';
 import {itemById,itemIcon} from './catalog.mjs';
@@ -24,7 +28,7 @@ async function verifyPassword(password,encoded){const [scheme,salt,expected]=enc
 const summary=user=>({...(ensureRoster(user.player),{}),id:user._id.toHexString(),username:user.usernameKey,displayName:user.player.displayName,level:user.player.account.level,gold:user.player.wallet.gold,diamonds:user.player.wallet.diamonds,stage:user.player.adventure.unlockedStage,towerFloor:user.player.tower?.floor||1,heroes:(user.player.hero?1:0)+Object.keys(user.player.reserveHeroes||{}).length,locked:!!user.locked,createdAt:user.createdAt,updatedAt:user.updatedAt});
 export class Store {
  constructor(uri,dbName){this.client=new MongoClient(uri,{serverSelectionTimeoutMS:15000,connectTimeoutMS:10000,maxPoolSize:15});this.db=this.client.db(dbName);this.users=this.db.collection('players');this.sessions=this.db.collection('sessions');this.adminLog=this.db.collection('admin_log');this.ranking=this.db.collection('tower_ranking');for(const [field,name] of [['beastBosses','beast_bosses'],['beastConfig','beast_config'],['beastRewards','beast_rewards'],['beastSeasons','beast_seasons'],['beastRanking','beast_ranking'],['beastPayouts','beast_payouts']])this[field]=this.db.collection(name)}
- async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.rewardConfig=this.db.collection('reward_config');applyRewardConfig(await this.rewardConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
+ async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.towerConfig=this.db.collection('tower_config');applyTowerConfig(await this.towerConfig.findOne({_id:'tower'}));this.guildBossConfig=this.db.collection('guild_boss_config');applyGuildBoss(await this.guildBossConfig.findOne({_id:'stages'}));this.contentConfig=this.db.collection('content_config');setContent(await this.contentConfig.findOne({_id:'content'})||{});this.rewardConfig=this.db.collection('reward_config');applyRewardConfig(await this.rewardConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
  async close(){clearInterval(this.beastTimer);clearInterval(this.arenaTimer);clearInterval(this.tthTimer);await this.client.close()}
  // ---- Chiến Thần Thú ----
  async setupBeast(){
@@ -125,6 +129,33 @@ export class Store {
   if(input?.reset===true){validateRewardRows(id,null,isRewardId,true);await this.rewardConfig.deleteOne({_id:id})}
   else await this.rewardConfig.updateOne({_id:id},{$set:{rows:validateRewardRows(id,input?.rows,isRewardId),updatedAt:new Date()}},{upsert:true});
   applyRewardConfig(await this.rewardConfig.find().toArray());await this.beastLog(`${input?.reset===true?'Trả về mặc định':'Sửa'} bảng thưởng ${id}`,ip);return this.rewardAdmin();
+ }
+ // ---- Leo tháp (tab Leo tháp): bản sửa thưa theo tầng + tầng thêm, áp ngay vào towerData.
+ towerAdmin(page){return{...towerAdminView(Number(page)||0),rewardItems:rewardItems()}}
+ async setTower(input,ip){
+  if(input?.op==='reset'){await this.towerConfig.deleteOne({_id:'tower'});applyTowerConfig(null)}
+  else{const next=editTower(input,isRewardId);await this.towerConfig.updateOne({_id:'tower'},{$set:{floors:next.floors,added:next.added,updatedAt:new Date()}},{upsert:true});applyTowerConfig(next)}
+  await this.beastLog(`Leo tháp: ${input?.op}${input?.floor?' tầng '+input.floor:''}`,ip);return this.towerAdmin(input?.page);
+ }
+ // ---- Boss hạm đội (tab Boss hạm đội): lưu cả danh sách ải, áp ngay vào guildData.stages.
+ async guildBossAdmin(){return guildBossView(!!await this.guildBossConfig.findOne({_id:'stages'},{projection:{_id:1}}))}
+ async setGuildBoss(input,ip){
+  if(input?.op==='reset'){await this.guildBossConfig.deleteOne({_id:'stages'});applyGuildBoss(null)}
+  else{const stages=editGuildBoss(input);await this.guildBossConfig.updateOne({_id:'stages'},{$set:{stages,updatedAt:new Date()}},{upsert:true});applyGuildBoss({stages})}
+  await this.beastLog(`Boss hạm đội: ${input?.op}${input?.stage?' ải '+input.stage:''}`,ip);return this.guildBossAdmin();
+ }
+ // ---- Nội dung phụ bản (tab Phụ bản / Quái): một bản ghi content_config, áp ngay vào bộ nhớ.
+ contentAdmin(){return contentView()}
+ async saveContent(next,detail,ip){
+  await this.contentConfig.updateOne({_id:'content'},{$set:{monsters:next.monsters,stages:next.stages,counts:next.counts,updatedAt:new Date()}},{upsert:true});
+  setContent(next);applyRewardConfig(await this.rewardConfig.find().toArray());await this.beastLog(detail,ip);return this.contentAdmin();
+ }
+ async setMonsters(input,ip){return this.saveContent({...structuredClone(content),monsters:input?.reset===true?{}:validateMonsters(input?.monsters)},input?.reset===true?'Trả quái về mặc định':'Sửa chỉ số quái',ip)}
+ async setStages(mode,input,ip){
+  const next=structuredClone(content);
+  if(input?.reset===true){next.stages[mode]={};if(mode!=='brave')delete next.counts[mode]}
+  else{const v=validateStages(mode,input);next.stages[mode]=v.stages;if(v.count!==null)next.counts[mode]=v.count}
+  return this.saveContent(next,`${input?.reset===true?'Trả về mặc định':'Sửa'} ải phụ bản ${mode}`,ip);
  }
  async beastLog(detail,ip){await this.adminLog.insertOne({userId:null,at:new Date(),detail,ip})}
  async setBeastRewards(keys,ranks,ip){

@@ -68,8 +68,8 @@ export function teamRound(b,input={action:'auto'}){
  const triggersOf=(u,on)=>{const sealed=(u.statuses||[]).find(s=>s.kind==='seal'&&s.until>=b.turn);return(u.kit?.triggers||[]).filter((t,i)=>t.on===on&&!(sealed&&i<sealed.passives))};
  const gain=(u,n)=>{u.energy=Math.min(100,(u.energy||0)+n*(1+(u.energyGain||0)))};
  for(const u of [...b.allies,...b.enemies]){
-  for(const e of u.effects.filter(e=>e.expiresTurn<b.turn)){revertHp(u,e);emit({type:'effect-expired',actor:e.source,target:u.id,skillId:e.skillId,name:e.name})}
-  u.effects=u.effects.filter(e=>e.expiresTurn>=b.turn);u.statuses=(u.statuses||[]).filter(s=>s.until>=b.turn);u.shields=(u.shields||[]).filter(s=>s.until>=b.turn&&(s.amount>0||s.hits>0));
+  for(const e of u.effects.filter(e=>e.expiresTurn<b.turn)){revertHp(u,e);emit({type:'effect-expired',actor:e.source,target:u.id,skillId:e.skillId,name:e.name,attribute:e.attribute})}
+  u.effects=u.effects.filter(e=>e.expiresTurn>=b.turn);u.statuses=(u.statuses||[]).filter(s=>s.until>=b.turn);{const keep=(u.shields||[]).filter(s=>s.until>=b.turn&&(s.amount>0||s.hits>0));for(const s of (u.shields||[]).filter(s=>!keep.includes(s)))emit({type:'effect-expired',target:u.id,skillId:s.skillId||'shield',attribute:'shield'});u.shields=keep}
   for(const key of Object.keys(u.cooldowns))u.cooldowns[key]=Math.max(0,u.cooldowns[key]-1);
  }
  const firstTarget=unit=>{
@@ -157,7 +157,7 @@ export function teamRound(b,input={action:'auto'}){
   // Kháng: kháng riêng của bị động + Miễn khống chế từ bảo vật (mã 40-43) + Miễn chống (bị động và trang bị, mã 11).
   if(!t.hp)return;const resist=Math.min(1,(t.resist?.[e.kind]||0)+(t.statusResist?.[e.kind]||0)+Math.max(0,(t.controlResist||0)+(t.debuffResist||0)-(u.controlPierce||0)));
   if(random()>=e.chance*(1-resist)*(1-(t.evade||0))){if(e.chance*(1-resist)<e.chance)emit({type:'resist',actor:t.id,target:t.id,skillId,name:statusNames[e.kind]});return}
-  t.statuses=t.statuses.filter(s=>s.kind!==e.kind);t.statuses.push({kind:e.kind,until:b.turn+e.turns-1+(e.kind==='silence'?0:0),source:u.id});
+  t.statuses=t.statuses.filter(s=>s.kind!==e.kind);t.statuses.push({kind:e.kind,until:b.turn+e.turns-1+(e.kind==='silence'?0:0),source:u.id,skillId});
   emit({type:'buff',actor:u.id,target:t.id,skillId,name:statusNames[e.kind],attribute:e.kind,value:0,expiresTurn:b.turn+e.turns-1});
  };
  const applyStat=(u,x,e,skillId,name)=>{
@@ -186,18 +186,18 @@ export function teamRound(b,input={action:'auto'}){
    // Phong Ấn: một kẻ địch ngẫu nhiên (+ cơ hội thêm một kẻ khác) giảm ST gây ra và mất N bị động kích hoạt.
    else if(e.type==='seal'){const foes=alive(opponents(u)).map(t=>[random(),t]).sort((a,c)=>a[0]-c[0]).map(x=>x[1]),list=foes.slice(0,random()<e.extraChance?2:1);
     for(const t of list){if(t.immuneDebuff||random()<(t.evade||0)){emit({type:'resist',actor:t.id,target:t.id,skillId,name:'Phong Ấn'});continue}
-     t.statuses=t.statuses.filter(s=>s.kind!=='seal');t.statuses.push({kind:'seal',until:b.turn+e.turns-1,source:u.id,passives:e.passives});emit({type:'buff',actor:u.id,target:t.id,skillId,name:'Phong Ấn',attribute:'seal',value:0,expiresTurn:b.turn+e.turns-1});
+     t.statuses=t.statuses.filter(s=>s.kind!=='seal');t.statuses.push({kind:'seal',until:b.turn+e.turns-1,source:u.id,skillId,passives:e.passives});emit({type:'buff',actor:u.id,target:t.id,skillId,name:'Phong Ấn',attribute:'seal',value:0,expiresTurn:b.turn+e.turns-1});
      addEffect(u,t,skillId+':seal',name,'damageDealt',e.damage,b.turn+e.turns-1)}}
    else if(e.type==='heal'){const team=alive(side(u)),list=e.on==='team'?team:e.on==='lowest'?[...team].sort((a,c)=>a.hp/a.maxHp-c.hp/c.maxHp)[0]?[[...team].sort((a,c)=>a.hp/a.maxHp-c.hp/c.maxHp)[0]]:[]:e.on==='some'?[...team].sort((a,c)=>a.hp/a.maxHp-c.hp/c.maxHp).slice(0,e.count||2):[u];
     for(const x of list)heal(u,x,e.attack?stat(u,'attack',b.turn)*e.attack*scale:x.maxHp*e.maxHp,skillId)}
-   else if(e.type==='shield'){const list=e.on==='team'?alive(side(u)):[u];for(const x of list){x.shields.push(e.block?{hits:e.block,until:b.turn+e.turns-1}:{amount:Math.round(e.maxHp?u.maxHp*e.maxHp:stat(u,'attack',b.turn)*e.attack),until:b.turn+e.turns-1});emit({type:'buff',actor:u.id,target:x.id,skillId,name:'Khiên chắn',attribute:'shield',value:0,expiresTurn:b.turn+e.turns-1})}}
+   else if(e.type==='shield'){const list=e.on==='team'?alive(side(u)):[u];for(const x of list){x.shields.push(e.block?{hits:e.block,until:b.turn+e.turns-1,skillId}:{skillId,amount:Math.round(e.maxHp?u.maxHp*e.maxHp:stat(u,'attack',b.turn)*e.attack),until:b.turn+e.turns-1});emit({type:'buff',actor:u.id,target:x.id,skillId,name:'Khiên chắn',attribute:'shield',value:0,expiresTurn:b.turn+e.turns-1})}}
    else if(e.type==='energy'){
     if(e.on==='target'){for(const t of victims())if(random()<(e.chance??1)){const taken=Math.min(t.energy||0,-e.value);t.energy-=taken;emit({type:'unit-state',actor:t.id,hp:t.hp,energy:t.energy});if(e.steal){u.energy=Math.min(100,u.energy+taken)}}}
     else for(const x of e.on==='team'?alive(side(u)):[u])if(!hasStatus(x,'fear',b.turn)){x.energy=Math.min(100,(x.energy||0)+e.value);emit({type:'unit-state',actor:x.id,hp:x.hp,energy:x.energy})}
     if(e.steal)emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy});
    }
-   else if(e.type==='cleanse'){for(const x of e.on==='team'?alive(side(u)):[u]){let n=e.count;x.statuses=x.statuses.filter(()=>n-->0?false:true);x.dots=x.dots.slice(Math.max(0,n));x.effects=x.effects.filter(f=>!(f.value<0&&f.source!==x.id&&n-->0))}}
-   else if(e.type==='dispel'){for(const t of victims())if(random()<(e.chance??1)){let n=e.count;t.effects=t.effects.filter(f=>!(f.value>0&&n-->0));t.shields=n>0?[]:t.shields}}
+   else if(e.type==='cleanse'){for(const x of e.on==='team'?alive(side(u)):[u]){let n=e.count;const gone=[];x.statuses=x.statuses.filter(s=>n-->0?(gone.push({skillId:s.skillId||'status',attribute:s.kind}),false):true);const cut=Math.max(0,n);for(const d of x.dots.slice(0,cut))gone.push({skillId:d.skillId,attribute:d.kind});x.dots=x.dots.slice(cut);x.effects=x.effects.filter(f=>{const drop=f.value<0&&f.source!==x.id&&n-->0;if(drop){revertHp(x,f);gone.push({skillId:f.skillId,attribute:f.attribute})}return!drop});for(const g of gone)emit({type:'effect-expired',target:x.id,...g})}}
+   else if(e.type==='dispel'){for(const t of victims())if(random()<(e.chance??1)){let n=e.count;const gone=[];t.effects=t.effects.filter(f=>{const drop=f.value>0&&n-->0;if(drop){revertHp(t,f);gone.push({skillId:f.skillId,attribute:f.attribute})}return!drop});if(n>0){for(const s of t.shields)gone.push({skillId:s.skillId||'shield',attribute:'shield'});t.shields=[]}for(const g of gone)emit({type:'effect-expired',target:t.id,...g})}}
    else if(e.type==='counter'&&cause&&cause.hp>0&&cause.side!==u.side&&u.counterTurn!==b.turn&&random()<(e.chance??1)){u.counterTurn=b.turn;emit({type:'trigger',actor:u.id,skillId,name:'Phản công'});kitBasic(u,cause,depth+1,true)}
    else if(e.type==='castUlt'&&depth===0&&random()<(e.chance??1)&&!hasStatus(u,'silence',b.turn)){emit({type:'trigger',actor:u.id,skillId,name});castKitUltimate(u,null,depth+1,true)}
    else if(e.type==='extraAction'&&depth===0&&random()<(e.chance??1)){const t=firstTarget(u);if(t){emit({type:'trigger',actor:u.id,skillId,name});kitBasic(u,t,depth+1,true)}}

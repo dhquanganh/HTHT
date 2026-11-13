@@ -9,6 +9,10 @@ let campaignChapterId=null,campaignStageId=null,campaignSlots=null,campaignSelec
 let battleActiveActorId=null,battleMenuHeroId=null;
 let battleReference=null,battleMenuOpen=false,skipBattleAnimations=false;
 let battleEffects=[],effectPool=[],battleShakes=[];
+// Hiệu ứng trạng thái gốc (dist/status-effects.json): Spine lặp trên người khi choáng / đóng băng / hóa đá…, biểu tượng buff / debuff chỉ số.
+let statusFx=null,statusPool=[],statusLive=new Map();
+// Ghi vết thời điểm trong trận cho kiểm thử trình duyệt (chỉ ghi khi window.__battleTrace là mảng).
+const battleTrace=(k,o={})=>{if(Array.isArray(window.__battleTrace))window.__battleTrace.push({k,t:battleTime,...o})};
 // shake_cams của db_battle_heroes: {delay, duration} giây tính từ lúc ra chiêu; rate là tỉ lệ nén thời gian của chiêu.
 function addShakes(list,rate=1,from=battleTime){if(skipBattleAnimations||!list?.length)return;for(const s of list)battleShakes.push({start:from+s.delay/rate,end:from+(s.delay+s.duration)/rate})}
 function shakeOffset(){battleShakes=battleShakes.filter(s=>s.end>battleTime);const s=battleShakes.find(s=>s.start<=battleTime);if(!s)return null;const k=1-.6*(battleTime-s.start)/Math.max(.01,s.end-s.start),amp=9*k;return{x:(Math.random()*2-1)*amp,y:(Math.random()*2-1)*amp}}
@@ -1089,7 +1093,45 @@ async function prepareBattleEffects(){
   for(const avatar of attackAvatars){const atk=heroEffects?.heroes[avatar]?.attack;if(!atk)continue;atk.cast=atk.cast.filter(e=>fxUsable(e)&&e.layer!=='BeyondCanvas');atk.impact=atk.impact.filter(fxUsable);for(const e of [...atk.cast,...atk.impact])attackKeys.add(e.key)}
   for(const key of attackKeys)for(let i=0;i<fxImpactSlots;i++)effectPool.push({kind:'atk-fx',key,skeleton:heroEffects.effects[key],animation:'',loop:false});
  }
- await Promise.all(effectPool.map(c=>V().loadSkeleton(c)));
+ statusFx??=await fetch('status-effects.json').then(r=>r.ok?r.json():null).catch(()=>null);statusLive=new Map();
+ if(statusFx&&!statusPool.length){
+  for(const [kind,cfg] of Object.entries(statusFx.statuses))for(let i=0;i<6;i++)statusPool.push({kind:'status-'+kind,status:kind,skeleton:statusFx.spines[cfg.spine],animation:cfg.loop,loop:true});
+  for(const [kind,cfg] of Object.entries(statusFx.once))for(let i=0;i<3;i++)statusPool.push({kind:'once-'+kind,skeleton:statusFx.spines[cfg.spine],animation:cfg.animation,loop:false});
+ }
+ await Promise.all([...effectPool.map(c=>V().loadSkeleton(c)),...statusPool.filter(c=>!c.instance).map(c=>V().loadSkeleton(c)),...Object.values(statusFx?.icons||{}).flatMap(x=>[x.buff,x.debuff]).map(k=>V().loadImage(k))]);
+}
+// Vị trí neo của hiệu ứng trạng thái trên nhân vật.
+// Spine trạng thái gốc dựng cho nhân vật cao ~250 đơn vị nên cỡ = chiều cao nhân vật / 250 × scale.
+// head: quanh đỉnh đầu (dưới thanh máu), body: giữa thân, feet: chân. dx / dy (px) dịch thêm theo cấu hình.
+function statusAnchor(a,x,y,anchor,cfg={}){const h=a.visualHeight||175,dx=(cfg.dx||0)*(a.flip||1),dy=cfg.dy||0;return anchor==='head'?{x:x+dx,y:y-h*.88+dy}:anchor==='body'?{x:x+dx,y:y-h*.45+dy}:{x:x+dx,y:y+4+dy}}
+/** Vẽ Spine trạng thái đang có của một nhân vật; giữ một controller cho mỗi (nhân vật, trạng thái) để vòng lặp chạy liền. */
+function drawStatusFx(ctx,a,x,y,step,turn){
+ if(!statusFx||!combatRenderer)return;
+ const active=a.hp>0?new Set((a.statusEffects||[]).filter(f=>f.expiresTurn>=turn&&statusFx.statuses[f.attribute]).map(f=>f.attribute)):new Set();
+ for(const [key,c] of statusLive)if(key.startsWith(a.id+':')&&!active.has(key.slice(a.id.length+1))){statusLive.delete(key)}
+ for(const kind of active){
+  const key=a.id+':'+kind,cfg=statusFx.statuses[kind];let c=statusLive.get(key);
+  if(!c){c=statusPool.find(x=>x.status===kind&&x.instance&&![...statusLive.values()].includes(x));if(!c)continue;statusLive.set(key,c);
+   const data=c.instance.data,has=n=>n&&data.findAnimation(n);c.lastAt=0;c.instance.setToSetupPose();c.state.clearTracks();
+   if(has(cfg.start)){c.state.setAnimation(0,cfg.start,false);c.state.addAnimation(0,has(cfg.loop)?cfg.loop:data.animations[0].name,true,0)}else c.state.setAnimation(0,has(cfg.loop)?cfg.loop:data.animations[0].name,true)}
+  // Đồng hồ thật (× tốc độ trận): hiệu ứng vẫn chạy khi trận đang chờ lệnh.
+  const t=performance.now(),dtReal=c.lastAt?Math.min(.1,(t-c.lastAt)/1000)*battleSpeed:0;c.lastAt=t;
+  c.state.update(dtReal);c.state.apply(c.instance);c.instance.updateWorldTransform();
+  const at=statusAnchor(a,x,y,cfg.anchor,cfg),k=(cfg.scale||1)*(a.visualHeight||175)/250;
+  ctx.save();ctx.translate(at.x,at.y);ctx.scale(k,-k);try{combatRenderer.draw(c.instance)}catch{}ctx.restore();
+ }
+}
+/** Hiệu ứng một lần (hồi sinh: Status_13). */
+function spawnStatusOnce(target,kind){
+ const cfg=statusFx?.once?.[kind],c=statusPool.find(x=>x.kind==='once-'+kind&&x.instance&&!battleEffects.some(f=>f.controller===x));if(skipBattleAnimations||!cfg||!c)return;
+ const anim=c.instance.data.findAnimation(cfg.animation)||c.instance.data.animations[0];c.instance.setToSetupPose();c.state.clearTracks();c.state.setAnimation(0,anim.name,false);c.state.apply(c.instance);c.instance.updateWorldTransform();
+ const at=statusAnchor(target,target.x,target.y,cfg.anchor,cfg),k=(cfg.scale||1)*(target.visualHeight||175)/250;
+ battleEffects.push({controller:c,x:at.x,y:at.y,scale:k,flip:1,startAt:battleTime,duration:anim.duration,elapsed:0});
+}
+/** Biểu tượng buff / debuff gốc theo thuộc tính chỉ số (value âm = debuff). Trạng thái khống chế đã có Spine nên không vẽ biểu tượng. */
+function statusIcons(a,turn){
+ const keys=[];for(const f of a.statusEffects||[]){if(f.expiresTurn<turn)continue;const pair=statusFx?.icons?.[f.attribute];if(!pair)continue;const key=(Number(f.value)||0)<0?pair.debuff:pair.buff;if(!keys.includes(key))keys.push(key)}
+ return keys.slice(0,6);
 }
 // Thiếu animation đúng tên (Sengoku: Hit gọi "animation" nhưng Skill_147 chỉ có cutsceen/hit) thì hiệu ứng trúng đòn lấy clip hit.
 function fxStart(controller,name){const data=controller.instance.data,animation=data.findAnimation(name)||data.animations.find(a=>a.name.toLowerCase()===String(name).toLowerCase())||(controller.kind==='hero-hit'&&data.animations.find(a=>/hit/i.test(a.name)))||data.animations[0];controller.instance.setToSetupPose();controller.state.clearTracks();controller.state.setAnimation(0,animation.name,false);controller.state.apply(controller.instance);controller.instance.updateWorldTransform();return animation}
@@ -1104,13 +1146,15 @@ function spawnHeroSkill(target,fx,animationLength,caster=null){const mirror=cast
  if(skipBattleAnimations)return null;
  battleEffects=battleEffects.filter(f=>!['hero-fx','hero-hit'].includes(f.controller.kind));
  const taken=new Set(),cast=fx.cast.map(e=>{const controller=effectPool.find(c=>c.kind==='hero-fx'&&c.key===e.key&&c.instance&&!taken.has(c)&&!battleEffects.some(f=>f.controller===c));if(controller)taken.add(controller);return{e,controller}}).filter(x=>x.controller);if(!cast.length)return null;
- const timed=cast.map(x=>({...x,animation:fxStart(x.controller,x.e.animation)})),end=Math.max(animationLength,...timed.map(x=>x.e.delay+x.animation.duration)),firstHit=fx.hits.length?Math.min(...fx.hits):end*.85,rate=Math.max(1,end/fxMaxSeconds);
+ const timed=cast.map(x=>({...x,animation:fxStart(x.controller,x.e.animation)}));
+ // Một pha như cũ: đoạn phim, hiệu ứng chiêu và hoạt ảnh tướng chạy cùng lúc theo mốc delay gốc của db_battle_heroes.
+ const end=Math.max(animationLength,...timed.map(x=>x.e.delay+x.animation.duration)),firstHit=fx.hits.length?Math.min(...fx.hits):end*.85,rate=Math.max(1,end/fxMaxSeconds);
  for(const {e,controller,animation} of timed){
   const cinematic=e.layer==='BeyondCanvas',behind=fxBackdrop(e),stage=e.origin==='1'&&!behind,cover=cinematic?fxCover(controller,e):null,at=cover||(behind?{x:zoroStage.cutX,y:zoroStage.cutY}:stage?fxStagePoint(e.x,e.y):{x:target.x,y:target.y-(target.visualHeight||175)*.5}),scale=cover?cover.scale:(e.scale||1)*(behind?zoroStage.cutScale:stage?zoroStage.slashScale:.7*target.scale);
   if(mirror&&stage&&!cover)at.x=1136-at.x;
-  battleEffects.push({controller,behind,x:at.x,y:at.y,scale,flip:mirror&&!cover&&!behind?-1:1,startAt:battleTime+e.delay/rate,rate,elapsed:-e.delay,duration:animation.duration,skill:true,targetId:target.id});
+  battleEffects.push({controller,behind,x:at.x,y:at.y,scale,flip:mirror&&!cover&&!behind?-1:1,startAt:battleTime+e.delay/rate,rate,elapsed:-e.delay,duration:animation.duration,skill:true,targetId:target.id,cutscene:cinematic});
  }
- addShakes(fx.shake,rate);
+ addShakes(fx.shake||[],rate);
  return{rate,hitAt:firstHit/rate,duration:end/rate};
 }
 function spawnHeroImpact(target,fx){
@@ -1212,7 +1256,7 @@ async function replay(events){
   if(e.type==='attack'){const quick=actor?.heroId==='zoro-king-of-hell',config=quick?{animation:'run',delay_cast_eff:.36}:actor?.attackConfig||battleReference?.combatAnimations?.[actor?.id==='hero'?'hero':'enemy']?.attack;playActor(actor,config?.animation||e.animation,false,1);const atkFx=!quick&&actor?heroEffects?.heroes[actor.avatar]?.attack:null;addShakes(atkFx?.shake);if(atkFx?.cast.length)setTimeout(()=>spawnAttackFx(atkFx.cast,actor,target),Number(config?.delay_cast_eff||.36)*600);if(actor){actor.moveMode='attack';actor.moveStart=battleTime*1000;actor.moveDuration=650;actor.moveTo=target?{x:target.x-actor.flip*90,y:target.y}:null}await sleep(Number(config?.delay_cast_eff||.36)*1000)}
   if(e.type==='skill'){
    const zoro=actor?.heroId==='zoro-king-of-hell',definition=actor?.side==='ally'||actor?.heroId?definitionById(actor.heroId):null,summoned=!!definition?.ultimate,boss=actor?.bossAvatar,fx=summoned?heroEffects?.heroes[definition.avatar]:boss?heroEffects?.heroes[boss]:null,config=zoro?definition.combat.skills[1]:summoned?definition.combat.skills.find(s=>/skill/i.test(s.animation))||{animation:fx?.animation||'skill'}:boss?{animation:fx?.animation||'beat'}:battleReference?.combatAnimations?.hero?.skill;
-   const animationLength=actor?.controller.instance?.data.findAnimation(config?.animation||e.animation)?.duration||1.87,scene=fx?.cast.length?spawnHeroSkill(target,fx,animationLength,actor):null,skillRate=zoro?zoroTiming.cutRate:scene?scene.rate:summoned?Math.max(1,animationLength/2.2):1;playActor(actor,config?.animation||e.animation,false,skillRate);
+   const animationLength=actor?.controller.instance?.data.findAnimation(config?.animation||e.animation)?.duration||1.87,scene=fx?.cast.length?spawnHeroSkill(target,fx,animationLength,actor):null,skillRate=zoro?zoroTiming.cutRate:scene?scene.rate:summoned?Math.max(1,animationLength/2.2):1;battleTrace('skill-event',{actor:actor?.id});playActor(actor,config?.animation||e.animation,false,skillRate);battleTrace('actor-skill',{actor:actor?.id});
    skillActor=actor;skillDuration=scene?scene.duration:zoro?animationLength:animationLength/skillRate;skillDelay=scene?scene.hitAt:summoned?Math.min(Number(config?.delay_cast_eff||.73),skillDuration*.6):Number(config?.delay_cast_eff||.73);skillAt=battleTime*1000;
    const zoroScene=zoro?spawnZoroSkill(target):null;if(zoroScene){skillDelay=zoroScene.hitAt;skillDuration=zoroScene.duration;addShakes((heroEffects?.shakes?.['576']||[]).map(s=>({delay:zoroScene.hitAt,duration:s.duration})))}
    const targets=actors.filter(a=>a.side!==actor?.side&&a.hp>0);if(actor&&targets.length&&!zoro&&!scene){actor.moveMode='skill';actor.moveStart=battleTime*1000;actor.moveDuration=skillDuration*1000;actor.moveTo={x:Math.min(...targets.map(a=>a.x))-225,y:Math.max(555,actor.y,targets.reduce((sum,a)=>sum+a.y,0)/targets.length)}}
@@ -1224,11 +1268,12 @@ async function replay(events){
   if(e.type==='ship-skill'){battleLines.push('Chiến hạm: '+e.name);await window.ShipUI?.battleCast(e,actors)}
   if(e.type==='turn'&&displayBattle){displayBattle.turn=e.turn;battleUi()}
   if(e.type==='defend'){battleLines.push(actor.name+' phòng thủ, tích thêm nộ.');await sleep(300)}
-  if(e.type==='heal'&&target){if(e.revive&&target.deathAt!==undefined){delete target.deathAt;playActor(target,'idling',true);floaters.push({x:target.x,y:target.y-175,text:'Hồi sinh',at:battleTime*1000,buff:true})}target.hp=e.hp;const view=displayUnit(target.id);if(view)view.hp=e.hp;if(e.amount>0){spawnBattleHeal(target);floaters.push({x:target.x,y:target.y-150,text:String(e.amount),at:battleTime*1000,kind:'heal'});battleLines.push(target.name+' hồi '+num(e.amount)+' máu.');if(!(e.skillId==='lifesteal'&&nextInWave(events,i,wave)))await sleep(350)}}
-  if(e.type==='buff'&&target){target.statusEffects??=[];target.statusEffects=target.statusEffects.filter(f=>f.skillId!==e.skillId);target.statusEffects.push(e);battleLines.push(e.name+': '+target.name);floaters.push({x:target.x,y:target.y-175-(events[i-1]?.type==='buff'&&events[i-1]?.target===e.target?24:0),text:e.name,at:battleTime*1000,buff:true});
+  if(e.type==='heal'&&target){if(e.revive)spawnStatusOnce(target,'revive');if(e.revive&&target.deathAt!==undefined){delete target.deathAt;playActor(target,'idling',true);floaters.push({x:target.x,y:target.y-175,text:'Hồi sinh',at:battleTime*1000,buff:true})}target.hp=e.hp;const view=displayUnit(target.id);if(view)view.hp=e.hp;if(e.amount>0){spawnBattleHeal(target);floaters.push({x:target.x,y:target.y-150,text:String(e.amount),at:battleTime*1000,kind:'heal'});battleLines.push(target.name+' hồi '+num(e.amount)+' máu.');if(!(e.skillId==='lifesteal'&&nextInWave(events,i,wave)))await sleep(350)}}
+  if(e.type==='buff'&&target){target.statusEffects??=[];target.statusEffects=target.statusEffects.filter(f=>!(f.skillId===e.skillId&&f.attribute===e.attribute));target.statusEffects.push(e);battleLines.push(e.name+': '+target.name);floaters.push({x:target.x,y:target.y-175-(events[i-1]?.type==='buff'&&events[i-1]?.target===e.target?24:0),text:e.name,at:battleTime*1000,buff:true});
    // Bị động sinh nhiều hiệu ứng cùng lúc: chỉ dừng ở hiệu ứng đầu của một chuỗi, các dòng sau hiện chồng lên nhau.
    if(events[i+1]?.type!=='buff')await sleep(events[i-1]?.type==='buff'?120:200)}
-  if(e.type==='effect-expired'&&target)target.statusEffects=(target.statusEffects||[]).filter(f=>f.skillId!==e.skillId);
+  // Hết hiệu lực: chỉ gỡ đúng hiệu ứng (kỹ năng + thuộc tính); sự kiện cũ không có thuộc tính thì gỡ theo kỹ năng.
+  if(e.type==='effect-expired'&&target)target.statusEffects=(target.statusEffects||[]).filter(f=>!(f.skillId===e.skillId&&(e.attribute==null||f.attribute===e.attribute)));
   if(e.type==='damage'&&target){if(!(wave&&e.actor===wave.actor&&!!e.skill===wave.skill&&!wave.targets.has(e.target)))wave={actor:e.actor,skill:!!e.skill,targets:new Set(),at:battleTime};wave.targets.add(e.target);target.hp=e.hp;target.lastHitAt=battleTime;if(e.energy!==undefined)target.energy=e.energy;const view=displayUnit(target.id);if(view){view.hp=e.hp;view.energy=target.energy}
    if(e.amount>0){playActor(target,e.hp<=0?'dead':'damage');const fx=e.skill&&actor?heroEffects?.heroes[actor.avatar]:null,atk=!e.skill&&actor?.heroId!=='zoro-king-of-hell'?heroEffects?.heroes[actor?.avatar]?.attack:null;if(!(actor?.heroId==='zoro-king-of-hell'&&e.skill)&&!(fx&&(spawnHeroImpact(target,fx)||fx.cast.some(c=>c.layer!=='BeyondCanvas')))&&!(atk&&spawnAttackFx(atk.impact,actor,target)))spawnBattleImpact(target,actor,e.skill)}
    floaters.push({x:target.x,y:target.y-140,text:e.immune?'Miễn dịch':e.miss?'Né':String(e.amount),at:wave.at*1000,kind:e.immune||e.miss?'block':e.critical?'crit':'lost'});if(e.blocked&&!e.immune&&!e.miss)floaters.push({x:target.x,y:target.y-185,text:'Chặn',at:wave.at*1000,kind:'block'});battleLines.push(`${actor?.name||catalog.hero.name} gây ${e.amount} sát thương.`);if(!nextInWave(events,i,wave))await sleep(e.skill?100:350)}
@@ -1299,6 +1344,7 @@ function drawBattleFrame(ctx,dt){
   ctx.save();ctx.globalAlpha=a.deathAt===undefined?1:Math.max(0,1-Math.max(0,battleTime-a.deathAt-.25)/.35);ctx.fillStyle='#101d2050';ctx.beginPath();ctx.ellipse(x,y+5,45,12,0,0,Math.PI*2);ctx.fill();
   if(a.id===selectedTarget&&a.hp>0){ctx.strokeStyle='#ffda61';ctx.lineWidth=3;ctx.beginPath();ctx.ellipse(x,y+5,54,17,0,0,Math.PI*2);ctx.stroke()}
   const c=a.controller;if(c.instance){c.state.update(step);c.state.apply(c.instance);c.instance.updateWorldTransform();ctx.translate(x,y);ctx.scale(a.scale*a.flip,-a.scale);if(!combatRenderer){combatRenderer=new spine.canvas.SkeletonRenderer(ctx);combatRenderer.triangleRendering=true}if(ctx.globalAlpha>0)try{combatRenderer.draw(c.instance)}catch(e){if(!c.renderError){c.renderError=e.message;V().toast('Không tải được hình nhân vật.')}}ctx.restore()}else ctx.restore();
+  drawStatusFx(ctx,a,x,y,step,displayBattle?.turn||b.turn);
   if(a.hp>0){
    const head=a.moveStart&&a.moveMode==='skill'?c.instance?.findBone('head_04'):null;
    const barX=x-32,barY=Math.min(y-(a.visualHeight||175)-14,head?y-head.worldY*a.scale-45:Infinity);
@@ -1311,7 +1357,8 @@ function drawBattleFrame(ctx,dt){
    if(rage&&energy>0)ctx.drawImage(rage,barX,barY+11,87*energy/100,4);
    ctx.font='bold 20px GameFont,sans-serif';ctx.textAlign='right';ctx.strokeStyle='#251d19';ctx.lineWidth=3;ctx.strokeText(a.level,barX-27,barY+13);ctx.fillStyle='#fff';ctx.fillText(a.level,barX-27,barY+13);
    const faction=V().readyImage(named('faction_'+(a.faction||'abyss')));if(faction)ctx.drawImage(faction,barX-25,barY-5,23,23);
-   (a.statusEffects||[]).filter(effect=>effect.expiresTurn>=(displayBattle?.turn||b.turn)).forEach((effect,i)=>{const key=catalog.heroes.flatMap(h=>h.skills).find(s=>s.id===effect.skillId)?.assetKey,icon=V().readyImage(key);if(icon)ctx.drawImage(icon,barX+i*25,barY-30,23,23)});
+   // Biểu tượng buff / debuff gốc (icon_buff_* / icon_debuff_*) trên thanh máu, như bản gốc.
+   statusIcons(a,displayBattle?.turn||b.turn).forEach((key,i)=>{const icon=V().readyImage(key);if(icon)ctx.drawImage(icon,barX+i*25,barY-30,23,23)});
    ctx.restore();
   }
  }
@@ -1322,6 +1369,8 @@ function drawBattleFrame(ctx,dt){
 function navigate(id){dialog.innerHTML='';return V().showScene(id)}
 const allowed=new Set([1,7,9,10,12,13,21,24,28,34,37,40,53,1156,1404,1600,1700]);
 window.GameRuntime={
+ // Cho kiểm thử trình duyệt: nhân vật của trận đang hiển thị (chỉ đọc / gắn trạng thái để xem hình).
+ battleActors:()=>actors,
  async boot(){document.body.classList.add('playing');scaled();
   try{battleReference=await fetch('battle-reference.json').then(r=>{if(!r.ok)throw Error('Không tải được tài nguyên chiến đấu.');return r.json()});catalog=await api('/api/catalog');document.querySelector('#toast')?.style.setProperty('--toast-art',`url('${assetSrc(named('bgr_toast'))}')`);catalog.items.forEach(item=>itemMap.set(item.id,item));window.TalentUI?.init(talentContext());window.ExcUI?.init(excContext());window.ArenaUI?.init(arenaContext());window.GuildUI?.init(guildUiContext());window.TthUI?.init(tthContext());window.RaidUI?.init(arenaContext());window.IntroUI?.init(introContext());window.ShipUI?.init(shipContext());window.TutorialUI?.init(tutorialContext());window.ProfileUI?.init(profileContext());window.AuraUI?.init({assetSrc});window.AltarUI?.init(altarContext());window.SealedUI?.init({...tthContext(),bonusPopup:r=>bonusPopup(r)});window.ShopUI?.init({...tthContext(),bonusPopup:r=>bonusPopup(r),itemInfo:id=>itemDialog(id),confirm:(text,title,price,ok,o={})=>messageBox({text,title,price,ok,...o})});window.TavernUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),confirm:(text,title,price,ok,okText)=>messageBox({text,title,price,ok,okText})});window.BraveUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),api:url=>api(url)});window.DungeonUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),api:url=>api(url)});window.CasinoUI?.init({...altarContext(),bonusPopup:r=>bonusPopup(r),spine:spineCanvas});window.VipUI?.init(altarContext());window.DiceUI?.init({...altarContext(),bonusPopup:r=>bonusPopup(r),spine:spineCanvas});await window.TthUI?.load().catch(()=>{});window.ArtifactUI?.init({infoHtml:item=>artifactInfoHtml(item),catalog:()=>catalog,player:()=>player,itemMap,assetSrc,assets:()=>V().assets(),named,img,escape,short,num,mutation,toast:m=>V().toast(m),rerender:()=>renderUi(),layer:()=>document.querySelector('#game-layer')});const f=Object.values(V().assets()).find(a=>a.name==='SVN-Titillium bold');const fontRef=await fetch('scenes/1.json').then(r=>r.json());const fontNode=V().allNodes(fontRef).find(n=>V().get(n,'Text')?.font);if(fontNode){const source=V().get(fontNode,'Text').font;const face=new FontFace('GameFont',`url(${JSON.stringify(source.src)})`);await face.load();document.fonts.add(face)}
    const response=await fetch('/api/auth/session',{credentials:'same-origin'});if(response.ok){const s=await response.json();player=s.player;selectCatalogHero();csrfToken=s.csrfToken;return{sceneId:window.IntroUI?.pending()?24:player.battle?.status==='active'?9:13}}return{sceneId:1};

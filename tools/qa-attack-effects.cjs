@@ -5,7 +5,7 @@ try{process.loadEnvFile('.env')}catch{}
 const stage=Number(process.env.STAGE||20),db='htps_attackfx_'+crypto.randomBytes(6).toString('hex'),port=4179,out='qa-output/attack-effects';let server,browser;
 (async()=>{
  fs.mkdirSync(out,{recursive:true});
- server=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,MONGODB_DB:db,PORT:String(port),HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe']});
+ server=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,NEW_ACCOUNT_INTRO:'off',MONGODB_DB:db,PORT:String(port),HOST:'127.0.0.1'},stdio:['ignore','pipe','pipe']});
  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Startup timeout')),30000);server.stdout.on('data',b=>{if(b.toString().includes('đang chạy')){clearTimeout(timer);resolve()}});server.once('exit',code=>reject(Error('QA exited '+code)))});
  browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
  const page=await browser.newPage({viewport:{width:1366,height:850}}),errors=[];page.on('pageerror',e=>errors.push(e.message));

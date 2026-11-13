@@ -5,10 +5,10 @@
 import {requireCondition,integer} from './errors.mjs';
 import {rewardPool} from './tavern.mjs';
 import {braveStageTable,milestoneRewards} from './brave.mjs';
-import {challengeTable,smashTable} from './sealed.mjs';
+import {challengeTable,smashTable,sealedConfig} from './sealed.mjs';
 import {marketPool,sealedShop} from './shop.mjs';
 import {altarShop,soulItem} from './altar.mjs';
-import {merchantGoods,dungeonStageTable} from './dungeon.mjs';
+import {merchantGoods,dungeonStageTable,dungeonConfig} from './dungeon.mjs';
 import {dailyQuests,dailyFinal} from './daily-quests.mjs';
 import {casinos} from './casino.mjs';
 import {itemById} from './catalog.mjs';
@@ -27,13 +27,13 @@ const tables=[
   read:()=>Object.entries(milestoneRewards).map(([m,list])=>({key:m,label:`Mốc ${m} ải`,rewards:clone(list)})),
   write:rows=>{for(const r of rows)milestoneRewards[r.key]=clone(r.rewards)}},
  {id:'sealed-challenge',group:'Mê cung',title:'Thưởng khiêu chiến (lần đầu)',list:true,
-  read:()=>challengeTable.map((list,i)=>({key:String(i+1),label:`Ải ${i+1}`,rewards:clone(list)})),
+  read:()=>challengeTable.slice(0,sealedConfig.levels).map((list,i)=>({key:String(i+1),label:`Ải ${i+1}`,rewards:clone(list)})),
   write:rows=>{for(const r of rows)challengeTable[Number(r.key)-1]=clone(r.rewards)}},
  {id:'sealed-smash',group:'Mê cung',title:'Thưởng càn quét',list:true,
-  read:()=>smashTable.map((list,i)=>({key:String(i+1),label:`Ải ${i+1}`,rewards:clone(list)})),
+  read:()=>smashTable.slice(0,sealedConfig.levels).map((list,i)=>({key:String(i+1),label:`Ải ${i+1}`,rewards:clone(list)})),
   write:rows=>{for(const r of rows)smashTable[Number(r.key)-1]=clone(r.rewards)}},
  {id:'dungeon-stage',group:'Đảo Bánh',title:'Thưởng qua ải',list:true,
-  read:()=>dungeonStageTable.map((list,i)=>({key:String(i+1),label:`Ải ${i+1}`,rewards:clone(list)})),
+  read:()=>dungeonStageTable.slice(0,dungeonConfig.stages).map((list,i)=>({key:String(i+1),label:`Ải ${i+1}`,rewards:clone(list)})),
   write:rows=>{for(const r of rows)dungeonStageTable[Number(r.key)-1]=clone(r.rewards)}},
  {id:'dungeon-merchant',group:'Đảo Bánh',title:'Hàng của gian thương',price:true,
   read:()=>Object.entries(merchantGoods).flatMap(([m,list])=>list.map((g,i)=>({key:`${m}-${i}`,label:`${['','Tiệm Mắt To','Tiệm Hạt Đậu','Tiệm Răng Sún'][m]} · món ${i+1}`,rewards:one(g.reward),price:clone(g.price)}))),
@@ -60,7 +60,8 @@ const nameOf=id=>itemById.get(id)?.name;
 /** Kiểm tra và chuẩn hoá các dòng gửi lên cho bảng `id` (số dòng và khoá dòng phải giữ nguyên). */
 export function validateRewardRows(id,input,isRewardId,onlyTable=false){
  const t=byId.get(id);requireCondition(t,'Bảng thưởng không tồn tại.',404);if(onlyTable)return null;requireCondition(Array.isArray(input),'Dữ liệu không hợp lệ.');
- const base=defaults.get(id);requireCondition(input.length===base.length,'Số dòng không khớp.');
+ // So với số dòng hiện tại (ải thêm mới ở tab Phụ bản làm bảng dài hơn mặc định).
+ const base=t.read();requireCondition(input.length===base.length,'Số dòng không khớp.');
  const reward=(r,what)=>{requireCondition(r&&typeof r==='object'&&isRewardId(r.itemId),`${what}: vật phẩm không hợp lệ.`);return{itemId:r.itemId,quantity:integer(r.quantity,1,1e12,`${what}: số lượng`)}};
  return input.map((row,i)=>{
   requireCondition(row&&row.key===base[i].key,'Thứ tự dòng không khớp.');const what=base[i].label;
@@ -75,7 +76,8 @@ export function validateRewardRows(id,input,isRewardId,onlyTable=false){
 /** Áp toàn bộ bản sửa (docs từ database); bảng không có bản sửa trở về mặc định. */
 export function applyRewardConfig(docs){
  const saved=new Map(docs.map(d=>[d._id,d.rows]));
- for(const t of tables){const base=defaults.get(t.id),rows=saved.get(t.id);t.write(rows&&rows.length===base.length?rows:base)}
+ // Ghi theo khoá dòng: bản lưu có thể ngắn hơn bảng hiện tại (ải thêm sau), dòng thừa bỏ qua.
+ for(const t of tables){const keys=new Set(t.read().map(r=>r.key)),rows=[...defaults.get(t.id),...(saved.get(t.id)||[])].filter(r=>keys.has(r.key));t.write(rows)}
 }
 export function rewardTablesView(savedIds=[]){
  const saved=new Set(savedIds);

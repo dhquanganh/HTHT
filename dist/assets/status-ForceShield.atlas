@@ -1,0 +1,20 @@
+
+ForceShield.png
+size: 232,132
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Group-1-copy-2
+  rotate: false
+  xy: 132, 18
+  size: 95, 112
+  orig: 95, 112
+  offset: 0, 0
+  index: -1
+mask_1016
+  rotate: false
+  xy: 2, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1

@@ -62,3 +62,24 @@ test('passive extra action after the last enemy dies does not crash (arena TypeE
  const b={id:'t',status:'active',turn:1,seed:7,allies:[unit('hero','ally',5000,{kit,heroId:'hero-x'})],enemies:[unit('enemy-0','enemy',1)],events:[]};
  initializeTeamBattle(b);assert.doesNotThrow(()=>teamRound(b,{action:'auto'}));assert.equal(b.enemies[0].hp,0);
 });
+test('status visuals follow the real effect: same skill freeze + armour debuff stay separate until each ends',async()=>{
+ const {kitForAvatar}=await import('../server/catalog.mjs');const kit=kitForAvatar('196');assert.ok(kit,'Monet kit');
+ const monet=unit('m','enemy',4,{heroId:'hero-196',kit,ultScale:1,energy:100,speed:5000,attack:50});
+ const allies=Array.from({length:3},(_,i)=>unit('a'+i,'ally',i,{heroId:undefined,speed:10+i}));
+ const b=battle(allies,[monet],777);initializeTeamBattle(b);
+ // Bộ giảm trạng thái giống dist/game.js: mỗi mục là (kỹ năng, thuộc tính).
+ const shown=new Map();const apply=e=>{const list=shown.get(e.target)||[];
+  if(e.type==='buff')shown.set(e.target,[...list.filter(f=>!(f.skillId===e.skillId&&f.attribute===e.attribute)),e]);
+  if(e.type==='effect-expired')shown.set(e.target,list.filter(f=>!(f.skillId===e.skillId&&(e.attribute==null||f.attribute===e.attribute))))};
+ const controls=['stun','freeze','silence','fear','petrify','panic','seal'];let sawBoth=false;
+ for(let round=0;round<6&&allies.some(a=>a.hp>0);round++){
+  for(const e of teamRound(b,{action:'auto'}))apply(e);
+  // So ở lượt kế tiếp (hiệu ứng còn hạn phải vẫn hiện sau khi lượt này kết thúc).
+  const next=b.turn+1;
+  for(const a of allies){const vis=(shown.get(a.id)||[]).filter(f=>f.expiresTurn>=next);
+   const visControl=new Set(vis.filter(f=>controls.includes(f.attribute)).map(f=>f.attribute)),real=new Set((a.statuses||[]).filter(s=>s.until>=next).map(s=>s.kind));
+   if(a.hp>0)assert.deepEqual([...visControl].sort(),[...real].sort(),`round ${round} ${a.id}`);
+   if(vis.some(f=>f.attribute==='freeze')&&vis.some(f=>f.attribute==='defense'))sawBoth=true}
+ }
+ assert.ok(sawBoth,'freeze and armour debuff from the same skill are both shown');
+});

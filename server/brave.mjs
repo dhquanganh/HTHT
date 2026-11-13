@@ -11,6 +11,7 @@
 // Số liệu máy chủ gốc (chu kỳ, cấp mở, thưởng, giá huy hiệu, mức hồi) không có trong client nên do bản web đặt.
 import {requireCondition} from './errors.mjs';
 import {heroAlbum,campaign,towerData} from './catalog.mjs';
+import {allowedPool,overrideLineup,adjustStats} from './content.mjs';
 
 export const braveConfig={minLevel:15,stages:15,cycleDays:2,altarStage:6,badgePrice:50,badgeBuyLimit:10,healRatio:.5,reviveRatio:.6,
  blessing:{rage:{stat:'attack',value:.2},rock:{stat:'maxHp',value:.3},storm:{stat:'speed',value:50}},milestones:[3,6,9,12,15]};
@@ -30,13 +31,15 @@ const byAvatar=new Map(heroAlbum.heroes.map(h=>[h.avatar,h]));
 const hash=(a,b)=>{let x=(a*2654435761^b*40503)>>>0;x^=x<<13;x^=x>>>17;x^=x<<5;return x>>>0};
 export const braveEnemyCount=stage=>Math.min(6,2+Math.ceil(stage/3));
 /** Đội hình ải (vị trí 1-2 hàng trước, 3-6 hàng sau như PopupBravePlayerNew FrontLine / BackLine). */
+const fromOverride=list=>list.filter(a=>byAvatar.has(a)).slice(0,6).map((avatar,i)=>{const h=byAvatar.get(avatar);return{avatar,name:h.name,faction:h.faction,rank:h.rank,position:i+1}});
 export function braveLineup(cycle,stage){
- const n=braveEnemyCount(stage),picked=[];
- for(let i=0;picked.length<n&&i<50;i++){const a=pool[hash(cycle+13,stage*17+i)%pool.length];if(!picked.includes(a))picked.push(a)}
+ const ov=overrideLineup('brave',stage);if(ov)return fromOverride(ov);
+ const n=braveEnemyCount(stage),picked=[],src=allowedPool(pool);
+ for(let i=0;picked.length<n&&i<50;i++){const a=src[hash(cycle+13,stage*17+i)%src.length];if(!picked.includes(a))picked.push(a)}
  return picked.map((avatar,i)=>{const h=byAvatar.get(avatar);return{avatar,name:h.name,faction:h.faction,position:i+1}});
 }
 export const braveScale=stage=>.28+stage*.05;
-export function braveEnemyStats(ref,stage,i){const k=braveScale(stage)*(1+i*.05);return{maxHp:Math.round(ref.maxHp*k*1.3),attack:Math.round(ref.attack*k),defense:Math.round(ref.defense*k),speed:Math.round(ref.speed*(.85+stage*.012))}}
+export function braveEnemyStats(ref,stage,i,avatar){const k=braveScale(stage)*(1+i*.05);return adjustStats({maxHp:Math.round(ref.maxHp*k*1.3),attack:Math.round(ref.attack*k),defense:Math.round(ref.defense*k),speed:Math.round(ref.speed*(.85+stage*.012))},'brave',stage,avatar,ref.level)}
 
 const fresh=cycle=>({cycle,stage:1,hp:{},rage:{},enemyHp:null,ref:null,claimed:[],badges:3,bought:0,blessing:{rage:0,rock:0,storm:0}});
 export function braveState(p,now=Date.now()){const c=braveCycle(now);if(p.brave?.cycle!==c)p.brave=fresh(c);return p.brave}
@@ -46,7 +49,7 @@ export function braveView(p,now=Date.now()){
   hp:s.hp,badges:s.badges,badgePrice:braveConfig.badgePrice,badgeBuyLeft:braveConfig.badgeBuyLimit-s.bought,blessing:s.blessing,altarOpen:s.stage>braveConfig.altarStage,altarStage:braveConfig.altarStage,
   milestones:braveConfig.milestones.map(m=>({stage:m,rewards:milestoneRewards[m],claimed:s.claimed.includes(m),ready:s.stage>m})),
   map:Array.from({length:braveConfig.stages},(_,i)=>{const stage=i+1,lineup=braveLineup(s.cycle,stage);return{stage,head:lineup[0].avatar,rewards:stageRewards(stage),
-   enemies:lineup.map((e,j)=>({...e,hp:stage===s.stage?(s.enemyHp?.[j]??1):stage<s.stage?0:1,...(s.ref?braveEnemyStats(s.ref,stage,j):{})}))}})};
+   enemies:lineup.map((e,j)=>({...e,hp:stage===s.stage?(s.enemyHp?.[j]??1):stage<s.stage?0:1,...(s.ref?braveEnemyStats(s.ref,stage,j,e.avatar):{})}))}})};
 }
 const requireOpen=p=>requireCondition(p.account.level>=braveConfig.minLevel,`Yêu cầu cấp độ ${braveConfig.minLevel}`,409,'BRAVE_LEVEL');
 /**
@@ -72,8 +75,8 @@ export function prepareBraveFight(p,slots,ctx,now=Date.now()){
  const ids=slots.filter(Boolean);requireCondition(ids.length,'Hãy chọn thuyền viên.');
  const dead=ids.find(id=>s.hp[id]===0);requireCondition(!dead,'Thuyền viên đã ngã không thể ra trận.',409,'BRAVE_HERO_DEAD');
  // Chỉ số tham chiếu cố định cho cả chu kỳ: trung bình 6 thuyền viên mạnh nhất lúc đánh trận đầu.
- if(!s.ref){const all=ctx.top().map(ctx.stats),avg=k=>Math.round(all.reduce((n,x)=>n+x[k],0)/all.length);s.ref={maxHp:avg('maxHp'),attack:avg('attack'),defense:avg('defense'),speed:avg('speed')}}
- const lineup=braveLineup(s.cycle,s.stage),enemies=lineup.map((e,i)=>{const st=braveEnemyStats(s.ref,s.stage,i);return{...e,...st,ratio:s.enemyHp?.[i]??1}});
+ if(!s.ref||s.ref.level===undefined){const all=ctx.top().map(ctx.stats),avg=k=>Math.round(all.reduce((n,x)=>n+(x[k]||0),0)/all.length);if(!s.ref)s.ref={maxHp:avg('maxHp'),attack:avg('attack'),defense:avg('defense'),speed:avg('speed')};s.ref.level=avg('level')||1}
+ const lineup=braveLineup(s.cycle,s.stage),enemies=lineup.map((e,i)=>{const st=braveEnemyStats(s.ref,s.stage,i,e.avatar);return{...e,...st,ratio:s.enemyHp?.[i]??1}});
  const b=braveConfig.blessing,boost={attack:1+s.blessing.rage*b.rage.value,maxHp:1+s.blessing.rock*b.rock.value,speed:s.blessing.storm*b.storm.value};
  return{allies:Object.fromEntries(ids.map(id=>[id,{ratio:s.hp[id]??1,rage:s.rage[id]??0}])),enemies,boost,meta:{cycle:s.cycle,stage:s.stage}};
 }

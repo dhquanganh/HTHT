@@ -64,6 +64,13 @@ export function mountAdmin(app,store,password,limiter){
  });
  app.get('/api/admin/events',guard,(req,res)=>res.json(store.eventAdmin()));
  app.post('/api/admin/events/:id',guard,async(req,res)=>res.json(await store.setEventConfig(req.params.id,req.body,req.ip)));
+ app.get('/api/admin/tower',guard,(req,res)=>res.json(store.towerAdmin(req.query.page)));
+ app.post('/api/admin/tower',guard,async(req,res)=>res.json(await store.setTower(req.body,req.ip)));
+ app.get('/api/admin/guild-boss',guard,async(req,res)=>res.json(await store.guildBossAdmin()));
+ app.post('/api/admin/guild-boss',guard,async(req,res)=>res.json(await store.setGuildBoss(req.body,req.ip)));
+ app.get('/api/admin/content',guard,(req,res)=>res.json(store.contentAdmin()));
+ app.post('/api/admin/content/monsters',guard,async(req,res)=>res.json(await store.setMonsters(req.body,req.ip)));
+ app.post('/api/admin/content/stages/:mode',guard,async(req,res)=>res.json(await store.setStages(req.params.mode,req.body,req.ip)));
  app.get('/api/admin/rewards',guard,async(req,res)=>res.json(await store.rewardAdmin()));
  app.post('/api/admin/rewards/:id',guard,async(req,res)=>res.json(await store.setRewardConfig(req.params.id,req.body,req.ip)));
  app.get('/api/admin/raid',guard,async(req,res)=>res.json(await store.raidAdmin()));
