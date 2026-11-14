@@ -96,7 +96,7 @@
  const wheelRows=mode=>mode===1?data.config.summonNormal:data.config.summonSpecial;
  const wheelFee=mode=>mode===1?data.config.feeNormal:data.config.feeSpecial;
  function itemTile(itemId,amount,{fruit=null,need=null}={}){
-  const tile=document.createElement('div');tile.className='ff-item';const item=c.items.get(itemId),src=fruit?art('fruitsmall/'+fruit.id):item?c.assetSrc(item.assetKey):c.rewardArt(itemId);
+  const tile=document.createElement('div');tile.className='ff-item';if(!fruit){tile.dataset.infoItem=itemId;tile.dataset.infoQty=amount||1}const item=c.items.get(itemId),src=fruit?art('fruitsmall/'+fruit.id):item?c.assetSrc(item.assetKey):c.rewardArt(itemId);
   tile.innerHTML=`<span class="ff-item-bg" style="background-image:url('${art('bgr_item_consumable')||c.assetSrc(c.named('bgr_item_consumable'))}')"></span><span class="ff-item-icon" style="background-image:url('${src}')"></span><span class="ff-item-border" style="background-image:url('${art('border_item')||c.assetSrc(c.named('border_item'))}')"></span>${need!==null?`<b class="${amount<need?'short':''}">${c.short(amount)}/${c.short(need)}</b>`:amount>1?`<b>${c.short(amount)}</b>`:''}`;
   if(item||fruit)tile.title=fruit?fruit.name:item.name;return tile;
  }

@@ -5,11 +5,18 @@ import {economy,heroAlbum,heroDefinitions} from './catalog.mjs';
 import {ownedHeroes} from './formation.mjs';
 import {newHero,shardFor} from './hero-roster.mjs';
 
-const {factions,rates,counts,duplicateShards}=economy.summon,playable=new Map(heroDefinitions.map(h=>[h.avatar,h]));
-const tier=rank=>rank>=6?6:rank===5?5:rank===4?4:3;
-const pools=Object.fromEntries(factions.map(faction=>[faction,Object.fromEntries([6,5,4,3].map(key=>[key,heroAlbum.heroes.filter(h=>playable.has(h.avatar)&&h.faction===faction&&tier(h.rank)===key)]))]));
+const {factions,rates,counts,duplicateShards}=economy.summon,tier=rank=>rank>=6?6:rank===5?5:rank===4?4:3;
+// Tính lại khi danh sách tướng đổi (nhân vật tạo ở trang quản trị thêm / bớt lúc đang chạy).
+let cacheKey='',playable=new Map(),pools={};
+function refresh(){
+ const key=heroDefinitions.length+':'+heroAlbum.heroes.length+':'+heroAlbum.heroes.at(-1)?.avatar+':'+heroDefinitions.filter(h=>h.custom).map(h=>h.avatar+h.faction+h.rank+(h.summon?'+':'-')).join(',');if(key===cacheKey)return;cacheKey=key;
+ playable=new Map(heroDefinitions.map(h=>[h.avatar,h]));
+ const summonable=h=>playable.has(h.avatar)&&(!playable.get(h.avatar).custom||playable.get(h.avatar).summon);
+ pools=Object.fromEntries(factions.map(faction=>[faction,Object.fromEntries([6,5,4,3].map(key=>[key,heroAlbum.heroes.filter(h=>summonable(h)&&h.faction===faction&&tier(h.rank)===key)]))]));
+}
 const secureRandom=()=>randomInt(1e9)/1e9;
 export function rollHero(faction,random=secureRandom,minimum=3){
+ refresh();
  const table=rates.filter(([rank])=>rank>=minimum&&pools[faction][rank].length),total=table.reduce((sum,[,weight])=>sum+weight,0);
  let roll=random()*total,rank=table.at(-1)[0];
  for(const [key,weight] of table){if(roll<weight){rank=key;break}roll-=weight}
@@ -27,10 +34,10 @@ export function validateSummon(input){
  requireCondition(counts.includes(count),'Số lần chiêu mộ không hợp lệ.');
  return{faction:input.faction,count};
 }
-export const choicePool=item=>heroAlbum.heroes.filter(h=>playable.has(h.avatar)&&h.rank===item.choice.rank&&item.choice.factions.includes(h.faction));
+export const choicePool=item=>{refresh();return heroAlbum.heroes.filter(h=>playable.has(h.avatar)&&(!playable.get(h.avatar).custom||playable.get(h.avatar).summon)&&h.rank===item.choice.rank&&item.choice.factions.includes(h.faction))};
 /** Tướng chưa có vào đội ngay; tướng đã có đổi thành mảnh để nâng sao. */
 export function grantSummon(p,hero){
- const definition=playable.get(hero.avatar);
+ refresh();const definition=playable.get(hero.avatar);
  if(ownedHeroes(p).has(definition.id))return{avatar:hero.avatar,shardItem:shardFor(definition),shards:duplicateShards};
  // Tướng đầu tiên của tài khoản mới (phần mở đầu) thành tướng chính.
  if(!p.hero)p.hero=newHero(definition);else(p.reserveHeroes??={})[definition.id]=newHero(definition);return{avatar:hero.avatar,fresh:true};

@@ -14,7 +14,7 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  const click=sel=>page.locator(sel).first().click();
  const node=name=>`.arena-layer [data-name="${name}"]`;
  await page.goto(url);await page.waitForSelector('#auth-form');await page.locator('[data-action=auth-register]').click();await page.locator('#username').fill('Arena_QA');await page.locator('#password').fill('arena-password-1');await page.locator('#password-confirm').fill('arena-password-1');await page.locator('.auth-submit').click();await ready();
- await players.updateOne({usernameKey:'arena_qa'},{$set:{'player.account.level':90,'player.hero.level':160,'player.hero.stars':8,'player.wallet.diamonds':5000,'player.inventory.consumable:40':5000}});
+ await players.updateOne({usernameKey:'arena_qa'},{$set:{'player.account.level':90,'player.hero.level':160,'player.hero.stars':8,'player.wallet.diamonds':5000,'player.inventory.consumable:40':5000,'player.album':{pieces:{'2-4':[0, 1, 2, 3, 4, 5, 6, 7, 8]},bonus:{}}}});
  await page.reload();await ready();await page.evaluate(()=>window.GameRuntime.navigate(37));await settle(1200);
  await page.evaluate(()=>window.ArenaUI.open());await page.waitForSelector('.arena-hub');await shot('hub');
  const hubText=await page.locator('.arena-hub').innerText();for(const s of ['Đơn đấu','Liên đấu','Võ đấu','Yêu cầu cấp độ 14'])assert.ok(hubText.includes(s),s);
@@ -26,6 +26,8 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  // Đánh (trận thật trong màn chiến đấu, chọn Bỏ qua bằng auto cho tới khi xong)
  await click('.arena-rivals [data-name="CellArenaRival"]:visible >> nth=2 >> [data-name="ButtonBattle"]');
  await page.waitForFunction(()=>window.GameRuntime.player.battle?.arena&&GameView.getSceneId()===9&&document.querySelector('#loading').hidden,null,{timeout:30000});
+ // Lục thức từ tranh Album: đội ta có tổng cao hơn bot nên được giảm sát thương; dòng Lục thức hiện trên trận.
+ {const l=await page.evaluate(()=>GameRuntime.player.battle.lucThuc);assert.ok(l&&l.ally>0&&l.reduce.ally>0,JSON.stringify(l));await page.waitForSelector('.battle-luc-thuc');await page.screenshot({path:`${output}/luc-thuc.png`})}
  assert.equal(await page.locator('.arena-layer').count(),0,'overlay closes for the battle');await page.waitForTimeout(1500);await shot('battle');
  await page.locator('[data-action="battle-skip"]').click().catch(()=>{});await page.waitForSelector('.battle-end [data-action="arena-back"]',{timeout:90000});await page.waitForTimeout(1200);await shot('battle-end');
  const endText=await page.locator('.battle-end').innerText();assert.ok(/Điểm [+-]\d+/.test(endText),endText);
@@ -69,6 +71,6 @@ const start=()=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['
  await click(node('ButtonBattle'));await page.waitForSelector('.arena-rivals');await shot('allstars-rivals');await click('.arena-rivals [data-name="ButtonClose"]');
  await click(node('ButtonBack'));await page.waitForSelector('.arena-hub');await click(node('ButtonBack'));await page.waitForFunction(()=>!document.querySelector('.arena-layer'));
  const unexpected=errors.filter(e=>!/401 \(Unauthorized\)/.test(e));assert.deepEqual(unexpected,[]);
- const report={errors:unexpected,checks:['hub','solo-scene','rivals','refresh','fight-battle','battle-end-points','return','tickets','records','rewards-daily-season','defense-save','player-info','league-3-teams','league-series','allstars-scene','allstars-tabs','knockout','bets','allstars-rewards','allstars-rivals','back']};
+ const report={errors:unexpected,checks:['hub','solo-scene','rivals','refresh','fight-battle','luc-thuc','battle-end-points','return','tickets','records','rewards-daily-season','defense-save','player-info','league-3-teams','league-series','allstars-scene','allstars-tabs','knockout','bets','allstars-rewards','allstars-rivals','back']};
  fs.writeFileSync(`${output}/report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report));
 })().catch(async e=>{console.error(e.stack);console.error('ERRORS',JSON.stringify(globalThis.__errors||[]));if(browser)for(const c of browser.contexts())for(const p of c.pages())console.error('TOAST',await p.evaluate(()=>document.querySelector('#toast')?.innerText).catch(()=>''));if(browser)for(const c of browser.contexts())for(const p of c.pages())await p.screenshot({path:`${output}/failure.png`}).catch(()=>{});process.exitCode=1}).finally(async()=>{if(browser)await browser.close();if(server){server.kill();await new Promise(r=>server.exitCode!==null?r():server.once('exit',r))}if(client){try{assert.match(database,/^htps_arena_[a-f0-9]{12}$/);await client.db(database).dropDatabase()}finally{await client.close()}}});

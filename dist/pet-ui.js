@@ -310,7 +310,7 @@
  const fmtM=n=>n>=1e9?(n/1e9).toFixed(n%1e9?1:0)+'B':n>=1e6?(n/1e6).toFixed(n%1e6?1:0)+'M':c.num(n);
  const parseReward=a=>{const out=[];for(let i=0;i+3<a.length;i+=4)out.push({itemId:'consumable:'+a[i+2],quantity:a[i+3]});return out};
  function tile(r,{count=true}={}){const t=document.createElement('div');t.className='pet-item pet-item-framed sr-tile';
-  t.innerHTML=`<i style="background-image:url('${c.assetSrc(c.named('bgr_item_consumable'))}')"></i><span style="background-image:url('${itemSrc(r.itemId)}')"></span><i style="background-image:url('${c.assetSrc(c.named('border_item'))}')"></i>${count?`<b>${c.short(r.quantity)}</b>`:''}`;t.title=c.items.get(r.itemId)?.name||'';return t}
+  t.innerHTML=`<i style="background-image:url('${c.assetSrc(c.named('bgr_item_consumable'))}')"></i><span style="background-image:url('${itemSrc(r.itemId)}')"></span><i style="background-image:url('${c.assetSrc(c.named('border_item'))}')"></i>${count?`<b>${c.short(r.quantity)}</b>`:''}`;t.title=c.items.get(r.itemId)?.name||'';t.dataset.infoItem=r.itemId;t.dataset.infoQty=r.quantity||1;return t}
  function tiles(host,list,opts){host.innerHTML='';list.forEach((r,i)=>{const t=tile(r,opts);Object.assign(t.style,{left:(i*100+4)+'px',top:'2px'});host.appendChild(t)})}
  let srTimers=[];const srTick=(el,fn)=>{fn();const id=setInterval(()=>{if(!el.isConnected)return clearInterval(id);fn()},1000);srTimers.push(id)};
  // ---- SilentRingStart

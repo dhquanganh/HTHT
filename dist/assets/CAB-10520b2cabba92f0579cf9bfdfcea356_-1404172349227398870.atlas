@@ -1,0 +1,293 @@
+
+Hero_51180.png
+size: 468,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 10
+  rotate: true
+  xy: 442, 499
+  size: 30, 24
+  orig: 32, 25
+  offset: 2, 1
+  index: -1
+Layer 10 copy
+  rotate: false
+  xy: 442, 441
+  size: 24, 27
+  orig: 25, 34
+  offset: 0, 7
+  index: -1
+Layer 10 copy 2
+  rotate: false
+  xy: 442, 441
+  size: 24, 27
+  orig: 25, 34
+  offset: 0, 7
+  index: -1
+Layer 10 copy 3
+  rotate: false
+  xy: 442, 441
+  size: 24, 27
+  orig: 25, 34
+  offset: 0, 7
+  index: -1
+Layer 11
+  rotate: true
+  xy: 158, 6
+  size: 126, 101
+  orig: 126, 102
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: false
+  xy: 268, 161
+  size: 130, 56
+  orig: 131, 67
+  offset: 0, 11
+  index: -1
+Layer 12 copy
+  rotate: false
+  xy: 435, 88
+  size: 31, 44
+  orig: 32, 45
+  offset: 1, 1
+  index: -1
+Layer 12 copy 2
+  rotate: false
+  xy: 435, 88
+  size: 31, 44
+  orig: 32, 45
+  offset: 1, 1
+  index: -1
+Layer 12 copy 3
+  rotate: false
+  xy: 398, 92
+  size: 35, 40
+  orig: 36, 40
+  offset: 1, 0
+  index: -1
+Layer 12 copy 4
+  rotate: false
+  xy: 398, 92
+  size: 35, 40
+  orig: 36, 40
+  offset: 1, 0
+  index: -1
+Layer 12 copy 5
+  rotate: false
+  xy: 398, 92
+  size: 35, 40
+  orig: 36, 40
+  offset: 1, 0
+  index: -1
+Layer 13
+  rotate: true
+  xy: 2, 26
+  size: 161, 154
+  orig: 163, 157
+  offset: 1, 2
+  index: -1
+Layer 14
+  rotate: false
+  xy: 272, 377
+  size: 168, 152
+  orig: 170, 154
+  offset: 1, 1
+  index: -1
+Layer 15
+  rotate: true
+  xy: 440, 267
+  size: 27, 26
+  orig: 29, 28
+  offset: 1, 1
+  index: -1
+Layer 15 copy 2
+  rotate: true
+  xy: 440, 228
+  size: 37, 23
+  orig: 37, 23
+  offset: 0, 0
+  index: -1
+Layer 16
+  rotate: false
+  xy: 305, 2
+  size: 35, 36
+  orig: 35, 38
+  offset: 0, 2
+  index: -1
+Layer 17
+  rotate: true
+  xy: 212, 181
+  size: 27, 48
+  orig: 29, 48
+  offset: 2, 0
+  index: -1
+Layer 19
+  rotate: true
+  xy: 305, 40
+  size: 119, 91
+  orig: 121, 91
+  offset: 1, 0
+  index: -1
+Layer 1a
+  rotate: false
+  xy: 158, 149
+  size: 52, 59
+  orig: 52, 60
+  offset: 0, 1
+  index: -1
+Layer 2
+  rotate: true
+  xy: 440, 326
+  size: 46, 26
+  orig: 46, 26
+  offset: 0, 0
+  index: -1
+Layer 20
+  rotate: true
+  xy: 261, 12
+  size: 120, 42
+  orig: 121, 42
+  offset: 0, 0
+  index: -1
+Layer 22
+  rotate: false
+  xy: 158, 210
+  size: 108, 43
+  orig: 108, 50
+  offset: 0, 3
+  index: -1
+Layer 23
+  rotate: true
+  xy: 2, 196
+  size: 161, 154
+  orig: 163, 156
+  offset: 1, 1
+  index: -1
+Layer 24
+  rotate: false
+  xy: 272, 219
+  size: 166, 156
+  orig: 168, 158
+  offset: 1, 1
+  index: -1
+Layer 25
+  rotate: true
+  xy: 400, 134
+  size: 53, 64
+  orig: 53, 64
+  offset: 0, 0
+  index: -1
+Layer 26
+  rotate: true
+  xy: 435, 11
+  size: 27, 30
+  orig: 33, 31
+  offset: 6, 1
+  index: -1
+Layer 27
+  rotate: true
+  xy: 212, 136
+  size: 43, 42
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+Layer 27 copy
+  rotate: true
+  xy: 440, 189
+  size: 37, 23
+  orig: 37, 25
+  offset: 0, 2
+  index: -1
+Layer 28
+  rotate: false
+  xy: 398, 40
+  size: 59, 46
+  orig: 59, 47
+  offset: 0, 1
+  index: -1
+Layer 29
+  rotate: false
+  xy: 342, 3
+  size: 49, 35
+  orig: 49, 36
+  offset: 0, 1
+  index: -1
+Layer 3
+  rotate: false
+  xy: 442, 413
+  size: 24, 26
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+Layer 30
+  rotate: false
+  xy: 440, 296
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: true
+  xy: 442, 374
+  size: 37, 23
+  orig: 37, 23
+  offset: 0, 0
+  index: -1
+Layer 15 copy
+  rotate: true
+  xy: 442, 374
+  size: 37, 23
+  orig: 37, 23
+  offset: 0, 0
+  index: -1
+Layer 5
+  rotate: true
+  xy: 2, 3
+  size: 21, 32
+  orig: 23, 33
+  offset: 2, 0
+  index: -1
+Layer 14 copy
+  rotate: true
+  xy: 2, 3
+  size: 21, 32
+  orig: 23, 33
+  offset: 2, 0
+  index: -1
+Layer 6
+  rotate: false
+  xy: 400, 190
+  size: 31, 27
+  orig: 31, 27
+  offset: 0, 0
+  index: -1
+Layer 7
+  rotate: false
+  xy: 442, 470
+  size: 24, 27
+  orig: 25, 34
+  offset: 0, 7
+  index: -1
+Layer 8
+  rotate: false
+  xy: 158, 255
+  size: 111, 102
+  orig: 122, 105
+  offset: 11, 0
+  index: -1
+Layer 9
+  rotate: true
+  xy: 393, 3
+  size: 35, 40
+  orig: 36, 40
+  offset: 1, 0
+  index: -1
+dam
+  rotate: true
+  xy: 2, 359
+  size: 170, 268
+  orig: 170, 268
+  offset: 0, 0
+  index: -1

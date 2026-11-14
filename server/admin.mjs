@@ -3,6 +3,7 @@ import {createHash,randomBytes,timingSafeEqual} from 'node:crypto';
 import {GameError,requireCondition,integer} from './errors.mjs';
 import {items,itemById,itemIcon} from './catalog.mjs';
 import {sendMail} from './mail.mjs';
+import express from 'express';
 
 const sha=value=>createHash('sha256').update(value).digest();
 const hex=value=>sha(value).toString('hex');
@@ -64,6 +65,19 @@ export function mountAdmin(app,store,password,limiter){
  });
  app.get('/api/admin/events',guard,(req,res)=>res.json(store.eventAdmin()));
  app.post('/api/admin/events/:id',guard,async(req,res)=>res.json(await store.setEventConfig(req.params.id,req.body,req.ip)));
+ app.get('/api/admin/album',guard,(req,res)=>res.json(store.albumAdmin()));
+ app.post('/api/admin/album',guard,async(req,res)=>res.json(await store.setAlbum(req.body,req.ip)));
+ // Ảnh tranh: thân là WebP thô (trang quản trị đã cắt 516×388), không qua bộ đọc JSON 16 KB.
+ app.post('/api/admin/album/art',guard,express.raw({type:'image/webp',limit:'1600kb'}),async(req,res)=>res.json(await store.uploadAlbumArt(req.body,req.ip)));
+ // Tạo nhân vật: danh sách, chi tiết, mẫu tướng gốc, xem trước kỹ năng, lưu / xoá; ảnh (sheet đã xoá nền, chân dung,
+ // biểu tượng) gửi riêng dạng WebP thô.
+ app.get('/api/admin/heroes',guard,(req,res)=>res.json(store.heroAdmin()));
+ app.get('/api/admin/heroes/template/:avatar',guard,(req,res)=>res.json(store.heroTemplate(req.params.avatar)));
+ app.get('/api/admin/heroes/:avatar',guard,(req,res)=>res.json(store.heroAdminOne(req.params.avatar)));
+ app.post('/api/admin/heroes/compile',guard,(req,res)=>res.json(store.heroCompile(req.body)));
+ app.post('/api/admin/heroes/save',guard,async(req,res)=>res.json(await store.saveHero(req.body,req.ip)));
+ app.post('/api/admin/heroes/delete',guard,async(req,res)=>res.json(await store.deleteHero(req.body?.avatar,req.ip)));
+ app.post('/api/admin/heroes/art',guard,express.raw({type:'image/webp',limit:'6mb'}),async(req,res)=>res.json(await store.uploadHeroArt(req.body,req.get('content-type'),req.ip)));
  app.get('/api/admin/tower',guard,(req,res)=>res.json(store.towerAdmin(req.query.page)));
  app.post('/api/admin/tower',guard,async(req,res)=>res.json(await store.setTower(req.body,req.ip)));
  app.get('/api/admin/guild-boss',guard,async(req,res)=>res.json(await store.guildBossAdmin()));
@@ -75,6 +89,8 @@ export function mountAdmin(app,store,password,limiter){
  app.post('/api/admin/rewards/:id',guard,async(req,res)=>res.json(await store.setRewardConfig(req.params.id,req.body,req.ip)));
  app.get('/api/admin/raid',guard,async(req,res)=>res.json(await store.raidAdmin()));
  app.post('/api/admin/raid',guard,async(req,res)=>res.json(await store.setRaidConfig(req.body,req.ip)));
+ app.get('/api/admin/gem',guard,async(req,res)=>res.json(await store.gemAdmin()));
+ app.post('/api/admin/gem',guard,async(req,res)=>res.json(await store.setGemConfig(req.body,req.ip)));
  app.get('/api/admin/beast',guard,async(req,res)=>res.json(await store.beastAdmin()));
  app.get('/api/admin/beast/ranking/:boss',guard,async(req,res)=>res.json(await store.beastAdminRanking(req.params.boss,Number(req.query.season))));
  app.post('/api/admin/beast/rewards',guard,async(req,res)=>{requireCondition(Array.isArray(req.body?.bosses)&&req.body.bosses.length,'Hãy chọn boss.');await store.setBeastRewards(req.body.bosses,req.body.ranks,req.ip);res.json(await store.beastAdmin())});

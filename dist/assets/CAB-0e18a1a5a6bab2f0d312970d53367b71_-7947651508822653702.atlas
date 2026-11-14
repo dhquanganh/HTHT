@@ -1,0 +1,62 @@
+
+wadatboss.png
+size: 998,517
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back details
+  rotate: true
+  xy: 569, 10
+  size: 505, 267
+  orig: 505, 437
+  offset: 0, 170
+  index: -1
+back eels1
+  rotate: true
+  xy: 838, 175
+  size: 164, 115
+  orig: 166, 117
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 2, 2
+  size: 565, 513
+  orig: 565, 513
+  offset: 0, 0
+  index: -1
+eel2
+  rotate: true
+  xy: 955, 80
+  size: 82, 33
+  orig: 84, 35
+  offset: 1, 1
+  index: -1
+eyes closed
+  rotate: true
+  xy: 955, 164
+  size: 175, 41
+  orig: 177, 43
+  offset: 1, 1
+  index: -1
+fish upper
+  rotate: true
+  xy: 897, 20
+  size: 153, 56
+  orig: 155, 58
+  offset: 1, 1
+  index: -1
+tay phai
+  rotate: false
+  xy: 838, 9
+  size: 57, 164
+  orig: 58, 166
+  offset: 0, 1
+  index: -1
+tay trai
+  rotate: false
+  xy: 838, 341
+  size: 156, 174
+  orig: 157, 174
+  offset: 1, 0
+  index: -1

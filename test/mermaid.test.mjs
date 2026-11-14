@@ -12,7 +12,7 @@ const captain=level=>{const p=starterPlayer('Captain');p.account.level=level;ret
 test('db_album has 14 albums and Rebeca 1-1 is a 2x2 picture giving the team 64000 HP',()=>{
  assert.equal(pictures.length,120);assert.equal(new Set(pictures.map(p=>p.album)).size,14);
  const rebeca=pictures[0];assert.deepEqual([rebeca.name,rebeca.rows,rebeca.cols,rebeca.requireLevel],['Rebeca',2,2,80]);assert.deepEqual(rebeca.points,[[2,64000]]);
- assert.equal(albumMaterial,'consumable:100045');assert.equal(albumFee,50);
+ assert.equal(albumMaterial,'consumable:100045');assert.equal(albumFee(),50);
 });
 test('rolling costs 50 Thẻ huyền bí, opens a new piece each time, pays the half milestone and completes the picture',()=>{
  const p=captain(80);p.inventory[albumMaterial]=200;const before=heroStats(p).maxHp;

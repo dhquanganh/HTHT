@@ -108,3 +108,34 @@ header{flex-wrap:wrap;gap:8px}.main-tabs{flex-wrap:wrap}
 .tw-edited{display:flex;flex-wrap:wrap;gap:4px;flex:none}
 #tw-jump{width:120px}
 #tower-tab .ct-slot small{max-width:96px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Tab Tranh Người Cá (admin-album.js). */
+.al-admin{display:flex;flex-direction:column;gap:12px}
+.al-rates .gb-row input{width:120px}
+.al-pick{display:flex!important;flex-direction:row!important;align-items:center;gap:8px;flex:none}.al-pick img{width:64px;height:48px;object-fit:cover;border-radius:5px;flex:none}.al-pick span{display:flex;flex-direction:column;min-width:0}.al-pick small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.al-edit{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}
+.al-art{position:relative;width:min(516px,100%);aspect-ratio:516/388;border-radius:8px;overflow:hidden;flex:none;background:#0b1118}
+.al-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.al-grid{position:absolute;inset:0;display:grid}.al-grid span{border:1px solid rgba(255,230,109,.75);color:#fff;font-size:12px;padding:2px 4px;text-shadow:0 1px 2px #000}
+.al-fields{flex:1;min-width:300px;display:flex;flex-direction:column;gap:8px}
+.al-fields input:not([type=number]){width:220px}.al-fields .ev-num input[type=number]{width:96px}
+.al-point select{max-width:220px}.al-point input{width:140px}
+.al-file{cursor:pointer;display:inline-flex;align-items:center;padding:6px 12px;border:1px solid var(--line);border-radius:8px}
+.al-add{background:var(--accent);color:#2a1c00;font-weight:700;border-color:var(--accent)}
+.al-crop{width:min(620px,96vw);max-height:92vh;overflow:auto}
+#al-canvas{width:100%;height:auto;border-radius:8px;background:#000}
+.al-pieces{display:grid;gap:3px}.al-pieces canvas{width:100%;height:auto;border-radius:3px}
+/* Tab Ngọc Vega (admin-gem.js) */
+.gem-pick{display:flex;gap:8px;align-items:center;text-align:left}.gem-pick span{display:grid}
+.gem-boss-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:10px}.gem-boss-head img{width:120px;border-radius:8px;flex:none}
+.gem-days{gap:10px;flex-wrap:wrap}.gem-day{display:flex;gap:4px;align-items:center;font-size:14px}.gem-day input{width:auto;min-height:0}
+.gem-tier{display:grid;gap:8px}.gem-tier-title{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.gem-tier-title small{flex-basis:100%}
+.gem-stats{flex-wrap:wrap;gap:8px;align-items:flex-end}.gem-stats select{min-height:36px;max-width:260px}
+.gem-chip .gem-rate{width:64px}.gem-chip small{color:var(--muted)}.gem-note{margin:0 0 8px}
+.gem-admin .gem-tier{display:grid!important;grid-template-columns:minmax(0,1fr);align-items:start}
+.gem-admin .gem-tier .beast-chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:6px}
+.gem-admin .gem-chip{max-width:none;width:100%;box-sizing:border-box}
+.gem-admin .gem-chip>.grow{flex:1;min-width:90px}
+.gem-admin .gem-chip input{width:90px}.gem-admin .gem-chip .gem-rate{width:62px}
+.gem-admin .gem-tier .beast-chips>button{justify-self:start}
+.gem-admin .gem-chip .gem-rate{width:80px}.gem-admin .gem-chip input{width:84px}

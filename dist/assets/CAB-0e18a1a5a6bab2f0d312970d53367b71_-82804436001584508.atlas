@@ -1,0 +1,27 @@
+
+vong-phep.png
+size: 719,247
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 4
+  rotate: true
+  xy: 275, 3
+  size: 242, 272
+  orig: 246, 276
+  offset: 2, 2
+  index: -1
+Layer 6
+  rotate: true
+  xy: 549, 75
+  size: 170, 168
+  orig: 172, 171
+  offset: 1, 1
+  index: -1
+skeleton
+  rotate: true
+  xy: 2, 2
+  size: 243, 271
+  orig: 247, 275
+  offset: 2, 2
+  index: -1

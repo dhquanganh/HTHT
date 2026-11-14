@@ -147,3 +147,26 @@
 
 .abyss-chest-spine{position:absolute;right:-18px;top:-26px;width:100px;height:100px;pointer-events:none}
 .album-reveal{position:absolute;z-index:6;width:800px;height:800px;pointer-events:none}
+
+/* PopupAbyssEnemy — khung popup_body là ảnh 9 mảnh gốc (viền trái 32, trên 72 gồm dải tiêu đề, phải 32, dưới 28):
+   vẽ bằng border-image thay vì kéo giãn cả ảnh (kéo giãn làm phình mép cuộn giấy và dải tiêu đề, nội dung tràn khỏi giấy). */
+.abyss-body{width:866px;height:566px;padding:0;background:none!important;border:solid transparent;border-width:72px 32px 28px;border-image-slice:72 32 28 32 fill;border-image-width:72px 32px 28px;border-image-repeat:stretch;box-sizing:border-box}
+.abyss-body>h2{top:-56px;color:#fff6dc!important;font-size:30px!important;text-shadow:0 0 2px #4a2a10,2px 2px 0 #4a2a10,-2px -2px 0 #4a2a10,2px -2px 0 #4a2a10,-2px 2px 0 #4a2a10}
+#game-layer .abyss-body>.mm-close{top:-82px;right:-52px}
+.abyss-fields{margin:12px 0 8px}
+.abyss-lineup{width:780px;height:152px}
+.abyss-lineup .row{gap:10px}.abyss-lineup .row.front{left:14px}.abyss-lineup .row.back{left:236px}.abyss-lineup .front{left:66px}.abyss-lineup .back{left:396px}.abyss-lineup .ship{left:640px}
+.abyss-ship{left:656px}
+.abyss-head>b{right:5px;top:3px;font-size:17px;text-shadow:0 0 2px #000,1px 1px 1px #000,-1px -1px 1px #000}
+.abyss-body h3{margin:6px 0 4px 14px}
+.abyss-quests{width:780px;padding:4px 6px;border-width:2px}
+#game-layer .mm-popup .abyss-quest{height:46px;margin:3px 0}
+#game-layer .mm-popup .abyss-body .abyss-attack{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);width:190px;height:64px;min-height:0;margin:0;padding:0;background:none!important;box-shadow:none!important;border-style:solid!important;border-color:transparent!important;border-width:23px 28px 17px!important;border-radius:0!important;border-image-slice:23 28 17 28 fill!important;border-image-width:23px 28px 17px!important;border-image-repeat:stretch!important;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:#7a4a1c!important;font-size:26px!important;font-weight:700;line-height:1}
+#game-layer .mm-popup .abyss-body .abyss-attack:hover{transform:translateX(-50%);translate:0 -1px}
+/* Mua lượt / Rương kho báu: cùng khung 9 mảnh popup_body (viền trên 72 gồm dải tiêu đề). */
+.abyss-buy-body,.abyss-gift-body{background:none!important;border:solid transparent;border-width:72px 32px 28px;border-image-slice:72 32 28 32 fill;border-image-width:72px 32px 28px;box-sizing:border-box}
+.abyss-buy-body{padding-top:8px}.abyss-gift-body{padding:6px 0 0}
+.abyss-buy-body>h2,.abyss-gift-body>h2{top:-56px;color:#fff6dc!important;text-shadow:0 0 2px #4a2a10,2px 2px 0 #4a2a10,-2px -2px 0 #4a2a10,2px -2px 0 #4a2a10,-2px 2px 0 #4a2a10}
+#game-layer .abyss-buy-body>.mm-close,#game-layer .abyss-gift-body>.mm-close{top:-82px;right:-52px}
+#game-layer .mm-popup .abyss-buy-body .abyss-buy-go{width:190px;height:64px;min-height:0;padding:0;background:none!important;box-shadow:none!important;border-style:solid!important;border-color:transparent!important;border-width:23px 28px 17px!important;border-radius:0!important;border-image-slice:23 28 17 28 fill!important;border-image-width:23px 28px 17px!important;display:flex;align-items:center;justify-content:center;color:#7a4a1c!important;font-size:26px!important;line-height:1}
+.abyss-gift-body .abyss-cells{height:318px}

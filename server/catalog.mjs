@@ -118,6 +118,8 @@ const heroProfiles=read('hero-profiles.json'),heroVisuals={...campaign.visuals,.
 const beastVisuals=Object.fromEntries(beastData.bosses.map(boss=>[boss.avatar,boss.visual]));
 // Quái Vành Đai Tĩnh Lặng (Giant Squid, Sea Cow, Lord of the Coast): spine chiến đấu từ tools/export-silentring.py.
 const silentVisuals=Object.fromEntries(Object.values(read('silent-ring.json').units).map(u=>[u.avatar,u.visual]));
+// Boss ngọc (Douglas Bullet / Wadatsumi / Pica): Spine trận đấu + ảnh đầu của avatar bậc I (tools/export-gem.py).
+const gemBossVisuals=read('gem.json').visuals;
 // Bản thử nghiệm dùng chung công thức chỉ số; bậc và lớp tạo khác biệt giữa các tướng.
 const gradeNames={1:'D',2:'C',3:'B',4:'A',5:'S',6:'SS'},gradeScales={1:.65,2:.75,3:.85,4:1,5:1.1,6:1.25};
 const classScales={warrior:{attack:.9,maxHp:1.2},mage:{attack:1.15,maxHp:.9},assassin:{attack:1.2,maxHp:.85},ranger:{attack:1.1,maxHp:.95},priest:{attack:.9,maxHp:1.05}};
@@ -177,5 +179,34 @@ if(itemById.get('consumable:100045'))itemById.get('consumable:100045').descripti
 if(itemById.get('consumable:60004')){Object.assign(itemById.get('consumable:60004'),{stoneId:15,effect:{},description:'Lắp Đá Cam 1 sao vào ô Đá hộ mệnh của tướng đang chọn.'})}
 // Beli và Đá EXP theo giờ: tính theo tốc độ rương tự động của ải cao nhất, như mô tả vật phẩm.
 for(const [offset,kind] of [[60,'gold'],[66,'stone']])[2,5,8,12,24,72].forEach((hours,i)=>{const item=itemById.get('consumable:'+(offset+i));if(item){item.afk={kind,hours};item.effect={}}});
+// ---- Nhân vật tạo ở trang quản trị (server/custom-heroes.mjs): đăng ký thẳng vào các bảng của catalog lúc khởi động
+// và mỗi lần lưu, để triệu hồi, đội hình, bộ kỹ năng (levelKit / battleKit), mảnh tướng, hồ sơ... dùng như tướng gốc.
+// `customClient` đi kèm /api/catalog: ảnh tải lên (đăng ký vào kho ảnh của game), hồ sơ và hiệu ứng chiêu.
+export const customClient={assets:{},profiles:{},effects:{heroes:{},effects:{}},visuals:{}};
+export const gradeOf=rank=>gradeNames[rank];
+export const hasAsset=k=>typeof k==='string'&&!!assets[k];
+/** Hồ sơ + mô tả theo cấp của tướng gốc (trang quản trị sao chép kỹ năng khi tạo nhân vật). */
+export const templateOf=avatar=>heroProfiles[avatar]?{profile:heroProfiles[avatar],levels:skillLevelData[avatar]||null,icon:Object.fromEntries((heroProfiles[avatar].skills||[]).map(s=>[s.icon,assets[s.icon]?.src||null]))}:null;
+export const defaultStatScale=(rank,cls)=>{const scale=gradeScales[rank]||1,shape=classScales[cls]||{attack:1,maxHp:1};return{attack:Math.round(scale*shape.attack*1000)/1000,maxHp:Math.round(scale*shape.maxHp*1000)/1000}};
+export function unregisterCustomHeroes(){
+ const ids=new Set(heroDefinitions.filter(h=>h.custom).map(h=>h.id)),avatars=new Set(heroDefinitions.filter(h=>h.custom).map(h=>h.avatar));
+ for(let i=heroDefinitions.length-1;i>=0;i--)if(ids.has(heroDefinitions[i].id))heroDefinitions.splice(i,1);
+ for(let i=heroAlbum.heroes.length-1;i>=0;i--)if(heroAlbum.heroes[i].custom)heroAlbum.heroes.splice(i,1);
+ for(let i=items.length-1;i>=0;i--)if(items[i].customHero){itemById.delete(items[i].id);items.splice(i,1)}
+ for(const id of ids)heroKits.delete(id);
+ for(const avatar of avatars){delete heroProfiles[avatar];delete skillLevelData[avatar];avatarKits.delete(avatar)}
+ for(const k of levelKits.keys())if(avatars.has(k.split(':')[0]))levelKits.delete(k);
+ for(const k of Object.keys(customClient.assets))delete assets[k];
+ Object.assign(customClient,{assets:{},profiles:{},effects:{heroes:{},effects:{}},visuals:{}});
+}
+/** Một nhân vật đã kiểm tra: định nghĩa tướng, hồ sơ (mô tả kỹ năng), mô tả theo cấp, mục album, ảnh, hiệu ứng. */
+export function registerCustomHero({definition,profile,levels,album,assets:art,effects,visual}){
+ for(const [k,v] of Object.entries(art)){assets[k]=v;customClient.assets[k]=v}
+ heroProfiles[definition.avatar]=profile;skillLevelData[definition.avatar]=levels;customClient.profiles[definition.avatar]=profile;
+ heroKits.set(definition.id,kitFromProfile(profile));heroDefinitions.push(definition);heroAlbum.heroes.push(album);
+ Object.assign(customClient.effects.effects,effects.effects);customClient.effects.heroes[definition.avatar]=effects.hero;customClient.visuals[definition.avatar]=visual;
+ const item={id:'heroshard:'+definition.avatar,name:'Mảnh '+definition.name,category:'shard',rarity:'purple',assetKey:definition.visual.head,heroShard:definition.avatar,merge:heroShardMerge,description:`Đủ ${heroShardMerge} mảnh ghép thành ${definition.name}. Đã có tướng thì dùng để lên sao.`,noShop:true,price:1000,priceCurrency:'gold',sellPrice:1,customHero:true};
+ items.push(item);itemById.set(item.id,item);
+}
 import {eventList,checkinRewards} from './events.mjs';
-export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals,...silentVisuals}},economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:eventList,checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points,artifactUpgrade:read('artifact-upgrade.json')}}
+export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals,...silentVisuals,...gemBossVisuals,...customClient.visuals}},customHeroes:customClient,economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:eventList,checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points,artifactUpgrade:read('artifact-upgrade.json')}}

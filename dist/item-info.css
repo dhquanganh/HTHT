@@ -1,0 +1,10 @@
+/* Thông tin vật phẩm (item-info-ui.js, PopupItemInfo gốc). */
+.item-info-layer{z-index:90;pointer-events:auto!important}
+.item-info-layer .pd-button{cursor:pointer}
+.item-info-tile{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.item-info-tile .ev-tile{width:96px;height:96px}.item-info-tile .ev-tile>img:not(.item-shard-mark){width:80px;height:80px}
+/* Ô vật phẩm ở mọi màn: nhận chạm kể cả khi lớp cha tắt pointer-events. */
+[data-info-item]{cursor:pointer;pointer-events:auto!important}
+.item-info-desc{overflow-y:auto!important;overflow-x:hidden!important;overflow-wrap:anywhere;scrollbar-width:thin}
+.item-info-layer [data-name="TextTitle"]{overflow:hidden}.item-info-layer [data-name="TextTitle"] .pd-text{line-height:1.1}
+.item-info-layer [data-name="TextInfo"]{overflow:hidden}

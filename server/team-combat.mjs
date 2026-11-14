@@ -1,6 +1,7 @@
 import {skillTier} from './luffy-skills.mjs';
 import {zoroTiers} from './zoro-combat.mjs';
 import {statusNames} from './skill-kit.mjs';
+import {setupLucThuc} from './luc-thuc.mjs';
 
 const alive=units=>units.filter(u=>u.hp>0);
 const isZoro=u=>u.heroId==='zoro-king-of-hell';
@@ -32,7 +33,7 @@ function applyKitStats(u){
  if(s.healCutImmune)u.healCutImmune=true;
  // Hộ Nguyên: N lượt đầu, mỗi đòn nhận vào không vượt quá x% Máu tối đa.
  if(s.damageCap)u.damageCap={ratio:s.damageCap,rounds:s.damageCapRounds||3};
- u.critChance=Math.min(1,u.critChance||0);u.dodgeChance=Math.min(.85,u.dodgeChance||0);u.damageReduction=Math.min(.9,u.damageReduction||0);
+ u.critChance=Math.min(1,u.critChance||0);u.dodgeChance=Math.min(.85,u.dodgeChance||0);u.damageReduction=Math.min(.9+Math.min(.09,u.reductionCap||0),u.damageReduction||0);
  u.resist={};for(const t of u.kit.triggers)if(t.on==='battleStart')for(const e of t.effects)if(e.type==='resist')u.resist[e.kind]=Math.max(u.resist[e.kind]||0,e.value);
 }
 export function initializeTeamBattle(b){
@@ -48,6 +49,8 @@ export function initializeTeamBattle(b){
   }
   u.teamInitialized=true;
  }
+ // Lục thức chỉ có tác dụng trong PvP (Chiến trường): b.pvp do arena đặt, b.arena là trận Đơn đấu xem trực tiếp.
+ if((b.pvp||b.arena)&&!b.lucThuc)setupLucThuc(b);
 }
 export function teamRound(b,input={action:'auto'}){
  initializeTeamBattle(b);const events=[],emit=e=>{const v={id:b.events.length+events.length,turn:b.turn,...e};events.push(v);return v};
@@ -89,9 +92,11 @@ export function teamRound(b,input={action:'auto'}){
   const critBonus=Math.max(0,.5+stat(source,'critDamage',b.turn)-(target.critResist||0));
   const normal=Math.max(1,raw*(critical?1+critBonus:1)-stat(target,'defense',b.turn)*(1-pierce)*.6);
   // Chặn trừ đi Chính xác của người đánh; đòn bị chặn còn một nửa. Giảm ST tối đa 90% như mô tả Thủ của game.
-  const blocked=!flat&&!bypass&&random()<Math.max(0,stat(target,'block',b.turn)-stat(source,'accuracy',b.turn)),guard=(blocked?.5:1)*(1-Math.min(.9,Math.max(0,stat(target,'damageReduction',b.turn))));
+  const blocked=!flat&&!bypass&&random()<Math.max(0,stat(target,'block',b.turn)-stat(source,'accuracy',b.turn)),guard=(blocked?.5:1)*(1-Math.min(.9+Math.min(.09,target.reductionCap||0),Math.max(0,stat(target,'damageReduction',b.turn))));
   const resistance=isZoro(target)&&!bypass?ztier(target,'enma').reduction:0;
   let amount=immune||miss?0:Math.max(1,Math.round(flat?flat*(1-Math.min(.9,target.damageReduction||0)):(normal*(1-resistance)+raw*(trueDamage+(target.passives?.includes('penetration')?0:Math.max(0,stat(source,'trueDamage',b.turn))))*(1-resistance))*guard*(.94+random()*.12)));
+  // Lục thức: đội có tổng cao hơn nhận ít sát thương hơn theo độ chênh lệch (tối đa 70%).
+  {const cut=b.lucThuc?.reduce?.[target.side];if(cut>0&&amount>0)amount=Math.max(1,Math.round(amount*(1-cut)))}
   // Lì Đòn giảm đòn chí mạng, Thôn Phệ giảm đòn nộ: mỗi mùa boss có một trong hai hoặc kỹ năng khác.
   if(target.passives&&(critical&&target.passives.includes('critical')||skill&&target.passives.includes('ultimate')))amount=Math.max(1,Math.round(amount*.01));
   // Bảo vật "ST vào nghề ..." (mã 35-39): tăng sát thương lên tướng đúng nghề.
@@ -179,7 +184,11 @@ export function teamRound(b,input={action:'auto'}){
     for(let i=0;i<(e.hits||1);i++)for(const t of targets)if(t.hp>0){const per=e.foeHp?Math.min(e.cap||4,e.foeHp*t.maxHp/attack)*scale:0;const r=hit(u,t,{multiplier:(mult+per)/(e.hits>1?Math.sqrt(e.hits):1),skill,skillId,trueDamage:e.pierce?.3:0,forceCritical:e.critical});lastDamage+=r.amount||0}
    }
    else if(e.type==='status')for(const t of victims())applyStatus(u,t,e,skillId,name);
-   else if(e.type==='dot'){const amount=Math.max(1,Math.round(stat(u,'attack',b.turn)*e.mult*scale));for(const t of victims())if(t.hp>0&&random()<(e.chance??1)){t.dots.push({kind:e.kind,amount,until:b.turn+Math.min(e.turns,20)-1,source:u.id,skillId});emit({type:'buff',actor:u.id,target:t.id,skillId,name:statusNames[e.kind],attribute:e.kind,value:amount,expiresTurn:b.turn+Math.min(e.turns,20)-1})}}
+   // Mất máu thẳng (debuff Boss ngọc: Ăn Mòn, Sợ Hãi, Trái Tim Sinh Khí): % Máu tối đa hoặc theo Công của chính mục tiêu.
+   else if(e.type==='hpLoss'){for(const t of victims())if(t.hp>0){const amount=Math.round(e.maxHp?t.maxHp*e.maxHp:stat(t,'attack',b.turn)*(e.attack||0));if(amount>0)hit(u,t,{flat:amount,bypass:true,passive:true,skillId})}}
+   else if(e.type==='dot'){const base=Math.max(1,Math.round(stat(u,'attack',b.turn)*(e.mult||0)*scale));for(const t of victims())if(t.hp>0&&random()<(e.chance??1)){
+    // Boss ngọc (Trúng Độc / Thiêu Đốt): DoT lượng cố định hoặc theo % Máu tối đa của mục tiêu.
+    const amount=e.fixed?Math.round(e.fixed):e.targetHp?Math.max(1,Math.round(t.maxHp*e.targetHp)):base;t.dots.push({kind:e.kind,amount,until:b.turn+Math.min(e.turns,20)-1,source:u.id,skillId});emit({type:'buff',actor:u.id,target:t.id,skillId,name:statusNames[e.kind],attribute:e.kind,value:amount,expiresTurn:b.turn+Math.min(e.turns,20)-1})}}
    else if(e.type==='stat'){const list=e.on==='team'?alive(side(u)):e.on==='self'?[u]:e.on==='enemies'?alive(opponents(u)).filter(t=>e.cond!=='slower'||stat(t,'speed',b.turn)<stat(u,'speed',b.turn)):victims();for(const x of list)if(e.chance===undefined||random()<e.chance)applyStat(u,x,e,skillId,name)}
    // Huyết Lực: mất x% máu hiện tại, tăng Công bằng lượng máu đã mất trong N lượt.
    else if(e.type==='bloodPact'){const lost=Math.floor(u.hp*e.ratio);if(lost>0){u.hp-=lost;emit({type:'unit-state',actor:u.id,hp:u.hp,energy:u.energy});addEffect(u,u,skillId+':blood',name,'attack',lost*e.attack/Math.max(1,u.baseAttack),b.turn+e.turns-1)}}

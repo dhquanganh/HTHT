@@ -14,6 +14,10 @@ import {setContent,content} from './content.mjs';
 import {contentView,validateMonsters,validateStages} from './content-admin.mjs';
 import {applyGuildBoss,guildBossView,editGuildBoss} from './guild-config.mjs';
 import {applyTowerConfig,towerAdminView,editTower} from './tower-config.mjs';
+import {applyCustomHeroes,validateHero,artIds,customHeroList,customHeroConfig,compilePreview,templateHeroes,nextAvatar,maxArtBytes,maxHeroes,artSrc} from './custom-heroes.mjs';
+import {templateOf} from './catalog.mjs';
+import {applyAlbumConfig,albumAdminView,validateAlbumConfig,checkArt,artUrl} from './album-config.mjs';
+import {randomBytes as albumArtId} from 'node:crypto';
 import {isRewardId} from './game.mjs';
 import {beastBosses,bossByKey,bracketIndex,classLabel,beastEntry,beastTurns,defaultBoss,defaultConfig,defaultRewards,rankBrackets,rewardItems,rewardView,variantOf,validateBossStats,validateConfig,validateRewards} from './beast.mjs';
 import {itemById,itemIcon} from './catalog.mjs';
@@ -22,13 +26,14 @@ import {installArena} from './arena-store.mjs';
 import {installGuild} from './guild-store.mjs';
 import {installTth} from './tth-store.mjs';
 import {defaultRaidConfig,validateRaidConfig,raidView} from './raid.mjs';
+import {applyGemConfig,validateGemConfig,gemConfig,gemAdminInfo} from './gem.mjs';
 const scrypt=promisify(scryptCallback),sha=value=>createHash('sha256').update(value).digest('hex');
 export async function passwordHash(password){const salt=randomBytes(16).toString('hex');const hash=await scrypt(password,salt,64,{N:16384,r:8,p:1});return`scrypt:${salt}:${hash.toString('hex')}`}
 async function verifyPassword(password,encoded){const [scheme,salt,expected]=encoded.split(':');if(scheme!=='scrypt'||!salt||!expected)return false;const hash=await scrypt(password,salt,64,{N:16384,r:8,p:1});const saved=Buffer.from(expected,'hex');return hash.length===saved.length&&timingSafeEqual(hash,saved)}
 const summary=user=>({...(ensureRoster(user.player),{}),id:user._id.toHexString(),username:user.usernameKey,displayName:user.player.displayName,level:user.player.account.level,gold:user.player.wallet.gold,diamonds:user.player.wallet.diamonds,stage:user.player.adventure.unlockedStage,towerFloor:user.player.tower?.floor||1,heroes:(user.player.hero?1:0)+Object.keys(user.player.reserveHeroes||{}).length,locked:!!user.locked,createdAt:user.createdAt,updatedAt:user.updatedAt});
 export class Store {
  constructor(uri,dbName){this.client=new MongoClient(uri,{serverSelectionTimeoutMS:15000,connectTimeoutMS:10000,maxPoolSize:15});this.db=this.client.db(dbName);this.users=this.db.collection('players');this.sessions=this.db.collection('sessions');this.adminLog=this.db.collection('admin_log');this.ranking=this.db.collection('tower_ranking');for(const [field,name] of [['beastBosses','beast_bosses'],['beastConfig','beast_config'],['beastRewards','beast_rewards'],['beastSeasons','beast_seasons'],['beastRanking','beast_ranking'],['beastPayouts','beast_payouts']])this[field]=this.db.collection(name)}
- async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.towerConfig=this.db.collection('tower_config');applyTowerConfig(await this.towerConfig.findOne({_id:'tower'}));this.guildBossConfig=this.db.collection('guild_boss_config');applyGuildBoss(await this.guildBossConfig.findOne({_id:'stages'}));this.contentConfig=this.db.collection('content_config');setContent(await this.contentConfig.findOne({_id:'content'})||{});this.rewardConfig=this.db.collection('reward_config');applyRewardConfig(await this.rewardConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
+ async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.gemConfigs=this.db.collection('gem_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.customHeroes=this.db.collection('custom_heroes');this.customHeroArt=this.db.collection('custom_hero_art');applyCustomHeroes(await this.customHeroes.find().toArray()).forEach(e=>console.warn('Nhân vật tự tạo lỗi',e));await this.loadGemConfig();this.albumConfig=this.db.collection('album_config');this.albumArt=this.db.collection('album_art');applyAlbumConfig(await this.albumConfig.findOne({_id:'album'}));this.towerConfig=this.db.collection('tower_config');applyTowerConfig(await this.towerConfig.findOne({_id:'tower'}));this.guildBossConfig=this.db.collection('guild_boss_config');applyGuildBoss(await this.guildBossConfig.findOne({_id:'stages'}));this.contentConfig=this.db.collection('content_config');setContent(await this.contentConfig.findOne({_id:'content'})||{});this.rewardConfig=this.db.collection('reward_config');applyRewardConfig(await this.rewardConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
  async close(){clearInterval(this.beastTimer);clearInterval(this.arenaTimer);clearInterval(this.tthTimer);await this.client.close()}
  // ---- Chiến Thần Thú ----
  async setupBeast(){
@@ -130,6 +135,51 @@ export class Store {
   else await this.rewardConfig.updateOne({_id:id},{$set:{rows:validateRewardRows(id,input?.rows,isRewardId),updatedAt:new Date()}},{upsert:true});
   applyRewardConfig(await this.rewardConfig.find().toArray());await this.beastLog(`${input?.reset===true?'Trả về mặc định':'Sửa'} bảng thưởng ${id}`,ip);return this.rewardAdmin();
  }
+ // ---- Tranh Người Cá (tab Tranh Người Cá): tỉ lệ, chỉ số, tranh mới; ảnh tải lên ở album_art.
+ albumAdmin(){return albumAdminView()}
+ async setAlbum(input,ip){
+  if(input?.reset===true){await this.albumConfig.deleteOne({_id:'album'});applyAlbumConfig(null)}
+  else{const ids=new Set((await this.albumArt.find({},{projection:{_id:1}}).toArray()).map(d=>d._id));const next=validateAlbumConfig(input,ids);
+   await this.albumConfig.updateOne({_id:'album'},{$set:{...next,updatedAt:new Date()}},{upsert:true});applyAlbumConfig(next)}
+  await this.beastLog(input?.reset===true?'Tranh Người Cá: về mặc định':'Sửa Tranh Người Cá',ip);return this.albumAdmin();
+ }
+ async uploadAlbumArt(buffer,ip){
+  checkArt(buffer);const id=albumArtId(12).toString('hex');await this.albumArt.insertOne({_id:id,data:buffer,type:'image/webp',size:buffer.length,createdAt:new Date()});
+  await this.beastLog(`Tải ảnh tranh ${id}`,ip);return{id,src:artUrl(id),art:'album-upload-'+id};
+ }
+ async albumArtFile(id){return /^[a-f0-9]{24}$/.test(id)?this.albumArt.findOne({_id:id}):null}
+ // ---- Tạo nhân vật (tab Tạo nhân vật): dữ liệu tướng + kỹ năng + hoạt ảnh sprite; ảnh ở custom_hero_art.
+ heroAdmin(){return{heroes:customHeroList(),templates:templateHeroes()}}
+ heroAdminOne(avatar){const c=customHeroConfig(avatar);requireCondition(c,'Không tìm thấy nhân vật.',404);return c}
+ heroTemplate(avatar){const t=templateOf(String(avatar));requireCondition(t,'Không tìm thấy tướng.',404);return t}
+ heroCompile(input){return compilePreview(input)}
+ async saveHero(input,ip){
+  const docs=await this.customHeroes.find({},{projection:{_id:1,rev:1}}).toArray(),editing=input?.avatar?docs.find(d=>d._id===String(input.avatar)):null;
+  requireCondition(!input?.avatar||editing,'Nhân vật không còn tồn tại.',404);requireCondition(editing||docs.length<maxHeroes,`Tối đa ${maxHeroes} nhân vật.`);
+  const avatar=editing?editing._id:nextAvatar(docs);
+  const wanted=new Set([input?.images?.head,input?.images?.thumb,input?.images?.art,...(input?.skills||[]).map(s=>s?.icon),...(input?.anim?.sheets||[]).map(s=>s?.art)].filter(v=>typeof v==='string'&&/^[a-f0-9]{24}$/.test(v)));
+  const known=new Set((await this.customHeroArt.find({_id:{$in:[...wanted]}},{projection:{_id:1}}).toArray()).map(d=>d._id));
+  const {avatar:_,...config}=validateHero(input,known,avatar),rev=(editing?.rev||0)+1;
+  await this.customHeroes.updateOne({_id:avatar},{$set:{...config,rev,updatedAt:new Date()},$setOnInsert:{createdAt:new Date()}},{upsert:true});
+  const errors=applyCustomHeroes(await this.customHeroes.find().toArray());
+  const mine=errors.find(e=>e.startsWith(avatar+':'));if(mine)throw new GameError('Lưu được nhưng không dựng được nhân vật: '+mine.slice(avatar.length+2));
+  await this.beastLog(`${editing?'Sửa':'Tạo'} nhân vật ${config.name} (${avatar})`,ip);return{avatar,...this.heroAdmin()};
+ }
+ async deleteHero(avatar,ip){
+  const id=String(avatar),c=customHeroConfig(id);requireCondition(c,'Không tìm thấy nhân vật.',404);
+  const heroId='hero-'+id,owners=await this.users.countDocuments({$or:[{'player.hero.id':heroId},{['player.reserveHeroes.'+heroId]:{$exists:true}}]});
+  requireCondition(!owners,`Đang có ${owners} tài khoản sở hữu ${c.name}, không thể xoá. Hãy tắt "Cho chiêu mộ" để ẩn khỏi triệu hồi.`,409);
+  await this.customHeroes.deleteOne({_id:id});applyCustomHeroes(await this.customHeroes.find().toArray());
+  const used=new Set((await this.customHeroes.find().toArray()).flatMap(d=>artIds(d)));await this.customHeroArt.deleteMany({_id:{$in:artIds(c).filter(a=>!used.has(a))}});
+  await this.beastLog(`Xoá nhân vật ${c.name} (${id})`,ip);return this.heroAdmin();
+ }
+ async uploadHeroArt(buffer,type,ip){
+  requireCondition(Buffer.isBuffer(buffer)&&buffer.length>=30,'Không đọc được ảnh tải lên.');requireCondition(buffer.length<=maxArtBytes,'Ảnh quá lớn (tối đa 6 MB).');
+  requireCondition(buffer.toString('ascii',0,4)==='RIFF'&&buffer.toString('ascii',8,12)==='WEBP','Ảnh phải là WebP (trang quản trị tự chuyển đổi).');
+  const id=albumArtId(12).toString('hex');await this.customHeroArt.insertOne({_id:id,data:buffer,type:'image/webp',size:buffer.length,createdAt:new Date()});
+  await this.beastLog(`Tải ảnh nhân vật ${id} (${Math.round(buffer.length/1024)} KB)`,ip);return{id,src:artSrc(id)};
+ }
+ async heroArtFile(id){return /^[a-f0-9]{24}$/.test(id)?this.customHeroArt.findOne({_id:id}):null}
  // ---- Leo tháp (tab Leo tháp): bản sửa thưa theo tầng + tầng thêm, áp ngay vào towerData.
  towerAdmin(page){return{...towerAdminView(Number(page)||0),rewardItems:rewardItems()}}
  async setTower(input,ip){
@@ -197,6 +247,14 @@ export class Store {
   return{total,top:rows.map((doc,i)=>({...row(doc,i+1),me:doc.userId.equals(_id)})),me:mine?row(mine,ahead+1):null};
  }
  // ---- Chiến dịch: cấu hình phần thưởng / lực chiến / cấp mở trong raid_config (admin sửa), mặc định theo bảng gốc.
+ // ---- Ngọc Vega: thưởng / chỉ số / ngày mở Boss ngọc trong gem_config (admin sửa), áp vào server/gem.mjs.
+ async loadGemConfig(){const doc=await this.gemConfigs.findOne({_id:'config'});try{applyGemConfig(doc?.config?validateGemConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Ngọc Vega lỗi, dùng mặc định',e.message);applyGemConfig(null)}}
+ async gemAdmin(){await this.loadGemConfig();const doc=await this.gemConfigs.findOne({_id:'config'});return{config:gemConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,rewardItems:rewardItems(),...gemAdminInfo()}}
+ async setGemConfig(input,ip){
+  if(input?.reset===true){await this.gemConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Ngọc Vega về mặc định',ip)}
+  else{const config=validateGemConfig(input?.config,isRewardId);await this.gemConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Ngọc Vega',ip)}
+  return this.gemAdmin();
+ }
  async raidConfig(){const doc=await this.raidConfigs.findOne({_id:'config'});return doc?.config||defaultRaidConfig()}
  async raidStatus(userId){const user=await this.getUser(userId);requireCondition(user,'Tài khoản không tồn tại.',401);return raidView(user.player,await this.raidConfig())}
  async raidAdmin(){const doc=await this.raidConfigs.findOne({_id:'config'});return{config:doc?.config||defaultRaidConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultRaidConfig(),rewardItems:rewardItems()}}

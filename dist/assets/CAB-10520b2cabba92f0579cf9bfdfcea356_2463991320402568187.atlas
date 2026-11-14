@@ -1,0 +1,195 @@
+
+Hero_51176.png
+size: 924,544
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ban tay phai 2
+  rotate: false
+  xy: 822, 181
+  size: 78, 69
+  orig: 80, 71
+  offset: 1, 1
+  index: -1
+ban tay trai 1
+  rotate: false
+  xy: 822, 41
+  size: 74, 69
+  orig: 76, 71
+  offset: 1, 1
+  index: -1
+ban tay trai 2a
+  rotate: false
+  xy: 736, 346
+  size: 58, 71
+  orig: 61, 73
+  offset: 2, 1
+  index: -1
+ban tay trai 4
+  rotate: false
+  xy: 833, 437
+  size: 87, 105
+  orig: 89, 107
+  offset: 1, 1
+  index: -1
+ban tay trai 5
+  rotate: true
+  xy: 466, 2
+  size: 80, 70
+  orig: 82, 72
+  offset: 1, 1
+  index: -1
+ban tay trai 6
+  rotate: true
+  xy: 797, 338
+  size: 97, 108
+  orig: 107, 115
+  offset: 9, 1
+  index: -1
+body 1
+  rotate: true
+  xy: 2, 23
+  size: 177, 210
+  orig: 177, 210
+  offset: 0, 0
+  index: -1
+body 1a
+  rotate: false
+  xy: 214, 2
+  size: 177, 210
+  orig: 177, 210
+  offset: 0, 0
+  index: -1
+body 3
+  rotate: false
+  xy: 522, 114
+  size: 146, 163
+  orig: 163, 163
+  offset: 0, 0
+  index: -1
+cang tay phai 2
+  rotate: true
+  xy: 672, 137
+  size: 147, 60
+  orig: 149, 62
+  offset: 1, 1
+  index: -1
+cang tay phai 2a
+  rotate: true
+  xy: 629, 419
+  size: 123, 41
+  orig: 125, 43
+  offset: 1, 1
+  index: -1
+cang tay phai 3
+  rotate: true
+  xy: 466, 84
+  size: 165, 54
+  orig: 167, 56
+  offset: 1, 1
+  index: -1
+cang tay phai 4
+  rotate: false
+  xy: 538, 4
+  size: 132, 108
+  orig: 134, 111
+  offset: 1, 2
+  index: -1
+cang tay phai 5
+  rotate: false
+  xy: 784, 252
+  size: 84, 84
+  orig: 86, 93
+  offset: 1, 8
+  index: -1
+cang tay trai 1
+  rotate: true
+  xy: 393, 7
+  size: 242, 71
+  orig: 248, 71
+  offset: 6, 0
+  index: -1
+cang tay trai 4
+  rotate: true
+  xy: 672, 41
+  size: 94, 76
+  orig: 96, 78
+  offset: 1, 1
+  index: -1
+head 1
+  rotate: true
+  xy: 511, 279
+  size: 263, 116
+  orig: 265, 118
+  offset: 1, 1
+  index: -1
+root
+  rotate: true
+  xy: 2, 202
+  size: 340, 169
+  orig: 340, 169
+  offset: 0, 0
+  index: -1
+root copy
+  rotate: true
+  xy: 173, 214
+  size: 328, 172
+  orig: 329, 172
+  offset: 0, 0
+  index: -1
+spine
+  rotate: false
+  xy: 347, 251
+  size: 162, 291
+  orig: 162, 291
+  offset: 0, 0
+  index: -1
+tay phai 1
+  rotate: false
+  xy: 736, 244
+  size: 46, 100
+  orig: 48, 102
+  offset: 1, 1
+  index: -1
+tay phai 2
+  rotate: true
+  xy: 822, 112
+  size: 67, 78
+  orig: 69, 80
+  offset: 1, 1
+  index: -1
+tay phai 3
+  rotate: true
+  xy: 734, 149
+  size: 93, 82
+  orig: 93, 84
+  offset: 0, 2
+  index: -1
+tay trai 1
+  rotate: false
+  xy: 629, 286
+  size: 105, 131
+  orig: 105, 131
+  offset: 0, 0
+  index: -1
+tay trai 2
+  rotate: false
+  xy: 750, 8
+  size: 70, 139
+  orig: 72, 141
+  offset: 1, 1
+  index: -1
+tayphai 4
+  rotate: false
+  xy: 672, 419
+  size: 123, 66
+  orig: 254, 66
+  offset: 3, 0
+  index: -1
+tayphai 4a
+  rotate: false
+  xy: 672, 487
+  size: 159, 55
+  orig: 254, 66
+  offset: 95, 3
+  index: -1

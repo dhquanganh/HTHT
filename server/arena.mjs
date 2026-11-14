@@ -71,7 +71,7 @@ export function asEnemies(units){
 export function asAllies(units){return units.map((u,i)=>({...structuredClone(u),id:i?'ally-'+u.heroId:'hero',side:'ally'}))}
 /** Đánh tự động hai đội (Vô song, Liên đấu): trả về thắng/thua và sát thương từng tướng. Hết 40 hiệp thì bên tấn công thua. */
 export function simulate(attackers,defenders,seed){
- const b={id:'sim',status:'active',turn:1,seed:(seed>>>0)||1,allies:asAllies(attackers),enemies:asEnemies(defenders),events:[]};
+ const b={id:'sim',status:'active',pvp:true,turn:1,seed:(seed>>>0)||1,allies:asAllies(attackers),enemies:asEnemies(defenders),events:[]};
  for(const e of b.enemies)e.frontRow=e.position>=4;
  initializeTeamBattle(b);const damage={};let turns=0;
  while(turns<40&&b.allies.some(u=>u.hp>0)&&b.enemies.some(u=>u.hp>0)){

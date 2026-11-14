@@ -1,0 +1,69 @@
+
+ussopp.png
+size: 1034,405
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 11
+  rotate: false
+  xy: 828, 15
+  size: 204, 151
+  orig: 204, 151
+  offset: 0, 0
+  index: -1
+Layer 12
+  rotate: false
+  xy: 328, 6
+  size: 233, 33
+  orig: 235, 35
+  offset: 1, 1
+  index: -1
+Layer 13
+  rotate: false
+  xy: 328, 41
+  size: 232, 42
+  orig: 234, 44
+  offset: 1, 1
+  index: -1
+Layer 14
+  rotate: true
+  xy: 444, 102
+  size: 301, 230
+  orig: 301, 230
+  offset: 0, 0
+  index: -1
+Layer 15
+  rotate: true
+  xy: 563, 2
+  size: 98, 187
+  orig: 98, 187
+  offset: 0, 0
+  index: -1
+Layer 4
+  rotate: true
+  xy: 828, 168
+  size: 235, 166
+  orig: 237, 168
+  offset: 1, 1
+  index: -1
+Layer 8
+  rotate: false
+  xy: 676, 103
+  size: 150, 300
+  orig: 150, 302
+  offset: 0, 1
+  index: -1
+Layer 9
+  rotate: true
+  xy: 2, 85
+  size: 318, 440
+  orig: 318, 440
+  offset: 0, 0
+  index: -1
+under
+  rotate: false
+  xy: 2, 7
+  size: 324, 76
+  orig: 327, 131
+  offset: 0, 55
+  index: -1

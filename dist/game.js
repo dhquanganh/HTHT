@@ -259,7 +259,8 @@ async function doForge(){
 // Điểm danh theo PopupCheckin, Sự kiện theo EventScene (10) với Tab_Event và PanelAccumulatedEvent.
 const walletArt={gold:['icon_gold','Vàng'],diamonds:['icon_gem','Kim cương'],spirit:['icon_spirit','EXP tướng'],vipExp:['icon_exp_vip','EXP VIP']};
 function eventReward(r){const wallet=walletArt[r.itemId],item=itemMap.get(r.itemId);return{name:wallet?wallet[1]:item?.name||r.itemId,key:wallet?named(wallet[0]):item?.assetKey}}
-function eventTile(r,cls=''){const art=eventReward(r),item=itemMap.get(r.itemId);return `<span class="ev-tile ${cls}" title="${escape(art.name)}">${img(art.key,'',art.name)}${item?itemStars(item):''}<b>${short(r.quantity)}</b></span>`}
+// data-info-item: chạm ô để xem thông tin vật phẩm (dist/item-info-ui.js, PopupItemInfo gốc).
+function eventTile(r,cls=''){const art=eventReward(r),item=itemMap.get(r.itemId);return `<span class="ev-tile ${cls}" title="${escape(art.name)}" data-info-item="${escape(r.itemId)}" data-info-qty="${Number(r.quantity)||1}">${img(art.key,'',art.name)}${item?itemStars(item):''}<b>${short(r.quantity)}</b></span>`}
 const clockText=ms=>{const s=Math.max(0,Math.floor(ms/1000)),d=Math.floor(s/86400),t=[Math.floor(s/3600)%24,Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':');return d?`${d} ngày ${t}`:t};
 let checkinClock=null,eventClock=null,eventTab='week',eventSelected=null,eventLoadedAt=0;
 function checkinDialog(){
@@ -679,6 +680,7 @@ function activityHit(hit){
  if(action==='GemLock')V().toast(I2('HC_YEU_CAU_CAP_DO_82','Yêu cầu cấp độ 82'));
  else if(action==='FF')window.DevilFruitUI.open(fruitContext());
  else if(action==='SR')window.PetUI.open(petContext());
+ else if(action==='Gem')window.GemUI.open(gemContext());
  else V().toast('Tính năng này đang được phát triển.');
  return true;
 }
@@ -692,6 +694,12 @@ async function srBack(){dialog.innerHTML='';const back=srReturn||{diff:player.ba
 function fruitContext(){return{player:()=>player,get catalog(){return catalog},items:itemMap,assetSrc,assets:()=>V().assets(),named,img,short,num,mutation,toast:m=>V().toast(m),spine:spineCanvas,
  rewardArt:id=>assetSrc(rewardArt(id==='gold'||id==='diamonds'?{kind:id}:{itemId:id}).key),
  help:()=>modal('TRÁI ÁC QUỶ','<p class="item-description">Thu thập Trái Ác Quỷ từ Vòng quay Xu Ác Quỷ. Cường hóa (tối đa +20) tăng 5% chỉ số cơ bản mỗi cấp; nâng sao (tối đa 12 sao) tăng chỉ số đặc biệt. Đủ 4 trái của một bộ đạt 2/4/6 sao thì chỉ số cơ bản cả bộ tăng thêm. Tướng cấp 100 trở lên đặt vào ô Cộng hưởng sẽ nhận toàn bộ chỉ số các trái đã sở hữu.</p>')}}
+// Ngọc Vega (dist/gem-ui.js): GemMain → khảm / chế tạo / Boss ngọc; đánh boss vào trận rồi quay lại đúng boss, đúng bậc.
+let gemReturn=null;
+function gemContext(){return{player:()=>player,get catalog(){return catalog},items:itemMap,assetSrc,assets:()=>V().assets(),named,img,short,num,mutation,toast:m=>V().toast(m),spine:spineCanvas,eventTile,pickTeam,
+ help:topic=>modal('NGỌC VEGA',{main:'<p class="item-description">Ngọc Vega gồm 3 chức năng: Trang bị (khảm 6 viên ngọc cho tướng), Chế tạo (dùng Vụn đá quý, Đá nâng đồ, Bụi ma thuật) và Boss ngọc (nhận nguyên liệu chế tạo).</p>',equip:'<p class="item-description">Chỉ tướng cấp 250, hạng SS trở lên được khảm ngọc. Ngọc phải cùng nghề với tướng. Khảm đủ 6 viên cùng bộ sẽ kích hoạt chỉ số bộ. "Trang bị nhanh" ưu tiên đủ một bộ có phẩm chất cao nhất.</p>',summon:'<p class="item-description">Mỗi lần chế tạo cần 150 Vụn đá quý, 15000 Đá nâng đồ và 1000 Bụi ma thuật. Thêm Đá phẩm chất để chắc chắn đạt phẩm chất tối thiểu, Thẻ nghề để ra đúng nghề, Thẻ bộ để ra đúng bộ (mỗi viên tốn 1 nguyên liệu).</p>',boss:'<p class="item-description">Mỗi boss mở vào ngày riêng, mỗi ngày 3 lượt (hết lượt dùng Vé Đánh Boss Ngọc). Tướng cấp 250 trở lên được ra trận. Địa Ngục: chọn tối đa 15 debuff gây bất lợi cho phe ta, đủ điểm nhận thêm phần thưởng mốc.</p>'}[topic]||''),
+ gemBattle:async body=>{const r=await mutation('/api/gem/boss',body,{render:false,message:false});if(!r)return;gemReturn={boss:body.bossId,tier:body.tier};window.GemUI.close();await navigate(9)}}}
+async function gemBack(){dialog.innerHTML='';const back=gemReturn||{boss:player.battle?.gemBoss?.bossId,tier:player.battle?.gemBoss?.tier};await navigate(13);window.GemUI.open(gemContext(),back)}
 function mermaidContext(){return{pickTeam,get player(){return player},catalog,img,assetSrc,named,escape,short,num,eventTile,mutation,navigate,toast:m=>V().toast(m),render:renderUi,spine:spineCanvas}}
 function mermaidHit(name){
  if(name==='ButtonNui'){window.MermaidUI.openAbyss(mermaidContext());return true}
@@ -763,7 +771,7 @@ function heroProfileHtml(h,details,skillIndex){
 }
 async function openHeroProfile(avatar,skillIndex=0){
  const h=catalog.album.heroes.find(x=>x.avatar===avatar);if(!h)return;
- if(!heroProfiles){try{heroProfiles=await fetch('hero-profiles.json').then(r=>{if(!r.ok)throw Error();return r.json()})}catch{V().toast('Không tải được hồ sơ tướng. Hãy thử lại.');return}}
+ if(!heroProfiles){try{heroProfiles=await fetch('hero-profiles.json').then(r=>{if(!r.ok)throw Error();return r.json()})}catch{V().toast('Không tải được hồ sơ tướng. Hãy thử lại.');return}}Object.assign(heroProfiles,catalog.customHeroes?.profiles||{});
  dialog.innerHTML=heroProfileHtml(h,heroProfiles[avatar],skillIndex);
 }
 function heroTabSprite(id){const pairs={stats:['8fd4da85aa0d7ce4884558df97df20ed_2','07963b4f9c382dd4cb228edb52f7e652_2'],equipment:['5ef10e3c6e40d444e86c7298e5f34224_2','1bbfb4c5edb956d40b9ae09f441531b8_2'],star:['535c72d764e98ed4387a59965335f3ca_2','19ddc6acc5da62544b2905162f3557b7_2'],special:['68415ab4b8abb2f4e8f946c1a9e80507_2','cc4c4f40b251e98498a316279868838d_2'],haki:['dc04a8264ac54be40a7fa15226b010b8_2','5ecb2bb61075da146b1358eafa00fbd4_2']};return(pairs[id]||pairs.star)[heroTab===id?0:1]}
@@ -937,7 +945,7 @@ function modal(title,body,classes=''){dialog.innerHTML=`<div class="modal-shade"
 let heroChoice=null,chestTables=null,chestChoice=null;
 async function loadChests(){if(chestTables)return chestTables;try{chestTables=await fetch('chests.json').then(r=>{if(!r.ok)throw Error();return r.json()})}catch{V().toast('Không tải được dữ liệu rương. Hãy thử lại.')}return chestTables}
 function rewardArt(reward){if(reward.kind==='gold')return{key:named('icon_gold'),name:'Vàng'};if(reward.kind==='diamonds')return{key:named('icon_gem'),name:'Kim cương'};if(reward.kind==='hero'){const def=catalog.heroes.find(d=>d.avatar===reward.avatar);return{key:def?.visual.head,name:def?.name||'Tướng'}}const item=itemMap.get(reward.itemId);return{key:item?.assetKey,name:item?.name||reward.itemId}}
-function rewardTile(reward,attributes=''){const art=rewardArt(reward),label=`${art.name}${reward.quantity>1?' ×'+num(reward.quantity):''}`,inner=`${img(art.key,reward.kind==='hero'?'choice-head':'chest-icon',art.name)}${reward.quantity>1?`<span class="chest-quantity">${short(reward.quantity)}</span>`:''}${reward.kind==='hero'&&reward.fresh?'<span class="summon-new">Mới</span>':''}`;return attributes?`<button class="choice-hero" ${attributes} aria-label="${escape(label)}" title="${escape(label)}">${inner}</button>`:`<div class="choice-hero" title="${escape(label)}" aria-label="${escape(label)}">${inner}</div>`}
+function rewardTile(reward,attributes=''){const art=rewardArt(reward),label=`${art.name}${reward.quantity>1?' ×'+num(reward.quantity):''}`,inner=`${img(art.key,reward.kind==='hero'?'choice-head':'chest-icon',art.name)}${reward.quantity>1?`<span class="chest-quantity">${short(reward.quantity)}</span>`:''}${reward.kind==='hero'&&reward.fresh?'<span class="summon-new">Mới</span>':''}`;return attributes?`<button class="choice-hero" ${attributes} aria-label="${escape(label)}" title="${escape(label)}">${inner}</button>`:`<div class="choice-hero" title="${escape(label)}" aria-label="${escape(label)}"${reward.kind!=='hero'&&(reward.itemId||reward.kind)?` data-info-item="${escape(reward.itemId||reward.kind)}" data-info-qty="${Number(reward.quantity)||1}"`:''}>${inner}</div>`}
 async function chestDialog(itemId){
  const tables=await loadChests(),chest=tables?.[itemId];if(!chest)return;const item=itemMap.get(itemId),choose=chest.mode==='choice',picked=choose&&chestChoice?.itemId===itemId?chestChoice.index:null;
  const rewards=chest.rewards.map((reward,index)=>{const tile=rewardTile(reward,choose?`data-action="chest-pick" data-item="${escape(itemId)}" data-index="${index}" aria-pressed="${index===picked}"`:'');return index===picked?tile.replace('class="choice-hero"','class="choice-hero selected"'):tile}).join('');
@@ -1052,7 +1060,7 @@ function battleWheel(enemy=false){const current=displayBattle||player.battle,uni
 function battleUi(){
  const b=player?.battle;if(!b)return;const allies=battleAllies(displayBattle||b),h=allies.find(u=>u.id===battleMenuHeroId)||allies.find(u=>u.hp>0)||allies[0],def=definitionById(h.heroId||player.hero.id),active=actors.find(a=>a.id===battleActiveActorId);
  const context={...referenceContext(),catalog:{...catalog,hero:def,skills:def.skills},player:{...player,hero:{...h,skillDetails:Object.fromEntries(def.skills.map(s=>[s.id,s.levels[Math.min(s.levels.length,h.skills?.[s.id]||1)-1]]))}}};
- screen.innerHTML=`<section class="battle-hud" aria-label="Chiến đấu"><div class="battle-round">Vòng ${displayBattle?.turn||b.turn}</div>${active?'<div class="battle-turn-name">'+escape(active.name)+'</div>':''}<button class="battle-sprite battle-info" data-action="battle-menu" aria-label="Thông tin và điều khiển trận đấu" aria-expanded="${battleMenuOpen}">${img(battleArt.info)}</button><button class="battle-sprite battle-speed" data-action="speed" aria-label="Tốc độ ×${battleSpeed}">${img(battleArt['speed'+battleSpeed])}</button><button class="battle-sprite battle-skip" data-action="battle-skip" aria-label="Bỏ qua hoạt ảnh, đánh tự động đến kết quả" ${b.status!=='active'&&!battleBusy?'disabled':''}>${img(battleArt.skip)}</button>${battleWheel()}${battleWheel(true)}${autoBattle?'<div class="battle-auto-status">'+(skipBattleAnimations?'Đang hoàn tất trận…':'Tự động chiến đấu')+'</div>':''}<aside class="battle-menu" ${battleMenuOpen?'':'hidden'}><nav class="battle-party">${allies.map(u=>`<button data-action="battle-hero" data-unit="${u.id}" aria-label="${escape(u.name)}" class="${u.id===h.id?'selected':''} ${u.hp<=0?'fallen':''}">${img(definitionById(u.heroId||player.hero.id).visual.head)}<small>${Math.round(100*u.hp/u.maxHp)}%</small></button>`).join('')}</nav><header>${img(def.visual.head)}<div><strong>${escape(h.name)}</strong><small>HP ${num(h.hp)}/${num(h.maxHp)} · Nộ ${h.energy}/100</small></div></header>${window.ReferenceUI.combatSkills(context)}<div class="battle-controls"><button class="${autoBattle?'subtle':'green'}" data-action="auto" ${b.status!=='active'&&!battleBusy?'disabled':''}>${autoBattle?'Tạm dừng sau vòng này':'Tiếp tục chiến đấu'}</button></div><div class="battle-links"><button class="subtle" data-action="battle-log">Nhật ký trận</button><button class="subtle" data-action="battle-exit">Rút lui</button></div></aside></section>`;
+ screen.innerHTML=`<section class="battle-hud" aria-label="Chiến đấu"><div class="battle-round">Vòng ${displayBattle?.turn||b.turn}</div>${active?'<div class="battle-turn-name">'+escape(active.name)+'</div>':''}${b.lucThuc&&(b.lucThuc.ally||b.lucThuc.enemy)?`<div class="battle-luc-thuc" title="Lục thức: đội có tổng cao hơn giảm sát thương nhận theo độ chênh lệch, tối đa 70% (chỉ PvP)">Lục thức ${short(b.lucThuc.ally)} · ${short(b.lucThuc.enemy)}${b.lucThuc.reduce.ally?` · Giảm ST ${Math.round(b.lucThuc.reduce.ally*1000)/10}%`:b.lucThuc.reduce.enemy?` · Địch giảm ST ${Math.round(b.lucThuc.reduce.enemy*1000)/10}%`:''}</div>`:''}<button class="battle-sprite battle-info" data-action="battle-menu" aria-label="Thông tin và điều khiển trận đấu" aria-expanded="${battleMenuOpen}">${img(battleArt.info)}</button><button class="battle-sprite battle-speed" data-action="speed" aria-label="Tốc độ ×${battleSpeed}">${img(battleArt['speed'+battleSpeed])}</button><button class="battle-sprite battle-skip" data-action="battle-skip" aria-label="Bỏ qua hoạt ảnh, đánh tự động đến kết quả" ${b.status!=='active'&&!battleBusy?'disabled':''}>${img(battleArt.skip)}</button>${battleWheel()}${battleWheel(true)}${autoBattle?'<div class="battle-auto-status">'+(skipBattleAnimations?'Đang hoàn tất trận…':'Tự động chiến đấu')+'</div>':''}<aside class="battle-menu" ${battleMenuOpen?'':'hidden'}><nav class="battle-party">${allies.map(u=>`<button data-action="battle-hero" data-unit="${u.id}" aria-label="${escape(u.name)}" class="${u.id===h.id?'selected':''} ${u.hp<=0?'fallen':''}">${img(definitionById(u.heroId||player.hero.id).visual.head)}<small>${Math.round(100*u.hp/u.maxHp)}%</small></button>`).join('')}</nav><header>${img(def.visual.head)}<div><strong>${escape(h.name)}</strong><small>HP ${num(h.hp)}/${num(h.maxHp)} · Nộ ${h.energy}/100</small></div></header>${window.ReferenceUI.combatSkills(context)}<div class="battle-controls"><button class="${autoBattle?'subtle':'green'}" data-action="auto" ${b.status!=='active'&&!battleBusy?'disabled':''}>${autoBattle?'Tạm dừng sau vòng này':'Tiếp tục chiến đấu'}</button></div><div class="battle-links"><button class="subtle" data-action="battle-log">Nhật ký trận</button><button class="subtle" data-action="battle-exit">Rút lui</button></div></aside></section>`;
 }
 function scheduleBattleTurn(delay=450/battleSpeed){
  clearTimeout(autoTimer);
@@ -1082,7 +1090,7 @@ async function prepareBattleEffects(){
  const avatars=[...new Set([...actors.filter(a=>a.side==='ally'||a.heroId).map(a=>definitionById(a.heroId)).filter(d=>d?.ultimate).map(d=>d.avatar),...actors.filter(a=>a.bossAvatar).map(a=>a.bossAvatar)])];
  const attackAvatars=[...new Set(actors.map(a=>a.avatar).filter(a=>a&&a!=='576'))];
  if(avatars.length||attackAvatars.length){
-  if(!heroEffects)heroEffects=await fetch('hero-effects.json').then(r=>r.ok?r.json():null).catch(()=>null);
+  if(!heroEffects){heroEffects=await fetch('hero-effects.json').then(r=>r.ok?r.json():null).catch(()=>null);const own=catalog.customHeroes?.effects;if(heroEffects&&own){Object.assign(heroEffects.effects,structuredClone(own.effects));Object.assign(heroEffects.heroes,structuredClone(own.heroes))}}
   for(const avatar of avatars){const fx=heroEffects?.heroes[avatar];if(!fx)continue;
    fx.cast=fx.cast.filter(fxUsable);fx.impact=fx.impact.filter(fxUsable);
    for(const e of fx.cast)effectPool.push({kind:'hero-fx',key:e.key,skeleton:heroEffects.effects[e.key],animation:e.animation,loop:false});
@@ -1219,12 +1227,22 @@ function spawnBattleHeal(target){
 // Ani_Block: [thời điểm giây, giá trị] nội suy tuyến tính; y là độ cao so với điểm hiện (anchoredPosition gốc trừ mốc đầu).
 const floaterFonts={number:{family:'font_ef92121f084bb95428ba536d0756f006_3',src:'assets/ef92121f084bb95428ba536d0756f006_3.ttf'},label:{family:'font_1241e6a2ad0f2e740a05308d4f5fdcd4_3',src:'assets/1241e6a2ad0f2e740a05308d4f5fdcd4_3.ttf'}};
 for(const f of Object.values(floaterFonts))if(typeof FontFace!=='undefined')new FontFace(f.family,`url(${JSON.stringify(f.src)})`).load().then(face=>document.fonts.add(face)).catch(()=>{});
+// Sự kiện "buff" của engine gồm cả hiệu ứng xấu: do phe kia đặt lên, giá trị âm (trừ Chí mạng: dương = bị giảm), khống chế, DoT, Phong Ấn.
+const harmfulKinds=new Set(['stun','freeze','silence','fear','petrify','panic','burn','poison','bleed','frostbite','seal','vulnerability']);
+function isDebuffEvent(e,actor,target){
+ const source=actor?.side||(e.actor==='ship'?'ally':null);
+ if(source&&target?.side&&source!==target.side)return true;
+ if(harmfulKinds.has(e.attribute))return true;
+ return typeof e.value==='number'&&(e.attribute==='critChance'?e.value>0:e.value<0);
+}
 const floaterStyles={
  lost:{font:'number',size:40,color:'#ffffff',length:.833,sx:[[0,1.6],[.1,1],[.167,1.2],[.233,1]],sy:[[0,1.2],[.1,1],[.167,1.2],[.233,1]],y:[[0,0],[.233,0],[.533,50],[.6,50],[.833,70]],a:[[0,1],[.6,1],[.833,0]]},
  crit:{font:'number',size:60,color:'#ff2b00',length:.833,sx:[[0,1],[.033,2],[.1,2],[.217,1.017],[.283,1.2],[.383,1]],sy:[[0,1],[.033,1.8],[.1,1.8],[.217,1.017],[.283,1.2],[.383,1]],y:[[0,0],[.383,0],[.6,50],[.833,65]],a:[[0,1],[.6,1],[.833,0]]},
  heal:{font:'number',size:40,color:'#6ef23b',length:.885,y:[[0,-50],[.462,50],[.885,50]],a:[[0,0],[.154,1],[.692,1],[.885,0]]},
  block:{font:'label',size:40,color:'#ffffff',length:1.083,y:[[0,0],[.867,55],[1.083,55]],a:[[0,1],[.867,1],[1.083,0]]},
  buff:{font:'label',size:22,color:'#c8ed67',length:1.1,y:[[0,0],[1.1,55]],a:[[0,1],[.75,1],[1.1,0]]},
+ // Hiệu ứng do phe kia đặt lên (giảm Thủ, Uy Hiếp, Thiêu đốt...): chữ đỏ để không nhầm với buff của chính đơn vị.
+ debuff:{font:'label',size:22,color:'#ff7a5c',length:1.1,y:[[0,0],[1.1,55]],a:[[0,1],[.75,1],[1.1,0]]},
 };
 const curveAt=(keys,t)=>{if(!keys)return null;if(t<=keys[0][0])return keys[0][1];for(let i=1;i<keys.length;i++)if(t<=keys[i][0]){const [t0,v0]=keys[i-1],[t1,v1]=keys[i];return v0+(v1-v0)*(t-t0)/(t1-t0||1)}return keys.at(-1)[1]};
 function drawFloaters(ctx,now){
@@ -1269,7 +1287,7 @@ async function replay(events){
   if(e.type==='turn'&&displayBattle){displayBattle.turn=e.turn;battleUi()}
   if(e.type==='defend'){battleLines.push(actor.name+' phòng thủ, tích thêm nộ.');await sleep(300)}
   if(e.type==='heal'&&target){if(e.revive)spawnStatusOnce(target,'revive');if(e.revive&&target.deathAt!==undefined){delete target.deathAt;playActor(target,'idling',true);floaters.push({x:target.x,y:target.y-175,text:'Hồi sinh',at:battleTime*1000,buff:true})}target.hp=e.hp;const view=displayUnit(target.id);if(view)view.hp=e.hp;if(e.amount>0){spawnBattleHeal(target);floaters.push({x:target.x,y:target.y-150,text:String(e.amount),at:battleTime*1000,kind:'heal'});battleLines.push(target.name+' hồi '+num(e.amount)+' máu.');if(!(e.skillId==='lifesteal'&&nextInWave(events,i,wave)))await sleep(350)}}
-  if(e.type==='buff'&&target){target.statusEffects??=[];target.statusEffects=target.statusEffects.filter(f=>!(f.skillId===e.skillId&&f.attribute===e.attribute));target.statusEffects.push(e);battleLines.push(e.name+': '+target.name);floaters.push({x:target.x,y:target.y-175-(events[i-1]?.type==='buff'&&events[i-1]?.target===e.target?24:0),text:e.name,at:battleTime*1000,buff:true});
+  if(e.type==='buff'&&target){target.statusEffects??=[];target.statusEffects=target.statusEffects.filter(f=>!(f.skillId===e.skillId&&f.attribute===e.attribute));target.statusEffects.push(e);battleLines.push(e.name+': '+target.name);floaters.push({x:target.x,y:target.y-175-(events[i-1]?.type==='buff'&&events[i-1]?.target===e.target?24:0),text:e.name,at:battleTime*1000,buff:true,...(isDebuffEvent(e,actor,target)?{kind:'debuff'}:{})});
    // Bị động sinh nhiều hiệu ứng cùng lúc: chỉ dừng ở hiệu ứng đầu của một chuỗi, các dòng sau hiện chồng lên nhau.
    if(events[i+1]?.type!=='buff')await sleep(events[i-1]?.type==='buff'?120:200)}
   // Hết hiệu lực: chỉ gỡ đúng hiệu ứng (kỹ năng + thuộc tính); sự kiện cũ không có thuộc tính thì gỡ theo kỹ năng.
@@ -1315,6 +1333,7 @@ function showBattleResult(){
  if(b.beast)return battleEndScreen(b,{damage:r.damage||0,lines:[`Tích lũy: ${num(r.total||0)}`,...(r.counted===false?['Mùa đã kết thúc nên trận này không được tính.']:[])],close:'beast-back'});
  if(b.broken)return battleEndScreen(b,{rewards:r.items||[],lines:won&&!r.counted?['Tháng đã đổi nên trận này không được tính.']:[],close:'event-back'});
  if(b.tower)return battleEndScreen(b,{rewards:won?[{itemId:'gold',quantity:r.gold},...r.items]:[],close:'tower'});
+ if(b.gemBoss)return battleEndScreen(b,{rewards:won?(r.items||[]):[],lines:[`${b.gemBoss.name}`+(b.gemBoss.tier===6?` · ${b.gemBoss.points} điểm debuff`:'')+(won?' · Đã tiêu diệt':' · Chưa hạ được boss')],close:'gem-back'});
  if(b.raid)return battleEndScreen(b,{rewards:won?(r.items||[]):[],lines:[`${b.raid.name} mức ${b.raid.index}`+(won?'':' · Thua không bị trừ lượt')],close:'raid-back'});
  if(b.tth)return battleEndScreen(b,{damage:r.damage||0,rewards:r.items||[],lines:[`${b.tth.name} · Ngày ${b.tth.day}`+(r.counted===false?' · Ngày đã đổi, trận không được tính':` · Sát thương cao nhất hôm nay: ${num(r.best||0)}`)],close:'tth-back'});
  if(b.guildBoss)return battleEndScreen(b,{damage:r.damage||0,rewards:[{itemId:'gold',quantity:r.gold||0},{itemId:'consumable:6',quantity:r.coin||0}],lines:[`Đánh Boss hạm đội ải ${b.guildBoss.stage}`+(guildResult?.killed?' · Đã hạ boss!':'')],close:'guild-back'});
@@ -1371,8 +1390,9 @@ const allowed=new Set([1,7,9,10,12,13,21,24,28,34,37,40,53,1156,1404,1600,1700])
 window.GameRuntime={
  // Cho kiểm thử trình duyệt: nhân vật của trận đang hiển thị (chỉ đọc / gắn trạng thái để xem hình).
  battleActors:()=>actors,
+ openAlbum:()=>window.MermaidUI.openAlbum(mermaidContext()),
  async boot(){document.body.classList.add('playing');scaled();
-  try{battleReference=await fetch('battle-reference.json').then(r=>{if(!r.ok)throw Error('Không tải được tài nguyên chiến đấu.');return r.json()});catalog=await api('/api/catalog');document.querySelector('#toast')?.style.setProperty('--toast-art',`url('${assetSrc(named('bgr_toast'))}')`);catalog.items.forEach(item=>itemMap.set(item.id,item));window.TalentUI?.init(talentContext());window.ExcUI?.init(excContext());window.ArenaUI?.init(arenaContext());window.GuildUI?.init(guildUiContext());window.TthUI?.init(tthContext());window.RaidUI?.init(arenaContext());window.IntroUI?.init(introContext());window.ShipUI?.init(shipContext());window.TutorialUI?.init(tutorialContext());window.ProfileUI?.init(profileContext());window.AuraUI?.init({assetSrc});window.AltarUI?.init(altarContext());window.SealedUI?.init({...tthContext(),bonusPopup:r=>bonusPopup(r)});window.ShopUI?.init({...tthContext(),bonusPopup:r=>bonusPopup(r),itemInfo:id=>itemDialog(id),confirm:(text,title,price,ok,o={})=>messageBox({text,title,price,ok,...o})});window.TavernUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),confirm:(text,title,price,ok,okText)=>messageBox({text,title,price,ok,okText})});window.BraveUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),api:url=>api(url)});window.DungeonUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),api:url=>api(url)});window.CasinoUI?.init({...altarContext(),bonusPopup:r=>bonusPopup(r),spine:spineCanvas});window.VipUI?.init(altarContext());window.DiceUI?.init({...altarContext(),bonusPopup:r=>bonusPopup(r),spine:spineCanvas});await window.TthUI?.load().catch(()=>{});window.ArtifactUI?.init({infoHtml:item=>artifactInfoHtml(item),catalog:()=>catalog,player:()=>player,itemMap,assetSrc,assets:()=>V().assets(),named,img,escape,short,num,mutation,toast:m=>V().toast(m),rerender:()=>renderUi(),layer:()=>document.querySelector('#game-layer')});const f=Object.values(V().assets()).find(a=>a.name==='SVN-Titillium bold');const fontRef=await fetch('scenes/1.json').then(r=>r.json());const fontNode=V().allNodes(fontRef).find(n=>V().get(n,'Text')?.font);if(fontNode){const source=V().get(fontNode,'Text').font;const face=new FontFace('GameFont',`url(${JSON.stringify(source.src)})`);await face.load();document.fonts.add(face)}
+  try{battleReference=await fetch('battle-reference.json').then(r=>{if(!r.ok)throw Error('Không tải được tài nguyên chiến đấu.');return r.json()});catalog=await api('/api/catalog');document.querySelector('#toast')?.style.setProperty('--toast-art',`url('${assetSrc(named('bgr_toast'))}')`);catalog.items.forEach(item=>itemMap.set(item.id,item));for(const p of catalog.albumData?.pictures||[])if(p.artSrc&&V()?.assets())V().assets()[p.art]={name:p.art,src:p.artSrc,width:516,height:388};if(V()?.assets())Object.assign(V().assets(),catalog.customHeroes?.assets||{});window.TalentUI?.init(talentContext());window.ExcUI?.init(excContext());window.ArenaUI?.init(arenaContext());window.GuildUI?.init(guildUiContext());window.TthUI?.init(tthContext());window.RaidUI?.init(arenaContext());window.IntroUI?.init(introContext());window.ShipUI?.init(shipContext());window.TutorialUI?.init(tutorialContext());window.ProfileUI?.init(profileContext());window.AuraUI?.init({assetSrc});window.AltarUI?.init(altarContext());window.ItemInfoUI?.init({player:()=>player,items:itemMap,num,assetSrc,assets:()=>V().assets(),layer:()=>document.querySelector('#game-layer'),tile:r=>eventTile(r,'item-info-big')});window.SealedUI?.init({...tthContext(),bonusPopup:r=>bonusPopup(r)});window.ShopUI?.init({...tthContext(),bonusPopup:r=>bonusPopup(r),itemInfo:id=>window.ItemInfoUI?.show(id),confirm:(text,title,price,ok,o={})=>messageBox({text,title,price,ok,...o})});window.TavernUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),confirm:(text,title,price,ok,okText)=>messageBox({text,title,price,ok,okText})});window.BraveUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),api:url=>api(url)});window.DungeonUI?.init({...tthContext(),catalog:()=>catalog,bonusPopup:r=>bonusPopup(r),api:url=>api(url)});window.CasinoUI?.init({...altarContext(),bonusPopup:r=>bonusPopup(r),spine:spineCanvas});window.VipUI?.init(altarContext());window.DiceUI?.init({...altarContext(),bonusPopup:r=>bonusPopup(r),spine:spineCanvas});await window.TthUI?.load().catch(()=>{});window.ArtifactUI?.init({infoHtml:item=>artifactInfoHtml(item),catalog:()=>catalog,player:()=>player,itemMap,assetSrc,assets:()=>V().assets(),named,img,escape,short,num,mutation,toast:m=>V().toast(m),rerender:()=>renderUi(),layer:()=>document.querySelector('#game-layer')});const f=Object.values(V().assets()).find(a=>a.name==='SVN-Titillium bold');const fontRef=await fetch('scenes/1.json').then(r=>r.json());const fontNode=V().allNodes(fontRef).find(n=>V().get(n,'Text')?.font);if(fontNode){const source=V().get(fontNode,'Text').font;const face=new FontFace('GameFont',`url(${JSON.stringify(source.src)})`);await face.load();document.fonts.add(face)}
    const response=await fetch('/api/auth/session',{credentials:'same-origin'});if(response.ok){const s=await response.json();player=s.player;selectCatalogHero();csrfToken=s.csrfToken;return{sceneId:window.IntroUI?.pending()?24:player.battle?.status==='active'?9:13}}return{sceneId:1};
   }catch(e){bootError=e.message;return{sceneId:1}}
  },
@@ -1400,6 +1420,7 @@ document.addEventListener('click',async e=>{
  if(action==='tower')return navigate(40);
  if(action==='beast-back')return navigate(1600);if(action==='raid-back'){dialog.innerHTML='';const m=player.battle?.raid?.mode;if(currentScene!==37)await navigate(37);return window.RaidUI?.open(m)}if(action==='tth-back'){dialog.innerHTML='';return openTth(player.tth?.bossIndex)}if(action==='guild-back'){dialog.innerHTML='';return openGuild('boss')}if(action==='arena-back'){dialog.innerHTML='';const mode=arenaReturn||player.battle?.arena?.mode||'solo';return openArena(mode)}
  if(action==='sr-back')return srBack();
+ if(action==='gem-back')return gemBack();
  if(action==='item-drop'){const panel=dialog.querySelector('.item-popup-drop');if(panel)panel.hidden=!panel.hidden;return}
  if(action==='item-drop-forge'){if(lastItem){forgeSlot=itemMap.get(lastItem).slot;forgeSelected[forgeSlot]=lastItem}return navigate(21)}
  if(action==='item-drop-world')return navigate(37);
@@ -1441,7 +1462,7 @@ document.addEventListener('click',async e=>{
  if(action==='summon-go')return navigate(24);
  if(action==='hero-go')return navigate(7);
  if(action==='dq-claim'){const data=await mutation('/api/daily-quest/claim',{id:button.dataset.quest},{close:false});if(data)questDialog();return}
- if(action==='dq-item'){const item=itemMap.get(button.dataset.item);if(item)V().toast(item.name+': '+(item.description||''));return}
+ if(action==='dq-item'){window.ItemInfoUI?.show(button.dataset.item);return}
  if(action==='dq-go'){dialog.innerHTML='';const go=button.dataset.go;
   if(go==='summon')return navigate(24);if(go==='arena')return openArena('solo');if(go==='forge')return navigate(21);if(go==='tower')return navigate(40);if(go==='beast')return navigate(1600);
   if(go==='mastery'){achievementDialog();return}if(go==='tavern'){await navigate(37);window.TavernUI.open();return}if(go==='events'){openSpecial();return}
@@ -1450,7 +1471,7 @@ document.addEventListener('click',async e=>{
  if(action==='se-slot'){if(sePick(button.dataset.slot)){seState.slot=button.dataset.slot;seDialog()}return}
  if(action==='se-tab'){seState.tab=button.dataset.tab;seDialog();return}
  if(action==='se-close'){seState=null;dialog.innerHTML='';renderUi();return}
- if(action==='se-item'){const item=itemMap.get(button.dataset.item);if(item)V().toast(item.name+': '+(item.description||''));return}
+ if(action==='se-item'){window.ItemInfoUI?.show(button.dataset.item);return}
  if(action==='se-upgrade'){const data=await mutation('/api/hero/special',{slot:button.dataset.slot,kind:button.dataset.kind},{close:false});if(data)seDialog();return}
  if(action==='stone-open'){stoneInfo();return}
  if(action==='use-open'){dialog.innerHTML='';useManyDialog(button.dataset.item);return}
@@ -1495,7 +1516,7 @@ document.addEventListener('click',async e=>{
  if(action==='mail-delete'&&button.dataset.mail?.startsWith('m:')){const id=button.dataset.mail.slice(2),data=await mutation('/api/mail/delete',{id},{render:false});if(data)mailDialog();return}
  if(action==='mail-delete-all'&&player.mail?.some(m=>m.claimedAt))await mutation('/api/mail/delete',{all:true},{render:false});
  if(action==='mail-delete'||action==='mail-delete-all'){const context=referenceContext(),claimed=player.adventure.lastDaily===context.day,ids=action==='mail-delete-all'?['journey',...(claimed?['daily:'+context.day]:[])]:[button.dataset.mail==='daily'?'daily:'+context.day:button.dataset.mail];if(ids.includes('daily:'+context.day)&&!claimed){V().toast('Hãy nhận quà trước khi xóa thư.');return}localStorage.setItem('htps_mail_'+(player.profile?.username||player.displayName),JSON.stringify([...new Set([...context.deletedMail,...ids])]));mailDialog();return}
- if(action==='mail-reward')return;
+ if(action==='mail-reward'){window.ItemInfoUI?.show(button.dataset.item);return}
  if(action==='home')return navigate(currentScene===28?37:13);
  if(action==='hero'){if(button.dataset.hero&&button.dataset.hero!==player.hero.id){const result=await mutation('/api/hero/select',{heroId:button.dataset.hero},{render:false});if(!result)return}heroTab='stats';return navigate(1156)}
  if(action==='inventory'){dictionary=false;inventoryTab='equipment';page=0;search='';return navigate(12)}

@@ -1,0 +1,46 @@
+// QA tab "Tạo nhân vật": tải sprite sheet, tìm khung, ghép hoạt ảnh, hiệu ứng, kỹ năng, xem trước Spine, lưu;
+// rồi kiểm tra game nạp được skeleton sinh ra. Dùng: node tools/qa-hero-creator.cjs <sheet1> [sheet2...]
+const {chromium}=require('playwright-core'),{MongoClient}=require('mongodb'),{spawn}=require('child_process');
+const fs=require('fs'),crypto=require('crypto'),assert=require('assert/strict');try{process.loadEnvFile('.env')}catch{}
+const database='htps_creator_'+crypto.randomBytes(6).toString('hex'),port=4197,url=`http://127.0.0.1:${port}`,output='qa-output/hero-creator',secret=crypto.randomBytes(18).toString('base64url');let server,browser;
+const sheets=process.argv.slice(2);if(!sheets.length)throw Error('Cần đường dẫn sprite sheet.');
+const start=env=>new Promise((resolve,reject)=>{const s=spawn(process.execPath,['server/index.mjs'],{env:{...process.env,MONGODB_DB:database,PORT:String(port),HOST:'127.0.0.1',NEW_ACCOUNT_INTRO:'off',...env},stdio:['ignore','pipe','pipe']});const timer=setTimeout(()=>reject(Error('QA startup timeout')),30000);s.stderr.on('data',b=>process.stderr.write(b));s.stdout.on('data',b=>{if(b.toString().includes('đang chạy')){clearTimeout(timer);resolve(s)}});s.once('exit',code=>{clearTimeout(timer);reject(Error('QA server exited '+code))})});
+const rowStarts=page=>page.evaluate(()=>{const fs=AdminHeroes.draft.anim.frames.filter(f=>f.s===0).sort((a,b)=>a.y-b.y),rows=[];for(const f of fs){const r=rows.find(r=>Math.abs((r[0].y+r[0].h/2)-(f.y+f.h/2))<r[0].h*.5);if(r)r.push(f);else rows.push([f])}return rows.map(r=>r.sort((a,b)=>a.x-b.x).map(f=>f.id))});
+(async()=>{
+ fs.mkdirSync(output,{recursive:true});server=await start({ADMIN_PASSWORD:secret});
+ browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const admin=await browser.newPage({viewport:{width:1600,height:1000}}),errors=[];admin.on('pageerror',e=>errors.push(e.message));admin.on('console',m=>{if(m.type()==='error')errors.push(m.text())});admin.on('dialog',d=>d.accept());
+ await admin.goto(url+'/admin');await admin.locator('#password').fill(secret);await admin.locator('#login-form button').click();await admin.waitForSelector('#tab-heroes');
+ await admin.locator('#tab-heroes').click();await admin.waitForTimeout(4000);await admin.waitForSelector('[data-new]');await admin.locator('[data-new]').click();
+ await admin.locator('[data-f="name"]').fill('Luffy Thử');await admin.locator('[data-f="name"]').dispatchEvent('change');
+ await admin.locator('[data-step="sheet"]').click();
+ await admin.setInputFiles('[data-add-sheet]',sheets);await admin.waitForSelector('.hc-box',{timeout:60000});
+ console.log('frames per sheet',await admin.evaluate(()=>AdminHeroes.draft.anim.sheets.map((_,i)=>AdminHeroes.draft.anim.frames.filter(f=>f.s===i).length)),'scale',await admin.evaluate(()=>AdminHeroes.draft.anim.scale));
+ await admin.locator('[data-sheet="0"]').first().click();await admin.waitForTimeout(300);await admin.screenshot({path:output+'/sheet.png',fullPage:true});
+ await admin.locator('[data-grid="rows"]').fill('2');await admin.locator('[data-grid="rows"]').dispatchEvent('change');await admin.locator('[data-grid="cols"]').fill('3');await admin.locator('[data-grid="cols"]').dispatchEvent('change');await admin.locator('[data-grid-split]').click();
+ const grid=await admin.evaluate(()=>AdminHeroes.draft.anim.frames.filter(f=>f.s===0).length);console.log('grid 2x3 frames',grid);assert.ok(grid>=1&&grid<=6,'grid split');
+ await admin.locator('[data-redetect]').click();
+ const rows=await rowStarts(admin);console.log('rows',JSON.stringify(rows));
+ await admin.locator('[data-step="anim"]').click();await admin.waitForSelector('.hc-pick .hc-box');
+ const pick=async(anim,row,shift=true)=>{await admin.locator(`[data-anim="${anim}"]`).click();await admin.locator(`.hc-pick [data-frame="${rows[Math.min(row,rows.length-1)][0]}"]`).click(shift?{modifiers:['Shift']}:{})};
+ await pick('idling',1);await pick('beat',3);await admin.locator('.hc-strip [data-hit="1"]').click();await pick('skill',3);await pick('damage',1,false);
+ await admin.locator('[data-anim="beat"]').click();await admin.locator('.hc-strip [data-cell="1"] canvas').click();await admin.waitForTimeout(400);
+ await admin.screenshot({path:output+'/anim.png',fullPage:true});
+ await admin.locator('[data-step="fx"]').click();await admin.locator('[data-fx-add]').click();
+ const last=await admin.evaluate(()=>AdminHeroes.draft.anim.frames.filter(f=>f.s===0).at(-1).id);await admin.locator(`.hc-pick [data-frame="${last}"]`).click();
+ await admin.locator('[data-assign="attack.impact"]').selectOption('0');await admin.locator('[data-assign="skill.impact"]').selectOption('0');
+ await admin.screenshot({path:output+'/fx.png',fullPage:true});
+ await admin.locator('[data-step="skills"]').click();await admin.waitForFunction(()=>document.querySelector('#hc-parse-0 li'));
+ await admin.locator('[data-sample="0"]').selectOption('1');await admin.waitForTimeout(900);await admin.screenshot({path:output+'/skills.png',fullPage:true});
+ await admin.locator('[data-step="images"]').click();await admin.locator('[data-from-sprite]').click();await admin.waitForSelector('canvas[data-crop]');await admin.screenshot({path:output+'/images.png',fullPage:true});
+ await admin.locator('[data-step="preview"]').click();await admin.waitForSelector('.hc-battle');await admin.waitForTimeout(3000);await admin.locator('.hc-battle').screenshot({path:output+'/preview-idle.png'});
+ await admin.locator('[data-pv="attack-full"]').click();await admin.waitForTimeout(450);await admin.locator('.hc-battle').screenshot({path:output+'/preview-attack.png'});
+ await admin.locator('[data-save]').click();await admin.waitForFunction(()=>document.querySelector('.hc-hero'),null,{timeout:120000});
+ const avatar=await admin.evaluate(()=>AdminHeroes.draft.avatar);assert.ok(avatar,'saved');console.log('saved avatar',avatar);
+ const game=await browser.newPage({viewport:{width:1300,height:760}});game.on('pageerror',e=>errors.push('game: '+e.message));
+ await game.goto(url);await game.waitForSelector('#auth-form');await game.locator('[data-action="auth-register"]').click();await game.locator('#username').fill('Hero_Tester');await game.locator('#password').fill('hero-tester-password');await game.locator('#password-confirm').fill('hero-tester-password');await game.locator('.auth-submit').click();await game.waitForFunction(()=>GameRuntime?.player&&document.querySelector('#loading').hidden);
+ const loaded=await game.evaluate(async a=>{const d=GameRuntime.catalog.heroes.find(h=>h.avatar===a);const c={skeleton:d.visual.skeleton,animation:'idling',loop:true};await GameView.loadSkeleton(c);return{ok:!!c.instance,anims:c.instance?.data.animations.map(x=>x.name),errors:window.uiDebug.errors.slice(-3)}},avatar);
+ console.log('game skeleton',JSON.stringify(loaded));
+ console.log('original hero heights',await game.evaluate(async()=>{const out=[];for(const d of GameRuntime.catalog.heroes.filter(h=>!h.custom&&h.visual?.skeleton).slice(0,40).filter((_,i)=>i%3===0)){const c={skeleton:d.visual.skeleton,animation:'idling',loop:true};await GameView.loadSkeleton(c);if(!c.instance)continue;const o=new spine.Vector2(),z=new spine.Vector2();c.instance.getBounds(o,z,[]);out.push(Math.round(z.y))}return out.join(',')}));assert.ok(loaded.ok,'game loads custom skeleton');
+ console.log('errors',errors);assert.deepEqual(errors.filter(e=>!/favicon|status of 401/.test(e)),[]);
+})().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{await browser?.close();server?.kill();if(process.env.MONGODB_URI){const client=new MongoClient(process.env.MONGODB_URI);try{await client.connect();assert.match(database,/^htps_creator_[a-f0-9]{12}$/);await client.db(database).dropDatabase()}finally{await client.close()}}});

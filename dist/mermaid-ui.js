@@ -9,7 +9,8 @@ const A=name=>c.catalog.abyssArt.art[name],B=name=>c.catalog.albumData.art[name]
 const pic=(album,image)=>c.catalog.albumData.pictures.find(p=>p.album===album&&p.image===image);
 const picState=(album,image)=>c.player.albumState.pictures.find(p=>p.album===album&&p.image===image);
 const pointNames={0:'Công',1:'Thủ',2:'Máu',3:'Tốc độ',97:'Lục thức'};
-const effectText=points=>'*Toàn đội tăng '+points.map(([id,v])=>`${v} ${pointNames[id]||''}`.trim()).join(', ');
+const pointLabel=([id,v])=>{const p=c.catalog.equipmentPoints?.[id];return p&&!pointNames[id]?`${p.percent?Math.round(v*p.rate*100)/100+'%':v} ${p.name}`:`${v} ${pointNames[id]||p?.name||''}`.trim()};
+const effectText=points=>'*Toàn đội tăng '+points.map(pointLabel).join(', ');
 const bg=key=>`background-image:url('${c.assetSrc(key)}')`;
 const close=()=>{clearInterval(timer);document.querySelector('.mm-screen')?.remove();document.querySelector('.mm-popup')?.remove()};
 function mount(cls,html){
@@ -50,11 +51,11 @@ function abyssStage(stage){
  if(!st.unlocked)return c.toast('Chưa đủ điều kiện mở khóa');
  const enemy=st.enemies,slots=[1,2,3,4,5,6].map(p=>enemy.heroes.find(h=>h.position===p)),power=enemy.power;
  const quest=(q,i)=>{const box=q.status===2?'taskbox2':'taskbox1';return `<button class="abyss-quest" data-action="mm-abyss-chest" data-stage="${stage}" data-quest="${i}" style="${bg(A(i?'bar0':'bar1'))}" ${q.status===1?'data-ready':''}>${c.img(A(q.status>0?'star2':'star1'),'abyss-quest-star')}<span>${c.escape(q.text)}</span>${q.status===1?'<canvas class="abyss-chest-spine" width="100" height="100"></canvas>':c.img(A(box),'abyss-chest')}</button>`};
- popup('abyss-enemy',`<section class="abyss-body" role="dialog" aria-modal="true" aria-label="Ải ${stage}" style="${bg(A('popup_body'))}"><h2>Ải ${stage}</h2><button class="mm-close" data-action="mm-popup-close" aria-label="Đóng" style="${bg(A('popup_close'))}"></button>
+ popup('abyss-enemy',`<section class="abyss-body" role="dialog" aria-modal="true" aria-label="Ải ${stage}" style="border-image-source:url('${c.assetSrc(A('popup_body'))}')"><h2>Ải ${stage}</h2><button class="mm-close" data-action="mm-popup-close" aria-label="Đóng" style="${bg(A('popup_close'))}"></button>
   <div class="abyss-fields"><span class="abyss-field" style="${bg(A('box_field_1'))}">${c.img(A('icon_power'))}<b>${c.num(power)}</b></span><span class="abyss-field turn" style="${bg(A('box_field_1'))}">${c.img(A('icon_turn_attack'))}<b>${st.turns}/${st.maxTurns}</b><button data-action="mm-abyss-buy-open" data-stage="${stage}" aria-label="Mua lượt" style="${bg(A('button_add'))}"></button></span></div>
   <div class="abyss-lineup" style="${bg(A('round_rect_5'))}"><b class="front">Hàng Trước</b><b class="back">Hàng Sau</b><b class="ship">Chiến hạm</b><div class="row front">${slots.slice(0,2).map(heroHead).join('')}</div><div class="row back">${slots.slice(2,6).map(heroHead).join('')}</div><span class="abyss-ship" style="${bg(A('border_gear'))}"></span></div>
   <h3>Nhiệm vụ</h3><div class="abyss-quests" style="${bg(A('rect'))}">${st.quests.map(quest).join('')}</div>
-  <button class="abyss-attack" data-action="mm-abyss-attack" data-stage="${stage}" style="${bg(A('button_yellow'))}">Tấn công</button></section>`);
+  <button class="abyss-attack" data-action="mm-abyss-attack" data-stage="${stage}" style="border-image-source:url('${c.assetSrc(A('button_yellow'))}')">Tấn công</button></section>`);
  for(const canvas of document.querySelectorAll('.abyss-chest-spine'))c.spine(canvas,c.catalog.abyssArt.chestSpine,{scale:1});
 }
 function abyssChest(stage,quest){
@@ -64,16 +65,16 @@ function abyssChest(stage,quest){
 }
 function buyOpen(stage){
  const a=c.player.abyss,st=a.stages[stage-1],left=a.buyLimit-st.bought;
- popup('abyss-buy',`<section class="abyss-buy-body" role="dialog" aria-modal="true" aria-label="Mua lượt đánh" style="${bg(A('popup_body'))}" data-stage="${stage}" data-max="${left}" data-price="${a.buyPrice}"><h2>Mua lượt đánh</h2><button class="mm-close" data-action="mm-abyss-stage" data-stage="${stage}" aria-label="Đóng" style="${bg(A('popup_close'))}"></button>
+ popup('abyss-buy',`<section class="abyss-buy-body" role="dialog" aria-modal="true" aria-label="Mua lượt đánh" style="border-image-source:url('${c.assetSrc(A('popup_body'))}')" data-stage="${stage}" data-max="${left}" data-price="${a.buyPrice}"><h2>Mua lượt đánh</h2><button class="mm-close" data-action="mm-abyss-stage" data-stage="${stage}" aria-label="Đóng" style="${bg(A('popup_close'))}"></button>
   <span class="abyss-buy-item" style="${bg(A('bgr_item_consumable'))}">${c.img(A('icon_turn_attack'))}${c.img(A('border_item'),'border')}</span><p>Nhận thêm lượt đánh ải</p>
   <div class="abyss-buy-count"><button data-action="mm-abyss-step" data-step="-1" aria-label="Bớt" style="${bg(A('button_minus'))}"></button><b style="${bg(A('box_field_1'))}" id="abyss-buy-n">${left?1:0}</b><button data-action="mm-abyss-step" data-step="1" aria-label="Thêm" style="${bg(A('button_plus'))}"></button></div>
   <p>Bạn đã mua ${st.bought}/${a.buyLimit} lần</p><span class="abyss-buy-price" style="${bg(A('box_field_1'))}">${c.img(A('icon_gem'))}<b id="abyss-buy-price">${left?a.buyPrice:0}/${c.short(c.player.wallet.diamonds)}</b></span>
-  <button class="abyss-buy-go" data-action="mm-abyss-buy" data-stage="${stage}" ${left?'':'disabled'} style="${bg(A('button_yellow'))}">Mua</button></section>`);
+  <button class="abyss-buy-go" data-action="mm-abyss-buy" data-stage="${stage}" ${left?'':'disabled'} style="border-image-source:url('${c.assetSrc(A('button_yellow'))}')">Mua</button></section>`);
 }
 function giftOpen(){
  const a=c.player.abyss;
  const cell=m=>`<div class="abyss-cell ${m.claimed!==null?'done':m.ready?'ready':''}"><b>${m.stars}${c.img(A('star2'))}</b><div>${m.options.map((r,i)=>`<button data-action="mm-abyss-pick" data-stars="${m.stars}" data-option="${i}" ${m.ready&&m.claimed===null?'':'disabled'} class="${m.claimed===i?'picked':''}" aria-label="Chọn quà">${tile(r)}</button>`).join('')}</div></div>`;
- popup('abyss-gift-popup',`<section class="abyss-gift-body" role="dialog" aria-modal="true" aria-label="Rương kho báu" style="${bg(A('popup_body'))}"><h2>Rương kho báu</h2><button class="mm-close" data-action="mm-popup-close" aria-label="Đóng" style="${bg(A('popup_close'))}"></button>
+ popup('abyss-gift-popup',`<section class="abyss-gift-body" role="dialog" aria-modal="true" aria-label="Rương kho báu" style="border-image-source:url('${c.assetSrc(A('popup_body'))}')"><h2>Rương kho báu</h2><button class="mm-close" data-action="mm-popup-close" aria-label="Đóng" style="${bg(A('popup_close'))}"></button>
   <div class="abyss-gift-desc" style="${bg(A('rect_26'))}">${c.img(A('taskbox_03'))}<p>Cứ với mỗi 6 sao đạt được sẽ mở ra 1 ô phần thưởng, thu thập nhiều sao nhất có thể để nhận được tối đa phần thưởng.</p></div>
   <p class="abyss-gift-info">Chọn một phần thưởng từ Rương kho báu <b>(${a.stars}/${a.maxStars}${c.img(A('star2'))})</b></p><div class="abyss-cells">${a.milestones.map(cell).join('')}</div></section>`);
 }

@@ -76,8 +76,8 @@
   if(e.target.id!=='grant-id')hideMatches();
   const id=e.target.id;
   try{
-   if(['tab-players','tab-beast','tab-events','tab-raid','tab-rewards','tab-stages','tab-monsters','tab-guildboss','tab-tower'].includes(id)){$('#players-tab').hidden=id!=='tab-players';for(const tab of ['#tab-players','#tab-beast','#tab-events','#tab-raid','#tab-rewards','#tab-stages','#tab-monsters','#tab-guildboss','#tab-tower']){const on=tab==='#'+id;$(tab).classList.toggle('on',on);$(tab).setAttribute('aria-selected',on)}if(id==='tab-beast')await window.AdminBeast.show();else window.AdminBeast.hide();if(id==='tab-events')await window.AdminEvents.show();else window.AdminEvents.hide();if(id==='tab-raid')await window.AdminRaid.show();else window.AdminRaid.hide();if(id==='tab-rewards')await window.AdminRewards.show();else window.AdminRewards.hide();if(id==='tab-stages')await window.AdminStages.show();else window.AdminStages.hide();if(id==='tab-monsters')await window.AdminMonsters.show();else window.AdminMonsters.hide();if(id==='tab-guildboss')await window.AdminGuildBoss.show();else window.AdminGuildBoss.hide();if(id==='tab-tower')await window.AdminTower.show();else window.AdminTower.hide();return}
-   if(e.target.closest('#beast-tab,#events-tab,#raid-tab'))return;
+   if(['tab-players','tab-beast','tab-events','tab-raid','tab-rewards','tab-stages','tab-monsters','tab-guildboss','tab-tower','tab-album','tab-heroes','tab-gem'].includes(id)){$('#players-tab').hidden=id!=='tab-players';for(const tab of ['#tab-players','#tab-beast','#tab-events','#tab-raid','#tab-rewards','#tab-stages','#tab-monsters','#tab-guildboss','#tab-tower','#tab-album','#tab-heroes','#tab-gem']){const on=tab==='#'+id;$(tab).classList.toggle('on',on);$(tab).setAttribute('aria-selected',on)}if(id==='tab-beast')await window.AdminBeast.show();else window.AdminBeast.hide();if(id==='tab-events')await window.AdminEvents.show();else window.AdminEvents.hide();if(id==='tab-raid')await window.AdminRaid.show();else window.AdminRaid.hide();if(id==='tab-rewards')await window.AdminRewards.show();else window.AdminRewards.hide();if(id==='tab-stages')await window.AdminStages.show();else window.AdminStages.hide();if(id==='tab-monsters')await window.AdminMonsters.show();else window.AdminMonsters.hide();if(id==='tab-guildboss')await window.AdminGuildBoss.show();else window.AdminGuildBoss.hide();if(id==='tab-tower')await window.AdminTower.show();else window.AdminTower.hide();if(id==='tab-album')await window.AdminAlbum.show();else window.AdminAlbum.hide();if(id==='tab-heroes')await window.AdminHeroes.show();else window.AdminHeroes.hide();if(id==='tab-gem')await window.AdminGem.show();else window.AdminGem.hide();return}
+   if(e.target.closest('#beast-tab,#events-tab,#raid-tab,#gem-tab'))return;
    if(id==='logout'){await api('/api/admin/logout',{});csrf='';$('#detail').hidden=true;showLogin()}
    if(id==='previous'&&page>0){page--;await loadPlayers()}
    if(id==='next'&&page+1<pages){page++;await loadPlayers()}
@@ -85,6 +85,8 @@
    openRow(e.target.closest('tbody tr'));
   }catch(error){toast(error.message)}
  });
- window.AdminApp={api,toast,escape,num,fold,icon,catalogItems:()=>items};
+ // Tải tệp thô (ảnh) kèm mã CSRF của phiên quản trị.
+ async function upload(url,blob){const response=await fetch(url,{method:'POST',credentials:'same-origin',headers:{Accept:'application/json','Content-Type':blob.type,'X-Admin-CSRF':csrf},body:blob});let data={};try{data=await response.json()}catch{}if(!response.ok){if(response.status===401)showLogin();throw Error(data.error?.message||'Tải ảnh thất bại.')}return data}
+ window.AdminApp={api,upload,toast,escape,num,fold,icon,catalogItems:()=>items};
  api('/api/admin/session').then(async data=>{csrf=data.csrfToken;await showApp()}).catch(showLogin);
 })();
