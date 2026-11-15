@@ -17,7 +17,7 @@
  function editor(){
   if(selected==='checkin')return `<h3>Quà điểm danh (${draft.rewards.length} ngày)</h3><div class="ev-grid">${draft.rewards.map((r,i)=>`<div class="ev-cell"><b>Ngày ${i+1}</b>${chip(`rewards.${i}`,r,draft.rewards.length>1)}</div>`).join('')}</div><button type="button" class="ghost mini" data-add-row="rewards">+ Thêm ngày</button>`;
   const e=source(),parts=[`<label class="ev-title">Tên hiển thị<input value="${escape(draft.title)}" data-text="title" maxlength="40"></label>`];
-  if(draft.milestones)parts.push(`<h3>Mốc</h3>${rows('milestones',p=>`${number(p+'.target',`${escape(e.stepLabel||'')} (${escape(e.stepUnit||'')})`,1)}${chips(p+'.rewards')}`,{add:{target:1,rewards:[{itemId:'gold',quantity:1000}]}})}`);
+  if(draft.milestones)parts.push(`<h3>Mốc</h3>${e.rotate?`<p class="muted">Quà của mốc cuối tự đổi mỗi kỳ: ${e.rotate.quantity} mảnh của một tướng SS ngẫu nhiên (quà nhập ở mốc cuối không dùng).</p>`:''}${rows('milestones',p=>`${number(p+'.target',`${escape(e.stepLabel||'')} (${escape(e.stepUnit||'')})`,1)}${chips(p+'.rewards')}`,{add:{target:1,rewards:[{itemId:'gold',quantity:1000}]}})}`);
   if(draft.offers)parts.push(`<h3>Gói đổi (giới hạn 0 = không giới hạn)</h3>${rows('offers',p=>`<span class="muted">Giá</span>${chip(p+'.cost',get(p+'.cost'))}<span class="muted">Nhận</span>${chip(p+'.reward',get(p+'.reward'))}${number(p+'.limit','Giới hạn')}`,{add:{cost:{itemId:'gold',quantity:1000},reward:{itemId:'consumable:16',quantity:1},limit:1}})}`);
   if(draft.cost)parts.push(`<h3>Giá mỗi lượt</h3>${chip('cost',draft.cost)}`);
   if(draft.daily)parts.push(`<h3>Quà ngày (ô giữa)</h3>${chip('daily',draft.daily)}`);

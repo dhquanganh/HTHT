@@ -20,8 +20,9 @@ test('the result comes from the server, not from client fields',()=>{const p=sta
 test('heroes match the chosen faction and rates hold over many rolls',()=>{
  const seen={};let seed=12345;const random=()=>{seed=(seed*1664525+1013904223)%4294967296;return seed/4294967296};
  for(let i=0;i<20000;i++){const h=rollHero('fortress',random);assert.equal(h.faction,'fortress');const key=h.rank>=4?h.rank:3;seen[key]=(seen[key]||0)+1}
- assert.ok(Math.abs(seen[6]/200-1)<.5);assert.ok(Math.abs(seen[5]/200-12)<1.5);assert.ok(Math.abs(seen[4]/200-35)<2);assert.ok(Math.abs(seen[3]/200-52)<2);
+ assert.equal(seen[6],undefined,'Thùng bia không ra tướng SS');assert.ok(Math.abs(seen[5]/200-12)<1.5);assert.ok(Math.abs(seen[4]/200-35)<2);assert.ok(Math.abs(seen[3]/200-53)<2);
 });
+test('beer barrels never summon SS heroes, even with the highest rolls',()=>{for(const f of ['fortress','shadow','abyss','forest'])assert.ok(rollSummon(f,10,()=>0).every(h=>h.rank<=5))});
 test('ten pulls always contain grade A or better',()=>{let seed=7;const low=()=>{seed=(seed*1664525+1013904223)%4294967296;return .9+seed/42949672960};for(let i=0;i<200;i++)assert.ok(rollSummon('shadow',10,low).some(h=>h.rank>=4))});
 test('a new hero joins the roster; a repeat becomes shards for star-ups',()=>{
  const p=starterPlayer('Captain'),shards=p.inventory['heroshard:624']||0;assert.equal(grantSummon(p,{avatar:'624'}).fresh,true);assert.ok(p.reserveHeroes['hero-624']);

@@ -32,6 +32,12 @@ function botEntry(mode,season,i,total){
  return{_id:entryId(mode,season,'bot'+i),mode,season,userId:null,bot:true,botIndex:i,botVersion,name:snap.displayName,avatar:snap.avatar,level:snap.level,power:snap.power,teams:snap.teams,points:prof.points,apoints:0,rank:i+1,hidden:false,updatedAt:new Date(0)};
 }
 
+/** Bot dùng cho chế độ khác (Đấu Trường Tân Tinh): đội của bot Chiến trường, cường hóa thêm theo hệ số quản trị. */
+export function botEntryFor(mode,season,i,total,boost=1){
+ const e=botEntry(mode,season,i,total);if(boost===1)return e;
+ for(const team of e.teams){for(const u of team.units){for(const k of ['attack','baseAttack','defense','baseDefense'])if(u[k])u[k]=Math.round(u[k]*boost);u.maxHp=Math.round(u.maxHp*boost);u.hp=u.maxHp;u.power=Math.round(u.attack*2.4+u.maxHp*.13+u.defense*2)}team.power=team.units.reduce((n,u)=>n+u.power,0)}
+ e.power=e.teams.reduce((n,x)=>n+x.power,0);return e;
+}
 export function installArena(Store){
  const P=Store.prototype;
  P.setupArena=async function(){

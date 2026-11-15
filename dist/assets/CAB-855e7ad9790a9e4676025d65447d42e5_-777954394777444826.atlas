@@ -1,0 +1,41 @@
+
+Cake2.png
+size: 248,188
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 74
+  rotate: true
+  xy: 2, 2
+  size: 183, 200
+  orig: 183, 200
+  offset: 0, 0
+  index: -1
+Layer 78
+  rotate: false
+  xy: 204, 99
+  size: 39, 39
+  orig: 41, 41
+  offset: 1, 1
+  index: -1
+Layer 79
+  rotate: false
+  xy: 204, 140
+  size: 41, 45
+  orig: 43, 48
+  offset: 1, 1
+  index: -1
+Layer 80
+  rotate: false
+  xy: 204, 59
+  size: 12, 12
+  orig: 15, 14
+  offset: 1, 1
+  index: -1
+Layer 81
+  rotate: false
+  xy: 204, 73
+  size: 19, 24
+  orig: 21, 26
+  offset: 1, 1
+  index: -1

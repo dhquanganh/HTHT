@@ -23,3 +23,21 @@ test('dizzy: even goes forward, odd goes back; completing a lap gives stars; sta
  p.dice.tile=21;const stars=p.dice.stars;const r=roll(p,{lucky:true,number:3});assert.equal(r.laps,1);assert.equal(p.dice.lap,1);assert.ok(p.dice.stars>=stars+config.lapStars);
  p.dice.stars=60;applyAction(p,'dice',{op:'claim',index:0});assert.throws(()=>applyAction(p,'dice',{op:'claim',index:0}),/Đã nhận/);assert.throws(()=>applyAction(p,'dice',{op:'claim',index:2}),/Cần 100/);
 });
+import {defaultDiceConfig,validateDiceConfig,applyDiceConfig} from '../server/dice.mjs';
+import {isRewardId} from '../server/game.mjs';
+import {applyFreedomConfig,defaultFreedomConfig} from '../server/freedom.mjs';
+test('cấu hình quản trị: hợp lệ, đổi bàn / giá / mốc có hiệu lực ngay; tắt thì ẩn và từ chối; Tự Do tắt cũng vậy',()=>{
+ const c=defaultDiceConfig();assert.deepEqual(validateDiceConfig(c,isRewardId),c);
+ assert.throws(()=>validateDiceConfig({...c,board:c.board.slice(1)},isRewardId),/22 ô/);
+ assert.throws(()=>validateDiceConfig({...c,milestones:[c.milestones[0],c.milestones[0]]},isRewardId),/trùng/);
+ const b=structuredClone(c.board);b[0]={type:1,key:1,amount:777};
+ applyDiceConfig(validateDiceConfig({...c,price:7,board:b},isRewardId));
+ try{
+  const p=starterPlayer('DiceCfg');applyAction(p,'dice',{op:'free'});const g=p.wallet.diamonds;applyAction(p,'dice',{op:'buy',count:1});assert.equal(g-p.wallet.diamonds,7);
+  p.dice.lucky=1;const sp=p.wallet.spirit;roll(p,{lucky:true,number:1});assert.equal(p.wallet.spirit-sp,777);
+  applyDiceConfig({...c,enabled:false});assert.equal(playerView(p).dice.enabled,false);assert.throws(()=>applyAction(p,'dice',{op:'free'}),/tạm đóng/);
+ }finally{applyDiceConfig(null)}
+ assert.equal(board[0].amount,c.board[0].amount);
+ applyFreedomConfig({...defaultFreedomConfig(),enabled:false});
+ try{const p=starterPlayer('FreeOff');p.account.level=99;assert.equal(playerView(p).freedom.enabled,false);assert.throws(()=>applyAction(p,'freedom-join',{}),/tạm đóng/)}finally{applyFreedomConfig(null)}
+});

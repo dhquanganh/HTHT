@@ -94,7 +94,9 @@ describe('Chiến trường on MongoDB',{skip:!process.env.MONGODB_URI},()=>{
   if(allstarPhase().phase==='group'){const data=await store.arenaFight(a._id.toHexString(),key(),'allstars',{opponentId:above._id,skip:true});
    if(data.player.battle.status==='won')assert.equal((await store.arenaEntries.findOne({_id:me})).rank,myRank-1)}
   // Vô song: chạy tick ở thời điểm sau Chung kết.
-  const w=seasonWindow(),end=w.start+7*86400000-60000;await store.allstarKnockout(w,w.start+5*86400000+60000);
+  // arenaScene chạy tick theo giờ thật: vào cuối tuần các vòng Vô song có thể đã được tính trước khi đặt cược.
+  // Xóa bảng đấu đó để mọi vòng đi theo mốc giờ giả lập của bài kiểm thử, không phụ thuộc ngày chạy.
+  const w=seasonWindow(),end=w.start+7*86400000-60000;await store.arenaMeta.deleteOne({_id:`allstars:bracket:${w.id}`});await store.allstarKnockout(w,w.start+5*86400000+60000);
   const bracket=await store.allstarBracket(a._id.toHexString());assert.equal(bracket.rounds[0].matches.length,8);
   const match=bracket.rounds[0].matches[0];await store.allstarBets.insertOne({season:w.id,matchId:match.id,userId:a._id,pick:'even',amount:1000});
   await store.allstarKnockout(w,end);const done=await store.allstarBracket(a._id.toHexString());

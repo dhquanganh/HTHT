@@ -1,0 +1,286 @@
+
+Altar_hero.png
+size: 1352,308
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+comm/black
+  rotate: false
+  xy: 314, 66
+  size: 238, 240
+  orig: 238, 240
+  offset: 0, 0
+  index: -1
+comm/dudai_1
+  rotate: false
+  xy: 554, 212
+  size: 126, 94
+  orig: 131, 96
+  offset: 3, 0
+  index: -1
+comm/dudai_2
+  rotate: false
+  xy: 554, 118
+  size: 119, 92
+  orig: 131, 96
+  offset: 12, 0
+  index: -1
+comm/dudai_3
+  rotate: false
+  xy: 682, 222
+  size: 119, 84
+  orig: 131, 96
+  offset: 11, 5
+  index: -1
+comm/dudai_4
+  rotate: false
+  xy: 803, 227
+  size: 117, 79
+  orig: 131, 96
+  offset: 13, 5
+  index: -1
+comm/flow
+  rotate: false
+  xy: 2, 3
+  size: 310, 303
+  orig: 386, 386
+  offset: 31, 29
+  index: -1
+comm/huoba_0
+  rotate: false
+  xy: 314, 2
+  size: 74, 62
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+comm/huoba_1
+  rotate: true
+  xy: 772, 146
+  size: 74, 64
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+comm/huoba_10
+  rotate: false
+  xy: 541, 2
+  size: 73, 62
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+comm/huoba_11
+  rotate: true
+  xy: 747, 2
+  size: 72, 61
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+comm/huoba_12
+  rotate: false
+  xy: 1094, 94
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+comm/huoba_13
+  rotate: false
+  xy: 1170, 94
+  size: 74, 64
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+comm/huoba_14
+  rotate: false
+  xy: 1203, 29
+  size: 73, 63
+  orig: 90, 80
+  offset: 5, 6
+  index: -1
+comm/huoba_15
+  rotate: true
+  xy: 1278, 82
+  size: 73, 63
+  orig: 90, 80
+  offset: 5, 6
+  index: -1
+comm/huoba_16
+  rotate: false
+  xy: 390, 2
+  size: 74, 62
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+comm/huoba_17
+  rotate: true
+  xy: 1278, 7
+  size: 73, 62
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+comm/huoba_18
+  rotate: false
+  xy: 1127, 29
+  size: 74, 63
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+comm/huoba_2
+  rotate: true
+  xy: 1285, 157
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+comm/huoba_3
+  rotate: false
+  xy: 765, 79
+  size: 73, 65
+  orig: 90, 80
+  offset: 5, 6
+  index: -1
+comm/huoba_4
+  rotate: true
+  xy: 616, 2
+  size: 72, 64
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+comm/huoba_5
+  rotate: true
+  xy: 682, 2
+  size: 72, 63
+  orig: 90, 80
+  offset: 5, 7
+  index: -1
+comm/huoba_6
+  rotate: false
+  xy: 1052, 27
+  size: 73, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+comm/huoba_7
+  rotate: true
+  xy: 985, 11
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+comm/huoba_8
+  rotate: false
+  xy: 1018, 94
+  size: 74, 65
+  orig: 90, 80
+  offset: 4, 6
+  index: -1
+comm/huoba_9
+  rotate: false
+  xy: 466, 2
+  size: 73, 62
+  orig: 90, 80
+  offset: 4, 7
+  index: -1
+comm/jianghuo_00000
+  rotate: true
+  xy: 682, 150
+  size: 70, 88
+  orig: 127, 100
+  offset: 16, 4
+  index: -1
+comm/jianghuo_00001
+  rotate: true
+  xy: 1111, 234
+  size: 72, 90
+  orig: 127, 100
+  offset: 14, 4
+  index: -1
+comm/jianghuo_00002
+  rotate: true
+  xy: 1017, 236
+  size: 70, 92
+  orig: 127, 100
+  offset: 16, 4
+  index: -1
+comm/jianghuo_00003
+  rotate: true
+  xy: 922, 235
+  size: 71, 93
+  orig: 127, 100
+  offset: 16, 3
+  index: -1
+comm/jianghuo_00004
+  rotate: true
+  xy: 675, 76
+  size: 72, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1
+comm/jianghuo_00005
+  rotate: true
+  xy: 1018, 161
+  size: 73, 86
+  orig: 127, 100
+  offset: 15, 6
+  index: -1
+comm/jianghuo_00006
+  rotate: true
+  xy: 840, 76
+  size: 73, 86
+  orig: 127, 100
+  offset: 16, 6
+  index: -1
+comm/jianghuo_00007
+  rotate: true
+  xy: 838, 151
+  size: 74, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1
+comm/jianghuo_00008
+  rotate: true
+  xy: 928, 160
+  size: 73, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1
+comm/jianghuo_00009
+  rotate: true
+  xy: 928, 87
+  size: 71, 86
+  orig: 127, 100
+  offset: 16, 5
+  index: -1
+comm/jianghuo_00010
+  rotate: true
+  xy: 1196, 160
+  size: 71, 87
+  orig: 127, 100
+  offset: 16, 3
+  index: -1
+comm/jianghuo_00011
+  rotate: true
+  xy: 1203, 233
+  size: 73, 89
+  orig: 127, 100
+  offset: 16, 2
+  index: -1
+comm/jianghuo_00012
+  rotate: true
+  xy: 1106, 161
+  size: 71, 88
+  orig: 127, 100
+  offset: 18, 3
+  index: -1
+comm/jianghuo_00013
+  rotate: true
+  xy: 810, 4
+  size: 70, 86
+  orig: 127, 100
+  offset: 19, 3
+  index: -1
+comm/jianghuo_00014
+  rotate: true
+  xy: 898, 3
+  size: 71, 85
+  orig: 127, 100
+  offset: 18, 3
+  index: -1

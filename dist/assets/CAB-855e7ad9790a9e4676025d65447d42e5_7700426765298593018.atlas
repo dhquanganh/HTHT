@@ -1,0 +1,118 @@
+
+Cake.png
+size: 672,396
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 61
+  rotate: false
+  xy: 2, 2
+  size: 393, 389
+  orig: 393, 389
+  offset: 0, 0
+  index: -1
+nen (1)
+  rotate: true
+  xy: 574, 81
+  size: 70, 88
+  orig: 127, 100
+  offset: 16, 4
+  index: -1
+nen (10)
+  rotate: true
+  xy: 485, 24
+  size: 71, 86
+  orig: 127, 100
+  offset: 16, 5
+  index: -1
+nen (11)
+  rotate: true
+  xy: 485, 97
+  size: 71, 87
+  orig: 127, 100
+  offset: 16, 3
+  index: -1
+nen (12)
+  rotate: true
+  xy: 397, 245
+  size: 73, 89
+  orig: 127, 100
+  offset: 16, 2
+  index: -1
+nen (13)
+  rotate: true
+  xy: 575, 153
+  size: 71, 88
+  orig: 127, 100
+  offset: 18, 3
+  index: -1
+nen (14)
+  rotate: true
+  xy: 397, 24
+  size: 70, 86
+  orig: 127, 100
+  offset: 19, 3
+  index: -1
+nen (15)
+  rotate: true
+  xy: 573, 8
+  size: 71, 85
+  orig: 127, 100
+  offset: 18, 3
+  index: -1
+nen (2)
+  rotate: false
+  xy: 582, 301
+  size: 72, 90
+  orig: 127, 100
+  offset: 14, 4
+  index: -1
+nen (3)
+  rotate: true
+  xy: 488, 245
+  size: 70, 92
+  orig: 127, 100
+  offset: 16, 4
+  index: -1
+nen (4)
+  rotate: true
+  xy: 397, 320
+  size: 71, 93
+  orig: 127, 100
+  offset: 16, 3
+  index: -1
+nen (5)
+  rotate: true
+  xy: 397, 171
+  size: 72, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1
+nen (6)
+  rotate: true
+  xy: 487, 170
+  size: 73, 86
+  orig: 127, 100
+  offset: 15, 6
+  index: -1
+nen (7)
+  rotate: true
+  xy: 397, 96
+  size: 73, 86
+  orig: 127, 100
+  offset: 16, 6
+  index: -1
+nen (8)
+  rotate: true
+  xy: 492, 317
+  size: 74, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1
+nen (9)
+  rotate: true
+  xy: 582, 226
+  size: 73, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1

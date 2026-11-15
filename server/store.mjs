@@ -20,12 +20,22 @@ import {applyAlbumConfig,albumAdminView,validateAlbumConfig,checkArt,artUrl} fro
 import {randomBytes as albumArtId} from 'node:crypto';
 import {isRewardId} from './game.mjs';
 import {beastBosses,bossByKey,bracketIndex,classLabel,beastEntry,beastTurns,defaultBoss,defaultConfig,defaultRewards,rankBrackets,rewardItems,rewardView,variantOf,validateBossStats,validateConfig,validateRewards} from './beast.mjs';
-import {itemById,itemIcon} from './catalog.mjs';
+import {itemById,itemIcon,definitionFor,heroDefinitions} from './catalog.mjs';
 import {ensureRoster} from './hero-roster.mjs';
 import {installArena} from './arena-store.mjs';
+import {installNova} from './nova-store.mjs';
+import {applyNovaConfig,validateNovaConfig,novaConfig,defaultNovaConfig} from './nova.mjs';
 import {installGuild} from './guild-store.mjs';
 import {installTth} from './tth-store.mjs';
 import {defaultRaidConfig,validateRaidConfig,raidView} from './raid.mjs';
+import {applyCasinoConfig,validateCasinoConfig,casinoConfig,defaultCasinoConfig} from './casino.mjs';
+import {applyDiceConfig,validateDiceConfig,diceConfig,defaultDiceConfig,tileKeys as diceKeys,rewardOf as diceReward} from './dice.mjs';
+import {applyXmasConfig,validateXmasConfig,xmasConfig,defaultXmasConfig} from './xmas.mjs';
+import {applyDecorConfig,validateDecorConfig,decorConfig,defaultDecorConfig} from './decor.mjs';
+import {applySanjiConfig,validateSanjiConfig,sanjiConfig,defaultSanjiConfig,seasonOf as sanjiSeason,topReward as sanjiTop} from './sanji.mjs';
+import {applyPotConfig,validatePotConfig,potConfig,defaultPotConfig,maps as potMaps} from './pot.mjs';
+import {applyFreedomConfig,validateFreedomConfig,freedomConfig,defaultFreedomConfig,cards as freedomCards,cardIconSrc} from './freedom.mjs';
+import {applyImpelConfig,validateImpelConfig,impelConfig,defaultImpelConfig} from './impeldown.mjs';
 import {applyGemConfig,validateGemConfig,gemConfig,gemAdminInfo} from './gem.mjs';
 const scrypt=promisify(scryptCallback),sha=value=>createHash('sha256').update(value).digest('hex');
 export async function passwordHash(password){const salt=randomBytes(16).toString('hex');const hash=await scrypt(password,salt,64,{N:16384,r:8,p:1});return`scrypt:${salt}:${hash.toString('hex')}`}
@@ -33,7 +43,7 @@ async function verifyPassword(password,encoded){const [scheme,salt,expected]=enc
 const summary=user=>({...(ensureRoster(user.player),{}),id:user._id.toHexString(),username:user.usernameKey,displayName:user.player.displayName,level:user.player.account.level,gold:user.player.wallet.gold,diamonds:user.player.wallet.diamonds,stage:user.player.adventure.unlockedStage,towerFloor:user.player.tower?.floor||1,heroes:(user.player.hero?1:0)+Object.keys(user.player.reserveHeroes||{}).length,locked:!!user.locked,createdAt:user.createdAt,updatedAt:user.updatedAt});
 export class Store {
  constructor(uri,dbName){this.client=new MongoClient(uri,{serverSelectionTimeoutMS:15000,connectTimeoutMS:10000,maxPoolSize:15});this.db=this.client.db(dbName);this.users=this.db.collection('players');this.sessions=this.db.collection('sessions');this.adminLog=this.db.collection('admin_log');this.ranking=this.db.collection('tower_ranking');for(const [field,name] of [['beastBosses','beast_bosses'],['beastConfig','beast_config'],['beastRewards','beast_rewards'],['beastSeasons','beast_seasons'],['beastRanking','beast_ranking'],['beastPayouts','beast_payouts']])this[field]=this.db.collection(name)}
- async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.gemConfigs=this.db.collection('gem_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.customHeroes=this.db.collection('custom_heroes');this.customHeroArt=this.db.collection('custom_hero_art');applyCustomHeroes(await this.customHeroes.find().toArray()).forEach(e=>console.warn('Nhân vật tự tạo lỗi',e));await this.loadGemConfig();this.albumConfig=this.db.collection('album_config');this.albumArt=this.db.collection('album_art');applyAlbumConfig(await this.albumConfig.findOne({_id:'album'}));this.towerConfig=this.db.collection('tower_config');applyTowerConfig(await this.towerConfig.findOne({_id:'tower'}));this.guildBossConfig=this.db.collection('guild_boss_config');applyGuildBoss(await this.guildBossConfig.findOne({_id:'stages'}));this.contentConfig=this.db.collection('content_config');setContent(await this.contentConfig.findOne({_id:'content'})||{});this.rewardConfig=this.db.collection('reward_config');applyRewardConfig(await this.rewardConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
+ async connect(){await this.client.connect();await this.db.command({ping:1});await this.users.createIndex({usernameKey:1},{unique:true});await this.sessions.createIndex({tokenHash:1},{unique:true});await this.sessions.createIndex({expiresAt:1},{expireAfterSeconds:0});await this.sessions.createIndex({userId:1});await this.adminLog.createIndex({userId:1,at:-1});await this.ranking.createIndex({userId:1},{unique:true});await this.ranking.createIndex({floors:-1,reachedAt:1,userId:1});await this.syncRanking();await this.setupBeast();await this.setupArena();await this.setupNova();await this.setupGuild();await this.setupTth();this.raidConfigs=this.db.collection('raid_config');this.gemConfigs=this.db.collection('gem_config');this.impelConfigs=this.db.collection('impeldown_config');this.freedomConfigs=this.db.collection('freedom_config');this.potConfigs=this.db.collection('pot_config');this.sanjiConfigs=this.db.collection('sanji_config');this.decorConfigs=this.db.collection('decor_config');this.xmasConfigs=this.db.collection('xmas_config');this.diceConfigs=this.db.collection('dice_config');this.casinoConfigs=this.db.collection('casino_config');this.sanjiRank=this.db.collection('sanji_rank');this.sanjiMeta=this.db.collection('sanji_meta');await this.sanjiRank.createIndex({season:1,points:-1,updatedAt:1});this.novaConfigs=this.db.collection('nova_config');this.eventConfig=this.db.collection('event_config');applyEventConfig(await this.eventConfig.find().toArray());this.customHeroes=this.db.collection('custom_heroes');this.customHeroArt=this.db.collection('custom_hero_art');applyCustomHeroes(await this.customHeroes.find().toArray()).forEach(e=>console.warn('Nhân vật tự tạo lỗi',e));await this.loadGemConfig();await this.loadImpelConfig();await this.loadNovaConfig();await this.loadFreedomConfig();await this.loadPotConfig();await this.loadSanjiConfig();await this.loadDecorConfig();await this.loadXmasConfig();await this.loadDiceConfig();await this.loadCasinoConfig();this.albumConfig=this.db.collection('album_config');this.albumArt=this.db.collection('album_art');applyAlbumConfig(await this.albumConfig.findOne({_id:'album'}));this.towerConfig=this.db.collection('tower_config');applyTowerConfig(await this.towerConfig.findOne({_id:'tower'}));this.guildBossConfig=this.db.collection('guild_boss_config');applyGuildBoss(await this.guildBossConfig.findOne({_id:'stages'}));this.contentConfig=this.db.collection('content_config');setContent(await this.contentConfig.findOne({_id:'content'})||{});this.rewardConfig=this.db.collection('reward_config');applyRewardConfig(await this.rewardConfig.find().toArray());this.dummyHash=await passwordHash('not-a-real-account-password');return this}
  async close(){clearInterval(this.beastTimer);clearInterval(this.arenaTimer);clearInterval(this.tthTimer);await this.client.close()}
  // ---- Chiến Thần Thú ----
  async setupBeast(){
@@ -255,6 +265,99 @@ export class Store {
   else{const config=validateGemConfig(input?.config,isRewardId);await this.gemConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Ngọc Vega',ip)}
   return this.gemAdmin();
  }
+ // ---- Vượt Ngục Impel Down: phí chìa, kho quà, quà cửa, mốc, nguồn chìa, mùa trong impeldown_config.
+ // ---- Đấu Trường Tự Do: vé, lượt tuần, giá reset, cấp tướng, tỉ lệ trợ giúp, 7 ải (đối thủ + thưởng) trong freedom_config.
+ // ---- Vòng quay (Casino thường / VIP): giá mua xu, xu mỗi lượt, miễn phí, làm mới, bể quà (casino_config).
+ async loadCasinoConfig(){const doc=await this.casinoConfigs.findOne({_id:'config'});try{applyCasinoConfig(doc?.config?validateCasinoConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Vòng quay lỗi, dùng mặc định',e.message);applyCasinoConfig(null)}}
+ async casinoAdmin(){await this.loadCasinoConfig();const doc=await this.casinoConfigs.findOne({_id:'config'});return{config:casinoConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultCasinoConfig(),rewardItems:rewardItems()}}
+ async setCasinoConfig(input,ip){
+  if(input?.reset===true){await this.casinoConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Vòng quay về mặc định',ip)}
+  else{const config=validateCasinoConfig(input?.config,isRewardId);await this.casinoConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Vòng quay',ip)}
+  return this.casinoAdmin();
+ }
+ // ---- Đổ xúc xắc: bật / tắt, xúc xắc, giá, vòng, mốc sao, 22 ô, Tarot (dice_config).
+ async loadDiceConfig(){const doc=await this.diceConfigs.findOne({_id:'config'});try{applyDiceConfig(doc?.config?validateDiceConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Đổ xúc xắc lỗi, dùng mặc định',e.message);applyDiceConfig(null)}}
+ async diceAdmin(){await this.loadDiceConfig();const doc=await this.diceConfigs.findOne({_id:'config'});return{config:diceConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultDiceConfig(),rewardItems:rewardItems(),keys:diceKeys.map(k=>({key:k,itemId:diceReward[k]||null}))}}
+ async setDiceConfig(input,ip){
+  if(input?.reset===true){await this.diceConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Đổ xúc xắc về mặc định',ip)}
+  else{const config=validateDiceConfig(input?.config,isRewardId);await this.diceConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Đổ xúc xắc',ip)}
+  return this.diceAdmin();
+ }
+ // ---- Giáng sinh / Sinh nhật: tất, túi kì diệu, điều ước, tích lũy, đổi quà (xmas_config).
+ async loadXmasConfig(){const doc=await this.xmasConfigs.findOne({_id:'config'});try{applyXmasConfig(doc?.config?validateXmasConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Giáng Sinh lỗi, dùng mặc định',e.message);applyXmasConfig(null)}}
+ async xmasAdmin(){await this.loadXmasConfig();const doc=await this.xmasConfigs.findOne({_id:'config'});return{config:xmasConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultXmasConfig(),rewardItems:rewardItems()}}
+ async setXmasConfig(input,ip){
+  if(input?.reset===true){await this.xmasConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Giáng Sinh về mặc định',ip)}
+  else{const config=validateXmasConfig(input?.config,isRewardId);await this.xmasConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Giáng Sinh',ip)}
+  return this.xmasAdmin();
+ }
+ // ---- Nội Thất: giá chế tạo, tỉ lệ phẩm, số tầng, kho, tái chế, Búa gỗ mỗi ngày (decor_config).
+ async loadDecorConfig(){const doc=await this.decorConfigs.findOne({_id:'config'});try{applyDecorConfig(doc?.config?validateDecorConfig(doc.config):null)}catch(e){console.warn('Cấu hình Nội Thất lỗi, dùng mặc định',e.message);applyDecorConfig(null)}}
+ async decorAdmin(){await this.loadDecorConfig();const doc=await this.decorConfigs.findOne({_id:'config'});return{config:decorConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultDecorConfig()}}
+ async setDecorConfig(input,ip){
+  if(input?.reset===true){await this.decorConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Nội Thất về mặc định',ip)}
+  else{const config=validateDecorConfig(input?.config);await this.decorConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Nội Thất',ip)}
+  return this.decorAdmin();
+ }
+ // ---- Bữa tiệc Sanji: món, quà mốc, thưởng top, cửa hàng (sanji_config); bảng Tim theo mùa (sanji_rank).
+ async loadSanjiConfig(){const doc=await this.sanjiConfigs.findOne({_id:'config'});try{applySanjiConfig(doc?.config?validateSanjiConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Bữa tiệc Sanji lỗi, dùng mặc định',e.message);applySanjiConfig(null)}}
+ async sanjiAdmin(){await this.loadSanjiConfig();const doc=await this.sanjiConfigs.findOne({_id:'config'});return{config:sanjiConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultSanjiConfig(),rewardItems:rewardItems()}}
+ async setSanjiConfig(input,ip){
+  if(input?.reset===true){await this.sanjiConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Bữa tiệc Sanji về mặc định',ip)}
+  else{const config=validateSanjiConfig(input?.config,isRewardId);await this.sanjiConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Bữa tiệc Sanji',ip)}
+  return this.sanjiAdmin();
+ }
+ sanjiClock(){return this.sanjiTime??Date.now()}
+ /** Tặng món rồi ghi điểm Tim của mùa vào bảng xếp hạng. */
+ async sanjiSend(userId,requestKey,input){
+  await this.sanjiSettle();const data=await this.mutate(userId,requestKey,'sanji-send',input);
+  const user=await this.getUser(userId),s=user.player.sanji;
+  if(s)await this.sanjiRank.updateOne({_id:`${s.season}:${userId}`},{$set:{season:s.season,userId:user._id,name:user.player.displayName,avatar:definitionFor(user.player.hero.id)?.avatar,level:user.player.account.level,points:s.hearts,updatedAt:new Date()}},{upsert:true});
+  return data;
+ }
+ async sanjiRanks(userId){
+  await this.sanjiSettle();const season=sanjiSeason(this.sanjiClock()),rows=await this.sanjiRank.find({season}).sort({points:-1,updatedAt:1}).limit(50).toArray();
+  const me=await this.sanjiRank.findOne({_id:`${season}:${userId}`}),myRank=me?await this.sanjiRank.countDocuments({season,$or:[{points:{$gt:me.points}},{points:me.points,updatedAt:{$lt:me.updatedAt}}]})+1:0;
+  return{season,myRank,myPoints:me?.points||0,rows:rows.map((r,i)=>({rank:i+1,name:r.name,avatar:r.avatar,level:r.level,points:r.points,me:String(r.userId)===String(userId)}))};
+ }
+ /** Hết mùa: gửi thưởng top của mùa trước qua thư (một lần, khóa trong sanji_meta). */
+ async sanjiSettle(){
+  const season=sanjiSeason(this.sanjiClock())-1;if(season<0)return;
+  try{await this.sanjiMeta.insertOne({_id:'settled:'+season,at:new Date()})}catch(e){if(e.code===11000)return;throw e}
+  const rows=await this.sanjiRank.find({season}).sort({points:-1,updatedAt:1}).limit(10000).toArray();
+  for(let i=0;i<rows.length;i++){const rewards=sanjiTop(i+1,rows[i].points);if(rewards)await this.arenaMail(rows[i].userId,{title:'Bữa tiệc Sanji',text:`Hạng ${i+1} mùa trước với ${rows[i].points} Tim.`,rewards})}
+ }
+ // ---- Đỉnh Thời Gian: ải (bản đồ, cấp quái, thưởng rương / qua ải), sát thương pháo, % hồi trong pot_config.
+ async loadPotConfig(){const doc=await this.potConfigs.findOne({_id:'config'});try{applyPotConfig(doc?.config?validatePotConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Đỉnh Thời Gian lỗi, dùng mặc định',e.message);applyPotConfig(null)}}
+ async potAdmin(){await this.loadPotConfig();const doc=await this.potConfigs.findOne({_id:'config'});return{config:potConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultPotConfig(),rewardItems:rewardItems(),
+  maps:Object.values(potMaps).map(m=>({id:m.id,cells:m.walk.size,objects:m.objects.reduce((a,o)=>(a[o.type]=(a[o.type]||0)+1,a),{})}))}}
+ async setPotConfig(input,ip){
+  if(input?.reset===true){await this.potConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Đỉnh Thời Gian về mặc định',ip)}
+  else{const config=validatePotConfig(input?.config,isRewardId);await this.potConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Đỉnh Thời Gian',ip)}
+  return this.potAdmin();
+ }
+ async loadFreedomConfig(){const doc=await this.freedomConfigs.findOne({_id:'config'});try{applyFreedomConfig(doc?.config?validateFreedomConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Tự Do lỗi, dùng mặc định',e.message);applyFreedomConfig(null)}}
+ async freedomAdmin(){await this.loadFreedomConfig();const doc=await this.freedomConfigs.findOne({_id:'config'});return{config:freedomConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultFreedomConfig(),rewardItems:rewardItems(),cards:freedomCards.map(({rule,...c})=>({...c,icon:cardIconSrc(c.icon)}))}}
+ async setFreedomConfig(input,ip){
+  if(input?.reset===true){await this.freedomConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Đấu Trường Tự Do về mặc định',ip)}
+  else{const config=validateFreedomConfig(input?.config,isRewardId);await this.freedomConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Đấu Trường Tự Do',ip)}
+  return this.freedomAdmin();
+ }
+ async loadImpelConfig(){const doc=await this.impelConfigs.findOne({_id:'config'});try{applyImpelConfig(doc?.config?validateImpelConfig(doc.config,isRewardId):null)}catch(e){console.warn('Cấu hình Vượt Ngục lỗi, dùng mặc định',e.message);applyImpelConfig(null)}}
+ async impelAdmin(){await this.loadImpelConfig();const doc=await this.impelConfigs.findOne({_id:'config'});return{config:impelConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultImpelConfig(),rewardItems:rewardItems()}}
+ async setImpelConfig(input,ip){
+  if(input?.reset===true){await this.impelConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Vượt Ngục về mặc định',ip)}
+  else{const config=validateImpelConfig(input?.config,isRewardId);await this.impelConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Vượt Ngục',ip)}
+  return this.impelAdmin();
+ }
+ // ---- Đấu Trường Tân Tinh: thưởng, nhiệm vụ, cửa hàng, buff, tướng đề xuất trong nova_config.
+ async loadNovaConfig(){const doc=await this.novaConfigs.findOne({_id:'config'});try{applyNovaConfig(doc?.config?validateNovaConfig(doc.config,isRewardId,id=>!!definitionFor(id)):null)}catch(e){console.warn('Cấu hình Tân Tinh lỗi, dùng mặc định',e.message);applyNovaConfig(null)}}
+ async novaAdmin(){await this.loadNovaConfig();const doc=await this.novaConfigs.findOne({_id:'config'});return{config:novaConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultNovaConfig(),rewardItems:rewardItems(),heroes:heroDefinitions.map(d=>({id:d.id,name:d.name,avatar:d.avatar}))}}
+ async setNovaConfig(input,ip){
+  if(input?.reset===true){await this.novaConfigs.deleteOne({_id:'config'});await this.beastLog('Trả Đấu Trường Tân Tinh về mặc định',ip)}
+  else{const config=validateNovaConfig(input?.config,isRewardId,id=>!!definitionFor(id));await this.novaConfigs.updateOne({_id:'config'},{$set:{config,updatedAt:new Date()}},{upsert:true});await this.beastLog('Sửa cấu hình Đấu Trường Tân Tinh',ip)}
+  return this.novaAdmin();
+ }
  async raidConfig(){const doc=await this.raidConfigs.findOne({_id:'config'});return doc?.config||defaultRaidConfig()}
  async raidStatus(userId){const user=await this.getUser(userId);requireCondition(user,'Tài khoản không tồn tại.',401);return raidView(user.player,await this.raidConfig())}
  async raidAdmin(){const doc=await this.raidConfigs.findOne({_id:'config'});return{config:doc?.config||defaultRaidConfig(),custom:!!doc,updatedAt:doc?.updatedAt||null,defaults:defaultRaidConfig(),rewardItems:rewardItems()}}
@@ -333,5 +436,6 @@ export class Store {
 }
 
 installArena(Store);
+installNova(Store);
 installGuild(Store);
 installTth(Store);

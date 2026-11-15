@@ -1,0 +1,13 @@
+
+Band2.png
+size: 208,104
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 42 copy 3
+  rotate: false
+  xy: 2, 2
+  size: 203, 99
+  orig: 237, 119
+  offset: 0, 20
+  index: -1

@@ -1,0 +1,34 @@
+
+enemy_akainu.png
+size: 264,148
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 16
+  rotate: true
+  xy: 155, 2
+  size: 95, 42
+  orig: 97, 44
+  offset: 1, 1
+  index: -1
+body
+  rotate: true
+  xy: 2, 8
+  size: 136, 151
+  orig: 136, 151
+  offset: 0, 0
+  index: -1
+chan
+  rotate: true
+  xy: 199, 10
+  size: 87, 60
+  orig: 87, 60
+  offset: 0, 0
+  index: -1
+shad
+  rotate: false
+  xy: 155, 99
+  size: 99, 45
+  orig: 101, 47
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,167 @@
+
+Hero_140event.png
+size: 1260,156
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: false
+  xy: 899, 78
+  size: 172, 76
+  orig: 182, 82
+  offset: 5, 3
+  index: -1
+ao1
+  rotate: true
+  xy: 710, 73
+  size: 81, 187
+  orig: 81, 187
+  offset: 0, 0
+  index: -1
+ao2
+  rotate: true
+  xy: 220, 10
+  size: 44, 178
+  orig: 44, 178
+  offset: 0, 0
+  index: -1
+arm1
+  rotate: false
+  xy: 1075, 7
+  size: 83, 71
+  orig: 85, 74
+  offset: 1, 1
+  index: -1
+arm1a
+  rotate: false
+  xy: 1168, 32
+  size: 88, 122
+  orig: 88, 122
+  offset: 0, 0
+  index: -1
+arm2a
+  rotate: true
+  xy: 940, 5
+  size: 71, 133
+  orig: 71, 133
+  offset: 0, 0
+  index: -1
+arm2b
+  rotate: true
+  xy: 867, 16
+  size: 55, 71
+  orig: 57, 73
+  offset: 1, 1
+  index: -1
+body
+  rotate: true
+  xy: 2, 37
+  size: 117, 193
+  orig: 117, 193
+  offset: 0, 0
+  index: -1
+foot1
+  rotate: false
+  xy: 658, 15
+  size: 31, 39
+  orig: 33, 41
+  offset: 1, 1
+  index: -1
+foot2
+  rotate: true
+  xy: 621, 7
+  size: 47, 35
+  orig: 49, 37
+  offset: 1, 1
+  index: -1
+hand1
+  rotate: true
+  xy: 578, 8
+  size: 46, 41
+  orig: 48, 43
+  offset: 1, 1
+  index: -1
+hand2
+  rotate: true
+  xy: 691, 11
+  size: 43, 28
+  orig: 45, 30
+  offset: 1, 1
+  index: -1
+head1
+  rotate: true
+  xy: 197, 56
+  size: 98, 169
+  orig: 98, 169
+  offset: 0, 0
+  index: -1
+head2
+  rotate: true
+  xy: 368, 56
+  size: 98, 169
+  orig: 98, 169
+  offset: 0, 0
+  index: -1
+head3
+  rotate: true
+  xy: 539, 56
+  size: 98, 169
+  orig: 98, 169
+  offset: 0, 0
+  index: -1
+khan1
+  rotate: true
+  xy: 2, 3
+  size: 32, 122
+  orig: 32, 122
+  offset: 0, 0
+  index: -1
+khan2
+  rotate: true
+  xy: 400, 12
+  size: 42, 109
+  orig: 42, 109
+  offset: 0, 0
+  index: -1
+rau
+  rotate: true
+  xy: 173, 5
+  size: 30, 45
+  orig: 30, 45
+  offset: 0, 0
+  index: -1
+vai1
+  rotate: false
+  xy: 511, 20
+  size: 65, 34
+  orig: 67, 36
+  offset: 1, 1
+  index: -1
+vai1a
+  rotate: false
+  xy: 1073, 80
+  size: 93, 74
+  orig: 93, 74
+  offset: 0, 0
+  index: -1
+vai1b
+  rotate: false
+  xy: 721, 2
+  size: 80, 69
+  orig: 80, 69
+  offset: 0, 0
+  index: -1
+vai2
+  rotate: false
+  xy: 126, 2
+  size: 45, 33
+  orig: 47, 35
+  offset: 1, 1
+  index: -1
+vai2a
+  rotate: false
+  xy: 803, 3
+  size: 62, 68
+  orig: 62, 68
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,20 @@
+
+Star.png
+size: 260,172
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 62
+  rotate: true
+  xy: 2, 2
+  size: 168, 171
+  orig: 184, 183
+  offset: 4, 2
+  index: -1
+Make Wish copy 3
+  rotate: true
+  xy: 175, 84
+  size: 86, 82
+  orig: 88, 84
+  offset: 1, 1
+  index: -1

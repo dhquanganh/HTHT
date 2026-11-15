@@ -1,4 +1,5 @@
 // Chiêu mộ bằng Thùng bia. Bộ dữ liệu client không có tỉ lệ gốc, nên `economy.summon.rates` là mức tự đặt.
+// Thùng bia chỉ ra tướng tới bậc S; tướng SS (rank 6) không có trong bể chiêu mộ.
 import {randomInt} from 'node:crypto';
 import {requireCondition} from './errors.mjs';
 import {economy,heroAlbum,heroDefinitions} from './catalog.mjs';
@@ -15,15 +16,16 @@ function refresh(){
  pools=Object.fromEntries(factions.map(faction=>[faction,Object.fromEntries([6,5,4,3].map(key=>[key,heroAlbum.heroes.filter(h=>summonable(h)&&h.faction===faction&&tier(h.rank)===key)]))]));
 }
 const secureRandom=()=>randomInt(1e9)/1e9;
-export function rollHero(faction,random=secureRandom,minimum=3){
+export function rollHero(faction,random=secureRandom,minimum=3,weights=rates){
  refresh();
- const table=rates.filter(([rank])=>rank>=minimum&&pools[faction][rank].length),total=table.reduce((sum,[,weight])=>sum+weight,0);
+ const table=weights.filter(([rank])=>rank>=minimum&&pools[faction][rank].length),total=table.reduce((sum,[,weight])=>sum+weight,0);
  let roll=random()*total,rank=table.at(-1)[0];
  for(const [key,weight] of table){if(roll<weight){rank=key;break}roll-=weight}
  const pool=pools[faction][rank];return pool[Math.floor(random()*pool.length)];
 }
 /** Mảnh tướng 5 sao chung: ngẫu nhiên một tướng từ 5 sao trở lên, mọi hệ. */
-export const rollFiveStar=(random=secureRandom)=>rollHero(factions[Math.floor(random()*factions.length)],random,5);
+const fiveStarRates=[[6,1],[5,12]];
+export const rollFiveStar=(random=secureRandom)=>rollHero(factions[Math.floor(random()*factions.length)],random,5,fiveStarRates);
 /** Lần cuối của lượt x10 chắc chắn ra tướng bậc A trở lên nếu chín lần trước chưa có. */
 export function rollSummon(faction,count,random=secureRandom){
  const heroes=[];for(let i=0;i<count;i++)heroes.push(rollHero(faction,random,i===9&&!heroes.some(h=>h.rank>=4)?4:3));return heroes;

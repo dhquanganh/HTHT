@@ -1,0 +1,146 @@
+
+frank.png
+size: 1324,268
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 100
+  rotate: true
+  xy: 1212, 139
+  size: 64, 54
+  orig: 64, 54
+  offset: 0, 0
+  index: -1
+Layer 101
+  rotate: false
+  xy: 1234, 4
+  size: 37, 32
+  orig: 39, 34
+  offset: 1, 1
+  index: -1
+Layer 102
+  rotate: false
+  xy: 848, 7
+  size: 258, 259
+  orig: 258, 259
+  offset: 0, 0
+  index: -1
+Layer 103
+  rotate: true
+  xy: 725, 17
+  size: 119, 120
+  orig: 121, 122
+  offset: 1, 1
+  index: -1
+Layer 104
+  rotate: false
+  xy: 1268, 150
+  size: 43, 53
+  orig: 45, 55
+  offset: 1, 1
+  index: -1
+Layer 104 copy
+  rotate: false
+  xy: 1271, 213
+  size: 43, 53
+  orig: 45, 55
+  offset: 1, 1
+  index: -1
+Layer 107
+  rotate: false
+  xy: 1108, 126
+  size: 102, 140
+  orig: 105, 142
+  offset: 2, 1
+  index: -1
+Layer 107a
+  rotate: true
+  xy: 279, 19
+  size: 117, 141
+  orig: 126, 141
+  offset: 0, 0
+  index: -1
+Layer 108
+  rotate: false
+  xy: 1108, 14
+  size: 124, 110
+  orig: 126, 112
+  offset: 1, 1
+  index: -1
+Layer 109
+  rotate: true
+  xy: 142, 6
+  size: 130, 135
+  orig: 132, 137
+  offset: 1, 1
+  index: -1
+Layer 110
+  rotate: false
+  xy: 596, 77
+  size: 127, 59
+  orig: 129, 61
+  offset: 1, 1
+  index: -1
+Layer 112
+  rotate: true
+  xy: 609, 7
+  size: 68, 99
+  orig: 68, 99
+  offset: 0, 0
+  index: -1
+Layer 113
+  rotate: false
+  xy: 422, 47
+  size: 172, 89
+  orig: 174, 91
+  offset: 1, 1
+  index: -1
+Layer 115
+  rotate: false
+  xy: 1234, 38
+  size: 46, 47
+  orig: 48, 49
+  offset: 1, 1
+  index: -1
+Layer 117
+  rotate: false
+  xy: 422, 11
+  size: 185, 34
+  orig: 187, 36
+  offset: 1, 1
+  index: -1
+Layer 99 copy
+  rotate: false
+  xy: 1282, 43
+  size: 39, 42
+  orig: 41, 44
+  offset: 1, 1
+  index: -1
+Layer-31
+  rotate: false
+  xy: 2, 138
+  size: 844, 128
+  orig: 844, 128
+  offset: 0, 0
+  index: -1
+glow_6182
+  rotate: false
+  xy: 1234, 87
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 1212, 205
+  size: 57, 61
+  orig: 57, 62
+  offset: 0, 1
+  index: -1
+vai1
+  rotate: false
+  xy: 2, 2
+  size: 138, 134
+  orig: 140, 136
+  offset: 1, 1
+  index: -1

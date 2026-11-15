@@ -1,0 +1,44 @@
+/* Giáng sinh / Sinh nhật: prefab gốc (PrefabDOM) + danh sách động. */
+#game-layer .xm-root,#game-layer .xm-popup{pointer-events:auto!important;z-index:40;user-select:none;-webkit-user-select:none}
+#game-layer .xm-root{background:#0009}
+#game-layer .xm-popup{position:absolute;inset:0;z-index:50;display:grid;place-items:center;background:#0008}
+#game-layer .xm-root .pd-button,#game-layer .xm-root button,#game-layer .xm-popup button,#game-layer .xm-root [data-sock-info],#game-layer .xm-root [data-claim],#game-layer .xm-root [data-wish-set],#game-layer .xm-root [data-wish-open],#game-layer .xm-root [data-bag],#game-layer .xm-root [data-shop],#game-layer .xm-root [data-daily]{cursor:pointer;pointer-events:auto}
+#game-layer .xm-root .pd-button:active{filter:brightness(.88)}
+#game-layer .xm-root .ev-tile,#game-layer .xm-popup .ev-tile{pointer-events:auto}
+#game-layer .xm-spine,#game-layer .xm-cake,#game-layer .xm-bagspine,#game-layer .xm-boxspine{position:absolute;left:50%;top:50%;translate:-50% -50%;pointer-events:none}
+#game-layer .xm-cake{top:-10%}
+/* Tab bên trái */
+#game-layer .xm-tab{display:grid!important;place-items:center;align-content:center;gap:2px;background:radial-gradient(#7a2a1a,#3a1208)!important;border:3px solid #c98a2a;border-radius:16px;color:#fff3d6;font:normal 15px GameFont,sans-serif;text-shadow:1px 1px 0 #000}
+#game-layer .xm-tab img{width:62px;height:56px;object-fit:contain}
+#game-layer .xm-tab.on{border-color:#ffe36a;box-shadow:0 0 12px #ffd34a;filter:brightness(1.15)}
+/* Nội dung tab đặt vào khung PopupEventXmasBirthday (1000 x 580): nội dung gốc lệch phải 95 để chừa cột tab, kéo về khớp khung 956 x 518. */
+#game-layer .xm-frame{position:absolute;left:-4px;top:24px;width:1000px;height:580px}
+/* Quà tất */
+#game-layer .xm-sockname{position:absolute;left:-60px;top:-125px;width:140px;text-align:center;color:#fff3d6;font:normal 15px GameFont,sans-serif;text-shadow:1px 1px 0 #000;pointer-events:none}
+#game-layer .xm-off{filter:grayscale(.8) brightness(.85)}
+#game-layer .xm-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#game-layer .xm-tile,#game-layer .xm-row .ev-tile{width:62px;height:62px}
+/* Tích lũy */
+#game-layer .xm-list{display:grid;gap:6px;justify-items:center;padding:6px 0;height:100%;overflow-y:auto;box-sizing:border-box}
+#game-layer .xm-root [data-name="Viewport"]{overflow:hidden}
+#game-layer .xm-cell{position:relative!important;left:auto!important;top:auto!important;flex:none}
+#game-layer .xm-fill{background:linear-gradient(#ffd75a,#e59a2a);border-radius:8px;height:16px}
+#game-layer .xm-ready{animation:xmPulse 1s ease-in-out infinite}
+@keyframes xmPulse{50%{scale:1.1;filter:drop-shadow(0 0 8px #ffd34a)}}
+/* Điều ước */
+#game-layer .xm-wishtile{width:80px;height:80px}
+#game-layer .xm-picked [data-name="ImgAvatar"]{filter:drop-shadow(0 0 8px #7de837)}
+#game-layer .xm-wishbar,#game-layer .xm-bagbar{position:absolute;left:-330px;top:220px;width:740px;display:flex;gap:12px;align-items:center;justify-content:center;color:#fff3d6;font:normal 16px GameFont,sans-serif;text-shadow:1px 1px 0 #000}
+#game-layer .xm-bagbar{left:-200px;top:200px;width:auto}
+#game-layer .xm-wishbar button,#game-layer .xm-bagbar button,#game-layer .xm-shoprow button{display:flex;gap:6px;align-items:center;padding:8px 16px;border:0;border-radius:10px;background:linear-gradient(#ffd75a,#e5a52a);color:#3a2205;font:normal 18px GameFont,sans-serif;box-shadow:0 3px 0 #9a6a14;text-shadow:none}
+#game-layer .xm-wishbar img,#game-layer .xm-shoprow button img,#game-layer .xm-shop h3 img{width:26px;height:26px}
+#game-layer .xm-shoprow button:disabled{filter:grayscale(1)}
+/* Đổi quà */
+#game-layer .xm-shop{position:relative;width:720px;max-height:540px;padding:24px 30px;border-radius:16px;background:#3a1a0c center/100% 100%;border:3px solid #c98a2a;display:grid;gap:10px;color:#fff3d6;font:normal 17px GameFont,sans-serif}
+#game-layer .xm-shop h3{margin:0;display:flex;gap:10px;align-items:center;justify-content:center;color:#ffd75a;font:normal 28px GameFont,sans-serif;text-shadow:2px 2px 0 #000}
+#game-layer .xm-shop h3 span{display:flex;gap:4px;align-items:center;font-size:20px;color:#fff3d6}
+#game-layer .xm-shoplist{display:grid;gap:8px;max-height:420px;overflow-y:auto}
+#game-layer .xm-shoprow{display:flex;gap:12px;align-items:center;padding:8px 14px;border-radius:10px;background:#0006}
+#game-layer .xm-shoprow>div{flex:1;display:grid}
+#game-layer .xm-shoprow small{color:#d9c39a}
+#game-layer .xm-x{position:absolute;right:-18px;top:-18px;width:60px;height:60px;border:0;background:center/contain no-repeat}

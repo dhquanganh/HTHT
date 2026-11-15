@@ -10,7 +10,7 @@
 (()=>{
  'use strict';
  const D=window.PrefabDOM,W=1136,H=640;
- let c=null,data=null,root=null,layers=[],mode=null,scene=null,timer=null,tab='rank',draft=null,selectedRow=0;
+ let c=null,data=null,root=null,layers=[],mode=null,scene=null,timer=null,tab='rank',draft=null,selectedRow=0,customSave=null;
  const cache={};
  const load=()=>data?Promise.resolve(data):fetch('arena.json').then(r=>r.json()).then(d=>data=d);
  const sceneJson=id=>cache[id]??=fetch(`scenes/${id}.json`).then(r=>{if(!r.ok)throw Error('Không tải được giao diện.');return r.json()});
@@ -208,6 +208,8 @@
  }
  async function saveDefense(){
   if(draft.some(r=>!r.some(Boolean)))return c.toast(mode==='league'?'Mỗi đội cần ít nhất một tướng.':'Hãy chọn ít nhất một tướng.');
+  // Chế độ khác dùng chung PopupFormation3 (Đấu Trường Tân Tinh): lưu qua hàm gọi vào.
+  if(customSave){const save=customSave,teams=draft;if(await save(teams)===false)return;customSave=null;draft=null;closeTop();return}
   const d=await c.mutation('/api/arena/defense',{mode,teams:draft},{render:false});if(!d)return;draft=null;closeTop();openMode(mode);
  }
 
@@ -302,7 +304,7 @@
    if(a.act==='rewardTab'){rewardTab=a.tab;closeTop();return openRewards()}
    if(a.act==='allstarTab'){allstarTab=a.tab;closeTop();return openRewards()}
    if(a.act==='defense'){draft=null;selectedRow=0;return openDefense()}
-   if(a.act==='defense-close'){draft=null;return closeTop()}
+   if(a.act==='defense-close'){draft=null;customSave=null;return closeTop()}
    if(a.act==='defense-save')return saveDefense();
    if(a.act==='slot'){selectedRow=a.row;const id=draft[a.row][a.index];if(id)draft[a.row][a.index]=null;closeTop();return openDefense()}
    if(a.act==='swap'){[draft[a.from],draft[a.to]]=[draft[a.to],draft[a.from]];closeTop();return openDefense()}
@@ -323,6 +325,9 @@
   async open(m,panel){try{closeAll();if(m)await openMode(m);else await openHub();
    const go={knockout:openKnockout,bets:openBets,rewards:openRewards,records:openRecords,defense:()=>{draft=null;selectedRow=0;return openDefense()},rivals:()=>openRivals()}[panel];if(m&&go)await go()}catch(e){c.toast(e.message)}},
   close:closeAll,
+  /** PopupFormation3 dùng chung: 3 đội ban đầu, tiêu đề, onSave(teams) trả false để giữ popup. */
+  async pickThree(teams,title,onSave){mode='league';draft=structuredClone(teams&&teams.length===3?teams:[Array(6).fill(null),Array(6).fill(null),Array(6).fill(null)]);selectedRow=0;customSave=onSave;await openDefense();
+   const t=layers.at(-1)&&D.find(layers.at(-1),'TextTitle');if(t&&title)D.setText(t,title,false)},
   isOpen:()=>!!root,
   /** Sau trận Đơn đấu / Võ đấu: điểm cộng trừ hiện ở màn kết thúc. */
   lines(result){if(!result)return[];return result.delta!==undefined&&result.delta!==0?[`Điểm ${result.delta>0?'+':''}${result.delta}`]:result.rankChanged?[`Lên hạng ${result.rankChanged}`]:[]},

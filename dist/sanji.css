@@ -1,0 +1,28 @@
+/* Bữa tiệc Sanji: prefab gốc (PrefabDOM) + danh sách động. */
+#game-layer .sj-root,#game-layer .sj-popup{pointer-events:auto!important;z-index:40;user-select:none;-webkit-user-select:none}
+#game-layer .sj-popup{z-index:46}
+#game-layer .sj-root .pd-button,#game-layer .sj-popup .pd-button,#game-layer .sj-popup [data-buy]{cursor:pointer;pointer-events:auto}
+#game-layer .sj-root .pd-button:active,#game-layer .sj-popup .pd-button:active{filter:brightness(.88)}
+#game-layer .sj-root .ev-tile,#game-layer .sj-popup .ev-tile{pointer-events:auto}
+#game-layer .sj-spine{position:absolute;left:50%;top:50%;translate:-50% -50%;width:1100px;height:900px;pointer-events:none}
+#game-layer .sj-foods{position:absolute;inset:0;display:flex;gap:16px;align-items:center;justify-content:center}
+#game-layer .sj-food{position:relative!important;left:auto!important;top:auto!important;flex:none;scale:.92}
+#game-layer .sj-list{display:grid;gap:6px;justify-items:center;padding:6px 0;height:100%;overflow-y:auto;box-sizing:border-box}
+#game-layer .sj-popup [data-name="Viewport"]{overflow:hidden}
+#game-layer .sj-cell{position:relative!important;left:auto!important;top:auto!important;flex:none}
+#game-layer .sj-cell.me{filter:drop-shadow(0 0 6px #ffd34a)}
+/* Gifts (698 x 130): chữ "Điểm vui vẻ cần" ở trên, ô quà ở hàng dưới (ItemsContent gốc là HorizontalLayoutGroup canh trái). */
+#game-layer .sj-items{position:absolute;left:0;top:12px;display:flex;gap:8px;align-items:center}
+#game-layer .sj-items .ev-tile{width:64px;height:64px}
+#game-layer .sj-label{left:20px!important;top:10px!important;width:620px!important;height:36px!important;translate:none!important}
+#game-layer .sj-label,#game-layer .sj-label *{justify-content:flex-start!important;text-align:left!important;white-space:nowrap}
+#game-layer .sj-list{overflow-x:hidden}
+#game-layer .sj-dim{opacity:.6}
+#game-layer .sj-empty{margin-top:120px;color:#5a3412;font:normal 22px GameFont,sans-serif;text-align:center}
+#game-layer .sj-rank .pd-button.on{filter:drop-shadow(0 0 6px #ffd34a) brightness(1.1)}
+#game-layer .sj-shoprow [data-name="ParentItem"]{display:flex;gap:30px;align-items:center}
+#game-layer .sj-shopitem{position:relative!important;left:auto!important;top:auto!important;flex:none}
+#game-layer .sj-shopitem [data-name="GameItem"]{display:grid;place-items:center}
+#game-layer .sj-shopitem .ev-tile{width:80px;height:80px}
+#game-layer .sj-limit{position:absolute;left:0;right:0;bottom:-24px;text-align:center;color:#5a3412;font:normal 15px GameFont,sans-serif}
+#game-layer .sj-limit.out{color:#c0392b}

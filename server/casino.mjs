@@ -7,7 +7,7 @@
 //   - VIP mở ở cấp 40 hoặc VIP 3 (MSG_REQUIRE_VIP_OR_LEVEL). Hết xu mua bằng kim cương (ButtonBuyChip).
 // Bể quà, tỉ lệ, chu kỳ và giá làm mới nằm ở máy chủ gốc nên do bản web đặt.
 import {randomInt} from 'node:crypto';
-import {requireCondition} from './errors.mjs';
+import {requireCondition,integer} from './errors.mjs';
 
 const it=(itemId,quantity)=>({itemId,quantity}),pool=(reward,weight)=>({reward,weight});
 export const casinos={
@@ -21,6 +21,31 @@ export const casinos={
         pool(it('consumable:3',1000),18),pool(it('spirit',100000),16)]},
 };
 export const refreshHours=8;
+// ---- Cấu hình quản trị (casino_config): giá mua xu (kim cương / xu), số xu mỗi lần quay 1 / 10 / 100, lượt miễn phí mỗi ngày,
+// giá làm mới, điều kiện mở VIP, bể quà (quà + trọng số). `casinos` được sửa tại chỗ nên mọi chỗ đang dùng thấy ngay.
+const originalCasinos=structuredClone(casinos);
+const editable=c=>({name:c.name,chip:c.chip,price:c.price,costs:{...c.costs},dailyFree:c.dailyFree||0,refreshPrice:c.refreshPrice,minLevel:c.minLevel||0,minVip:c.minVip||0,pool:c.pool.map(x=>({reward:{...x.reward},weight:x.weight}))});
+export const defaultCasinoConfig=()=>Object.fromEntries(Object.entries(originalCasinos).map(([id,c])=>[id,editable(c)]));
+export const casinoConfig=()=>Object.fromEntries(Object.entries(casinos).map(([id,c])=>[id,editable(c)]));
+export function applyCasinoConfig(cfg){
+ cfg=cfg||defaultCasinoConfig();
+ for(const [id,c] of Object.entries(cfg)){if(!casinos[id])continue;Object.assign(casinos[id],{price:c.price,costs:{...c.costs},dailyFree:c.dailyFree,refreshPrice:c.refreshPrice,pool:c.pool.map(x=>pool({...x.reward},x.weight))});
+  if(id==='super'){casinos[id].minLevel=c.minLevel;casinos[id].minVip=c.minVip}}
+ return cfg;
+}
+export function validateCasinoConfig(input,isRewardId){
+ requireCondition(input&&typeof input==='object','Thiếu cấu hình.');const out={};
+ for(const [id,base] of Object.entries(originalCasinos)){
+  const c=input[id],name=base.name,n=(v,l,a,b)=>integer(v,a,b,`${name}: ${l}`);requireCondition(c&&typeof c==='object',`${name}: thiếu cấu hình.`);
+  requireCondition(Array.isArray(c.pool)&&c.pool.length>=8&&c.pool.length<=40,`${name}: bể quà cần 8-40 món (đĩa có 8 ô).`);
+  const items=c.pool.map((x,i)=>{requireCondition(typeof x?.reward?.itemId==='string'&&isRewardId(x.reward.itemId),`${name}: quà ${i+1} không tồn tại.`,404);
+   return{reward:{itemId:x.reward.itemId,quantity:n(x.reward.quantity,`quà ${i+1} số lượng`,1,1e12)},weight:n(x.weight,`quà ${i+1} tỉ lệ`,1,1e6)}});
+  out[id]={name,chip:base.chip,price:n(c.price,'giá 1 xu (kim cương)',1,1e6),costs:{1:n(c.costs?.[1],'xu cho 1 lượt',1,1e6),10:n(c.costs?.[10],'xu cho 10 lượt',1,1e6),100:n(c.costs?.[100],'xu cho 100 lượt',1,1e7)},
+   dailyFree:id==='normal'?n(c.dailyFree,'lượt miễn phí mỗi ngày',0,100):0,refreshPrice:n(c.refreshPrice,'giá làm mới',0,1e6),
+   minLevel:id==='super'?n(c.minLevel,'cấp mở',0,1000):0,minVip:id==='super'?n(c.minVip,'VIP mở',0,30):0,pool:items};
+ }
+ return out;
+}
 const SLOTS=8,vnDay=now=>new Date(now+7*3600000).toISOString().slice(0,10);
 // Mốc bắt buộc làm mới theo giờ Việt Nam: 0h, 8h, 16h.
 const nextForced=now=>{const period=refreshHours*3600000,local=now+7*3600000;return Math.floor(local/period)*period+period-7*3600000};

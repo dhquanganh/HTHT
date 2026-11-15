@@ -109,7 +109,7 @@ const campaignSource=read('campaign.json');
 export const stages=campaignSource.stages;
 const {stages:sourceStages,warnings:campaignWarnings,...campaignMetadata}=campaignSource;
 export const campaign=campaignMetadata;
-export const economy={initialGold:12000,initialDiamonds:500,dailyGold:1500,dailyDiamonds:50,maxHeroLevel:60,maxStars:19,maxRank:5,maxSkillLevel:4,afk:{tickSeconds:5,maxSeconds:36000,minClaimSeconds:60,overflowSeconds:3600,stoneItem:'consumable:1'},tower:{turnsPerDay:5},summon:{item:'consumable:16',factions:['fortress','shadow','abyss','forest'],counts:[1,10],rates:[[6,1],[5,12],[4,35],[3,52]],startItems:10,duplicateShards:8}};
+export const economy={initialGold:12000,initialDiamonds:500,dailyGold:1500,dailyDiamonds:50,maxHeroLevel:60,maxStars:19,maxRank:5,maxSkillLevel:4,afk:{tickSeconds:5,maxSeconds:36000,minClaimSeconds:60,overflowSeconds:3600,stoneItem:'consumable:1'},tower:{turnsPerDay:5},summon:{item:'consumable:16',factions:['fortress','shadow','abyss','forest'],counts:[1,10],rates:[[5,12],[4,35],[3,53]],startItems:10,duplicateShards:8}};
 export const towerData=read('tower.json');
 export const beastData=read('beast.json');
 export const heroStoneData=read('hero-stones.json');
@@ -208,5 +208,5 @@ export function registerCustomHero({definition,profile,levels,album,assets:art,e
  const item={id:'heroshard:'+definition.avatar,name:'Mảnh '+definition.name,category:'shard',rarity:'purple',assetKey:definition.visual.head,heroShard:definition.avatar,merge:heroShardMerge,description:`Đủ ${heroShardMerge} mảnh ghép thành ${definition.name}. Đã có tướng thì dùng để lên sao.`,noShop:true,price:1000,priceCurrency:'gold',sellPrice:1,customHero:true};
  items.push(item);itemById.set(item.id,item);
 }
-import {eventList,checkinRewards} from './events.mjs';
-export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals,...silentVisuals,...gemBossVisuals,...customClient.visuals}},customHeroes:customClient,economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:eventList,checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points,artifactUpgrade:read('artifact-upgrade.json')}}
+import {publicEvents,checkinRewards} from './events.mjs';
+export function publicCatalog(){return{version:'0.5.0',hero:heroDefinition,heroes:heroDefinitions,album:heroAlbum,items,stages,campaign:{...campaign,visuals:{...campaign.visuals,...towerData.visuals,...beastVisuals,...silentVisuals,...gemBossVisuals,...customClient.visuals}},customHeroes:customClient,economy,skills,equipmentSlots,visuals,beastUi:beastData.ui,heroStones:heroStoneData,albumData,abyssArt:abyssData,mermaid:mermaidData,events:publicEvents(),checkinRewards,equipmentSets:equipmentData.sets,equipmentPoints:equipmentData.points,artifactUpgrade:read('artifact-upgrade.json')}}

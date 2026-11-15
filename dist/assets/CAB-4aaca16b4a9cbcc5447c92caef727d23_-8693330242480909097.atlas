@@ -1,0 +1,69 @@
+
+Open_Furniture.png
+size: 685,384
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+glass
+  rotate: false
+  xy: 209, 191
+  size: 190, 191
+  orig: 192, 193
+  offset: 1, 1
+  index: -1
+glass2
+  rotate: false
+  xy: 401, 191
+  size: 190, 191
+  orig: 192, 193
+  offset: 1, 1
+  index: -1
+khung_do
+  rotate: false
+  xy: 2, 2
+  size: 169, 171
+  orig: 171, 173
+  offset: 1, 1
+  index: -1
+khung_tim
+  rotate: false
+  xy: 173, 2
+  size: 169, 171
+  orig: 171, 173
+  offset: 1, 1
+  index: -1
+khung_vang
+  rotate: false
+  xy: 344, 18
+  size: 169, 171
+  orig: 171, 173
+  offset: 1, 1
+  index: -1
+khungglow
+  rotate: false
+  xy: 2, 175
+  size: 205, 207
+  orig: 209, 211
+  offset: 2, 2
+  index: -1
+rem_do
+  rotate: false
+  xy: 593, 221
+  size: 83, 161
+  orig: 83, 161
+  offset: 0, 0
+  index: -1
+rem_tim
+  rotate: false
+  xy: 515, 28
+  size: 83, 161
+  orig: 83, 161
+  offset: 0, 0
+  index: -1
+rem_vang
+  rotate: false
+  xy: 600, 58
+  size: 83, 161
+  orig: 83, 161
+  offset: 0, 0
+  index: -1

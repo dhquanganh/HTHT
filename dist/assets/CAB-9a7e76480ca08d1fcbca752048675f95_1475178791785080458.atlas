@@ -1,0 +1,83 @@
+
+Pot_Gate.png
+size: 352,168
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hor
+  rotate: false
+  xy: 2, 77
+  size: 128, 89
+  orig: 128, 89
+  offset: 0, 0
+  index: -1
+sod2_01
+  rotate: false
+  xy: 184, 16
+  size: 64, 61
+  orig: 102, 128
+  offset: 35, 29
+  index: -1
+sod2_02
+  rotate: true
+  xy: 291, 64
+  size: 79, 57
+  orig: 103, 128
+  offset: 20, 28
+  index: -1
+sod2_03
+  rotate: false
+  xy: 132, 80
+  size: 78, 63
+  orig: 102, 128
+  offset: 14, 29
+  index: -1
+sod2_04
+  rotate: false
+  xy: 212, 79
+  size: 77, 64
+  orig: 103, 128
+  offset: 10, 28
+  index: -1
+sod2_05
+  rotate: true
+  xy: 64, 4
+  size: 71, 60
+  orig: 102, 128
+  offset: 3, 28
+  index: -1
+sod2_06
+  rotate: true
+  xy: 2, 2
+  size: 73, 60
+  orig: 102, 128
+  offset: 1, 30
+  index: -1
+sod2_07
+  rotate: true
+  xy: 126, 7
+  size: 68, 56
+  orig: 103, 128
+  offset: 3, 30
+  index: -1
+sod2_08
+  rotate: false
+  xy: 250, 12
+  size: 55, 50
+  orig: 102, 128
+  offset: 5, 32
+  index: -1
+sod2_09
+  rotate: false
+  xy: 307, 19
+  size: 43, 43
+  orig: 103, 128
+  offset: 8, 35
+  index: -1
+ver
+  rotate: true
+  xy: 132, 145
+  size: 21, 193
+  orig: 21, 193
+  offset: 0, 0
+  index: -1

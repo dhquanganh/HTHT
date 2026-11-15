@@ -1,0 +1,27 @@
+
+Bag.png
+size: 356,292
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bag
+  rotate: true
+  xy: 2, 5
+  size: 285, 199
+  orig: 285, 199
+  offset: 0, 0
+  index: -1
+Layer-79.png3
+  rotate: true
+  xy: 203, 48
+  size: 242, 150
+  orig: 242, 150
+  offset: 0, 0
+  index: -1
+ligt
+  rotate: false
+  xy: 203, 2
+  size: 44, 44
+  orig: 50, 50
+  offset: 3, 3
+  index: -1

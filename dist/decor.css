@@ -1,0 +1,85 @@
+/* Trang trí tàu / Nội Thất: prefab gốc (PrefabDOM) + tầng tàu, kho, xưởng dựng động. */
+#game-layer .dc-root,#game-layer .dc-popup{pointer-events:auto!important;z-index:40;user-select:none;-webkit-user-select:none}
+#game-layer .dc-popup{z-index:48;position:absolute;inset:0}
+#game-layer .dc-root .pd-button,#game-layer .dc-popup .pd-button,#game-layer .dc-popup button,#game-layer .dc-root button{cursor:pointer;pointer-events:auto}
+#game-layer .dc-root .pd-button:active,#game-layer .dc-popup .pd-button:active{filter:brightness(.88)}
+/* Màn chính: 3 tầng tàu xếp dọc */
+#game-layer .dc-ship{position:absolute;left:140px;top:96px;width:856px;height:520px;display:grid;gap:6px;align-content:start;z-index:2}
+#game-layer .dc-floor-row{position:relative;height:163px;border-radius:10px;overflow:hidden;cursor:pointer;background:#2b1a0d;box-shadow:0 0 0 2px #8a5a2c}
+#game-layer .dc-floor-row:hover{box-shadow:0 0 0 3px #ffd34a}
+#game-layer .dc-floor{position:absolute!important;left:0!important;top:0!important;transform-origin:0 0;pointer-events:none}
+#game-layer .dc-floor-label{position:absolute;left:8px;bottom:6px;padding:2px 10px;border-radius:10px;background:#000a;color:#fff3d6;font:normal 16px GameFont,sans-serif}
+#game-layer .dc-floor-label span{color:#ffd75a;margin-left:6px}
+#game-layer .dc-slot-img{position:absolute;left:50%;top:50%;translate:-50% -50%;width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 4px 2px #0006)}
+#game-layer .dc-hero{position:absolute;left:1100px;bottom:10px;width:260px;height:300px;pointer-events:none}
+#game-layer .dc-daily{position:absolute;right:0;top:-44px;display:flex;gap:6px;align-items:center;padding:6px 14px;border:0;border-radius:10px;background:linear-gradient(#8fe063,#4fae2c);color:#fff;font:normal 18px GameFont,sans-serif;text-shadow:1px 1px 0 #0006}
+#game-layer .dc-daily img{width:28px;height:28px}
+/* Ô nội thất (ItemFurniture) */
+#game-layer .dc-grid{display:flex;flex-wrap:wrap;gap:8px;padding:8px;align-content:flex-start;justify-content:center}
+#game-layer .dc-item{position:relative;width:86px;height:86px;padding:0;border:3px solid #9a5ce0;border-radius:10px;background:radial-gradient(#fff6e0,#d9bf8c);overflow:hidden}
+#game-layer .dc-item.q2{border-color:#f0b627}#game-layer .dc-item.q3{border-color:#e03b2f}
+#game-layer .dc-item.on{box-shadow:0 0 0 3px #7de837}
+#game-layer .dc-pic{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);object-fit:contain}
+#game-layer .dc-badges{position:absolute;left:2px;top:2px;display:flex;gap:1px}
+#game-layer .dc-badges img{width:20px;height:20px}
+#game-layer .dc-badges .dc-hh{border-radius:50%;border:1px solid #fff}
+#game-layer .dc-used{position:absolute;left:0;right:0;bottom:0;background:#0009;color:#ffd75a;font:normal 11px GameFont,sans-serif;font-style:normal}
+#game-layer .dc-check{position:absolute;right:3px;bottom:3px;width:22px;height:22px;border-radius:5px;background:#fffc;color:#2a8c12;font:bold 18px/22px sans-serif;font-style:normal}
+#game-layer .dc-hint{width:100%;margin:12px 0;text-align:center;color:#d9c39a;font:normal 17px GameFont,sans-serif}
+/* Sửa tầng */
+#game-layer .dc-ed-bg{position:absolute;inset:0;background:#1b120a center/cover}
+#game-layer .dc-ed-floor{position:absolute;left:11px;top:70px;width:1114px;height:206px;border-radius:8px;overflow:hidden;box-shadow:0 0 0 3px #8a5a2c}
+#game-layer .dc-ed-floor .dc-floor{pointer-events:auto}
+#game-layer .dc-ed-floor [data-slot]{cursor:pointer;pointer-events:auto}
+#game-layer .dc-ed-floor [data-name="ImageEditSelect"]{box-shadow:0 0 0 6px #7de837 inset}
+#game-layer .dc-ed-bar{position:absolute;left:0;right:0;top:8px;height:56px;display:flex;gap:14px;align-items:center;padding:0 12px;color:#fff3d6;font:normal 18px GameFont,sans-serif}
+#game-layer .dc-back{width:56px;height:56px;border:0;background:center/contain no-repeat}
+#game-layer .dc-ed-hero{display:flex;gap:10px;align-items:center}
+#game-layer .dc-ed-hero b{color:#ffd75a;font-size:22px}
+#game-layer .dc-ed-actions{margin-left:auto;display:flex;gap:8px}
+#game-layer .dc-popup button:not(.dc-item):not(.dc-opt):not(.dc-back):not(.dc-x):not(.dc-hpick){padding:7px 14px;border:0;border-radius:8px;background:linear-gradient(#ffd75a,#e5a52a);color:#3a2205;font:normal 17px GameFont,sans-serif}
+#game-layer .dc-popup button.ghost{background:linear-gradient(#8fe063,#4fae2c);color:#fff;text-shadow:1px 1px 0 #0006}
+#game-layer .dc-popup button:disabled{filter:grayscale(1)}
+#game-layer .dc-ed-info{position:absolute;left:11px;right:11px;top:284px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;color:#fff3d6;font:normal 16px GameFont,sans-serif}
+#game-layer .dc-ed-info span{color:#a99372}#game-layer .dc-ed-info span.ok{color:#7de837}
+#game-layer .dc-ed-list{position:absolute;left:11px;right:11px;top:316px;bottom:10px;border-radius:10px;background:#2b1a0dcc;overflow-y:auto}
+#game-layer .dc-ed-head{padding:8px 12px;color:#ffd75a;font:normal 18px GameFont,sans-serif;display:flex;gap:12px;align-items:center}
+/* Xưởng */
+#game-layer .dc-franky{position:absolute;left:0;bottom:0;width:560px;height:640px;pointer-events:none}
+#game-layer .dc-new{display:grid;place-items:center;background:#000b}
+#game-layer .dc-new-box{position:relative;display:grid;gap:10px;justify-items:center;max-width:900px;color:#fff3d6;font:normal 18px GameFont,sans-serif}
+#game-layer .dc-new-box h3{margin:0;color:#ffd75a;font:normal 30px GameFont,sans-serif;text-shadow:2px 2px 0 #000}
+#game-layer .dc-open{position:absolute;left:50%;top:50%;translate:-50% -60%;width:400px;height:400px;pointer-events:none;z-index:-1}
+#game-layer .dc-order,#game-layer .dc-sets,#game-layer .dc-pick{display:grid;place-items:center;background:#000a}
+#game-layer .dc-order-box,#game-layer .dc-sets-box{position:relative;width:820px;max-height:560px;overflow-y:auto;padding:20px 26px;border-radius:14px;background:#2b1a0d center/100% 100%;border:2px solid #b5864a;color:#fff3d6;font:normal 17px GameFont,sans-serif;display:grid;gap:10px}
+#game-layer .dc-order-box h3,#game-layer .dc-sets-box h3{margin:0;text-align:center;color:#ffd75a;font:normal 28px GameFont,sans-serif}
+#game-layer .dc-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+#game-layer .dc-end{justify-content:flex-end}
+#game-layer .dc-opt{display:grid;justify-items:center;gap:2px;width:96px;padding:6px;border:2px solid transparent;border-radius:10px;background:#0005;color:#fff3d6;font:normal 14px GameFont,sans-serif}
+#game-layer .dc-opt img{width:48px;height:48px;object-fit:contain}
+#game-layer .dc-opt.on{border-color:#7de837;background:#2f5a1a}
+#game-layer .dc-heroes{max-height:300px;overflow-y:auto}
+#game-layer .dc-x{position:absolute;right:8px;top:8px;width:52px;height:52px;border:0;background:center/contain no-repeat}
+#game-layer .dc-sets-list{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+#game-layer .dc-set{width:130px;display:grid;justify-items:center;gap:2px;padding:6px;border-radius:10px;background:#0005}
+#game-layer .dc-set img{width:64px;height:64px;border-radius:8px}
+#game-layer .dc-set small{color:#d9c39a;font-size:13px;text-align:center}
+#game-layer .dc-hpick{display:grid;justify-items:center;gap:2px;padding:0;border:0;background:none;color:#7de837;font:normal 12px GameFont,sans-serif}
+#game-layer .dc-hpick .arena-card{width:72px;height:72px}
+#game-layer .dc-hpick.used{opacity:.4}
+/* Kho */
+#game-layer .dc-store [data-name="Viewport"]{overflow-y:auto}
+#game-layer .dc-detail{position:absolute;inset:14px;display:grid;gap:8px;align-content:start;justify-items:center;color:#4a2a10;font:normal 16px GameFont,sans-serif;text-align:center}
+#game-layer .dc-detail h3{margin:0;font:normal 24px GameFont,sans-serif}
+#game-layer .dc-detail h3.q1{color:#7b3dc0}#game-layer .dc-detail h3.q2{color:#c08a10}#game-layer .dc-detail h3.q3{color:#c0392b}
+#game-layer .dc-big{width:170px;height:170px;border:4px solid #9a5ce0;border-radius:14px;background:radial-gradient(#fff6e0,#d9bf8c);display:grid;place-items:center}
+#game-layer .dc-big.q2{border-color:#f0b627}#game-layer .dc-big.q3{border-color:#e03b2f}
+#game-layer .dc-big img{width:140px;height:140px;object-fit:contain}
+#game-layer .dc-eff{color:#2a6a12}
+#game-layer .dc-detail .dc-hint{color:#7a5a30}
+#game-layer .dc-gain{display:flex;gap:6px;align-items:center}
+#game-layer .dc-gain img{width:28px;height:28px}
+#game-layer .dc-store [data-cat]{cursor:pointer}
+/* Ô trống của ShipDecorFloor: ảnh giữ chỗ (ImageItem trắng) ẩn đi, chỉ hiện ảnh nội thất đã đặt. */
+#game-layer .dc-floor [data-name="ImageItem"]{background:none!important;background-color:transparent!important}
+#game-layer .dc-floor [data-name="ImageItem"]>:not(.dc-slot-img){display:none!important}

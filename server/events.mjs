@@ -1,7 +1,7 @@
 // Điểm danh và Sự kiện. Asset chỉ có giao diện; danh sách sự kiện và phần thưởng do server gốc giữ.
 // Bộ mặc định dưới đây được nạp vào MongoDB (event_config) lần đầu; trang quản trị sửa bản trong database.
 // Số có ghi "theo ảnh" lấy từ ảnh màn hình gốc, còn lại là số tự đặt.
-import {randomInt} from 'node:crypto';
+import {randomInt,createHash} from 'node:crypto';
 import {requireCondition,integer} from './errors.mjs';
 
 const item=(itemId,quantity)=>({itemId,quantity});
@@ -60,7 +60,8 @@ const defaultEvents=[
   pool:[{weight:30,reward:gold(50000)},{weight:20,reward:item(enhance,100)},{weight:15,reward:item(dust,300)},{weight:12,reward:item(clover,30)},{weight:10,reward:item(xuSpin,2)},{weight:6,reward:item(barrel,1)},{weight:4,reward:diamonds(60)},{weight:2,reward:item(xuSuper,1)},{weight:1,reward:item(rankS,1)}],
   ...steps('Mở','rương',[[10,item(clover,50)],[30,item(barrel,2)],[60,item(xuSuper,3)],[100,item(rankS,1)]])},
  progress('super-spin','week','superSpin','Xu Quay Siêu Cấp',{icon:'icon_xuquaysieucap',banner:'banner_xuquaysieucap'},'Xu quay siêu cấp đã dùng','Dùng','xu',[[10,diamonds(100)],[30,item(barrel,3)],[60,item(rankS,1)],[100,item(rankSS,1)]]),
- progress('wanted-summon','week','summon','Chiêu Mộ Đại Hải Tặc',{icon:'icon_chieumodaihaitac',banner:'banner-chieu-mo-hai-tac_big'},'Điểm chiêu mộ','Đạt','điểm',[[10,gold(100000)],[30,item(enhance,300)],[60,item(barrel,3)],[120,diamonds(300)]]),
+ // Mốc cuối (240 điểm): mỗi kỳ tuần đổi sang `rotate.quantity` mảnh của một tướng SS ngẫu nhiên (cùng một tướng cho mọi người chơi trong kỳ).
+ {...progress('wanted-summon','week','summon','Chiêu Mộ Đại Hải Tặc',{icon:'icon_chieumodaihaitac',banner:'banner-chieu-mo-hai-tac_big'},'Điểm chiêu mộ','Đạt','điểm',[[10,gold(100000)],[30,item(enhance,300)],[60,item(barrel,3)],[120,diamonds(300)],[240,item(rankSS,1)]]),rotate:{quantity:50}},
  progress('recruit-five','week','summon5','Chiêu Mộ Đồng Đội',{icon:'icon_summon_new',banner:'event_chieu_mo_dung_tuong_big'},'Thuyền viên 5 sao đã chiêu mộ','Chiêu mộ','thuyền viên 5 sao',[[1,diamonds(100)],[3,item(barrel,3)],[5,item(rankS,1)]]),
  progress('lucky-point','week','lucky','Thu Thập Nhân Phẩm',{icon:'icon_nhanpham',banner:'banner_nhanpham'},'Điểm nhân phẩm (chiêu mộ, vòng quay thường)','Đạt','điểm',[[20,item(clover,50)],[50,item(xuSpin,5)],[100,item(barrel,3)],[200,diamonds(300)]]),
  progress('arena-mission','week','arenaPoint','Nhiệm Vụ Chiến Trường',{icon:'icon_chientruong',banner:'banner_nvchientruong'},'Điểm chiến trường (thắng 2, thua 1)','Đạt','điểm',[[10,item(ticket,3)],[30,gold(150000)],[60,item(barrel,2)],[100,diamonds(200)]]),
@@ -157,6 +158,18 @@ function periodEnd(event,now){
  else{d.setUTCMonth(d.getUTCMonth()+1,1);d.setUTCHours(0,0,0,0)}
  return d.getTime()-7*3600000;
 }
+// Mốc xoay vòng: bể mảnh tướng SS do game.mjs nạp (tránh vòng import với catalog).
+let rotatePool=()=>[];
+export const setRotatePool=fn=>{rotatePool=fn};
+/** Mốc của sự kiện trong kỳ hiện tại: sự kiện có `rotate` thay quà mốc cuối bằng mảnh tướng chọn theo khóa kỳ. */
+export function milestonesOf(event,now=Date.now()){
+ const rows=event.milestones;if(!event.rotate||!rows?.length)return rows;
+ const pool=rotatePool();if(!pool.length)return rows;
+ const pick=pool[createHash('sha256').update(event.id+':'+periodKey(event,now)).digest().readUInt32BE(0)%pool.length],last=rows.at(-1);
+ return[...rows.slice(0,-1),{...last,rewards:[item(pick,event.rotate.quantity)],rotating:true}];
+}
+/** Danh sách sự kiện gửi cho client: đã áp mốc xoay vòng của kỳ hiện tại. */
+export const publicEvents=(now=Date.now())=>eventList.map(event=>event.rotate?{...event,milestones:milestonesOf(event,now)}:event);
 function eventState(p,event,now){
  const store=p.events??={},period=periodKey(event,now);
  if(store[event.id]?.period!==period)store[event.id]={period,count:0,claimed:[],bought:{},stage:0,round:1,days:0,lastDay:null,freeDay:null,unlocked:false};
@@ -180,7 +193,7 @@ function requireEvent(id,type){
 }
 const roll=(rows,random)=>{let left=random(rows.reduce((sum,row)=>sum+row.weight,0));return rows.findIndex(row=>(left-=row.weight)<0)};
 export function claimEvent(p,input,grant,now=Date.now()){
- const event=requireEvent(input.id),state=eventState(p,event,now),index=integer(input.index,0,99,'Mốc'),milestone=event.milestones?.[index];
+ const event=requireEvent(input.id),state=eventState(p,event,now),index=integer(input.index,0,99,'Mốc'),milestone=milestonesOf(event,now)?.[index];
  requireCondition(milestone,'Mốc không tồn tại.',404);
  requireCondition(state.count>=milestone.target,'Chưa đạt mốc này.',409,'EVENT_NOT_REACHED');
  requireCondition(!state.claimed.includes(index),'Đã nhận mốc này.',409,'EVENT_CLAIMED');
@@ -257,7 +270,7 @@ export function eventsView(p,now=Date.now()){
  for(const event of eventList){
   const saved=p.events?.[event.id],live=saved?.period===periodKey(event,now);
   const level=event.live==='level'?Math.max(live?saved.count:0,p.account?.level||0):null;
-  view[event.id]={unlocked:live?!!saved.unlocked:false,count:level??(live?saved.count:0),claimed:live?saved.claimed:[],bought:live?saved.bought:{},stage:live?saved.stage||0:0,round:live?saved.round||1:1,days:live?saved.days||0:0,rolledToday:live&&saved.lastDay===today,freeToday:live&&saved.freeDay===today,remaining:periodEnd(event,now)-now};
+  view[event.id]={unlocked:live?!!saved.unlocked:false,count:level??(live?saved.count:0),claimed:live?saved.claimed:[],bought:live?saved.bought:{},stage:live?saved.stage||0:0,round:live?saved.round||1:1,days:live?saved.days||0:0,rolledToday:live&&saved.lastDay===today,freeToday:live&&saved.freeDay===today,remaining:periodEnd(event,now)-now,endsAt:periodEnd(event,now)};
  }
  return view;
 }

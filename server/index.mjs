@@ -1,3 +1,4 @@
+import './env.mjs';
 import {Store} from './store.mjs';
 import {createApp} from './app.mjs';
 const uri=process.env.MONGODB_URI,dbName=process.env.MONGODB_DB||'haitacphucsinh_local';

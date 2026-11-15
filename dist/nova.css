@@ -1,0 +1,42 @@
+/* Đấu Trường Tân Tinh: prefab gốc dựng bằng PrefabDOM, chỉ thêm tương tác và danh sách động. */
+#game-layer .nv-root,#game-layer .nv-popup{pointer-events:auto!important;z-index:40;user-select:none;-webkit-user-select:none}
+#game-layer .nv-popup{z-index:46}
+#game-layer .nv-root .pd-button,#game-layer .nv-popup .pd-button,#game-layer .nv-tab,#game-layer .nv-pick{cursor:pointer;pointer-events:auto}
+#game-layer .nv-root .pd-button:active,#game-layer .nv-popup .pd-button:active{filter:brightness(.88)}
+#game-layer .nv-root .pd-viewport>.pd-node,#game-layer .nv-popup .pd-viewport>.pd-node{position:relative!important;left:0!important;top:0!important;width:100%!important}
+#game-layer .nv-root .ev-tile,#game-layer .nv-popup .ev-tile,#game-layer .nv-popup button,#game-layer .nv-popup select,#game-layer .nv-cell,#game-layer .nv-cell *{pointer-events:auto}
+#game-layer .nv-html{position:absolute;inset:0;display:flex;align-items:center;overflow-x:auto;overflow-y:hidden}
+#game-layer .nv-row{display:flex;gap:8px;align-items:center;padding:0 6px}
+#game-layer .nv-tile{display:inline-grid;place-items:center;box-sizing:border-box;flex:none;width:70px;height:70px}
+#game-layer .nv-tile>img{width:80%!important;height:80%!important;object-fit:contain}
+#game-layer .nv-head{width:70px;height:70px;flex:none;border:2px solid #f0c060;border-radius:8px;overflow:hidden;background:#20140b}
+#game-layer .nv-head img{width:100%;height:100%;object-fit:cover}
+#game-layer .nv-list{display:grid;gap:4px;justify-items:center;padding:4px 0;height:100%;overflow-y:auto;box-sizing:border-box}
+#game-layer .nv-list>.nv-cell{position:relative!important;left:auto!important;top:auto!important;flex:none}
+#game-layer [data-name="ScrollBattle"] [data-name="Content"]{display:grid;gap:2px;justify-items:center;overflow-y:auto;height:100%}
+#game-layer [data-name="ScrollBattle"] [data-name="Content"]>.nv-cell{position:relative!important;left:auto!important;top:auto!important}
+#game-layer .nv-tabs{display:grid;gap:8px;justify-items:center;padding:6px 0;height:100%;overflow-y:auto;box-sizing:border-box}
+#game-layer .nv-tabs>.nv-tab{position:relative!important;left:auto!important;top:auto!important}
+#game-layer .nv-select{width:100%;height:100%;background:#2d1d0f;color:#fff3d6;border:0;border-radius:8px;font:normal 18px GameFont,sans-serif;padding:0 10px;pointer-events:auto}
+#game-layer .nv-ginfo{position:absolute;inset:0;display:flex;align-items:center;padding-left:10px;color:#fff3d6;font:normal 18px GameFont,sans-serif;text-shadow:1px 1px 0 #000}
+#game-layer .nv-cell.nv-me{filter:drop-shadow(0 0 6px #ffd34a)}
+#game-layer .nv-pick.on::after{content:"\2714";position:absolute;left:-40px;top:-20px;color:#7de837;font:bold 30px sans-serif;text-shadow:1px 1px 0 #000}
+#game-layer .nv-greward{position:absolute;right:6px;top:0;bottom:0;display:flex;gap:6px;align-items:center}
+#game-layer .nv-greward .ev-tile{width:60px;height:60px}
+#game-layer .nv-shop-list{position:absolute;inset:0;overflow-y:auto;display:grid;gap:8px;padding:8px;align-content:start}
+#game-layer .nv-shop-row{display:flex;gap:12px;align-items:center;padding:8px 14px;border-radius:10px;background:#2b1a0dcc;border:2px solid #8a5a2c;color:#fff3d6;font:normal 18px GameFont,sans-serif}
+#game-layer .nv-shop-row>div{flex:1;display:grid}
+#game-layer .nv-shop-row small{color:#d9c39a;font-size:15px}
+#game-layer .nv-buy{display:flex;gap:6px;align-items:center;min-width:120px;justify-content:center;padding:6px 12px;border:0;border-radius:8px;background:linear-gradient(#ffd75a,#e5a52a);color:#3a2205;font:normal 20px GameFont,sans-serif;cursor:pointer}
+#game-layer .nv-buy img{width:26px;height:26px}
+#game-layer .nv-buy:disabled{filter:grayscale(1);cursor:default}
+#game-layer .nv-schedule-row{position:absolute;inset:0;display:flex;gap:10px;overflow-x:auto;padding:6px;box-sizing:border-box}
+#game-layer .nv-col{position:relative;flex:none;width:276px;height:476px}
+#game-layer .nv-col>.pd-node{position:relative!important;left:0!important;top:0!important}
+#game-layer .nv-spine{position:absolute;left:50%;bottom:20%;transform:translateX(-50%);width:260px;height:360px;pointer-events:none}
+#game-layer .nv-empty{position:absolute;left:0;right:0;top:120px;text-align:center;color:#fff3d6;font:normal 22px GameFont,sans-serif}
+/* Màn 1136 px: nút Quay lại (góc trên trái) đè lên tiêu đề / bảng — chuyển xuống phần trống bên trái thanh dưới (NovaBottomBar bắt đầu từ x=120). */
+#game-layer .nv-root:is(.nv-main,.nv-battle,.nv-bracket,.nv-top) [data-name="AnchorTopLeft"]>[data-name="ButtonClose"]{translate:-70px 510px;scale:.8}
+#game-layer .nv-root:is(.nv-battle,.nv-bracket) [data-name="AnchorTopRight"]>[data-name="ButtonHelp"]{translate:-1000px 513px;scale:.85}
+/* Cửa hàng: thanh tiêu đề (Bar 448 px) bám mép trái màn hình như bản gốc, không đè lên danh sách. */
+#game-layer .nv-popup.nv-shop>[data-name="AnchorTopLeft"]{translate:-224px 0}

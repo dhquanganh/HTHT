@@ -2,12 +2,12 @@ import {randomUUID} from 'node:crypto';
 import {GameError,requireCondition,integer} from './errors.mjs';
 import {materials,itemById,items,economy,skills,levelKit,stages,legacyStages,equipmentSlots,heroDefinition,definitionFor,campaign,heroAlbum,heroDefinitions,heroShardMerge,heroExpItem,heroKits,kitForAvatar,profileForAvatar} from './catalog.mjs';
 import {skillLevels,skillTier,ensureLuffySkills,battleSkillState,effectiveStat} from './luffy-skills.mjs';
-import {ensureRoster,heroSkills,heroLevels,heroTier,shardFor} from './hero-roster.mjs';
+import {ensureRoster,heroSkills,heroLevels,heroTier,shardFor,newHero} from './hero-roster.mjs';
 import {zoroRound} from './zoro-combat.mjs';
 import {formationView,validateFormation,ownedHeroes} from './formation.mjs';
 import {initializeTeamBattle,teamRound} from './team-combat.mjs';
 import {emptyAfk,startAfk,bankAfk,afkView,collectAfk,afkHours} from './afk.mjs';
-import {trackEvent,claimEvent,unlockEvent,exchangeEvent,prayEvent,eventsView,checkinView,claimCheckin,buyEventMaterial,startEventStage,finishEventStage,spinEvent,freeEventGift,rollcallEvent} from './events.mjs';
+import {setRotatePool,trackEvent,claimEvent,unlockEvent,exchangeEvent,prayEvent,eventsView,checkinView,claimCheckin,buyEventMaterial,startEventStage,finishEventStage,spinEvent,freeEventGift,rollcallEvent} from './events.mjs';
 import {emptyTower,towerView,spendTowerTurn,finishTower,floorEnemies} from './tower.mjs';
 import {adjustTowerUnit} from './tower-config.mjs';
 import {rollChest,chestHero} from './chests.mjs';
@@ -29,6 +29,20 @@ import {talentView,talentStats,talentLevelBonus,talentPassives,talentKit,talentA
 import {srView,srCheckIn,srStart,srFinish,srClaimAchievement,srClaimSeason} from './silent-ring.mjs';
 import {petView,recruitPets,combinePet,levelPet,growthPet,erasePet,enlightPet,starUpPet,equipPet,heroPet} from './pet.mjs';
 import {devilFruitView,combineFruit,levelUpFruit,starUpFruit,rollWheel,setResonance,unlockResonance,fruitBonus} from './devil-fruit.mjs';
+import {novaPlayerState,questTrack,questView,applyNovaBuff,novaConfig,currency as novaCurrency} from './nova.mjs';
+import {sanjiView,sanjiAction} from './sanji.mjs';
+import {decorView,decorAction,decorBonus} from './decor.mjs';
+import {xmasView,xmasAction,xmasConfig} from './xmas.mjs';
+import {impelConfig} from './impeldown.mjs';
+import {potConfig} from './pot.mjs';
+import {sanjiConfig} from './sanji.mjs';
+import {decorConfig} from './decor.mjs';
+// Sự kiện đang tắt (quản trị): ẩn khỏi giao diện, từ chối thao tác.
+const eventOn=(cfg,name)=>requireCondition(cfg().enabled!==false,`${name} đang tạm đóng.`,403,'EVENT_OFF');
+import {potView,potAction,finishPot,enemySpec,potState} from './pot.mjs';
+import {heroPool as freedomPool} from './freedom.mjs';
+import {freedomView,freedomAction,freedomFormation,finishFreedom,applyCards as applyFreedomCards,freedomConfig} from './freedom.mjs';
+import {impelView,impelEnter,impelOpen,impelClaim,impelBuy,impelFloor,keyItem as impelKey} from './impeldown.mjs';
 import {gemsView,equipGem,autoEquip,unequipGems,sellGems,summonGems,openGemCard,openableCards,gemBonus,gemBossView,milestonesView,setBossDebuffs,startGemBoss,finishGemBoss,ticketItem as gemTicket} from './gem.mjs';
 import {abyssView,startAbyss,finishAbyss,claimAbyssQuest,buyAbyssTurn,claimAbyssMilestone} from './abyss.mjs';
 import {arenaModes,dayKey,freeTickets,ticketItem,ticketPrice,ticketBuyLimit,allstarAttacks,allstarAttackPrice,allstarBuyLimit,betItem,betAmount,asEnemies,series} from './arena.mjs';
@@ -37,6 +51,8 @@ import {excView,excAction,excLevel,excPoints,excTierStats,excSkill} from './exc.
 import {tthView,tthBuy,tthSpend,tthFinish,tthDay,bossUnit,bossOfDay,battleRounds as tthRounds} from './tth.mjs';
 import {raidSmash,raidBuy,raidPrepare,raidFinish,raidEnemyStats,raidModes,vnDay as raidDay} from './raid.mjs';
 import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
+// Mốc cuối "Chiêu Mộ Đại Hải Tặc": mảnh của một tướng SS (rank 6) có sẵn trong game, không tính nhân vật tự tạo.
+setRotatePool(()=>heroDefinitions.filter(h=>h.rank===6&&!h.custom).map(shardFor));
 import {shipView,shipAction,shipForBattle,shipItems} from './ship.mjs';
 import {profileAction,levelRewards,noteLevelUp} from './profile.mjs';
 import {applyAura} from './aura.mjs';
@@ -105,7 +121,7 @@ export function heroStats(player){
  const grow=h.level*(1+h.level/150);
  const stats={maxHp:Math.round((800+grow*82)*rank*star),attack:Math.round((100+grow*14)*rank*star),defense:Math.round((25+grow*4)*rank*star),speed:Math.round(100+h.level*(1+h.level/600))};
  if(scale){stats.attack=Math.round(stats.attack*scale.attack);stats.maxHp=Math.round(stats.maxHp*scale.maxHp)}
- const fruit=fruitBonus(player,h),gem=gemBonus(player,h,definitionFor(h.id)),bonus=equipmentBonus(Object.values(h.equipment),h.id,[...stoneGroups(h),...albumGroups(player),...fruit.groups,...gem.groups]);
+ const fruit=fruitBonus(player,h),gem=gemBonus(player,h,definitionFor(h.id)),decor=decorBonus(player,h.id),bonus=equipmentBonus(Object.values(h.equipment),h.id,[...stoneGroups(h),...albumGroups(player),...fruit.groups,...gem.groups,...decor.groups]);
  for(const [field,value] of Object.entries(bonus.flat))stats[field]+=value;
  // Thú cưng trang bị: Công, Thủ, Máu, Tốc của thú cưng cộng thẳng cho chủ nhân.
  {const pet=heroPet(player,h.id);if(pet){stats.attack+=pet.stats.atk;stats.defense+=pet.stats.def;stats.maxHp+=pet.stats.hp;stats.speed+=pet.stats.spd}}
@@ -176,7 +192,7 @@ function introView(state){
   afk:null,tower:null,albumState:null,achievements:null,homeQuest:null,devilFruit:null,pets:null,silentRing:null,mastery:null,abyss:null,dailyQuest:null,arena:null,tth:null,guild:null,activity:[]};
 }
 export function playerView(player,now=Date.now()){if(!player.hero){ensureRoster(player);return baseView(player,now)}return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
-function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;if(!state.hero)return introView(state);const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),ships:shipView(player),vipInfo:vipView(player),casino:casinoView(player,now),dungeon:dungeonView(player,now),brave:braveView(player,now),tavern:tavernView(player,now),shop:shopView(player,now),sealed:sealedView(player,now,sealedRef(player)),dice:diceView(player,now),altar:altarView(player,now),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),gem:{...gemsView(player),boss:gemBossView(player,now),milestones:milestonesView()},pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),tth:tthView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
+function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;if(!state.hero)return introView(state);const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),ships:shipView(player),vipInfo:vipView(player),casino:casinoView(player,now),dungeon:dungeonView(player,now),brave:braveView(player,now),tavern:tavernView(player,now),shop:shopView(player,now),sealed:sealedView(player,now,sealedRef(player)),dice:diceView(player,now),altar:altarView(player,now),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),impelDown:{...impelView(player,now),enabled:impelConfig().enabled!==false},freedom:{...freedomView(player,now),enabled:freedomConfig().enabled!==false},novaEnabled:novaConfig().enabled!==false,pot:{...potView(player),enabled:potConfig().enabled!==false},sanji:{...sanjiView(player,now),enabled:sanjiConfig().enabled!==false},decor:{...decorView(player,now),enabled:decorConfig().enabled!==false},xmas:{...xmasView(player,now),enabled:xmasConfig().enabled!==false},gem:{...gemsView(player),boss:gemBossView(player,now),milestones:milestonesView()},pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),tth:tthView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
 function addItem(p,id,qty){requireCondition(itemById.has(id),'Vật phẩm không tồn tại.');if(id===heroExpItem){p.wallet.spirit=(p.wallet.spirit||0)+qty;requireCondition(p.wallet.spirit>=0,'Không đủ Đá EXP.');return}p.inventory[id]=(p.inventory[id]||0)+qty;requireCondition(p.inventory[id]>=0,'Không đủ vật phẩm.')}
 function spend(p,cost){for(const [currency,amount] of Object.entries(cost)){requireCondition(Number.isSafeInteger(amount)&&amount>=0,'Chi phí không hợp lệ.');requireCondition((p.wallet[currency]||0)>=amount,`Không đủ ${({gold:'vàng',diamonds:'kim cương',spirit:'EXP tướng'})[currency]||currency}.`,400,'INSUFFICIENT_FUNDS');p.wallet[currency]-=amount;if(currency==='diamonds')trackEvent(p,'diamondSpend',amount)}}
 function spendItems(p,cost={}){for(const [id,amount] of Object.entries(cost)){requireCondition((id===heroExpItem?p.wallet.spirit:p.inventory[id]||0)>=amount,`Không đủ ${itemById.get(id)?.name||'vật phẩm'}.`);addItem(p,id,-amount)}}
@@ -263,6 +279,11 @@ const heroHead=(p,id,slot)=>{const h=ownedHeroes(p).get(id),d=definitionFor(id);
 /** Snapshot đội phòng thủ lưu trong bảng Chiến trường: đơn vị trận đấu đã tính sẵn + đầu tướng để hiển thị. */
 export function arenaSnapshot(p,mode){
  const teams=arenaDefenseTeams(p,mode).map(slots=>{const units=teamUnits(p,slots);return{power:units.reduce((n,u)=>n+(u.power||0),0),heads:slots.map((id,slot)=>id&&heroHead(p,id,slot)).filter(Boolean),units}});
+ return{displayName:p.displayName,avatar:definitionFor(p.hero.id).avatar,level:p.account.level,power:teams.reduce((n,t)=>n+t.power,0),teams};
+}
+/** Snapshot đội Đấu Trường Tân Tinh (3 đội đã lưu ở p.nova.team) cho bảng đấu: đơn vị trận đấu + đầu tướng. */
+export function novaSnapshot(p){
+ const teams=(p.nova?.team||[]).map(slots=>{const units=teamUnits(p,slots);return{power:units.reduce((n,u)=>n+(u.power||0),0),heads:slots.map((id,slot)=>id&&heroHead(p,id,slot)).filter(Boolean),units}});
  return{displayName:p.displayName,avatar:definitionFor(p.hero.id).avatar,level:p.account.level,power:teams.reduce((n,t)=>n+t.power,0),teams};
 }
 function arenaAttackTeams(p,mode,input){
@@ -542,6 +563,90 @@ function runAction(p,action,input,now,context){
  if(action==='fruit-roll'){outsideBattle(p);return rollWheel(p,input,{pay:cost=>payReward(p,cost),grant:reward=>grantReward(p,reward),name:p.displayName})}
  if(action==='fruit-heroes'){outsideBattle(p);return setResonance(p,input,ownedHeroes(p))}
  if(action==='fruit-unlock'){outsideBattle(p);return unlockResonance(p,cost=>payReward(p,cost))}
+ // Đấu Trường Tân Tinh (NOVA_*): context.nova do Store nạp (mùa, giai đoạn, đối thủ, tướng đề xuất).
+ if(action.startsWith('nova-')){
+  outsideBattle(p);eventOn(novaConfig,'Đấu Trường Tân Tinh');const ctx=context?.nova;requireCondition(ctx,'Đấu Trường Tân Tinh chưa sẵn sàng.',503);const s=novaPlayerState(p,ctx.season),grant=reward=>grantReward(p,reward);
+  if(action==='nova-team'){
+   requireCondition(p.account.level>=novaConfig().minLevel,`Yêu cầu cấp ${novaConfig().minLevel} trở lên.`,403,'LEVEL_REQUIRED');
+   s.team=arenaAttackTeams(p,'league',{teams:input.teams});const first=!s.registered;s.registered=true;
+   if(first){questTrack(s,'register');for(const r of novaConfig().register)grant({...r})}
+   return{message:'Lưu đội hình thành công',registered:true,rewards:first?novaConfig().register:[]};
+  }
+  if(action==='nova-attack'){
+   const opp=ctx.opponent;requireCondition(opp&&s.team,'Đối thủ không hợp lệ.',409);
+   const mine=s.team.map(slots=>applyNovaBuff(teamUnits(p,slots),ctx.recommend));
+   const result=series(mine,opp.teams.map(t=>applyNovaBuff(structuredClone(t.units),ctx.recommend)),Math.floor(now%4294967295)||1);
+   questTrack(s,'attack');if(result.win)questTrack(s,'win');
+   return{message:result.win?'Chiến thắng!':'Thất bại.',nova:{opponentId:opp.id,win:result.win,score:result.score,bouts:result.bouts.map((r,i)=>({team:i+1,win:r.win,turns:r.turns}))}};
+  }
+  if(action==='nova-bet'){questTrack(s,'bet');return{message:'Đã dự đoán.'}}
+  if(action==='nova-like'){requireCondition(!s.likes.includes(input.userId),'Bạn đã thích người chơi này.',409,'NOVA_LIKED');s.likes.push(input.userId);questTrack(s,'like');for(const r of novaConfig().like)grant({...r});return{message:'Đã thích.',rewards:novaConfig().like}}
+  if(action==='nova-quest'){const q=questView(s.quests).find(x=>x.id===Number(input.id));requireCondition(q,'Nhiệm vụ không tồn tại.',404);requireCondition(q.status!==2,'Đã nhận thưởng.',409);requireCondition(q.status===1,'Chưa hoàn thành nhiệm vụ.',409);
+   s.quests.claimed.push(q.id);for(const r of q.rewards)grant({...r});return{message:'Nhận thưởng nhiệm vụ.',rewards:q.rewards}}
+  if(action==='nova-shop'){const item=novaConfig().shop.find(x=>x.id===Number(input.id)),count=integer(input.count??1,1,10000,'Số lượng');requireCondition(item,'Vật phẩm không tồn tại.',404);
+   const used=s.shop[item.id]||0;requireCondition(used+count<=item.limit,`Chỉ mua thêm được ${Math.max(0,item.limit-used)} lần.`,409,'NOVA_SHOP_LIMIT');
+   spendItems(p,{[novaCurrency]:item.price*count});s.shop[item.id]=used+count;const r={...item.reward,quantity:item.reward.quantity*count};grant(r);return{message:'Mua thành công.',rewards:[r]}}
+  throw new GameError('Hành động Đấu Trường Tân Tinh không hợp lệ.');
+ }
+ // Vượt Ngục Impel Down (EVENT_IMPLE_DOWN_*): vào sự kiện (chìa tặng mỗi ngày) / lật ô / chọn tầng / nhận quà mốc / mua chìa.
+ // Đấu Trường Tự Do (dist/freedom-ui.js, server/freedom.mjs): đội phát ngẫu nhiên, nhiều ải (mặc định 7), trợ giúp mỗi ải.
+ // Giáng sinh / Sinh nhật (dist/xmas-ui.js, server/xmas.mjs).
+ if(action.startsWith('xmas-')){
+  outsideBattle(p);eventOn(xmasConfig,'Sự kiện Giáng Sinh');
+  const pay=cost=>{if(cost.itemId in p.wallet)spend(p,{[cost.itemId]:cost.quantity});else spendItems(p,{[cost.itemId]:cost.quantity})};
+  return xmasAction(p,action,input,{now,level:p.account.level,spend:pay,grant:reward=>grantReward(p,reward)});
+ }
+ // Trang trí tàu / Nội Thất (dist/decor-ui.js, server/decor.mjs).
+ if(action.startsWith('decor-')){
+  outsideBattle(p);eventOn(decorConfig,'Trang trí tàu');const owned=ownedHeroes(p);
+  return decorAction(p,action,input,{now,level:p.account.level,owned:id=>owned.has(id),spendItems:cost=>spendItems(p,cost),grant:reward=>grantReward(p,reward)});
+ }
+ // Bữa tiệc Sanji (dist/sanji-ui.js, server/sanji.mjs): tặng món, tăng tốc, quà mốc, cửa hàng Đầu Bếp.
+ if(action.startsWith('sanji-')){
+  outsideBattle(p);eventOn(sanjiConfig,'Bữa tiệc Sanji');
+  const pay=cost=>{if(cost.itemId in p.wallet)spend(p,{[cost.itemId]:cost.quantity});else spendItems(p,{[cost.itemId]:cost.quantity})};
+  return sanjiAction(p,action,input,{now,level:p.account.level,spend:pay,grant:reward=>grantReward(p,reward)});
+ }
+ // Đỉnh Thời Gian (dist/pot-ui.js, server/pot.mjs): bản đồ ô, đội của người chơi, máu giữ qua các trận.
+ if(action.startsWith('pot-')){
+  outsideBattle(p);eventOn(potConfig,'Đỉnh Thời Gian');const owned=ownedHeroes(p);
+  const r=potAction(p,action,input,{now,level:p.account.level,owned:id=>owned.has(id),grant:reward=>grantReward(p,reward)});
+  if(!r.fight)return r;
+  const run=potState(p).run,o=run.objects.find(x=>x.id===r.fight.objectId),spec=enemySpec(run,o,freedomPool());
+  const slots=run.team.map(id=>id&&(run.hp[id]??1)>0?id:null),foes=asEnemies(freedomUnits(spec.heroes,spec.level,spec.boost));
+  const saved=p.formation;openBattle(p,foes,{chapter:1+(run.stage*5+o.id)%12,stageId:null,pot:{stage:run.stage,objectId:o.id,boss:r.fight.boss}},{version:2,slots},saved?.position??0,now);
+  if(saved)p.formation=saved;else delete p.formation;
+  const b=p.battle;b.enemies.forEach((e,i)=>{e.id='enemy-'+i});
+  applyFreedomCards(b.allies,run.relics,b.enemies);
+  for(const u of b.allies){const ratio=run.hp[u.heroId]??1;u.hp=Math.max(1,Math.round(u.maxHp*ratio))}
+  if(input.skip===true)while(b.status==='active')battleRound(p,{battleId:b.id,turn:b.turn,action:'auto'},now);
+  return{...r,message:r.fight.boss?'Khiêu chiến boss!':'Giao chiến!',battleId:b.id};
+ }
+ if(action.startsWith('freedom-')){
+  outsideBattle(p);eventOn(freedomConfig,'Đấu Trường Tự Do');
+  if(action==='freedom-attack'){
+   const slots=freedomFormation(p,input?.formation),run=p.freedom.run,enemy=run.enemy;
+   const allies=freedomUnits(slots,freedomConfig().heroLevel,1),foes=asEnemies(freedomUnits(enemy.heroes,enemy.level,enemy.boost));
+   applyFreedomCards(allies,run.cards,foes);applyFreedomCards(foes,enemy.cards,allies);
+   const saved=p.formation;openBattle(p,foes,{chapter:1+(run.stage*3)%12,stageId:null,freedom:{stage:run.stage+1,total:run.total||freedomConfig().stages.length}},null,0,now);
+   if(saved)p.formation=saved;else delete p.formation;
+   const b=p.battle;b.combatVersion=2;b.allies=allies.map((u,i)=>({...u,id:i?'ally-'+u.heroId:'hero',side:'ally'}));
+   b.enemies.forEach((e,i)=>{e.side='enemy';e.id='enemy-'+i});
+   b.aura={ally:applyAura(b.allies),enemy:applyAura(b.enemies.filter(e=>e.faction))};initializeTeamBattle(b);
+   if(input.skip===true)while(b.status==='active')battleRound(p,{battleId:b.id,turn:b.turn,action:'auto'},now);
+   return{message:`Ải ${run.stage+1}: bắt đầu.`,battleId:b.id};
+  }
+  return freedomAction(p,action,input,{now,level:p.account.level,spendItems:cost=>spendItems(p,cost),spendDiamonds:n=>spend(p,{diamonds:n}),grant:reward=>grantReward(p,reward)});
+ }
+ if(action.startsWith('impel-')){
+  outsideBattle(p);eventOn(impelConfig,'Vượt Ngục');const grant=reward=>grantReward(p,reward);
+  if(action==='impel-enter')return impelEnter(p,grant,now);
+  if(action==='impel-open')return impelOpen(p,input,{spend:n=>spendItems(p,{[impelKey]:n}),grant},now);
+  if(action==='impel-floor')return impelFloor(p,input,now);
+  if(action==='impel-claim')return impelClaim(p,input,grant,now);
+  if(action==='impel-buy')return impelBuy(p,input,{spendDiamonds:n=>spend(p,{diamonds:n}),grant},now);
+  throw new GameError('Hành động Vượt Ngục không hợp lệ.');
+ }
  // Ngọc Vega (GEM_*): khảm / khảm tự động / tháo / bán / chế tạo / chọn debuff / đánh Boss ngọc.
  if(action.startsWith('gem-')){
   outsideBattle(p);const owned=ownedHeroes(p),ctx={owned,definitionFor};
@@ -618,9 +723,18 @@ function openBattle(p,enemies,meta,teamFormation,position,now){
  initializeTeamBattle(p.battle);
 }
 /** Đơn vị trận đấu của một đội hình 6 ô (chỉ số, Haki, Nộ, bộ kỹ năng + thú cưng + Thiên phú). Dùng cho trận thường và snapshot Chiến trường. */
+/** Tướng Đấu Trường Tự Do: không thuộc người chơi — dựng trên người chơi ảo, cùng cấp, sao thấp nhất đủ trần cấp, nhân hệ số. */
+export function freedomUnits(slots,level,boost=1){
+ const vp=starterPlayer('freedom');let stars=1;while(stars<19&&levelCap(stars)<level)stars++;const lv=Math.min(level,levelCap(stars));
+ const ids=slots.filter(Boolean),heroes=ids.map(id=>({...newHero(definitionFor(id)),level:lv,stars}));
+ vp.hero=heroes[0];vp.reserveHeroes=Object.fromEntries(heroes.slice(1).map(h=>[h.id,h]));
+ const units=teamUnits(vp,slots);
+ for(const u of units){if(boost!==1){for(const k of ['attack','baseAttack','defense','baseDefense'])if(u[k])u[k]=Math.round(u[k]*boost);u.maxHp=Math.round(u.maxHp*boost);u.hp=u.maxHp}u.power=Math.round(u.attack*2.4+u.maxHp*.13+u.defense*2)}
+ return units;
+}
 export function teamUnits(p,slots){
  const owned=ownedHeroes(p),allies=[],lucThuc=albumLucThuc(p);
- slots.forEach((heroId,position)=>{if(!heroId||!owned.has(heroId))return;const h=owned.get(heroId),stats=heroStats({...p,hero:h}),definition=definitionFor(heroId);allies.push({id:allies.length?'ally-'+heroId:'hero',heroId,side:'ally',lucThuc,name:definition.name,faction:definition.faction,avatar:definition.avatar,heroClass:definition.class,level:h.level,stars:h.stars,...stats,...hakiUnit(h,stats),hp:stats.maxHp,energy:heroId==='zoro-king-of-hell'?100:35,position,frontRow:position<2,skills:heroLevels(h),cooldowns:{},...(definition.ultimate?{ultimate:definition.ultimates?{...definition.ultimates[(heroLevels(h)[definition.ultimate.id]||1)-1]}:scaledUltimate(definition.ultimate,heroLevels(h)[definition.ultimate.id])}:{}),...(heroKits.get(heroId)?{kit:withExcKit(withTalentKit(withPetKit(battleKit(h,definition)||heroKits.get(heroId),heroPet(p,heroId)),h),h),ultScale:1}:(talentPassives(h).length||withExcKit(null,h))?{kit:withExcKit(withTalentKit(null,h),h)}:{})})});
+ slots.forEach((heroId,position)=>{if(!heroId||!owned.has(heroId))return;const h=owned.get(heroId),stats=heroStats({...p,hero:h}),definition=definitionFor(heroId);allies.push({id:allies.length?'ally-'+heroId:'hero',heroId,side:'ally',lucThuc:lucThuc+decorBonus(p,heroId).lucThuc,name:definition.name,faction:definition.faction,avatar:definition.avatar,heroClass:definition.class,level:h.level,stars:h.stars,...stats,...hakiUnit(h,stats),hp:stats.maxHp,energy:heroId==='zoro-king-of-hell'?100:35,position,frontRow:position<2,skills:heroLevels(h),cooldowns:{},...(definition.ultimate?{ultimate:definition.ultimates?{...definition.ultimates[(heroLevels(h)[definition.ultimate.id]||1)-1]}:scaledUltimate(definition.ultimate,heroLevels(h)[definition.ultimate.id])}:{}),...(heroKits.get(heroId)?{kit:withExcKit(withTalentKit(withPetKit(battleKit(h,definition)||heroKits.get(heroId),heroPet(p,heroId)),h),h),ultScale:1}:(talentPassives(h).length||withExcKit(null,h))?{kit:withExcKit(withTalentKit(null,h),h)}:{})})});
  return allies;
 }
 function random(b){let x=b.seed>>>0;x^=x<<13;x^=x>>>17;x^=x<<5;b.seed=x>>>0;return b.seed/4294967296}
@@ -635,6 +749,8 @@ function battleRound(p,input,now){
   events.push(...teamRound(b,input));
   if(b.silent){if(!b.allies.some(u=>u.hp>0)||!b.enemies.some(u=>u.hp>0)||b.turn>=b.silent.rounds){b.status='won';srFinish(p,b,reward=>grantReward(p,reward),now);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
   else if(b.beast){if(!b.allies.some(u=>u.hp>0)||b.turn>=b.beast.rounds){b.status='won';finishBeast(p,b);event(b,events,{type:'victory',reward:b.reward})}else b.turn++}
+  else if(b.pot){const won=!b.enemies.some(u=>u.hp>0);if(won||!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status=won?'won':'lost';b.potResult=finishPot(p,b,b.allies,won,{grant:reward=>grantReward(p,reward)});b.reward=b.potResult;event(b,events,won?{type:'victory',reward:b.reward}:{type:'defeat'})}else b.turn++}
+  else if(b.freedom){const won=!b.enemies.some(u=>u.hp>0);if(won||!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status=won?'won':'lost';b.freedomResult=finishFreedom(p,won);b.reward=b.freedomResult;event(b,events,won?{type:'victory',reward:b.reward}:{type:'defeat'})}else b.turn++}
   else if(b.gemBoss){const won=!b.enemies.some(u=>u.hp>0);if(won||!b.allies.some(u=>u.hp>0)||b.turn>=b.gemBoss.rounds){b.status=won?'won':'lost';finishGemBoss(p,b,{grant:reward=>grantReward(p,reward),now});event(b,events,won?{type:'victory',reward:b.reward}:{type:'defeat'})}else b.turn++}
   else if(b.raid){if(!b.enemies.some(u=>u.hp>0)){b.status='won';raidFinish(p,b,reward=>grantReward(p,reward),now);event(b,events,{type:'victory',reward:b.reward})}else if(!b.allies.some(u=>u.hp>0)||b.turn>=40){b.status='lost';raidFinish(p,b,()=>{},now);event(b,events,{type:'defeat'})}else b.turn++}
   else if(b.tth){if(!b.allies.some(u=>u.hp>0)||b.turn>=b.tth.rounds){b.status='won';tthFinish(p,b,reward=>grantReward(p,reward));event(b,events,{type:'victory',reward:b.reward})}else b.turn++}

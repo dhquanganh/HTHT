@@ -1,0 +1,132 @@
+
+Candles.png
+size: 836,200
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 14 copy
+  rotate: true
+  xy: 222, 151
+  size: 47, 582
+  orig: 49, 584
+  offset: 1, 1
+  index: -1
+Layer 73
+  rotate: true
+  xy: 110, 111
+  size: 87, 110
+  orig: 87, 110
+  offset: 0, 0
+  index: -1
+ligt
+  rotate: false
+  xy: 2, 93
+  size: 106, 105
+  orig: 119, 119
+  offset: 6, 7
+  index: -1
+nen (1)
+  rotate: true
+  xy: 488, 4
+  size: 70, 88
+  orig: 127, 100
+  offset: 16, 4
+  index: -1
+nen (10)
+  rotate: true
+  xy: 183, 2
+  size: 71, 86
+  orig: 127, 100
+  offset: 16, 5
+  index: -1
+nen (11)
+  rotate: true
+  xy: 312, 3
+  size: 71, 87
+  orig: 127, 100
+  offset: 16, 3
+  index: -1
+nen (12)
+  rotate: true
+  xy: 312, 76
+  size: 73, 89
+  orig: 127, 100
+  offset: 16, 2
+  index: -1
+nen (13)
+  rotate: true
+  xy: 669, 4
+  size: 71, 88
+  orig: 127, 100
+  offset: 18, 3
+  index: -1
+nen (14)
+  rotate: true
+  xy: 578, 4
+  size: 70, 86
+  orig: 127, 100
+  offset: 19, 3
+  index: -1
+nen (15)
+  rotate: true
+  xy: 401, 3
+  size: 71, 85
+  orig: 127, 100
+  offset: 18, 3
+  index: -1
+nen (2)
+  rotate: true
+  xy: 669, 77
+  size: 72, 90
+  orig: 127, 100
+  offset: 14, 4
+  index: -1
+nen (3)
+  rotate: true
+  xy: 2, 21
+  size: 70, 92
+  orig: 127, 100
+  offset: 16, 4
+  index: -1
+nen (4)
+  rotate: false
+  xy: 110, 16
+  size: 71, 93
+  orig: 127, 100
+  offset: 16, 3
+  index: -1
+nen (5)
+  rotate: false
+  xy: 761, 61
+  size: 72, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1
+nen (6)
+  rotate: true
+  xy: 493, 76
+  size: 73, 86
+  orig: 127, 100
+  offset: 15, 6
+  index: -1
+nen (7)
+  rotate: true
+  xy: 581, 76
+  size: 73, 86
+  orig: 127, 100
+  offset: 16, 6
+  index: -1
+nen (8)
+  rotate: true
+  xy: 222, 75
+  size: 74, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1
+nen (9)
+  rotate: true
+  xy: 403, 76
+  size: 73, 88
+  orig: 127, 100
+  offset: 15, 5
+  index: -1

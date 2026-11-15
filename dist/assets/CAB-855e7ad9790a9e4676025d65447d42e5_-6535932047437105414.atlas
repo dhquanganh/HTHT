@@ -1,0 +1,419 @@
+
+Bigmom_bd.png
+size: 808,1032
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 12
+  rotate: false
+  xy: 2, 800
+  size: 628, 230
+  orig: 630, 232
+  offset: 1, 1
+  index: -1
+bgrmouth
+  rotate: true
+  xy: 482, 12
+  size: 86, 100
+  orig: 88, 102
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 2, 457
+  size: 581, 341
+  orig: 630, 341
+  offset: 35, 0
+  index: -1
+boob1
+  rotate: false
+  xy: 124, 360
+  size: 151, 95
+  orig: 151, 95
+  offset: 0, 0
+  index: -1
+boob2
+  rotate: false
+  xy: 585, 356
+  size: 152, 100
+  orig: 152, 100
+  offset: 0, 0
+  index: -1
+butter
+  rotate: false
+  xy: 793, 690
+  size: 11, 23
+  orig: 11, 23
+  offset: 0, 0
+  index: -1
+check
+  rotate: false
+  xy: 328, 6
+  size: 65, 88
+  orig: 65, 88
+  offset: 0, 0
+  index: -1
+cloud
+  rotate: true
+  xy: 630, 607
+  size: 141, 161
+  orig: 143, 164
+  offset: 1, 1
+  index: -1
+eye
+  rotate: true
+  xy: 793, 729
+  size: 19, 13
+  orig: 21, 15
+  offset: 1, 1
+  index: -1
+face
+  rotate: false
+  xy: 632, 750
+  size: 171, 161
+  orig: 178, 161
+  offset: 0, 0
+  index: -1
+food1
+  rotate: true
+  xy: 140, 67
+  size: 17, 16
+  orig: 19, 18
+  offset: 1, 1
+  index: -1
+food2
+  rotate: true
+  xy: 793, 715
+  size: 12, 13
+  orig: 15, 15
+  offset: 1, 1
+  index: -1
+foodmain
+  rotate: true
+  xy: 739, 356
+  size: 46, 66
+  orig: 49, 68
+  offset: 2, 1
+  index: -1
+fx/hit_blue_01
+  rotate: false
+  xy: 320, 363
+  size: 92, 92
+  orig: 128, 128
+  offset: 20, 8
+  index: -1
+fx/hit_blue_02
+  rotate: false
+  xy: 584, 5
+  size: 104, 100
+  orig: 128, 128
+  offset: 16, 8
+  index: -1
+fx/hit_blue_03
+  rotate: false
+  xy: 469, 343
+  size: 112, 112
+  orig: 128, 128
+  offset: 12, 8
+  index: -1
+fx/hit_blue_04
+  rotate: false
+  xy: 388, 100
+  size: 120, 124
+  orig: 128, 128
+  offset: 8, 0
+  index: -1
+fx/hit_blue_05
+  rotate: false
+  xy: 140, 86
+  size: 124, 128
+  orig: 128, 128
+  offset: 4, 0
+  index: -1
+fx/hit_blue_06
+  rotate: false
+  xy: 221, 226
+  size: 124, 128
+  orig: 128, 128
+  offset: 4, 0
+  index: -1
+fx/hit_blue_07
+  rotate: true
+  xy: 266, 96
+  size: 128, 120
+  orig: 128, 128
+  offset: 0, 8
+  index: -1
+fx/hit_blue_08
+  rotate: true
+  xy: 347, 226
+  size: 128, 120
+  orig: 128, 128
+  offset: 0, 8
+  index: -1
+fx/hit_blue_09
+  rotate: true
+  xy: 510, 107
+  size: 120, 116
+  orig: 128, 128
+  offset: 0, 12
+  index: -1
+fx/hit_blue_10
+  rotate: true
+  xy: 690, 234
+  size: 120, 116
+  orig: 128, 128
+  offset: 0, 12
+  index: -1
+fx/hit_blue_11
+  rotate: false
+  xy: 2, 359
+  size: 120, 96
+  orig: 128, 128
+  offset: 0, 32
+  index: -1
+fx/hit_blue_12
+  rotate: true
+  xy: 469, 229
+  size: 112, 72
+  orig: 128, 128
+  offset: 4, 32
+  index: -1
+fx/hit_blue_13
+  rotate: false
+  xy: 124, 5
+  size: 112, 60
+  orig: 128, 128
+  offset: 4, 40
+  index: -1
+fx/hit_blue_14
+  rotate: true
+  xy: 270, 2
+  size: 92, 56
+  orig: 128, 128
+  offset: 20, 40
+  index: -1
+fx/hit_blue_15
+  rotate: false
+  xy: 628, 236
+  size: 60, 52
+  orig: 128, 128
+  offset: 24, 40
+  index: -1
+fx/hit_blue_16
+  rotate: true
+  xy: 585, 762
+  size: 36, 44
+  orig: 128, 128
+  offset: 48, 44
+  index: -1
+fx/smoke_12001
+  rotate: false
+  xy: 2, 2
+  size: 61, 63
+  orig: 64, 64
+  offset: 2, 0
+  index: -1
+fx/smoke_show_01
+  rotate: true
+  xy: 628, 183
+  size: 51, 58
+  orig: 85, 85
+  offset: 17, 10
+  index: -1
+fx/smoke_show_02
+  rotate: false
+  xy: 628, 290
+  size: 60, 64
+  orig: 86, 85
+  offset: 13, 6
+  index: -1
+fx/smoke_show_03
+  rotate: false
+  xy: 744, 471
+  size: 61, 68
+  orig: 85, 85
+  offset: 12, 6
+  index: -1
+fx/smoke_show_04
+  rotate: false
+  xy: 744, 541
+  size: 62, 64
+  orig: 85, 86
+  offset: 12, 7
+  index: -1
+fx/smoke_show_05
+  rotate: true
+  xy: 688, 183
+  size: 49, 52
+  orig: 86, 86
+  offset: 19, 21
+  index: -1
+fx/smoke_show_06
+  rotate: false
+  xy: 414, 399
+  size: 53, 56
+  orig: 85, 86
+  offset: 17, 20
+  index: -1
+fx/smoke_show_07
+  rotate: true
+  xy: 742, 180
+  size: 52, 57
+  orig: 85, 85
+  offset: 17, 20
+  index: -1
+fx/smoke_show_08
+  rotate: true
+  xy: 739, 160
+  size: 18, 26
+  orig: 86, 85
+  offset: 25, 51
+  index: -1
+fx/smoke_show_09
+  rotate: false
+  xy: 158, 68
+  size: 15, 16
+  orig: 85, 85
+  offset: 25, 58
+  index: -1
+fx/spark
+  rotate: false
+  xy: 793, 678
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+fx/tialua
+  rotate: false
+  xy: 585, 717
+  size: 43, 43
+  orig: 49, 49
+  offset: 3, 3
+  index: -1
+handbutter
+  rotate: true
+  xy: 585, 458
+  size: 147, 157
+  orig: 147, 157
+  offset: 0, 0
+  index: -1
+handice
+  rotate: false
+  xy: 140, 216
+  size: 79, 138
+  orig: 82, 140
+  offset: 1, 1
+  index: -1
+hathair
+  rotate: true
+  xy: 2, 67
+  size: 287, 136
+  orig: 287, 136
+  offset: 0, 0
+  index: -1
+ice
+  rotate: true
+  xy: 628, 108
+  size: 73, 51
+  orig: 75, 53
+  offset: 1, 1
+  index: -1
+meteo
+  rotate: true
+  xy: 395, 11
+  size: 87, 85
+  orig: 89, 88
+  offset: 1, 2
+  index: -1
+meteoac
+  rotate: true
+  xy: 603, 231
+  size: 29, 19
+  orig: 29, 19
+  offset: 0, 0
+  index: -1
+meteoeye
+  rotate: false
+  xy: 771, 160
+  size: 29, 18
+  orig: 31, 20
+  offset: 1, 1
+  index: -1
+meteomouth
+  rotate: true
+  xy: 65, 4
+  size: 61, 57
+  orig: 63, 59
+  offset: 1, 1
+  index: -1
+mouth
+  rotate: false
+  xy: 690, 10
+  size: 79, 100
+  orig: 79, 101
+  offset: 0, 1
+  index: -1
+no1
+  rotate: true
+  xy: 543, 262
+  size: 79, 81
+  orig: 79, 81
+  offset: 0, 0
+  index: -1
+no2
+  rotate: true
+  xy: 585, 607
+  size: 108, 42
+  orig: 108, 42
+  offset: 0, 0
+  index: -1
+nose
+  rotate: true
+  xy: 277, 362
+  size: 93, 41
+  orig: 93, 41
+  offset: 0, 0
+  index: -1
+promeo
+  rotate: false
+  xy: 632, 913
+  size: 173, 117
+  orig: 173, 117
+  offset: 0, 0
+  index: -1
+promeoac
+  rotate: false
+  xy: 744, 404
+  size: 61, 65
+  orig: 62, 65
+  offset: 0, 0
+  index: -1
+promouth
+  rotate: false
+  xy: 414, 356
+  size: 42, 41
+  orig: 44, 43
+  offset: 1, 1
+  index: -1
+teeth1
+  rotate: true
+  xy: 238, 2
+  size: 82, 30
+  orig: 82, 30
+  offset: 0, 0
+  index: -1
+teeth2
+  rotate: false
+  xy: 543, 229
+  size: 58, 31
+  orig: 58, 32
+  offset: 0, 1
+  index: -1
+tounge
+  rotate: true
+  xy: 681, 112
+  size: 69, 56
+  orig: 69, 56
+  offset: 0, 0
+  index: -1
