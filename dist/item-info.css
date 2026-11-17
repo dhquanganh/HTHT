@@ -8,3 +8,26 @@
 .item-info-desc{overflow-y:auto!important;overflow-x:hidden!important;overflow-wrap:anywhere;scrollbar-width:thin}
 .item-info-layer [data-name="TextTitle"]{overflow:hidden}.item-info-layer [data-name="TextTitle"] .pd-text{line-height:1.1}
 .item-info-layer [data-name="TextInfo"]{overflow:hidden}
+
+/* Xem trước rương (PopupShowListRewards gốc). */
+.item-info-tile.item-info-chest{pointer-events:auto;cursor:zoom-in}
+.item-info-tile.item-info-chest .ev-tile{transition:filter .15s}.item-info-tile.item-info-chest:hover .ev-tile{filter:brightness(1.15)}
+.chest-preview-layer [data-name="GroupRewards"]{display:flex;flex-direction:column;align-items:center}
+.chest-pv-note{margin:0 0 6px;color:#6b3b17;font:normal 17px GameFont,sans-serif;text-align:center}
+.chest-pv-grid{display:grid;grid-template-columns:repeat(var(--cols),96px);gap:8px;justify-content:center;max-height:356px;overflow-y:auto;overflow-x:hidden;padding:2px 6px 2px 2px;scrollbar-width:thin}
+.chest-pv-cell{width:96px;height:96px;display:flex;align-items:center;justify-content:center}
+.chest-pv-cell .ev-tile{width:92px;height:92px;cursor:pointer}.chest-pv-cell .ev-tile>img:not(.item-shard-mark){width:76px;height:76px}
+.chest-pv-hero>img{border-radius:8px;object-fit:cover}
+/* Hiệu ứng phẩm chất trong ô thông tin / xem trước (qualityTile ở game.js). */
+.item-info-layer .ev-tile.q-art{background:none!important;border:0!important;box-shadow:none!important;padding:0;position:relative}
+.item-info-layer .ev-tile.q-art>.aui{position:absolute;inset:0}
+.item-info-layer .ev-tile.q-sparkle{position:relative;overflow:visible}
+.chest-pv-grid{padding:12px 10px 10px 8px}
+/* Chỉ số / hiệu ứng vật phẩm trong popup thông tin (itemDetailHtml ở game.js). */
+.item-info-detail{margin-top:4px;white-space:normal}
+.item-info-detail .item-popup-stats{margin:0 0 2px;color:#8fe36a;font-size:20px;line-height:1.3}
+.item-info-detail .item-popup-set{margin:8px 0 2px}.item-info-detail .item-popup-set h3{margin:0 0 2px;color:#e6bf62;font-size:20px;font-weight:700}
+.item-info-detail .item-popup-set p{margin:0 0 2px 4px;color:#a8a29a;font-size:19px;line-height:1.3}.item-info-detail .item-popup-set p.on{color:#fff}
+/* Mảnh thú cưng / mảnh trái ác quỷ trong rương: biểu tượng mảnh ở góc trên trái ô (như ô mảnh gốc). */
+.ev-tile .ev-shard,.choice-hero .ev-shard{position:absolute;left:2px;top:2px;width:26%;height:26%;pointer-events:none;font-style:normal}
+.ev-tile .ev-shard img,.choice-hero .ev-shard img{width:100%!important;height:100%!important;object-fit:contain}

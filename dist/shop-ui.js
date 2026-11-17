@@ -1,6 +1,7 @@
 /* Cửa hàng — PopupShop gốc (scene 1404) dựng bằng PrefabDOM.
  *   Nền bgr_shop2 + Nami (ImageNami), thanh tiêu đề "Cửa hàng", nút Trở về.
- *   TabManager (ButtonTabShop): Chợ đen (SHOP_MARKET, server/shop.mjs) và Cửa hàng huyết tế (SHOP_ALTAR, server/altar.mjs).
+ *   TabManager (ButtonTabShop): Chợ đen (SHOP_MARKET, server/shop.mjs), Cửa hàng huyết tế (SHOP_ALTAR, server/altar.mjs),
+ *   Mê cung và Đấu trường (đổi Lệnh bài võ đấu, ô tiền FieldArenaCoin; server/arena-shop.mjs, sửa ở tab admin "Shop Đấu trường").
  *   Kệ hàng: mỗi CellPopupShop là một tầng kệ (shelves1) chứa 3 ShopItem (GameItem + nút giá IconPrice / TextPrice,
  *   PriceInactive khi đã mua). GroupAsset: tiền tệ của tab. ButtonRefresh (kim cương) và GroupRefresh "Làm mới sau".
  */
@@ -17,34 +18,40 @@
  const tag=(n,v)=>{if(n)n.shop=v;return n};
  const full={m_AnchorMin:{x:0,y:0},m_AnchorMax:{x:1,y:1},m_SizeDelta:{x:0,y:0},m_AnchoredPosition:{x:0,y:0},m_Pivot:{x:.5,y:.5},m_LocalScale:{x:1,y:1,z:1}};
  const p=()=>c.player();
- const fmt=ms=>{ms=Math.max(0,ms);const s=Math.floor(ms/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60);return[h,m,s%60].map(x=>String(x).padStart(2,'0')).join(':')};
+ const fmt=ms=>{ms=Math.max(0,ms);const s=Math.floor(ms/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),t=[h,m,s%60].map(x=>String(x).padStart(2,'0')).join(':');return d?`${d} ngày ${t}`:t};
  const nextDay=()=>{const D_=86400000;return(Math.floor((Date.now()+7*3600000)/D_)+1)*D_-7*3600000};
- const soulItem='consumable:7',book='material:seal-book',bookDL='material:seal-book-dl';
- const currencyIcon=id=>id==='gold'?c.named('icon_gold'):id==='diamonds'?c.named('icon_gem'):id===soulItem?c.named('icon_soul_coin'):id===book?c.named('icon_seal_book_normal'):id===bookDL?c.named('icon_seal_book_dl'):c.named('icon_gem');
+ const soulItem='consumable:7',book='material:seal-book',bookDL='material:seal-book-dl',arenaToken='consumable:40';
+ const currencyIcon=id=>id==='gold'?c.named('icon_gold'):id==='diamonds'?c.named('icon_gem'):id===soulItem?c.named('icon_soul_coin'):id===book?c.named('icon_seal_book_normal'):id===bookDL?c.named('icon_seal_book_dl'):c.items.get(id)?.assetKey||c.named('icon_gem');
  const balance=id=>id==='gold'||id==='diamonds'?p().wallet[id]||0:p().inventory?.[id]||0;
- const tabs=[{id:'market',title:I2('LBL_POPUP_SHOP_TITLE_MARKET','Chợ đen')},{id:'altar',title:I2('LBL_POPUP_SHOP_TITLE_ALTAR','Huyết tế')},{id:'sealed',title:I2('LBL_SEALAND','Mê cung')}];
+ const allTabs=[{id:'market',title:I2('LBL_POPUP_SHOP_TITLE_MARKET','Chợ đen')},{id:'altar',title:I2('LBL_POPUP_SHOP_TITLE_ALTAR','Huyết tế')},{id:'sealed',title:I2('LBL_SEALAND','Mê cung')},{id:'arena',title:'Đấu trường'}];
+ // Tab Đấu trường ẩn khi quản trị tắt cửa hàng.
+ const arenaOn=()=>!!p().shop?.arena&&p().shop.arena.enabled!==false;
+ const tabs=()=>allTabs.filter(t=>t.id!=='arena'||arenaOn());
+ // Thời điểm làm mới của tab (null = không làm mới).
+ const resetAt=()=>tab==='market'?p().shop.resetAt:tab==='arena'?p().shop.arena.resetAt:nextDay();
  // Danh sách hàng của tab: {key, reward, price, sold, note}
  function goods(){
   if(tab==='market')return p().shop.items.map(o=>({key:o.slot,reward:o.reward,price:o.price,sold:o.bought}));
+  if(tab==='arena')return p().shop.arena.offers.map(o=>({key:o.id,reward:o.reward,price:{itemId:arenaToken,quantity:o.price},sold:!!o.limit&&o.bought>=o.limit,note:o.limit?`${o.limit-o.bought}/${o.limit}`:''}));
   if(tab==='sealed')return p().shop.sealed.map(o=>({key:o.id,reward:o.reward,price:o.price,sold:o.bought>=o.limit,note:`${o.limit-o.bought}/${o.limit}`}));
   return(p().altar?.shop||[]).map(o=>({key:o.id,reward:o.reward,price:{itemId:soulItem,quantity:o.cost},sold:o.bought>=o.limit,note:`${o.limit-o.bought}/${o.limit}`}));
  }
  async function open(t){
-  try{src??=await fetch('scenes/1404.json').then(r=>r.json());if(t)tab=t;if(tab==='altar'&&!p().altar)await c.api('/api/state').catch(()=>{});render();clearInterval(timer);timer=setInterval(tick,1000)}catch(e){c.toast(e.message)}
+  try{src??=await fetch('scenes/1404.json').then(r=>r.json());if(t)tab=t;if(tab==='arena'&&!arenaOn())tab='market';if(tab==='altar'&&!p().altar)await c.api('/api/state').catch(()=>{});render();clearInterval(timer);timer=setInterval(tick,1000)}catch(e){c.toast(e.message)}
  }
- function tick(){if(!root?.isConnected)return clearInterval(timer);const at=tab==='market'?p().shop.resetAt:nextDay();if(at<=Date.now()){c.api('/api/state').then(render).catch(()=>{});return}const t=D.find(root,'TextCountdown');if(t)D.setText(t,fmt(at-Date.now()))}
+ function tick(){if(!root?.isConnected)return clearInterval(timer);const at=resetAt();if(at===null)return;if(at<=Date.now()){c.api('/api/state').then(render).catch(()=>{});return}const t=D.find(root,'TextCountdown');if(t)D.setText(t,fmt(at-Date.now()))}
  function render(){
   const n=structuredClone(src.roots[0]);n.transform={...full};const list=goods();
   txt(deep(n,'TextTitle'),I2('LBL_HOME_2_SCENE_SHOP','Cửa hàng'));tag(deep(n,'ButtonBack'),{act:'back'});
   // Tab: nhân bản ButtonTabShop theo từng cửa hàng.
   const mgr=deep(n,'TabManager'),tpl=kid(mgr,'ButtonTabShop');
-  mgr.children=tabs.map(t=>{const b=structuredClone(tpl);b.name='Tab_'+t.id;on(kid(b,'ImageOn'),t.id===tab);on(kid(b,'ImageOff'),t.id!==tab);txt(kid(b,'Text'),t.title);tag(b,{act:'tab',tab:t.id});return b});
+  mgr.children=tabs().map(t=>{const b=structuredClone(tpl);b.name='Tab_'+t.id;on(kid(b,'ImageOn'),t.id===tab);on(kid(b,'ImageOff'),t.id!==tab);txt(kid(b,'Text'),t.title);tag(b,{act:'tab',tab:t.id});return b});
   // Tiền tệ của tab.
-  const assets=deep(n,'GroupAsset'),show=tab==='market'?['FieldGem','FieldGold']:tab==='sealed'?['FieldSealBookNormal','FieldSealBookDL']:['FieldGem','FieldSoulCoin'];
-  for(const f of assets.children){on(f,show.includes(f.name));const v={FieldGem:balance('diamonds'),FieldGold:balance('gold'),FieldSoulCoin:balance(soulItem),FieldSealBookNormal:balance(book),FieldSealBookDL:balance(bookDL)}[f.name];if(v!==undefined)txt(kid(f,'TextValue'),c.num(v))}
+  const assets=deep(n,'GroupAsset'),show=tab==='market'?['FieldGem','FieldGold']:tab==='sealed'?['FieldSealBookNormal','FieldSealBookDL']:tab==='arena'?['FieldArenaCoin']:['FieldGem','FieldSoulCoin'];
+  for(const f of assets.children){on(f,show.includes(f.name));const v={FieldGem:balance('diamonds'),FieldGold:balance('gold'),FieldSoulCoin:balance(soulItem),FieldSealBookNormal:balance(book),FieldSealBookDL:balance(bookDL),FieldArenaCoin:balance(arenaToken)}[f.name];if(v!==undefined)txt(kid(f,'TextValue'),c.num(v))}
   // Làm mới.
   const refresh=deep(n,'ButtonRefresh');on(refresh,tab==='market');txt(kid(refresh,'Text'),I2('LBL_REFRESH','Làm mới'));txt(deep(refresh,'TextCost'),p().shop.refreshCost);tag(refresh,{act:'refresh'});
-  txt(deep(n,'TextRefresh'),I2('LBL_REFESH_AFTER','Làm mới sau:'));txt(deep(n,'TextCountdown'),fmt((tab==='market'?p().shop.resetAt:nextDay())-Date.now()));
+  txt(deep(n,'TextRefresh'),I2('LBL_REFESH_AFTER','Làm mới sau:'));const at=resetAt();on(deep(n,'GroupRefresh'),at!==null);if(at!==null)txt(deep(n,'TextCountdown'),fmt(at-Date.now()));
   // Kệ hàng: mỗi tầng 3 món.
   const cellTpl=deep(n,'CellPopupShop'),itemTpl=kid(cellTpl,'ShopItem'),rows=[];
   for(let i=0;i<list.length;i+=3){const row=structuredClone(cellTpl);on(row,true);on(kid(row,'ShopItem'),false);row.children=row.children.filter(k=>k.name!=='ShopItem');
@@ -75,7 +82,7 @@
   if(t.act==='buy'){
    const g=t.good,name=c.items.get(g.reward.itemId)?.name||({gold:'Beli',diamonds:'Kim cương',spirit:'Linh hồn'})[g.reward.itemId]||g.reward.itemId;
    if(balance(g.price.itemId)<g.price.quantity)return c.toast(g.price.itemId==='gold'?'Không đủ Beli.':g.price.itemId==='diamonds'?'Không đủ kim cương.':g.price.itemId===soulItem?'Không đủ Hồn hải tặc.':`Không đủ ${c.items.get(g.price.itemId)?.name||'vật phẩm'}.`);
-   const text=`Mua ${name} x${c.num(g.reward.quantity)}?`,go=async()=>{const r=tab==='market'?await act('/api/shop/buy',{op:'buy',slot:g.key}):tab==='sealed'?await act('/api/shop/buy',{op:'sealed-buy',id:g.key}):await act('/api/altar',{op:'buy',id:g.key});if(r)c.bonusPopup(r.result?.rewards||[g.reward])};
+   const text=`Mua ${name} x${c.num(g.reward.quantity)}?`,go=async()=>{const r=tab==='market'?await act('/api/shop/buy',{op:'buy',slot:g.key}):tab==='sealed'?await act('/api/shop/buy',{op:'sealed-buy',id:g.key}):tab==='arena'?await act('/api/shop/buy',{op:'arena-buy',id:g.key}):await act('/api/altar',{op:'buy',id:g.key});if(r)c.bonusPopup(r.result?.rewards||[g.reward])};
    return g.price.itemId!=='gold'&&g.price.itemId!=='diamonds'?c.confirm(`${text} (${c.num(g.price.quantity)} ${c.items.get(g.price.itemId)?.name||'Hồn hải tặc'})`,I2('LBL_BUY','Mua'),null,go):c.confirm(text,I2('LBL_BUY','Mua'),g.price.quantity,go,{currency:g.price.itemId});
   }
  }

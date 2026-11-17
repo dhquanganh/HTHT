@@ -1,4 +1,6 @@
-// Mở rương theo dist/chests.json. Bảng gốc không có tỉ lệ nên các phần thưởng của rương ngẫu nhiên có cơ hội ngang nhau.
+// Mở rương theo dist/chests.json (tools/export-chests.py). Bảng gốc không có tỉ lệ nên các phần thưởng của rương ngẫu nhiên
+// có cơ hội ngang nhau. Chế độ: random (draws món khác nhau), random + groups (bốc nguyên một bộ, ví dụ 1 set trang bị đỏ),
+// choice (người chơi chọn 1), all (nhận hết). Loại quà: gold, diamonds, item, hero, avatar, fruit, fruitShard, pet, petShard.
 import {randomInt} from 'node:crypto';
 import {requireCondition,integer} from './errors.mjs';
 import {chestData,heroAlbum,itemById} from './catalog.mjs';
@@ -14,7 +16,11 @@ export function rollChest(item,input,random=secureRandom){
   return{count:1,rewards:[chest.rewards[index]]};
  }
  const count=integer(input.count??1,1,maxOpen,'Số lượng'),rewards=[];
- for(let i=0;i<count;i++)rewards.push(...pick(chest.rewards,chest.draws||1,random));
+ for(let i=0;i<count;i++){
+  if(chest.mode==='all')rewards.push(...chest.rewards);
+  else if(chest.groups)rewards.push(...chest.groups[Math.floor(random()*chest.groups.length)].map(index=>chest.rewards[index]));
+  else rewards.push(...pick(chest.rewards,chest.draws||1,random));
+ }
  return{count,rewards};
 }
 export const chestHero=reward=>heroAlbum.heroes.find(h=>h.avatar===reward.avatar);

@@ -36,6 +36,13 @@ export function validateSummon(input){
  requireCondition(counts.includes(count),'Số lần chiêu mộ không hợp lệ.');
  return{faction:input.faction,count};
 }
+/** Tướng ngẫu nhiên khi ghép mảnh tướng ngẫu nhiên: cùng bể với rương tự chọn (rank đúng, hệ trong danh sách). */
+// Hệ không có tướng đúng bậc (vd. hệ hiếm không có tướng S): lấy bậc gần nhất còn tướng của đúng hệ, ưu tiên bậc cao hơn.
+export function mergePoolOf(pool){
+ for(const rank of [pool.rank,pool.rank+1,pool.rank-1,pool.rank+2,pool.rank-2]){const list=choicePool({choice:{...pool,rank}});if(list.length)return list}
+ return[];
+}
+export function rollMergeHero(pool,random=secureRandom){const list=mergePoolOf(pool);requireCondition(list.length,'Chưa có tướng phù hợp để ghép.',409);return list[Math.floor(random()*list.length)]}
 export const choicePool=item=>{refresh();return heroAlbum.heroes.filter(h=>playable.has(h.avatar)&&(!playable.get(h.avatar).custom||playable.get(h.avatar).summon)&&h.rank===item.choice.rank&&item.choice.factions.includes(h.faction))};
 /** Tướng chưa có vào đội ngay; tướng đã có đổi thành mảnh để nâng sao. */
 export function grantSummon(p,hero){

@@ -1,0 +1,22 @@
+# Render Blueprint: web service Node (Express + MongoDB).
+# Build phải cài gói Node (express, mongodb, helmet); thiếu bước này server báo "Cannot find package 'mongodb'".
+services:
+  - type: web
+    name: haitacphucsinh-game
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Server mặc định nghe 127.0.0.1; Render cần 0.0.0.0 mới nhận được kết nối từ ngoài.
+      - key: HOST
+        value: 0.0.0.0
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

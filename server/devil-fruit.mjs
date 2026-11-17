@@ -77,6 +77,14 @@ export function starUpFruit(p,input,pay){
  s.shards[f.id]-=fee.sameshard;o.star++;
  return{message:`${f.name} ${o.star} sao`,star:o.star};
 }
+/** Trái nhận từ rương: chưa có thì sở hữu luôn, đã có thì đổi ra đủ mảnh của trái đó (như ô trái nguyên của vòng quay). */
+export function grantFruit(p,id){
+ const s=state(p),f=fruitOrFail(id);
+ if(!s.owned[f.id]){s.owned[f.id]={level:0,star:0};return{fruitId:f.id,fresh:true}}
+ const amount=shardsFor(f.rank);s.shards[f.id]=(s.shards[f.id]||0)+amount;return{fruitId:f.id,shards:amount};
+}
+export function addFruitShards(p,id,amount){const s=state(p),f=fruitOrFail(id);s.shards[f.id]=(s.shards[f.id]||0)+amount;return{fruitId:f.id,shards:amount}}
+export const fruitName=id=>fruitById.get(Number(id))?.name;
 /** Một lượt quay: chọn ô theo percent, trả kết quả và ô trúng (1..16) để client chạy đèn. */
 function rollOnce(s,mode,random,grant){
  const rows=wheels[mode].rows,total=rows.reduce((n,r)=>n+r.percent,0);let x=random()*total,index=0;

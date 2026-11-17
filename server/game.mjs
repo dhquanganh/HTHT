@@ -27,8 +27,8 @@ import {hakiView,hakiStats,hakiUnit,pickHaki} from './haki.mjs';
 import {upgradeArtifact} from './artifact-upgrade.mjs';
 import {talentView,talentStats,talentLevelBonus,talentPassives,talentKit,talentAction} from './talent.mjs';
 import {srView,srCheckIn,srStart,srFinish,srClaimAchievement,srClaimSeason} from './silent-ring.mjs';
-import {petView,recruitPets,combinePet,levelPet,growthPet,erasePet,enlightPet,starUpPet,equipPet,heroPet} from './pet.mjs';
-import {devilFruitView,combineFruit,levelUpFruit,starUpFruit,rollWheel,setResonance,unlockResonance,fruitBonus} from './devil-fruit.mjs';
+import {petView,recruitPets,combinePet,levelPet,growthPet,erasePet,enlightPet,starUpPet,equipPet,heroPet,grantPet,addPetShards} from './pet.mjs';
+import {devilFruitView,combineFruit,levelUpFruit,starUpFruit,rollWheel,setResonance,unlockResonance,fruitBonus,grantFruit,addFruitShards} from './devil-fruit.mjs';
 import {novaPlayerState,questTrack,questView,applyNovaBuff,novaConfig,currency as novaCurrency} from './nova.mjs';
 import {sanjiView,sanjiAction} from './sanji.mjs';
 import {decorView,decorAction,decorBonus} from './decor.mjs';
@@ -50,7 +50,7 @@ import {guildState,techBonus,applyTech,techView,techAction,guildCoin,createCost,
 import {excView,excAction,excLevel,excPoints,excTierStats,excSkill} from './exc.mjs';
 import {tthView,tthBuy,tthSpend,tthFinish,tthDay,bossUnit,bossOfDay,battleRounds as tthRounds} from './tth.mjs';
 import {raidSmash,raidBuy,raidPrepare,raidFinish,raidEnemyStats,raidModes,vnDay as raidDay} from './raid.mjs';
-import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool} from './summon.mjs';
+import {rollSummon,rollFiveStar,validateSummon,grantSummon,startSummon,choicePool,rollMergeHero} from './summon.mjs';
 // Mốc cuối "Chiêu Mộ Đại Hải Tặc": mảnh của một tướng SS (rank 6) có sẵn trong game, không tính nhân vật tự tạo.
 setRotatePool(()=>heroDefinitions.filter(h=>h.rank===6&&!h.custom).map(shardFor));
 import {shipView,shipAction,shipForBattle,shipItems} from './ship.mjs';
@@ -60,6 +60,7 @@ import {addVipExp,afkBonus,raidBuyBonus,vipView} from './vip.mjs';
 import {casinoAction,casinoView} from './casino.mjs';
 import {sealedView,sealedAction,prepareSealedFight,finishSealed,referenceStats} from './sealed.mjs';
 import {shopView,shopAction} from './shop.mjs';
+import {arenaShopView,arenaShopBuy} from './arena-shop.mjs';
 import {tavernView,tavernAction} from './tavern.mjs';
 import {braveView,braveAction,prepareBraveFight,finishBrave} from './brave.mjs';
 import {dungeonView,dungeonAction,prepareDungeonFight,finishDungeon} from './dungeon.mjs';
@@ -192,7 +193,7 @@ function introView(state){
   afk:null,tower:null,albumState:null,achievements:null,homeQuest:null,devilFruit:null,pets:null,silentRing:null,mastery:null,abyss:null,dailyQuest:null,arena:null,tth:null,guild:null,activity:[]};
 }
 export function playerView(player,now=Date.now()){if(!player.hero){ensureRoster(player);return baseView(player,now)}return{...baseView(player,now),events:eventsView(player,now),checkin:checkinView(player,now)}}
-function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;if(!state.hero)return introView(state);const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),ships:shipView(player),vipInfo:vipView(player),casino:casinoView(player,now),dungeon:dungeonView(player,now),brave:braveView(player,now),tavern:tavernView(player,now),shop:shopView(player,now),sealed:sealedView(player,now,sealedRef(player)),dice:diceView(player,now),altar:altarView(player,now),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),impelDown:{...impelView(player,now),enabled:impelConfig().enabled!==false},freedom:{...freedomView(player,now),enabled:freedomConfig().enabled!==false},novaEnabled:novaConfig().enabled!==false,pot:{...potView(player),enabled:potConfig().enabled!==false},sanji:{...sanjiView(player,now),enabled:sanjiConfig().enabled!==false},decor:{...decorView(player,now),enabled:decorConfig().enabled!==false},xmas:{...xmasView(player,now),enabled:xmasConfig().enabled!==false},gem:{...gemsView(player),boss:gemBossView(player,now),milestones:milestonesView()},pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),tth:tthView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
+function baseView(player,now){ensureRoster(player);const {receipts,activity,reserveHeroes,...state}=player;if(!state.hero)return introView(state);const view=h=>({...h,skills:heroLevels(h),skillDetails:Object.fromEntries(heroSkills(h).map(s=>[s.id,heroTier(h,s.id)])),name:definitionFor(h.id).name,stats:heroStats({...player,hero:h}),special:specialView(h),germa:germaView(h,definitionFor(h.id).avatar),haki:hakiView(h),talent:talentView(h),exc:excView(h,definitionFor(h.id).avatar),starLabel:starLabel(h.stars)});return{...state,inventory:{...state.inventory,...(state.wallet.spirit>0?{[heroExpItem]:state.wallet.spirit}:{})},formation:formationView(player),hero:view(state.hero),heroes:[state.hero,...Object.values(reserveHeroes)].map(view),costs:upgradeCosts(player),ships:shipView(player),vipInfo:vipView(player),casino:casinoView(player,now),dungeon:dungeonView(player,now),brave:braveView(player,now),tavern:tavernView(player,now),shop:{...shopView(player,now),arena:arenaShopView(player,now)},sealed:sealedView(player,now,sealedRef(player)),dice:diceView(player,now),altar:altarView(player,now),afk:afkView(player,now),tower:towerView(player,now),albumState:albumView(player),achievements:achievementView(player),homeQuest:homeQuestView(player),devilFruit:devilFruitView(player),impelDown:{...impelView(player,now),enabled:impelConfig().enabled!==false},freedom:{...freedomView(player,now),enabled:freedomConfig().enabled!==false},novaEnabled:novaConfig().enabled!==false,pot:{...potView(player),enabled:potConfig().enabled!==false},sanji:{...sanjiView(player,now),enabled:sanjiConfig().enabled!==false},decor:{...decorView(player,now),enabled:decorConfig().enabled!==false},xmas:{...xmasView(player,now),enabled:xmasConfig().enabled!==false},gem:{...gemsView(player),boss:gemBossView(player,now),milestones:milestonesView()},pets:petView(player,now),silentRing:srView(player,now),mastery:masteryView(player),abyss:abyssView(player,now),dailyQuest:dailyQuestView(player,now),arena:arenaView(player,now),tth:tthView(player,now),guild:guildView(player,now),activity:activity.slice(-20).reverse()}}
 function addItem(p,id,qty){requireCondition(itemById.has(id),'Vật phẩm không tồn tại.');if(id===heroExpItem){p.wallet.spirit=(p.wallet.spirit||0)+qty;requireCondition(p.wallet.spirit>=0,'Không đủ Đá EXP.');return}p.inventory[id]=(p.inventory[id]||0)+qty;requireCondition(p.inventory[id]>=0,'Không đủ vật phẩm.')}
 function spend(p,cost){for(const [currency,amount] of Object.entries(cost)){requireCondition(Number.isSafeInteger(amount)&&amount>=0,'Chi phí không hợp lệ.');requireCondition((p.wallet[currency]||0)>=amount,`Không đủ ${({gold:'vàng',diamonds:'kim cương',spirit:'EXP tướng'})[currency]||currency}.`,400,'INSUFFICIENT_FUNDS');p.wallet[currency]-=amount;if(currency==='diamonds')trackEvent(p,'diamondSpend',amount)}}
 function spendItems(p,cost={}){for(const [id,amount] of Object.entries(cost)){requireCondition((id===heroExpItem?p.wallet.spirit:p.inventory[id]||0)>=amount,`Không đủ ${itemById.get(id)?.name||'vật phẩm'}.`);addItem(p,id,-amount)}}
@@ -467,6 +468,7 @@ function runAction(p,action,input,now,context){
  if(action==='event-exchange')return exchangeEvent(p,input,cost=>payReward(p,cost),reward=>grantReward(p,reward),now);
  if(action==='event-pray')return prayEvent(p,input,cost=>payReward(p,cost),reward=>grantReward(p,reward),now);
  // Cửa hàng chỉ để xem: mọi yêu cầu mua đều bị từ chối, kể cả gọi API trực tiếp.
+ if(action==='buy'&&input.op==='arena-buy'){outsideBattle(p);return arenaShopBuy(p,input,{pay:c=>payReward(p,c),grant:r=>grantReward(p,r)},now)}
  if(action==='buy'){outsideBattle(p);return shopAction(p,input,{pay:c=>payReward(p,c),grant:r=>grantReward(p,r)},now)}
  if(action==='use'){
   outsideBattle(p);const item=itemById.get(input.itemId),qty=integer(input.quantity??1,1,1000000000);
@@ -521,10 +523,16 @@ function runAction(p,action,input,now,context){
  if(action==='shard-merge'){
   outsideBattle(p);const item=itemById.get(input.itemId);requireCondition(item?.merge,'Vật phẩm này không ghép được.',404);
   if(item.heroShard)requireCondition(!ownedHeroes(p).has('hero-'+item.heroShard),'Đã có tướng này, mảnh dùng để lên sao.',409,'HERO_OWNED');
-  requireCondition((p.inventory[item.id]||0)>=item.merge,`Cần ${item.merge} ${item.name}.`,409,'SHARD_NOT_ENOUGH');
-  spendItems(p,{[item.id]:item.merge});const target=item.heroShard?{avatar:item.heroShard}:rollFiveStar(),grant=grantSummon(p,target);if(grant.shardItem)addItem(p,grant.shardItem,grant.shards);
-  if((heroAlbum.heroes.find(h=>h.avatar===target.avatar)?.rank||0)>=5)trackEvent(p,'merge5',1,now);
-  return{message:grant.shardItem?`Đã có tướng này, nhận ${grant.shards} mảnh.`:'Đã ghép thành tướng mới.',hero:grant};
+  // Mảnh tướng cụ thể ghép 1 lần; mảnh ngẫu nhiên ghép được tối đa 10 lần một lượt (count).
+  const count=item.heroShard?1:Math.max(1,Math.min(10,Math.floor(Number(input.count)||1)));
+  requireCondition((p.inventory[item.id]||0)>=item.merge*count,`Cần ${item.merge*count} ${item.name}.`,409,'SHARD_NOT_ENOUGH');
+  spendItems(p,{[item.id]:item.merge*count});const heroes=[];
+  for(let i=0;i<count;i++){
+   const target=item.heroShard?{avatar:item.heroShard}:item.mergePool?rollMergeHero(item.mergePool):rollFiveStar(),grant=grantSummon(p,target);if(grant.shardItem)addItem(p,grant.shardItem,grant.shards);
+   if((heroAlbum.heroes.find(h=>h.avatar===target.avatar)?.rank||0)>=5)trackEvent(p,'merge5',1,now);heroes.push(grant);
+  }
+  const fresh=heroes.filter(h=>h.fresh).length;
+  return{message:count===1?(heroes[0].shardItem?`Đã có tướng này, nhận ${heroes[0].shards} mảnh.`:'Đã ghép thành tướng mới.'):`Đã ghép ${count} lần: ${fresh} tướng mới${count-fresh?`, ${count-fresh} lần đổi thành mảnh`:''}.`,hero:heroes[0],heroes};
  }
  if(['stone-unlock','stone-upgrade','stone-convert'].includes(action)){
   outsideBattle(p);const pay=(gold,dust)=>{spend(p,{gold});spendItems(p,{[stoneDust]:dust})};
@@ -679,6 +687,12 @@ function runAction(p,action,input,now,context){
   for(const reward of rewards){
    if(reward.kind==='gold'||reward.kind==='diamonds'){p.wallet[reward.kind]+=reward.quantity;add(reward.kind,reward)}
    else if(reward.kind==='item'){addItem(p,reward.itemId,reward.quantity);add(reward.itemId,reward)}
+   // Ảnh đại diện đặc biệt: đã có thì không nhận thêm (fresh=false để bảng kết quả ghi "đã sở hữu").
+   else if(reward.kind==='avatar'){p.avatars??=[];const fresh=!p.avatars.includes(reward.id);if(fresh)p.avatars.push(reward.id);add('avatar:'+reward.id,{...reward,fresh})}
+   else if(reward.kind==='fruit'){const g=grantFruit(p,reward.id);add(g.fresh?'fruit:'+g.fruitId:'fruitShard:'+g.fruitId,g.fresh?{kind:'fruit',id:g.fruitId,quantity:1,fresh:true}:{kind:'fruitShard',id:g.fruitId,quantity:g.shards})}
+   else if(reward.kind==='fruitShard'){addFruitShards(p,reward.id,reward.quantity);add('fruitShard:'+reward.id,reward)}
+   else if(reward.kind==='pet'){grantPet(p,reward.id);add('pet:'+reward.id,reward)}
+   else if(reward.kind==='petShard'){addPetShards(p,reward.id,reward.quantity);add('petShard:'+reward.id,reward)}
    else{const grant=grantSummon(p,chestHero(reward));if(grant.shardItem){addItem(p,grant.shardItem,grant.shards);add('hero:'+grant.avatar,{kind:'hero',avatar:grant.avatar,shardItem:grant.shardItem,quantity:grant.shards})}else add('hero:'+grant.avatar,{kind:'hero',avatar:grant.avatar,fresh:true,quantity:1})}
   }
   return{message:`Đã mở ${count} ${item.name}.`,rewards:[...merged.values()]};

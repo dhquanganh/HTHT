@@ -73,6 +73,10 @@ export function recruitPets(p,input,{pay,grant,now=Date.now(),random=Math.random
  const results=Array.from({length:Math.abs(amount)},()=>recruitOnce(s,random,grant));
  return{message:`Chiêu mộ ${results.length} lần.`,results};
 }
+// ---- Nhận từ rương / túi thú cưng: con mới (thú cưng được trùng loại) hoặc mảnh để ghép ở Thư viện.
+export function grantPet(p,setId){const s=state(p),base=byId.get(Number(setId));requireCondition(base,'Thú cưng không tồn tại.',404);const pet=newPet(s,base.id);return{setId:base.id,uid:pet.uid}}
+export function addPetShards(p,setId,amount){const s=state(p),base=byId.get(Number(setId));requireCondition(base,'Thú cưng không tồn tại.',404);s.shards[base.id]=(s.shards[base.id]||0)+amount;return{setId:base.id,shards:amount}}
+export const petName=id=>byId.get(Number(id))?.name;
 // ---- Ghép ở Thư viện (PET_2_SUMMON)
 export function combinePet(p,input){
  const s=state(p),base=byId.get(Number(input.setId));requireCondition(base,'Thú cưng không tồn tại.',404);

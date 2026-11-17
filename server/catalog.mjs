@@ -174,6 +174,18 @@ for(const hero of heroDefinitions){
  items.push(item);itemById.set(item.id,item);
 }
 itemById.get('shard:30000').merge=50;
+// Mảnh tướng ngẫu nhiên (shard 30001-30006, 40001-40015): ghép `number_merge` (50) mảnh → 1 tướng ngẫu nhiên đúng bậc / hệ ghi trên mảnh.
+// Bậc: "5 sao" và "S" = rank 5, "SS" = rank 6. Hệ theo tên; "Ngẫu nhiên" / "L1" = 4 hệ thường, "L2" = 2 hệ hiếm (Thông minh, Minh mẫn).
+{
+ const factionByName=[['nhanh nhẹn','fortress'],['bền bỉ','abyss'],['bền bĩ','abyss'],['chính xác','forest'],['sinh khí','shadow'],['thông minh','dark'],['minh mẫn','light']];
+ const common=['fortress','abyss','forest','shadow'],rare=['dark','light'];
+ for(const item of itemById.values()){
+  if(item.category!=='shard'||!/^shard:(3000[1-6]|400(0[1-9]|1[0-5]))$/.test(item.id))continue;
+  const name=item.name.toLocaleLowerCase('vi'),rank=/\bss\b/.test(name)?6:5,hit=factionByName.find(([n])=>name.includes(n));
+  const factions=hit?[hit[1]]:/l2/.test(name)?rare:common;
+  item.merge=Number(item.originalMetadata?.number_merge)||50;item.mergePool={rank,factions};
+ }
+}
 // Đá Cam dùng để lắp ngay Đá Cam 1 sao (db_hero_stone id 15) cho tướng đang chọn.
 if(itemById.get('consumable:100045'))itemById.get('consumable:100045').description='Dùng để rút mảnh ghép ảnh ở Album, Đảo Người Cá. Nhận từ rương nhiệm vụ Vực thẳm.';
 if(itemById.get('consumable:60004')){Object.assign(itemById.get('consumable:60004'),{stoneId:15,effect:{},description:'Lắp Đá Cam 1 sao vào ô Đá hộ mệnh của tướng đang chọn.'})}

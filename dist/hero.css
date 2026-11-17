@@ -321,3 +321,7 @@ body.playing #toast{bottom:120px}
 .ev-coins{flex-wrap:wrap}.ev-coins span{flex:none;display:inline-flex;align-items:center;gap:6px}.ev-coins img{width:32px;height:32px;object-fit:contain}.ev-coins .muted{flex:1 1 100%;font-size:16px;opacity:.85}
 .ev-fund .ev-cost{flex:none}
 .ev-locked{position:absolute;right:18px;top:50%;transform:translateY(-50%);padding:6px 12px;border-radius:8px;background:#7a5a33;color:#fff3d6;font-size:16px}
+/* Bảng thống kê trận (battle-detail-ui.js, PopupBattleDetail): nằm trên màn kết thúc trận và các hộp thoại. */
+.battle-detail-layer{z-index:95;pointer-events:auto!important}.battle-detail-layer .pd-button{cursor:pointer}
+/* Số trong huy hiệu cánh sao (GroupStarE): viền đen đặc 8 hướng cho dễ đọc trên nền sao vàng, áp cho mọi nơi dùng huy hiệu. */
+.hero-star-e b,[data-name="TextStarE"]{text-shadow:-.1em -.1em 0 #000,0 -.1em 0 #000,.1em -.1em 0 #000,.1em 0 0 #000,.1em .1em 0 #000,0 .1em 0 #000,-.1em .1em 0 #000,-.1em 0 0 #000,0 0 .2em #000!important}

@@ -3,7 +3,7 @@
  *   2. PopupSummonHeroes: lần lượt từng tướng nhận được — ảnh lớn của tướng (Hero/Image, heroart), Spine bậc "Ranking"
  *      (D / C / B / A / S / SS), Spine hệ "Class" (D rừng xanh, I hắc ám, P ánh sáng, S vực thẳm, V bóng tối, A pháo đài),
  *      sao, tên, hạt sáng "Summoning_partical". Chạm để xem tướng tiếp theo; nút quay lại bỏ qua phần còn lại.
- * Gọi: await window.SummonFx.play(heroes, ctx) rồi mới hiện bảng kết quả. */
+ * Gọi: await window.SummonFx.play(heroes, ctx) rồi mới hiện bảng kết quả. ctx.beer === false: bỏ thùng bia (ghép mảnh tướng). */
 (()=>{
  'use strict';
  const D=window.PrefabDOM;let scenes=null;
@@ -48,7 +48,7 @@
  }
  async function play(heroes,ctx){
   const layer=ctx.layer();const cover=document.createElement('div');cover.className='sfx-root';layer.appendChild(cover);
-  try{await beer(ctx,cover);await reveal(heroes,ctx,cover)}catch(e){console.warn('summon fx',e)}finally{cover.remove()}
+  try{if(ctx.beer!==false)await beer(ctx,cover);await reveal(heroes,ctx,cover)}catch(e){console.warn('summon fx',e)}finally{cover.remove()}
  }
  window.SummonFx={play,load};
 })();

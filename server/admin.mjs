@@ -91,6 +91,8 @@ export function mountAdmin(app,store,password,limiter){
  app.post('/api/admin/raid',guard,async(req,res)=>res.json(await store.setRaidConfig(req.body,req.ip)));
  app.get('/api/admin/gem',guard,async(req,res)=>res.json(await store.gemAdmin()));
  app.post('/api/admin/gem',guard,async(req,res)=>res.json(await store.setGemConfig(req.body,req.ip)));
+ app.get('/api/admin/arena-shop',guard,async(req,res)=>res.json(await store.arenaShopAdmin()));
+ app.post('/api/admin/arena-shop',guard,async(req,res)=>res.json(await store.setArenaShopConfig(req.body,req.ip)));
  app.get('/api/admin/casino',guard,async(req,res)=>res.json(await store.casinoAdmin()));
  app.post('/api/admin/casino',guard,async(req,res)=>res.json(await store.setCasinoConfig(req.body,req.ip)));
  app.get('/api/admin/dice',guard,async(req,res)=>res.json(await store.diceAdmin()));
